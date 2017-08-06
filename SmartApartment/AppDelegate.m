@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "LaunchAdViewController.h"
+#import "LCTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //停留2s再进主界面
+    [NSThread sleepForTimeInterval:2.0];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
+    [[NavManager shareInstance] setRootController:[LaunchAdViewController new]];
+    self.window.rootViewController = [[NavManager shareInstance] rootNavigationController];
+    
+    
+    
     return YES;
 }
 

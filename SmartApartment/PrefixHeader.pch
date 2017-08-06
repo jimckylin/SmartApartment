@@ -1,0 +1,83 @@
+//
+//  PrefixHeader.pch
+//  SmartApartment
+//
+//  Created by Jimcky Lin on 2017/8/6.
+//  Copyright © 2017年 Jimcky Lin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "NavManager.h"
+#import <PureLayout.h>
+
+
+// 根据屏幕高度比算出不同设备对应数值
+#define kGetScreenHeightScale(height) iPhone5SE? height * 568 / 667.0 : iPhone6_6s? height * 667 / 667.0 : height * 736 / 667.0
+
+// 根据屏幕宽度比算出不同设备对应数值
+#define kGetScreenWeightScale(height) iPhone5SE? (height * 320 / 375.0) : iPhone6_6s? (height * 375 / 375.0) : (height * 414 / 375.0)
+
+#define WS(weakSelf) __weak typeof (&*self) weakSelf = self;
+#define __WeakObj(o)  __weak typeof(o) o##Weak = o;
+#define __StrongObj(o) __strong typeof(o) o = o##Weak;
+
+// 颜色
+#pragma mark - RGBA颜色
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#pragma mark - 主视图bound
+#define Screen_SIZE [UIScreen mainScreen].bounds.size
+#pragma mark - 主视图bounds
+#define Screen_Bounds [UIScreen mainScreen].bounds
+#pragma mark - 主视图Width
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#pragma mark - 主视图Height
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#pragma mark - 加载图片
+#define kImage(M) [UIImage imageNamed:M]
+#pragma mark - long 转 NSNumber
+#define kNSNumLong(M)    [NSNumber numberWithLong:M]
+#pragma mark - longlong 转 NSNumber
+#define kNSNumLongLong(M)    [NSNumber numberWithLongLong:M]
+#pragma mark - int 转 NSNumber
+#define kNSNumInteger(M) [NSNumber numberWithInteger:M]
+#pragma mark - double 转 NSNumber
+#define kNSNumDouble(M)  [NSNumber numberWithDouble:M]
+#pragma mark - 字符串格式化函数
+#define kNSString(M) [NSString stringWithFormat:@"%@",M]
+
+#pragma mark NSLog 是否使用的宏
+#ifndef __ISRELEASE
+#define __ISRELEASE 1
+#endif
+#define COMPILEVER __ISRELEASE
+#if COMPILEVER
+#    define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#    define NSLog(...) {}
+#endif
+
+
+// 车位管家的官网地址
+#define kCWGJURL @"http://www.cheweiguanjia.com"
+
+//测试数据标识
+//#define TEST_MODEL_ON_OFF
+
+// 判断是否为 iPhone 4
+#define iPhone4 [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 480.0f
+
+// 判断是否为 iPhone 5SE
+#define iPhone5SE [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f
+
+// 判断是否为iPhone 6/6s
+#define iPhone6_6s [[UIScreen mainScreen] bounds].size.width == 375.0f && [[UIScreen mainScreen] bounds].size.height == 667.0f
+
+// 判断是否为iPhone 6Plus/6sPlus
+#define iPhone6Plus_6sPlus [[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f
+
+#define kWindow [UIApplication sharedApplication].keyWindow
+
+
+#endif /* PrefixHeader_pch */

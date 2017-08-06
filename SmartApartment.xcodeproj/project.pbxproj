@@ -7,28 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EDBDA13E47337EAD8D1B319 /* libPods-SmartApartment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
-		A9AA8EA31F3712A5005F9DBB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EA21F3712A5005F9DBB /* FirstViewController.m */; };
-		A9AA8EA61F3712A5005F9DBB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EA51F3712A5005F9DBB /* SecondViewController.m */; };
-		A9AA8EA91F3712A5005F9DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EA71F3712A5005F9DBB /* Main.storyboard */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
 		A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */; };
+		A9AA8EC51F3720AA005F9DBB /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EBC1F3720AA005F9DBB /* LCTabBar.m */; };
+		A9AA8EC61F3720AA005F9DBB /* LCTabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EBE1F3720AA005F9DBB /* LCTabBarBadge.m */; };
+		A9AA8EC71F3720AA005F9DBB /* LCTabBarController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EC01F3720AA005F9DBB /* LCTabBarController.bundle */; };
+		A9AA8EC81F3720AA005F9DBB /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EC21F3720AA005F9DBB /* LCTabBarController.m */; };
+		A9AA8EC91F3720AA005F9DBB /* LCTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EC41F3720AA005F9DBB /* LCTabBarItem.m */; };
+		A9AA8ECC1F372461005F9DBB /* JKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ECB1F372461005F9DBB /* JKTabbarController.m */; };
+		A9AA8ECF1F37260F005F9DBB /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ECE1F37260F005F9DBB /* NavManager.m */; };
+		A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */; };
+		A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED61F37275B005F9DBB /* HomeViewController.m */; };
+		A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EDA1F3751F7005F9DBB /* LaunchAdViewController.m */; };
+		A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EDE1F375245005F9DBB /* LaunchAdView.m */; };
+		A9AA8EE31F375DF2005F9DBB /* LaunchAdJump@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EE21F375DF2005F9DBB /* LaunchAdJump@2x.png */; };
+		A9AA8EE71F3764CB005F9DBB /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EE61F3764CB005F9DBB /* MineViewController.m */; };
+		A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EE91F376C37005F9DBB /* BannerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartApartment.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9AA8EA11F3712A5005F9DBB /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A9AA8EA21F3712A5005F9DBB /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		A9AA8EA41F3712A5005F9DBB /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A9AA8EA51F3712A5005F9DBB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		A9AA8EA81F3712A5005F9DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9AA8EAD1F3712A5005F9DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9AA8EAF1F3712A5005F9DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9AA8EBB1F3720AA005F9DBB /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
+		A9AA8EBC1F3720AA005F9DBB /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
+		A9AA8EBD1F3720AA005F9DBB /* LCTabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarBadge.h; sourceTree = "<group>"; };
+		A9AA8EBE1F3720AA005F9DBB /* LCTabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarBadge.m; sourceTree = "<group>"; };
+		A9AA8EBF1F3720AA005F9DBB /* LCTabBarCONST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarCONST.h; sourceTree = "<group>"; };
+		A9AA8EC01F3720AA005F9DBB /* LCTabBarController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCTabBarController.bundle; sourceTree = "<group>"; };
+		A9AA8EC11F3720AA005F9DBB /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
+		A9AA8EC21F3720AA005F9DBB /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
+		A9AA8EC31F3720AA005F9DBB /* LCTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarItem.h; sourceTree = "<group>"; };
+		A9AA8EC41F3720AA005F9DBB /* LCTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarItem.m; sourceTree = "<group>"; };
+		A9AA8ECA1F372461005F9DBB /* JKTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTabbarController.h; sourceTree = "<group>"; };
+		A9AA8ECB1F372461005F9DBB /* JKTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTabbarController.m; sourceTree = "<group>"; };
+		A9AA8ECD1F37260F005F9DBB /* NavManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavManager.h; sourceTree = "<group>"; };
+		A9AA8ECE1F37260F005F9DBB /* NavManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavManager.m; sourceTree = "<group>"; };
+		A9AA8ED11F3726EC005F9DBB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A9AA8ED51F37275B005F9DBB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		A9AA8ED61F37275B005F9DBB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		A9AA8ED91F3751F7005F9DBB /* LaunchAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdViewController.h; sourceTree = "<group>"; };
+		A9AA8EDA1F3751F7005F9DBB /* LaunchAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAdViewController.m; sourceTree = "<group>"; };
+		A9AA8EDD1F375245005F9DBB /* LaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdView.h; sourceTree = "<group>"; };
+		A9AA8EDE1F375245005F9DBB /* LaunchAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAdView.m; sourceTree = "<group>"; };
+		A9AA8EE01F3757A6005F9DBB /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A9AA8EE21F375DF2005F9DBB /* LaunchAdJump@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchAdJump@2x.png"; sourceTree = "<group>"; };
+		A9AA8EE51F3764CB005F9DBB /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		A9AA8EE61F3764CB005F9DBB /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		A9AA8EE81F376C37005F9DBB /* BannerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerDetailViewController.h; sourceTree = "<group>"; };
+		A9AA8EE91F376C37005F9DBB /* BannerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerDetailViewController.m; sourceTree = "<group>"; };
+		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
+		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +74,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDBDA13E47337EAD8D1B319 /* libPods-SmartApartment.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C479CF2F2478DD0B440D828 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97A92854C1FBDE741622538A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */,
+				EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A9AA8E8F1F3712A5005F9DBB = {
 			isa = PBXGroup;
 			children = (
 				A9AA8E9A1F3712A5005F9DBB /* SmartApartment */,
 				A9AA8E991F3712A5005F9DBB /* Products */,
+				97A92854C1FBDE741622538A /* Pods */,
+				3C479CF2F2478DD0B440D828 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,15 +119,18 @@
 		A9AA8E9A1F3712A5005F9DBB /* SmartApartment */ = {
 			isa = PBXGroup;
 			children = (
+				A9AA8EE41F3764B9005F9DBB /* Mine */,
+				A9AA8EE11F375DEA005F9DBB /* Resource */,
+				A9AA8EB91F371A09005F9DBB /* General */,
+				A9AA8EB81F3719CB005F9DBB /* Category */,
+				A9AA8EB71F37198E005F9DBB /* Thirdpart */,
+				A9AA8EB61F371964005F9DBB /* Controller */,
+				A9AA8EB51F371950005F9DBB /* ParentController */,
 				A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */,
 				A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */,
-				A9AA8EA11F3712A5005F9DBB /* FirstViewController.h */,
-				A9AA8EA21F3712A5005F9DBB /* FirstViewController.m */,
-				A9AA8EA41F3712A5005F9DBB /* SecondViewController.h */,
-				A9AA8EA51F3712A5005F9DBB /* SecondViewController.m */,
-				A9AA8EA71F3712A5005F9DBB /* Main.storyboard */,
 				A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */,
 				A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */,
+				A9AA8EE01F3757A6005F9DBB /* PrefixHeader.pch */,
 				A9AA8EAF1F3712A5005F9DBB /* Info.plist */,
 				A9AA8E9B1F3712A5005F9DBB /* Supporting Files */,
 			);
@@ -84,6 +145,123 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A9AA8EB51F371950005F9DBB /* ParentController */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8ECD1F37260F005F9DBB /* NavManager.h */,
+				A9AA8ECE1F37260F005F9DBB /* NavManager.m */,
+				A9AA8EBA1F3720AA005F9DBB /* LCTabBarController */,
+				A9AA8ECA1F372461005F9DBB /* JKTabbarController.h */,
+				A9AA8ECB1F372461005F9DBB /* JKTabbarController.m */,
+			);
+			path = ParentController;
+			sourceTree = "<group>";
+		};
+		A9AA8EB61F371964005F9DBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8ED81F3751F7005F9DBB /* Launch */,
+				A9AA8ED41F372751005F9DBB /* Home */,
+				A9AA8ED01F3726C8005F9DBB /* Login */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9AA8EB71F37198E005F9DBB /* Thirdpart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Thirdpart;
+			sourceTree = "<group>";
+		};
+		A9AA8EB81F3719CB005F9DBB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A9AA8EB91F371A09005F9DBB /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		A9AA8EBA1F3720AA005F9DBB /* LCTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8EBB1F3720AA005F9DBB /* LCTabBar.h */,
+				A9AA8EBC1F3720AA005F9DBB /* LCTabBar.m */,
+				A9AA8EBD1F3720AA005F9DBB /* LCTabBarBadge.h */,
+				A9AA8EBE1F3720AA005F9DBB /* LCTabBarBadge.m */,
+				A9AA8EBF1F3720AA005F9DBB /* LCTabBarCONST.h */,
+				A9AA8EC01F3720AA005F9DBB /* LCTabBarController.bundle */,
+				A9AA8EC11F3720AA005F9DBB /* LCTabBarController.h */,
+				A9AA8EC21F3720AA005F9DBB /* LCTabBarController.m */,
+				A9AA8EC31F3720AA005F9DBB /* LCTabBarItem.h */,
+				A9AA8EC41F3720AA005F9DBB /* LCTabBarItem.m */,
+			);
+			path = LCTabBarController;
+			sourceTree = "<group>";
+		};
+		A9AA8ED01F3726C8005F9DBB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8ED11F3726EC005F9DBB /* LoginViewController.h */,
+				A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A9AA8ED41F372751005F9DBB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8ED51F37275B005F9DBB /* HomeViewController.h */,
+				A9AA8ED61F37275B005F9DBB /* HomeViewController.m */,
+				A9AA8EE81F376C37005F9DBB /* BannerDetailViewController.h */,
+				A9AA8EE91F376C37005F9DBB /* BannerDetailViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A9AA8ED81F3751F7005F9DBB /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8EDC1F375232005F9DBB /* View */,
+				A9AA8ED91F3751F7005F9DBB /* LaunchAdViewController.h */,
+				A9AA8EDA1F3751F7005F9DBB /* LaunchAdViewController.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		A9AA8EDC1F375232005F9DBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8EDD1F375245005F9DBB /* LaunchAdView.h */,
+				A9AA8EDE1F375245005F9DBB /* LaunchAdView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8EE21F375DF2005F9DBB /* LaunchAdJump@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A9AA8EE41F3764B9005F9DBB /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				A9AA8EE51F3764CB005F9DBB /* MineViewController.h */,
+				A9AA8EE61F3764CB005F9DBB /* MineViewController.m */,
+			);
+			name = Mine;
+			path = Controller/Mine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +269,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9AA8EB21F3712A5005F9DBB /* Build configuration list for PBXNativeTarget "SmartApartment" */;
 			buildPhases = (
+				A01A58B63C28C2EB2762C041 /* [CP] Check Pods Manifest.lock */,
 				A9AA8E941F3712A5005F9DBB /* Sources */,
 				A9AA8E951F3712A5005F9DBB /* Frameworks */,
 				A9AA8E961F3712A5005F9DBB /* Resources */,
+				6A6E156F1EC7118368F09682 /* [CP] Embed Pods Frameworks */,
+				183DEE0ED1178F593AE84C38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,37 +323,88 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AA8EE31F375DF2005F9DBB /* LaunchAdJump@2x.png in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
+				A9AA8EC71F3720AA005F9DBB /* LCTabBarController.bundle in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
-				A9AA8EA91F3712A5005F9DBB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		183DEE0ED1178F593AE84C38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A6E156F1EC7118368F09682 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A01A58B63C28C2EB2762C041 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9AA8E941F3712A5005F9DBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9AA8EA61F3712A5005F9DBB /* SecondViewController.m in Sources */,
+				A9AA8EC81F3720AA005F9DBB /* LCTabBarController.m in Sources */,
+				A9AA8EC61F3720AA005F9DBB /* LCTabBarBadge.m in Sources */,
+				A9AA8ECC1F372461005F9DBB /* JKTabbarController.m in Sources */,
+				A9AA8EC91F3720AA005F9DBB /* LCTabBarItem.m in Sources */,
+				A9AA8ECF1F37260F005F9DBB /* NavManager.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
-				A9AA8EA31F3712A5005F9DBB /* FirstViewController.m in Sources */,
+				A9AA8EC51F3720AA005F9DBB /* LCTabBar.m in Sources */,
+				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
+				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
+				A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */,
+				A9AA8EE71F3764CB005F9DBB /* MineViewController.m in Sources */,
+				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
+				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A9AA8EA71F3712A5005F9DBB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9AA8EA81F3712A5005F9DBB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,9 +508,14 @@
 		};
 		A9AA8EB31F3712A5005F9DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SmartApartment/PrefixHeader.pch;
 				INFOPLIST_FILE = SmartApartment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimcky.SmartApartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,9 +524,14 @@
 		};
 		A9AA8EB41F3712A5005F9DBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SmartApartment/PrefixHeader.pch;
 				INFOPLIST_FILE = SmartApartment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimcky.SmartApartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -315,6 +557,7 @@
 				A9AA8EB41F3712A5005F9DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
