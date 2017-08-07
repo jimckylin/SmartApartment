@@ -7,7 +7,6 @@
 //
 
 #import "MineViewController.h"
-#import "UIViewController+Nav.h"
 #import "UIScrollView+HeaderScaleImage.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -25,7 +24,8 @@
 
 - (void)initUI {
     
-    [self setDefaultNavTitle:NSLocalizedString(@"我的", nil) rightBtnTitle:nil];
+    [_naviBackBtn setHidden:YES];
+    _naviLabel.text = NSLocalizedString(@"我的", nil);
     
     _tableView = [[UITableView alloc] init];
     _tableView.backgroundColor = [UIColor whiteColor];

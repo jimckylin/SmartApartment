@@ -7,7 +7,7 @@
 //
 
 #import "NavManager.h"
-#import "JKTabbarController.h"
+#import "RootTabBarController.h"
 #import "AppDelegate.h"
 
 @interface NavManager ()
@@ -43,7 +43,7 @@
 
 - (void)setLoginRootController {
     
-    UIViewController *vc = [JKTabbarController new];
+    UIViewController *vc = [RootTabBarController new];
     [self setRootController:vc];
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -55,6 +55,7 @@
     
     _navigationCtr = [[UINavigationController alloc] initWithRootViewController:controller];
     _navigationCtr.navigationBarHidden = YES;
+    _navigationCtr.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 - (void)setNavController:(UINavigationController *)navController {
@@ -83,7 +84,7 @@
 
 - (void)returnToMainView:(BOOL)isAnimated {
     [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){
-        if ([vc isKindOfClass:NSClassFromString(@"JKTabbarController")]) {  //主页的Class为XTSideMenu !!
+        if ([vc isKindOfClass:NSClassFromString(@"RootTabBarController")]) {  //主页的Class为XTSideMenu !!
             [[self rootNavigationController] popToViewController:vc animated:isAnimated];
             *stop = YES;
         }
@@ -97,7 +98,7 @@
 - (UIViewController*)getMainViewController {
     __block UIViewController *mainVc = nil;
     [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){
-        if ([vc isKindOfClass:NSClassFromString(@"JKTabbarController")]) {  //主页的Class为JKTabbarController !!
+        if ([vc isKindOfClass:NSClassFromString(@"RootTabBarController")]) {  //主页的Class为JKTabbarController !!
             mainVc = vc;
             *stop = YES;
         }

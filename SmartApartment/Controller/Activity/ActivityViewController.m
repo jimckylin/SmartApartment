@@ -1,23 +1,22 @@
 //
-//  BannerDetailViewController.m
+//  ActivityViewController.m
 //  SmartApartment
 //
-//  Created by Jimcky Lin on 2017/8/6.
+//  Created by Jimcky Lin on 2017/8/7.
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "BannerDetailViewController.h"
+#import "ActivityViewController.h"
 
-@interface BannerDetailViewController ()
+@interface ActivityViewController ()
 
 @end
 
-@implementation BannerDetailViewController
+@implementation ActivityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _naviLabel.text = NSLocalizedString(@"详情", nil);
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

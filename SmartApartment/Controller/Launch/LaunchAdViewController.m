@@ -57,7 +57,7 @@
         launchAdView.delegate = self;
         [self.view addSubview:launchAdView];
         
-        self.adShowSecond = 5;
+        self.adShowSecond = 0.5;
         self.adTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(adCountDown) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.adTimer forMode:NSRunLoopCommonModes];
     } else {

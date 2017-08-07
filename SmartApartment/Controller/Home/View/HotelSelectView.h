@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     
-    HotelSelectBtnTypeAlldayRoom,   // 全日房
+    HotelSelectBtnTypeAlldayRoom = 1000,   // 全日房
     HotelSelectBtnTypeHoursRoom,    // 钟点房
     HotelSelectBtnTypeCitySelect,   // 城市选择
     HotelSelectBtnTypeLocate,       // 定位
