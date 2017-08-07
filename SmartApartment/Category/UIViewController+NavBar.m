@@ -32,6 +32,7 @@ void *TitleLabelKey = nil;
 @implementation UIViewController (NavBar)
 
 
+
 - (void)setBarView:(UIView *)barView
 {
     objc_setAssociatedObject(self, &BarViewKey, barView, OBJC_ASSOCIATION_RETAIN);

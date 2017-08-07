@@ -11,5 +11,8 @@ target 'SmartApartment' do
   pod 'IQKeyboardManager',     '~> 4.0.9'
   pod 'SDCycleScrollView',     '~> 1.66'
   pod 'MJRefresh',             '~> 3.1.12'
-
+  pod 'YZHeaderScaleImage',    '~> 1.0.1'
+  
+  
+  
 end

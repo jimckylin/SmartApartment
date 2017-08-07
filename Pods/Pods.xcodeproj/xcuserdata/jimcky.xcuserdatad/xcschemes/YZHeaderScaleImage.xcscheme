@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '62D2D39D6F9FCD247A57651EB6BC9CB6'
-               BlueprintName = 'Pods-SmartApartment'
+               BlueprintIdentifier = '5E8CF0B43F670647DE804B40CFFCFA0E'
+               BlueprintName = 'YZHeaderScaleImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-SmartApartment.a'>
+               BuildableName = 'libYZHeaderScaleImage.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

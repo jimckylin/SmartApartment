@@ -12,8 +12,7 @@
 #import "NavManager.h"
 #import <PureLayout.h>
 #import "UIColor+HexString.h"
-#import "UIViewController+NavBar.h"
-
+#import "BaseViewController.h"
 
 
 // 根据屏幕高度比算出不同设备对应数值

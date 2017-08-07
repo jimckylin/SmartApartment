@@ -7,6 +7,7 @@
 //
 
 #import "BannerDetailViewController.h"
+#import "UIViewController+Nav.h"
 
 @interface BannerDetailViewController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self setDefaultLeftBtnAndTitle:@"详情"];
 }
 
 - (void)didReceiveMemoryWarning {

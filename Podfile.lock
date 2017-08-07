@@ -7,12 +7,14 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - YZHeaderScaleImage (1.0.1)
 
 DEPENDENCIES:
   - IQKeyboardManager (~> 4.0.9)
   - MJRefresh (~> 3.1.12)
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.66)
+  - YZHeaderScaleImage (~> 1.0.1)
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
@@ -20,7 +22,8 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: 74fe9027ce1766bea3052a8d5a424b9dc8498e4f
+PODFILE CHECKSUM: 5e2c6bf83be267d3297791ba0954e2133fee7b38
 
 COCOAPODS: 1.2.1

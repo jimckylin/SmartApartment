@@ -54,12 +54,12 @@
 //    NSAssert(!_navigationCtr, @"can not set root controller again!");
     
     _navigationCtr = [[UINavigationController alloc] initWithRootViewController:controller];
-    //_navigationCtr.navigationBarHidden = YES;
+    _navigationCtr.navigationBarHidden = YES;
 }
 
 - (void)setNavController:(UINavigationController *)navController {
     _navigationCtr = navController;
-    //_navigationCtr.navigationBarHidden = YES;
+    _navigationCtr.navigationBarHidden = YES;
 }
 
 - (void)showViewController:(UIViewController*)controller isAnimated:(BOOL)isAnimated {

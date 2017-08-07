@@ -12,6 +12,11 @@
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
+		A9730E831F384F82006E66A4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E821F384F82006E66A4 /* BaseViewController.m */; };
+		A9730E861F3852E1006E66A4 /* UIViewController+Nav.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E851F3852E1006E66A4 /* UIViewController+Nav.m */; };
+		A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9730E871F385377006E66A4 /* nav_back@2x.png */; };
+		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
+		A97D41DB1F385D920071284B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41DA1F385D920071284B /* Localizable.strings */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -42,6 +47,15 @@
 		A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		A9730E7E1F384B97006E66A4 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
 		A9730E7F1F384B97006E66A4 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
+		A9730E811F384F82006E66A4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A9730E821F384F82006E66A4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A9730E841F3852E1006E66A4 /* UIViewController+Nav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Nav.h"; sourceTree = "<group>"; };
+		A9730E851F3852E1006E66A4 /* UIViewController+Nav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Nav.m"; sourceTree = "<group>"; };
+		A9730E871F385377006E66A4 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		A97D41D31F385CAA0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A97D41D71F385CFF0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A97D41D91F385D0B0071284B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A97D41DA1F385D920071284B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +135,8 @@
 				A9730E791F384B1B006E66A4 /* UIView+Size.m */,
 				A9730E751F384AFE006E66A4 /* UIViewController+NavBar.h */,
 				A9730E761F384AFE006E66A4 /* UIViewController+NavBar.m */,
+				A9730E841F3852E1006E66A4 /* UIViewController+Nav.h */,
+				A9730E851F3852E1006E66A4 /* UIViewController+Nav.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -158,6 +174,8 @@
 				A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */,
 				A9AA8EE01F3757A6005F9DBB /* PrefixHeader.pch */,
 				A9AA8EAF1F3712A5005F9DBB /* Info.plist */,
+				A97D41D81F385CFF0071284B /* InfoPlist.strings */,
+				A97D41DA1F385D920071284B /* Localizable.strings */,
 				A9AA8E9B1F3712A5005F9DBB /* Supporting Files */,
 			);
 			path = SmartApartment;
@@ -179,6 +197,8 @@
 				A9AA8EBA1F3720AA005F9DBB /* LCTabBarController */,
 				A9AA8ECA1F372461005F9DBB /* JKTabbarController.h */,
 				A9AA8ECB1F372461005F9DBB /* JKTabbarController.m */,
+				A9730E811F384F82006E66A4 /* BaseViewController.h */,
+				A9730E821F384F82006E66A4 /* BaseViewController.m */,
 			);
 			path = ParentController;
 			sourceTree = "<group>";
@@ -267,6 +287,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9730E871F385377006E66A4 /* nav_back@2x.png */,
 				A9AA8EE21F375DF2005F9DBB /* LaunchAdJump@2x.png */,
 			);
 			path = Resource;
@@ -343,7 +364,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AA8EE31F375DF2005F9DBB /* LaunchAdJump@2x.png in Resources */,
+				A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
+				A97D41DB1F385D920071284B /* Localizable.strings in Resources */,
+				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
 				A9AA8EC71F3720AA005F9DBB /* LCTabBarController.bundle in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
 			);
@@ -404,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9730E831F384F82006E66A4 /* BaseViewController.m in Sources */,
 				A9AA8EC81F3720AA005F9DBB /* LCTabBarController.m in Sources */,
 				A9AA8EC61F3720AA005F9DBB /* LCTabBarBadge.m in Sources */,
 				A9AA8ECC1F372461005F9DBB /* JKTabbarController.m in Sources */,
@@ -417,6 +442,7 @@
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */,
+				A9730E861F3852E1006E66A4 /* UIViewController+Nav.m in Sources */,
 				A9AA8EE71F3764CB005F9DBB /* MineViewController.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
@@ -428,10 +454,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A97D41D81F385CFF0071284B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A97D41D71F385CFF0071284B /* zh-Hans */,
+				A97D41D91F385D0B0071284B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A9AA8EAD1F3712A5005F9DBB /* Base */,
+				A97D41D31F385CAA0071284B /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -443,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -491,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -540,7 +578,7 @@
 				INFOPLIST_FILE = SmartApartment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimcky.SmartApartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -556,7 +594,7 @@
 				INFOPLIST_FILE = SmartApartment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimcky.SmartApartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

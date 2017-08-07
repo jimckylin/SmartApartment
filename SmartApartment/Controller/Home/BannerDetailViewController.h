@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BannerDetailViewController : UIViewController
+@interface BannerDetailViewController : BaseViewController
 
 @end
