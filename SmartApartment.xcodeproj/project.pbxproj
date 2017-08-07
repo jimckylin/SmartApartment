@@ -17,6 +17,7 @@
 		A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9730E871F385377006E66A4 /* nav_back@2x.png */; };
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
 		A97D41DB1F385D920071284B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41DA1F385D920071284B /* Localizable.strings */; };
+		A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D41DE1F3892EF0071284B /* HotelSelectView.m */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -56,6 +57,8 @@
 		A97D41D71F385CFF0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A97D41D91F385D0B0071284B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A97D41DA1F385D920071284B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A97D41DD1F3892EF0071284B /* HotelSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectView.h; sourceTree = "<group>"; };
+		A97D41DE1F3892EF0071284B /* HotelSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectView.m; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +142,15 @@
 				A9730E851F3852E1006E66A4 /* UIViewController+Nav.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		A97D41DC1F3892220071284B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A97D41DD1F3892EF0071284B /* HotelSelectView.h */,
+				A97D41DE1F3892EF0071284B /* HotelSelectView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A9AA8E8F1F3712A5005F9DBB = {
@@ -257,6 +269,7 @@
 		A9AA8ED41F372751005F9DBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A97D41DC1F3892220071284B /* View */,
 				A9AA8ED51F37275B005F9DBB /* HomeViewController.h */,
 				A9AA8ED61F37275B005F9DBB /* HomeViewController.m */,
 				A9AA8EE81F376C37005F9DBB /* BannerDetailViewController.h */,
@@ -438,6 +451,7 @@
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8EC51F3720AA005F9DBB /* LCTabBar.m in Sources */,
+				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
