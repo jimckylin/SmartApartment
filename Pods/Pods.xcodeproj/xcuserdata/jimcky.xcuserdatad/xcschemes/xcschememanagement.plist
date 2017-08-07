@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SmartApartment.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D8A54D3D42D49AA4961DFC98DD6FB9B</key>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>547A9D25B594EBDA559F0AEDDC37D95D</key>
+		<key>0D7B3E764D652825368E953B3372E223</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65DC91E9B03109FA5368E2A1C7DE9409</key>
+		<key>586628D687E811F44D030BC08926B833</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFE90DC8E759908428DF54272F544921</key>
+		<key>B13B11847D6747CB6AE01F95CC477EB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7550D399A73D600FD950CA064C6085B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
