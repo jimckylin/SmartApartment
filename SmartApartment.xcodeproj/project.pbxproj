@@ -10,6 +10,7 @@
 		2EDBDA13E47337EAD8D1B319 /* libPods-SmartApartment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
+		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -21,7 +22,6 @@
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
 		A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */; };
-		A9AA8ECF1F37260F005F9DBB /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ECE1F37260F005F9DBB /* NavManager.m */; };
 		A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */; };
 		A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED61F37275B005F9DBB /* HomeViewController.m */; };
 		A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EDA1F3751F7005F9DBB /* LaunchAdViewController.m */; };
@@ -46,6 +46,8 @@
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
 		A9414F001F38C55E007857D2 /* TripHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripHelperViewController.m; sourceTree = "<group>"; };
+		A9414F031F38CA49007857D2 /* NavManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavManager.h; sourceTree = "<group>"; };
+		A9414F041F38CA49007857D2 /* NavManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavManager.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -66,8 +68,6 @@
 		A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9AA8EAD1F3712A5005F9DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9AA8EAF1F3712A5005F9DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9AA8ECD1F37260F005F9DBB /* NavManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavManager.h; sourceTree = "<group>"; };
-		A9AA8ECE1F37260F005F9DBB /* NavManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavManager.m; sourceTree = "<group>"; };
 		A9AA8ED11F3726EC005F9DBB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A9AA8ED51F37275B005F9DBB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -130,6 +130,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A9414F021F38CA39007857D2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A9414F031F38CA49007857D2 /* NavManager.h */,
+				A9414F041F38CA49007857D2 /* NavManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,15 +192,14 @@
 				A9AA8EB91F371A09005F9DBB /* General */,
 				A9AA8EB71F37198E005F9DBB /* Thirdpart */,
 				A9AA8EB61F371964005F9DBB /* Controller */,
-				A9AA8EB51F371950005F9DBB /* ParentController */,
 				A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */,
 				A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */,
 				A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */,
-				A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */,
 				A9AA8EE01F3757A6005F9DBB /* PrefixHeader.pch */,
 				A9AA8EAF1F3712A5005F9DBB /* Info.plist */,
-				A97D41D81F385CFF0071284B /* InfoPlist.strings */,
 				A97D41DA1F385D920071284B /* Localizable.strings */,
+				A97D41D81F385CFF0071284B /* InfoPlist.strings */,
+				A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */,
 				A9AA8E9B1F3712A5005F9DBB /* Supporting Files */,
 			);
 			path = SmartApartment;
@@ -203,15 +211,6 @@
 				A9AA8E9C1F3712A5005F9DBB /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A9AA8EB51F371950005F9DBB /* ParentController */ = {
-			isa = PBXGroup;
-			children = (
-				A9AA8ECD1F37260F005F9DBB /* NavManager.h */,
-				A9AA8ECE1F37260F005F9DBB /* NavManager.m */,
-			);
-			path = ParentController;
 			sourceTree = "<group>";
 		};
 		A9AA8EB61F371964005F9DBB /* Controller */ = {
@@ -237,6 +236,7 @@
 		A9AA8EB91F371A09005F9DBB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				A9414F021F38CA39007857D2 /* Manager */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -466,9 +466,9 @@
 			files = (
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
-				A9AA8ECF1F37260F005F9DBB /* NavManager.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
+				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
