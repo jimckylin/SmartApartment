@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     HotelSelectBtnTypeSearchHotel,  // 查找酒店
 };
 
-@protocol HotelSelectView <NSObject>
+@protocol HotelSelectViewDelegate <NSObject>
 
 - (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type;
 
@@ -27,5 +27,7 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
 
 
 @interface HotelSelectView : UIView
+
+@property (nonatomic, copy) id<HotelSelectViewDelegate> deletegate;
 
 @end

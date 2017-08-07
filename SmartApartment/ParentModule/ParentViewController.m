@@ -65,7 +65,7 @@
 
     _naviBackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _naviBackBtn.frame = CGRectMake(0, 20, 75, 44);
-    [_naviBackBtn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [_naviBackBtn setImage:[UIImage imageNamed:@"nav_return_ic_wiphone"] forState:UIControlStateNormal];
     [_naviBackBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 27)];
     [_naviBackBtn addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
     [_naviView addSubview:_naviBackBtn];

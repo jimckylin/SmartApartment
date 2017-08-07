@@ -13,7 +13,10 @@
 #import "HotelSelectView.h"
 
 
-@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate>
+@interface HomeViewController ()<UITableViewDelegate,
+                                 UITableViewDataSource,
+                                 SDCycleScrollViewDelegate,
+                                 HotelSelectViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -91,6 +94,7 @@
         
         if (indexPath.row == 0) {
             HotelSelectView *selectView = [[HotelSelectView alloc] init];
+            selectView.deletegate = self;
             [cell addSubview:selectView];
         }
         
@@ -106,5 +110,15 @@
     BannerDetailViewController *bannerDetail = [BannerDetailViewController new];
     [[NavManager shareInstance] showViewController:bannerDetail isAnimated:YES];
 }
+
+
+#pragma mark - HotelSelectViewDelegate
+
+- (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type {
+    
+    
+}
+
+
 
 @end

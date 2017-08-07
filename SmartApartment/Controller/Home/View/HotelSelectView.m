@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UIScrollView *contentSrollView;
 @property (nonatomic, strong) UIButton *alldayBtn;
 @property (nonatomic, strong) UIButton *hoursBtn;
+@property (nonatomic, strong) UIButton *cityBtn;
+@property (nonatomic, strong) UIButton *locateBtn;
 
 @end
 
@@ -65,6 +67,33 @@
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _hoursBtn.tag = HotelSelectBtnTypeHoursRoom;
     [self addSubview:_hoursBtn];
+    
+    UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, 40, kScreenWidth, self.size.height - 40)];
+    [_contentSrollView addSubview:selectView];
+    
+    _cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_cityBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_cityBtn setTitle:@"福州" forState:UIControlStateNormal];
+    [_cityBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
+    [_cityBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    _cityBtn.tag = HotelSelectBtnTypeCitySelect;
+    [selectView addSubview:_cityBtn];
+    
+    _locateBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_locateBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_locateBtn setImage:kImage(@"home_location_ic_siphone") forState:UIControlStateNormal];
+    [_locateBtn setTitle:@" 我的位置" forState:UIControlStateNormal];
+    [_locateBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
+    [_locateBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [_locateBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    _locateBtn.tag = HotelSelectBtnTypeLocate;
+    [selectView addSubview:_locateBtn];
+    
+    UIImage *image = kImage(@"myorder_lineiphone");
+    UIImageView *line1 = [[UIImageView alloc] initWithImage:image];
+    line1.frame = CGRectMake(30, 90, kScreenWidth - 60, 0.5);
+    [selectView addSubview:line1];
 }
 
 
@@ -89,10 +118,16 @@
     else if (type == HotelSelectBtnTypeCitySelect) {
         
     }
+    
+    if (self.deletegate && [self.deletegate respondsToSelector:@selector(hotelSelectViewDidClickBtn:)]) {
+        [self.deletegate hotelSelectViewDidClickBtn:type];
+    }
 }
 
 
 - (void)updateConstraints {
+    
+    CGFloat paddingX = 30;
     
     [_contentSrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(40, 0, 0, 0)];
     
@@ -103,6 +138,14 @@
     [_hoursBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_alldayBtn];
     [_hoursBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_hoursBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 40)];
+    
+    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:paddingX];
+    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [_cityBtn autoSetDimensionsToSize:CGSizeMake(150, 50)];
+    
+    [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:paddingX];
+    [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [_locateBtn autoSetDimensionsToSize:CGSizeMake(75, 50)];
     
     [super updateConstraints];
 }

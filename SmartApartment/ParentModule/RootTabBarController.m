@@ -27,9 +27,6 @@
     
     self.showSeparateLines = YES;
     
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    [self.view addGestureRecognizer:panGestureRecognizer];
-    
     _homeVC = [HomeViewController new];
     _homeVC.view.backgroundColor = [UIColor whiteColor];
 

@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [_naviBackBtn setHidden:YES];
+    _naviLabel.text = NSLocalizedString(@"活动", nil);
 }
 
 - (void)didReceiveMemoryWarning {
