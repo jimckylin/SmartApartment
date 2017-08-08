@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 #import "LaunchAdViewController.h"
-#import "LCTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
+    
     [[NavManager shareInstance] setRootController:[LaunchAdViewController new]];
     self.window.rootViewController = [[NavManager shareInstance] rootNavigationController];
     

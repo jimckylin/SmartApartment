@@ -7,7 +7,6 @@
 //
 
 #import "BannerDetailViewController.h"
-#import "UIViewController+Nav.h"
 
 @interface BannerDetailViewController ()
 
@@ -18,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setDefaultLeftBtnAndTitle:@"详情"];
+    _naviLabel.text = NSLocalizedString(@"详情", nil);
 }
 
 - (void)didReceiveMemoryWarning {

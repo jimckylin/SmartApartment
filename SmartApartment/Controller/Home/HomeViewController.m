@@ -9,10 +9,14 @@
 #import "HomeViewController.h"
 #import "SDCycleScrollView.h"
 #import "BannerDetailViewController.h"
-#import "UIViewController+NavBar.h"
-#import "UIViewController+Nav.h"
 
-@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate>
+#import "HotelSelectView.h"
+
+
+@interface HomeViewController ()<UITableViewDelegate,
+                                 UITableViewDataSource,
+                                 SDCycleScrollViewDelegate,
+                                 HotelSelectViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -36,8 +40,10 @@
 //    self.barView.backgroundColor = [UIColor whiteColor];
 //    [self.view addSubview:self.barView];
 
-    [self setDefaultNavTitle:NSLocalizedString(@"WisdomApartment", nil) rightBtnTitle:nil];
-    
+    //[self setDefaultNavTitle:NSLocalizedString(@"WisdomApartment", nil) rightBtnTitle:nil];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    bgView.backgroundColor = [UIColor colorWithHexString:@"#F2F2F2"];
+    [self.view addSubview:bgView];
     
     NSArray *imagesURLStrings = @[
                                   @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
@@ -54,9 +60,9 @@
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_tableView];
-    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
+    //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [bgView addSubview:_tableView];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     _tableView.tableHeaderView = bannerView;
 }
@@ -70,7 +76,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 160;
+        return 290;
     }else {
         return 150;
     }
@@ -85,6 +91,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
+        
+        if (indexPath.row == 0) {
+            HotelSelectView *selectView = [[HotelSelectView alloc] init];
+            selectView.deletegate = self;
+            [cell addSubview:selectView];
+        }
+        
     }
     
     return cell;
@@ -97,5 +110,15 @@
     BannerDetailViewController *bannerDetail = [BannerDetailViewController new];
     [[NavManager shareInstance] showViewController:bannerDetail isAnimated:YES];
 }
+
+
+#pragma mark - HotelSelectViewDelegate
+
+- (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type {
+    
+    
+}
+
+
 
 @end

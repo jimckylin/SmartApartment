@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     
-    HotelSelectBtnTypeAlldayRoom,   // 全日房
+    HotelSelectBtnTypeAlldayRoom = 1000,   // 全日房
     HotelSelectBtnTypeHoursRoom,    // 钟点房
     HotelSelectBtnTypeCitySelect,   // 城市选择
     HotelSelectBtnTypeLocate,       // 定位
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     HotelSelectBtnTypeSearchHotel,  // 查找酒店
 };
 
-@protocol HotelSelectView <NSObject>
+@protocol HotelSelectViewDelegate <NSObject>
 
 - (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type;
 
@@ -27,5 +27,7 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
 
 
 @interface HotelSelectView : UIView
+
+@property (nonatomic, copy) id<HotelSelectViewDelegate> deletegate;
 
 @end
