@@ -28,6 +28,6 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
 
 @interface HotelSelectView : UIView
 
-@property (nonatomic, copy) id<HotelSelectViewDelegate> deletegate;
+@property (nonatomic, weak) id<HotelSelectViewDelegate> deletegate;
 
 @end
