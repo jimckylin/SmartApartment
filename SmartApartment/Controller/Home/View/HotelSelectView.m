@@ -73,7 +73,7 @@
     [_hoursBtn setBackgroundImage:whiteImg forState:UIControlStateSelected];
     [_hoursBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_hoursBtn setTitle:@"钟点房" forState:UIControlStateNormal];
-    [_hoursBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
+    [_hoursBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateHighlighted];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _hoursBtn.tag = HotelSelectBtnTypeHoursRoom;
@@ -86,9 +86,9 @@
     _cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_cityBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     //[_cityBtn setImage:kImage(@"home_arrow_iconiphone") forState:UIControlStateNormal];
-    [_cityBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
-    [_cityBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [_cityBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [_cityBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [_cityBtn setTitle:@"福州  >" forState:UIControlStateNormal];
     _cityBtn.titleLabel.textAlignment = NSTextAlignmentLeft; // 文字在titleLabel中左对齐(并没有看出有什么卵用)
     [_cityBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
@@ -99,7 +99,7 @@
     [_locateBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_locateBtn setImage:kImage(@"home_location_ic_siphone") forState:UIControlStateNormal];
     [_locateBtn setTitle:@"我的位置" forState:UIControlStateNormal];
-    [_locateBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
+    [_locateBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateHighlighted];
     [_locateBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_locateBtn.titleLabel setFont:[UIFont systemFontOfSize:11]];
     _locateBtn.titleLabel.textAlignment = NSTextAlignmentRight; // 文字在titleLabel中右对齐(并没有看出有什么卵用)
@@ -116,9 +116,9 @@
     // 时间选择
     _liveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_liveBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_liveBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
-    [_liveBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_liveBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
+    [_liveBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
+    [_liveBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [_liveBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [_liveBtn setTitle:@"08月08日" forState:UIControlStateNormal];
     _liveBtn.titleLabel.textAlignment = NSTextAlignmentLeft; // 文字在titleLabel中左对齐(并没有看出有什么卵用)
     [_liveBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
@@ -128,9 +128,9 @@
     _leaveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_leaveBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_leaveBtn setTitle:@"08月09日" forState:UIControlStateNormal];
-    [_leaveBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
-    [_leaveBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_leaveBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
+    [_leaveBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
+    [_leaveBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [_leaveBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _leaveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
     _leaveBtn.tag = HotelSelectBtnTypeLeaveDate;
     [selectView addSubview:_leaveBtn];

@@ -24,6 +24,13 @@
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
 		A97D41DB1F385D920071284B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41DA1F385D920071284B /* Localizable.strings */; };
 		A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D41DE1F3892EF0071284B /* HotelSelectView.m */; };
+		A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */; };
+		A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98223FB1F3A19BB00CA9A9F /* CityData.plist */; };
+		A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */ = {isa = PBXBuildFile; fileRef = A98223FD1F3A19BB00CA9A9F /* TLCity.m */; };
+		A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A98223FF1F3A19BB00CA9A9F /* TLCityGroupCell.m */; };
+		A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224011F3A19BB00CA9A9F /* TLCityHeaderView.m */; };
+		A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224031F3A19BB00CA9A9F /* TLCityPickerController.m */; };
+		A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224061F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -76,6 +83,20 @@
 		A97D41DA1F385D920071284B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A97D41DD1F3892EF0071284B /* HotelSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectView.h; sourceTree = "<group>"; };
 		A97D41DE1F3892EF0071284B /* HotelSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectView.m; sourceTree = "<group>"; };
+		A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jifen_mall@2x.png"; sourceTree = "<group>"; };
+		A98223E51F3A131700CA9A9F /* DINCond-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCond-Medium.otf"; sourceTree = "<group>"; };
+		A98223FB1F3A19BB00CA9A9F /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
+		A98223FC1F3A19BB00CA9A9F /* TLCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCity.h; sourceTree = "<group>"; };
+		A98223FD1F3A19BB00CA9A9F /* TLCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCity.m; sourceTree = "<group>"; };
+		A98223FE1F3A19BB00CA9A9F /* TLCityGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityGroupCell.h; sourceTree = "<group>"; };
+		A98223FF1F3A19BB00CA9A9F /* TLCityGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityGroupCell.m; sourceTree = "<group>"; };
+		A98224001F3A19BB00CA9A9F /* TLCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityHeaderView.h; sourceTree = "<group>"; };
+		A98224011F3A19BB00CA9A9F /* TLCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityHeaderView.m; sourceTree = "<group>"; };
+		A98224021F3A19BB00CA9A9F /* TLCityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerController.h; sourceTree = "<group>"; };
+		A98224031F3A19BB00CA9A9F /* TLCityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityPickerController.m; sourceTree = "<group>"; };
+		A98224041F3A19BB00CA9A9F /* TLCityPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerDelegate.h; sourceTree = "<group>"; };
+		A98224051F3A19BB00CA9A9F /* TLCityPickerSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerSearchResultController.h; sourceTree = "<group>"; };
+		A98224061F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityPickerSearchResultController.m; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +205,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
+			isa = PBXGroup;
+			children = (
+				A98223FA1F3A19BB00CA9A9F /* TLCityPicker */,
+			);
+			path = Thirdpart;
+			sourceTree = "<group>";
+		};
+		A98223FA1F3A19BB00CA9A9F /* TLCityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A98223FB1F3A19BB00CA9A9F /* CityData.plist */,
+				A98223FC1F3A19BB00CA9A9F /* TLCity.h */,
+				A98223FD1F3A19BB00CA9A9F /* TLCity.m */,
+				A98223FE1F3A19BB00CA9A9F /* TLCityGroupCell.h */,
+				A98223FF1F3A19BB00CA9A9F /* TLCityGroupCell.m */,
+				A98224001F3A19BB00CA9A9F /* TLCityHeaderView.h */,
+				A98224011F3A19BB00CA9A9F /* TLCityHeaderView.m */,
+				A98224021F3A19BB00CA9A9F /* TLCityPickerController.h */,
+				A98224031F3A19BB00CA9A9F /* TLCityPickerController.m */,
+				A98224041F3A19BB00CA9A9F /* TLCityPickerDelegate.h */,
+				A98224051F3A19BB00CA9A9F /* TLCityPickerSearchResultController.h */,
+				A98224061F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m */,
+			);
+			path = TLCityPicker;
+			sourceTree = "<group>";
+		};
 		A9AA8E8F1F3712A5005F9DBB = {
 			isa = PBXGroup;
 			children = (
@@ -205,11 +253,11 @@
 		A9AA8E9A1F3712A5005F9DBB /* SmartApartment */ = {
 			isa = PBXGroup;
 			children = (
+				A98223F91F3A19B300CA9A9F /* Thirdpart */,
 				A9AA8EEF1F38B706005F9DBB /* ParentModule */,
 				A9730E741F384ADE006E66A4 /* Category */,
 				A9AA8EE11F375DEA005F9DBB /* Resource */,
 				A9AA8EB91F371A09005F9DBB /* General */,
-				A9AA8EB71F37198E005F9DBB /* Thirdpart */,
 				A9AA8EB61F371964005F9DBB /* Controller */,
 				A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */,
 				A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */,
@@ -243,13 +291,6 @@
 				A9AA8ED01F3726C8005F9DBB /* Login */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A9AA8EB71F37198E005F9DBB /* Thirdpart */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Thirdpart;
 			sourceTree = "<group>";
 		};
 		A9AA8EB91F371A09005F9DBB /* General */ = {
@@ -303,6 +344,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A98223E51F3A131700CA9A9F /* DINCond-Medium.otf */,
+				A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */,
 				A95B3FBB1F3961BF0046E150 /* iconfont.ttf */,
 				A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */,
 				A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */,
@@ -422,6 +465,7 @@
 			files = (
 				A9AA8EE31F375DF2005F9DBB /* LaunchAdJump@2x.png in Resources */,
 				A9414F071F38D060007857D2 /* nav_return_ic_wiphone@2x.png in Resources */,
+				A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */,
 				A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
@@ -430,6 +474,7 @@
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
+				A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
 				A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
@@ -496,19 +541,24 @@
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
+				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
+				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
+				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
+				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
+				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
