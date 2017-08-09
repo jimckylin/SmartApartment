@@ -53,7 +53,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = MainBgColor;
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#F2F2F2"];
 
     _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
     _naviView.backgroundColor = [UIColor clearColor];
