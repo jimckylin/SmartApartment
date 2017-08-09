@@ -10,9 +10,10 @@
 #import "SDCycleScrollView.h"
 #import "BannerDetailViewController.h"
 #import "TLCityPickerController.h"
+#import "CalendarViewController.h"
 #import "HotelListViewController.h"
 #import "HotelSelectView.h"
-
+#import "ZYCalendarManager.h"
 
 @interface HomeViewController ()<UITableViewDelegate,
                                  UITableViewDataSource,
@@ -142,19 +143,28 @@
 - (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type {
     
     switch (type) {
-        case HotelSelectBtnTypeCitySelect:
-        {
+        case HotelSelectBtnTypeCitySelect: {
             TLCityPickerController *cityPickerVC = [[TLCityPickerController alloc] init];
             [cityPickerVC setDelegate:self];
             
             cityPickerVC.locationCityID = @"1400010000";
             //    cityPickerVC.commonCitys = [[NSMutableArray alloc] initWithArray: @[@"1400010000", @"100010000"]];        // 最近访问城市，如果不设置，将自动管理
             cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
-
             [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];
         }
             break;
-        case HotelSelectBtnTypeSearchHotel:{
+        case HotelSelectBtnTypeLiveDate:
+        case HotelSelectBtnTypeLeaveDate: {
+            CalendarViewController *vc = [CalendarViewController new];
+            vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
+                for (NSDate *date in manager.selectedDateArray) {
+                    NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+                }
+            };
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
+        case HotelSelectBtnTypeSearchHotel: {
             HotelListViewController *vc = [HotelListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }

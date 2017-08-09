@@ -24,6 +24,18 @@
 		A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FCE1F3AA4680046E150 /* mine_set_navbariphone@2x.png */; };
 		A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FD31F3AAF400046E150 /* SettingViewController.m */; };
 		A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FD71F3ABED00046E150 /* HotelListViewController.m */; };
+		A95B3FED1F3AC7FF0046E150 /* backImg_end.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FDB1F3AC7FF0046E150 /* backImg_end.png */; };
+		A95B3FEE1F3AC7FF0046E150 /* backImg_start.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FDC1F3AC7FF0046E150 /* backImg_start.png */; };
+		A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FDD1F3AC7FF0046E150 /* circle.png */; };
+		A95B3FF01F3AC7FF0046E150 /* circle_cir.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FDE1F3AC7FF0046E150 /* circle_cir.png */; };
+		A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FE01F3AC7FF0046E150 /* JTDateHelper.m */; };
+		A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FE21F3AC7FF0046E150 /* ZYCalendarManager.m */; };
+		A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FE41F3AC7FF0046E150 /* ZYCalendarView.m */; };
+		A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FE61F3AC7FF0046E150 /* ZYDayView.m */; };
+		A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FE81F3AC7FF0046E150 /* ZYEmptyDayView.m */; };
+		A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FEA1F3AC7FF0046E150 /* ZYMonthView.m */; };
+		A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FEC1F3AC7FF0046E150 /* ZYWeekView.m */; };
+		A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FFA1F3AC8860046E150 /* CalendarViewController.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -86,6 +98,26 @@
 		A95B3FD31F3AAF400046E150 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		A95B3FD61F3ABED00046E150 /* HotelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListViewController.h; sourceTree = "<group>"; };
 		A95B3FD71F3ABED00046E150 /* HotelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
+		A95B3FDB1F3AC7FF0046E150 /* backImg_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backImg_end.png; sourceTree = "<group>"; };
+		A95B3FDC1F3AC7FF0046E150 /* backImg_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backImg_start.png; sourceTree = "<group>"; };
+		A95B3FDD1F3AC7FF0046E150 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		A95B3FDE1F3AC7FF0046E150 /* circle_cir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_cir.png; sourceTree = "<group>"; };
+		A95B3FDF1F3AC7FF0046E150 /* JTDateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDateHelper.h; sourceTree = "<group>"; };
+		A95B3FE01F3AC7FF0046E150 /* JTDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDateHelper.m; sourceTree = "<group>"; };
+		A95B3FE11F3AC7FF0046E150 /* ZYCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCalendarManager.h; sourceTree = "<group>"; };
+		A95B3FE21F3AC7FF0046E150 /* ZYCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCalendarManager.m; sourceTree = "<group>"; };
+		A95B3FE31F3AC7FF0046E150 /* ZYCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCalendarView.h; sourceTree = "<group>"; };
+		A95B3FE41F3AC7FF0046E150 /* ZYCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCalendarView.m; sourceTree = "<group>"; };
+		A95B3FE51F3AC7FF0046E150 /* ZYDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYDayView.h; sourceTree = "<group>"; };
+		A95B3FE61F3AC7FF0046E150 /* ZYDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDayView.m; sourceTree = "<group>"; };
+		A95B3FE71F3AC7FF0046E150 /* ZYEmptyDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYEmptyDayView.h; sourceTree = "<group>"; };
+		A95B3FE81F3AC7FF0046E150 /* ZYEmptyDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYEmptyDayView.m; sourceTree = "<group>"; };
+		A95B3FE91F3AC7FF0046E150 /* ZYMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYMonthView.h; sourceTree = "<group>"; };
+		A95B3FEA1F3AC7FF0046E150 /* ZYMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYMonthView.m; sourceTree = "<group>"; };
+		A95B3FEB1F3AC7FF0046E150 /* ZYWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYWeekView.h; sourceTree = "<group>"; };
+		A95B3FEC1F3AC7FF0046E150 /* ZYWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYWeekView.m; sourceTree = "<group>"; };
+		A95B3FF91F3AC8860046E150 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		A95B3FFA1F3AC8860046E150 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -209,6 +241,48 @@
 			path = Apartment;
 			sourceTree = "<group>";
 		};
+		A95B3FD91F3AC7FF0046E150 /* ZYCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				A95B3FDA1F3AC7FF0046E150 /* Images */,
+				A95B3FDF1F3AC7FF0046E150 /* JTDateHelper.h */,
+				A95B3FE01F3AC7FF0046E150 /* JTDateHelper.m */,
+				A95B3FE11F3AC7FF0046E150 /* ZYCalendarManager.h */,
+				A95B3FE21F3AC7FF0046E150 /* ZYCalendarManager.m */,
+				A95B3FE31F3AC7FF0046E150 /* ZYCalendarView.h */,
+				A95B3FE41F3AC7FF0046E150 /* ZYCalendarView.m */,
+				A95B3FE51F3AC7FF0046E150 /* ZYDayView.h */,
+				A95B3FE61F3AC7FF0046E150 /* ZYDayView.m */,
+				A95B3FE71F3AC7FF0046E150 /* ZYEmptyDayView.h */,
+				A95B3FE81F3AC7FF0046E150 /* ZYEmptyDayView.m */,
+				A95B3FE91F3AC7FF0046E150 /* ZYMonthView.h */,
+				A95B3FEA1F3AC7FF0046E150 /* ZYMonthView.m */,
+				A95B3FEB1F3AC7FF0046E150 /* ZYWeekView.h */,
+				A95B3FEC1F3AC7FF0046E150 /* ZYWeekView.m */,
+			);
+			path = ZYCalendarView;
+			sourceTree = "<group>";
+		};
+		A95B3FDA1F3AC7FF0046E150 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A95B3FDB1F3AC7FF0046E150 /* backImg_end.png */,
+				A95B3FDC1F3AC7FF0046E150 /* backImg_start.png */,
+				A95B3FDD1F3AC7FF0046E150 /* circle.png */,
+				A95B3FDE1F3AC7FF0046E150 /* circle_cir.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A95B3FF81F3AC87A0046E150 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A95B3FF91F3AC8860046E150 /* CalendarViewController.h */,
+				A95B3FFA1F3AC8860046E150 /* CalendarViewController.m */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +316,7 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A95B3FD91F3AC7FF0046E150 /* ZYCalendarView */,
 				A98223FA1F3A19BB00CA9A9F /* TLCityPicker */,
 			);
 			path = Thirdpart;
@@ -317,6 +392,7 @@
 		A9AA8EB61F371964005F9DBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A95B3FF81F3AC87A0046E150 /* Calendar */,
 				A9AA8F0C1F38C309005F9DBB /* Activity */,
 				A9AA8F0A1F38C2F0005F9DBB /* TripHepler */,
 				A9AA8EE41F3764B9005F9DBB /* Mine */,
@@ -517,14 +593,18 @@
 				A97D41DB1F385D920071284B /* Localizable.strings in Resources */,
 				A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */,
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
+				A95B3FED1F3AC7FF0046E150 /* backImg_end.png in Resources */,
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
+				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
 				A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
 				A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
 				A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */,
 				A95B3FCB1F3AA04D0046E150 /* mine_information_iciphone@2x.png in Resources */,
+				A95B3FEE1F3AC7FF0046E150 /* backImg_start.png in Resources */,
+				A95B3FF01F3AC7FF0046E150 /* circle_cir.png in Resources */,
 				A9AA8F061F38C217005F9DBB /* icon_head_back@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,26 +665,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
+				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
+				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
+				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
+				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
+				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
+				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
+				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
+				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
