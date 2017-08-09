@@ -13,6 +13,6 @@ target 'SmartApartment' do
   pod 'MJRefresh',             '~> 3.1.12'
   pod 'YZHeaderScaleImage',    '~> 1.0.1'
   pod 'SVProgressHUD',         '~> 2.1.2'
-  pod 'ZYCalendarView',        '~> 0.0.1'
+  #pod 'ZYCalendarView',        '~> 0.0.1'
   
 end
