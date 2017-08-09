@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YZHeaderScaleImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0894164F359F5B9CEDAEA270FDC3EF4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2E59C44CC871BF292EC7151C2A9BD8DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>370B4F997BD51548E3532C2A9353B6E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,6 +77,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>65BED149043A8CD95A6A5331982A892B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>73D76E883FE77E9ABE653640718700B5</key>
 		<dict>
 			<key>primary</key>
@@ -72,7 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AD2F61FE6A92FD5BE7E96132BE66640C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B986C0E05D0774A77DD210749F81FF09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E2CEF136FB955D7A3B6F0A7257F64FF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8E0E51DE3B208D1B504BB9A4FBA867B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

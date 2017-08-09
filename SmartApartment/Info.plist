@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>iconfont.ttf</string>
+		<string>DINCond-Medium.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
