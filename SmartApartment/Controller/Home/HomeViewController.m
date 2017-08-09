@@ -10,7 +10,7 @@
 #import "SDCycleScrollView.h"
 #import "BannerDetailViewController.h"
 #import "TLCityPickerController.h"
-
+#import "HotelListViewController.h"
 #import "HotelSelectView.h"
 
 
@@ -37,10 +37,12 @@
     [_naviBackBtn setHidden:YES];
     [_naviView setAlpha:0];
     _naviLabel.text = @"智慧公寓";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     bgView.backgroundColor = [UIColor colorWithHexString:@"#F2F2F2"];
-    [self.view insertSubview:bgView belowSubview:_naviView];
+    [self.view addSubview:bgView];
+    [self.view sendSubviewToBack:bgView];
     
     NSArray *imagesURLStrings = @[
                                   @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
@@ -148,13 +150,15 @@
             cityPickerVC.locationCityID = @"1400010000";
             //    cityPickerVC.commonCitys = [[NSMutableArray alloc] initWithArray: @[@"1400010000", @"100010000"]];        // 最近访问城市，如果不设置，将自动管理
             cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
-            
-            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:cityPickerVC] animated:YES completion:^{
-                
-            }];
+
+            [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];
         }
             break;
-            
+        case HotelSelectBtnTypeSearchHotel:{
+            HotelListViewController *vc = [HotelListViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -164,15 +168,11 @@
 #pragma mark - TLCityPickerDelegate
 
 - (void) cityPickerController:(TLCityPickerController *)cityPickerViewController didSelectCity:(TLCity *)city {
-    [cityPickerViewController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [[NavManager shareInstance] returnToFrontView:YES];
 }
 
 - (void) cityPickerControllerDidCancel:(TLCityPickerController *)cityPickerViewController {
-    [cityPickerViewController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    
 }
 
 

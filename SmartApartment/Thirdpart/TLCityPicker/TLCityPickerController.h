@@ -13,7 +13,7 @@
 #define     MAX_COMMON_CITY_NUMBER      8
 #define     COMMON_CITY_DATA_KEY        @"TLCityPickerCommonCityArray"
 
-@interface TLCityPickerController : UITableViewController
+@interface TLCityPickerController : ParentViewController
 
 @property (nonatomic, assign) id<TLCityPickerDelegate>delegate;
 

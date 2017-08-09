@@ -11,8 +11,12 @@
 #import "TLCityHeaderView.h"
 #import "TLCityGroupCell.h"
 
-@interface TLCityPickerController () <TLCityGroupCellDelegate, TLSearchResultControllerDelegate>
+@interface TLCityPickerController () <UITableViewDelegate,
+                                      UITableViewDataSource,
+                                      TLCityGroupCellDelegate,
+                                      TLSearchResultControllerDelegate>
 
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) TLCityPickerSearchResultController *searchResultVC;
 
@@ -30,16 +34,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"城市选择"];
-    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonDown:)];
-    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
+//    [self.navigationItem setTitle:@"城市选择"];
+//    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonDown:)];
+//    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
     
+    _naviLabel.text = NSLocalizedString(@"城市选择", nil);
+    
+    self.tableView = [UITableView new];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self.tableView setTableHeaderView:self.searchController.searchBar];
     [self.tableView setSectionIndexBackgroundColor:[UIColor clearColor]];
     [self.tableView setSectionIndexColor:[UIColor blackColor]];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     [self.tableView registerClass:[TLCityGroupCell class] forCellReuseIdentifier:@"TLCityGroupCell"];
     [self.tableView registerClass:[TLCityHeaderView class] forHeaderFooterViewReuseIdentifier:@"TLCityHeaderView"];
+    [self.view addSubview:_tableView];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
 }
 
 

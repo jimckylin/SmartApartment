@@ -135,9 +135,10 @@
 -(void)addRightNaviButton:(UIImage *)image highlight:(UIImage *)highlight action:(SEL)action{
     
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(kScreenWidth - image.size.width - 20, 22, 40, 40);
+    button.frame=CGRectMake(kScreenWidth - 40 - 5, 22, 40, 40);
     [button setImage:image forState:UIControlStateNormal];
     [button setImage:highlight forState:UIControlStateHighlighted];
+    button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [_naviView addSubview:button];
 }

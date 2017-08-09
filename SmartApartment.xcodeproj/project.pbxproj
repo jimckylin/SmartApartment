@@ -22,6 +22,8 @@
 		A95B3FCB1F3AA04D0046E150 /* mine_information_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FC81F3AA04D0046E150 /* mine_information_iciphone@2x.png */; };
 		A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FC91F3AA04D0046E150 /* mine_order_iciphone@2x.png */; };
 		A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FCE1F3AA4680046E150 /* mine_set_navbariphone@2x.png */; };
+		A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FD31F3AAF400046E150 /* SettingViewController.m */; };
+		A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FD71F3ABED00046E150 /* HotelListViewController.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -80,6 +82,10 @@
 		A95B3FC81F3AA04D0046E150 /* mine_information_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_information_iciphone@2x.png"; sourceTree = "<group>"; };
 		A95B3FC91F3AA04D0046E150 /* mine_order_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_order_iciphone@2x.png"; sourceTree = "<group>"; };
 		A95B3FCE1F3AA4680046E150 /* mine_set_navbariphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_set_navbariphone@2x.png"; sourceTree = "<group>"; };
+		A95B3FD21F3AAF400046E150 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A95B3FD31F3AAF400046E150 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A95B3FD61F3ABED00046E150 /* HotelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListViewController.h; sourceTree = "<group>"; };
+		A95B3FD71F3ABED00046E150 /* HotelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -183,6 +189,24 @@
 				A9414F041F38CA49007857D2 /* NavManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		A95B3FD11F3AAF2B0046E150 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A95B3FD21F3AAF400046E150 /* SettingViewController.h */,
+				A95B3FD31F3AAF400046E150 /* SettingViewController.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A95B3FD51F3ABEAB0046E150 /* Apartment */ = {
+			isa = PBXGroup;
+			children = (
+				A95B3FD61F3ABED00046E150 /* HotelListViewController.h */,
+				A95B3FD71F3ABED00046E150 /* HotelListViewController.m */,
+			);
+			path = Apartment;
 			sourceTree = "<group>";
 		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
@@ -328,6 +352,7 @@
 				A9AA8ED61F37275B005F9DBB /* HomeViewController.m */,
 				A9AA8EE81F376C37005F9DBB /* BannerDetailViewController.h */,
 				A9AA8EE91F376C37005F9DBB /* BannerDetailViewController.m */,
+				A95B3FD51F3ABEAB0046E150 /* Apartment */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -379,6 +404,7 @@
 		A9AA8EE41F3764B9005F9DBB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				A95B3FD11F3AAF2B0046E150 /* Setting */,
 				A9414EFC1F38C4DE007857D2 /* MineViewController.h */,
 				A9414EFD1F38C4DE007857D2 /* MineViewController.m */,
 			);
@@ -561,11 +587,13 @@
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
+				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
+				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
