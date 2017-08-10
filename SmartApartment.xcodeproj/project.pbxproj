@@ -50,6 +50,8 @@
 		A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224011F3A19BB00CA9A9F /* TLCityHeaderView.m */; };
 		A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224031F3A19BB00CA9A9F /* TLCityPickerController.m */; };
 		A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98224061F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m */; };
+		A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9906F671F3BFC17007725B7 /* MineHeaderView.m */; };
+		A9906F6A1F3C00E6007725B7 /* mine_headiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9906F691F3C00E6007725B7 /* mine_headiphone@2x.png */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -145,6 +147,9 @@
 		A98224041F3A19BB00CA9A9F /* TLCityPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerDelegate.h; sourceTree = "<group>"; };
 		A98224051F3A19BB00CA9A9F /* TLCityPickerSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerSearchResultController.h; sourceTree = "<group>"; };
 		A98224061F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityPickerSearchResultController.m; sourceTree = "<group>"; };
+		A9906F661F3BFC17007725B7 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
+		A9906F671F3BFC17007725B7 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		A9906F691F3C00E6007725B7 /* mine_headiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_headiphone@2x.png"; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -341,6 +346,15 @@
 			path = TLCityPicker;
 			sourceTree = "<group>";
 		};
+		A9906F651F3BFBF9007725B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9906F661F3BFC17007725B7 /* MineHeaderView.h */,
+				A9906F671F3BFC17007725B7 /* MineHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A9AA8E8F1F3712A5005F9DBB = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +469,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9906F691F3C00E6007725B7 /* mine_headiphone@2x.png */,
 				A95B3FCE1F3AA4680046E150 /* mine_set_navbariphone@2x.png */,
 				A95B3FC71F3AA04D0046E150 /* mine_hotel_iciphone@2x.png */,
 				A95B3FC81F3AA04D0046E150 /* mine_information_iciphone@2x.png */,
@@ -480,6 +495,7 @@
 		A9AA8EE41F3764B9005F9DBB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				A9906F651F3BFBF9007725B7 /* View */,
 				A95B3FD11F3AAF2B0046E150 /* Setting */,
 				A9414EFC1F38C4DE007857D2 /* MineViewController.h */,
 				A9414EFD1F38C4DE007857D2 /* MineViewController.m */,
@@ -586,6 +602,7 @@
 				A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */,
 				A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */,
 				A95B3FC61F3A9F290046E150 /* mine_hand_bgiphone@2x.png in Resources */,
+				A9906F6A1F3C00E6007725B7 /* mine_headiphone@2x.png in Resources */,
 				A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
@@ -700,6 +717,7 @@
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
+				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

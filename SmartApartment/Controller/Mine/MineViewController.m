@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "SettingViewController.h"
 #import "UIScrollView+HeaderScaleImage.h"
+#import "MineHeaderView.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -50,10 +51,11 @@
     _tableView.yz_headerScaleImage = [UIImage imageNamed:@"mine_hand_bgiphone"];
     
     // 设置tableView头部视图，必须设置头部视图背景颜色为clearColor,否则会被挡住
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 140)];
+    UIView *headerView = [MineHeaderView new];
     // 清空头部视图背景颜色
     headerView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = headerView;
+    
     
 }
 
