@@ -17,6 +17,15 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+*.xcuserstate
+*/.DS_Store
+.DS_Store
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+UserInterface.xcuserstate
+
 ## Other
 *.moved-aside
 *.xccheckout
