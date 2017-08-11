@@ -40,6 +40,8 @@
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
 		A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9730E871F385377006E66A4 /* nav_back@2x.png */; };
+		A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D501F3D646800B14D36 /* HotelSelectSubView.m */; };
+		A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */; };
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
 		A97D41DB1F385D920071284B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41DA1F385D920071284B /* Localizable.strings */; };
 		A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D41DE1F3892EF0071284B /* HotelSelectView.m */; };
@@ -127,6 +129,11 @@
 		A9730E7E1F384B97006E66A4 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
 		A9730E7F1F384B97006E66A4 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
 		A9730E871F385377006E66A4 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		A9768D4F1F3D646800B14D36 /* HotelSelectSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectSubView.h; sourceTree = "<group>"; };
+		A9768D501F3D646800B14D36 /* HotelSelectSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectSubView.m; sourceTree = "<group>"; };
+		A9768D531F3D848400B14D36 /* HomeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeEnum.h; sourceTree = "<group>"; };
+		A9768D541F3D8ED900B14D36 /* ExtraSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraSearchViewController.h; sourceTree = "<group>"; };
+		A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraSearchViewController.m; sourceTree = "<group>"; };
 		A97D41D31F385CAA0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A97D41D71F385CFF0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A97D41D91F385D0B0071284B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -242,6 +249,8 @@
 			children = (
 				A95B3FD61F3ABED00046E150 /* HotelListViewController.h */,
 				A95B3FD71F3ABED00046E150 /* HotelListViewController.m */,
+				A9768D541F3D8ED900B14D36 /* ExtraSearchViewController.h */,
+				A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */,
 			);
 			path = Apartment;
 			sourceTree = "<group>";
@@ -309,11 +318,21 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		A9768D521F3D843A00B14D36 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A9768D531F3D848400B14D36 /* HomeEnum.h */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		A97D41DC1F3892220071284B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A97D41DD1F3892EF0071284B /* HotelSelectView.h */,
 				A97D41DE1F3892EF0071284B /* HotelSelectView.m */,
+				A9768D4F1F3D646800B14D36 /* HotelSelectSubView.h */,
+				A9768D501F3D646800B14D36 /* HotelSelectSubView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,6 +456,7 @@
 		A9AA8ED41F372751005F9DBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A9768D521F3D843A00B14D36 /* Enum */,
 				A97D41DC1F3892220071284B /* View */,
 				A9AA8ED51F37275B005F9DBB /* HomeViewController.h */,
 				A9AA8ED61F37275B005F9DBB /* HomeViewController.m */,
@@ -699,10 +719,12 @@
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
+				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
+				A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,

@@ -12,6 +12,8 @@
 #import "TLCityPickerController.h"
 #import "CalendarViewController.h"
 #import "HotelListViewController.h"
+#import "ExtraSearchViewController.h"
+
 #import "HotelSelectView.h"
 #import "ZYCalendarManager.h"
 
@@ -93,8 +95,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
             cell.backgroundColor = [UIColor clearColor];
-            HotelSelectView *selectView = [[HotelSelectView alloc] init];
-            selectView.deletegate = self;
+            HotelSelectView *selectView = [[HotelSelectView alloc] initWithDelegate:self];
             [cell addSubview:selectView];
         }
         return cell;
@@ -140,7 +141,7 @@
 
 #pragma mark - HotelSelectViewDelegate
 
-- (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type {
+- (void)hotelSelectViewDidClickBtn:(HotelSelectBtnType)type roomType:(HotelRoomType)roomType {
     
     switch (type) {
         case HotelSelectBtnTypeCitySelect: {
@@ -166,6 +167,11 @@
             break;
         case HotelSelectBtnTypeSearchHotel: {
             HotelListViewController *vc = [HotelListViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
+        case HotelSelectBtnTypeExtraSearch: {
+            ExtraSearchViewController *vc = [ExtraSearchViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }
             break;

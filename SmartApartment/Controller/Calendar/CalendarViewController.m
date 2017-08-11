@@ -15,6 +15,9 @@
 
 @implementation CalendarViewController
 
+- (void)dealloc {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,18 +29,18 @@
     
     _naviLabel.text = @"选择日期";
     
-    UIView *weekTitlesView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.size.width, 64)];
+    UIView *weekTitlesView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.size.width, 40)];
     [self.view addSubview:weekTitlesView];
     CGFloat weekW = self.view.size.width/7;
     NSArray *titles = @[@"日", @"一", @"二", @"三", @"四", @"五", @"六"];
     for (int i = 0; i < 7; i++) {
-        UILabel *week = [[UILabel alloc] initWithFrame:CGRectMake(i*weekW, 20, weekW, 44)];
+        UILabel *week = [[UILabel alloc] initWithFrame:CGRectMake(i*weekW, 1, weekW, 40)];
         week.textAlignment = NSTextAlignmentCenter;
         [weekTitlesView addSubview:week];
         week.text = titles[i];
     }
     
-    ZYCalendarView *view = [[ZYCalendarView alloc] initWithFrame:CGRectMake(0, 128, self.view.frame.size.width, self.view.frame.size.height-128)];
+    ZYCalendarView *view = [[ZYCalendarView alloc] initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-104)];
     // 不可以点击已经过去的日期
     view.manager.canSelectPastDays = false;
     // 可以选择时间段
