@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, HeaderEventType) {
+    
+    HeaderEventTypeProfile = 110,    // 个人资料
+    HeaderEventTypeBalance,          // 余额
+    HeaderEventTypeCoupon,           // 优惠券
+    HeaderEventTypeIntegral,         // 积分
+};
+
+@protocol MineHeaderViewDelegate <NSObject>
+
+- (void)mineHeaderViewDidClickEvent:(HeaderEventType)type;
+
+@end
+
+
 @interface MineHeaderView : UIView
+
+@property (nonatomic, weak) id<MineHeaderViewDelegate> delegate;
 
 @end

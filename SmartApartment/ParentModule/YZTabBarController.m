@@ -34,9 +34,9 @@
     tabBarBgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:tabBarBgView];
     
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
-    line.backgroundColor = [UIColor lightGrayColor];
-    [tabBarBgView addSubview:line];
+    //UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
+    //line.backgroundColor = [UIColor lightGrayColor];
+    //[tabBarBgView addSubview:line];
     
     NSUInteger viewCount = MAX_Tabs;
     imageViews = [NSMutableArray arrayWithCapacity:viewCount];

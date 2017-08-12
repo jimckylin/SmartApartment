@@ -12,13 +12,23 @@
 
 @property (nonatomic, strong) UIImageView *headImgView;
 
-@property (nonatomic, strong) UIButton *cityBtn;
-@property (nonatomic, strong) UIButton *locateBtn;
-@property (nonatomic, strong) UIButton *liveBtn;
-@property (nonatomic, strong) UIButton *leaveBtn;
+@property (nonatomic, strong) UILabel     *nickNameLabel;
+@property (nonatomic, strong) UIImageView *vipIconV;
+@property (nonatomic, strong) UILabel     *levelLabel;
 
-@property (nonatomic, strong) UILabel *nickNameLabel;
-@property (nonatomic, strong) UILabel *levelLabel;
+@property (nonatomic, strong) UILabel *balanceLabel;    // 余额
+@property (nonatomic, strong) UILabel *couponLabel;     // 优惠券
+@property (nonatomic, strong) UILabel *integralLabel;   // 积分
+
+@property (nonatomic, strong) UILabel *balance;     // 余额
+@property (nonatomic, strong) UILabel *coupon;      // 优惠券
+@property (nonatomic, strong) UILabel *integral;    // 积分
+
+// 按钮
+@property (nonatomic, strong) UIButton *profileBtn;
+@property (nonatomic, strong) UIButton *balanceBtn;
+@property (nonatomic, strong) UIButton *couponBtn;
+@property (nonatomic, strong) UIButton *integralBtn;
 
 @end
 
@@ -27,7 +37,7 @@
 
 - (instancetype)init {
     
-    self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, 150)];
+    self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, 346/2)];
     if (self) {
         [self initView];
     }
@@ -46,49 +56,176 @@
     [self addSubview:_headImgView];
     
     _nickNameLabel = [UILabel new];
-    _nickNameLabel.font = [UIFont systemFontOfSize:14];
+    _nickNameLabel.font = [UIFont systemFontOfSize:16];
     _nickNameLabel.textColor = [UIColor whiteColor];
     _nickNameLabel.text = @"15888888888";
     [self addSubview:_nickNameLabel];
     
+    _vipIconV = [UIImageView new];
+    _vipIconV.image = [UIImage imageNamed:@"mine_vip_1_iciphone"];
+    _vipIconV.contentMode = UIViewContentModeScaleAspectFill;
+    [self addSubview:_vipIconV];
+    
     _levelLabel = [UILabel new];
-    _levelLabel.font = [UIFont systemFontOfSize:13];
-    _levelLabel.textColor = [UIColor whiteColor];
+    _levelLabel.font = [UIFont systemFontOfSize:12];
+    _levelLabel.textColor = [UIColor lightTextColor];
     _levelLabel.text = @"网客";
     [self addSubview:_levelLabel];
     
+    UIImageView *arrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+    arrowIconV.center = CGPointMake(kScreenWidth - 25, 78);
+    [self addSubview:arrowIconV];
+    
+    
+    // 下半部分
+    UIFont *font = [UIFont fontWithName:@"DINCond-Medium.otf" size:10];
+    
+    _balanceLabel = [UILabel new];
+    _balanceLabel.font = font;
+    _balanceLabel.textColor = [UIColor whiteColor];
+    _balanceLabel.textAlignment = NSTextAlignmentCenter;
+    _balanceLabel.text = @"0";
+    [self addSubview:_balanceLabel];
+    
+    _couponLabel = [UILabel new];
+    _couponLabel.font = font;
+    _couponLabel.textColor = [UIColor whiteColor];
+    _couponLabel.textAlignment = NSTextAlignmentCenter;
+    _couponLabel.text = @"0";
+    [self addSubview:_couponLabel];
+    
+    _integralLabel = [UILabel new];
+    _integralLabel.font = font;
+    _integralLabel.textColor = [UIColor whiteColor];
+    _integralLabel.textAlignment = NSTextAlignmentCenter;
+    _integralLabel.text = @"0";
+    [self addSubview:_integralLabel];
+    
+    _balance = [UILabel new];
+    _balance.font = [UIFont systemFontOfSize:13];
+    _balance.textColor = [UIColor whiteColor];
+    _balance.textAlignment = NSTextAlignmentCenter;
+    _balance.text = @"余额";
+    [self addSubview:_balance];
+    
+    _coupon = [UILabel new];
+    _coupon.font = [UIFont systemFontOfSize:13];
+    _coupon.textColor = [UIColor whiteColor];
+    _coupon.textAlignment = NSTextAlignmentCenter;
+    _coupon.text = @"优惠券";
+    [self addSubview:_coupon];
+    
+    _integral = [UILabel new];
+    _integral.font = [UIFont systemFontOfSize:13];
+    _integral.textColor = [UIColor whiteColor];
+    _integral.textAlignment = NSTextAlignmentCenter;
+    _integral.text = @"积分";
+    [self addSubview:_integral];
 
+    // 按钮
+    _profileBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _profileBtn.backgroundColor = [UIColor clearColor];
+    [_profileBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _profileBtn.tag = HeaderEventTypeProfile;
+    [self addSubview:_profileBtn];
+    
+    _balanceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _balanceBtn.backgroundColor = [UIColor clearColor];
+    [_balanceBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _balanceBtn.tag = HeaderEventTypeBalance;
+    [self addSubview:_balanceBtn];
+    
+    _couponBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _couponBtn.backgroundColor = [UIColor clearColor];
+    [_couponBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _couponBtn.tag = HeaderEventTypeCoupon;
+    [self addSubview:_couponBtn];
+    
+    _integralBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _integralBtn.backgroundColor = [UIColor clearColor];
+    [_integralBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _integralBtn.tag = HeaderEventTypeIntegral;
+    [self addSubview:_integralBtn];
 }
 
 
+#pragma mark - UIButton Action
+
+- (void)btnClick:(UIButton *)sender {
+    
+    HeaderEventType type = sender.tag;
+    if ([self.delegate respondsToSelector:@selector(mineHeaderViewDidClickEvent:)]) {
+        [self.delegate mineHeaderViewDidClickEvent:type];
+    }
+}
+
+
+
+#pragma mark - Layout
+
 - (void)updateConstraints {
     
-    CGFloat paddingX = 25;
+    CGFloat paddingX = 18;
     
     [_headImgView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:paddingX];
-    [_headImgView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:paddingX];
+    [_headImgView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:45];
     [_headImgView autoSetDimensionsToSize:CGSizeMake(56, 56)];
     
-    [_nickNameLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_headImgView withOffset:25];
-    [_nickNameLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_headImgView];
+    [_nickNameLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_headImgView withOffset:paddingX];
+    [_nickNameLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_headImgView withOffset:10] ;
     [_nickNameLabel autoSetDimensionsToSize:CGSizeMake(kScreenWidth-100, 20)];
     
-    [_levelLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_nickNameLabel];
-    [_levelLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_nickNameLabel withOffset:5];
-    [_levelLabel autoSetDimensionsToSize:CGSizeMake(50, 20)];
+    [_vipIconV autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_nickNameLabel];
+    [_vipIconV autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_nickNameLabel withOffset:6];
+    [_vipIconV autoSetDimensionsToSize:CGSizeMake(14, 14)];
     
-//    [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:paddingX];
-//    [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-//    [_locateBtn autoSetDimensionsToSize:CGSizeMake(75, 50)];
-//    
-//    [_liveBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:paddingX];
-//    [_liveBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_cityBtn];
-//    [_liveBtn autoSetDimensionsToSize:CGSizeMake(65, 50)];
-//    
-//    [_leaveBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:paddingX + 30];
-//    [_leaveBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_cityBtn];
-//    [_leaveBtn autoSetDimensionsToSize:CGSizeMake(65, 50)];
-//    
+    [_levelLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_vipIconV withOffset:4];
+    [_levelLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_nickNameLabel withOffset:6];
+    [_levelLabel autoSetDimensionsToSize:CGSizeMake(50, 14)];
+
+    CGFloat width = kScreenWidth/3;
+    [_balanceLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_balanceLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_headImgView withOffset:20];
+    [_balanceLabel autoSetDimensionsToSize:CGSizeMake(width, 25)];
+    
+    [_couponLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_balanceLabel];
+    [_couponLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balanceLabel];
+    [_couponLabel autoSetDimensionsToSize:CGSizeMake(width, 25)];
+
+    [_integralLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_couponLabel];
+    [_integralLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balanceLabel];
+    [_integralLabel autoSetDimensionsToSize:CGSizeMake(width, 25)];
+    
+    [_balance autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_balance autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_balanceLabel];
+    [_balance autoSetDimensionsToSize:CGSizeMake(width, 20)];
+    
+    [_coupon autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_balanceLabel];
+    [_coupon autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balance];
+    [_coupon autoSetDimensionsToSize:CGSizeMake(width, 20)];
+    
+    [_integral autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_couponLabel];
+    [_integral autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balance];
+    [_integral autoSetDimensionsToSize:CGSizeMake(width, 20)];
+    
+    // button
+    [_profileBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_profileBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:43];
+    [_profileBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 75)];
+    
+    [_balanceBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_balanceBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balanceLabel];
+    [_balanceBtn autoSetDimensionsToSize:CGSizeMake(width, 45)];
+    
+    [_couponBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_balanceBtn];
+    [_couponBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_balanceBtn];
+    [_couponBtn autoSetDimensionsToSize:CGSizeMake(width, 45)];
+    
+    [_integralBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_couponBtn];
+    [_integralBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_couponBtn];
+    [_integralBtn autoSetDimensionsToSize:CGSizeMake(width, 45)];
+
+//
 //    [_liveLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_liveBtn];
 //    [_liveLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_cityBtn];
 //    [_liveLabel autoSetDimensionsToSize:CGSizeMake(30, 50)];
