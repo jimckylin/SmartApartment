@@ -40,10 +40,13 @@
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
 		A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9730E871F385377006E66A4 /* nav_back@2x.png */; };
+		A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677731F3EE97500EDCDFA /* ActivityTableViewCell.m */; };
+		A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97677751F3EED4900EDCDFA /* activity02@2x.png */; };
+		A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97677791F3EF64E00EDCDFA /* Localizable.strings */; };
+		A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A976777C1F3EF76E00EDCDFA /* ActivityDetailViewController.m */; };
 		A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D501F3D646800B14D36 /* HotelSelectSubView.m */; };
 		A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */; };
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
-		A97D41DB1F385D920071284B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41DA1F385D920071284B /* Localizable.strings */; };
 		A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D41DE1F3892EF0071284B /* HotelSelectView.m */; };
 		A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */; };
 		A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98223FB1F3A19BB00CA9A9F /* CityData.plist */; };
@@ -129,6 +132,13 @@
 		A9730E7E1F384B97006E66A4 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
 		A9730E7F1F384B97006E66A4 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
 		A9730E871F385377006E66A4 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		A97677721F3EE97500EDCDFA /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
+		A97677731F3EE97500EDCDFA /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
+		A97677751F3EED4900EDCDFA /* activity02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activity02@2x.png"; sourceTree = "<group>"; };
+		A97677781F3EF64E00EDCDFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A976777A1F3EF65100EDCDFA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A976777B1F3EF76E00EDCDFA /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		A976777C1F3EF76E00EDCDFA /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
 		A9768D4F1F3D646800B14D36 /* HotelSelectSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectSubView.h; sourceTree = "<group>"; };
 		A9768D501F3D646800B14D36 /* HotelSelectSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectSubView.m; sourceTree = "<group>"; };
 		A9768D531F3D848400B14D36 /* HomeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeEnum.h; sourceTree = "<group>"; };
@@ -137,7 +147,6 @@
 		A97D41D31F385CAA0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A97D41D71F385CFF0071284B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A97D41D91F385D0B0071284B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A97D41DA1F385D920071284B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A97D41DD1F3892EF0071284B /* HotelSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectView.h; sourceTree = "<group>"; };
 		A97D41DE1F3892EF0071284B /* HotelSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectView.m; sourceTree = "<group>"; };
 		A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jifen_mall@2x.png"; sourceTree = "<group>"; };
@@ -318,6 +327,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		A97677711F3EE95500EDCDFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A97677721F3EE97500EDCDFA /* ActivityTableViewCell.h */,
+				A97677731F3EE97500EDCDFA /* ActivityTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A9768D521F3D843A00B14D36 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,7 +424,7 @@
 				A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */,
 				A9AA8EE01F3757A6005F9DBB /* PrefixHeader.pch */,
 				A9AA8EAF1F3712A5005F9DBB /* Info.plist */,
-				A97D41DA1F385D920071284B /* Localizable.strings */,
+				A97677791F3EF64E00EDCDFA /* Localizable.strings */,
 				A97D41D81F385CFF0071284B /* InfoPlist.strings */,
 				A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */,
 				A9AA8E9B1F3712A5005F9DBB /* Supporting Files */,
@@ -489,6 +507,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A97677751F3EED4900EDCDFA /* activity02@2x.png */,
 				A9906F691F3C00E6007725B7 /* mine_headiphone@2x.png */,
 				A95B3FCE1F3AA4680046E150 /* mine_set_navbariphone@2x.png */,
 				A95B3FC71F3AA04D0046E150 /* mine_hotel_iciphone@2x.png */,
@@ -549,8 +568,11 @@
 		A9AA8F0C1F38C309005F9DBB /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				A97677711F3EE95500EDCDFA /* View */,
 				A9AA8F0D1F38C31E005F9DBB /* ActivityViewController.h */,
 				A9AA8F0E1F38C31E005F9DBB /* ActivityViewController.m */,
+				A976777B1F3EF76E00EDCDFA /* ActivityDetailViewController.h */,
+				A976777C1F3EF76E00EDCDFA /* ActivityDetailViewController.m */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -601,6 +623,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A9AA8E8F1F3712A5005F9DBB;
 			productRefGroup = A9AA8E991F3712A5005F9DBB /* Products */;
@@ -627,9 +650,10 @@
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
 				A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */,
-				A97D41DB1F385D920071284B /* Localizable.strings in Resources */,
+				A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */,
 				A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */,
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
+				A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */,
 				A95B3FED1F3AC7FF0046E150 /* backImg_end.png in Resources */,
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
@@ -703,9 +727,11 @@
 			files = (
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
+				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
+				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
@@ -747,6 +773,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A97677791F3EF64E00EDCDFA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A97677781F3EF64E00EDCDFA /* en */,
+				A976777A1F3EF65100EDCDFA /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A97D41D81F385CFF0071284B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
