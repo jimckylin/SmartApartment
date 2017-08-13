@@ -42,10 +42,12 @@
     _naviLabel.text = @"智慧公寓";
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
+    [self.view addSubview:view];
+    
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     bgView.backgroundColor = [UIColor colorWithHexString:@"#F2F2F2"];
     [self.view addSubview:bgView];
-    [self.view sendSubviewToBack:bgView];
     
     NSArray *imagesURLStrings = @[
                                   @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
@@ -67,6 +69,8 @@
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 49, 0)];
     
     _tableView.tableHeaderView = bannerView;
+    
+    [self.view bringSubviewToFront:_naviView];
 }
 
 
