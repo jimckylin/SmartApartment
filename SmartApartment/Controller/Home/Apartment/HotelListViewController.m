@@ -7,12 +7,22 @@
 //
 
 #import "HotelListViewController.h"
+#import "TLCityPickerController.h"
+#import "CalendarViewController.h"
+
+#import "HotelListHeaderView.h"
 #import "HotelListCell.h"
+
+#import "ZYCalendarManager.h"
 
 NSString *const kHotelListCell = @"kHotelListCell";
 
-@interface HotelListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HotelListViewController ()<UITableViewDelegate,
+                                      UITableViewDataSource,
+                                      HotelListHeaderViewDelegate,
+                                      TLCityPickerDelegate>
 
+@property (nonatomic, strong) HotelListHeaderView *headerView;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -28,17 +38,24 @@ NSString *const kHotelListCell = @"kHotelListCell";
 
 - (void)initSubView {
     
-    _tableView = [[UITableView alloc] init];
+    [_naviView setAlpha:0.f];
+    // header
+    _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
+    _headerView.backgroundColor = [UIColor redColor];
+    _headerView.delegate = self;
+    [self.view addSubview:_headerView];
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_tableView];
     [_tableView registerClass:[HotelListCell class] forCellReuseIdentifier:kHotelListCell];
-    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
+    _tableView.contentInset = UIEdgeInsetsMake(90, 0, 0, 0);
+    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(90, 0, 0, 0);
+    [self.view addSubview:_tableView];
     
-    _tableView.contentInset = UIEdgeInsetsMake(308/2, 0, 0, 0);
-    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(308/2, 0, 0, 0);
+    [self.view bringSubviewToFront:_naviView];
 }
 
 
@@ -71,6 +88,34 @@ NSString *const kHotelListCell = @"kHotelListCell";
     //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    
+    CGFloat bounceHeight = 90;
+    CGFloat offsetY = scrollView.contentOffset.y + 90;
+    CGFloat triggerY = 60;
+    
+    if (offsetY > triggerY) {
+        //NSLog(@"222222:%f  offsetY:%f", scrollView.contentOffset.y, scrollView.contentOffset.y + 90);
+        _naviView.alpha = (offsetY - triggerY)/(bounceHeight-triggerY);
+    }else {
+        _naviView.alpha = 0.f;
+    }
+    
+    [_headerView relayoutHeaderView:scrollView];
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self relayoutTableViewOffset:scrollView];
+    [_headerView relayoutHeaderView:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)deceleratev {
+    [self relayoutTableViewOffset:scrollView];
+    [_headerView relayoutHeaderView:scrollView];
+}
+
 
 #pragma mark - UIButton Action
 
@@ -79,6 +124,59 @@ NSString *const kHotelListCell = @"kHotelListCell";
     
 }
 
+- (void)hotelListHeaderViewDidClickBtn:(HotelListHeaderBtnType)type {
+    
+    if (type == HotelListHeaderBtnTypeBack) {
+        [[NavManager shareInstance] returnToFrontView:YES];
+        
+    }else if (type == HotelListHeaderBtnTypeCity) {
+        TLCityPickerController *cityPickerVC = [[TLCityPickerController alloc] init];
+        [cityPickerVC setDelegate:self];
+        
+        cityPickerVC.locationCityID = @"1400010000";
+        //    cityPickerVC.commonCitys = [[NSMutableArray alloc] initWithArray: @[@"1400010000", @"100010000"]];        // 最近访问城市，如果不设置，将自动管理
+        cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
+        [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];
+        
+    }else {
+        CalendarViewController *vc = [CalendarViewController new];
+        vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
+            for (NSDate *date in manager.selectedDateArray) {
+                NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+            }
+        };
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }
+}
+
+
+#pragma mark - TLCityPickerDelegate
+
+- (void) cityPickerController:(TLCityPickerController *)cityPickerViewController didSelectCity:(TLCity *)city {
+    [[NavManager shareInstance] returnToFrontView:YES];
+}
+
+- (void) cityPickerControllerDidCancel:(TLCityPickerController *)cityPickerViewController {
+    
+}
+
+
+#pragma mark - Private
+
+- (void)relayoutTableViewOffset:(UIScrollView *)scrollView {
+    
+    CGFloat bounceHeight = 90;
+    CGFloat offsetY = scrollView.contentOffset.y + 90;
+    CGFloat triggerY = 60;
+    
+    if (offsetY > triggerY && offsetY < bounceHeight) {
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
+    
+    if (offsetY > 0 && offsetY < triggerY) {
+        [scrollView setContentOffset:CGPointMake(0, -bounceHeight) animated:YES];
+    }
+}
 
 
 @end
