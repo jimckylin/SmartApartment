@@ -9,6 +9,7 @@
 #import "HotelListViewController.h"
 #import "TLCityPickerController.h"
 #import "CalendarViewController.h"
+#import "HotelDetailViewController.h"
 
 #import "HotelListHeaderView.h"
 #import "HotelListCell.h"
@@ -102,8 +103,8 @@ NSString *const kHotelListCell = @"kHotelListCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //ActivityDetailViewController *vc = [ActivityDetailViewController new];
-    //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    HotelDetailViewController *vc = [HotelDetailViewController new];
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
