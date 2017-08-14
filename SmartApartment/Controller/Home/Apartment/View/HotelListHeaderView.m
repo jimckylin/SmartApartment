@@ -93,7 +93,7 @@
     CGFloat offsetY = scrollView.contentOffset.y + bounceHeight;
     CGFloat triggerY = 60; // 触发临界线
     
-    if (offsetY > 0 && offsetY < triggerY) {
+    if (offsetY >= 0 && offsetY < triggerY) {
         CGFloat ratio = offsetY/bounceHeight;
         CGFloat headerOffsetY = 64*ratio;
         self.top = - headerOffsetY;
@@ -102,11 +102,18 @@
         [_dateBtn setAlpha:alpha];
     }
     
-    if (offsetY > triggerY && offsetY < bounceHeight) {
+    if (offsetY > triggerY && offsetY <= bounceHeight) {
         
         CGFloat alpha = (bounceHeight - offsetY)/(bounceHeight - triggerY);
         [_cityBtn setAlpha:alpha];
         [_backBtn setAlpha:alpha];
+    }
+    
+    if (offsetY <= 0) {
+        self.top = 0;
+        [_dateBtn setAlpha:1];
+        [_cityBtn setAlpha:1];
+        [_backBtn setAlpha:1];
     }
 }
 

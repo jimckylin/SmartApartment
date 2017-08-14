@@ -39,6 +39,9 @@ NSString *const kHotelListCell = @"kHotelListCell";
 - (void)initSubView {
     
     [_naviView setAlpha:0.f];
+    UIView *view = [UIView new];
+    [self.view addSubview:view];
+    
     // header
     _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
     _headerView.backgroundColor = [UIColor redColor];
@@ -56,6 +59,21 @@ NSString *const kHotelListCell = @"kHotelListCell";
     [self.view addSubview:_tableView];
     
     [self.view bringSubviewToFront:_naviView];
+    
+    
+    UIButton *conditionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    conditionBtn.frame = CGRectMake(40, 20+6.5, kScreenWidth - 55, 31);
+    conditionBtn.backgroundColor = [UIColor lightTextColor];
+    [conditionBtn setImage:kImage(@"list_city_iciphone") forState:UIControlStateNormal];
+    [conditionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [conditionBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
+    [conditionBtn setTitle:@"福州(10)·8月14-15 共1晚" forState:UIControlStateNormal];
+    conditionBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+    [conditionBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
+    conditionBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    conditionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [conditionBtn addTarget:self action:@selector(conditionBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_naviView addSubview:conditionBtn];
 }
 
 
@@ -103,25 +121,27 @@ NSString *const kHotelListCell = @"kHotelListCell";
     }
     
     [_headerView relayoutHeaderView:scrollView];
+    [self exchangeSubview:scrollView];
 }
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self relayoutTableViewOffset:scrollView];
     [_headerView relayoutHeaderView:scrollView];
+    [self exchangeSubview:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)deceleratev {
     [self relayoutTableViewOffset:scrollView];
     [_headerView relayoutHeaderView:scrollView];
+    [self exchangeSubview:scrollView];
 }
 
 
 #pragma mark - UIButton Action
 
-- (void)tripHistoryBtnClick:(id)sender {
-    
-    
+- (void)conditionBtnClick:(id)sender {
+    [_tableView setContentOffset:CGPointMake(0, -90) animated:YES];
 }
 
 - (void)hotelListHeaderViewDidClickBtn:(HotelListHeaderBtnType)type {
@@ -175,6 +195,23 @@ NSString *const kHotelListCell = @"kHotelListCell";
     
     if (offsetY > 0 && offsetY < triggerY) {
         [scrollView setContentOffset:CGPointMake(0, -bounceHeight) animated:YES];
+    }
+}
+
+- (void)exchangeSubview:(UIScrollView *)scrollView {
+    
+    NSInteger index1 = [[self.view subviews] indexOfObject:_headerView];
+    NSInteger index2 = [[self.view subviews] indexOfObject:_tableView];
+    
+    CGFloat offsetY = scrollView.contentOffset.y + 90;
+    if (offsetY <= 0) {
+        if (index1 < index2) {
+            [self.view exchangeSubviewAtIndex:index1 withSubviewAtIndex:index2];
+        }
+    }else {
+        if (index1 > index2) {
+            [self.view exchangeSubviewAtIndex:index1 withSubviewAtIndex:index2];
+        }
     }
 }
 
