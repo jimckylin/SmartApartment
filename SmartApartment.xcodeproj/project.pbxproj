@@ -55,6 +55,11 @@
 		A976779E1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A976779B1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png */; };
 		A976779F1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A976779C1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png */; };
 		A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A976779D1F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png */; };
+		A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677A31F433BB200EDCDFA /* ZZFoldCellModel.m */; };
+		A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677A61F433CCC00EDCDFA /* HotelDetailHeaderCell.m */; };
+		A97677AA1F433CEB00EDCDFA /* HotelDetailMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677A91F433CEB00EDCDFA /* HotelDetailMapCell.m */; };
+		A97677AD1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677AC1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.m */; };
+		A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677AF1F43433B00EDCDFA /* BlankCell.m */; };
 		A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D501F3D646800B14D36 /* HotelSelectSubView.m */; };
 		A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */; };
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
@@ -166,6 +171,16 @@
 		A976779B1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_detail_like_btn_siphone@2x.png"; sourceTree = "<group>"; };
 		A976779C1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_detail_like_s_btniphone@2x.png"; sourceTree = "<group>"; };
 		A976779D1F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_detail_share_btn_siphone@2x.png"; sourceTree = "<group>"; };
+		A97677A21F433BB200EDCDFA /* ZZFoldCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFoldCellModel.h; sourceTree = "<group>"; };
+		A97677A31F433BB200EDCDFA /* ZZFoldCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFoldCellModel.m; sourceTree = "<group>"; };
+		A97677A51F433CCC00EDCDFA /* HotelDetailHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailHeaderCell.h; sourceTree = "<group>"; };
+		A97677A61F433CCC00EDCDFA /* HotelDetailHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailHeaderCell.m; sourceTree = "<group>"; };
+		A97677A81F433CEB00EDCDFA /* HotelDetailMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailMapCell.h; sourceTree = "<group>"; };
+		A97677A91F433CEB00EDCDFA /* HotelDetailMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailMapCell.m; sourceTree = "<group>"; };
+		A97677AB1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailRoomTypeListCell.h; sourceTree = "<group>"; };
+		A97677AC1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailRoomTypeListCell.m; sourceTree = "<group>"; };
+		A97677AE1F43433B00EDCDFA /* BlankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankCell.h; sourceTree = "<group>"; };
+		A97677AF1F43433B00EDCDFA /* BlankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankCell.m; sourceTree = "<group>"; };
 		A9768D4F1F3D646800B14D36 /* HotelSelectSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectSubView.h; sourceTree = "<group>"; };
 		A9768D501F3D646800B14D36 /* HotelSelectSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectSubView.m; sourceTree = "<group>"; };
 		A9768D531F3D848400B14D36 /* HomeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeEnum.h; sourceTree = "<group>"; };
@@ -287,11 +302,12 @@
 		A95B3FD51F3ABEAB0046E150 /* Apartment */ = {
 			isa = PBXGroup;
 			children = (
+				A97677A11F433BAA00EDCDFA /* Model */,
 				A97677921F40B35500EDCDFA /* View */,
-				A95B3FD61F3ABED00046E150 /* HotelListViewController.h */,
-				A95B3FD71F3ABED00046E150 /* HotelListViewController.m */,
 				A97677981F41FB5A00EDCDFA /* HotelDetailViewController.h */,
 				A97677991F41FB5A00EDCDFA /* HotelDetailViewController.m */,
+				A95B3FD61F3ABED00046E150 /* HotelListViewController.h */,
+				A95B3FD71F3ABED00046E150 /* HotelListViewController.m */,
 				A9768D541F3D8ED900B14D36 /* ExtraSearchViewController.h */,
 				A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */,
 			);
@@ -373,12 +389,29 @@
 		A97677921F40B35500EDCDFA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A97677931F40B35B00EDCDFA /* HotelListCell.h */,
-				A97677941F40B35B00EDCDFA /* HotelListCell.m */,
 				A985ABF11F415193005B31DF /* HotelListHeaderView.h */,
 				A985ABF21F415193005B31DF /* HotelListHeaderView.m */,
+				A97677931F40B35B00EDCDFA /* HotelListCell.h */,
+				A97677941F40B35B00EDCDFA /* HotelListCell.m */,
+				A97677A51F433CCC00EDCDFA /* HotelDetailHeaderCell.h */,
+				A97677A61F433CCC00EDCDFA /* HotelDetailHeaderCell.m */,
+				A97677A81F433CEB00EDCDFA /* HotelDetailMapCell.h */,
+				A97677A91F433CEB00EDCDFA /* HotelDetailMapCell.m */,
+				A97677AB1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.h */,
+				A97677AC1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.m */,
+				A97677AE1F43433B00EDCDFA /* BlankCell.h */,
+				A97677AF1F43433B00EDCDFA /* BlankCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A97677A11F433BAA00EDCDFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A97677A21F433BB200EDCDFA /* ZZFoldCellModel.h */,
+				A97677A31F433BB200EDCDFA /* ZZFoldCellModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A9768D521F3D843A00B14D36 /* Enum */ = {
@@ -795,21 +828,25 @@
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
 				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
+				A97677AD1F433D2700EDCDFA /* HotelDetailRoomTypeListCell.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
+				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
+				A97677AA1F433CEB00EDCDFA /* HotelDetailMapCell.m in Sources */,
 				A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
+				A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */,
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
@@ -835,6 +872,7 @@
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
+				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 			);
