@@ -46,7 +46,7 @@ UITableViewDataSource>
     
     SDCycleScrollView *bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, kScreenWidth, 270) delegate:nil placeholderImage:[UIImage imageNamed:@"snapshot"]];
     bannerView.imageURLStringsGroup = imagesURLStrings;
-    bannerView.autoScrollTimeInterval = 5;
+    bannerView.autoScrollTimeInterval = 6;
     
     
     _tableView = [[UITableView alloc] init];
@@ -122,9 +122,7 @@ UITableViewDataSource>
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifier];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
-            UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 174)];
-            imageV.image = [UIImage imageNamed:@"jifen_mall"];
-            [cell addSubview:imageV];
+            
         }
         return cell;
     }
@@ -132,9 +130,7 @@ UITableViewDataSource>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 1) {
-        [SVProgressHUD showInfoWithStatus:@"正在开发中"];
-    }
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
