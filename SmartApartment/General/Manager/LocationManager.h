@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
 
-NSString *const kLocationState;
-NSString *const kLocationCity;
-NSString *const kLocationStreet;
-NSString *const kLocationAddress;
+extern NSString *const kLocationState;
+extern NSString *const kLocationCity;
+extern NSString *const kLocationStreet;
+extern NSString *const kLocationAddress;
 
 
 @interface LocationManager : NSObject
