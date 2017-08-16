@@ -14,7 +14,7 @@
 #import "HotelDetailHeaderCell.h"
 #import "HotelDetailMapCell.h"
 #import "HotelDetailRoomTypeListCell.h"
-
+#import "MapViewController.h"
 
 NSString *const kBlankCell = @"BlankCell";
 NSString *const kHotelDetailHeaderCell = @"HotelDetailHeaderCell";
@@ -153,7 +153,7 @@ UITableViewDataSource>
             return cell;
         }else if (section == 1 && row == 0) {
             HotelDetailMapCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailMapCell];
-            
+            [cell setMapCenterCoordinate:@"26.08" lon:@"119.3"];
             
             return cell;
         }
@@ -185,7 +185,9 @@ UITableViewDataSource>
     if (indexPath.section == 0) {
         
     }else if (indexPath.section == 1) {
-        
+        MapViewController *map = [MapViewController new];
+        [map setMapCenterCoordinate:@"26.08" lon:@"119.3"];
+        [[NavManager shareInstance] showViewController:map isAnimated:YES];
     }else if (indexPath.section == 2) {
         
         ZZFoldCellModel *didSelectFoldCellModel = self.data[indexPath.row];

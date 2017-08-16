@@ -7,6 +7,14 @@
 //
 
 #import "HotelDetailMapCell.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+@interface HotelDetailMapCell ()
+
+@property(nonatomic, strong) BMKMapView *mapView;
+
+@end
 
 @implementation HotelDetailMapCell
 
@@ -28,14 +36,34 @@
     
     UIView *bgView = [UIView new];
     bgView.backgroundColor = [UIColor whiteColor];
-    bgView.layer.cornerRadius = 6;
     [self addSubview:bgView];
     [bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
     
+    _mapView = [BMKMapView new];
+    _mapView.zoomLevel = 18;
+    [bgView addSubview:_mapView];
+    [_mapView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, -80, 0, -80)];
     
-    
-    
+    bgView.layer.cornerRadius = 6;
+    bgView.layer.masksToBounds = YES;
+    _mapView.layer.cornerRadius = 6;
+    _mapView.layer.masksToBounds = YES;
 }
+
+
+- (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon {
+    
+    CLLocationCoordinate2D coor;
+    coor.latitude = [lat doubleValue];
+    coor.longitude = [lon doubleValue];
+    _mapView.centerCoordinate = coor;
+    
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    annotation.coordinate = coor;
+    //annotation.title = @"这里是北京";
+    [_mapView addAnnotation:annotation];
+}
+
 
 
 - (void)updateConstraints {

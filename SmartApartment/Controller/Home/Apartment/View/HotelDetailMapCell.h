@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface HotelDetailMapCell : UITableViewCell
+
+- (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon;
 
 @end

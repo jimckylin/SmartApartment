@@ -10,12 +10,35 @@
 
 #import "LaunchAdViewController.h"
 
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+
+- (void)configBaiduMap {
+    
+    BMKMapManager *mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [mapManager start:@"2QrqWtgqQfHkhE7AlhSqKLtI8oOQ1Ccd"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -25,6 +48,8 @@
     
     [[NavManager shareInstance] setRootController:[LaunchAdViewController new]];
     self.window.rootViewController = [[NavManager shareInstance] rootNavigationController];
+    
+    [self configBaiduMap];
     
     
     
