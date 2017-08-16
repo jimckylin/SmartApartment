@@ -15,6 +15,7 @@
 @property(nonatomic, assign) CLLocationCoordinate2D coor;
 @property(nonatomic, strong) BMKMapView *mapView;
 
+
 @end
 
 @implementation MapViewController
@@ -38,7 +39,9 @@
     annotation.coordinate = self.coor;
     //annotation.title = @"这里是北京";
     [_mapView addAnnotation:annotation];
+    
 }
+
 
 
 - (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon {

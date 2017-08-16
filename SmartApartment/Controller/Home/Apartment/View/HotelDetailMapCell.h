@@ -11,6 +11,8 @@
 
 @interface HotelDetailMapCell : UITableViewCell
 
+@property (nonatomic, copy) void(^mapViewDidClickBlock)(void);
+
 - (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon;
 
 @end
