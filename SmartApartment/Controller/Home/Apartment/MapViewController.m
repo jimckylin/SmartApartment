@@ -12,6 +12,7 @@
 
 @interface MapViewController ()
 
+@property(nonatomic, assign) CLLocationCoordinate2D coor;
 @property(nonatomic, strong) BMKMapView *mapView;
 
 @end
@@ -29,7 +30,14 @@
     _mapView = [BMKMapView new];
     _mapView.zoomLevel = 18;
     [self.view addSubview:_mapView];
+    _mapView.centerCoordinate = self.coor;
     [_mapView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
+    
+    
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    annotation.coordinate = self.coor;
+    //annotation.title = @"这里是北京";
+    [_mapView addAnnotation:annotation];
 }
 
 
@@ -38,12 +46,7 @@
     CLLocationCoordinate2D coor;
     coor.latitude = [lat doubleValue];
     coor.longitude = [lon doubleValue];
-    _mapView.centerCoordinate = coor;
-    
-    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
-    annotation.coordinate = coor;
-    //annotation.title = @"这里是北京";
-    [_mapView addAnnotation:annotation];
+    self.coor = coor;
 }
 
 

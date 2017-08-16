@@ -34,6 +34,7 @@
 		A952860E1F43F9CE00D7EB2F /* detail_map_pin_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A952860C1F43F9CE00D7EB2F /* detail_map_pin_siphone@2x.png */; };
 		A952860F1F43F9CE00D7EB2F /* detail_map_piniphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A952860D1F43F9CE00D7EB2F /* detail_map_piniphone@2x.png */; };
 		A95286121F43FA6B00D7EB2F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95286111F43FA6B00D7EB2F /* MapViewController.m */; };
+		A95286151F441E9C00D7EB2F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A95286141F441E9C00D7EB2F /* LocationManager.m */; };
 		A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */; };
 		A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */; };
 		A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */; };
@@ -116,6 +117,7 @@
 		A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8F031F38C217005F9DBB /* icon_head_back@2x.png */; };
 		A9AA8F061F38C217005F9DBB /* icon_head_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8F041F38C217005F9DBB /* icon_head_back@3x.png */; };
 		A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8F0E1F38C31E005F9DBB /* ActivityViewController.m */; };
+		A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +152,8 @@
 		A952860D1F43F9CE00D7EB2F /* detail_map_piniphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_map_piniphone@2x.png"; sourceTree = "<group>"; };
 		A95286101F43FA6B00D7EB2F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A95286111F43FA6B00D7EB2F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		A95286131F441E9C00D7EB2F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		A95286141F441E9C00D7EB2F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_arrow_iconiphone@2x.png"; sourceTree = "<group>"; };
 		A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iconfont.h"; sourceTree = "<group>"; };
 		A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iconfont.m"; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 		A9AA8F041F38C217005F9DBB /* icon_head_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_head_back@3x.png"; sourceTree = "<group>"; };
 		A9AA8F0D1F38C31E005F9DBB /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		A9AA8F0E1F38C31E005F9DBB /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		A9D4D8C71F4434AA005C4100 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
 		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -359,6 +365,8 @@
 			children = (
 				A9414F031F38CA49007857D2 /* NavManager.h */,
 				A9414F041F38CA49007857D2 /* NavManager.m */,
+				A95286131F441E9C00D7EB2F /* LocationManager.h */,
+				A95286141F441E9C00D7EB2F /* LocationManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -627,6 +635,7 @@
 		A9AA8ED41F372751005F9DBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A9D4D8C61F44349B005C4100 /* ViewModel */,
 				A9768D521F3D843A00B14D36 /* Enum */,
 				A97D41DC1F3892220071284B /* View */,
 				A9AA8ED51F37275B005F9DBB /* HomeViewController.h */,
@@ -742,6 +751,15 @@
 				A976777C1F3EF76E00EDCDFA /* ActivityDetailViewController.m */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		A9D4D8C61F44349B005C4100 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9D4D8C71F4434AA005C4100 /* HomeViewModel.h */,
+				A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -918,6 +936,8 @@
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
+				A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */,
+				A95286151F441E9C00D7EB2F /* LocationManager.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A97677AA1F433CEB00EDCDFA /* HotelDetailMapCell.m in Sources */,

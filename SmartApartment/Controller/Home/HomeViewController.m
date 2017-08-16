@@ -16,6 +16,7 @@
 
 #import "HotelSelectView.h"
 #import "ZYCalendarManager.h"
+#import "LocationManager.h"
 
 @interface HomeViewController ()<UITableViewDelegate,
                                  UITableViewDataSource,
@@ -24,6 +25,7 @@
                                  TLCityPickerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSString *city;
 
 @end
 
@@ -33,6 +35,14 @@
     [super viewDidLoad];
     
     [self initUI];
+}
+
+- (void)initData {
+    
+    __WeakObj(self)
+    [[LocationManager shareManager] startLocate:^(NSDictionary *addressDic) {
+        selfWeak.city = addressDic[kLocationCity];
+    }];
 }
 
 - (void)initUI {
