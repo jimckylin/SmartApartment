@@ -1,5 +1,5 @@
 //
-//  HotelDetailRoomTypeListCell.h
+//  HotelDetailRoomListCell.h
 //  SmartApartment
 //
 //  Created by Jimcky Lin on 2017/8/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HotelDetailRoomTypeListCell : UITableViewCell
+@interface HotelDetailRoomListCell : UITableViewCell
 
 @end

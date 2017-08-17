@@ -1,14 +1,14 @@
 //
-//  HotelDetailRoomTypeListCell.m
+//  HotelDetailRoomListCell.m
 //  SmartApartment
 //
 //  Created by Jimcky Lin on 2017/8/15.
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "HotelDetailRoomTypeListCell.h"
+#import "HotelDetailRoomListCell.h"
 
-@implementation HotelDetailRoomTypeListCell
+@implementation HotelDetailRoomListCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

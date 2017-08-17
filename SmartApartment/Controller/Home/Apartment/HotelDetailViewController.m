@@ -13,20 +13,29 @@
 #import "BlankCell.h"
 #import "HotelDetailHeaderCell.h"
 #import "HotelDetailMapCell.h"
-#import "HotelDetailRoomTypeListCell.h"
+#import "HotelDetailRoomTypeCell.h"
+#import "HotelDetailDateCell.h"
+#import "HotelDetailRoomListCell.h"
+#import "HotelDetailRoomPriceTypeCell.h"
+#import "HotelDetailMoreCell.h"
 #import "MapViewController.h"
 
 NSString *const kBlankCell = @"BlankCell";
 NSString *const kHotelDetailHeaderCell = @"HotelDetailHeaderCell";
 NSString *const kHotelDetailMapCell = @"HotelDetailMapCell";
-NSString *const kHotelDetailRoomTypeListCell = @"HotelDetailRoomTypeListCell";
+NSString *const kHotelDetailRoomTypeCell = @"HotelDetailRoomTypeCell";
+NSString *const kHotelDetailDateCell = @"HotelDetailDateCell";
+NSString *const kHotelDetailRoomListCell = @"HotelDetailRoomListCell";
+NSString *const kHotelDetailRoomPriceTypeCell = @"HotelDetailRoomPriceTypeCell";
+NSString *const kHotelDetailMoreCell = @"HotelDetailMoreCell";
 
 
 @interface HotelDetailViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property(nonatomic,strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
+@property(nonatomic, strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
+@property(nonatomic, assign) BOOL isAlldayRoomExpand; // 是否伸缩 defalut NO
 
 @end
 
@@ -63,7 +72,11 @@ UITableViewDataSource>
     [_tableView registerClass:[BlankCell class] forCellReuseIdentifier:kBlankCell];
     [_tableView registerClass:[HotelDetailHeaderCell class] forCellReuseIdentifier:kHotelDetailHeaderCell];
     [_tableView registerClass:[HotelDetailMapCell class] forCellReuseIdentifier:kHotelDetailMapCell];
-    [_tableView registerClass:[HotelDetailRoomTypeListCell class] forCellReuseIdentifier:kHotelDetailRoomTypeListCell];
+    [_tableView registerClass:[HotelDetailRoomTypeCell class] forCellReuseIdentifier:kHotelDetailRoomTypeCell];
+    [_tableView registerClass:[HotelDetailDateCell class] forCellReuseIdentifier:kHotelDetailDateCell];
+    [_tableView registerClass:[HotelDetailRoomListCell class] forCellReuseIdentifier:kHotelDetailRoomListCell];
+    [_tableView registerClass:[HotelDetailRoomPriceTypeCell class] forCellReuseIdentifier:kHotelDetailRoomPriceTypeCell];
+    [_tableView registerClass:[HotelDetailMoreCell class] forCellReuseIdentifier:kHotelDetailMoreCell];
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0.01)];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
@@ -110,8 +123,14 @@ UITableViewDataSource>
     
     if (section == 0 || section == 1) {
         return 1;
+    }else if(section == 2) {
+        if ([self.data count] > 3) { // 数据大于3个
+            return 2+self.data.count+1;
+        }else {
+            return 2+self.data.count;
+        }
     }
-    return self.data.count;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,7 +140,28 @@ UITableViewDataSource>
     }else if (indexPath.section == 1) {
         return 101;
     }else if (indexPath.section == 2){
-        return 65;
+        
+        if (indexPath.row == 0) {
+            return 40;
+        }else if (indexPath.row == 1) {
+            return 50;
+        }else {
+            
+            // 数据大于3个且未展开情况
+            if ([self.data count] > 3) {
+                if (indexPath.row == 2+self.data.count) {
+                    return 40; // 更多cell 高度
+                }else if (indexPath.row >= 5) {
+                    if (!self.isAlldayRoomExpand) {
+                        return 0;
+                    }
+                    ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+                    return foldCellModel.level.intValue==0?65:50;
+                }
+            }
+            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+            return foldCellModel.level.intValue==0?65:50;
+        }
     }
     return 0;
 }
@@ -163,12 +203,35 @@ UITableViewDataSource>
         }
     }
     else {
-        HotelDetailRoomTypeListCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeListCell];
         
-        ZZFoldCellModel *foldCellModel = self.data[indexPath.row];
-        cell.textLabel.text = foldCellModel.text;
-        
-        return cell;
+        if (row == 0) {
+            HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
+            return cell;
+        }else if (row == 1) {
+            HotelDetailDateCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailDateCell];
+            return cell;
+        }else {
+            
+            // 数据大于3个且未展开情况
+            if ([self.data count] > 3) {
+                if (indexPath.row == 2+self.data.count) {
+                    HotelDetailMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailMoreCell];
+                    return cell;
+                }
+            }
+
+            
+            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+            if (foldCellModel.level.intValue == 0) {
+                HotelDetailRoomListCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomListCell];
+                cell.textLabel.text = foldCellModel.text;
+                return cell;
+            }else {
+                HotelDetailRoomPriceTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomPriceTypeCell];
+                
+                return cell;
+            }
+        }
     }
     
     return nil;
@@ -178,8 +241,16 @@ UITableViewDataSource>
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 2) {
-        ZZFoldCellModel *foldCellModel = self.data[indexPath.row];
-        return foldCellModel.level.intValue;
+        if (indexPath.row >= 2) {
+            
+            if (self.data.count > 3) {
+                if (indexPath.row == 2+self.data.count) {
+                    return 0;
+                }
+            }
+            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+            return foldCellModel.level.intValue;
+        }
     }
     return 0;
 }
@@ -191,40 +262,41 @@ UITableViewDataSource>
     }else if (indexPath.section == 1) {
         
     }else if (indexPath.section == 2) {
-        
-        ZZFoldCellModel *didSelectFoldCellModel = self.data[indexPath.row];
-        [tableView beginUpdates];
-        if (didSelectFoldCellModel.belowCount == 0) {
-            
-            //Data
-            NSArray *submodels = [didSelectFoldCellModel open];
-            NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:((NSRange){indexPath.row + 1,submodels.count})];
-            [self.data insertObjects:submodels atIndexes:indexes];
-            
-            //Rows
-            NSMutableArray *indexPaths = [NSMutableArray new];
-            for (int i = 0; i < submodels.count; i++) {
-                NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:(indexPath.row + 1 + i) inSection:indexPath.section];
-                [indexPaths addObject:insertIndexPath];
+        if (indexPath.row >= 2) {
+            ZZFoldCellModel *didSelectFoldCellModel = self.data[indexPath.row-2];
+            [tableView beginUpdates];
+            if (didSelectFoldCellModel.belowCount == 0) {
+                
+                //Data
+                NSArray *submodels = [didSelectFoldCellModel open];
+                NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:((NSRange){indexPath.row + 1-2,submodels.count})];
+                [self.data insertObjects:submodels atIndexes:indexes];
+                
+                //Rows
+                NSMutableArray *indexPaths = [NSMutableArray new];
+                for (int i = 0; i < submodels.count; i++) {
+                    NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:(indexPath.row + 1 + i) inSection:indexPath.section];
+                    [indexPaths addObject:insertIndexPath];
+                }
+                [tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+                
+            }else {
+                
+                //Data
+                NSArray *submodels = [self.data subarrayWithRange:((NSRange){indexPath.row + 1-2,didSelectFoldCellModel.belowCount})];
+                [didSelectFoldCellModel closeWithSubmodels:submodels];
+                [self.data removeObjectsInArray:submodels];
+                
+                //Rows
+                NSMutableArray *indexPaths = [NSMutableArray new];
+                for (int i = 0; i < submodels.count; i++) {
+                    NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:(indexPath.row + 1 + i) inSection:indexPath.section];
+                    [indexPaths addObject:insertIndexPath];
+                }
+                [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
             }
-            [tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
-            
-        }else {
-            
-            //Data
-            NSArray *submodels = [self.data subarrayWithRange:((NSRange){indexPath.row + 1,didSelectFoldCellModel.belowCount})];
-            [didSelectFoldCellModel closeWithSubmodels:submodels];
-            [self.data removeObjectsInArray:submodels];
-            
-            //Rows
-            NSMutableArray *indexPaths = [NSMutableArray new];
-            for (int i = 0; i < submodels.count; i++) {
-                NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:(indexPath.row + 1 + i) inSection:indexPath.section];
-                [indexPaths addObject:insertIndexPath];
-            }
-            [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+            [tableView endUpdates];
         }
-        [tableView endUpdates];
         
     }else {
         
@@ -271,52 +343,10 @@ UITableViewDataSource>
                                      @{
                                          @"text":@"衡水市",
                                          @"level":@"1",
-                                         @"submodels":@[
-                                                 @{
-                                                     @"text":@"阜城县",
-                                                     @"level":@"2",
-                                                     @"submodels":@[
-                                                             @{
-                                                                 @"text":@"大白乡",
-                                                                 @"level":@"3",
-                                                                 },
-                                                             @{
-                                                                 @"text":@"建桥乡",
-                                                                 @"level":@"3",
-                                                                 },
-                                                             @{
-                                                                 @"text":@"古城镇",
-                                                                 @"level":@"3",
-                                                                 }
-                                                             ]
-                                                     },
-                                                 @{
-                                                     @"text":@"武邑县",
-                                                     @"level":@"2",
-                                                     },
-                                                 @{
-                                                     @"text":@"景县",
-                                                     @"level":@"2",
-                                                     }
-                                                 ]
                                          },
                                      @{
                                          @"text":@"廊坊市",
                                          @"level":@"1",
-                                         @"submodels":@[
-                                                 @{
-                                                     @"text":@"固安县",
-                                                     @"level":@"2",
-                                                     },
-                                                 @{
-                                                     @"text":@"三河市",
-                                                     @"level":@"2",
-                                                     },
-                                                 @{
-                                                     @"text":@"霸州市",
-                                                     @"level":@"2",
-                                                     }
-                                                 ]
                                          }
                                      ]
                              },
@@ -362,104 +392,7 @@ UITableViewDataSource>
                                          }
                                      ]
                              },
-                         @{
-                             @"text":@"商务大床房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"特价房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"商务大床房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"特价房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"商务大床房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"特价房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"商务大床房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
-                                         @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
+
                          ];
     
     self.data = [NSMutableArray new];
