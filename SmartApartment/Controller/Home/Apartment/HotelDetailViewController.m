@@ -7,14 +7,16 @@
 //
 
 #import "HotelDetailViewController.h"
-#import "SDCycleScrollView.h"
+#import "CalendarViewController.h"
+
+#import "HotelDetailDateView.h"
+#import "ZYCalendarManager.h"
 #import "ZZFoldCellModel.h"
 
 #import "BlankCell.h"
 #import "HotelDetailHeaderCell.h"
 #import "HotelDetailMapCell.h"
 #import "HotelDetailRoomTypeCell.h"
-#import "HotelDetailDateCell.h"
 #import "HotelDetailRoomListCell.h"
 #import "HotelDetailRoomPriceTypeCell.h"
 #import "HotelDetailMoreCell.h"
@@ -24,18 +26,17 @@ NSString *const kBlankCell = @"BlankCell";
 NSString *const kHotelDetailHeaderCell = @"HotelDetailHeaderCell";
 NSString *const kHotelDetailMapCell = @"HotelDetailMapCell";
 NSString *const kHotelDetailRoomTypeCell = @"HotelDetailRoomTypeCell";
-NSString *const kHotelDetailDateCell = @"HotelDetailDateCell";
 NSString *const kHotelDetailRoomListCell = @"HotelDetailRoomListCell";
 NSString *const kHotelDetailRoomPriceTypeCell = @"HotelDetailRoomPriceTypeCell";
 NSString *const kHotelDetailMoreCell = @"HotelDetailMoreCell";
 
 
 @interface HotelDetailViewController ()<UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
-@property(nonatomic, assign) BOOL isAlldayRoomExpand; // 是否伸缩 defalut NO
+//@property(nonatomic, assign) BOOL isAlldayRoomExpand; // 是否伸缩 defalut NO
 
 @end
 
@@ -73,7 +74,6 @@ UITableViewDataSource>
     [_tableView registerClass:[HotelDetailHeaderCell class] forCellReuseIdentifier:kHotelDetailHeaderCell];
     [_tableView registerClass:[HotelDetailMapCell class] forCellReuseIdentifier:kHotelDetailMapCell];
     [_tableView registerClass:[HotelDetailRoomTypeCell class] forCellReuseIdentifier:kHotelDetailRoomTypeCell];
-    [_tableView registerClass:[HotelDetailDateCell class] forCellReuseIdentifier:kHotelDetailDateCell];
     [_tableView registerClass:[HotelDetailRoomListCell class] forCellReuseIdentifier:kHotelDetailRoomListCell];
     [_tableView registerClass:[HotelDetailRoomPriceTypeCell class] forCellReuseIdentifier:kHotelDetailRoomPriceTypeCell];
     [_tableView registerClass:[HotelDetailMoreCell class] forCellReuseIdentifier:kHotelDetailMoreCell];
@@ -124,11 +124,7 @@ UITableViewDataSource>
     if (section == 0 || section == 1) {
         return 1;
     }else if(section == 2) {
-        if ([self.data count] > 3) { // 数据大于3个
-            return 2+self.data.count+1;
-        }else {
-            return 2+self.data.count;
-        }
+        return 1+self.data.count;
     }
     return 0;
 }
@@ -142,24 +138,9 @@ UITableViewDataSource>
     }else if (indexPath.section == 2){
         
         if (indexPath.row == 0) {
-            return 40;
-        }else if (indexPath.row == 1) {
-            return 50;
+            return 104;
         }else {
-            
-            // 数据大于3个且未展开情况
-            if ([self.data count] > 3) {
-                if (indexPath.row == 2+self.data.count) {
-                    return 40; // 更多cell 高度
-                }else if (indexPath.row >= 5) {
-                    if (!self.isAlldayRoomExpand) {
-                        return 0;
-                    }
-                    ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
-                    return foldCellModel.level.intValue==0?65:50;
-                }
-            }
-            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-1];
             return foldCellModel.level.intValue==0?65:50;
         }
     }
@@ -188,7 +169,7 @@ UITableViewDataSource>
     if (section == 0 || section == 1) {
         if (section == 0 && row == 0) {
             HotelDetailHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailHeaderCell];
-            
+            //cell.delegate = self;
             
             return cell;
         }else if (section == 1 && row == 0) {
@@ -206,29 +187,18 @@ UITableViewDataSource>
         
         if (row == 0) {
             HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
-            return cell;
-        }else if (row == 1) {
-            HotelDetailDateCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailDateCell];
+            cell.delegate = (id<HotelDetailRoomTypeCellDelegate>)self;
             return cell;
         }else {
-            
-            // 数据大于3个且未展开情况
-            if ([self.data count] > 3) {
-                if (indexPath.row == 2+self.data.count) {
-                    HotelDetailMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailMoreCell];
-                    return cell;
-                }
-            }
 
-            
-            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
+            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-1];
             if (foldCellModel.level.intValue == 0) {
                 HotelDetailRoomListCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomListCell];
                 cell.textLabel.text = foldCellModel.text;
                 return cell;
             }else {
                 HotelDetailRoomPriceTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomPriceTypeCell];
-                
+                cell.delegate = self;
                 return cell;
             }
         }
@@ -238,23 +208,6 @@ UITableViewDataSource>
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 2) {
-        if (indexPath.row >= 2) {
-            
-            if (self.data.count > 3) {
-                if (indexPath.row == 2+self.data.count) {
-                    return 0;
-                }
-            }
-            ZZFoldCellModel *foldCellModel = self.data[indexPath.row-2];
-            return foldCellModel.level.intValue;
-        }
-    }
-    return 0;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
@@ -262,14 +215,14 @@ UITableViewDataSource>
     }else if (indexPath.section == 1) {
         
     }else if (indexPath.section == 2) {
-        if (indexPath.row >= 2) {
-            ZZFoldCellModel *didSelectFoldCellModel = self.data[indexPath.row-2];
+        if (indexPath.row >= 1) {
+            ZZFoldCellModel *didSelectFoldCellModel = self.data[indexPath.row-1];
             [tableView beginUpdates];
             if (didSelectFoldCellModel.belowCount == 0) {
                 
                 //Data
                 NSArray *submodels = [didSelectFoldCellModel open];
-                NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:((NSRange){indexPath.row + 1-2,submodels.count})];
+                NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:((NSRange){indexPath.row + 1-1,submodels.count})];
                 [self.data insertObjects:submodels atIndexes:indexes];
                 
                 //Rows
@@ -283,7 +236,7 @@ UITableViewDataSource>
             }else {
                 
                 //Data
-                NSArray *submodels = [self.data subarrayWithRange:((NSRange){indexPath.row + 1-2,didSelectFoldCellModel.belowCount})];
+                NSArray *submodels = [self.data subarrayWithRange:((NSRange){indexPath.row + 1-1,didSelectFoldCellModel.belowCount})];
                 [didSelectFoldCellModel closeWithSubmodels:submodels];
                 [self.data removeObjectsInArray:submodels];
                 
@@ -331,68 +284,77 @@ UITableViewDataSource>
     
 }
 
+
+#pragma mark - HotelDetailDateViewDelegate
+
+- (void)hotelDetailDateViewDidClick:(HotelSelectBtnType)type {
+    
+    CalendarViewController *vc = [CalendarViewController new];
+    vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
+        for (NSDate *date in manager.selectedDateArray) {
+            NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+        }
+    };
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+}
+
+
+#pragma mark - HotelDetailRoomPriceTypeCellDelegate
+
+- (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type {
+    
+    NSLog(@"type:%zd", type);
+}
+
+
+
 #pragma mark - init Data
 
 - (void)initData {
     
     NSArray *netData = @[
                          @{
-                             @"text":@"标准大床房",
+                             @"text":@"普通房",
                              @"level":@"0",
                              @"submodels":@[
                                      @{
-                                         @"text":@"衡水市",
+                                         @"text":@"优惠券",
                                          @"level":@"1",
                                          },
                                      @{
-                                         @"text":@"廊坊市",
+                                         @"text":@"网客价",
                                          @"level":@"1",
                                          }
                                      ]
                              },
                          @{
-                             @"text":@"特价房",
+                             @"text":@"标准房",
                              @"level":@"0",
                              @"submodels":@[
                                      @{
-                                         @"text":@"德州市",
+                                         @"text":@"优惠券",
                                          @"level":@"1",
                                          },
                                      @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
+                                         @"text":@"网客价",
+                                         @"level":@"1",
                                          }
                                      ]
                              },
                          @{
-                             @"text":@"商务大床房",
+                             @"text":@"豪华房",
                              @"level":@"0",
                              @"submodels":@[
                                      @{
-                                         @"text":@"德州市",
+                                         @"text":@"优惠券",
                                          @"level":@"1",
                                          },
                                      @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
-                                         }
-                                     ]
-                             },
-                         @{
-                             @"text":@"特价房",
-                             @"level":@"0",
-                             @"submodels":@[
-                                     @{
-                                         @"text":@"德州市",
+                                         @"text":@"网客价",
                                          @"level":@"1",
-                                         },
-                                     @{
-                                         @"text":@"烟台市",
-                                         @"level":@"1"
                                          }
                                      ]
                              },
-
                          ];
     
     self.data = [NSMutableArray new];

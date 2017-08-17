@@ -60,26 +60,17 @@
     [bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(260, 10, 0, 10)];
     
     
-    
-    UIView *thumbBgView = [[UIView alloc] initWithFrame:CGRectZero];
-    thumbBgView.backgroundColor = [UIColor lightGrayColor];
-    [bgView addSubview:thumbBgView];
-    
-    [thumbBgView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
-    [thumbBgView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:8];
-    [thumbBgView autoSetDimensionsToSize:CGSizeMake(110, 94)];
-    
-    _thumbImgV = [UIImageView new];
-    _thumbImgV.contentMode = UIViewContentModeScaleAspectFill;
-    _thumbImgV.image = [UIImage imageNamed:@"activity02"];
-    _thumbImgV.clipsToBounds = YES;
-    [thumbBgView addSubview:_thumbImgV];
-    
+    // header
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:16];
     _titleLabel.textColor = [UIColor darkTextColor];
     _titleLabel.text = @"优客酒店北京朝阳区双桥东路店";
     [bgView addSubview:_titleLabel];
+    
+    _thumbImgV = [[UIImageView alloc] initWithImage:kImage(@"detail_brand_iciphone")];
+    _thumbImgV.contentMode = UIViewContentModeScaleAspectFill;
+    _thumbImgV.clipsToBounds = YES;
+    [self addSubview:_thumbImgV];
     
     _scoreLabel = [UILabel new];
     _scoreLabel.font = [UIFont systemFontOfSize:10];
@@ -116,11 +107,13 @@
 
 - (void)updateConstraints {
     
-    [_thumbImgV autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(3, 3, 3, 3)];
+    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
+    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+    CGSize size =[_titleLabel.text sizeWithAttributes:@{NSFontAttributeName:_titleLabel.font}];
+    [_titleLabel autoSetDimension:ALDimensionWidth toSize:size.width];
     
-    [_titleLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_thumbImgV withOffset:7.5];
-    [_titleLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_thumbImgV];
-    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
+    [_thumbImgV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
+    [_thumbImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:5];
     
     [_scoreLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
     [_scoreLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel];

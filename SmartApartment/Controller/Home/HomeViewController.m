@@ -168,6 +168,15 @@
             [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];
         }
             break;
+        case HotelSelectBtnTypeLocate: {
+            [SVProgressHUD show];
+            [[LocationManager shareManager] startLocate:^(NSDictionary *addressDic) {
+               
+                
+                [SVProgressHUD dismiss];
+            }];
+        }
+            break;
         case HotelSelectBtnTypeLiveDate:
         case HotelSelectBtnTypeLeaveDate: {
             CalendarViewController *vc = [CalendarViewController new];

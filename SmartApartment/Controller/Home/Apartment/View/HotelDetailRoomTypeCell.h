@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "HomeEnum.h"
 
+@protocol HotelDetailRoomTypeCellDelegate <NSObject>
+
+- (void)hotelDetailRoomTypeCellDidClickBtn;
+@end
+
+
 @interface HotelDetailRoomTypeCell : UITableViewCell
+
+@property (nonatomic, assign) id<HotelDetailRoomTypeCellDelegate> delegate;
 
 @end

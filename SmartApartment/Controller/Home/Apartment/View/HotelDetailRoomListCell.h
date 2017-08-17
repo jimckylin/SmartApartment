@@ -10,4 +10,6 @@
 
 @interface HotelDetailRoomListCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *roomPriceDic;
+
 @end

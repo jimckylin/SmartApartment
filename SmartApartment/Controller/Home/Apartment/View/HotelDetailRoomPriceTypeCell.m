@@ -7,12 +7,13 @@
 //
 
 #import "HotelDetailRoomPriceTypeCell.h"
-
+#import <BAButton/BAButton.h>
 
 @interface HotelDetailRoomPriceTypeCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIImageView *flagImgV;
+@property (nonatomic, strong) UIButton *questionBtn;
+@property (nonatomic, strong) UIButton *bookBtn;
 @property (nonatomic, strong) UILabel *scoreLabel;
 
 @property (nonatomic, strong) UILabel *tagLabel;
@@ -47,22 +48,33 @@
     
     
     UIView *bgView = [UIView new];
-    bgView.backgroundColor = [UIColor lightGrayColor];
+    bgView.backgroundColor = [UIColor colorWithHexString:@"#EAEEF1"];
     [self addSubview:bgView];
     [bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
     
     
     _titleLabel = [UILabel new];
-    _titleLabel.font = [UIFont systemFontOfSize:12];
-    _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"金卡价";
+    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.textColor = [UIColor grayColor];
+    _titleLabel.text = @"网客价";
     [bgView addSubview:_titleLabel];
     
-    _flagImgV = [UIImageView new];
-    _flagImgV.contentMode = UIViewContentModeScaleAspectFill;
-    _flagImgV.image = [UIImage imageNamed:@"detail_vip_goldiphone"];
-    [bgView addSubview:_flagImgV];
+    
+    _questionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_questionBtn setImage:kImage(@"xq_wenhaoiphone") forState:UIControlStateNormal];
+    [_questionBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _questionBtn.tag = HotelRoomListBtnTypeQustion;
+    [bgView addSubview:_questionBtn];
 
+    _bookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _bookBtn.backgroundColor = [UIColor redColor];
+    [_bookBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_bookBtn setTitle:@"预订" forState:UIControlStateNormal];
+    [_bookBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_bookBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    _bookBtn.layer.cornerRadius = 4;
+    _bookBtn.tag = HotelRoomListBtnTypeBook;
+    [bgView addSubview:_bookBtn];
     
 //    _scoreLabel = [UILabel new];
 //    _scoreLabel.font = [UIFont systemFontOfSize:10];
@@ -93,15 +105,29 @@
 }
 
 
+#pragma mark - UIButton Action 
+
+- (void)btnClick:(UIButton *)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickBtn:)]) {
+        [self.delegate hotelDetailRoomPriceTypeCellDidClickBtn:sender.tag];
+    }
+}
+
+
 - (void)updateConstraints {
     
-    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
+    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:25];
     [_titleLabel autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
-    [_titleLabel autoSetDimension:ALDimensionWidth toSize:80];
+    [_titleLabel autoSetDimension:ALDimensionWidth toSize:50];
     
-    [_flagImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
-    [_flagImgV autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel];
-    [_flagImgV autoSetDimensionsToSize:CGSizeMake(23, 15)];
+    [_questionBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel];
+    [_questionBtn autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+    [_questionBtn autoSetDimensionsToSize:CGSizeMake(30, 30)];
+    
+    [_bookBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16];
+    [_bookBtn autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+    [_bookBtn autoSetDimensionsToSize:CGSizeMake(40, 29)];
     
 //    [_scoreLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
 //    [_scoreLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel];
@@ -117,7 +143,7 @@
 //    [_remainLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_flagImgV];
 //    [_remainLabel autoSetDimensionsToSize:CGSizeMake(120, 20)];
     
-    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
+    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:68];
     [_priceLabel autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 20)];
     

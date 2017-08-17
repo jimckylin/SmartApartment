@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BAButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,37 +57,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0894164F359F5B9CEDAEA270FDC3EF4B</key>
+		<key>18D024A4AD871EB2E33830CBE36461A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>370B4F997BD51548E3532C2A9353B6E6</key>
+		<key>2E405E229D1E3CB69E7DFA12273CBDF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65BED149043A8CD95A6A5331982A892B</key>
+		<key>8F7AB24C567B855FBEFCF0CC0B16BDD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9650B5ADCE86F1A055FAFC635284BDB5</key>
+		<key>904F4F27FD314010A3812EB2A9306183</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD2F61FE6A92FD5BE7E96132BE66640C</key>
+		<key>9D95B5161C827E941A7212B7FA4D3A64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B986C0E05D0774A77DD210749F81FF09</key>
+		<key>DB9D0C04A6C130DE23D897C27A6E265A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8E0E51DE3B208D1B504BB9A4FBA867B</key>
+		<key>DF16294958183152A25CF08F05FDCEBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED95FD07FA86E1A1954F62B9B9C9F2F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
