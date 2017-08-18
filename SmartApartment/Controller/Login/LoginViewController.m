@@ -8,16 +8,16 @@
 
 #import "LoginViewController.h"
 
-#import "CZDLoginView.h"
+#import "LoginView.h"
 
 #import "CZDWebViewFactory.h"
-#import "CZDLoginViewModel.h"
+#import "LoginViewModel.h"
 
 
 @interface LoginViewController ()<CZDLoginViewDelegate>
 
-@property (nonatomic, strong) CZDLoginView           *loginView;
-@property (nonatomic, strong) CZDLoginViewModel      *viewModel;
+@property (nonatomic, strong) LoginView           *loginView;
+@property (nonatomic, strong) LoginViewModel      *viewModel;
 
 @end
 
@@ -37,7 +37,7 @@
 }
 
 - (void)initData {
-    _viewModel = [CZDLoginViewModel new];
+    _viewModel = [LoginViewModel new];
 }
 
 - (void)initUI {
@@ -46,7 +46,7 @@
     _naviLabel.text = @"登录";
     //[self.customNavItem.leftBarButtonItem]
     
-    _loginView = [[CZDLoginView alloc] init];
+    _loginView = [[LoginView alloc] init];
     _loginView.userInfo = _userInfo;
     _loginView.delegate = self;
     [self.view addSubview:_loginView];

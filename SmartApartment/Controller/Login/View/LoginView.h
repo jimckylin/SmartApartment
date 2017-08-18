@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, CZDLoginAction) {
 @end
 
 
-@interface CZDLoginView : UIView
+@interface LoginView : UIView
 
 @property (nonatomic, weak) id<CZDLoginViewDelegate> delegate;
 @property (nonatomic, strong) NSDictionary *userInfo;

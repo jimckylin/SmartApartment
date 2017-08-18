@@ -6,12 +6,12 @@
 //  Copyright © 2017年 CheWeiGuanJia. All rights reserved.
 //
 
-#import "CZDLoginViewModel.h"
-#import "CZDLoginView.h"
+#import "LoginViewModel.h"
+#import "LoginView.h"
 #import "MBProgressHUD+CWGJ.h"
 
 
-@interface CZDLoginViewModel ()
+@interface LoginViewModel ()
 
 
 @property (nonatomic, copy) void(^verifyCodeRequestComplete)(void);
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation CZDLoginViewModel
+@implementation LoginViewModel
 
 - (void)requestVerifyCode:(NSString *)phone type:(int)type complete:(void (^)(void))complete {
     

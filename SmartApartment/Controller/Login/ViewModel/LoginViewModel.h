@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class CZDLoginView;
+@class LoginView;
 
-@interface CZDLoginViewModel : UIView
+@interface LoginViewModel : UIView
 
-@property (nonatomic, weak) CZDLoginView *loginView;
+@property (nonatomic, weak) LoginView *loginView;
 
 // 获取验证码 type: app 4  微信 7
 - (void)requestVerifyCode:(NSString *)phone type:(int)type complete:(void(^)(void))complete;

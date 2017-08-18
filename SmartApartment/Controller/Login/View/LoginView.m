@@ -6,14 +6,14 @@
 //  Copyright © 2017年 CheWeiGuanJia. All rights reserved.
 //
 
-#import "CZDLoginView.h"
+#import "LoginView.h"
 
 #import "UITextField+PhoneTextField.h"
 #import "UITextField+VerifyNoteTextField.h"
 #import "UIButton+countDown.h"
 #import "UIImage+Categories.h"
 
-@interface CZDLoginView ()<UITextFieldDelegate,
+@interface LoginView ()<UITextFieldDelegate,
                            PhoneTextFieldDelegate,
                            VerifyNoteTextFieldDelegate>
 
@@ -40,7 +40,7 @@
 @end
 
 
-@implementation CZDLoginView
+@implementation LoginView
 
 - (instancetype)init {
     

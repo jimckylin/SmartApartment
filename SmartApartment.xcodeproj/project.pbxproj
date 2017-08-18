@@ -68,11 +68,11 @@
 		A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63FB1F46815A00F78A7E /* HotelDetailCommentCell.m */; };
 		A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */; };
 		A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64011F468DD200F78A7E /* LoginViewController.m */; };
-		A95D64061F468DE500F78A7E /* CZDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64051F468DE500F78A7E /* CZDLoginView.m */; };
+		A95D64061F468DE500F78A7E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64051F468DE500F78A7E /* LoginView.m */; };
 		A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D640B1F468E0400F78A7E /* CZDWebViewController.m */; };
 		A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D640F1F468E0400F78A7E /* CZDWebViewFactory.m */; };
 		A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64111F468E0400F78A7E /* CZDWebViewModel.m */; };
-		A95D64191F4692E300F78A7E /* CZDLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */; };
+		A95D64191F4692E300F78A7E /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64181F4692E300F78A7E /* LoginViewModel.m */; };
 		A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */; };
 		A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D641E1F4693C000F78A7E /* MBProgressHUD+CWGJ.m */; };
 		A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64211F46946800F78A7E /* UIViewController+CWGJ.m */; };
@@ -239,16 +239,16 @@
 		A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailMoreCommentCell.m; sourceTree = "<group>"; };
 		A95D64001F468DD200F78A7E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A95D64011F468DD200F78A7E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		A95D64041F468DE500F78A7E /* CZDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDLoginView.h; sourceTree = "<group>"; };
-		A95D64051F468DE500F78A7E /* CZDLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDLoginView.m; sourceTree = "<group>"; };
+		A95D64041F468DE500F78A7E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		A95D64051F468DE500F78A7E /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		A95D640A1F468E0400F78A7E /* CZDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewController.h; sourceTree = "<group>"; };
 		A95D640B1F468E0400F78A7E /* CZDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewController.m; sourceTree = "<group>"; };
 		A95D640E1F468E0400F78A7E /* CZDWebViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewFactory.h; sourceTree = "<group>"; };
 		A95D640F1F468E0400F78A7E /* CZDWebViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewFactory.m; sourceTree = "<group>"; };
 		A95D64101F468E0400F78A7E /* CZDWebViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewModel.h; sourceTree = "<group>"; };
 		A95D64111F468E0400F78A7E /* CZDWebViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewModel.m; sourceTree = "<group>"; };
-		A95D64171F4692E300F78A7E /* CZDLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDLoginViewModel.h; sourceTree = "<group>"; };
-		A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDLoginViewModel.m; sourceTree = "<group>"; };
+		A95D64171F4692E300F78A7E /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		A95D64181F4692E300F78A7E /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		A95D641A1F4693B300F78A7E /* MBProgressHUD+gjMB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+gjMB.h"; sourceTree = "<group>"; };
 		A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+gjMB.m"; sourceTree = "<group>"; };
 		A95D641D1F4693C000F78A7E /* MBProgressHUD+CWGJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CWGJ.h"; sourceTree = "<group>"; };
@@ -528,8 +528,8 @@
 		A95D64031F468DE500F78A7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A95D64041F468DE500F78A7E /* CZDLoginView.h */,
-				A95D64051F468DE500F78A7E /* CZDLoginView.m */,
+				A95D64041F468DE500F78A7E /* LoginView.h */,
+				A95D64051F468DE500F78A7E /* LoginView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -566,8 +566,8 @@
 		A95D64161F4692E300F78A7E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A95D64171F4692E300F78A7E /* CZDLoginViewModel.h */,
-				A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */,
+				A95D64171F4692E300F78A7E /* LoginViewModel.h */,
+				A95D64181F4692E300F78A7E /* LoginViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1123,7 +1123,7 @@
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
-				A95D64191F4692E300F78A7E /* CZDLoginViewModel.m in Sources */,
+				A95D64191F4692E300F78A7E /* LoginViewModel.m in Sources */,
 				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
@@ -1179,7 +1179,7 @@
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
-				A95D64061F468DE500F78A7E /* CZDLoginView.m in Sources */,
+				A95D64061F468DE500F78A7E /* LoginView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
