@@ -12,7 +12,6 @@
 #import "UITextField+VerifyNoteTextField.h"
 #import "UIButton+countDown.h"
 #import "UIImage+Categories.h"
-#import "MBProgressHUD+CWGJ.h"
 
 @interface CZDLoginView ()<UITextFieldDelegate,
                            PhoneTextFieldDelegate,

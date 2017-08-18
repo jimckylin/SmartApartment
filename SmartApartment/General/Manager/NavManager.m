@@ -44,6 +44,15 @@
 
 - (void)setLoginRootController {
     
+    UIViewController *vc = [LoginViewController new];
+    [self setRootController:vc];
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    window.rootViewController = [self rootNavigationController];
+}
+
+- (void)setHomeRootController {
+    
     UIViewController *vc = [RootTabBarController new];
     [self setRootController:vc];
     

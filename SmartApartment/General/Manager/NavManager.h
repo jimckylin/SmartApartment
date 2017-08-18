@@ -19,6 +19,7 @@
 - (void)goToMainVC;
 
 - (void)setLoginRootController;
+- (void)setHomeRootController;
 - (void)setRootController:(UIViewController*)controller;
 
 - (void)showViewController:(UIViewController*)controller isAnimated:(BOOL)isAnimated;     //默认使用ControllerShowModePush

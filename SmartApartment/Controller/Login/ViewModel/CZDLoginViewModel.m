@@ -38,8 +38,12 @@
 
 - (void)requestLoginWithPhone:(NSString *)phone verifyCode:(NSString *)code {
     
-    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@"登录中..."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [MBProgressHUD cwgj_hideHUD];
+        [[NavManager shareInstance] setHomeRootController];
+    });
 }
 
 - (void)requestWeChatLoginWithPhone:(NSDictionary *)param {

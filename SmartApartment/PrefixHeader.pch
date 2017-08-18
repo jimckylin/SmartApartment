@@ -15,7 +15,7 @@
 #import "UIView+Size.h"
 #import "UIButton+AYActionBlock.h"
 #import "SVProgressHUD.h"
-
+#import "MBProgressHUD+CWGJ.h"
 #import "ParentViewController.h"
 
 

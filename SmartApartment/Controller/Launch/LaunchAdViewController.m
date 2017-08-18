@@ -79,9 +79,9 @@
     }
     
     if (/* is login */ (YES)) {
-        [[NavManager shareInstance] setLoginRootController];
+        [[NavManager shareInstance] setHomeRootController];
     }else {
-        [[NavManager shareInstance] showViewController:[LoginViewController new] isAnimated:NO];
+        [[NavManager shareInstance] setLoginRootController];
     }
     
     
