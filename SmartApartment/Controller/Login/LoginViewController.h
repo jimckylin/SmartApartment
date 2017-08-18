@@ -1,13 +1,15 @@
 //
-//  LoginViewController.h
-//  SmartApartment
+//  CZDLoginViewController.h
+//  CWGJCarOwner
 //
-//  Created by Jimcky Lin on 2017/8/6.
-//  Copyright © 2017年 Jimcky Lin. All rights reserved.
+//  Created by jimcky on 2017/7/18.
+//  Copyright © 2017年 CheWeiGuanJia. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : ParentViewController
+
+@property (nonatomic, strong) NSDictionary *userInfo;
 
 @end

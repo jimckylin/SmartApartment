@@ -14,5 +14,7 @@ target 'SmartApartment' do
   pod 'YZHeaderScaleImage',    '~> 1.0.1'
   pod 'SVProgressHUD',         '~> 2.1.2'
   pod 'BAButton',              '~> 2.5.9'
+  pod 'WebViewJavascriptBridge', '~> 6.0.2'
+  pod 'MBProgressHUD',         '~> 1.0.0'
   
 end

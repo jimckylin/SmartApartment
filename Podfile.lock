@@ -1,6 +1,7 @@
 PODS:
   - BAButton (2.5.9)
   - IQKeyboardManager (4.0.11)
+  - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - PureLayout (3.0.2)
   - SDCycleScrollView (1.73):
@@ -9,27 +10,32 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.1.2)
+  - WebViewJavascriptBridge (6.0.2)
   - YZHeaderScaleImage (1.0.1)
 
 DEPENDENCIES:
   - BAButton (~> 2.5.9)
   - IQKeyboardManager (~> 4.0.9)
+  - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.66)
   - SVProgressHUD (~> 2.1.2)
+  - WebViewJavascriptBridge (~> 6.0.2)
   - YZHeaderScaleImage (~> 1.0.1)
 
 SPEC CHECKSUMS:
   BAButton: 60fc8d016fad9e2eb20c3b4c4af84313c05fca12
   IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: a005a7c5fd962f83dd94c5edf0edabd278caa463
+PODFILE CHECKSUM: f734363c55bdf8805bcc573d4dab94fa9ee8554d
 
 COCOAPODS: 1.2.1

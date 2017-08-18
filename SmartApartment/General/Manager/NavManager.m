@@ -8,6 +8,7 @@
 
 #import "NavManager.h"
 #import "RootTabBarController.h"
+#import "LoginViewController.h"
 #import "AppDelegate.h"
 
 @interface NavManager ()
@@ -74,12 +75,22 @@
 }
 
 - (void)returnToLoginView:(BOOL)isAnimated {
+    
+    __block BOOL exsitLoginVC;
     [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){
         if ([vc isKindOfClass:NSClassFromString(@"LoginViewController")]) {
             [[self rootNavigationController] popToViewController:vc animated:isAnimated];
+            exsitLoginVC = YES;
             *stop = YES;
         }
     }];
+    if (!exsitLoginVC) {
+        LoginViewController *vc = [LoginViewController new];
+        [self setRootController:vc];
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = [self rootNavigationController];
+    }
 }
 
 - (void)returnToMainView:(BOOL)isAnimated {

@@ -63,6 +63,23 @@
 		A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FEA1F3AC7FF0046E150 /* ZYMonthView.m */; };
 		A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FEC1F3AC7FF0046E150 /* ZYWeekView.m */; };
 		A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FFA1F3AC8860046E150 /* CalendarViewController.m */; };
+		A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63F51F46812600F78A7E /* HotelDetailCommentHeaderCell.m */; };
+		A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63F81F46813F00F78A7E /* HotelDetailNoCommentCellCell.m */; };
+		A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63FB1F46815A00F78A7E /* HotelDetailCommentCell.m */; };
+		A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */; };
+		A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64011F468DD200F78A7E /* LoginViewController.m */; };
+		A95D64061F468DE500F78A7E /* CZDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64051F468DE500F78A7E /* CZDLoginView.m */; };
+		A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D640B1F468E0400F78A7E /* CZDWebViewController.m */; };
+		A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D640F1F468E0400F78A7E /* CZDWebViewFactory.m */; };
+		A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64111F468E0400F78A7E /* CZDWebViewModel.m */; };
+		A95D64191F4692E300F78A7E /* CZDLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */; };
+		A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */; };
+		A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D641E1F4693C000F78A7E /* MBProgressHUD+CWGJ.m */; };
+		A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64211F46946800F78A7E /* UIViewController+CWGJ.m */; };
+		A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64241F46977F00F78A7E /* UITextField+PhoneTextField.m */; };
+		A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64271F46978F00F78A7E /* UITextField+VerifyNoteTextField.m */; };
+		A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642A1F46979D00F78A7E /* UIButton+countDown.m */; };
+		A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642D1F46985C00F78A7E /* UIImage+Categories.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -108,7 +125,6 @@
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
 		A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAC1F3712A5005F9DBB /* LaunchScreen.storyboard */; };
-		A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */; };
 		A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8ED61F37275B005F9DBB /* HomeViewController.m */; };
 		A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EDA1F3751F7005F9DBB /* LaunchAdViewController.m */; };
 		A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8EDE1F375245005F9DBB /* LaunchAdView.m */; };
@@ -213,6 +229,40 @@
 		A95B3FEC1F3AC7FF0046E150 /* ZYWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYWeekView.m; sourceTree = "<group>"; };
 		A95B3FF91F3AC8860046E150 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		A95B3FFA1F3AC8860046E150 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		A95D63F41F46812600F78A7E /* HotelDetailCommentHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailCommentHeaderCell.h; sourceTree = "<group>"; };
+		A95D63F51F46812600F78A7E /* HotelDetailCommentHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailCommentHeaderCell.m; sourceTree = "<group>"; };
+		A95D63F71F46813F00F78A7E /* HotelDetailNoCommentCellCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailNoCommentCellCell.h; sourceTree = "<group>"; };
+		A95D63F81F46813F00F78A7E /* HotelDetailNoCommentCellCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailNoCommentCellCell.m; sourceTree = "<group>"; };
+		A95D63FA1F46815A00F78A7E /* HotelDetailCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailCommentCell.h; sourceTree = "<group>"; };
+		A95D63FB1F46815A00F78A7E /* HotelDetailCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailCommentCell.m; sourceTree = "<group>"; };
+		A95D63FD1F46889B00F78A7E /* HotelDetailMoreCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailMoreCommentCell.h; sourceTree = "<group>"; };
+		A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailMoreCommentCell.m; sourceTree = "<group>"; };
+		A95D64001F468DD200F78A7E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A95D64011F468DD200F78A7E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A95D64041F468DE500F78A7E /* CZDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDLoginView.h; sourceTree = "<group>"; };
+		A95D64051F468DE500F78A7E /* CZDLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDLoginView.m; sourceTree = "<group>"; };
+		A95D640A1F468E0400F78A7E /* CZDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewController.h; sourceTree = "<group>"; };
+		A95D640B1F468E0400F78A7E /* CZDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewController.m; sourceTree = "<group>"; };
+		A95D640E1F468E0400F78A7E /* CZDWebViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewFactory.h; sourceTree = "<group>"; };
+		A95D640F1F468E0400F78A7E /* CZDWebViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewFactory.m; sourceTree = "<group>"; };
+		A95D64101F468E0400F78A7E /* CZDWebViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDWebViewModel.h; sourceTree = "<group>"; };
+		A95D64111F468E0400F78A7E /* CZDWebViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDWebViewModel.m; sourceTree = "<group>"; };
+		A95D64171F4692E300F78A7E /* CZDLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZDLoginViewModel.h; sourceTree = "<group>"; };
+		A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZDLoginViewModel.m; sourceTree = "<group>"; };
+		A95D641A1F4693B300F78A7E /* MBProgressHUD+gjMB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+gjMB.h"; sourceTree = "<group>"; };
+		A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+gjMB.m"; sourceTree = "<group>"; };
+		A95D641D1F4693C000F78A7E /* MBProgressHUD+CWGJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CWGJ.h"; sourceTree = "<group>"; };
+		A95D641E1F4693C000F78A7E /* MBProgressHUD+CWGJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CWGJ.m"; sourceTree = "<group>"; };
+		A95D64201F46946800F78A7E /* UIViewController+CWGJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWGJ.h"; sourceTree = "<group>"; };
+		A95D64211F46946800F78A7E /* UIViewController+CWGJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWGJ.m"; sourceTree = "<group>"; };
+		A95D64231F46977F00F78A7E /* UITextField+PhoneTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+PhoneTextField.h"; sourceTree = "<group>"; };
+		A95D64241F46977F00F78A7E /* UITextField+PhoneTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PhoneTextField.m"; sourceTree = "<group>"; };
+		A95D64261F46978F00F78A7E /* UITextField+VerifyNoteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+VerifyNoteTextField.h"; sourceTree = "<group>"; };
+		A95D64271F46978F00F78A7E /* UITextField+VerifyNoteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+VerifyNoteTextField.m"; sourceTree = "<group>"; };
+		A95D64291F46979D00F78A7E /* UIButton+countDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+countDown.h"; sourceTree = "<group>"; };
+		A95D642A1F46979D00F78A7E /* UIButton+countDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+countDown.m"; sourceTree = "<group>"; };
+		A95D642C1F46985C00F78A7E /* UIImage+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Categories.h"; sourceTree = "<group>"; };
+		A95D642D1F46985C00F78A7E /* UIImage+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Categories.m"; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -289,8 +339,6 @@
 		A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9AA8EAD1F3712A5005F9DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9AA8EAF1F3712A5005F9DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9AA8ED11F3726EC005F9DBB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A9AA8ED51F37275B005F9DBB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		A9AA8ED61F37275B005F9DBB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		A9AA8ED91F3751F7005F9DBB /* LaunchAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdViewController.h; sourceTree = "<group>"; };
@@ -477,9 +525,70 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		A95D64031F468DE500F78A7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A95D64041F468DE500F78A7E /* CZDLoginView.h */,
+				A95D64051F468DE500F78A7E /* CZDLoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95D64071F468E0400F78A7E /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A95D640A1F468E0400F78A7E /* CZDWebViewController.h */,
+				A95D640B1F468E0400F78A7E /* CZDWebViewController.m */,
+				A95D640C1F468E0400F78A7E /* View */,
+				A95D640D1F468E0400F78A7E /* ViewModel */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		A95D640C1F468E0400F78A7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95D640D1F468E0400F78A7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A95D640E1F468E0400F78A7E /* CZDWebViewFactory.h */,
+				A95D640F1F468E0400F78A7E /* CZDWebViewFactory.m */,
+				A95D64101F468E0400F78A7E /* CZDWebViewModel.h */,
+				A95D64111F468E0400F78A7E /* CZDWebViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A95D64161F4692E300F78A7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A95D64171F4692E300F78A7E /* CZDLoginViewModel.h */,
+				A95D64181F4692E300F78A7E /* CZDLoginViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A95D642C1F46985C00F78A7E /* UIImage+Categories.h */,
+				A95D642D1F46985C00F78A7E /* UIImage+Categories.m */,
+				A95D64291F46979D00F78A7E /* UIButton+countDown.h */,
+				A95D642A1F46979D00F78A7E /* UIButton+countDown.m */,
+				A95D64261F46978F00F78A7E /* UITextField+VerifyNoteTextField.h */,
+				A95D64271F46978F00F78A7E /* UITextField+VerifyNoteTextField.m */,
+				A95D64231F46977F00F78A7E /* UITextField+PhoneTextField.h */,
+				A95D64241F46977F00F78A7E /* UITextField+PhoneTextField.m */,
+				A95D64201F46946800F78A7E /* UIViewController+CWGJ.h */,
+				A95D64211F46946800F78A7E /* UIViewController+CWGJ.m */,
+				A95D641D1F4693C000F78A7E /* MBProgressHUD+CWGJ.h */,
+				A95D641E1F4693C000F78A7E /* MBProgressHUD+CWGJ.m */,
+				A95D641A1F4693B300F78A7E /* MBProgressHUD+gjMB.h */,
+				A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */,
 				A95B3FBC1F3962BA0046E150 /* NSDate+Utilities.h */,
 				A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */,
 				A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */,
@@ -528,6 +637,14 @@
 				A97677AC1F433D2700EDCDFA /* HotelDetailRoomListCell.m */,
 				A955E9CF1F45735500FEB05F /* HotelDetailMoreCell.h */,
 				A955E9D01F45735500FEB05F /* HotelDetailMoreCell.m */,
+				A95D63F41F46812600F78A7E /* HotelDetailCommentHeaderCell.h */,
+				A95D63F51F46812600F78A7E /* HotelDetailCommentHeaderCell.m */,
+				A95D63FA1F46815A00F78A7E /* HotelDetailCommentCell.h */,
+				A95D63FB1F46815A00F78A7E /* HotelDetailCommentCell.m */,
+				A95D63F71F46813F00F78A7E /* HotelDetailNoCommentCellCell.h */,
+				A95D63F81F46813F00F78A7E /* HotelDetailNoCommentCellCell.m */,
+				A95D63FD1F46889B00F78A7E /* HotelDetailMoreCommentCell.h */,
+				A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */,
 				A97677AE1F43433B00EDCDFA /* BlankCell.h */,
 				A97677AF1F43433B00EDCDFA /* BlankCell.m */,
 			);
@@ -650,6 +767,7 @@
 		A9AA8EB61F371964005F9DBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A95D64071F468E0400F78A7E /* Web */,
 				A95B3FF81F3AC87A0046E150 /* Calendar */,
 				A9AA8F0C1F38C309005F9DBB /* Activity */,
 				A9AA8F0A1F38C2F0005F9DBB /* TripHepler */,
@@ -672,8 +790,10 @@
 		A9AA8ED01F3726C8005F9DBB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A9AA8ED11F3726EC005F9DBB /* LoginViewController.h */,
-				A9AA8ED21F3726EC005F9DBB /* LoginViewController.m */,
+				A95D64161F4692E300F78A7E /* ViewModel */,
+				A95D64031F468DE500F78A7E /* View */,
+				A95D64001F468DD200F78A7E /* LoginViewController.h */,
+				A95D64011F468DD200F78A7E /* LoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -986,6 +1106,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */,
+				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
 				A9BA5DF31F4614C70093A50D /* BookHotelViewController.m in Sources */,
@@ -994,17 +1116,25 @@
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
+				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
+				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
+				A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */,
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
+				A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
+				A95D64191F4692E300F78A7E /* CZDLoginViewModel.m in Sources */,
+				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
+				A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */,
 				A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */,
 				A955E9CE1F45697E00FEB05F /* HotelDetailDateView.m in Sources */,
 				A95286151F441E9C00D7EB2F /* LocationManager.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A97677AA1F433CEB00EDCDFA /* HotelDetailMapCell.m in Sources */,
+				A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */,
 				A95286121F43FA6B00D7EB2F /* MapViewController.m in Sources */,
 				A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
@@ -1021,29 +1151,35 @@
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A955E9C41F454B4300FEB05F /* HotelDetailRoomPriceTypeCell.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
+				A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */,
 				A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
-				A9AA8ED31F3726EC005F9DBB /* LoginViewController.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
+				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
+				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
+				A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */,
+				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
+				A95D64061F468DE500F78A7E /* CZDLoginView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

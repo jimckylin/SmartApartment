@@ -1,14 +1,23 @@
 //
-//  LoginViewController.m
-//  SmartApartment
+//  CZDLoginViewController.m
+//  CWGJCarOwner
 //
-//  Created by Jimcky Lin on 2017/8/6.
-//  Copyright © 2017年 Jimcky Lin. All rights reserved.
+//  Created by jimcky on 2017/7/18.
+//  Copyright © 2017年 CheWeiGuanJia. All rights reserved.
 //
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
+#import "CZDLoginView.h"
+
+#import "CZDWebViewFactory.h"
+#import "CZDLoginViewModel.h"
+
+
+@interface LoginViewController ()<CZDLoginViewDelegate>
+
+@property (nonatomic, strong) CZDLoginView           *loginView;
+@property (nonatomic, strong) CZDLoginViewModel      *viewModel;
 
 @end
 
@@ -16,22 +25,105 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self initData];
+    [self initUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    [_loginView phoneTextFieldBecomeFirstResponse];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initData {
+    _viewModel = [CZDLoginViewModel new];
 }
-*/
+
+- (void)initUI {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    _naviLabel.text = @"登录";
+    //[self.customNavItem.leftBarButtonItem]
+    
+    _loginView = [[CZDLoginView alloc] init];
+    _loginView.userInfo = _userInfo;
+    _loginView.delegate = self;
+    [self.view addSubview:_loginView];
+}
+
+
+#pragma mark - CZDLoginViewDelegate
+
+- (void)loginViewDidClickBtnAction:(CZDLoginAction)action param:(NSDictionary *)param {
+    
+    NSString *phone = param[@"paramPhone"];
+    NSString *code  = param[@"paramCode"];
+    
+    switch (action) {
+        case CZDLoginActionVerifyCodeSend: {
+            __WeakObj(_loginView);
+            [_viewModel requestVerifyCode:phone type:4 complete:^{
+                [_loginViewWeak startCountDown];
+            }];
+        }
+
+            break;
+        case CZDLoginActionVoiceVerifyCodeSend:{
+            __WeakObj(self)
+            [_viewModel requestVoiceVerifyCode:phone type:4 complete:^{
+                
+                
+            }];
+        }
+            
+            break;
+        case CZDLoginActionLogin: {
+            [_viewModel requestLoginWithPhone:phone verifyCode:code];
+        }
+            break;
+            
+        case CZDLoginActionWXOAuthVerifyCodeSend: {
+            __WeakObj(_loginView);
+            [_viewModel requestVerifyCode:phone type:7 complete:^{
+                
+                [_loginViewWeak startCountDown];
+            }];
+        }
+            
+            break;
+        case CZDLoginActionWXOAuthVoiceVerifyCodeSend:{
+            __WeakObj(self)
+            [_viewModel requestVoiceVerifyCode:phone type:7 complete:^{
+                
+                
+            }];
+        }
+            
+            break;
+        case CZDLoginActionWXOAuthLogin: {
+            NSDictionary *param = @{@"telephone":phone,
+                                    @"smscode":code,
+                                    @"openid":self.userInfo[@"openid"],
+                                    @"unionid":self.userInfo[@"unionid"],
+                                    @"service_id":@3
+                                    };
+            [_viewModel requestWeChatLoginWithPhone:param];
+        }
+            break;
+            
+        case CZDLoginActionProtocol: {
+            CZDWebViewController *vc = [CZDWebViewFactory getWebVcWithType:CZDWebTypeRegisterAgreement];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
 
 @end

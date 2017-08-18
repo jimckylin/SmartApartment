@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WebViewJavascriptBridge.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YZHeaderScaleImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,12 +72,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E405E229D1E3CB69E7DFA12273CBDF6</key>
+		<key>2D492C42EA6C69241FD7546F3FEC0FA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F7AB24C567B855FBEFCF0CC0B16BDD0</key>
+		<key>4043CC08E5A5FC6372BC38FBA765BF30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A0C58CF4DBF57128449520B95C52FCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D95B5161C827E941A7212B7FA4D3A64</key>
+		<key>9651A0F5E02B33CE75CA1E89541ACB19</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB9D0C04A6C130DE23D897C27A6E265A</key>
+		<key>B536BB23FB94CD59842080FA322B7A37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF16294958183152A25CF08F05FDCEBB</key>
+		<key>BE05B737E6A828EDCAD1E2DF8140D89E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED95FD07FA86E1A1954F62B9B9C9F2F2</key>
+		<key>E6AA9A2FE8B87E99F6A8C1336325867B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

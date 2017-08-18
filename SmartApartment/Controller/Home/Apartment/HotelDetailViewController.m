@@ -8,19 +8,25 @@
 
 #import "HotelDetailViewController.h"
 #import "CalendarViewController.h"
+#import "MapViewController.h"
 
 #import "HotelDetailDateView.h"
 #import "ZYCalendarManager.h"
 #import "ZZFoldCellModel.h"
-
+/* 头部 */
 #import "BlankCell.h"
 #import "HotelDetailHeaderCell.h"
 #import "HotelDetailMapCell.h"
+/* 房型 */
 #import "HotelDetailRoomTypeCell.h"
 #import "HotelDetailRoomListCell.h"
 #import "HotelDetailRoomPriceTypeCell.h"
 #import "HotelDetailMoreCell.h"
-#import "MapViewController.h"
+/* 评论 */
+#import "HotelDetailCommentHeaderCell.h"
+#import "HotelDetailCommentCell.h"
+#import "HotelDetailNoCommentCellCell.h"
+#import "HotelDetailMoreCommentCell.h"
 
 NSString *const kBlankCell = @"BlankCell";
 NSString *const kHotelDetailHeaderCell = @"HotelDetailHeaderCell";
@@ -29,6 +35,10 @@ NSString *const kHotelDetailRoomTypeCell = @"HotelDetailRoomTypeCell";
 NSString *const kHotelDetailRoomListCell = @"HotelDetailRoomListCell";
 NSString *const kHotelDetailRoomPriceTypeCell = @"HotelDetailRoomPriceTypeCell";
 NSString *const kHotelDetailMoreCell = @"HotelDetailMoreCell";
+NSString *const kHotelDetailCommentHeaderCell = @"HotelDetailCommentHeaderCell";
+NSString *const kHotelDetailCommentCell = @"HotelDetailCommentCell";
+NSString *const kHotelDetailNoCommentCellCell = @"HotelDetailNoCommentCellCell";
+NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 
 
 @interface HotelDetailViewController ()<UITableViewDelegate,
@@ -36,6 +46,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
+@property(nonatomic, strong) NSMutableArray *comments;
 //@property(nonatomic, assign) BOOL isAlldayRoomExpand; // 是否伸缩 defalut NO
 
 @end
@@ -77,6 +88,11 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
     [_tableView registerClass:[HotelDetailRoomListCell class] forCellReuseIdentifier:kHotelDetailRoomListCell];
     [_tableView registerClass:[HotelDetailRoomPriceTypeCell class] forCellReuseIdentifier:kHotelDetailRoomPriceTypeCell];
     [_tableView registerClass:[HotelDetailMoreCell class] forCellReuseIdentifier:kHotelDetailMoreCell];
+    [_tableView registerClass:[HotelDetailCommentHeaderCell class] forCellReuseIdentifier:kHotelDetailCommentHeaderCell];
+    [_tableView registerClass:[HotelDetailCommentCell class] forCellReuseIdentifier:kHotelDetailCommentCell];
+    [_tableView registerClass:[HotelDetailNoCommentCellCell class] forCellReuseIdentifier:kHotelDetailNoCommentCellCell];
+    [_tableView registerClass:[HotelDetailMoreCommentCell class] forCellReuseIdentifier:kHotelDetailMoreCommentCell];
+    
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0.01)];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
@@ -116,7 +132,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -125,6 +141,11 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
         return 1;
     }else if(section == 2) {
         return 1+self.data.count;
+    }else {
+        if (_comments.count > 0) {
+            return 3;
+        }
+        return 2;
     }
     return 0;
 }
@@ -142,6 +163,20 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
         }else {
             ZZFoldCellModel *foldCellModel = self.data[indexPath.row-1];
             return foldCellModel.level.intValue==0?65:50;
+        }
+    }else {
+        if (_comments.count > 0) {
+            if (indexPath.row == 0) {
+                return 80;
+            }else if (indexPath.row == 1){
+                return 100;
+            }
+            return 40;
+        }else {
+            if (indexPath.row == 0) {
+                return 80;
+            }
+            return 120;
         }
     }
     return 0;
@@ -182,9 +217,9 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
             };
             return cell;
         }
-    }
-    else {
         
+    }
+    else if (section == 2){
         if (row == 0) {
             HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
             cell.delegate = (id<HotelDetailRoomTypeCellDelegate>)self;
@@ -201,6 +236,24 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
                 cell.delegate = self;
                 return cell;
             }
+        }
+        
+    }else {
+        if (row == 0) {
+            HotelDetailCommentHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailCommentHeaderCell];
+            return cell;
+            
+        }else if (indexPath.row == 1) {
+            if (_comments > 0) {
+                HotelDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailCommentCell];
+                return cell;
+            }else {
+                HotelDetailNoCommentCellCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailNoCommentCellCell];
+                return cell;
+            }
+        }else {
+            HotelDetailMoreCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailMoreCommentCell];
+            return cell;
         }
     }
     
@@ -362,6 +415,40 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
         ZZFoldCellModel *foldCellModel = [ZZFoldCellModel modelWithDic:(NSDictionary *)netData[i]];
         [self.data addObject:foldCellModel];
     }
+    
+    
+    NSArray *comments = @[@{@"userid": @"1",
+                           @"name": @"Jimcky",
+                           @"avatar": @"https://www.baidu.com",
+                           @"content": @"这是评论内容",
+                           @"reply": @"这是回复内容"
+                           },
+                          @{@"userid": @"1",
+                            @"name": @"Jimcky",
+                            @"avatar": @"https://www.baidu.com",
+                            @"content": @"这是评论内容",
+                            @"reply": @"这是回复内容"
+                            },
+                          @{@"userid": @"1",
+                            @"name": @"Jimcky",
+                            @"avatar": @"https://www.baidu.com",
+                            @"content": @"这是评论内容",
+                            @"reply": @"这是回复内容"
+                            },
+                          @{@"userid": @"1",
+                            @"name": @"Jimcky",
+                            @"avatar": @"https://www.baidu.com",
+                            @"content": @"这是评论内容",
+                            @"reply": @"这是回复内容"
+                            },
+                          @{@"userid": @"1",
+                            @"name": @"Jimcky",
+                            @"avatar": @"https://www.baidu.com",
+                            @"content": @"这是评论内容",
+                            @"reply": @"这是回复内容"
+                            },];
+    _comments = [NSMutableArray new];
+    [_comments addObjectsFromArray:comments];
 }
 
 
