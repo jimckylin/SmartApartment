@@ -8,15 +8,22 @@
 
 #import "HotelDetailCommentHeaderCell.h"
 #import <BAButton/BAButton.h>
+#import "JKProgressView.h"
 
 @interface HotelDetailCommentHeaderCell ()
 
 @property (nonatomic, strong) UILabel *goodCommentRatioLabel;
 @property (nonatomic, strong) UILabel *scoreLabel;
-@property (nonatomic, strong) UIImageView *flagImgV;
-@property (nonatomic, strong) UILabel *tagLabel;
-@property (nonatomic, strong) UILabel *remainLabel;
-@property (nonatomic, strong) UILabel *priceLabel;
+
+@property (nonatomic, strong) UILabel *hygieneLabel;     // 卫生
+@property (nonatomic, strong) UILabel *serviceLabel;     // 服务
+@property (nonatomic, strong) UILabel *envirmentLabel;   // 环境
+@property (nonatomic, strong) UILabel *cpRatioLabel;     // 性价比
+
+@property (nonatomic, strong) JKProgressView *hygieneProgress;     // 卫生
+@property (nonatomic, strong) JKProgressView *serviceProgress;     // 服务
+@property (nonatomic, strong) JKProgressView *envirmentProgress;   // 环境
+@property (nonatomic, strong) JKProgressView *cpRatioProgress;     // 性价比
 
 @end
 
@@ -59,33 +66,67 @@
     _goodCommentRatioLabel.text = @"100%好评";
     [bgView addSubview:_goodCommentRatioLabel];
     
+    UIView *line = [UIView new];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [bgView addSubview:line];
+    [line autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:100];
+    [line autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+    [line autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15];
+    [line autoSetDimension:ALDimensionWidth toSize:0.5];
     
-    _flagImgV = [UIImageView new];
-    _flagImgV.contentMode = UIViewContentModeScaleAspectFill;
-    _flagImgV.image = [UIImage imageNamed:@"xq_xinyongzhuiphone"];
-    [bgView addSubview:_flagImgV];
+
+    // 评价比率
+    _hygieneLabel = [UILabel new];
+    _hygieneLabel.font = [UIFont systemFontOfSize:10];
+    _hygieneLabel.textColor = [UIColor lightGrayColor];
+    _hygieneLabel.layer.cornerRadius = 2;
+    _hygieneLabel.text = @"卫生";
+    [bgView addSubview:_hygieneLabel];
     
-    _tagLabel = [UILabel new];
-    _tagLabel.font = [UIFont systemFontOfSize:11];
-    _tagLabel.textColor = [UIColor redColor];
-    _tagLabel.layer.cornerRadius = 2;
-    _tagLabel.text = @"很安静";
-    [bgView addSubview:_tagLabel];
+    _serviceLabel = [UILabel new];
+    _serviceLabel.font = [UIFont systemFontOfSize:10];
+    _serviceLabel.textColor = [UIColor lightGrayColor];
+    _serviceLabel.text = @"服务";
+    [bgView addSubview:_serviceLabel];
     
-    _remainLabel = [UILabel new];
-    _remainLabel.font = [UIFont systemFontOfSize:12];
-    _remainLabel.textColor = [UIColor redColor];
-    _remainLabel.text = @"仅剩4间客房";
-    [bgView addSubview:_remainLabel];
+    _envirmentLabel = [UILabel new];
+    _envirmentLabel.font = [UIFont systemFontOfSize:10];
+    _envirmentLabel.textColor = [UIColor lightGrayColor];
+    _envirmentLabel.text = @"环境";
+    [bgView addSubview:_envirmentLabel];
     
-    _priceLabel = [UILabel new];
-    _priceLabel.font = [UIFont systemFontOfSize:13];
-    _priceLabel.textColor = [UIColor redColor];
-    _priceLabel.textAlignment = NSTextAlignmentRight;
-    _priceLabel.text = @"¥99起";
-    [bgView addSubview:_priceLabel];
+    _cpRatioLabel = [UILabel new];
+    _cpRatioLabel.font = [UIFont systemFontOfSize:10];
+    _cpRatioLabel.textColor = [UIColor lightGrayColor];
+    _cpRatioLabel.text = @"性价比";
+    [bgView addSubview:_cpRatioLabel];
+    
+    
+    _hygieneProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(180, 17, 80, 4)];
+    _hygieneProgress.progress = 1;
+    [bgView addSubview:_hygieneProgress];
+    
+    _serviceProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(180, 30, 80, 4)];
+    _serviceProgress.progress = 1;
+    [bgView addSubview:_serviceProgress];
+    
+    _envirmentProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(180, 43, 80, 4)];
+    _envirmentProgress.progress = 1;
+    [bgView addSubview:_envirmentProgress];
+    
+    _cpRatioProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(180, 56, 80, 4)];
+    _cpRatioProgress.progress = 1;
+    [bgView addSubview:_cpRatioProgress];
+    
 }
 
+- (void)setCommentHeaderDic:(NSDictionary *)commentDic {
+    
+    _hygieneProgress.progress = 1;
+    _serviceProgress.progress = 0.89;
+    _envirmentProgress.progress = 1;
+    _cpRatioProgress.progress = 0.9;
+}
 
 - (void)updateConstraints {
     
@@ -98,6 +139,22 @@
     [_goodCommentRatioLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:_scoreLabel];
     [_goodCommentRatioLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_scoreLabel];
     
+    //
+    [_hygieneLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_scoreLabel withOffset:40];
+    [_hygieneLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+    [_hygieneLabel autoSetDimensionsToSize:CGSizeMake(40, 13)];
+    
+    [_serviceLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_hygieneLabel];
+    [_serviceLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_hygieneLabel];
+    [_serviceLabel autoSetDimensionsToSize:CGSizeMake(40, 13)];
+    
+    [_envirmentLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_hygieneLabel];
+    [_envirmentLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_serviceLabel];
+    [_envirmentLabel autoSetDimensionsToSize:CGSizeMake(40, 13)];
+    
+    [_cpRatioLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_hygieneLabel];
+    [_cpRatioLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_envirmentLabel];
+    [_cpRatioLabel autoSetDimensionsToSize:CGSizeMake(40, 13)];
     
     
     

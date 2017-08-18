@@ -241,6 +241,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
     }else {
         if (row == 0) {
             HotelDetailCommentHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailCommentHeaderCell];
+            [cell setCommentHeaderDic:nil];
             return cell;
             
         }else if (indexPath.row == 1) {

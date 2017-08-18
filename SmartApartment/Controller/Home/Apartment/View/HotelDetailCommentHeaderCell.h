@@ -10,4 +10,6 @@
 
 @interface HotelDetailCommentHeaderCell : UITableViewCell
 
+- (void)setCommentHeaderDic:(NSDictionary*)commentDic;
+
 @end

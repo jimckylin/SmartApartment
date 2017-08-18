@@ -17,6 +17,7 @@
 #import "SVProgressHUD.h"
 #import "MBProgressHUD+CWGJ.h"
 #import "ParentViewController.h"
+#import <BMLine/UIView+BMLine.h>
 
 
 // 根据屏幕高度比算出不同设备对应数值

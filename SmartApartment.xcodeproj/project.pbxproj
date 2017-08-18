@@ -80,6 +80,7 @@
 		A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64271F46978F00F78A7E /* UITextField+VerifyNoteTextField.m */; };
 		A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642A1F46979D00F78A7E /* UIButton+countDown.m */; };
 		A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642D1F46985C00F78A7E /* UIImage+Categories.m */; };
+		A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64301F46E10500F78A7E /* JKProgressView.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -263,6 +264,8 @@
 		A95D642A1F46979D00F78A7E /* UIButton+countDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+countDown.m"; sourceTree = "<group>"; };
 		A95D642C1F46985C00F78A7E /* UIImage+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Categories.h"; sourceTree = "<group>"; };
 		A95D642D1F46985C00F78A7E /* UIImage+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Categories.m"; sourceTree = "<group>"; };
+		A95D642F1F46E10500F78A7E /* JKProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKProgressView.h; sourceTree = "<group>"; };
+		A95D64301F46E10500F78A7E /* JKProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKProgressView.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -647,6 +650,8 @@
 				A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */,
 				A97677AE1F43433B00EDCDFA /* BlankCell.h */,
 				A97677AF1F43433B00EDCDFA /* BlankCell.m */,
+				A95D642F1F46E10500F78A7E /* JKProgressView.h */,
+				A95D64301F46E10500F78A7E /* JKProgressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1114,6 +1119,7 @@
 				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
 				A97677AD1F433D2700EDCDFA /* HotelDetailRoomListCell.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
+				A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,

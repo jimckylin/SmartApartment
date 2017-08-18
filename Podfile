@@ -16,5 +16,7 @@ target 'SmartApartment' do
   pod 'BAButton',              '~> 2.5.9'
   pod 'WebViewJavascriptBridge', '~> 6.0.2'
   pod 'MBProgressHUD',         '~> 1.0.0'
+  pod 'BMLine',                '~> 1.0'
+  pod 'ChameleonFramework',    '~> 2.1.0'
   
 end

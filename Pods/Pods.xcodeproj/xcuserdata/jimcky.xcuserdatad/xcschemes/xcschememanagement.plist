@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BMLine.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,22 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>05F89846BB841B36900DD06B9703A0A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1406522AEA41CA0C5C4FD571922EF483</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>18D024A4AD871EB2E33830CBE36461A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D492C42EA6C69241FD7546F3FEC0FA5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4043CC08E5A5FC6372BC38FBA765BF30</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4A0C58CF4DBF57128449520B95C52FCF</key>
+		<key>41DE1B4D10626D40E7DC43E2FB357CC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,27 +102,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6D7B4DEEE32A03BC8C2E1C876A38591E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>739BCF1786B6DDA5D92D5DD4CC664C11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8974A477B30A97ED382E24C1E7A81572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>904F4F27FD314010A3812EB2A9306183</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9651A0F5E02B33CE75CA1E89541ACB19</key>
+		<key>A436D4E4AE96F0783960D528AE47A62B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B536BB23FB94CD59842080FA322B7A37</key>
+		<key>D57F6DD7CBDE11E457971075B0805982</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE05B737E6A828EDCAD1E2DF8140D89E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6AA9A2FE8B87E99F6A8C1336325867B</key>
+		<key>E59CB93471149DCCCE19B26649A4C2A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
