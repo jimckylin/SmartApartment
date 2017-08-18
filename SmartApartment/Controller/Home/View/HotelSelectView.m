@@ -63,7 +63,7 @@
     [_hoursBtn setBackgroundImage:whiteImg forState:UIControlStateSelected];
     [_hoursBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_hoursBtn setTitle:@"钟点房" forState:UIControlStateNormal];
-    [_hoursBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateHighlighted];
+    [_hoursBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _hoursBtn.tag = HotelSelectBtnTypeHoursRoom;

@@ -6,11 +6,11 @@
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "HotelDetailCommentHeaderCell.h"
+#import "HotelCommentHeaderCell.h"
 #import <BAButton/BAButton.h>
 #import "JKProgressView.h"
 
-@interface HotelDetailCommentHeaderCell ()
+@interface HotelCommentHeaderCell ()
 
 @property (nonatomic, strong) UILabel *goodCommentRatioLabel;
 @property (nonatomic, strong) UILabel *scoreLabel;
@@ -30,16 +30,20 @@
 @property (nonatomic, strong) UILabel *envirmentScore;   // 环境
 @property (nonatomic, strong) UILabel *cpRatioScore;     // 性价比
 
+
+@property (nonatomic, strong) NSMutableArray *btnArray;
+@property (nonatomic, strong) UIView *indicatorLine;
+
 @end
 
 
-@implementation HotelDetailCommentHeaderCell
+@implementation HotelCommentHeaderCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
         [self initSubView];
     }
     return self;
@@ -51,31 +55,26 @@
 
 - (void)initSubView {
     
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-20, 80)];
-    bgView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:bgView];
-    [bgView ba_view_setViewRectCornerType:BAKit_ViewRectCornerTypeTopLeftAndTopRight viewCornerRadius:6];
-    
     _scoreLabel = [UILabel new];
     _scoreLabel.font = [UIFont systemFontOfSize:16];
     _scoreLabel.textColor = [UIColor redColor];
     _scoreLabel.textAlignment = NSTextAlignmentCenter;
     _scoreLabel.text = @"4.8分";
-    [bgView addSubview:_scoreLabel];
+    [self addSubview:_scoreLabel];
     
     _goodCommentRatioLabel = [UILabel new];
     _goodCommentRatioLabel.font = [UIFont systemFontOfSize:10];
     _goodCommentRatioLabel.textColor = [UIColor lightGrayColor];
     _goodCommentRatioLabel.textAlignment = NSTextAlignmentCenter;
     _goodCommentRatioLabel.text = @"100%好评";
-    [bgView addSubview:_goodCommentRatioLabel];
+    [self addSubview:_goodCommentRatioLabel];
     
     UIView *line = [UIView new];
     line.backgroundColor = [UIColor lightGrayColor];
-    [bgView addSubview:line];
+    [self addSubview:line];
     [line autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:90];
     [line autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [line autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15];
+    [line autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:73];
     [line autoSetDimension:ALDimensionWidth toSize:0.5];
     
 
@@ -85,69 +84,129 @@
     _hygieneLabel.textColor = [UIColor lightGrayColor];
     _hygieneLabel.layer.cornerRadius = 2;
     _hygieneLabel.text = @"卫生";
-    [bgView addSubview:_hygieneLabel];
+    [self addSubview:_hygieneLabel];
     
     _serviceLabel = [UILabel new];
     _serviceLabel.font = [UIFont systemFontOfSize:10];
     _serviceLabel.textColor = [UIColor lightGrayColor];
     _serviceLabel.text = @"服务";
-    [bgView addSubview:_serviceLabel];
+    [self addSubview:_serviceLabel];
     
     _envirmentLabel = [UILabel new];
     _envirmentLabel.font = [UIFont systemFontOfSize:10];
     _envirmentLabel.textColor = [UIColor lightGrayColor];
     _envirmentLabel.text = @"环境";
-    [bgView addSubview:_envirmentLabel];
+    [self addSubview:_envirmentLabel];
     
     _cpRatioLabel = [UILabel new];
     _cpRatioLabel.font = [UIFont systemFontOfSize:10];
     _cpRatioLabel.textColor = [UIColor lightGrayColor];
     _cpRatioLabel.text = @"性价比";
-    [bgView addSubview:_cpRatioLabel];
+    [self addSubview:_cpRatioLabel];
     
     
     _hygieneProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(165, 17, 90, 4)];
     _hygieneProgress.progress = 1;
-    [bgView addSubview:_hygieneProgress];
+    [self addSubview:_hygieneProgress];
     
     _serviceProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(165, 30, 90, 4)];
     _serviceProgress.progress = 1;
-    [bgView addSubview:_serviceProgress];
+    [self addSubview:_serviceProgress];
     
     _envirmentProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(165, 43, 90, 4)];
     _envirmentProgress.progress = 1;
-    [bgView addSubview:_envirmentProgress];
+    [self addSubview:_envirmentProgress];
     
     _cpRatioProgress = [[JKProgressView alloc] initWithFrame:CGRectMake(165, 56, 90, 4)];
     _cpRatioProgress.progress = 1;
-    [bgView addSubview:_cpRatioProgress];
+    [self addSubview:_cpRatioProgress];
     
     _hygieneScore = [UILabel new];
     _hygieneScore.font = [UIFont systemFontOfSize:10];
     _hygieneScore.textColor = [UIColor lightGrayColor];
     _hygieneScore.layer.cornerRadius = 2;
     _hygieneScore.text = @"4.0";
-    [bgView addSubview:_hygieneScore];
+    [self addSubview:_hygieneScore];
     
     _serviceScore = [UILabel new];
     _serviceScore.font = [UIFont systemFontOfSize:10];
     _serviceScore.textColor = [UIColor lightGrayColor];
     _serviceScore.text = @"4.0";
-    [bgView addSubview:_serviceScore];
+    [self addSubview:_serviceScore];
     
     _envirmentScore = [UILabel new];
     _envirmentScore.font = [UIFont systemFontOfSize:10];
     _envirmentScore.textColor = [UIColor lightGrayColor];
     _envirmentScore.text = @"4.0";
-    [bgView addSubview:_envirmentScore];
+    [self addSubview:_envirmentScore];
     
     _cpRatioScore = [UILabel new];
     _cpRatioScore.font = [UIFont systemFontOfSize:10];
     _cpRatioScore.textColor = [UIColor lightGrayColor];
     _cpRatioScore.text = @"4.0";
-    [bgView addSubview:_cpRatioScore];
+    [self addSubview:_cpRatioScore];
     
+    // 评价类型
+    UIView *line1 = [UIView new];
+    line1.frame = CGRectMake(0, 80, kScreenWidth, 0.5);
+    line1.backgroundColor = [UIColor lightGrayColor];
+    [self addSubview:line1];
+    
+    UIView *btnBg = [UIView new];
+    [self addSubview:btnBg];
+    [btnBg autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(80, 0, 0, 0)];
+    
+    if (!_btnArray) {
+        _btnArray = [NSMutableArray new];
+    }
+    NSArray *titles = @[@"全部", @"好评", @"中评", @"差评"];
+    CGFloat width = kScreenWidth/4;
+    for (NSInteger index = 0; index < 4; index ++) {
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(width*index, 0, width, 58);
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTitle:titles[index] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:13]];
+        btn.tag = index;
+        [btnBg addSubview:btn];
+        if (index == 0) {
+            btn.selected = YES;
+        }
+        [_btnArray addObject:btn];
+    }
+    _indicatorLine = [UIView new];
+    _indicatorLine.backgroundColor = [UIColor redColor];
+    [self addSubview:_indicatorLine];
+    [_indicatorLine autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:(width-60)/2];
+    [_indicatorLine autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_indicatorLine autoSetDimensionsToSize:CGSizeMake(60, 3)];
 }
+
+
+#pragma mark - UIButton Action
+
+- (void)btnClick:(UIButton *)sender {
+    
+    CommentType type = sender.tag;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelCommentHeaderCellDidClick:)]) {
+        [self.delegate hotelCommentHeaderCellDidClick:type];
+    }
+    
+    for (NSInteger index = 0; index < 4; index ++) {
+        UIButton *btn = _btnArray[index];
+        if (sender.tag == btn.tag) {
+            btn.selected = YES;
+        }else {
+            btn.selected = NO;
+        }
+    }
+    CGFloat width = kScreenWidth/4;
+    _indicatorLine.left = (width-60)/2+ sender.tag*width;
+}
+
 
 - (void)setCommentHeaderDic:(NSDictionary *)commentDic {
     
@@ -155,13 +214,19 @@
     _serviceProgress.progress = 0.89;
     _envirmentProgress.progress = 1;
     _cpRatioProgress.progress = 0.9;
+    
+    NSArray *titles = @[@"全部(46)", @"好评(34)", @"中评(10)", @"差评(2)"];
+    for (NSInteger index = 0; index < 4; index ++) {
+        UIButton *btn = _btnArray[index];
+        [btn setTitle:titles[index] forState:UIControlStateNormal];
+    }
 }
 
 - (void)updateConstraints {
     
     [_scoreLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_scoreLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
-    [_scoreLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:30];
+    [_scoreLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:30+58];
     [_scoreLabel autoSetDimension:ALDimensionWidth toSize:90];
     
     [_goodCommentRatioLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];

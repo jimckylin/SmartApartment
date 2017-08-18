@@ -7,6 +7,7 @@
 //
 
 #import "HotelDetailMoreCommentCell.h"
+#import <BAButton/BAButton.h>
 
 @implementation HotelDetailMoreCommentCell
 
@@ -26,16 +27,16 @@
 
 - (void)initSubView {
     
-    UIView *bgView = [UIView new];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth - 20, 40)];
     bgView.backgroundColor = [UIColor whiteColor];
     [self addSubview:bgView];
-    [bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    [bgView ba_view_setViewRectCornerType:BAKit_ViewRectCornerTypeBottomLeftAndBottomRight viewCornerRadius:6];
     
     UILabel *label = [UILabel new];
     label.font = [UIFont systemFontOfSize:13];
-    label.textColor = [UIColor redColor];
+    label.textColor = [UIColor grayColor];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"查看更多评论";
+    label.text = @"查看全部45条评论";
     [bgView addSubview:label];
     [label autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     

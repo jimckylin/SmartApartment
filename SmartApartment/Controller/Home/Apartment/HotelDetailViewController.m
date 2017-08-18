@@ -9,6 +9,7 @@
 #import "HotelDetailViewController.h"
 #import "CalendarViewController.h"
 #import "MapViewController.h"
+#import "HotelCommentListViewController.h"
 
 #import "HotelDetailDateView.h"
 #import "ZYCalendarManager.h"
@@ -169,7 +170,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
             if (indexPath.row == 0) {
                 return 80;
             }else if (indexPath.row == 1){
-                return 100;
+                return 200; // 根据评论及回复内容动态高度
             }
             return 40;
         }else {
@@ -245,7 +246,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
             return cell;
             
         }else if (indexPath.row == 1) {
-            if (_comments > 0) {
+            if (_comments.count > 0) {
                 HotelDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailCommentCell];
                 return cell;
             }else {
@@ -305,9 +306,14 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
             [tableView endUpdates];
         }
         
-    }else {
+    }else if(indexPath.section == 3) {
         
-        
+        if (_comments.count > 0) {
+            if (indexPath.row == 2) {
+                HotelCommentListViewController *vc = [HotelCommentListViewController new];
+                [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            }
+        }
     }
 }
 
