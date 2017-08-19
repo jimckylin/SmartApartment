@@ -10,6 +10,7 @@
 #import "CalendarViewController.h"
 #import "MapViewController.h"
 #import "HotelCommentListViewController.h"
+#import "BookHotelViewController.h"
 
 #import "HotelDetailDateView.h"
 #import "ZYCalendarManager.h"
@@ -364,6 +365,10 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 - (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type {
     
     NSLog(@"type:%zd", type);
+    if (type == HotelRoomListBtnTypeBook) {
+        BookHotelViewController *vc = [BookHotelViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }
 }
 
 

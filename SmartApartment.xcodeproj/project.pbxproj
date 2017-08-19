@@ -81,6 +81,26 @@
 		A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642A1F46979D00F78A7E /* UIButton+countDown.m */; };
 		A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642D1F46985C00F78A7E /* UIImage+Categories.m */; };
 		A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64301F46E10500F78A7E /* JKProgressView.m */; };
+		A96A33021F47573C00A55A42 /* WRCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33011F47573C00A55A42 /* WRCellView.m */; };
+		A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */; };
+		A96A33081F47FF1B00A55A42 /* BookBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33071F47FF1B00A55A42 /* BookBottomView.m */; };
+		A96A330A1F4809D200A55A42 /* order_up_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33091F4809D200A55A42 /* order_up_iciphone@2x.png */; };
+		A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A330C1F4815B900A55A42 /* BookSuccessViewController.m */; };
+		A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A330F1F481D6200A55A42 /* OrderDetailViewController.m */; };
+		A96A33131F481DDF00A55A42 /* UseCouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33121F481DDF00A55A42 /* UseCouponListViewController.m */; };
+		A96A33151F481F1900A55A42 /* reserve_illustrationiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33141F481F1900A55A42 /* reserve_illustrationiphone@2x.png */; };
+		A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33161F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png */; };
+		A96A33191F4825D500A55A42 /* wechat_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33171F4825D500A55A42 /* wechat_iciphone@2x.png */; };
+		A96A331C1F48266500A55A42 /* reserve_pay_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A331A1F48266500A55A42 /* reserve_pay_siphone@2x.png */; };
+		A96A331D1F48266500A55A42 /* reserve_payiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A331B1F48266500A55A42 /* reserve_payiphone@2x.png */; };
+		A96A331F1F482EE600A55A42 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96A331E1F482EE600A55A42 /* OrderDetailViewController.xib */; };
+		A96A33491F4845C000A55A42 /* OrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33481F4845C000A55A42 /* OrderDetailView.m */; };
+		A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96A334A1F4845D000A55A42 /* OrderDetailView.xib */; };
+		A96A334D1F48463800A55A42 /* order_fill_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A334C1F48463800A55A42 /* order_fill_bgiphone@2x.png */; };
+		A96A334F1F4847E000A55A42 /* details_card_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A334E1F4847E000A55A42 /* details_card_bgiphone@2x.png */; };
+		A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33501F48487B00A55A42 /* order_detail_costiphone@2x.png */; };
+		A96A33541F484C1200A55A42 /* order_detail_stayiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33521F484C1200A55A42 /* order_detail_stayiphone@2x.png */; };
+		A96A33551F484C1200A55A42 /* order_details_retreat_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33531F484C1200A55A42 /* order_details_retreat_iciphone@2x.png */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -277,6 +297,32 @@
 		A95D642D1F46985C00F78A7E /* UIImage+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Categories.m"; sourceTree = "<group>"; };
 		A95D642F1F46E10500F78A7E /* JKProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKProgressView.h; sourceTree = "<group>"; };
 		A95D64301F46E10500F78A7E /* JKProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKProgressView.m; sourceTree = "<group>"; };
+		A96A33001F47573C00A55A42 /* WRCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCellView.h; sourceTree = "<group>"; };
+		A96A33011F47573C00A55A42 /* WRCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCellView.m; sourceTree = "<group>"; };
+		A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oeder_reminder_iciphone@2x.png"; sourceTree = "<group>"; };
+		A96A33061F47FF1B00A55A42 /* BookBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBottomView.h; sourceTree = "<group>"; };
+		A96A33071F47FF1B00A55A42 /* BookBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBottomView.m; sourceTree = "<group>"; };
+		A96A33091F4809D200A55A42 /* order_up_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_up_iciphone@2x.png"; sourceTree = "<group>"; };
+		A96A330B1F4815B900A55A42 /* BookSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSuccessViewController.h; sourceTree = "<group>"; };
+		A96A330C1F4815B900A55A42 /* BookSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSuccessViewController.m; sourceTree = "<group>"; };
+		A96A330E1F481D6200A55A42 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		A96A330F1F481D6200A55A42 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		A96A33111F481DDF00A55A42 /* UseCouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseCouponListViewController.h; sourceTree = "<group>"; };
+		A96A33121F481DDF00A55A42 /* UseCouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCouponListViewController.m; sourceTree = "<group>"; };
+		A96A33141F481F1900A55A42 /* reserve_illustrationiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reserve_illustrationiphone@2x.png"; sourceTree = "<group>"; };
+		A96A33161F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reserve_pay_1_iciphone@2x.png"; sourceTree = "<group>"; };
+		A96A33171F4825D500A55A42 /* wechat_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat_iciphone@2x.png"; sourceTree = "<group>"; };
+		A96A331A1F48266500A55A42 /* reserve_pay_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reserve_pay_siphone@2x.png"; sourceTree = "<group>"; };
+		A96A331B1F48266500A55A42 /* reserve_payiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reserve_payiphone@2x.png"; sourceTree = "<group>"; };
+		A96A331E1F482EE600A55A42 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
+		A96A33471F4845C000A55A42 /* OrderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailView.h; sourceTree = "<group>"; };
+		A96A33481F4845C000A55A42 /* OrderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailView.m; sourceTree = "<group>"; };
+		A96A334A1F4845D000A55A42 /* OrderDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailView.xib; sourceTree = "<group>"; };
+		A96A334C1F48463800A55A42 /* order_fill_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_fill_bgiphone@2x.png"; sourceTree = "<group>"; };
+		A96A334E1F4847E000A55A42 /* details_card_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_card_bgiphone@2x.png"; sourceTree = "<group>"; };
+		A96A33501F48487B00A55A42 /* order_detail_costiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_detail_costiphone@2x.png"; sourceTree = "<group>"; };
+		A96A33521F484C1200A55A42 /* order_detail_stayiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_detail_stayiphone@2x.png"; sourceTree = "<group>"; };
+		A96A33531F484C1200A55A42 /* order_details_retreat_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_details_retreat_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -506,6 +552,13 @@
 				A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */,
 				A9BA5DF11F4614C70093A50D /* BookHotelViewController.h */,
 				A9BA5DF21F4614C70093A50D /* BookHotelViewController.m */,
+				A96A330B1F4815B900A55A42 /* BookSuccessViewController.h */,
+				A96A330C1F4815B900A55A42 /* BookSuccessViewController.m */,
+				A96A330E1F481D6200A55A42 /* OrderDetailViewController.h */,
+				A96A330F1F481D6200A55A42 /* OrderDetailViewController.m */,
+				A96A331E1F482EE600A55A42 /* OrderDetailViewController.xib */,
+				A96A33111F481DDF00A55A42 /* UseCouponListViewController.h */,
+				A96A33121F481DDF00A55A42 /* UseCouponListViewController.m */,
 				A9BA5DF41F4615230093A50D /* HotelDescrViewController.h */,
 				A9BA5DF51F4615230093A50D /* HotelDescrViewController.m */,
 				A992C1F01F47331C00D5371C /* HotelCommentListViewController.h */,
@@ -603,6 +656,27 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A96A32FF1F47573C00A55A42 /* WRCellView */ = {
+			isa = PBXGroup;
+			children = (
+				A96A33001F47573C00A55A42 /* WRCellView.h */,
+				A96A33011F47573C00A55A42 /* WRCellView.m */,
+			);
+			path = WRCellView;
+			sourceTree = "<group>";
+		};
+		A96A33051F47FEA200A55A42 /* BookHotel */ = {
+			isa = PBXGroup;
+			children = (
+				A96A33061F47FF1B00A55A42 /* BookBottomView.h */,
+				A96A33071F47FF1B00A55A42 /* BookBottomView.m */,
+				A96A33471F4845C000A55A42 /* OrderDetailView.h */,
+				A96A33481F4845C000A55A42 /* OrderDetailView.m */,
+				A96A334A1F4845D000A55A42 /* OrderDetailView.xib */,
+			);
+			path = BookHotel;
+			sourceTree = "<group>";
+		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +755,7 @@
 				A97677AF1F43433B00EDCDFA /* BlankCell.m */,
 				A95D642F1F46E10500F78A7E /* JKProgressView.h */,
 				A95D64301F46E10500F78A7E /* JKProgressView.m */,
+				A96A33051F47FEA200A55A42 /* BookHotel */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +791,7 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A96A32FF1F47573C00A55A42 /* WRCellView */,
 				A992C1DC1F4724EA00D5371C /* JWStarView */,
 				A95B3FD91F3AC7FF0046E150 /* ZYCalendarView */,
 				A98223FA1F3A19BB00CA9A9F /* TLCityPicker */,
@@ -890,6 +966,18 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A96A33521F484C1200A55A42 /* order_detail_stayiphone@2x.png */,
+				A96A33531F484C1200A55A42 /* order_details_retreat_iciphone@2x.png */,
+				A96A33501F48487B00A55A42 /* order_detail_costiphone@2x.png */,
+				A96A334E1F4847E000A55A42 /* details_card_bgiphone@2x.png */,
+				A96A334C1F48463800A55A42 /* order_fill_bgiphone@2x.png */,
+				A96A331A1F48266500A55A42 /* reserve_pay_siphone@2x.png */,
+				A96A331B1F48266500A55A42 /* reserve_payiphone@2x.png */,
+				A96A33161F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png */,
+				A96A33171F4825D500A55A42 /* wechat_iciphone@2x.png */,
+				A96A33141F481F1900A55A42 /* reserve_illustrationiphone@2x.png */,
+				A96A33091F4809D200A55A42 /* order_up_iciphone@2x.png */,
+				A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */,
 				A992C1EC1F472D8600D5371C /* star_full_iciphone@2x.png */,
 				A992C1EE1F472DC300D5371C /* star_gray_iciphone@2x.png */,
 				A992C1E01F47275900D5371C /* share_friend_iciphone@2x.png */,
@@ -1074,8 +1162,10 @@
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
 				A976779E1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png in Resources */,
 				A976779F1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png in Resources */,
+				A96A33151F481F1900A55A42 /* reserve_illustrationiphone@2x.png in Resources */,
 				A9BA5DEC1F45F5320093A50D /* detail_more_iciphone@2x.png in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
+				A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */,
 				A9BA5DEE1F45F98C0093A50D /* xq_wenhaoiphone@2x.png in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
 				A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */,
@@ -1084,10 +1174,13 @@
 				A952860B1F43EB2900D7EB2F /* mapapi.bundle in Resources */,
 				A97677891F3F0AFB00EDCDFA /* mine_vip_2_iciphone@2x.png in Resources */,
 				A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */,
+				A96A33541F484C1200A55A42 /* order_detail_stayiphone@2x.png in Resources */,
 				A992C1EF1F472DC300D5371C /* star_gray_iciphone@2x.png in Resources */,
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
 				A992C1E41F47275900D5371C /* share_friend_iciphone@2x.png in Resources */,
+				A96A334F1F4847E000A55A42 /* details_card_bgiphone@2x.png in Resources */,
 				A985ABF01F415134005B31DF /* list_time_iciphone@2x.png in Resources */,
+				A96A331F1F482EE600A55A42 /* OrderDetailViewController.xib in Resources */,
 				A976778B1F3F0AFB00EDCDFA /* mine_vip_3_iciphone@2x.png in Resources */,
 				A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */,
 				A976777F1F3F029000EDCDFA /* logoiphone@2x.png in Resources */,
@@ -1095,8 +1188,11 @@
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
+				A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */,
 				A992C1E61F47275900D5371C /* share_sina_iciphone@2x.png in Resources */,
+				A96A331C1F48266500A55A42 /* reserve_pay_siphone@2x.png in Resources */,
 				A976778D1F3F301E00EDCDFA /* trip_history_iciphone@2x.png in Resources */,
+				A96A331D1F48266500A55A42 /* reserve_payiphone@2x.png in Resources */,
 				A992C1E71F47275900D5371C /* share_weichat_iciphone@2x.png in Resources */,
 				A952860E1F43F9CE00D7EB2F /* detail_map_pin_siphone@2x.png in Resources */,
 				A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */,
@@ -1105,17 +1201,23 @@
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A992C1E51F47275900D5371C /* share_qq_iciphone@2x.png in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
+				A96A330A1F4809D200A55A42 /* order_up_iciphone@2x.png in Resources */,
 				A97677B21F44930900EDCDFA /* sale_location_iconiphone@2x.png in Resources */,
+				A96A33191F4825D500A55A42 /* wechat_iciphone@2x.png in Resources */,
 				A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */,
+				A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
+				A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */,
 				A985ABEF1F415134005B31DF /* list_city_iciphone@2x.png in Resources */,
 				A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */,
 				A952860F1F43F9CE00D7EB2F /* detail_map_piniphone@2x.png in Resources */,
+				A96A334D1F48463800A55A42 /* order_fill_bgiphone@2x.png in Resources */,
 				A95B3FCB1F3AA04D0046E150 /* mine_information_iciphone@2x.png in Resources */,
 				A95B3FEE1F3AC7FF0046E150 /* backImg_start.png in Resources */,
 				A95B3FF01F3AC7FF0046E150 /* circle_cir.png in Resources */,
 				A955E9C81F4557E100FEB05F /* detail_vip_silveriphone@2x.png in Resources */,
 				A9AA8F061F38C217005F9DBB /* icon_head_back@3x.png in Resources */,
+				A96A33551F484C1200A55A42 /* order_details_retreat_iciphone@2x.png in Resources */,
 				A9BA5DF01F460D070093A50D /* detail_brand_iciphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,6 +1277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96A33081F47FF1B00A55A42 /* BookBottomView.m in Sources */,
 				A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */,
 				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
@@ -1191,12 +1294,15 @@
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
 				A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */,
+				A96A33021F47573C00A55A42 /* WRCellView.m in Sources */,
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A95D64191F4692E300F78A7E /* LoginViewModel.m in Sources */,
+				A96A33491F4845C000A55A42 /* OrderDetailView.m in Sources */,
 				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
+				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
 				A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */,
 				A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */,
@@ -1226,6 +1332,7 @@
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
+				A96A33131F481DDF00A55A42 /* UseCouponListViewController.m in Sources */,
 				A955E9C41F454B4300FEB05F /* HotelDetailRoomPriceTypeCell.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
@@ -1244,6 +1351,7 @@
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
+				A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */,
 				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
