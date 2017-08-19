@@ -141,6 +141,7 @@
 - (void)logoutBtnClick:(id)sender {
     
     NSLog(@"登出");
+    [UserManager manager].isLogin = NO;
     [[NavManager shareInstance] returnToLoginView:YES];
 }
 

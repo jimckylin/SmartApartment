@@ -18,7 +18,7 @@
 #import "MBProgressHUD+CWGJ.h"
 #import "ParentViewController.h"
 #import <BMLine/UIView+BMLine.h>
-
+#import "UserManager.h"
 
 // 根据屏幕高度比算出不同设备对应数值
 #define kGetScreenHeightScale(height) iPhone5SE? height * 568 / 667.0 : iPhone6_6s? height * 667 / 667.0 : height * 736 / 667.0
@@ -31,6 +31,8 @@
 #define __StrongObj(o) __strong typeof(o) o = o##Weak;
 
 // 颜色
+#define ThemeColor [UIColor colorWithHexString:@"#EA2035"]
+
 #pragma mark - RGBA颜色
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #pragma mark - 主视图bound

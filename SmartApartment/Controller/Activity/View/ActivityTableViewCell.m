@@ -35,9 +35,10 @@
 
 - (void)initSubView {
     
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 552/2)];
+    UIView *bgView = [UIView new];
     bgView.backgroundColor = [UIColor whiteColor];
     [self addSubview:bgView];
+    [bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     _thumbImgV = [UIImageView new];
     _thumbImgV.contentMode = UIViewContentModeScaleAspectFill;

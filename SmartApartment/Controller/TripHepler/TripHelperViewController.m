@@ -7,13 +7,17 @@
 //
 
 #import "TripHelperViewController.h"
-#import "HotelListCell.h"
+#import "HotelDetailViewController.h"
+#import "TripHistoryListViewController.h"
 
-NSString *const kTripListCell = @"kTripListCell";
+#import "TripHelperNoOrderView.h"
+#import "TripListCell.h"
+
 
 @interface TripHelperViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) TripHelperNoOrderView *tripHelperNoOrderView;
 
 @end
 
@@ -27,7 +31,15 @@ NSString *const kTripListCell = @"kTripListCell";
     _naviLabel.text = NSLocalizedString(@"行程助手", nil);
     [self addRightNaviButton:kImage(@"trip_history_iciphone") highlight:nil action:@selector(tripHistoryBtnClick:)];
     
+    [self iniData];
     [self initSubView];
+}
+
+- (void)iniData {
+    
+    self.tripHelperNoOrderView.tripHelperNoOrderViewBlock = ^(){
+        [[NavManager shareInstance] goToTabbarHome];
+    };
 }
 
 - (void)initSubView {
@@ -38,20 +50,26 @@ NSString *const kTripListCell = @"kTripListCell";
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
-    [_tableView registerClass:[HotelListCell class] forCellReuseIdentifier:kTripListCell];
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 49, 0)];
     
+    [_tableView registerNib:[UINib nibWithNibName:@"TripListCell" bundle:nil] forCellReuseIdentifier:@"TripListCell"];
 }
 
 
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if ([UserManager manager].isLogin) {
+        return 10;
+    }
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 552/2+10;
+    if ([UserManager manager].isLogin) {
+        return 373;
+    }
+    return 1193;
 }
 
 
@@ -59,18 +77,19 @@ NSString *const kTripListCell = @"kTripListCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    HotelListCell *cell = [tableView dequeueReusableCellWithIdentifier:kTripListCell];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
-    
+    TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
+    if (![UserManager manager].isLogin) {
+        [cell addSubview:self.tripHelperNoOrderView];
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //ActivityDetailViewController *vc = [ActivityDetailViewController new];
-    //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    if ([UserManager manager].isLogin) {
+        HotelDetailViewController *vc = [HotelDetailViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }
 }
 
 
@@ -78,8 +97,21 @@ NSString *const kTripListCell = @"kTripListCell";
 
 - (void)tripHistoryBtnClick:(id)sender {
     
-    
+    TripHistoryListViewController *vc = [TripHistoryListViewController new];
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
+
+
+#pragma mark - Getter
+
+- (TripHelperNoOrderView *)tripHelperNoOrderView {
+    if (!_tripHelperNoOrderView) {
+        NSArray *nibView =  [[NSBundle mainBundle] loadNibNamed:@"TripHelperNoOrderView"owner:self options:nil];
+        _tripHelperNoOrderView = nibView.lastObject;
+    }
+    return _tripHelperNoOrderView;
+}
+
 
 
 @end

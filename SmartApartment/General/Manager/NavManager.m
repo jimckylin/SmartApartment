@@ -115,6 +115,17 @@
     [self returnToMainView:NO];
 }
 
+- (void)goToTabbarHome {
+    
+    [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){
+        if ([vc isKindOfClass:NSClassFromString(@"RootTabBarController")]) {
+            RootTabBarController *tabbar = (RootTabBarController*)vc;
+            [tabbar setSelectedIndex:0];
+            *stop = YES;
+        }
+    }];
+}
+
 - (UIViewController*)getMainViewController {
     __block UIViewController *mainVc = nil;
     [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){

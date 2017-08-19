@@ -37,17 +37,17 @@
 #define PriceRGBColor [UIColor colorWithRed:226.0/255.0 green:108.0/255.0 blue:118.0/255.0 alpha:1.0]
 #define PriceHexColor #E26C76
 
-#define ThemeColor [UIColor colorWithRed:0 green:0.6 blue:0.8 alpha:1.000]
-#define ThemeLightColor [UIColor colorWithRed:0.298 green:0.718 blue:0.859 alpha:1.000]
-#define TopColor [UIColor colorWithRed:43.0/255.0 green:181.0/255.0 blue:117.0/255.0 alpha:1.0]
-#define DarkGreyColor [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0]
-#define LightGreyColor [UIColor colorWithRed:170.0/255.0 green:170.0/255.0 blue:170.0/255.0 alpha:1.0]
-
-#define SeparatorColor [UIColor colorWithRed:221.0/255.0 green:221.0/255.0 blue:221.0/255.0 alpha:1.0]
-#define BorderColor [UIColor colorWithRed:215.0/255.0 green:215.0/255.0 blue:215.0/255.0 alpha:1.0]
-#define SecondTitleColor [UIColor colorWithRed:119.0/255.0 green:119.0/255.0 blue:119.0/255.0 alpha:1.0]
-#define TextHighlightColor [UIColor colorWithRed:93.0/255.0 green:93.0/255.0 blue:93.0/255.0 alpha:1.0]
-#define TextPlaceholderColor [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0]
+//#define ThemeColor [UIColor colorWithRed:0 green:0.6 blue:0.8 alpha:1.000]
+//#define ThemeLightColor [UIColor colorWithRed:0.298 green:0.718 blue:0.859 alpha:1.000]
+//#define TopColor [UIColor colorWithRed:43.0/255.0 green:181.0/255.0 blue:117.0/255.0 alpha:1.0]
+//#define DarkGreyColor [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0]
+//#define LightGreyColor [UIColor colorWithRed:170.0/255.0 green:170.0/255.0 blue:170.0/255.0 alpha:1.0]
+//
+//#define SeparatorColor [UIColor colorWithRed:221.0/255.0 green:221.0/255.0 blue:221.0/255.0 alpha:1.0]
+//#define BorderColor [UIColor colorWithRed:215.0/255.0 green:215.0/255.0 blue:215.0/255.0 alpha:1.0]
+//#define SecondTitleColor [UIColor colorWithRed:119.0/255.0 green:119.0/255.0 blue:119.0/255.0 alpha:1.0]
+//#define TextHighlightColor [UIColor colorWithRed:93.0/255.0 green:93.0/255.0 blue:93.0/255.0 alpha:1.0]
+//#define TextPlaceholderColor [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0]
 
 #define LineColor YZColor(221, 221, 221, 0.9)
 

@@ -17,6 +17,7 @@
 + (NavManager *)shareInstance;
 
 - (void)goToMainVC;
+- (void)goToTabbarHome;
 
 - (void)setLoginRootController;
 - (void)setHomeRootController;

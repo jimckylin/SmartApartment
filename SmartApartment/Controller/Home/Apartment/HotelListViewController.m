@@ -45,7 +45,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     
     // header
     _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
-    _headerView.backgroundColor = [UIColor redColor];
+    _headerView.backgroundColor = ThemeColor;
     _headerView.delegate = self;
     [self.view addSubview:_headerView];
     

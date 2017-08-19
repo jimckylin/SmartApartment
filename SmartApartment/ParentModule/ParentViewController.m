@@ -60,7 +60,7 @@
     [self.view addSubview:_naviView];
     
     _naviBgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
-    _naviBgView.backgroundColor = YZColor(51, 64, 72, 1);
+    _naviBgView.backgroundColor = ThemeColor;//YZColor(51, 64, 72, 1);
     [_naviView addSubview:_naviBgView];
 
     _naviBackBtn = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -149,7 +149,7 @@
     
     // 查找酒店
     _searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _searchBtn.backgroundColor = [UIColor redColor];
+    _searchBtn.backgroundColor = ThemeColor;
     [_searchBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_searchBtn setTitle:@"查找酒店" forState:UIControlStateNormal];
     [_searchBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

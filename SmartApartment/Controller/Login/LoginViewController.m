@@ -79,6 +79,7 @@
             
             break;
         case CZDLoginActionLogin: {
+            [UserManager manager].isLogin = YES;
             [_viewModel requestLoginWithPhone:phone verifyCode:code];
         }
             break;
