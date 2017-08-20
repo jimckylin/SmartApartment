@@ -7,9 +7,13 @@
 //
 
 #import "MineViewController.h"
+#import "PersonInfoViewController.h"
 #import "SettingViewController.h"
 #import "UIScrollView+HeaderScaleImage.h"
 #import "MineHeaderView.h"
+#import "AboutViewController.h"
+#import "HotelCommentListViewController.h"
+#import "TripHistoryListViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -37,11 +41,12 @@
     [self.view addSubview:settingBtn];
 
     
-    _tableView = [[UITableView alloc] init];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.sectionHeaderHeight = 10;
     [self.view addSubview:_tableView];
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 49, 0)];
     
@@ -63,8 +68,16 @@
 
 #pragma mark - UITableView Delegate
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if (section == 0) {
+        return 4;
+    }
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,31 +89,58 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *cellIdetifier = @"cellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
-        cell.backgroundColor = [UIColor whiteColor];
-        cell.textLabel.font = [UIFont systemFontOfSize:14];
-        cell.textLabel.textColor = [UIColor darkTextColor];
+    if (indexPath.section == 0) {
+        NSString *cellIdetifier = @"cellIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.font = [UIFont systemFontOfSize:14];
+            cell.textLabel.textColor = [UIColor darkTextColor];
+            
+        }
         
+        NSArray *icons = @[@"mine_order_iciphone", @"mine_information_iciphone", @"mine_comment_iciphone", @"mine_information_iciphone"];
+        NSArray *titles = @[@"酒店订单", @"常用信息", @"我的点评", @"客服电话"];
+        
+        cell.imageView.image = [UIImage imageNamed:icons[indexPath.row]];
+        cell.textLabel.text = titles[indexPath.row];
+        return cell;
+        
+    }else {
+        NSString *cellIdetifier = @"cellIdentifier1";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.font = [UIFont systemFontOfSize:14];
+            cell.textLabel.textColor = [UIColor darkTextColor];
+            
+        }
+        cell.textLabel.text = @"关于蔓心宿";
+        return cell;
     }
-    NSDictionary *dic = @{@"酒店订单":@"mine_order_iciphone", @"我的酒店":@"mine_hotel_iciphone", @"常用信息":@"mine_information_iciphone"};
-    cell.imageView.image = [UIImage imageNamed:[dic allValues][indexPath.row]];
-    cell.textLabel.text = [dic allKeys][indexPath.row];
     
-    return cell;
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        
-    }else if (indexPath.row == 1) {
-        
-    }else if (indexPath.row == 2) {
-        
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            TripHistoryListViewController *vc = [TripHistoryListViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }else if (indexPath.row == 1) {
+            
+        }else if (indexPath.row == 2) {
+            HotelCommentListViewController *vc = [HotelCommentListViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+    }else {
+        AboutViewController *vc = [AboutViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     }
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -118,8 +158,10 @@
 - (void)mineHeaderViewDidClickEvent:(HeaderEventType)type {
     
     switch (type) {
-            case HeaderEventTypeProfile:
-            
+            case HeaderEventTypeProfile:{
+                PersonInfoViewController *vc = [PersonInfoViewController new];
+                [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            }
             break;
             case HeaderEventTypeBalance:
             

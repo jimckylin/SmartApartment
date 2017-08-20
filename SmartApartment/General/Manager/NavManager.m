@@ -95,10 +95,7 @@
     }];
     if (!exsitLoginVC) {
         LoginViewController *vc = [LoginViewController new];
-        [self setRootController:vc];
-        
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        window.rootViewController = [self rootNavigationController];
+        [self showViewController:vc isAnimated:YES];
     }
 }
 

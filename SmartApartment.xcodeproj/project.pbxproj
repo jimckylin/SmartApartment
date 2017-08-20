@@ -197,6 +197,12 @@
 		A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */; };
 		A9EB26421F48CF99007DB818 /* TripHistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26411F48CF99007DB818 /* TripHistoryListViewController.m */; };
 		A9EB26451F48D156007DB818 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26441F48D156007DB818 /* UserManager.m */; };
+		A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */; };
+		A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26491F494A02007DB818 /* HotelOrderListViewController.m */; };
+		A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */; };
+		A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB264F1F494B14007DB818 /* AboutViewController.m */; };
+		A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */; };
+		A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -490,6 +496,16 @@
 		A9EB26411F48CF99007DB818 /* TripHistoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripHistoryListViewController.m; sourceTree = "<group>"; };
 		A9EB26431F48D156007DB818 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		A9EB26441F48D156007DB818 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_comment_iciphone@2x.png"; sourceTree = "<group>"; };
+		A9EB26481F494A02007DB818 /* HotelOrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelOrderListViewController.h; sourceTree = "<group>"; };
+		A9EB26491F494A02007DB818 /* HotelOrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelOrderListViewController.m; sourceTree = "<group>"; };
+		A9EB264B1F494A54007DB818 /* UsefullInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsefullInfoViewController.h; sourceTree = "<group>"; };
+		A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefullInfoViewController.m; sourceTree = "<group>"; };
+		A9EB264E1F494B14007DB818 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A9EB264F1F494B14007DB818 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_about_qrcodeiphone@2x.png"; sourceTree = "<group>"; };
+		A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoViewController.h; sourceTree = "<group>"; };
+		A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoViewController.m; sourceTree = "<group>"; };
 		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
 		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1007,6 +1023,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */,
+				A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */,
 				A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */,
 				A9EB263C1F48C1D2007DB818 /* recoment_shadowiphone@2x.png */,
 				A9EB263A1F48C124007DB818 /* bigCelliphone@2x.png */,
@@ -1089,6 +1107,14 @@
 				A95B3FD11F3AAF2B0046E150 /* Setting */,
 				A9414EFC1F38C4DE007857D2 /* MineViewController.h */,
 				A9414EFD1F38C4DE007857D2 /* MineViewController.m */,
+				A9EB26481F494A02007DB818 /* HotelOrderListViewController.h */,
+				A9EB26491F494A02007DB818 /* HotelOrderListViewController.m */,
+				A9EB264B1F494A54007DB818 /* UsefullInfoViewController.h */,
+				A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */,
+				A9EB264E1F494B14007DB818 /* AboutViewController.h */,
+				A9EB264F1F494B14007DB818 /* AboutViewController.m */,
+				A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */,
+				A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1274,6 +1300,8 @@
 				A9BA5DF81F4716D10093A50D /* detail_blank_commentiphone@2x.png in Resources */,
 				A955E9C71F4557E100FEB05F /* detail_vip_goldiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
+				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
+				A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */,
 				A9EB26201F48ACFF007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A992C1E51F47275900D5371C /* share_qq_iciphone@2x.png in Resources */,
 				A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */,
@@ -1422,6 +1450,7 @@
 				A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
+				A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
@@ -1429,6 +1458,7 @@
 				A992C1DF1F4724EA00D5371C /* JWStarView.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
 				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
+				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
@@ -1438,7 +1468,9 @@
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
 				A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */,
+				A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
+				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
 				A9EB26451F48D156007DB818 /* UserManager.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
