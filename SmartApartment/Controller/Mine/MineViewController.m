@@ -14,6 +14,7 @@
 #import "AboutViewController.h"
 #import "HotelCommentListViewController.h"
 #import "TripHistoryListViewController.h"
+#import "HotelOrderListViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -98,7 +99,31 @@
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.textLabel.textColor = [UIColor darkTextColor];
             
+            UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 135, 0, 100, 44)];
+            [subLabel setTextAlignment:NSTextAlignmentRight];
+            [subLabel setTextColor:[UIColor lightGrayColor]];
+            [subLabel setFont:[UIFont systemFontOfSize:13.0f]];
+            subLabel.tag = 1000;
+            [cell addSubview:subLabel];
+            
+            UIImageView *iconArrow = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+            iconArrow.center = CGPointMake(kScreenWidth-25, 22);
+            iconArrow.tag = 1001;
+            [cell addSubview:iconArrow];
+            
         }
+        UILabel *subLabel = (UILabel *)[cell viewWithTag:1000];
+        UIImageView *iconArrow = (UIImageView *)[cell viewWithTag:1001];
+        
+        if (indexPath.row == 1) {
+            subLabel.text = @"常用旅客";
+        }else if (indexPath.row == 3){
+            iconArrow.hidden = YES;
+            subLabel.textColor = ThemeColor;
+            subLabel.left = subLabel.left + 20;
+            subLabel.text = @"400-4154-451";
+        }
+        
         
         NSArray *icons = @[@"mine_order_iciphone", @"mine_information_iciphone", @"mine_comment_iciphone", @"mine_information_iciphone"];
         NSArray *titles = @[@"酒店订单", @"常用信息", @"我的点评", @"客服电话"];
@@ -116,6 +141,10 @@
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.textLabel.textColor = [UIColor darkTextColor];
             
+            UIImageView *iconArrow = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+            iconArrow.center = CGPointMake(kScreenWidth-25, 22);
+            iconArrow.tag = 1001;
+            [cell addSubview:iconArrow];
         }
         cell.textLabel.text = @"关于蔓心宿";
         return cell;
@@ -126,15 +155,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            TripHistoryListViewController *vc = [TripHistoryListViewController new];
+            HotelOrderListViewController *vc = [HotelOrderListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            
+            
+            //TripHistoryListViewController *vc = [TripHistoryListViewController new];
+            //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else if (indexPath.row == 1) {
             
         }else if (indexPath.row == 2) {
             HotelCommentListViewController *vc = [HotelCommentListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }else {
+            NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
     }else {
         AboutViewController *vc = [AboutViewController new];

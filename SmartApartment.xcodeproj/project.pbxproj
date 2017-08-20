@@ -203,6 +203,18 @@
 		A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB264F1F494B14007DB818 /* AboutViewController.m */; };
 		A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */; };
 		A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */; };
+		A9EB267C1F4963D5007DB818 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB265E1F4963D5007DB818 /* MASCompositeConstraint.m */; };
+		A9EB267D1F4963D5007DB818 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26611F4963D5007DB818 /* MASConstraint.m */; };
+		A9EB267E1F4963D5007DB818 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26631F4963D5007DB818 /* MASConstraintMaker.m */; };
+		A9EB267F1F4963D5007DB818 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26651F4963D5007DB818 /* MASLayoutConstraint.m */; };
+		A9EB26801F4963D5007DB818 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26691F4963D5007DB818 /* MASViewAttribute.m */; };
+		A9EB26811F4963D5007DB818 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB266B1F4963D5007DB818 /* MASViewConstraint.m */; };
+		A9EB26821F4963D5007DB818 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB266D1F4963D5007DB818 /* NSArray+MASAdditions.m */; };
+		A9EB26831F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26701F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		A9EB26841F4963D5007DB818 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26721F4963D5007DB818 /* View+MASAdditions.m */; };
+		A9EB26851F4963D5007DB818 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26751F4963D5007DB818 /* ViewController+MASAdditions.m */; };
+		A9EB26861F4963D5007DB818 /* DotCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26781F4963D5007DB818 /* DotCountLabel.m */; };
+		A9EB26871F4963D5007DB818 /* YJSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB267A1F4963D5007DB818 /* YJSliderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -506,6 +518,35 @@
 		A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_about_qrcodeiphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoViewController.h; sourceTree = "<group>"; };
 		A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoViewController.m; sourceTree = "<group>"; };
+		A9EB265D1F4963D5007DB818 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		A9EB265E1F4963D5007DB818 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		A9EB265F1F4963D5007DB818 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		A9EB26601F4963D5007DB818 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		A9EB26611F4963D5007DB818 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		A9EB26621F4963D5007DB818 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		A9EB26631F4963D5007DB818 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		A9EB26641F4963D5007DB818 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		A9EB26651F4963D5007DB818 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		A9EB26661F4963D5007DB818 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		A9EB26671F4963D5007DB818 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		A9EB26681F4963D5007DB818 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		A9EB26691F4963D5007DB818 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		A9EB266A1F4963D5007DB818 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		A9EB266B1F4963D5007DB818 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		A9EB266C1F4963D5007DB818 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		A9EB266D1F4963D5007DB818 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		A9EB266E1F4963D5007DB818 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		A9EB266F1F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		A9EB26701F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		A9EB26711F4963D5007DB818 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		A9EB26721F4963D5007DB818 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		A9EB26731F4963D5007DB818 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		A9EB26741F4963D5007DB818 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		A9EB26751F4963D5007DB818 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		A9EB26771F4963D5007DB818 /* DotCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotCountLabel.h; sourceTree = "<group>"; };
+		A9EB26781F4963D5007DB818 /* DotCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotCountLabel.m; sourceTree = "<group>"; };
+		A9EB26791F4963D5007DB818 /* YJSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSliderView.h; sourceTree = "<group>"; };
+		A9EB267A1F4963D5007DB818 /* YJSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSliderView.m; sourceTree = "<group>"; };
 		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
 		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -848,6 +889,8 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A9EB26761F4963D5007DB818 /* Masonry */,
+				A9EB267B1F4963D5007DB818 /* YJSliderView */,
 				A96A32FF1F47573C00A55A42 /* WRCellView */,
 				A992C1DC1F4724EA00D5371C /* JWStarView */,
 				A95B3FD91F3AC7FF0046E150 /* ZYCalendarView */,
@@ -1179,6 +1222,51 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A9EB26761F4963D5007DB818 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB265D1F4963D5007DB818 /* MASCompositeConstraint.h */,
+				A9EB265E1F4963D5007DB818 /* MASCompositeConstraint.m */,
+				A9EB265F1F4963D5007DB818 /* MASConstraint+Private.h */,
+				A9EB26601F4963D5007DB818 /* MASConstraint.h */,
+				A9EB26611F4963D5007DB818 /* MASConstraint.m */,
+				A9EB26621F4963D5007DB818 /* MASConstraintMaker.h */,
+				A9EB26631F4963D5007DB818 /* MASConstraintMaker.m */,
+				A9EB26641F4963D5007DB818 /* MASLayoutConstraint.h */,
+				A9EB26651F4963D5007DB818 /* MASLayoutConstraint.m */,
+				A9EB26661F4963D5007DB818 /* Masonry.h */,
+				A9EB26671F4963D5007DB818 /* MASUtilities.h */,
+				A9EB26681F4963D5007DB818 /* MASViewAttribute.h */,
+				A9EB26691F4963D5007DB818 /* MASViewAttribute.m */,
+				A9EB266A1F4963D5007DB818 /* MASViewConstraint.h */,
+				A9EB266B1F4963D5007DB818 /* MASViewConstraint.m */,
+				A9EB266C1F4963D5007DB818 /* NSArray+MASAdditions.h */,
+				A9EB266D1F4963D5007DB818 /* NSArray+MASAdditions.m */,
+				A9EB266E1F4963D5007DB818 /* NSArray+MASShorthandAdditions.h */,
+				A9EB266F1F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				A9EB26701F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				A9EB26711F4963D5007DB818 /* View+MASAdditions.h */,
+				A9EB26721F4963D5007DB818 /* View+MASAdditions.m */,
+				A9EB26731F4963D5007DB818 /* View+MASShorthandAdditions.h */,
+				A9EB26741F4963D5007DB818 /* ViewController+MASAdditions.h */,
+				A9EB26751F4963D5007DB818 /* ViewController+MASAdditions.m */,
+			);
+			name = Masonry;
+			path = "../../../../../Downloads/YJSliderView-master/YJSliderView/Masonry";
+			sourceTree = "<group>";
+		};
+		A9EB267B1F4963D5007DB818 /* YJSliderView */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB26771F4963D5007DB818 /* DotCountLabel.h */,
+				A9EB26781F4963D5007DB818 /* DotCountLabel.m */,
+				A9EB26791F4963D5007DB818 /* YJSliderView.h */,
+				A9EB267A1F4963D5007DB818 /* YJSliderView.m */,
+			);
+			name = YJSliderView;
+			path = "../../../../../Downloads/YJSliderView-master/YJSliderView/YJSliderView";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1387,6 +1475,7 @@
 			files = (
 				A96A33081F47FF1B00A55A42 /* BookBottomView.m in Sources */,
 				A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */,
+				A9EB26821F4963D5007DB818 /* NSArray+MASAdditions.m in Sources */,
 				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
@@ -1400,6 +1489,7 @@
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
+				A9EB26811F4963D5007DB818 /* MASViewConstraint.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
 				A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */,
 				A96A33021F47573C00A55A42 /* WRCellView.m in Sources */,
@@ -1408,12 +1498,16 @@
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A95D64191F4692E300F78A7E /* LoginViewModel.m in Sources */,
 				A96A33491F4845C000A55A42 /* OrderDetailView.m in Sources */,
+				A9EB26801F4963D5007DB818 /* MASViewAttribute.m in Sources */,
 				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
+				A9EB267F1F4963D5007DB818 /* MASLayoutConstraint.m in Sources */,
+				A9EB267C1F4963D5007DB818 /* MASCompositeConstraint.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
 				A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */,
 				A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */,
+				A9EB26851F4963D5007DB818 /* ViewController+MASAdditions.m in Sources */,
 				A955E9CE1F45697E00FEB05F /* HotelDetailDateView.m in Sources */,
 				A95286151F441E9C00D7EB2F /* LocationManager.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
@@ -1427,6 +1521,7 @@
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
+				A9EB26831F4963D5007DB818 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
 				A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */,
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
@@ -1436,6 +1531,7 @@
 				A9EB26421F48CF99007DB818 /* TripHistoryListViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
 				A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */,
+				A9EB267E1F4963D5007DB818 /* MASConstraintMaker.m in Sources */,
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
@@ -1451,6 +1547,7 @@
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
 				A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */,
+				A9EB26841F4963D5007DB818 /* View+MASAdditions.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
@@ -1463,7 +1560,9 @@
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
 				A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */,
+				A9EB26861F4963D5007DB818 /* DotCountLabel.m in Sources */,
 				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
+				A9EB267D1F4963D5007DB818 /* MASConstraint.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
@@ -1476,6 +1575,7 @@
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A9EB26331F48BC65007DB818 /* TripListCell.m in Sources */,
+				A9EB26871F4963D5007DB818 /* YJSliderView.m in Sources */,
 				A95D64061F468DE500F78A7E /* LoginView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 				A9EB26241F48AF08007DB818 /* TripHelperNoOrderView.m in Sources */,

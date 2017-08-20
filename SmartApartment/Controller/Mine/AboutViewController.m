@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UILabel *versionLabel;
+@property (nonatomic, strong) UILabel *rightsLabel;
 
 @property (nonatomic, assign) BOOL didSetupConstraints;
 
@@ -38,6 +39,7 @@
     [self.view addSubview:self.contentView];
     [self.contentView addSubview:self.logoImageView];
     [self.contentView addSubview:self.versionLabel];
+    [self.contentView addSubview:self.rightsLabel];
 
     [self.view setNeedsUpdateConstraints];
 }
@@ -75,9 +77,21 @@
         [_versionLabel setFont:[UIFont systemFontOfSize:18.0f]];
         
     }
-    
     return _versionLabel;
 }
+
+- (UILabel*)rightsLabel
+{
+    if (!_rightsLabel) {
+        _rightsLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [_rightsLabel setTextAlignment:NSTextAlignmentCenter];
+        [_rightsLabel setTextColor:[UIColor lightGrayColor]];
+        [_rightsLabel setFont:[UIFont systemFontOfSize:13.0f]];
+        _rightsLabel.text = @"Copyright© 2015 ihotels.cc, All rights reserved.";
+    }
+    return _rightsLabel;
+}
+
 
 
 - (UIView*)contentView
@@ -114,6 +128,9 @@
         [self.versionLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:16.0f];
         [self.versionLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16.0f];
         [self.versionLabel autoSetDimension:ALDimensionHeight toSize:60];
+        
+        [self.rightsLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        [self.rightsLabel autoSetDimension:ALDimensionHeight toSize:40];
         
         self.didSetupConstraints = TRUE;
         [self setVersionLabelText:@"1.0"];
