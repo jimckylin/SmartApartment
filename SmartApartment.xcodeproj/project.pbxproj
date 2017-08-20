@@ -215,6 +215,11 @@
 		A9EB26851F4963D5007DB818 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26751F4963D5007DB818 /* ViewController+MASAdditions.m */; };
 		A9EB26861F4963D5007DB818 /* DotCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26781F4963D5007DB818 /* DotCountLabel.m */; };
 		A9EB26871F4963D5007DB818 /* YJSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB267A1F4963D5007DB818 /* YJSliderView.m */; };
+		A9EB268B1F4971E5007DB818 /* PassengerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26891F4971E5007DB818 /* PassengerCell.m */; };
+		A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268A1F4971E5007DB818 /* PassengerCell.xib */; };
+		A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */; };
+		A9EB26901F497546007DB818 /* order_add_grey_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */; };
+		A9EB26931F4977C9007DB818 /* AddPassengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26921F4977C9007DB818 /* AddPassengerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -547,6 +552,13 @@
 		A9EB26781F4963D5007DB818 /* DotCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotCountLabel.m; sourceTree = "<group>"; };
 		A9EB26791F4963D5007DB818 /* YJSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSliderView.h; sourceTree = "<group>"; };
 		A9EB267A1F4963D5007DB818 /* YJSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSliderView.m; sourceTree = "<group>"; };
+		A9EB26881F4971E5007DB818 /* PassengerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassengerCell.h; sourceTree = "<group>"; };
+		A9EB26891F4971E5007DB818 /* PassengerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassengerCell.m; sourceTree = "<group>"; };
+		A9EB268A1F4971E5007DB818 /* PassengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassengerCell.xib; sourceTree = "<group>"; };
+		A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "information_phone_iciphone@2x.png"; sourceTree = "<group>"; };
+		A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_grey_iciphone@2x.png"; sourceTree = "<group>"; };
+		A9EB26911F4977C9007DB818 /* AddPassengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPassengerViewController.h; sourceTree = "<group>"; };
+		A9EB26921F4977C9007DB818 /* AddPassengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPassengerViewController.m; sourceTree = "<group>"; };
 		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
 		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -923,6 +935,9 @@
 			children = (
 				A9906F661F3BFC17007725B7 /* MineHeaderView.h */,
 				A9906F671F3BFC17007725B7 /* MineHeaderView.m */,
+				A9EB26881F4971E5007DB818 /* PassengerCell.h */,
+				A9EB26891F4971E5007DB818 /* PassengerCell.m */,
+				A9EB268A1F4971E5007DB818 /* PassengerCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1066,6 +1081,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */,
+				A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */,
 				A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */,
 				A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */,
 				A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */,
@@ -1154,6 +1171,8 @@
 				A9EB26491F494A02007DB818 /* HotelOrderListViewController.m */,
 				A9EB264B1F494A54007DB818 /* UsefullInfoViewController.h */,
 				A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */,
+				A9EB26911F4977C9007DB818 /* AddPassengerViewController.h */,
+				A9EB26921F4977C9007DB818 /* AddPassengerViewController.m */,
 				A9EB264E1F494B14007DB818 /* AboutViewController.h */,
 				A9EB264F1F494B14007DB818 /* AboutViewController.m */,
 				A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */,
@@ -1341,6 +1360,7 @@
 				A97677971F41EEA600EDCDFA /* xq_xinyongzhuiphone@2x.png in Resources */,
 				A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */,
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
+				A9EB26901F497546007DB818 /* order_add_grey_iciphone@2x.png in Resources */,
 				A9EB262F1F48B1CB007DB818 /* trip_remind_iciphone@2x.png in Resources */,
 				A976779E1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png in Resources */,
 				A976779F1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png in Resources */,
@@ -1348,6 +1368,7 @@
 				A9BA5DEC1F45F5320093A50D /* detail_more_iciphone@2x.png in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
 				A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */,
+				A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */,
 				A9EB262A1F48AF9E007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A9BA5DEE1F45F98C0093A50D /* xq_wenhaoiphone@2x.png in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
@@ -1355,6 +1376,7 @@
 				A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */,
 				A992C1ED1F472D8600D5371C /* star_full_iciphone@2x.png in Resources */,
 				A9EB26351F48BC79007DB818 /* TripListCell.xib in Resources */,
+				A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */,
 				A952860B1F43EB2900D7EB2F /* mapapi.bundle in Resources */,
 				A97677891F3F0AFB00EDCDFA /* mine_vip_2_iciphone@2x.png in Resources */,
 				A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */,
@@ -1552,6 +1574,7 @@
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
+				A9EB26931F4977C9007DB818 /* AddPassengerViewController.m in Sources */,
 				A992C1DF1F4724EA00D5371C /* JWStarView.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
 				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
@@ -1576,6 +1599,7 @@
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A9EB26331F48BC65007DB818 /* TripListCell.m in Sources */,
 				A9EB26871F4963D5007DB818 /* YJSliderView.m in Sources */,
+				A9EB268B1F4971E5007DB818 /* PassengerCell.m in Sources */,
 				A95D64061F468DE500F78A7E /* LoginView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 				A9EB26241F48AF08007DB818 /* TripHelperNoOrderView.m in Sources */,

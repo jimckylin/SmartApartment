@@ -15,6 +15,7 @@
 #import "HotelCommentListViewController.h"
 #import "TripHistoryListViewController.h"
 #import "HotelOrderListViewController.h"
+#import "UsefullInfoViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -165,6 +166,8 @@
             //TripHistoryListViewController *vc = [TripHistoryListViewController new];
             //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else if (indexPath.row == 1) {
+            UsefullInfoViewController *vc = [UsefullInfoViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
             
         }else if (indexPath.row == 2) {
             HotelCommentListViewController *vc = [HotelCommentListViewController new];
