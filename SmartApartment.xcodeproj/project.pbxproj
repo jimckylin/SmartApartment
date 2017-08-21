@@ -21,6 +21,13 @@
 		A92F7FC51F4B3D1E0056CACC /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FBB1F4B3D1D0056CACC /* ViewController+MASAdditions.m */; };
 		A92F7FCB1F4B3D290056CACC /* DotCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FC81F4B3D290056CACC /* DotCountLabel.m */; };
 		A92F7FCC1F4B3D290056CACC /* YJSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FCA1F4B3D290056CACC /* YJSliderView.m */; };
+		A92F7FD31F4B502A0056CACC /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FD11F4B502A0056CACC /* MyOrderCell.m */; };
+		A92F7FD41F4B502A0056CACC /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FD21F4B502A0056CACC /* MyOrderCell.xib */; };
+		A92F7FD61F4B515F0056CACC /* message_location_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FD51F4B515F0056CACC /* message_location_iciphone@2x.png */; };
+		A92F7FD81F4B51980056CACC /* message_zip_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FD71F4B51980056CACC /* message_zip_iciphone@2x.png */; };
+		A92F7FDA1F4B53BC0056CACC /* trip_pic_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */; };
+		A92F7FDD1F4B5F660056CACC /* detail_listiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */; };
+		A92F7FDE1F4B5F660056CACC /* detail_phone_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
 		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
@@ -256,6 +263,14 @@
 		A92F7FC81F4B3D290056CACC /* DotCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotCountLabel.m; sourceTree = "<group>"; };
 		A92F7FC91F4B3D290056CACC /* YJSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSliderView.h; sourceTree = "<group>"; };
 		A92F7FCA1F4B3D290056CACC /* YJSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSliderView.m; sourceTree = "<group>"; };
+		A92F7FD01F4B502A0056CACC /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
+		A92F7FD11F4B502A0056CACC /* MyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCell.m; sourceTree = "<group>"; };
+		A92F7FD21F4B502A0056CACC /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		A92F7FD51F4B515F0056CACC /* message_location_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_location_iciphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FD71F4B51980056CACC /* message_zip_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_zip_iciphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_pic_bgiphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_listiphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_phone_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9414EFC1F38C4DE007857D2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
@@ -994,6 +1009,9 @@
 				A9EB26881F4971E5007DB818 /* PassengerCell.h */,
 				A9EB26891F4971E5007DB818 /* PassengerCell.m */,
 				A9EB268A1F4971E5007DB818 /* PassengerCell.xib */,
+				A92F7FD01F4B502A0056CACC /* MyOrderCell.h */,
+				A92F7FD11F4B502A0056CACC /* MyOrderCell.m */,
+				A92F7FD21F4B502A0056CACC /* MyOrderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1137,6 +1155,11 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */,
+				A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */,
+				A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */,
+				A92F7FD71F4B51980056CACC /* message_zip_iciphone@2x.png */,
+				A92F7FD51F4B515F0056CACC /* message_location_iciphone@2x.png */,
 				A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */,
 				A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */,
 				A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */,
@@ -1365,6 +1388,7 @@
 				A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */,
 				A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */,
 				A95B3FC61F3A9F290046E150 /* mine_hand_bgiphone@2x.png in Resources */,
+				A92F7FD81F4B51980056CACC /* message_zip_iciphone@2x.png in Resources */,
 				A9906F6A1F3C00E6007725B7 /* mine_headiphone@2x.png in Resources */,
 				A97677871F3F0AFB00EDCDFA /* mine_vip_1_iciphone@2x.png in Resources */,
 				A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */,
@@ -1381,6 +1405,7 @@
 				A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */,
 				A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */,
 				A9EB262A1F48AF9E007DB818 /* trip_illustrationiphone@2x.png in Resources */,
+				A92F7FDA1F4B53BC0056CACC /* trip_pic_bgiphone@2x.png in Resources */,
 				A9BA5DEE1F45F98C0093A50D /* xq_wenhaoiphone@2x.png in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
 				A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */,
@@ -1390,6 +1415,7 @@
 				A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */,
 				A952860B1F43EB2900D7EB2F /* mapapi.bundle in Resources */,
 				A97677891F3F0AFB00EDCDFA /* mine_vip_2_iciphone@2x.png in Resources */,
+				A92F7FD41F4B502A0056CACC /* MyOrderCell.xib in Resources */,
 				A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */,
 				A96A33541F484C1200A55A42 /* order_detail_stayiphone@2x.png in Resources */,
 				A992C1EF1F472DC300D5371C /* star_gray_iciphone@2x.png in Resources */,
@@ -1419,6 +1445,7 @@
 				A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */,
 				A9EB263D1F48C1D2007DB818 /* recoment_shadowiphone@2x.png in Resources */,
 				A9BA5DF81F4716D10093A50D /* detail_blank_commentiphone@2x.png in Resources */,
+				A92F7FD61F4B515F0056CACC /* message_location_iciphone@2x.png in Resources */,
 				A955E9C71F4557E100FEB05F /* detail_vip_goldiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
@@ -1436,6 +1463,8 @@
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
 				A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */,
 				A985ABEF1F415134005B31DF /* list_city_iciphone@2x.png in Resources */,
+				A92F7FDD1F4B5F660056CACC /* detail_listiphone@2x.png in Resources */,
+				A92F7FDE1F4B5F660056CACC /* detail_phone_iciphone@2x.png in Resources */,
 				A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */,
 				A9EB26391F48C0D0007DB818 /* trip_more_iciphone@2x.png in Resources */,
 				A952860F1F43F9CE00D7EB2F /* detail_map_piniphone@2x.png in Resources */,
@@ -1574,6 +1603,7 @@
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */,
+				A92F7FD31F4B502A0056CACC /* MyOrderCell.m in Sources */,
 				A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,

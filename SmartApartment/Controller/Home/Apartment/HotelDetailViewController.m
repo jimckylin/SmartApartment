@@ -44,7 +44,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 
 
 @interface HotelDetailViewController ()<UITableViewDelegate,
-UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateViewDelegate>
+UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateViewDelegate, HotelDetailHeaderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
@@ -343,6 +343,19 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 - (void)shareBtnClick:(id)sender {
     
     
+}
+
+
+#pragma mark - HotelDetailHeaderCellDelegate
+
+- (void)hotelDetailHeaderCellDidClickBtn:(HotelDetailHeaderType)type {
+    
+    if (type == HotelDetailHeaderTypeHotelDetail) {
+        
+    }else {
+        NSMutableString* str = [[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
 }
 
 

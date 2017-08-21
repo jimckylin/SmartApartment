@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, HotelDetailHeaderType) {
+    
+    HotelDetailHeaderTypeHotelDetail = 123,    // 详情
+    HotelDetailHeaderTypeTelBtn,               // 电话
+};
+
+
 @protocol HotelDetailHeaderCellDelegate <NSObject>
 
-- (void)hotelDetailHeaderCellDidClickBtn;
+- (void)hotelDetailHeaderCellDidClickBtn:(HotelDetailHeaderType)type;
 
 @end
 
