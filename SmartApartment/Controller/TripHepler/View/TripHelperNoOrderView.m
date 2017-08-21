@@ -17,10 +17,22 @@
 @implementation TripHelperNoOrderView
 
 - (void)awakeFromNib {
-    
     [self.bookHotelBtn addTarget:self action:@selector(bookHotelBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     [super awakeFromNib];
+}
+
+
+- (void)setFrame:(CGRect)frame {
+    frame.size.width = kScreenWidth;
+    [super setFrame:frame];
+    
+}
+
+- (void)layoutSubviews {
+    
+    [super layoutSubviews];
+    //[self autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
 }
 
 - (void)bookHotelBtnClick:(id)sender {

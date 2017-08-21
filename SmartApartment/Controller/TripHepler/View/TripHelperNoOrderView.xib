@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TripHelperNoOrderView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TripHelperNoOrderView">
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="TripHelperNoOrderView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="1193"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trip_illustrationiphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="GjJ-rJ-kB9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip_illustrationiphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="GjJ-rJ-kB9">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="目前暂无订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLW-g1-aFZ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前暂无订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLW-g1-aFZ">
                     <rect key="frame" x="108" y="236" width="158" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="FWG-iS-aMV"/>
+                        <constraint firstAttribute="width" constant="158" id="ykr-X5-bLl"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击预订酒店，即刻开启你的行程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foP-EU-aE8">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击预订酒店，即刻开启你的行程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foP-EU-aE8">
                     <rect key="frame" x="80" y="265" width="215" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.49342211790000001" green="0.49342211790000001" blue="0.49342211790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZG-IF-JnR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZG-IF-JnR">
                     <rect key="frame" x="32" y="314" width="311" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.91764705882352937" green="0.12549019607843137" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9ZG-IF-JnR" secondAttribute="height" multiplier="311:44" id="rjl-53-y5Y"/>
+                    </constraints>
                     <state key="normal" title="预订酒店">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -46,46 +50,81 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-dh-lHT">
-                    <rect key="frame" x="124" y="401" width="126" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-dh-lHT">
+                    <rect key="frame" x="124" y="401" width="126" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="  行程提醒" image="trip_remind_iciphone.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trip_remind_piciphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="u1U-jW-Ssp">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip_remind_piciphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="u1U-jW-Ssp">
                     <rect key="frame" x="0.0" y="421" width="384" height="320"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="JCy-T7-c8J"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您的入住日程将在这里呈现" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf5-xv-veR">
-                    <rect key="frame" x="32" y="725" width="311" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的入住日程将在这里呈现" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf5-xv-veR">
+                    <rect key="frame" x="32" y="730" width="311" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.16977007769999999" green="0.16977007769999999" blue="0.16977007769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-rE-iiT">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-rE-iiT">
                     <rect key="frame" x="124" y="793" width="126" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="hpS-Fb-aTM"/>
+                        <constraint firstAttribute="width" constant="126" id="oJ5-S9-Jh4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="  入住服务" image="trip_service_iciphone.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trip_service_piciphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="IqX-Ah-RFQ">
-                    <rect key="frame" x="0.0" y="817" width="375" height="314"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip_service_piciphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="IqX-Ah-RFQ">
+                    <rect key="frame" x="69" y="817" width="236" height="299"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您可以在行程助手里方便地完成续住、付房费和自助退房等操作" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zm-pQ-KFE">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您可以在行程助手里方便地完成续住、付房费和自助退房等操作" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zm-pQ-KFE">
                     <rect key="frame" x="52" y="1118" width="281" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="nWm-Hi-kl6"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.16977007769999999" green="0.16977007769999999" blue="0.16977007769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Mew-rE-iiT" secondAttribute="bottom" constant="378" id="6J1-Vr-vs9"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="DKZ-zB-3HS"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="leading" secondItem="Rf5-xv-veR" secondAttribute="leading" id="Fur-2J-dtj"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="qLW-g1-aFZ" secondAttribute="centerX" id="HUr-5t-QnX"/>
+                <constraint firstAttribute="trailing" secondItem="u1U-jW-Ssp" secondAttribute="trailing" constant="-9" id="I9F-Kf-RG8"/>
+                <constraint firstItem="qLW-g1-aFZ" firstAttribute="top" secondItem="GjJ-rJ-kB9" secondAttribute="bottom" constant="8" symbolic="YES" id="IXz-YR-SHG"/>
+                <constraint firstItem="u1U-jW-Ssp" firstAttribute="top" secondItem="lFB-dh-lHT" secondAttribute="bottom" constant="3" id="IqF-tu-lJC"/>
+                <constraint firstItem="GjJ-rJ-kB9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jv3-ol-KWV"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="Mew-rE-iiT" secondAttribute="centerX" id="KZM-em-WgN"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="foP-EU-aE8" secondAttribute="centerX" id="McS-0D-PFU"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="GjJ-rJ-kB9" secondAttribute="centerX" id="Sg1-Fb-ISd"/>
+                <constraint firstAttribute="trailing" secondItem="GjJ-rJ-kB9" secondAttribute="trailing" id="TZJ-7e-sUC"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="trailing" secondItem="Rf5-xv-veR" secondAttribute="trailing" id="U7x-Pd-ZlN"/>
+                <constraint firstItem="7Zm-pQ-KFE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="52" id="VLs-Ba-2k6"/>
+                <constraint firstItem="foP-EU-aE8" firstAttribute="top" secondItem="qLW-g1-aFZ" secondAttribute="bottom" constant="8" symbolic="YES" id="VZk-vt-lX5"/>
+                <constraint firstItem="GjJ-rJ-kB9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Yzg-SW-fUS"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cmR-cg-8PF"/>
+                <constraint firstItem="u1U-jW-Ssp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="diD-zf-cDq"/>
+                <constraint firstItem="Mew-rE-iiT" firstAttribute="top" secondItem="Rf5-xv-veR" secondAttribute="bottom" constant="47" id="hLy-cm-hHM"/>
+                <constraint firstItem="u1U-jW-Ssp" firstAttribute="centerX" secondItem="7Zm-pQ-KFE" secondAttribute="centerX" id="hXx-U0-fgt"/>
+                <constraint firstItem="qLW-g1-aFZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="236" id="l2z-bc-SY2"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="top" secondItem="foP-EU-aE8" secondAttribute="bottom" constant="28" id="lCs-kZ-GJF"/>
+                <constraint firstItem="IqX-Ah-RFQ" firstAttribute="top" secondItem="Mew-rE-iiT" secondAttribute="bottom" constant="2" id="lT0-5d-xbT"/>
+                <constraint firstItem="lFB-dh-lHT" firstAttribute="top" secondItem="9ZG-IF-JnR" secondAttribute="bottom" constant="43" id="rnU-Xj-osp"/>
+                <constraint firstItem="Mew-rE-iiT" firstAttribute="leading" secondItem="lFB-dh-lHT" secondAttribute="leading" id="u40-Nn-eby"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="lFB-dh-lHT" secondAttribute="centerX" id="wK2-tS-55t"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="314" id="xC9-Zn-IYj"/>
+                <constraint firstItem="9ZG-IF-JnR" firstAttribute="centerX" secondItem="IqX-Ah-RFQ" secondAttribute="centerX" id="yGu-nC-WIa"/>
+                <constraint firstItem="7Zm-pQ-KFE" firstAttribute="top" secondItem="IqX-Ah-RFQ" secondAttribute="bottom" constant="2" id="zc6-Mz-dP4"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -93,7 +132,7 @@
             <connections>
                 <outlet property="bookHotelBtn" destination="9ZG-IF-JnR" id="rZ5-pw-ahP"/>
             </connections>
-            <point key="canvasLocation" x="-205.5" y="180.5"/>
+            <point key="canvasLocation" x="-205.5" y="447.5"/>
         </view>
     </objects>
     <resources>
