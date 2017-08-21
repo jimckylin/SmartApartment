@@ -11,23 +11,35 @@
 @interface OrderDetailView ()
 
 @property (nonatomic, strong) IBOutlet UIButton *payOrderBtn;
+@property (nonatomic, strong) IBOutlet UIButton *cancelBtn;
 
 @end
 
 @implementation OrderDetailView
 
 - (void)awakeFromNib {
-    
+    self.payOrderBtn.tag = OrderDetailViewBtnTypePay;
     [self.payOrderBtn addTarget:self action:@selector(payOrderBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.cancelBtn.tag = OrderDetailViewBtnTypeCancel;
+    [self.cancelBtn addTarget:self action:@selector(cancelBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     [super awakeFromNib];
 }
 
-- (void)payOrderBtnClick:(id)sender {
+- (void)payOrderBtnClick:(UIButton *)sender {
     
     if (self.OrderDetailViewBlock) {
-        self.OrderDetailViewBlock();
+        self.OrderDetailViewBlock(sender.tag);
     }
 }
+
+- (void)cancelBtnClick:(UIButton *)sender {
+    
+    if (self.OrderDetailViewBlock) {
+        self.OrderDetailViewBlock(sender.tag);
+    }
+}
+
 
 @end

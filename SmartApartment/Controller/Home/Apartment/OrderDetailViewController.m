@@ -35,9 +35,12 @@
 
 - (void)addEvent {
     
-    self.orderDetailView.OrderDetailViewBlock = ^(void){
-        
-        [[NavManager shareInstance] returnToFrontView:YES];
+    self.orderDetailView.OrderDetailViewBlock = ^(OrderDetailViewBtnType type){
+        if (type == OrderDetailViewBtnTypePay) {
+            [[NavManager shareInstance] returnToFrontView:YES];
+        }else {
+            
+        }
     };
 }
 

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, OrderDetailViewBtnType) {
+    
+    OrderDetailViewBtnTypePay = 123,    // 去支付
+    OrderDetailViewBtnTypeCancel,       // 取消
+};
+
 @interface OrderDetailView : UIView
 
-@property (nonatomic, copy) void(^OrderDetailViewBlock)(void);
+@property (nonatomic, copy) void(^OrderDetailViewBlock)(OrderDetailViewBtnType type);
 
 @end
