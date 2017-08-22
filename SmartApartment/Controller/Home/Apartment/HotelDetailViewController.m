@@ -15,6 +15,8 @@
 #import "HotelDetailDateView.h"
 #import "ZYCalendarManager.h"
 #import "ZZFoldCellModel.h"
+#import "ShareManager.h"
+
 /* 头部 */
 #import "BlankCell.h"
 #import "HotelDetailHeaderCell.h"
@@ -29,6 +31,9 @@
 #import "HotelDetailCommentCell.h"
 #import "HotelDetailNoCommentCellCell.h"
 #import "HotelDetailMoreCommentCell.h"
+
+
+
 
 NSString *const kBlankCell = @"BlankCell";
 NSString *const kHotelDetailHeaderCell = @"HotelDetailHeaderCell";
@@ -206,7 +211,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
     if (section == 0 || section == 1) {
         if (section == 0 && row == 0) {
             HotelDetailHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailHeaderCell];
-            //cell.delegate = self;
+            cell.delegate = self;
             
             return cell;
         }else if (section == 1 && row == 0) {
@@ -342,7 +347,7 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 
 - (void)shareBtnClick:(id)sender {
     
-    
+    [[ShareManager manager] startShare];
 }
 
 
