@@ -226,7 +226,7 @@
 
 - (PPNumberButton *)roomNumBtn{
     if (!_roomNumBtn) {
-        _roomNumBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(kScreenWidth - 115, 17.5, 100, 15)];
+        _roomNumBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(kScreenWidth - 117, 17.5, 100, 15)];
         // 初始化时隐藏减按钮
         _roomNumBtn.defaultNumber = 1;
         _roomNumBtn.minValue = 1;

@@ -8,6 +8,7 @@
 
 #import "HotelSelectSubView.h"
 #import "UIImage+color.h"
+#import <BAButton/BAButton.h>
 
 @interface HotelSelectSubView ()
 
@@ -46,14 +47,14 @@
     self.backgroundColor = [UIColor whiteColor];
     
     _cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _cityBtn.frame = CGRectMake(30, 0, kScreenWidth - 60 - 80, 50);
     [_cityBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    //[_cityBtn setImage:kImage(@"home_arrow_iconiphone") forState:UIControlStateNormal];
+    [_cityBtn setImage:kImage(@"home_arrow_iconiphone") forState:UIControlStateNormal];
     [_cityBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [_cityBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
-    [_cityBtn setTitle:@"福州  >" forState:UIControlStateNormal];
-    _cityBtn.titleLabel.textAlignment = NSTextAlignmentLeft; // 文字在titleLabel中左对齐(并没有看出有什么卵用)
-    [_cityBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
+    [_cityBtn setTitle:@"福州" forState:UIControlStateNormal];
+    [_cityBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeLeftImageRight padding:10];
     _cityBtn.tag = HotelSelectBtnTypeCitySelect;
     [self addSubview:_cityBtn];
     
@@ -184,9 +185,9 @@
     
     CGFloat paddingX = 30;
     
-    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:paddingX];
-    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_cityBtn autoSetDimensionsToSize:CGSizeMake(150, 50)];
+//    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:paddingX];
+//    [_cityBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
+//    [_cityBtn autoSetDimensionsToSize:CGSizeMake(150, 50)];
     
     [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:paddingX];
     [_locateBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];

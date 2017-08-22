@@ -16,6 +16,8 @@
 #import "TripHistoryListViewController.h"
 #import "HotelOrderListViewController.h"
 #import "UsefullInfoViewController.h"
+#import "WalletViewController.h"
+#import "CouponViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -198,15 +200,21 @@
 - (void)mineHeaderViewDidClickEvent:(HeaderEventType)type {
     
     switch (type) {
-            case HeaderEventTypeProfile:{
-                PersonInfoViewController *vc = [PersonInfoViewController new];
-                [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        case HeaderEventTypeProfile:{
+            PersonInfoViewController *vc = [PersonInfoViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
             }
             break;
-            case HeaderEventTypeBalance:
-            
+        case HeaderEventTypeBalance: {
+            WalletViewController *vc = [WalletViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+                
+            }
             break;
-            case HeaderEventTypeCoupon:
+        case HeaderEventTypeCoupon: {
+            CouponViewController *vc = [CouponViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
             
             break;
             case HeaderEventTypeIntegral:

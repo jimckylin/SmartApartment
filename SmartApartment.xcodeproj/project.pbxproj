@@ -28,6 +28,12 @@
 		A92F7FDA1F4B53BC0056CACC /* trip_pic_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */; };
 		A92F7FDD1F4B5F660056CACC /* detail_listiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */; };
 		A92F7FDE1F4B5F660056CACC /* detail_phone_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */; };
+		A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FE01F4C65870056CACC /* WalletViewController.m */; };
+		A92F7FE41F4C66C80056CACC /* WalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FE31F4C66C80056CACC /* WalletView.m */; };
+		A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FE61F4C6FDC0056CACC /* RechargeViewController.m */; };
+		A92F7FEA1F4C95B10056CACC /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FE91F4C95B10056CACC /* CouponViewController.m */; };
+		A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FEC1F4C982F0056CACC /* CouponListCell.m */; };
+		A92F7FEF1F4C999F0056CACC /* coupon_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
 		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
@@ -284,6 +290,17 @@
 		A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_pic_bgiphone@2x.png"; sourceTree = "<group>"; };
 		A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_listiphone@2x.png"; sourceTree = "<group>"; };
 		A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_phone_iciphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FDF1F4C65870056CACC /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
+		A92F7FE01F4C65870056CACC /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
+		A92F7FE21F4C66C80056CACC /* WalletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletView.h; sourceTree = "<group>"; };
+		A92F7FE31F4C66C80056CACC /* WalletView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletView.m; sourceTree = "<group>"; };
+		A92F7FE51F4C6FDC0056CACC /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		A92F7FE61F4C6FDC0056CACC /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
+		A92F7FE81F4C95B10056CACC /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponViewController.h; sourceTree = "<group>"; };
+		A92F7FE91F4C95B10056CACC /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponViewController.m; sourceTree = "<group>"; };
+		A92F7FEB1F4C982F0056CACC /* CouponListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListCell.h; sourceTree = "<group>"; };
+		A92F7FEC1F4C982F0056CACC /* CouponListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListCell.m; sourceTree = "<group>"; };
+		A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_bgiphone@2x.png"; sourceTree = "<group>"; };
 		A9414EFC1F38C4DE007857D2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
@@ -1115,6 +1132,10 @@
 				A92F7FD01F4B502A0056CACC /* MyOrderCell.h */,
 				A92F7FD11F4B502A0056CACC /* MyOrderCell.m */,
 				A92F7FD21F4B502A0056CACC /* MyOrderCell.xib */,
+				A92F7FE21F4C66C80056CACC /* WalletView.h */,
+				A92F7FE31F4C66C80056CACC /* WalletView.m */,
+				A92F7FEB1F4C982F0056CACC /* CouponListCell.h */,
+				A92F7FEC1F4C982F0056CACC /* CouponListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1258,6 +1279,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */,
 				A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */,
 				A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */,
 				A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */,
@@ -1363,6 +1385,12 @@
 				A9EB264F1F494B14007DB818 /* AboutViewController.m */,
 				A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */,
 				A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */,
+				A92F7FDF1F4C65870056CACC /* WalletViewController.h */,
+				A92F7FE01F4C65870056CACC /* WalletViewController.m */,
+				A92F7FE51F4C6FDC0056CACC /* RechargeViewController.h */,
+				A92F7FE61F4C6FDC0056CACC /* RechargeViewController.m */,
+				A92F7FE81F4C95B10056CACC /* CouponViewController.h */,
+				A92F7FE91F4C95B10056CACC /* CouponViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1531,6 +1559,7 @@
 				A95154AB1F4C183A00841D3F /* UMSocialSDKPromptResources.bundle in Resources */,
 				A992C1E41F47275900D5371C /* share_friend_iciphone@2x.png in Resources */,
 				A96A334F1F4847E000A55A42 /* details_card_bgiphone@2x.png in Resources */,
+				A92F7FEF1F4C999F0056CACC /* coupon_bgiphone@2x.png in Resources */,
 				A9EB26301F48B1CB007DB818 /* trip_service_iciphone@2x.png in Resources */,
 				A985ABF01F415134005B31DF /* list_time_iciphone@2x.png in Resources */,
 				A9EB262B1F48AF9E007DB818 /* trip_remind_piciphone@2x.png in Resources */,
@@ -1664,6 +1693,7 @@
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
+				A92F7FEA1F4C95B10056CACC /* CouponViewController.m in Sources */,
 				A95154B11F4C2D1000841D3F /* ShareManager.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
 				A92F7FC51F4B3D1E0056CACC /* ViewController+MASAdditions.m in Sources */,
@@ -1694,6 +1724,7 @@
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
+				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
@@ -1709,6 +1740,7 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A96A33131F481DDF00A55A42 /* UseCouponListViewController.m in Sources */,
@@ -1727,6 +1759,7 @@
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
 				A92F7FCC1F4B3D290056CACC /* YJSliderView.m in Sources */,
+				A92F7FE41F4C66C80056CACC /* WalletView.m in Sources */,
 				A9EB26931F4977C9007DB818 /* AddPassengerViewController.m in Sources */,
 				A992C1DF1F4724EA00D5371C /* JWStarView.m in Sources */,
 				A92F7FCB1F4B3D290056CACC /* DotCountLabel.m in Sources */,
@@ -1753,6 +1786,7 @@
 				A92F7FC11F4B3D1D0056CACC /* MASViewConstraint.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
+				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A9EB26331F48BC65007DB818 /* TripListCell.m in Sources */,
 				A9EB268B1F4971E5007DB818 /* PassengerCell.m in Sources */,
@@ -1915,7 +1949,7 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1949,7 +1983,7 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
