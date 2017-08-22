@@ -11,6 +11,7 @@
 
 @interface BookBottomView ()
 
+@property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UILabel *priceLabel;
 
 @property (nonatomic, strong) UIButton *detailBtn;
@@ -35,12 +36,18 @@
 - (void)initView {
     self.backgroundColor = [UIColor whiteColor];
     
+    _bgView = [UIView new];
+    _bgView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_bgView];
+    
+    
+    
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:18];
     _priceLabel.textColor = [UIColor redColor];
     _priceLabel.numberOfLines = 0;
     _priceLabel.text = @"￥215";
-    [self addSubview:_priceLabel];
+    [_bgView addSubview:_priceLabel];
     
     // 时间选择
     _detailBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,7 +58,7 @@
     [_detailBtn setTitle:@"明细" forState:UIControlStateNormal];
     [_detailBtn setImage:kImage(@"order_up_iciphone") forState:UIControlStateNormal];
     _detailBtn.tag = HotelSelectBtnTypeDetail;
-    [self addSubview:_detailBtn];
+    [_bgView addSubview:_detailBtn];
     [_detailBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeCenterImageRight padding:10];
     
     _bookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -62,7 +69,7 @@
     [_bookBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_bookBtn.titleLabel setFont:[UIFont systemFontOfSize:16]];
     _bookBtn.tag = HotelSelectBtnTypeBook;
-    [self addSubview:_bookBtn];
+    [_bgView addSubview:_bookBtn];
 }
 
 
@@ -76,10 +83,22 @@
         [UIView animateWithDuration:0.2 animations:^{
             if (_detailBtn.selected) {
                 [_detailBtn.imageView setTransform:CGAffineTransformMakeRotation(M_PI)];
+                self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+                
             }else {
                 [_detailBtn.imageView setTransform:CGAffineTransformMakeRotation(0)];
+                self.backgroundColor = [UIColor whiteColor];
             }
         }];
+        
+        if (_detailBtn.selected) {
+            self.height = kScreenHeight;
+            self.top = 0;
+        }else {
+            self.top = kScreenHeight - 50;
+            self.height = 50;
+        }
+        _bgView.top = self.height - 50;
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(bookBottomViewDickBtn:)]) {
@@ -92,6 +111,9 @@
 
 - (void)updateConstraints {
 
+    [_bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [_bgView autoSetDimension:ALDimensionHeight toSize:50];
+    
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 50)];

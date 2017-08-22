@@ -19,6 +19,7 @@ target 'SmartApartment' do
   pod 'BMLine',                '~> 1.0'
   pod 'ChameleonFramework',    '~> 2.1.0'
   pod 'RTLabel',               '~> 1.0.1'
+  pod 'PPNumberButton',        '~> 0.7.0'
   #pod 'XLForm',                '~> 3.3.0'
   
 end

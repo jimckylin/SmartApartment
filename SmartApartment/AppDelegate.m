@@ -22,6 +22,11 @@
 
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
+#import <UMSocialCore/UMSocialCore.h>
+
+
+#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
+
 
 @interface AppDelegate ()
 
@@ -50,7 +55,15 @@
     self.window.rootViewController = [[NavManager shareInstance] rootNavigationController];
     
     [self configBaiduMap];
+    /* 打开日志 */
+    [[UMSocialManager defaultManager] openLog:YES];
+    // 打开图片水印
+    //[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
+    [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = NO;
     
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
+    [self configUSharePlatforms];
     
     
     return YES;
@@ -82,6 +95,58 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+//#define __IPHONE_10_0    100000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响。
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+#endif
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+
+#pragma mark - 
+
+- (void)configUSharePlatforms {
+    /*
+     设置微信的appKey和appSecret
+     [微信平台从U-Share 4/5升级说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_1
+     */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:nil];
+    
+    /*
+     设置新浪的appKey和appSecret
+     [新浪微博集成说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_2
+     */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+}
+
 
 
 @end

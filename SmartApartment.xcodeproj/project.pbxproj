@@ -34,6 +34,19 @@
 		A9414F071F38D060007857D2 /* nav_return_ic_wiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */; };
 		A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */; };
 		A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */; };
+		A95154921F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */; };
+		A95154931F4BCEBF00841D3F /* order_add_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */; };
+		A95154941F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */; };
+		A95154951F4BCEBF00841D3F /* order_minus_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95154911F4BCEBF00841D3F /* order_minus_iciphone@2x.png */; };
+		A95154A71F4C183A00841D3F /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A95154991F4C183A00841D3F /* libSocialSina.a */; };
+		A95154A81F4C183A00841D3F /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A951549C1F4C183A00841D3F /* libSocialWeChat.a */; };
+		A95154A91F4C183A00841D3F /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951549F1F4C183A00841D3F /* UMSocialCore.framework */; };
+		A95154AA1F4C183A00841D3F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95154A01F4C183A00841D3F /* UMSocialNetwork.framework */; };
+		A95154AB1F4C183A00841D3F /* UMSocialSDKPromptResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A95154A11F4C183A00841D3F /* UMSocialSDKPromptResources.bundle */; };
+		A95154AC1F4C183A00841D3F /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A95154A31F4C183A00841D3F /* libUMSocialLog.a */; };
+		A95154AD1F4C183A00841D3F /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A95154A51F4C183A00841D3F /* UMSocialSDKResources.bundle */; };
+		A95154AE1F4C183A00841D3F /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95154A61F4C183A00841D3F /* UShareUI.framework */; };
+		A95154B11F4C2D1000841D3F /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A95154B01F4C2D1000841D3F /* ShareManager.m */; };
 		A95285EB1F43E4CF00D7EB2F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95285EA1F43E4CF00D7EB2F /* CoreLocation.framework */; };
 		A95285ED1F43E4DB00D7EB2F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95285EC1F43E4DB00D7EB2F /* QuartzCore.framework */; };
 		A95285EF1F43E4E600D7EB2F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95285EE1F43E4E600D7EB2F /* OpenGLES.framework */; };
@@ -280,6 +293,22 @@
 		A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_return_ic_wiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myorder_lineiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_location_ic_siphone@2x.png"; sourceTree = "<group>"; };
+		A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_grey_iciphone@2x.png"; sourceTree = "<group>"; };
+		A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_iciphone@2x.png"; sourceTree = "<group>"; };
+		A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_minus_ic_scopyiphone@2x.png"; sourceTree = "<group>"; };
+		A95154911F4BCEBF00841D3F /* order_minus_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_minus_iciphone@2x.png"; sourceTree = "<group>"; };
+		A95154991F4C183A00841D3F /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		A951549A1F4C183A00841D3F /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		A951549C1F4C183A00841D3F /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		A951549D1F4C183A00841D3F /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		A951549F1F4C183A00841D3F /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		A95154A01F4C183A00841D3F /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		A95154A11F4C183A00841D3F /* UMSocialSDKPromptResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKPromptResources.bundle; sourceTree = "<group>"; };
+		A95154A31F4C183A00841D3F /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
+		A95154A51F4C183A00841D3F /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		A95154A61F4C183A00841D3F /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
+		A95154AF1F4C2D0F00841D3F /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
+		A95154B01F4C2D1000841D3F /* ShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
 		A95285EA1F43E4CF00D7EB2F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A95285EC1F43E4DB00D7EB2F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A95285EE1F43E4E600D7EB2F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -586,17 +615,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95154A91F4C183A00841D3F /* UMSocialCore.framework in Frameworks */,
 				A95286081F43EA1500D7EB2F /* libcrypto.a in Frameworks */,
 				A95286091F43EA1500D7EB2F /* libssl.a in Frameworks */,
 				A95286011F43EA0100D7EB2F /* BaiduMapAPI_Base.framework in Frameworks */,
+				A95154AE1F4C183A00841D3F /* UShareUI.framework in Frameworks */,
 				A95286021F43EA0100D7EB2F /* BaiduMapAPI_Location.framework in Frameworks */,
+				A95154AA1F4C183A00841D3F /* UMSocialNetwork.framework in Frameworks */,
 				A95286031F43EA0100D7EB2F /* BaiduMapAPI_Map.framework in Frameworks */,
 				A95286041F43EA0100D7EB2F /* BaiduMapAPI_Search.framework in Frameworks */,
 				A95286051F43EA0100D7EB2F /* BaiduMapAPI_Utils.framework in Frameworks */,
 				A95285FB1F43E53C00D7EB2F /* libstdc++.6.0.9.tbd in Frameworks */,
+				A95154A81F4C183A00841D3F /* libSocialWeChat.a in Frameworks */,
+				A95154AC1F4C183A00841D3F /* libUMSocialLog.a in Frameworks */,
 				A95285F91F43E53100D7EB2F /* libsqlite3.0.tbd in Frameworks */,
 				A95285F71F43E51A00D7EB2F /* CoreTelephony.framework in Frameworks */,
 				A95285F51F43E50900D7EB2F /* Security.framework in Frameworks */,
+				A95154A71F4C183A00841D3F /* libSocialSina.a in Frameworks */,
 				A95285F31F43E50100D7EB2F /* CoreGraphics.framework in Frameworks */,
 				A95285F11F43E4F700D7EB2F /* SystemConfiguration.framework in Frameworks */,
 				A95285EF1F43E4E600D7EB2F /* OpenGLES.framework in Frameworks */,
@@ -703,8 +738,75 @@
 				A95286141F441E9C00D7EB2F /* LocationManager.m */,
 				A9EB26431F48D156007DB818 /* UserManager.h */,
 				A9EB26441F48D156007DB818 /* UserManager.m */,
+				A95154AF1F4C2D0F00841D3F /* ShareManager.h */,
+				A95154B01F4C2D1000841D3F /* ShareManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		A95154961F4C183A00841D3F /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				A95154971F4C183A00841D3F /* SocialLibraries */,
+				A951549E1F4C183A00841D3F /* UMSocialSDK */,
+				A95154A21F4C183A00841D3F /* UMSocialSDKPlugin */,
+				A95154A41F4C183A00841D3F /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		A95154971F4C183A00841D3F /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				A95154981F4C183A00841D3F /* Sina */,
+				A951549B1F4C183A00841D3F /* WeChat */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		A95154981F4C183A00841D3F /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				A95154991F4C183A00841D3F /* libSocialSina.a */,
+				A951549A1F4C183A00841D3F /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		A951549B1F4C183A00841D3F /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				A951549C1F4C183A00841D3F /* libSocialWeChat.a */,
+				A951549D1F4C183A00841D3F /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		A951549E1F4C183A00841D3F /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A951549F1F4C183A00841D3F /* UMSocialCore.framework */,
+				A95154A01F4C183A00841D3F /* UMSocialNetwork.framework */,
+				A95154A11F4C183A00841D3F /* UMSocialSDKPromptResources.bundle */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		A95154A21F4C183A00841D3F /* UMSocialSDKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				A95154A31F4C183A00841D3F /* libUMSocialLog.a */,
+			);
+			path = UMSocialSDKPlugin;
+			sourceTree = "<group>";
+		};
+		A95154A41F4C183A00841D3F /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				A95154A51F4C183A00841D3F /* UMSocialSDKResources.bundle */,
+				A95154A61F4C183A00841D3F /* UShareUI.framework */,
+			);
+			path = UMSocialUI;
 			sourceTree = "<group>";
 		};
 		A95B3FD11F3AAF2B0046E150 /* Setting */ = {
@@ -971,6 +1073,7 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A95154961F4C183A00841D3F /* UMSocial */,
 				A92F7FC61F4B3D290056CACC /* YJSliderView */,
 				A92F7FA21F4B3D1D0056CACC /* Masonry */,
 				A92F7F9E1F4B333C0056CACC /* STSegmentView */,
@@ -1155,6 +1258,10 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */,
+				A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */,
+				A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */,
+				A95154911F4BCEBF00841D3F /* order_minus_iciphone@2x.png */,
 				A92F7FDB1F4B5F660056CACC /* detail_listiphone@2x.png */,
 				A92F7FDC1F4B5F660056CACC /* detail_phone_iciphone@2x.png */,
 				A92F7FD91F4B53BC0056CACC /* trip_pic_bgiphone@2x.png */,
@@ -1392,6 +1499,7 @@
 				A9906F6A1F3C00E6007725B7 /* mine_headiphone@2x.png in Resources */,
 				A97677871F3F0AFB00EDCDFA /* mine_vip_1_iciphone@2x.png in Resources */,
 				A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */,
+				A95154AD1F4C183A00841D3F /* UMSocialSDKResources.bundle in Resources */,
 				A97677971F41EEA600EDCDFA /* xq_xinyongzhuiphone@2x.png in Resources */,
 				A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */,
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
@@ -1420,12 +1528,14 @@
 				A96A33541F484C1200A55A42 /* order_detail_stayiphone@2x.png in Resources */,
 				A992C1EF1F472DC300D5371C /* star_gray_iciphone@2x.png in Resources */,
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
+				A95154AB1F4C183A00841D3F /* UMSocialSDKPromptResources.bundle in Resources */,
 				A992C1E41F47275900D5371C /* share_friend_iciphone@2x.png in Resources */,
 				A96A334F1F4847E000A55A42 /* details_card_bgiphone@2x.png in Resources */,
 				A9EB26301F48B1CB007DB818 /* trip_service_iciphone@2x.png in Resources */,
 				A985ABF01F415134005B31DF /* list_time_iciphone@2x.png in Resources */,
 				A9EB262B1F48AF9E007DB818 /* trip_remind_piciphone@2x.png in Resources */,
 				A96A331F1F482EE600A55A42 /* OrderDetailViewController.xib in Resources */,
+				A95154951F4BCEBF00841D3F /* order_minus_iciphone@2x.png in Resources */,
 				A976778B1F3F0AFB00EDCDFA /* mine_vip_3_iciphone@2x.png in Resources */,
 				A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */,
 				A976777F1F3F029000EDCDFA /* logoiphone@2x.png in Resources */,
@@ -1455,8 +1565,11 @@
 				A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
 				A96A330A1F4809D200A55A42 /* order_up_iciphone@2x.png in Resources */,
+				A95154931F4BCEBF00841D3F /* order_add_iciphone@2x.png in Resources */,
 				A97677B21F44930900EDCDFA /* sale_location_iconiphone@2x.png in Resources */,
 				A96A33191F4825D500A55A42 /* wechat_iciphone@2x.png in Resources */,
+				A95154921F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png in Resources */,
+				A95154941F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png in Resources */,
 				A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */,
 				A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */,
 				A9EB26371F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png in Resources */,
@@ -1551,6 +1664,7 @@
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
+				A95154B11F4C2D1000841D3F /* ShareManager.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
 				A92F7FC51F4B3D1E0056CACC /* ViewController+MASAdditions.m in Sources */,
 				A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */,
@@ -1785,6 +1899,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMapAPI",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialUI",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1795,8 +1911,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMapAPI/thirdlibs",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1814,6 +1933,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMapAPI",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialUI",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1824,8 +1945,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMapAPI/thirdlibs",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

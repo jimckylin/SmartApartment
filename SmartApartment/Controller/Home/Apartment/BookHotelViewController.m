@@ -10,12 +10,14 @@
 #import "BookSuccessViewController.h"
 #import "WRCellView.h"
 #import "BookBottomView.h"
+#import <PPNumberButton/PPNumberButton.h>
+
 
 #define WRCellViewHeight  50
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface BookHotelViewController ()<BookBottomViewDelegate>
+@interface BookHotelViewController ()<BookBottomViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) WRCellView    *roomNumView;
@@ -27,7 +29,9 @@
 @property (nonatomic, strong) WRCellView    *tipView;
 
 @property (nonatomic, strong) UILabel       *roomNumLabel;
+@property (nonatomic, strong) PPNumberButton *roomNumBtn;
 @property (nonatomic, strong) UITextField   *livePersonTF;
+@property (nonatomic, strong) UIButton      *livePersonBtn;
 @property (nonatomic, strong) UITextField   *phoneNumTF;
 @property (nonatomic, strong) UILabel       *arriveTimeLabel;
 
@@ -45,6 +49,7 @@
     [self initView];
     [self addViews];
     [self setCellFrame];
+    [self onClickEvent];
 }
 
 - (void)initView {
@@ -65,7 +70,9 @@
     [self.containerView addSubview:self.tipView];
     
     [self.roomNumView addSubview:self.roomNumLabel];
+    [self.roomNumView addSubview:self.roomNumBtn];
     [self.livePersonView addSubview:self.livePersonTF];
+    [self.livePersonView addSubview:self.livePersonBtn];
     [self.phoneNumView addSubview:self.phoneNumTF];
     [self.arriveTimeView addSubview:self.arriveTimeLabel];
     
@@ -104,7 +111,32 @@
     self.arriveTimeView.tapBlock = ^ {
         __strong typeof(self) pThis = weakSelf;
         
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"12:00前", @"13:00前", @"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前", nil];
+        // 显示
+        [actionsheet showInView:pThis.view];
     };
+    
+    
+}
+
+
+#pragma mark - 
+
+- (void)btnClick:(id)sender {
+    
+    
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    NSArray *times = @[@"12:00前", @"13:00前", @"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
+    if (buttonIndex < [times count]) {
+        NSString *time = times[buttonIndex];
+        self.arriveTimeLabel.text = time;
+    }
 }
 
 
@@ -192,6 +224,20 @@
     return _roomNumLabel;
 }
 
+- (PPNumberButton *)roomNumBtn{
+    if (!_roomNumBtn) {
+        _roomNumBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(kScreenWidth - 115, 17.5, 100, 15)];
+        // 初始化时隐藏减按钮
+        _roomNumBtn.defaultNumber = 1;
+        _roomNumBtn.minValue = 1;
+        _roomNumBtn.maxValue = 200;
+        _roomNumBtn.decreaseHide = YES;
+        _roomNumBtn.increaseImage = [UIImage imageNamed:@"order_add_iciphone"];
+        _roomNumBtn.decreaseImage = [UIImage imageNamed:@"order_minus_ic_scopyiphone"];
+    }
+    return _roomNumBtn;
+}
+
 - (UITextField *)livePersonTF {
     if (_livePersonTF == nil) {
         _livePersonTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
@@ -200,6 +246,16 @@
         _livePersonTF.text = @"Jimcky Lin";
     }
     return _livePersonTF;
+}
+
+- (UIButton *)livePersonBtn {
+    if (!_livePersonBtn) {
+        _livePersonBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _livePersonBtn.frame = CGRectMake(kScreenWidth-35, 15, 20, 20);
+        [_livePersonBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_livePersonBtn setImage:kImage(@"order_add_iciphone") forState:UIControlStateNormal];
+    }
+    return _livePersonBtn;
 }
 
 - (UITextField *)phoneNumTF {
