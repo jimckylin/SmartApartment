@@ -7,6 +7,7 @@ PODS:
   - IQKeyboardManager (4.0.11)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - OpenSSL (1.0.210)
   - PPNumberButton (0.7.0)
   - PureLayout (3.0.2)
   - RTLabel (1.0.1)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - IQKeyboardManager (~> 4.0.9)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
+  - OpenSSL
   - PPNumberButton (~> 0.7.0)
   - PureLayout (~> 3.0.2)
   - RTLabel (~> 1.0.1)
@@ -41,6 +43,7 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  OpenSSL: 246ffb948e9d56466727fd318134af35f5aa764e
   PPNumberButton: a053cde152b0e683302ce41a4755bfa02e1b3a83
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   RTLabel: 6005d07fef57b101097c4271f804daae3110cbca
@@ -50,6 +53,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: 2fae23e2da147409635c387624c9bd4dd6b422b9
+PODFILE CHECKSUM: 411014d23a543e08ab828fea83ffe0cb14378130
 
 COCOAPODS: 1.2.1

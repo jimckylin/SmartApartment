@@ -40,6 +40,23 @@
 		A9414F071F38D060007857D2 /* nav_return_ic_wiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */; };
 		A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */; };
 		A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */; };
+		A94B82431F4D1E7A00840D88 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */; };
+		A94B82441F4D1E7A00840D88 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A94B823F1F4D1E7A00840D88 /* README.txt */; };
+		A94B82471F4D259F00840D88 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82461F4D259F00840D88 /* PayManager.m */; };
+		A94B825A1F4D262000840D88 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B824B1F4D262000840D88 /* DataSigner.m */; };
+		A94B825B1F4D262000840D88 /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B824D1F4D262000840D88 /* DataVerifier.m */; };
+		A94B825C1F4D262000840D88 /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B824F1F4D262000840D88 /* MD5DataSigner.m */; };
+		A94B825D1F4D262000840D88 /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82511F4D262000840D88 /* NSDataEx.m */; };
+		A94B825E1F4D262000840D88 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82531F4D262000840D88 /* openssl_wrapper.m */; };
+		A94B825F1F4D262000840D88 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82551F4D262000840D88 /* RSADataSigner.m */; };
+		A94B82601F4D262000840D88 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82571F4D262000840D88 /* RSADataVerifier.m */; };
+		A94B82611F4D262000840D88 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = A94B82591F4D262000840D88 /* WXUtil.mm */; };
+		A94B82661F4D268B00840D88 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82651F4D268B00840D88 /* Order.m */; };
+		A94B826A1F4D26A800840D88 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A94B82681F4D26A800840D88 /* AlipaySDK.bundle */; };
+		A94B826B1F4D26A800840D88 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94B82691F4D26A800840D88 /* AlipaySDK.framework */; };
+		A94B826E1F4D26C900840D88 /* WXPayRContent.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B826D1F4D26C900840D88 /* WXPayRContent.m */; };
+		A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */; };
+		A94B82741F4D280900840D88 /* NSMutableDictionary+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */; };
 		A95154921F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */; };
 		A95154931F4BCEBF00841D3F /* order_add_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */; };
 		A95154941F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */; };
@@ -310,6 +327,40 @@
 		A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_return_ic_wiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myorder_lineiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_location_ic_siphone@2x.png"; sourceTree = "<group>"; };
+		A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		A94B823F1F4D1E7A00840D88 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		A94B82401F4D1E7A00840D88 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		A94B82411F4D1E7A00840D88 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		A94B82421F4D1E7A00840D88 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		A94B82451F4D259F00840D88 /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
+		A94B82461F4D259F00840D88 /* PayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
+		A94B82491F4D262000840D88 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		A94B824A1F4D262000840D88 /* DataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSigner.h; sourceTree = "<group>"; };
+		A94B824B1F4D262000840D88 /* DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSigner.m; sourceTree = "<group>"; };
+		A94B824C1F4D262000840D88 /* DataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVerifier.h; sourceTree = "<group>"; };
+		A94B824D1F4D262000840D88 /* DataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVerifier.m; sourceTree = "<group>"; };
+		A94B824E1F4D262000840D88 /* MD5DataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5DataSigner.h; sourceTree = "<group>"; };
+		A94B824F1F4D262000840D88 /* MD5DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5DataSigner.m; sourceTree = "<group>"; };
+		A94B82501F4D262000840D88 /* NSDataEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataEx.h; sourceTree = "<group>"; };
+		A94B82511F4D262000840D88 /* NSDataEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataEx.m; sourceTree = "<group>"; };
+		A94B82521F4D262000840D88 /* openssl_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
+		A94B82531F4D262000840D88 /* openssl_wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
+		A94B82541F4D262000840D88 /* RSADataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataSigner.h; sourceTree = "<group>"; };
+		A94B82551F4D262000840D88 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
+		A94B82561F4D262000840D88 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
+		A94B82571F4D262000840D88 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		A94B82581F4D262000840D88 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		A94B82591F4D262000840D88 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		A94B82641F4D268B00840D88 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		A94B82651F4D268B00840D88 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		A94B82681F4D26A800840D88 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		A94B82691F4D26A800840D88 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		A94B826C1F4D26C900840D88 /* WXPayRContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPayRContent.h; sourceTree = "<group>"; };
+		A94B826D1F4D26C900840D88 /* WXPayRContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPayRContent.m; sourceTree = "<group>"; };
+		A94B826F1F4D26DA00840D88 /* ZFBPayRContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBPayRContent.h; sourceTree = "<group>"; };
+		A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBPayRContent.m; sourceTree = "<group>"; };
+		A94B82721F4D280900840D88 /* NSMutableDictionary+CWGJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CWGJ.h"; sourceTree = "<group>"; };
+		A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CWGJ.m"; sourceTree = "<group>"; };
 		A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_grey_iciphone@2x.png"; sourceTree = "<group>"; };
 		A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_iciphone@2x.png"; sourceTree = "<group>"; };
 		A95154901F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_minus_ic_scopyiphone@2x.png"; sourceTree = "<group>"; };
@@ -634,9 +685,11 @@
 			files = (
 				A95154A91F4C183A00841D3F /* UMSocialCore.framework in Frameworks */,
 				A95286081F43EA1500D7EB2F /* libcrypto.a in Frameworks */,
+				A94B82431F4D1E7A00840D88 /* libWeChatSDK.a in Frameworks */,
 				A95286091F43EA1500D7EB2F /* libssl.a in Frameworks */,
 				A95286011F43EA0100D7EB2F /* BaiduMapAPI_Base.framework in Frameworks */,
 				A95154AE1F4C183A00841D3F /* UShareUI.framework in Frameworks */,
+				A94B826B1F4D26A800840D88 /* AlipaySDK.framework in Frameworks */,
 				A95286021F43EA0100D7EB2F /* BaiduMapAPI_Location.framework in Frameworks */,
 				A95154AA1F4C183A00841D3F /* UMSocialNetwork.framework in Frameworks */,
 				A95286031F43EA0100D7EB2F /* BaiduMapAPI_Map.framework in Frameworks */,
@@ -757,8 +810,68 @@
 				A9EB26441F48D156007DB818 /* UserManager.m */,
 				A95154AF1F4C2D0F00841D3F /* ShareManager.h */,
 				A95154B01F4C2D1000841D3F /* ShareManager.m */,
+				A94B82451F4D259F00840D88 /* PayManager.h */,
+				A94B82461F4D259F00840D88 /* PayManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		A94B823D1F4D1E7A00840D88 /* OpenSDK1.8.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */,
+				A94B823F1F4D1E7A00840D88 /* README.txt */,
+				A94B82401F4D1E7A00840D88 /* WechatAuthSDK.h */,
+				A94B82411F4D1E7A00840D88 /* WXApi.h */,
+				A94B82421F4D1E7A00840D88 /* WXApiObject.h */,
+			);
+			path = OpenSDK1.8.0;
+			sourceTree = "<group>";
+		};
+		A94B82481F4D262000840D88 /* RSADataSigner */ = {
+			isa = PBXGroup;
+			children = (
+				A94B82491F4D262000840D88 /* config.h */,
+				A94B824A1F4D262000840D88 /* DataSigner.h */,
+				A94B824B1F4D262000840D88 /* DataSigner.m */,
+				A94B824C1F4D262000840D88 /* DataVerifier.h */,
+				A94B824D1F4D262000840D88 /* DataVerifier.m */,
+				A94B824E1F4D262000840D88 /* MD5DataSigner.h */,
+				A94B824F1F4D262000840D88 /* MD5DataSigner.m */,
+				A94B82501F4D262000840D88 /* NSDataEx.h */,
+				A94B82511F4D262000840D88 /* NSDataEx.m */,
+				A94B82521F4D262000840D88 /* openssl_wrapper.h */,
+				A94B82531F4D262000840D88 /* openssl_wrapper.m */,
+				A94B82541F4D262000840D88 /* RSADataSigner.h */,
+				A94B82551F4D262000840D88 /* RSADataSigner.m */,
+				A94B82561F4D262000840D88 /* RSADataVerifier.h */,
+				A94B82571F4D262000840D88 /* RSADataVerifier.m */,
+				A94B82581F4D262000840D88 /* WXUtil.h */,
+				A94B82591F4D262000840D88 /* WXUtil.mm */,
+			);
+			path = RSADataSigner;
+			sourceTree = "<group>";
+		};
+		A94B82631F4D268200840D88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A94B826F1F4D26DA00840D88 /* ZFBPayRContent.h */,
+				A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */,
+				A94B826C1F4D26C900840D88 /* WXPayRContent.h */,
+				A94B826D1F4D26C900840D88 /* WXPayRContent.m */,
+				A94B82641F4D268B00840D88 /* Order.h */,
+				A94B82651F4D268B00840D88 /* Order.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A94B82671F4D26A800840D88 /* AlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				A94B82681F4D26A800840D88 /* AlipaySDK.bundle */,
+				A94B82691F4D26A800840D88 /* AlipaySDK.framework */,
+			);
+			path = AlipaySDK;
 			sourceTree = "<group>";
 		};
 		A95154961F4C183A00841D3F /* UMSocial */ = {
@@ -978,6 +1091,8 @@
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A94B82721F4D280900840D88 /* NSMutableDictionary+CWGJ.h */,
+				A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */,
 				A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */,
 				A95D642C1F46985C00F78A7E /* UIImage+Categories.h */,
 				A95D642D1F46985C00F78A7E /* UIImage+Categories.m */,
@@ -1090,6 +1205,8 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A94B82671F4D26A800840D88 /* AlipaySDK */,
+				A94B823D1F4D1E7A00840D88 /* OpenSDK1.8.0 */,
 				A95154961F4C183A00841D3F /* UMSocial */,
 				A92F7FC61F4B3D290056CACC /* YJSliderView */,
 				A92F7FA21F4B3D1D0056CACC /* Masonry */,
@@ -1181,6 +1298,7 @@
 		A9AA8E9A1F3712A5005F9DBB /* SmartApartment */ = {
 			isa = PBXGroup;
 			children = (
+				A94B82631F4D268200840D88 /* Model */,
 				A98223F91F3A19B300CA9A9F /* Thirdpart */,
 				A9AA8EEF1F38B706005F9DBB /* ParentModule */,
 				A9730E741F384ADE006E66A4 /* Category */,
@@ -1226,6 +1344,7 @@
 		A9AA8EB91F371A09005F9DBB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				A94B82481F4D262000840D88 /* RSADataSigner */,
 				A9414F021F38CA39007857D2 /* Manager */,
 			);
 			path = General;
@@ -1569,7 +1688,9 @@
 				A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */,
 				A976777F1F3F029000EDCDFA /* logoiphone@2x.png in Resources */,
 				A95B3FED1F3AC7FF0046E150 /* backImg_end.png in Resources */,
+				A94B826A1F4D26A800840D88 /* AlipaySDK.bundle in Resources */,
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
+				A94B82441F4D1E7A00840D88 /* README.txt in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
 				A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */,
@@ -1687,12 +1808,15 @@
 				A97677AD1F433D2700EDCDFA /* HotelDetailRoomListCell.m in Sources */,
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */,
+				A94B825C1F4D262000840D88 /* MD5DataSigner.m in Sources */,
 				A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */,
 				A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
+				A94B82611F4D262000840D88 /* WXUtil.mm in Sources */,
+				A94B82661F4D268B00840D88 /* Order.m in Sources */,
 				A92F7FEA1F4C95B10056CACC /* CouponViewController.m in Sources */,
 				A95154B11F4C2D1000841D3F /* ShareManager.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
@@ -1747,6 +1871,8 @@
 				A955E9C41F454B4300FEB05F /* HotelDetailRoomPriceTypeCell.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
+				A94B82471F4D259F00840D88 /* PayManager.m in Sources */,
+				A94B82601F4D262000840D88 /* RSADataVerifier.m in Sources */,
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */,
 				A92F7FD31F4B502A0056CACC /* MyOrderCell.m in Sources */,
@@ -1777,19 +1903,27 @@
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
 				A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */,
 				A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */,
+				A94B825F1F4D262000840D88 /* RSADataSigner.m in Sources */,
 				A92F7FBF1F4B3D1D0056CACC /* MASLayoutConstraint.m in Sources */,
 				A92F7FC01F4B3D1D0056CACC /* MASViewAttribute.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
 				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
+				A94B825E1F4D262000840D88 /* openssl_wrapper.m in Sources */,
 				A9EB26451F48D156007DB818 /* UserManager.m in Sources */,
 				A92F7FA11F4B333C0056CACC /* STSegmentView.m in Sources */,
 				A92F7FC11F4B3D1D0056CACC /* MASViewConstraint.m in Sources */,
+				A94B826E1F4D26C900840D88 /* WXPayRContent.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
+				A94B825B1F4D262000840D88 /* DataVerifier.m in Sources */,
+				A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
+				A94B825D1F4D262000840D88 /* NSDataEx.m in Sources */,
 				A9EB26331F48BC65007DB818 /* TripListCell.m in Sources */,
+				A94B825A1F4D262000840D88 /* DataSigner.m in Sources */,
 				A9EB268B1F4971E5007DB818 /* PassengerCell.m in Sources */,
+				A94B82741F4D280900840D88 /* NSMutableDictionary+CWGJ.m in Sources */,
 				A95D64061F468DE500F78A7E /* LoginView.m in Sources */,
 				A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */,
 				A9EB26241F48AF08007DB818 /* TripHelperNoOrderView.m in Sources */,
@@ -1935,6 +2069,7 @@
 					"$(PROJECT_DIR)/BaiduMapAPI",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/AlipaySDK",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1948,6 +2083,7 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/OpenSDK1.8.0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1969,6 +2105,7 @@
 					"$(PROJECT_DIR)/BaiduMapAPI",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/AlipaySDK",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1982,6 +2119,7 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/SmartApartment/Thirdpart/OpenSDK1.8.0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";

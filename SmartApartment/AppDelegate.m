@@ -23,12 +23,14 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 #import <UMSocialCore/UMSocialCore.h>
+#import "PayManager.h"
+#import "WXApi.h"
+
+// 友盟appkey
+#define USHARE_APPKEY @"59939256f29d9803c800084b"
 
 
-#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
-
-
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -62,7 +64,7 @@
     [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = NO;
     
     /* 设置友盟appkey */
-    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_APPKEY];
     [self configUSharePlatforms];
     
     
@@ -131,7 +133,7 @@
 }
 
 
-#pragma mark - 
+#pragma mark - Private
 
 - (void)configUSharePlatforms {
     /*
@@ -147,6 +149,42 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
 }
 
+
+#pragma mark - 微信回调
+
+- (void)onResp:(BaseResp *)resp {
+    if ([resp isKindOfClass:[PayResp class]]) {
+        if (resp.errCode == 0){
+            [[PayManager getInstance] PayWXSucc];
+        }
+    } else if ([resp isKindOfClass:[SendAuthResp class]]) {     //微信授权登录
+        SendAuthResp *authResp = (SendAuthResp*)resp;
+        int errorCode = authResp.errCode;
+        NSString *proposeState = authResp.state;
+        if (errorCode == 0) {
+            
+        }
+    } else if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
+        if (resp.errCode == 0) {
+            //分享完券回来
+            
+        }
+    }
+}
+
+- (BOOL)appHandleOpenURL:(NSURL *)url {
+    if ([url.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"safepay call back:%@", resultDic);
+        }];
+        return YES;
+    } else if ([url.host isEqualToString:@"pay"]) {
+        return [WXApi handleOpenURL:url delegate:self];
+    } else if ([url.host isEqualToString:@"oauth"]) {
+        return [WXApi handleOpenURL:url delegate:self];
+    }
+    return YES;
+}
 
 
 @end
