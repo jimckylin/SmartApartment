@@ -7,6 +7,8 @@
 //
 
 #import "WalletViewController.h"
+#import "RechargeViewController.h"
+#import "BalanceDetailListViewController.h"
 #import "WalletView.h"
 
 @interface WalletViewController ()
@@ -39,6 +41,12 @@
     [rechargeBtn autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [rechargeBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:walletView withOffset:60];
     [rechargeBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth-80, 40)];
+    
+    
+    [self addRightNaviButton:@"明细" actionBlock:^{
+        BalanceDetailListViewController *vc = [BalanceDetailListViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }];
 }
 
 
@@ -46,7 +54,8 @@
 
 - (void)btnClick:(UIButton *)sender {
     
-    
+    RechargeViewController *vc = [RechargeViewController new];
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 @end

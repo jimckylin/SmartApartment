@@ -34,6 +34,9 @@
 		A92F7FEA1F4C95B10056CACC /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FE91F4C95B10056CACC /* CouponViewController.m */; };
 		A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FEC1F4C982F0056CACC /* CouponListCell.m */; };
 		A92F7FEF1F4C999F0056CACC /* coupon_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */; };
+		A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */; };
+		A92F7FF91F4DF2770056CACC /* BalanceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF71F4DF2770056CACC /* BalanceListCell.m */; };
+		A92F7FFA1F4DF2770056CACC /* BalanceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
 		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
@@ -318,6 +321,11 @@
 		A92F7FEB1F4C982F0056CACC /* CouponListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListCell.h; sourceTree = "<group>"; };
 		A92F7FEC1F4C982F0056CACC /* CouponListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListCell.m; sourceTree = "<group>"; };
 		A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_bgiphone@2x.png"; sourceTree = "<group>"; };
+		A92F7FF01F4DF1270056CACC /* BalanceDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailListViewController.h; sourceTree = "<group>"; };
+		A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailListViewController.m; sourceTree = "<group>"; };
+		A92F7FF61F4DF2770056CACC /* BalanceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceListCell.h; sourceTree = "<group>"; };
+		A92F7FF71F4DF2770056CACC /* BalanceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceListCell.m; sourceTree = "<group>"; };
+		A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceListCell.xib; sourceTree = "<group>"; };
 		A9414EFC1F38C4DE007857D2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
@@ -1253,6 +1261,9 @@
 				A92F7FE31F4C66C80056CACC /* WalletView.m */,
 				A92F7FEB1F4C982F0056CACC /* CouponListCell.h */,
 				A92F7FEC1F4C982F0056CACC /* CouponListCell.m */,
+				A92F7FF61F4DF2770056CACC /* BalanceListCell.h */,
+				A92F7FF71F4DF2770056CACC /* BalanceListCell.m */,
+				A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1510,6 +1521,8 @@
 				A92F7FE61F4C6FDC0056CACC /* RechargeViewController.m */,
 				A92F7FE81F4C95B10056CACC /* CouponViewController.h */,
 				A92F7FE91F4C95B10056CACC /* CouponViewController.m */,
+				A92F7FF01F4DF1270056CACC /* BalanceDetailListViewController.h */,
+				A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1706,6 +1719,7 @@
 				A9EB263D1F48C1D2007DB818 /* recoment_shadowiphone@2x.png in Resources */,
 				A9BA5DF81F4716D10093A50D /* detail_blank_commentiphone@2x.png in Resources */,
 				A92F7FD61F4B515F0056CACC /* message_location_iciphone@2x.png in Resources */,
+				A92F7FFA1F4DF2770056CACC /* BalanceListCell.xib in Resources */,
 				A955E9C71F4557E100FEB05F /* detail_vip_goldiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
@@ -1857,6 +1871,7 @@
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
 				A955E9D11F45735500FEB05F /* HotelDetailMoreCell.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
+				A92F7FF91F4DF2770056CACC /* BalanceListCell.m in Sources */,
 				A992C1F91F4736EA00D5371C /* HotelCommentHeaderCell.m in Sources */,
 				A9EB26421F48CF99007DB818 /* TripHistoryListViewController.m in Sources */,
 				A982240C1F3A19BB00CA9A9F /* TLCityPickerSearchResultController.m in Sources */,
@@ -1906,6 +1921,7 @@
 				A94B825F1F4D262000840D88 /* RSADataSigner.m in Sources */,
 				A92F7FBF1F4B3D1D0056CACC /* MASLayoutConstraint.m in Sources */,
 				A92F7FC01F4B3D1D0056CACC /* MASViewAttribute.m in Sources */,
+				A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
 				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
 				A94B825E1F4D262000840D88 /* openssl_wrapper.m in Sources */,
