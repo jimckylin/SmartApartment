@@ -144,7 +144,7 @@
         }
         
         RechargeButton *lastBtn = _chargeBtns.lastObject;
-        UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, lastBtn.bottom + 10, 100, 20)];
+        UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, lastBtn.bottom + 25, 100, 20)];
         typeLabel.font = [UIFont boldSystemFontOfSize:14];
         typeLabel.textColor = [UIColor darkTextColor];
         typeLabel.text = @"选择支付方式";
