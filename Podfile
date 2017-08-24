@@ -21,6 +21,7 @@ target 'SmartApartment' do
   pod 'RTLabel',               '~> 1.0.1'
   pod 'PPNumberButton',        '~> 0.7.0'
   pod 'OpenSSL'
+  pod 'PPNetworkHelper',       '~> 0.8.0'
   #pod 'XLForm',                '~> 3.3.0'
   
 end

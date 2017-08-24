@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - BAButton (2.5.9)
   - BMLine (1.0)
   - ChameleonFramework (2.1.0):
@@ -8,6 +23,9 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - OpenSSL (1.0.210)
+  - PPNetworkHelper (0.8.0):
+    - AFNetworking (~> 3.1.0)
+    - YYCache (~> 1.0.4)
   - PPNumberButton (0.7.0)
   - PureLayout (3.0.2)
   - RTLabel (1.0.1)
@@ -18,6 +36,7 @@ PODS:
   - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.1.2)
   - WebViewJavascriptBridge (6.0.2)
+  - YYCache (1.0.4)
   - YZHeaderScaleImage (1.0.1)
 
 DEPENDENCIES:
@@ -28,6 +47,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - OpenSSL
+  - PPNetworkHelper (~> 0.8.0)
   - PPNumberButton (~> 0.7.0)
   - PureLayout (~> 3.0.2)
   - RTLabel (~> 1.0.1)
@@ -37,6 +57,7 @@ DEPENDENCIES:
   - YZHeaderScaleImage (~> 1.0.1)
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BAButton: 60fc8d016fad9e2eb20c3b4c4af84313c05fca12
   BMLine: 7b52228a5701d2a514ad822857be8aefe8947412
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -44,6 +65,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   OpenSSL: 246ffb948e9d56466727fd318134af35f5aa764e
+  PPNetworkHelper: 900d1af5cb9f2932b3f955ebf72148b7ec403d44
   PPNumberButton: a053cde152b0e683302ce41a4755bfa02e1b3a83
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   RTLabel: 6005d07fef57b101097c4271f804daae3110cbca
@@ -51,8 +73,9 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: 411014d23a543e08ab828fea83ffe0cb14378130
+PODFILE CHECKSUM: 4382bce52145024714faad702aa912c751eab6e4
 
 COCOAPODS: 1.2.1

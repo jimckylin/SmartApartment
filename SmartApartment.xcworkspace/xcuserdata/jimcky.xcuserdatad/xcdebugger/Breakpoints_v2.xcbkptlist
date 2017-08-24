@@ -51,13 +51,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartApartment/AppDelegate.m"
-            timestampString = "525148635.511396"
+            filePath = "SmartApartment/General/HttpRequest/Sign/RequestSign.m"
+            timestampString = "525252596.785293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-application:openURL:sourceApplication:annotation:"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "+signCreater:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[RequestSign signCreater:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/HttpRequest/Sign/RequestSign.m"
+                  timestampString = "525254375.091741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "83">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27+[RequestSign signCreater:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/HttpRequest/Sign/RequestSign.m"
+                  timestampString = "525254375.094482"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "74">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
+            timestampString = "525248833.767895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-requestVerifyCode:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +115,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartApartment/AppDelegate.m"
-            timestampString = "525148636.959345"
+            filePath = "SmartApartment/General/HttpRequest/SAHttpRequest.m"
+            timestampString = "525250101.89951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-application:handleOpenURL:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "+requestWithFunction:parameters:success:failure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[SAHttpRequest requestWithFunction:parameters:success:failure:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/HttpRequest/SAHttpRequest.m"
+                  timestampString = "525254375.107618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "486">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__64+[SAHttpRequest requestWithFunction:parameters:success:failure:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/HttpRequest/SAHttpRequest.m"
+                  timestampString = "525254375.110858"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/General/HttpRequest/SAHttpRequest.m"
+            timestampString = "525250101.89951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "+requestWithFunction:parameters:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/General/HttpRequest/SAHttpRequest.m"
+            timestampString = "525250101.89951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+requestWithFunction:parameters:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

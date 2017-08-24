@@ -63,7 +63,7 @@
     switch (action) {
         case CZDLoginActionVerifyCodeSend: {
             __WeakObj(_loginView);
-            [_viewModel requestVerifyCode:phone type:4 complete:^{
+            [_viewModel requestVerifyCode:@"15860292278" complete:^{
                 [_loginViewWeak startCountDown];
             }];
         }
@@ -80,13 +80,14 @@
             break;
         case CZDLoginActionLogin: {
             [UserManager manager].isLogin = YES;
-            [_viewModel requestLoginWithPhone:phone verifyCode:code];
+            [_viewModel requestLoginWithPhone:phone psw:@"psw"];
+            //[_viewModel requestLoginWithPhone:phone verifyCode:code];
         }
             break;
             
         case CZDLoginActionWXOAuthVerifyCodeSend: {
             __WeakObj(_loginView);
-            [_viewModel requestVerifyCode:phone type:7 complete:^{
+            [_viewModel requestVerifyCode:phone complete:^{
                 
                 [_loginViewWeak startCountDown];
             }];

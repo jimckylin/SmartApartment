@@ -21,11 +21,17 @@
 
 @implementation LoginViewModel
 
-- (void)requestVerifyCode:(NSString *)phone type:(int)type complete:(void (^)(void))complete {
+- (void)requestVerifyCode:(NSString *)phone complete:(void (^)(void))complete {
     
-    self.verifyCodeRequestComplete = complete;
+    //self.verifyCodeRequestComplete = complete;
+    
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    
+    [SAHttpRequest requestWithFuncion:@"getCheckCode" params:@{@"mobilePhone": phone} success:^(id response) {
+        [MBProgressHUD cwgj_hideHUD];
+        complete();
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+    }];
 }
 
 - (void)requestVoiceVerifyCode:(NSString *)phone
@@ -34,6 +40,18 @@
     
     self.voiceVerifyCodeRequestComplete = complete;
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+}
+
+- (void)requestLoginWithPhone:(NSString *)phone psw:(NSString *)psw {
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@"登录中..."];
+    [SAHttpRequest requestWithFuncion:@"login" params:@{@"username": @"15860292277",
+                                                               @"pwd": @"123456"} success:^(id response) {
+        [MBProgressHUD cwgj_hideHUD];
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+    }];
 }
 
 - (void)requestLoginWithPhone:(NSString *)phone verifyCode:(NSString *)code {

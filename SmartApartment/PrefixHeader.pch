@@ -19,6 +19,7 @@
 #import "ParentViewController.h"
 #import <BMLine/UIView+BMLine.h>
 #import "UserManager.h"
+#import "SAHttpRequest.h"
 
 // 根据屏幕高度比算出不同设备对应数值
 #define kGetScreenHeightScale(height) iPhone5SE? height * 568 / 667.0 : iPhone6_6s? height * 667 / 667.0 : height * 736 / 667.0
@@ -68,8 +69,8 @@
 #endif
 
 
-// 车位管家的官网地址
-#define kCWGJURL @"http://www.cheweiguanjia.com"
+// 测试地址
+#define kBaseURL @"http://116.62.124.66/1.0.0/httpMobileTerminalAdapter"
 
 //测试数据标识
 //#define TEST_MODEL_ON_OFF

@@ -14,11 +14,12 @@
 
 @property (nonatomic, weak) LoginView *loginView;
 
-// 获取验证码 type: app 4  微信 7
-- (void)requestVerifyCode:(NSString *)phone type:(int)type complete:(void(^)(void))complete;
+// 获取验证码
+- (void)requestVerifyCode:(NSString *)phone complete:(void(^)(void))complete;
 // 获取语音验证码
 - (void)requestVoiceVerifyCode:(NSString *)phone type:(int)type complete:(void(^)(void))complete;
 // 登录
+- (void)requestLoginWithPhone:(NSString *)phone psw:(NSString *)psw;
 - (void)requestLoginWithPhone:(NSString *)phone verifyCode:(NSString *)code;
 // 微信登录
 - (void)requestWeChatLoginWithPhone:(NSDictionary *)param;

@@ -160,6 +160,9 @@
 		A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33501F48487B00A55A42 /* order_detail_costiphone@2x.png */; };
 		A96A33541F484C1200A55A42 /* order_detail_stayiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33521F484C1200A55A42 /* order_detail_stayiphone@2x.png */; };
 		A96A33551F484C1200A55A42 /* order_details_retreat_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33531F484C1200A55A42 /* order_details_retreat_iciphone@2x.png */; };
+		A96E112B1F4E83E700357DCB /* SAHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112A1F4E83E700357DCB /* SAHttpRequest.m */; };
+		A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112E1F4E8D7F00357DCB /* RequestSign.m */; };
+		A96E11321F4EBCE000357DCB /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E11311F4EBCE000357DCB /* Encrypt.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -515,6 +518,12 @@
 		A96A33501F48487B00A55A42 /* order_detail_costiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_detail_costiphone@2x.png"; sourceTree = "<group>"; };
 		A96A33521F484C1200A55A42 /* order_detail_stayiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_detail_stayiphone@2x.png"; sourceTree = "<group>"; };
 		A96A33531F484C1200A55A42 /* order_details_retreat_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_details_retreat_iciphone@2x.png"; sourceTree = "<group>"; };
+		A96E11291F4E83E700357DCB /* SAHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHttpRequest.h; sourceTree = "<group>"; };
+		A96E112A1F4E83E700357DCB /* SAHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAHttpRequest.m; sourceTree = "<group>"; };
+		A96E112D1F4E8D7F00357DCB /* RequestSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSign.h; sourceTree = "<group>"; };
+		A96E112E1F4E8D7F00357DCB /* RequestSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSign.m; sourceTree = "<group>"; };
+		A96E11301F4EBCE000357DCB /* Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrypt.h; sourceTree = "<group>"; };
+		A96E11311F4EBCE000357DCB /* Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypt.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -1096,6 +1105,27 @@
 			path = BookHotel;
 			sourceTree = "<group>";
 		};
+		A96E11281F4E83BA00357DCB /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A96E112C1F4E874E00357DCB /* Sign */,
+				A96E11291F4E83E700357DCB /* SAHttpRequest.h */,
+				A96E112A1F4E83E700357DCB /* SAHttpRequest.m */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		A96E112C1F4E874E00357DCB /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				A96E112D1F4E8D7F00357DCB /* RequestSign.h */,
+				A96E112E1F4E8D7F00357DCB /* RequestSign.m */,
+				A96E11301F4EBCE000357DCB /* Encrypt.h */,
+				A96E11311F4EBCE000357DCB /* Encrypt.m */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,6 +1385,7 @@
 		A9AA8EB91F371A09005F9DBB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				A96E11281F4E83BA00357DCB /* HttpRequest */,
 				A94B82481F4D262000840D88 /* RSADataSigner */,
 				A9414F021F38CA39007857D2 /* Manager */,
 			);
@@ -1839,6 +1870,7 @@
 				A96A33021F47573C00A55A42 /* WRCellView.m in Sources */,
 				A95B3FF41F3AC7FF0046E150 /* ZYDayView.m in Sources */,
 				A95D64021F468DD200F78A7E /* LoginViewController.m in Sources */,
+				A96E11321F4EBCE000357DCB /* Encrypt.m in Sources */,
 				A92F7FBE1F4B3D1D0056CACC /* MASConstraintMaker.m in Sources */,
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A92F7FC31F4B3D1D0056CACC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1859,6 +1891,7 @@
 				A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */,
 				A95286121F43FA6B00D7EB2F /* MapViewController.m in Sources */,
 				A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */,
+				A96E112B1F4E83E700357DCB /* SAHttpRequest.m in Sources */,
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
@@ -1915,6 +1948,7 @@
 				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
+				A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */,
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
 				A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */,
 				A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */,
