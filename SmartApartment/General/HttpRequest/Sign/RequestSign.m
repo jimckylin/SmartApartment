@@ -7,8 +7,9 @@
 //
 
 #import "RequestSign.h"
-#include <CommonCrypto/CommonHMAC.h>
 #import "Encrypt.h"
+#import "SecurityUtil.h"
+#import "NSData+AES128.h"
 
 NSString *const accessKey = @"NJ6KD5V31D5TZ956";
 
@@ -24,6 +25,13 @@ NSString *const accessKey = @"NJ6KD5V31D5TZ956";
     NSString *string = [sortedArray componentsJoinedByString:@"&"];
     NSString *sign = [NSString stringWithFormat:@"%@&key=%@", string, accessKey];
     sign = [Encrypt MD5ForLower32Bate:sign].uppercaseString;
+    NSData *signData = [sign dataUsingEncoding:NSUTF8StringEncoding];
+    signData = [signData AES256EncryptWithKey:accessKey];
+    sign = [self byteToHexString:signData];
+    
+    NSData *data = [@"pUjPjRp8dF2BzvAjntSLKomQ7Q1ZggvLzxRWQr1iD8k=" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *str = [data AES256DecryptWithKey:accessKey];
+    NSString *sing = [[NSString alloc] initWithData:str encoding:NSUTF8StringEncoding];
     
     return sign;
 }
@@ -43,31 +51,42 @@ NSString *const accessKey = @"NJ6KD5V31D5TZ956";
 }
 
 
-//密码进行hmac-md5加密
-+ (NSString *)getHmacmd5:(NSString *)clearText withSecret:(NSString *)secret{
++ (NSString *)byteToHexString:(NSData *)encryptedData {
     
-    CCHmacContext ctx;
-    
-    //使用GBK编码
-    unsigned long encode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    const char *key = [secret cStringUsingEncoding:encode];
-    const char *str = [clearText cStringUsingEncoding:encode];
-    
-    unsigned char mac[CC_MD5_DIGEST_LENGTH];
-    char hexmac[2 * CC_MD5_DIGEST_LENGTH + 1];
-
-    char *p;
-    CCHmacInit(&ctx, kCCHmacAlgMD5, key, strlen(key));
-    CCHmacUpdate(&ctx, str, strlen(str));
-    CCHmacFinal(&ctx, mac);
-    p = hexmac;
-    
-    for (int i = 0; i < CC_MD5_DIGEST_LENGTH;i++) {
-        snprintf(p,3,"%02x", mac[ i ]);
-        p += 2;
+    //下面是Byte 转换为16进制。
+    NSString *hexStr=@"";
+    Byte *bytes = (Byte *)[encryptedData bytes];
+    for(int i=0; i<[encryptedData length]; i++)
+    {
+        NSString *newHexStr = [NSString stringWithFormat:@"%x",bytes[i]&0xff];///16进制数
+        if([newHexStr length]==1)
+            hexStr = [NSString stringWithFormat:@"%@0%@",hexStr,newHexStr];
+        else
+            hexStr = [NSString stringWithFormat:@"%@%@",hexStr,newHexStr];
     }
-    
-    return [NSString stringWithCString:hexmac encoding:encode];
+    NSLog(@"%@", hexStr);
+    NSLog(@"%@", hexStr.uppercaseString);
+    return hexStr.uppercaseString;
 }
 
 @end
+
+
+@interface NSData (Encypt)
+
+@end
+
+@implementation NSData (Encypt)
+
+
+#pragma mark -
+
+
+
+
+
+@end
+
+
+
+

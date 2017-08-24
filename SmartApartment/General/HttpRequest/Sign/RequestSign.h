@@ -13,15 +13,4 @@
 
 + (NSString *)signCreater:(NSDictionary *)params;
 
-/**
- *  使用hmac-md5加密
- *
- *  @param clearText 原文
- *  @param secret    秘钥
- *
- *  @return 密文
- */
-
-+ (NSString *)getHmacmd5:(NSString *)clearText withSecret:(NSString *)secret;
-
 @end

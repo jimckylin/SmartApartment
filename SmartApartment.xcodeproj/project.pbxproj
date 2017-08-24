@@ -37,6 +37,12 @@
 		A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */; };
 		A92F7FF91F4DF2770056CACC /* BalanceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF71F4DF2770056CACC /* BalanceListCell.m */; };
 		A92F7FFA1F4DF2770056CACC /* BalanceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */; };
+		A92F80041F4F1C270056CACC /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FFC1F4F1C270056CACC /* GTMBase64.m */; };
+		A92F80051F4F1C270056CACC /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80001F4F1C270056CACC /* NSData+AES.m */; };
+		A92F80061F4F1C270056CACC /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80021F4F1C270056CACC /* SecurityUtil.m */; };
+		A92F80091F4F210D0056CACC /* NSData+AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80081F4F210D0056CACC /* NSData+AES128.m */; };
+		A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800B1F4F3C870056CACC /* RechargeView.m */; };
+		A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800E1F4F40E70056CACC /* RechargeButton.m */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
 		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
@@ -329,6 +335,19 @@
 		A92F7FF61F4DF2770056CACC /* BalanceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceListCell.h; sourceTree = "<group>"; };
 		A92F7FF71F4DF2770056CACC /* BalanceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceListCell.m; sourceTree = "<group>"; };
 		A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceListCell.xib; sourceTree = "<group>"; };
+		A92F7FFB1F4F1C270056CACC /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		A92F7FFC1F4F1C270056CACC /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		A92F7FFD1F4F1C270056CACC /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		A92F7FFF1F4F1C270056CACC /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		A92F80001F4F1C270056CACC /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		A92F80011F4F1C270056CACC /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
+		A92F80021F4F1C270056CACC /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
+		A92F80071F4F210D0056CACC /* NSData+AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES128.h"; sourceTree = "<group>"; };
+		A92F80081F4F210D0056CACC /* NSData+AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES128.m"; sourceTree = "<group>"; };
+		A92F800A1F4F3C870056CACC /* RechargeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeView.h; sourceTree = "<group>"; };
+		A92F800B1F4F3C870056CACC /* RechargeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeView.m; sourceTree = "<group>"; };
+		A92F800D1F4F40E70056CACC /* RechargeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeButton.h; sourceTree = "<group>"; };
+		A92F800E1F4F40E70056CACC /* RechargeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeButton.m; sourceTree = "<group>"; };
 		A9414EFC1F38C4DE007857D2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
@@ -816,6 +835,31 @@
 			path = YJSliderView;
 			sourceTree = "<group>";
 		};
+		A92F7FFE1F4F1C270056CACC /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				A92F7FFB1F4F1C270056CACC /* GTMBase64.h */,
+				A92F7FFC1F4F1C270056CACC /* GTMBase64.m */,
+				A92F7FFD1F4F1C270056CACC /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		A92F80031F4F1C270056CACC /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				A92F7FFE1F4F1C270056CACC /* GTMBase64 */,
+				A92F7FFF1F4F1C270056CACC /* NSData+AES.h */,
+				A92F80001F4F1C270056CACC /* NSData+AES.m */,
+				A92F80071F4F210D0056CACC /* NSData+AES128.h */,
+				A92F80081F4F210D0056CACC /* NSData+AES128.m */,
+				A92F80011F4F1C270056CACC /* SecurityUtil.h */,
+				A92F80021F4F1C270056CACC /* SecurityUtil.m */,
+			);
+			name = Security;
+			path = "../../../../../../Downloads/AES128位带16进制转换/AES使用/test/Security";
+			sourceTree = "<group>";
+		};
 		A9414F021F38CA39007857D2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1108,6 +1152,7 @@
 		A96E11281F4E83BA00357DCB /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
+				A92F80031F4F1C270056CACC /* Security */,
 				A96E112C1F4E874E00357DCB /* Sign */,
 				A96E11291F4E83E700357DCB /* SAHttpRequest.h */,
 				A96E112A1F4E83E700357DCB /* SAHttpRequest.m */,
@@ -1294,6 +1339,10 @@
 				A92F7FF61F4DF2770056CACC /* BalanceListCell.h */,
 				A92F7FF71F4DF2770056CACC /* BalanceListCell.m */,
 				A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */,
+				A92F800A1F4F3C870056CACC /* RechargeView.h */,
+				A92F800B1F4F3C870056CACC /* RechargeView.m */,
+				A92F800D1F4F40E70056CACC /* RechargeButton.h */,
+				A92F800E1F4F40E70056CACC /* RechargeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1847,6 +1896,7 @@
 				A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */,
 				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
+				A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
 				A9BA5DF31F4614C70093A50D /* BookHotelViewController.m in Sources */,
 				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
@@ -1857,6 +1907,7 @@
 				A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */,
 				A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
+				A92F80051F4F1C270056CACC /* NSData+AES.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
@@ -1895,10 +1946,12 @@
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
+				A92F80041F4F1C270056CACC /* GTMBase64.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
+				A92F80091F4F210D0056CACC /* NSData+AES128.m in Sources */,
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
 				A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */,
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
@@ -1912,6 +1965,7 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A92F80061F4F1C270056CACC /* SecurityUtil.m in Sources */,
 				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
@@ -1956,6 +2010,7 @@
 				A92F7FBF1F4B3D1D0056CACC /* MASLayoutConstraint.m in Sources */,
 				A92F7FC01F4B3D1D0056CACC /* MASViewAttribute.m in Sources */,
 				A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */,
+				A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
 				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
 				A94B825E1F4D262000840D88 /* openssl_wrapper.m in Sources */,
