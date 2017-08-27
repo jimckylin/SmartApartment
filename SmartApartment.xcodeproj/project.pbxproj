@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2EDBDA13E47337EAD8D1B319 /* libPods-SmartApartment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */; };
+		A9060F9C1F52B7BD00778B53 /* coupon_sele_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9060F9A1F52B7BD00778B53 /* coupon_sele_siphone@2x.png */; };
+		A9060F9D1F52B7BD00778B53 /* coupon_seleiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9060F9B1F52B7BD00778B53 /* coupon_seleiphone@2x.png */; };
+		A9060FA01F52C1EA00778B53 /* InvoiceInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060F9F1F52C1EA00778B53 /* InvoiceInfoCell.m */; };
+		A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA21F52C4C100778B53 /* NewAddInvoiceViewController.m */; };
+		A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */; };
 		A92F7FA11F4B333C0056CACC /* STSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA01F4B333C0056CACC /* STSegmentView.m */; };
 		A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA41F4B3D1D0056CACC /* MASCompositeConstraint.m */; };
 		A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA71F4B3D1D0056CACC /* MASConstraint.m */; };
@@ -43,6 +48,8 @@
 		A92F80091F4F210D0056CACC /* NSData+AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80081F4F210D0056CACC /* NSData+AES128.m */; };
 		A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800B1F4F3C870056CACC /* RechargeView.m */; };
 		A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800E1F4F40E70056CACC /* RechargeButton.m */; };
+		A92F80121F51633E0056CACC /* AddInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80111F51633E0056CACC /* AddInvoiceViewController.m */; };
+		A92F80151F516F9D0056CACC /* InvoiceTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80141F516F9D0056CACC /* InvoiceTypeCell.m */; };
 		A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414EFD1F38C4DE007857D2 /* MineViewController.m */; };
 		A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F001F38C55E007857D2 /* TripHelperViewController.m */; };
 		A9414F051F38CA49007857D2 /* NavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9414F041F38CA49007857D2 /* NavManager.m */; };
@@ -280,6 +287,14 @@
 
 /* Begin PBXFileReference section */
 		99E8A644A65F58929D1FE943 /* libPods-SmartApartment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartApartment.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9060F9A1F52B7BD00778B53 /* coupon_sele_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_sele_siphone@2x.png"; sourceTree = "<group>"; };
+		A9060F9B1F52B7BD00778B53 /* coupon_seleiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_seleiphone@2x.png"; sourceTree = "<group>"; };
+		A9060F9E1F52C1EA00778B53 /* InvoiceInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceInfoCell.h; sourceTree = "<group>"; };
+		A9060F9F1F52C1EA00778B53 /* InvoiceInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceInfoCell.m; sourceTree = "<group>"; };
+		A9060FA11F52C4C100778B53 /* NewAddInvoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAddInvoiceViewController.h; sourceTree = "<group>"; };
+		A9060FA21F52C4C100778B53 /* NewAddInvoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAddInvoiceViewController.m; sourceTree = "<group>"; };
+		A9060FA41F52C5C000778B53 /* NewAddInvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAddInvoiceCell.h; sourceTree = "<group>"; };
+		A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAddInvoiceCell.m; sourceTree = "<group>"; };
 		A92F7F9F1F4B333C0056CACC /* STSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSegmentView.h; sourceTree = "<group>"; };
 		A92F7FA01F4B333C0056CACC /* STSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSegmentView.m; sourceTree = "<group>"; };
 		A92F7FA31F4B3D1D0056CACC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -348,6 +363,10 @@
 		A92F800B1F4F3C870056CACC /* RechargeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeView.m; sourceTree = "<group>"; };
 		A92F800D1F4F40E70056CACC /* RechargeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeButton.h; sourceTree = "<group>"; };
 		A92F800E1F4F40E70056CACC /* RechargeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeButton.m; sourceTree = "<group>"; };
+		A92F80101F51633E0056CACC /* AddInvoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddInvoiceViewController.h; sourceTree = "<group>"; };
+		A92F80111F51633E0056CACC /* AddInvoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddInvoiceViewController.m; sourceTree = "<group>"; };
+		A92F80131F516F9D0056CACC /* InvoiceTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceTypeCell.h; sourceTree = "<group>"; };
+		A92F80141F516F9D0056CACC /* InvoiceTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceTypeCell.m; sourceTree = "<group>"; };
 		A9414EFC1F38C4DE007857D2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		A9414EFD1F38C4DE007857D2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		A9414EFF1F38C55E007857D2 /* TripHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperViewController.h; sourceTree = "<group>"; };
@@ -1035,6 +1054,10 @@
 				A9BA5DF51F4615230093A50D /* HotelDescrViewController.m */,
 				A992C1F01F47331C00D5371C /* HotelCommentListViewController.h */,
 				A992C1F11F47331C00D5371C /* HotelCommentListViewController.m */,
+				A92F80101F51633E0056CACC /* AddInvoiceViewController.h */,
+				A92F80111F51633E0056CACC /* AddInvoiceViewController.m */,
+				A9060FA11F52C4C100778B53 /* NewAddInvoiceViewController.h */,
+				A9060FA21F52C4C100778B53 /* NewAddInvoiceViewController.m */,
 			);
 			path = Apartment;
 			sourceTree = "<group>";
@@ -1250,6 +1273,12 @@
 				A95D63FE1F46889B00F78A7E /* HotelDetailMoreCommentCell.m */,
 				A97677AE1F43433B00EDCDFA /* BlankCell.h */,
 				A97677AF1F43433B00EDCDFA /* BlankCell.m */,
+				A92F80131F516F9D0056CACC /* InvoiceTypeCell.h */,
+				A92F80141F516F9D0056CACC /* InvoiceTypeCell.m */,
+				A9060F9E1F52C1EA00778B53 /* InvoiceInfoCell.h */,
+				A9060F9F1F52C1EA00778B53 /* InvoiceInfoCell.m */,
+				A9060FA41F52C5C000778B53 /* NewAddInvoiceCell.h */,
+				A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */,
 				A95D642F1F46E10500F78A7E /* JKProgressView.h */,
 				A95D64301F46E10500F78A7E /* JKProgressView.m */,
 				A96A33051F47FEA200A55A42 /* BookHotel */,
@@ -1489,6 +1518,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9060F9A1F52B7BD00778B53 /* coupon_sele_siphone@2x.png */,
+				A9060F9B1F52B7BD00778B53 /* coupon_seleiphone@2x.png */,
 				A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */,
 				A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */,
 				A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */,
@@ -1737,6 +1768,7 @@
 				A95B3FC61F3A9F290046E150 /* mine_hand_bgiphone@2x.png in Resources */,
 				A92F7FD81F4B51980056CACC /* message_zip_iciphone@2x.png in Resources */,
 				A9906F6A1F3C00E6007725B7 /* mine_headiphone@2x.png in Resources */,
+				A9060F9C1F52B7BD00778B53 /* coupon_sele_siphone@2x.png in Resources */,
 				A97677871F3F0AFB00EDCDFA /* mine_vip_1_iciphone@2x.png in Resources */,
 				A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */,
 				A95154AD1F4C183A00841D3F /* UMSocialSDKResources.bundle in Resources */,
@@ -1801,6 +1833,7 @@
 				A92F7FD61F4B515F0056CACC /* message_location_iciphone@2x.png in Resources */,
 				A92F7FFA1F4DF2770056CACC /* BalanceListCell.xib in Resources */,
 				A955E9C71F4557E100FEB05F /* detail_vip_goldiphone@2x.png in Resources */,
+				A9060F9D1F52B7BD00778B53 /* coupon_seleiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
 				A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */,
@@ -1931,7 +1964,9 @@
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
 				A92F7FC21F4B3D1D0056CACC /* NSArray+MASAdditions.m in Sources */,
+				A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
+				A92F80121F51633E0056CACC /* AddInvoiceViewController.m in Sources */,
 				A95D641C1F4693B300F78A7E /* MBProgressHUD+gjMB.m in Sources */,
 				A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */,
 				A955E9CE1F45697E00FEB05F /* HotelDetailDateView.m in Sources */,
@@ -1946,6 +1981,7 @@
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
+				A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */,
 				A92F80041F4F1C270056CACC /* GTMBase64.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
@@ -1992,6 +2028,7 @@
 				A992C1DF1F4724EA00D5371C /* JWStarView.m in Sources */,
 				A92F7FCB1F4B3D290056CACC /* DotCountLabel.m in Sources */,
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
+				A92F80151F516F9D0056CACC /* InvoiceTypeCell.m in Sources */,
 				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
@@ -2012,6 +2049,7 @@
 				A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */,
 				A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
+				A9060FA01F52C1EA00778B53 /* InvoiceInfoCell.m in Sources */,
 				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
 				A94B825E1F4D262000840D88 /* openssl_wrapper.m in Sources */,
 				A9EB26451F48D156007DB818 /* UserManager.m in Sources */,

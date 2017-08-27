@@ -68,7 +68,7 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
-                  timestampString = "525291027.542524"
+                  timestampString = "525523056.391191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -83,7 +83,7 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
-                  timestampString = "525291027.546338"
+                  timestampString = "525523056.401221"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -122,6 +122,54 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "+signCreater:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/View/InvoiceTypeCell.m"
+            timestampString = "525523066.57187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-onClickEvent"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/View/InvoiceTypeCell.m"
+            timestampString = "525523191.092124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-onClickEvent"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/View/InvoiceTypeCell.m"
+            timestampString = "525523208.210943"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-onClickEvent"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

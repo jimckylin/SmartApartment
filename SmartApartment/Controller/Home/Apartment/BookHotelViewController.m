@@ -7,6 +7,7 @@
 //
 
 #import "BookHotelViewController.h"
+#import "AddInvoiceViewController.h"
 #import "BookSuccessViewController.h"
 #import "WRCellView.h"
 #import "BookBottomView.h"
@@ -116,6 +117,10 @@
         [actionsheet showInView:pThis.view];
     };
     
+    self.invoiceView.tapBlock = ^{
+        AddInvoiceViewController *vc = [AddInvoiceViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    };
     
 }
 
