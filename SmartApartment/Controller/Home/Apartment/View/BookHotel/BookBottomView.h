@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, HotelBookBtnType) {
 
 @protocol BookBottomViewDelegate <NSObject>
 
-- (void)bookBottomViewDickBtn:(HotelBookBtnType)type;
+- (void)bookBottomViewDickBtn:(HotelBookBtnType)type detailShow:(BOOL)show;
 @end
 
 @interface BookBottomView : UIView

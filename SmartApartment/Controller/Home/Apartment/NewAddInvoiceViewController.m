@@ -9,6 +9,7 @@
 #import "NewAddInvoiceViewController.h"
 #import "InvoiceTypeCell.h"
 #import "NewAddInvoiceCell.h"
+#import "WRCellView.h"
 
 #import <BAButton/BAButton.h>
 
@@ -24,6 +25,9 @@ UITableViewDataSource>
 @property(nonatomic, assign) BOOL isNeetInvoice;   // 是否需要发票
 
 @property(nonatomic, assign) InvoiceType type;   // 发票类型
+
+@property (nonatomic, strong) WRCellView    *tipView;
+@property (nonatomic, strong) UILabel       *tipLabel;
 
 @end
 
@@ -53,10 +57,14 @@ UITableViewDataSource>
     
     
     // footer
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 150)];
     _tableView.tableFooterView = footerView;
     
-    UIButton *addBtn = [UIButton ba_buttonWithFrame:CGRectMake(20, 40, kScreenWidth-40, 44) title:@"保存" titleColor:[UIColor whiteColor] titleFont:[UIFont systemFontOfSize:13] image:[UIImage imageNamed:@"order_add_grey_iciphone"] backgroundColor:ThemeColor];
+    [footerView addSubview:self.tipView];
+    [self.tipView addSubview:self.tipLabel];
+    self.tipView.frame = CGRectMake(0, 10, kScreenWidth, 50);
+    
+    UIButton *addBtn = [UIButton ba_buttonWithFrame:CGRectMake(20, 80, kScreenWidth-40, 44) title:@"保存" titleColor:[UIColor whiteColor] titleFont:[UIFont systemFontOfSize:13] image:[UIImage imageNamed:@"order_add_grey_iciphone"] backgroundColor:ThemeColor];
     [addBtn ba_button_setViewRectCornerType:BAKit_ViewRectCornerTypeAllCorners viewCornerRadius:4];
     [addBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeNormal padding:10];
     [addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -184,6 +192,28 @@ UITableViewDataSource>
 - (void)initData {
     
 }
+
+
+- (WRCellView *)tipView {
+    if (_tipView == nil) {
+        _tipView = [[WRCellView alloc] initWithLineStyle:WRCellStyleIconLabel_Icon];
+        _tipView.leftIcon.image = kImage(@"oeder_reminder_iciphone");
+    }
+    return _tipView;
+}
+
+- (UILabel *)tipLabel {
+    if (_tipLabel == nil) {
+        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 175, 50)];
+        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视酒店空房情况安排";
+        _tipLabel.font = [UIFont systemFontOfSize:11];
+        _tipLabel.textColor = [UIColor lightGrayColor];
+        _tipLabel.numberOfLines = 0;
+        _tipLabel.frame = CGRectMake(40, 0, kScreenWidth-72, 50);
+    }
+    return _tipLabel;
+}
+
 
 
 @end

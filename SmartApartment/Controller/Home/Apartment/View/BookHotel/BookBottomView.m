@@ -62,7 +62,7 @@
     [_detailBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeCenterImageRight padding:10];
     
     _bookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _bookBtn.backgroundColor = [UIColor redColor];
+    _bookBtn.backgroundColor = ThemeColor;
     [_bookBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_bookBtn setTitle:@"确认预订" forState:UIControlStateNormal];
     [_bookBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
@@ -90,19 +90,10 @@
                 self.backgroundColor = [UIColor whiteColor];
             }
         }];
-        
-        if (_detailBtn.selected) {
-            self.height = kScreenHeight;
-            self.top = 0;
-        }else {
-            self.top = kScreenHeight - 50;
-            self.height = 50;
-        }
-        _bgView.top = self.height - 50;
     }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(bookBottomViewDickBtn:)]) {
-        [self.delegate bookBottomViewDickBtn:type];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(bookBottomViewDickBtn:detailShow:)]) {
+        [self.delegate bookBottomViewDickBtn:type detailShow:sender.selected];
     }
 }
 

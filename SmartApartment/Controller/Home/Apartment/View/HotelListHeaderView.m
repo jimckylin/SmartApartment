@@ -7,7 +7,7 @@
 //
 
 #import "HotelListHeaderView.h"
-
+#import <BAButton/BAButton.h>
 
 @interface HotelListHeaderView ()
 
@@ -44,7 +44,7 @@
     [self addSubview:_backBtn];
     
     _cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _cityBtn.backgroundColor = [UIColor lightTextColor];
+    _cityBtn.backgroundColor = RGBA(256, 256, 256, 0.2);
     [_cityBtn setImage:kImage(@"list_city_iciphone") forState:UIControlStateNormal];
     [_cityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
@@ -53,12 +53,13 @@
     [_cityBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
     _cityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     _cityBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [_cityBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeLeftImageLeft padding:10];
     _cityBtn.tag = HotelListHeaderBtnTypeCity;
     [_cityBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_cityBtn];
     
     _dateBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _dateBtn.backgroundColor = [UIColor lightTextColor];
+    _dateBtn.backgroundColor = RGBA(256, 256, 256, 0.2);
     [_dateBtn setImage:kImage(@"list_time_iciphone") forState:UIControlStateNormal];
     [_dateBtn setTitle:@"8月14-15 共1晚" forState:UIControlStateNormal];
     [_dateBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -67,7 +68,7 @@
     [_dateBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
     _dateBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     _dateBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    //_dateBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+    [_dateBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeLeftImageLeft padding:10];
     _dateBtn.tag = HotelListHeaderBtnTypeDate;
     [_dateBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_dateBtn];

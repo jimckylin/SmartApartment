@@ -113,6 +113,7 @@
 		A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A955E9CA1F45694C00FEB05F /* HotelDetailRoomTypeCell.m */; };
 		A955E9CE1F45697E00FEB05F /* HotelDetailDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A955E9CD1F45697E00FEB05F /* HotelDetailDateView.m */; };
 		A955E9D11F45735500FEB05F /* HotelDetailMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A955E9D01F45735500FEB05F /* HotelDetailMoreCell.m */; };
+		A959C31A1F53180D006E091A /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A959C3191F53180D006E091A /* BookDetailView.m */; };
 		A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */; };
 		A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */; };
 		A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */; };
@@ -459,6 +460,8 @@
 		A955E9CD1F45697E00FEB05F /* HotelDetailDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailDateView.m; sourceTree = "<group>"; };
 		A955E9CF1F45735500FEB05F /* HotelDetailMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetailMoreCell.h; sourceTree = "<group>"; };
 		A955E9D01F45735500FEB05F /* HotelDetailMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetailMoreCell.m; sourceTree = "<group>"; };
+		A959C3181F53180D006E091A /* BookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailView.h; sourceTree = "<group>"; };
+		A959C3191F53180D006E091A /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_arrow_iconiphone@2x.png"; sourceTree = "<group>"; };
 		A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iconfont.h"; sourceTree = "<group>"; };
 		A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iconfont.m"; sourceTree = "<group>"; };
@@ -1165,6 +1168,8 @@
 			children = (
 				A96A33061F47FF1B00A55A42 /* BookBottomView.h */,
 				A96A33071F47FF1B00A55A42 /* BookBottomView.m */,
+				A959C3181F53180D006E091A /* BookDetailView.h */,
+				A959C3191F53180D006E091A /* BookDetailView.m */,
 				A96A33471F4845C000A55A42 /* OrderDetailView.h */,
 				A96A33481F4845C000A55A42 /* OrderDetailView.m */,
 				A96A334A1F4845D000A55A42 /* OrderDetailView.xib */,
@@ -1939,6 +1944,7 @@
 				A94B825C1F4D262000840D88 /* MD5DataSigner.m in Sources */,
 				A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */,
 				A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */,
+				A959C31A1F53180D006E091A /* BookDetailView.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
 				A92F80051F4F1C270056CACC /* NSData+AES.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,

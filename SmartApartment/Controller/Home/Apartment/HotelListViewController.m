@@ -14,6 +14,7 @@
 #import "HotelListHeaderView.h"
 #import "HotelListCell.h"
 
+#import <BAButton/BAButton.h>
 #import "ZYCalendarManager.h"
 
 NSString *const kHotelListCell = @"kHotelListCell";
@@ -64,15 +65,12 @@ NSString *const kHotelListCell = @"kHotelListCell";
     
     UIButton *conditionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     conditionBtn.frame = CGRectMake(40, 20+6.5, kScreenWidth - 55, 31);
-    conditionBtn.backgroundColor = [UIColor lightTextColor];
+    conditionBtn.backgroundColor = RGBA(256, 256, 256, 0.2);
     [conditionBtn setImage:kImage(@"list_city_iciphone") forState:UIControlStateNormal];
     [conditionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [conditionBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
     [conditionBtn setTitle:@"福州(10)·8月14-15 共1晚" forState:UIControlStateNormal];
-    conditionBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
-    [conditionBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
-    conditionBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    conditionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [conditionBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeLeftImageLeft padding:10];
     [conditionBtn addTarget:self action:@selector(conditionBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_naviView addSubview:conditionBtn];
 }

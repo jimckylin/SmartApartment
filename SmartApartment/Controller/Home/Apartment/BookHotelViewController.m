@@ -10,6 +10,7 @@
 #import "AddInvoiceViewController.h"
 #import "BookSuccessViewController.h"
 #import "WRCellView.h"
+#import "BookDetailView.h"
 #import "BookBottomView.h"
 #import <PPNumberButton/PPNumberButton.h>
 
@@ -21,6 +22,11 @@
 @interface BookHotelViewController ()<BookBottomViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
+@property (nonatomic, strong) UIView        *headerView;
+@property (nonatomic, strong) UILabel       *titleLabel;
+@property (nonatomic, strong) UILabel       *descrLabel;
+@property (nonatomic, strong) UILabel       *dateLabel;
+
 @property (nonatomic, strong) WRCellView    *roomNumView;
 @property (nonatomic, strong) WRCellView    *livePersonView;
 @property (nonatomic, strong) WRCellView    *phoneNumView;
@@ -39,6 +45,8 @@
 @property (nonatomic, strong) UILabel       *invoiceLabel;
 @property (nonatomic, strong) UITextField   *remarkTF;
 @property (nonatomic, strong) UILabel       *tipLabel;
+
+@property (nonatomic, strong) BookDetailView *bookDetailView;
 
 @end
 
@@ -62,6 +70,7 @@
 }
 
 - (void)addViews {
+    [self.containerView addSubview:self.headerView];
     [self.containerView addSubview:self.roomNumView];
     [self.containerView addSubview:self.livePersonView];
     [self.containerView addSubview:self.phoneNumView];
@@ -89,7 +98,7 @@
 }
 
 - (void)setCellFrame {
-    self.roomNumView.frame = CGRectMake(0, 30, kScreenWidth, WRCellViewHeight);
+    self.roomNumView.frame = CGRectMake(0, _headerView.bottom+10, kScreenWidth, WRCellViewHeight);
     self.livePersonView.frame = CGRectMake(0, _roomNumView.bottom, kScreenWidth, WRCellViewHeight);
     self.phoneNumView.frame = CGRectMake(0, _livePersonView.bottom, kScreenWidth, WRCellViewHeight);
     
@@ -147,17 +156,57 @@
 
 #pragma mark - BookBottomViewDelegate
 
-- (void)bookBottomViewDickBtn:(HotelBookBtnType)type {
+- (void)bookBottomViewDickBtn:(HotelBookBtnType)type detailShow:(BOOL)show {
     
     if (type == HotelSelectBtnTypeBook) {
         BookSuccessViewController *vc = [BookSuccessViewController new];
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        
+    }else {
+        if (show) {
+            _bookDetailView = [[BookDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 50)];
+            [self.view addSubview:_bookDetailView];
+        }else {
+            [_bookDetailView removeFromSuperview];
+        }
     }
 }
 
 
 
 #pragma mark - getter
+
+- (UIView *)headerView {
+    if (!_headerView) {
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 103)];
+        
+        UIImageView *bgImgV = [UIImageView new];
+        bgImgV.frame = _headerView.bounds;
+        bgImgV.contentMode = UIViewContentModeScaleAspectFit;
+        bgImgV.image = [UIImage imageNamed:@"order_fill_bgiphone"];
+        [_headerView addSubview:bgImgV];
+        
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 12, kScreenHeight-30, 25)];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.textColor = [UIColor darkTextColor];
+        _titleLabel.text = @"尚客优酒店北京怀柔区北房镇幸福大街店";
+        [_headerView addSubview:_titleLabel];
+        
+        _descrLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, _titleLabel.bottom, kScreenHeight-30, 25)];
+        _descrLabel.font = [UIFont systemFontOfSize:14];
+        _descrLabel.textColor = [UIColor grayColor];
+        _descrLabel.text = @"高级麻将套房";
+        [_headerView addSubview:_descrLabel];
+        
+        _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, _descrLabel.bottom, kScreenHeight-30, 25)];
+        _dateLabel.font = [UIFont systemFontOfSize:14];
+        _dateLabel.textColor = [UIColor grayColor];
+        _dateLabel.text = @"入住08月19日 离店08月20日 1晚";
+        [_headerView addSubview:_dateLabel];
+        
+    }
+    return _headerView;
+}
 
 - (WRCellView *)roomNumView {
     if (_roomNumView == nil) {
