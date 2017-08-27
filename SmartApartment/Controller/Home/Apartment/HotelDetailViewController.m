@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import "HotelCommentListViewController.h"
 #import "BookHotelViewController.h"
+#import "HotelDescrViewController.h"
 
 #import "HotelDetailDateView.h"
 #import "ZYCalendarManager.h"
@@ -356,7 +357,8 @@ UITableViewDataSource, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateView
 - (void)hotelDetailHeaderCellDidClickBtn:(HotelDetailHeaderType)type {
     
     if (type == HotelDetailHeaderTypeHotelDetail) {
-        
+        HotelDescrViewController *vc = [HotelDescrViewController new];
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     }else {
         NSMutableString* str = [[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];

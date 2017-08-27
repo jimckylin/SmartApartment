@@ -74,9 +74,12 @@
     _priceLabel.text = @"￥215";
     [_bgView addSubview:_priceLabel];
     
-    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(0, self.height-0.5, kScreenWidth, 0.5)];
+    UIView *line2 = [UIView new];
     line2.backgroundColor = [UIColor lightGrayColor];
     [_bgView addSubview:line2];
+    [line2 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [line2 autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [line2 autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 0.5)];
 }
 
 
