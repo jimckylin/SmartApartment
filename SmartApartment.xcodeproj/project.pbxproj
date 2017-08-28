@@ -112,6 +112,8 @@
 		A955E9D11F45735500FEB05F /* HotelDetailMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A955E9D01F45735500FEB05F /* HotelDetailMoreCell.m */; };
 		A959C31A1F53180D006E091A /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A959C3191F53180D006E091A /* BookDetailView.m */; };
 		A959C31D1F5341ED006E091A /* HotelConfigCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A959C31C1F5341ED006E091A /* HotelConfigCell.m */; };
+		A959C3211F548C6F006E091A /* YRJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A959C3201F548C6F006E091A /* YRJSONAdapter.m */; };
+		A959C3251F54946A006E091A /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = A959C3241F54946A006E091A /* AESCipher.m */; };
 		A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */; };
 		A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */; };
 		A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */; };
@@ -455,6 +457,10 @@
 		A959C3191F53180D006E091A /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		A959C31B1F5341ED006E091A /* HotelConfigCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigCell.h; sourceTree = "<group>"; };
 		A959C31C1F5341ED006E091A /* HotelConfigCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigCell.m; sourceTree = "<group>"; };
+		A959C31F1F548C6F006E091A /* YRJSONAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRJSONAdapter.h; sourceTree = "<group>"; };
+		A959C3201F548C6F006E091A /* YRJSONAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRJSONAdapter.m; sourceTree = "<group>"; };
+		A959C3231F54946A006E091A /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		A959C3241F54946A006E091A /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_arrow_iconiphone@2x.png"; sourceTree = "<group>"; };
 		A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iconfont.h"; sourceTree = "<group>"; };
 		A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iconfont.m"; sourceTree = "<group>"; };
@@ -990,6 +996,24 @@
 			path = UMSocialUI;
 			sourceTree = "<group>";
 		};
+		A959C31E1F548C6F006E091A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				A959C31F1F548C6F006E091A /* YRJSONAdapter.h */,
+				A959C3201F548C6F006E091A /* YRJSONAdapter.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		A959C3221F54946A006E091A /* AESCipher */ = {
+			isa = PBXGroup;
+			children = (
+				A959C3231F54946A006E091A /* AESCipher.h */,
+				A959C3241F54946A006E091A /* AESCipher.m */,
+			);
+			path = AESCipher;
+			sourceTree = "<group>";
+		};
 		A95B3FD11F3AAF2B0046E150 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,6 +1172,7 @@
 		A96E11281F4E83BA00357DCB /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
+				A959C3221F54946A006E091A /* AESCipher */,
 				A96E112C1F4E874E00357DCB /* Sign */,
 				A96E11291F4E83E700357DCB /* SAHttpRequest.h */,
 				A96E112A1F4E83E700357DCB /* SAHttpRequest.m */,
@@ -1293,6 +1318,7 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A959C31E1F548C6F006E091A /* JSONKit */,
 				A94B82671F4D26A800840D88 /* AlipaySDK */,
 				A94B823D1F4D1E7A00840D88 /* OpenSDK1.8.0 */,
 				A95154961F4C183A00841D3F /* UMSocial */,
@@ -1906,6 +1932,7 @@
 				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
 				A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */,
+				A959C3211F548C6F006E091A /* YRJSONAdapter.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
 				A9BA5DF31F4614C70093A50D /* BookHotelViewController.m in Sources */,
 				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
@@ -2012,6 +2039,7 @@
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
 				A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */,
 				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
+				A959C3251F54946A006E091A /* AESCipher.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
 				A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */,

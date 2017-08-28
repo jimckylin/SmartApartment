@@ -13,4 +13,6 @@
 
 + (NSString *)signCreater:(NSDictionary *)params;
 
++ (NSString *)AES256EncryptWithJson:(NSString *)json;
+
 @end
