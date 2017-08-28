@@ -42,10 +42,6 @@
 		A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */; };
 		A92F7FF91F4DF2770056CACC /* BalanceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FF71F4DF2770056CACC /* BalanceListCell.m */; };
 		A92F7FFA1F4DF2770056CACC /* BalanceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */; };
-		A92F80041F4F1C270056CACC /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FFC1F4F1C270056CACC /* GTMBase64.m */; };
-		A92F80051F4F1C270056CACC /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80001F4F1C270056CACC /* NSData+AES.m */; };
-		A92F80061F4F1C270056CACC /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80021F4F1C270056CACC /* SecurityUtil.m */; };
-		A92F80091F4F210D0056CACC /* NSData+AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80081F4F210D0056CACC /* NSData+AES128.m */; };
 		A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800B1F4F3C870056CACC /* RechargeView.m */; };
 		A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F800E1F4F40E70056CACC /* RechargeButton.m */; };
 		A92F80121F51633E0056CACC /* AddInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F80111F51633E0056CACC /* AddInvoiceViewController.m */; };
@@ -56,6 +52,7 @@
 		A9414F071F38D060007857D2 /* nav_return_ic_wiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */; };
 		A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */; };
 		A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */; };
+		A9415A3E1F53ED0500FAD195 /* HotelDescrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9415A3D1F53ED0500FAD195 /* HotelDescrCell.m */; };
 		A94B82431F4D1E7A00840D88 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */; };
 		A94B82441F4D1E7A00840D88 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A94B823F1F4D1E7A00840D88 /* README.txt */; };
 		A94B82471F4D259F00840D88 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82461F4D259F00840D88 /* PayManager.m */; };
@@ -352,15 +349,6 @@
 		A92F7FF61F4DF2770056CACC /* BalanceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceListCell.h; sourceTree = "<group>"; };
 		A92F7FF71F4DF2770056CACC /* BalanceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceListCell.m; sourceTree = "<group>"; };
 		A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceListCell.xib; sourceTree = "<group>"; };
-		A92F7FFB1F4F1C270056CACC /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		A92F7FFC1F4F1C270056CACC /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		A92F7FFD1F4F1C270056CACC /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		A92F7FFF1F4F1C270056CACC /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
-		A92F80001F4F1C270056CACC /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
-		A92F80011F4F1C270056CACC /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
-		A92F80021F4F1C270056CACC /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
-		A92F80071F4F210D0056CACC /* NSData+AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES128.h"; sourceTree = "<group>"; };
-		A92F80081F4F210D0056CACC /* NSData+AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES128.m"; sourceTree = "<group>"; };
 		A92F800A1F4F3C870056CACC /* RechargeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeView.h; sourceTree = "<group>"; };
 		A92F800B1F4F3C870056CACC /* RechargeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeView.m; sourceTree = "<group>"; };
 		A92F800D1F4F40E70056CACC /* RechargeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeButton.h; sourceTree = "<group>"; };
@@ -378,6 +366,8 @@
 		A9414F061F38D060007857D2 /* nav_return_ic_wiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_return_ic_wiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myorder_lineiphone@2x.png"; sourceTree = "<group>"; };
 		A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_location_ic_siphone@2x.png"; sourceTree = "<group>"; };
+		A9415A3C1F53ED0500FAD195 /* HotelDescrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDescrCell.h; sourceTree = "<group>"; };
+		A9415A3D1F53ED0500FAD195 /* HotelDescrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDescrCell.m; sourceTree = "<group>"; };
 		A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		A94B823F1F4D1E7A00840D88 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A94B82401F4D1E7A00840D88 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -860,31 +850,6 @@
 			path = YJSliderView;
 			sourceTree = "<group>";
 		};
-		A92F7FFE1F4F1C270056CACC /* GTMBase64 */ = {
-			isa = PBXGroup;
-			children = (
-				A92F7FFB1F4F1C270056CACC /* GTMBase64.h */,
-				A92F7FFC1F4F1C270056CACC /* GTMBase64.m */,
-				A92F7FFD1F4F1C270056CACC /* GTMDefines.h */,
-			);
-			path = GTMBase64;
-			sourceTree = "<group>";
-		};
-		A92F80031F4F1C270056CACC /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				A92F7FFE1F4F1C270056CACC /* GTMBase64 */,
-				A92F7FFF1F4F1C270056CACC /* NSData+AES.h */,
-				A92F80001F4F1C270056CACC /* NSData+AES.m */,
-				A92F80071F4F210D0056CACC /* NSData+AES128.h */,
-				A92F80081F4F210D0056CACC /* NSData+AES128.m */,
-				A92F80011F4F1C270056CACC /* SecurityUtil.h */,
-				A92F80021F4F1C270056CACC /* SecurityUtil.m */,
-			);
-			name = Security;
-			path = "../../../../../../Downloads/AES128位带16进制转换/AES使用/test/Security";
-			sourceTree = "<group>";
-		};
 		A9414F021F38CA39007857D2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1183,7 +1148,6 @@
 		A96E11281F4E83BA00357DCB /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				A92F80031F4F1C270056CACC /* Security */,
 				A96E112C1F4E874E00357DCB /* Sign */,
 				A96E11291F4E83E700357DCB /* SAHttpRequest.h */,
 				A96E112A1F4E83E700357DCB /* SAHttpRequest.m */,
@@ -1287,10 +1251,12 @@
 				A9060F9F1F52C1EA00778B53 /* InvoiceInfoCell.m */,
 				A9060FA41F52C5C000778B53 /* NewAddInvoiceCell.h */,
 				A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */,
-				A95D642F1F46E10500F78A7E /* JKProgressView.h */,
-				A95D64301F46E10500F78A7E /* JKProgressView.m */,
 				A959C31B1F5341ED006E091A /* HotelConfigCell.h */,
 				A959C31C1F5341ED006E091A /* HotelConfigCell.m */,
+				A9415A3C1F53ED0500FAD195 /* HotelDescrCell.h */,
+				A9415A3D1F53ED0500FAD195 /* HotelDescrCell.m */,
+				A95D642F1F46E10500F78A7E /* JKProgressView.h */,
+				A95D64301F46E10500F78A7E /* JKProgressView.m */,
 				A96A33051F47FEA200A55A42 /* BookHotel */,
 			);
 			path = View;
@@ -1951,7 +1917,6 @@
 				A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */,
 				A959C31A1F53180D006E091A /* BookDetailView.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
-				A92F80051F4F1C270056CACC /* NSData+AES.m in Sources */,
 				A95B3FD41F3AAF400046E150 /* SettingViewController.m in Sources */,
 				A95D641F1F4693C000F78A7E /* MBProgressHUD+CWGJ.m in Sources */,
 				A976777D1F3EF76E00EDCDFA /* ActivityDetailViewController.m in Sources */,
@@ -1976,6 +1941,7 @@
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
 				A92F7FC21F4B3D1D0056CACC /* NSArray+MASAdditions.m in Sources */,
+				A9415A3E1F53ED0500FAD195 /* HotelDescrCell.m in Sources */,
 				A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
 				A92F80121F51633E0056CACC /* AddInvoiceViewController.m in Sources */,
@@ -1994,12 +1960,10 @@
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */,
-				A92F80041F4F1C270056CACC /* GTMBase64.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */,
 				A9AA8F021F38B7BC005F9DBB /* UIButton+AYActionBlock.m in Sources */,
-				A92F80091F4F210D0056CACC /* NSData+AES128.m in Sources */,
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
 				A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */,
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
@@ -2013,7 +1977,6 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
-				A92F80061F4F1C270056CACC /* SecurityUtil.m in Sources */,
 				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,

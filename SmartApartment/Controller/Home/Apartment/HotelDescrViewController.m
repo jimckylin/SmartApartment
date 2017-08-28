@@ -9,11 +9,11 @@
 #import "HotelDescrViewController.h"
 #import "MapViewController.h"
 
+#import "HotelConfigCell.h"
 #import "HotelDetailMapCell.h"
-#import "HotelListCell.h"
+#import "HotelDescrCell.h"
+#import "BlankCell.h"
 
-
-NSString *const kHotelListCell = @"kHotelListCell";
 
 @interface HotelDescrViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -39,10 +39,11 @@ UITableViewDataSource>
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView registerClass:[HotelListCell class] forCellReuseIdentifier:kHotelListCell];
-    _tableView.contentInset = UIEdgeInsetsMake(90, 0, 0, 0);
-    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(90, 0, 0, 0);
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView registerClass:[HotelDescrCell class] forCellReuseIdentifier:@"HotelDescrCell"];
+    [_tableView registerClass:[BlankCell class] forCellReuseIdentifier:@"BlankCell"];
+    [_tableView registerClass:[HotelConfigCell class] forCellReuseIdentifier:@"HotelConfigCell"];
+    [_tableView registerClass:[HotelDetailMapCell class] forCellReuseIdentifier:@"HotelDetailMapCell"];
     [self.view addSubview:_tableView];
 }
 
@@ -50,7 +51,6 @@ UITableViewDataSource>
 #pragma mark - UITableView Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 4;
 }
 
@@ -67,7 +67,12 @@ UITableViewDataSource>
     }else if (section == 2) {
         return 101;
     }
-    return 244;
+    return [HotelDescrCell getDescrCellHeight:nil];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 10;
 }
 
 
@@ -77,8 +82,18 @@ UITableViewDataSource>
     
     NSInteger section = indexPath.section;
     if (section == 0) {
+        HotelConfigCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelConfigCell"];
+        return cell;
         
     }else if (section == 1) {
+        BlankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlankCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        cell.imageView.image = kImage(@"detail_phone_iciphone");
+        
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+        cell.textLabel.text = [NSString stringWithFormat:@"酒店电话(%@)", @"135608065986"];
+        return cell;
         
     }else if (section == 2) {
         HotelDetailMapCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelDetailMapCell"];
@@ -89,19 +104,22 @@ UITableViewDataSource>
             [[NavManager shareInstance] showViewController:map isAnimated:YES];
         };
         return cell;
+        
+    }else if (section == 3) {
+        HotelDescrCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelDescrCell"];
+        
+        return cell;
     }
     
-    HotelListCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelListCell];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
-    
-    
-    return cell;
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    if (indexPath.section == 1) {
+        NSMutableString* str = [[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
 }
 
 

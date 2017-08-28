@@ -8,8 +8,8 @@
 
 #import "RequestSign.h"
 #import "Encrypt.h"
-#import "SecurityUtil.h"
-#import "NSData+AES128.h"
+//#import "SecurityUtil.h"
+//#import "NSData+AES128.h"
 
 NSString *const accessKey = @"NJ6KD5V31D5TZ956";
 
@@ -26,12 +26,8 @@ NSString *const accessKey = @"NJ6KD5V31D5TZ956";
     NSString *sign = [NSString stringWithFormat:@"%@&key=%@", string, accessKey];
     sign = [Encrypt MD5ForLower32Bate:sign].uppercaseString;
     NSData *signData = [sign dataUsingEncoding:NSUTF8StringEncoding];
-    signData = [signData AES256EncryptWithKey:accessKey];
+    //signData = [signData AES256EncryptWithKey:accessKey];
     sign = [self byteToHexString:signData];
-    
-    NSData *data = [@"pUjPjRp8dF2BzvAjntSLKomQ7Q1ZggvLzxRWQr1iD8k=" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *str = [data AES256DecryptWithKey:accessKey];
-    NSString *sing = [[NSString alloc] initWithData:str encoding:NSUTF8StringEncoding];
     
     return sign;
 }
