@@ -51,6 +51,7 @@
 		<string>wechat</string>
 		<string>weixin</string>
 		<string>baidumap</string>
+		<string>iosamap</string>
 	</array>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
