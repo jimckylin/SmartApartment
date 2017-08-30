@@ -9,7 +9,7 @@
 #import "StarHotelCell.h"
 #import "JWStarView.h"
 
-@interface StarHotelCell ()
+@interface StarHotelCell ()<JWStarViewViewDelegate>
 
 @property (nonatomic, strong) UILabel *hygieneLabel;     // 卫生
 @property (nonatomic, strong) UILabel *envirmentLabel;   // 环境
@@ -75,27 +75,23 @@
     
     
     _hygieneStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, 8, 100, 20)];
+    _hygieneStarsView.delegate = self;
     _hygieneStarsView.rateStyle = HalfStar;
-    _hygieneStarsView.isIndicator = YES;
-    _hygieneStarsView.currentScore = 4.5;
     [bgView addSubview:_hygieneStarsView];
     
     _envirmentStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _hygieneStarsView.bottom+18, 100, 20)];
     _envirmentStarsView.rateStyle = HalfStar;
-    _envirmentStarsView.isIndicator = YES;
-    _envirmentStarsView.currentScore = 4.5;
+    _envirmentStarsView.delegate = self;
     [bgView addSubview:_envirmentStarsView];
     
     _serviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _envirmentStarsView.bottom+18, 100, 20)];
     _serviceStarsView.rateStyle = HalfStar;
-    _serviceStarsView.isIndicator = YES;
-    _serviceStarsView.currentScore = 4.5;
+    _serviceStarsView.delegate = self;
     [bgView addSubview:_serviceStarsView];
     
     _deviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _serviceStarsView.bottom+18, 100, 20)];
     _deviceStarsView.rateStyle = HalfStar;
-    _deviceStarsView.isIndicator = YES;
-    _deviceStarsView.currentScore = 4.5;
+    _deviceStarsView.delegate = self;
     [bgView addSubview:_deviceStarsView];
     
     
@@ -119,6 +115,15 @@
     
     
 }
+
+
+#pragma mark - JWStarViewViewDelegate
+
+-(void)starView:(JWStarView *)starView currentScore:(CGFloat)currentScore {
+    
+    
+}
+
 
 - (void)updateConstraints {
     

@@ -32,7 +32,7 @@ UITableViewDataSource>
 
 - (void)initSubView {
     
-    _naviLabel.text = @"酒店介绍";
+    _naviLabel.text = @"酒店点评";
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     _tableView.backgroundColor = [UIColor clearColor];
@@ -106,9 +106,11 @@ UITableViewDataSource>
         BlankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlankCell"];
         
         WRCellView *tripTypeView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
+        tripTypeView.frame = CGRectMake(0, 0, kScreenWidth, cell.height);
         tripTypeView.leftLabel.textColor = [UIColor darkTextColor];
         tripTypeView.leftLabel.text = @"出游类型";
         tripTypeView.rightLabel.text = @"出游类型";
+        [cell addSubview:tripTypeView];
         
         __weak typeof(self) weakSelf = self;
         tripTypeView.tapBlock = ^ {
