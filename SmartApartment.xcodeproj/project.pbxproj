@@ -53,6 +53,11 @@
 		A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */; };
 		A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */; };
 		A9415A3E1F53ED0500FAD195 /* HotelDescrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9415A3D1F53ED0500FAD195 /* HotelDescrCell.m */; };
+		A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9415A4B1F55200A00FAD195 /* login_password_hide_ic@2x.png */; };
+		A9415A4E1F55200A00FAD195 /* login_password_hshow_ic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9415A4C1F55200A00FAD195 /* login_password_hshow_ic@2x.png */; };
+		A9415A511F5520FA00FAD195 /* Register1View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9415A501F5520FA00FAD195 /* Register1View.m */; };
+		A9415A541F55210D00FAD195 /* Register2View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9415A531F55210D00FAD195 /* Register2View.m */; };
+		A9415A571F55211D00FAD195 /* Register3View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9415A561F55211D00FAD195 /* Register3View.m */; };
 		A94B82431F4D1E7A00840D88 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */; };
 		A94B82441F4D1E7A00840D88 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A94B823F1F4D1E7A00840D88 /* README.txt */; };
 		A94B82471F4D259F00840D88 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82461F4D259F00840D88 /* PayManager.m */; };
@@ -370,6 +375,14 @@
 		A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_location_ic_siphone@2x.png"; sourceTree = "<group>"; };
 		A9415A3C1F53ED0500FAD195 /* HotelDescrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDescrCell.h; sourceTree = "<group>"; };
 		A9415A3D1F53ED0500FAD195 /* HotelDescrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDescrCell.m; sourceTree = "<group>"; };
+		A9415A4B1F55200A00FAD195 /* login_password_hide_ic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password_hide_ic@2x.png"; sourceTree = "<group>"; };
+		A9415A4C1F55200A00FAD195 /* login_password_hshow_ic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password_hshow_ic@2x.png"; sourceTree = "<group>"; };
+		A9415A4F1F5520FA00FAD195 /* Register1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register1View.h; sourceTree = "<group>"; };
+		A9415A501F5520FA00FAD195 /* Register1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register1View.m; sourceTree = "<group>"; };
+		A9415A521F55210D00FAD195 /* Register2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register2View.h; sourceTree = "<group>"; };
+		A9415A531F55210D00FAD195 /* Register2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register2View.m; sourceTree = "<group>"; };
+		A9415A551F55211D00FAD195 /* Register3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register3View.h; sourceTree = "<group>"; };
+		A9415A561F55211D00FAD195 /* Register3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register3View.m; sourceTree = "<group>"; };
 		A94B823E1F4D1E7A00840D88 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		A94B823F1F4D1E7A00840D88 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A94B82401F4D1E7A00840D88 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -1104,6 +1117,12 @@
 			children = (
 				A95D64041F468DE500F78A7E /* LoginView.h */,
 				A95D64051F468DE500F78A7E /* LoginView.m */,
+				A9415A4F1F5520FA00FAD195 /* Register1View.h */,
+				A9415A501F5520FA00FAD195 /* Register1View.m */,
+				A9415A521F55210D00FAD195 /* Register2View.h */,
+				A9415A531F55210D00FAD195 /* Register2View.m */,
+				A9415A551F55211D00FAD195 /* Register3View.h */,
+				A9415A561F55211D00FAD195 /* Register3View.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1520,6 +1539,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9415A4B1F55200A00FAD195 /* login_password_hide_ic@2x.png */,
+				A9415A4C1F55200A00FAD195 /* login_password_hshow_ic@2x.png */,
 				A9060F9A1F52B7BD00778B53 /* coupon_sele_siphone@2x.png */,
 				A9060F9B1F52B7BD00778B53 /* coupon_seleiphone@2x.png */,
 				A92F7FEE1F4C999F0056CACC /* coupon_bgiphone@2x.png */,
@@ -1788,6 +1809,7 @@
 				A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */,
 				A9EB262A1F48AF9E007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A92F7FDA1F4B53BC0056CACC /* trip_pic_bgiphone@2x.png in Resources */,
+				A9415A4E1F55200A00FAD195 /* login_password_hshow_ic@2x.png in Resources */,
 				A9BA5DEE1F45F98C0093A50D /* xq_wenhaoiphone@2x.png in Resources */,
 				A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */,
 				A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */,
@@ -1820,6 +1842,7 @@
 				A94B82441F4D1E7A00840D88 /* README.txt in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
+				A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */,
 				A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */,
 				A9EB263B1F48C124007DB818 /* bigCelliphone@2x.png in Resources */,
 				A992C1E61F47275900D5371C /* share_sina_iciphone@2x.png in Resources */,
@@ -1963,6 +1986,7 @@
 				A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */,
 				A92F7FC31F4B3D1D0056CACC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A95D64191F4692E300F78A7E /* LoginViewModel.m in Sources */,
+				A9415A541F55210D00FAD195 /* Register2View.m in Sources */,
 				A96A33491F4845C000A55A42 /* OrderDetailView.m in Sources */,
 				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
@@ -2060,7 +2084,9 @@
 				A92F7FC11F4B3D1D0056CACC /* MASViewConstraint.m in Sources */,
 				A94B826E1F4D26C900840D88 /* WXPayRContent.m in Sources */,
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
+				A9415A571F55211D00FAD195 /* Register3View.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
+				A9415A511F5520FA00FAD195 /* Register1View.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
 				A94B825B1F4D262000840D88 /* DataVerifier.m in Sources */,
 				A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */,

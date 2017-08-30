@@ -37,28 +37,70 @@
     [params setObject:sign forKey:@"sign"];
     
     NSString *jsonString = [params JSONString];
-    //NSString *encrypt = [RequestSign AES256EncryptWithJson:jsonString];
-    NSString *encrypt = aesEncryptString(jsonString, @"NJ6KD5V31D5TZ956");
-    NSLog(@"sign:--------------------->%@", sign);
-    NSLog(@"请求报文:------------------->%@", encrypt);
+    NSString *encrypt = aesEncryptString(jsonString, accessKey);
+    //NSLog(@"sign:----------->> %@", sign);
+    //NSLog(@"请求报文:--------->> %@", encrypt);
     
+    NSData *bodyData = [[NSString stringWithFormat:@"data=%@",encrypt] dataUsingEncoding:NSUTF8StringEncoding];//把bodyString转换为NSData数据
+    NSURL *serverUrl = [NSURL URLWithString:kBaseURL];//获取到服务器的url地址
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverUrl
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                       timeoutInterval:10];//请求这个地址， timeoutInterval:10 设置为10s超时：请求时间超过10s会被认为连接不上，连接超时
+    [request setHTTPMethod:@"POST"];//POST请求
+    [request setHTTPBody:bodyData];//body 数据
     
-    // 在请求之前你可以统一配置你请求的相关参数 ,设置请求头, 请求参数的格式, 返回数据的格式....这样你就不需要每次请求都要设置一遍相关参数
-    // 设置请求头
-    [PPNetworkHelper setValue:@"9" forHTTPHeaderField:@"fromType"];
-    [PPNetworkHelper setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    // 发起请求
-    return [PPNetworkHelper POST:kBaseURL parameters:@{@"data": encrypt} success:^(id responseObject) {
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        // 在这里你可以根据项目自定义其他一些重复操作,比如加载页面时候的等待效果, 提醒弹窗....
-        success(responseObject);
-        
-    } failure:^(NSError *error) {
-        // 同上
-        failure(error);
-        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSString *decryptString = aesDecryptString(dataString, accessKey);
+                
+                id res = [decryptString objectFromJSONString];
+                [self handleResultCode:res complete:^(NSInteger resultCode, NSError *error) {
+                    if (resultCode == 0) {
+                        success(res);
+                    }else {
+                        failure(error);
+                    }
+                }];
+                
+            }else {
+                failure(error);
+            }
+        });
     }];
+    [dataTask resume];
+    return dataTask;
+    // 发起请求
+//    return [PPNetworkHelper POST:kBaseURL parameters:@{@"data": encrypt} success:^(id responseObject) {
+//        
+//        // 在这里你可以根据项目自定义其他一些重复操作,比如加载页面时候的等待效果, 提醒弹窗....
+//        success(responseObject);
+//        
+//    } failure:^(NSError *error) {
+//        // 同上
+//        failure(error);
+//        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+//    }];
+}
+
+// 返回结果编码：0000-成功，0001-失败，0002-方法未授权，0003-解密错误，0004-报文无效，9999-未知错误
++ (void)handleResultCode:(id)res complete:(void(^)(NSInteger resultCode, NSError *error))complete {
+    
+    if ([res isKindOfClass:[NSDictionary class]]) {
+        NSInteger resultCode = [res[@"resultCode"] integerValue];
+        if (resultCode == 0) {
+            complete(0, nil);
+        }else {
+            NSString *msg = res[@"msg"];
+            NSDictionary *userInfo = @{msg: NSLocalizedDescriptionKey,
+                                       msg: NSLocalizedFailureReasonErrorKey,};
+            NSError *error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:4 userInfo:userInfo];
+            complete(resultCode, error);
+        }
+    }
 }
 
 @end

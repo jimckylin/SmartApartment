@@ -11,7 +11,7 @@
 #import "AESCipher.h"
 #import <CommonCrypto/CommonCryptor.h>
 
-NSString const *kInitVector = nil;
+NSString const *kInitVector = @"NJ6KD5V31D5TZ956"; // 初始化向量
 size_t const kKeySize = kCCKeySizeAES128;
 
 NSData * cipherOperation(NSData *contentData, NSData *keyData, CCOperation operation) {

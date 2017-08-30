@@ -43,6 +43,7 @@
 - (void)initUI {
     
     self.view.backgroundColor = [UIColor whiteColor];
+    _naviBgView.backgroundColor = [UIColor clearColor];
     _naviLabel.text = @"登录";
     //[self.customNavItem.leftBarButtonItem]
     
@@ -63,7 +64,7 @@
     switch (action) {
         case CZDLoginActionVerifyCodeSend: {
             __WeakObj(_loginView);
-            [_viewModel requestVerifyCode:@"15860292278" complete:^{
+            [_viewModel requestVerifyCode:phone complete:^{
                 [_loginViewWeak startCountDown];
             }];
         }

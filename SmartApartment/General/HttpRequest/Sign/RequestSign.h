@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const accessKey;
+
 @interface RequestSign : NSObject
 
-
 + (NSString *)signCreater:(NSDictionary *)params;
-
-+ (NSString *)AES256EncryptWithJson:(NSString *)json;
 
 @end

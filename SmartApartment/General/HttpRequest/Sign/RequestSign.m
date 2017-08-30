@@ -10,9 +10,6 @@
 #import "Encrypt.h"
 #import <CommonCrypto/CommonCrypto.h>
 
-//#import "SecurityUtil.h"
-//#import "NSData+AES128.h"
-
 NSString *const accessKey = @"NJ6KD5V31D5TZ956";
 
 @implementation RequestSign
@@ -46,7 +43,9 @@ NSString *const accessKey = @"NJ6KD5V31D5TZ956";
 }
 
 
-+ (NSString *)byteToHexString:(NSData *)encryptedData {
+//------------------------------------
+
++ (NSString *)byte2HexString:(NSData *)encryptedData {
     
     //下面是Byte 转换为16进制。
     NSString *hexStr=@"";
@@ -64,77 +63,24 @@ NSString *const accessKey = @"NJ6KD5V31D5TZ956";
     return hexStr.uppercaseString;
 }
 
-+ (NSString *)AES256EncryptWithJson:(NSString *)json  //加密
-{
-    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *encryptData = [self AES256EncryptWithKey:accessKey data:jsonData];
-    NSString *hexString = [self byteToHexString:encryptData];
-    
-    return hexString.uppercaseString;
-}
-
-+ (NSData *)AES256EncryptWithKey:(NSString *)key data:(NSData *)data  //加密
-
-{
-    
-    char keyPtr[kCCKeySizeAES128+1];
-    
-    bzero(keyPtr, sizeof(keyPtr));
-    
-    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
-    
-    NSUInteger dataLength = [data length];
-    
-    size_t bufferSize = dataLength + kCCBlockSizeAES128;
-    
-    void *buffer = malloc(bufferSize);
-    
-    size_t numBytesEncrypted = 0;
-    
-    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128,
-                                          
-                                          kCCOptionPKCS7Padding | kCCOptionECBMode,
-                                          
-                                          keyPtr, kCCBlockSizeAES128,
-                                          
-                                          NULL,
-                                          
-                                          [data bytes], dataLength,
-                                          
-                                          buffer, bufferSize,
-                                          
-                                          &numBytesEncrypted);
-    
-    if (cryptStatus == kCCSuccess) {
-        
-        return [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];
-        
++ (NSData *)hexString2byte:(NSString *)hex {
+    NSMutableData *data = [NSMutableData dataWithCapacity:hex.length / 2];
+    unsigned char whole_byte;
+    char byte_chars[3] = {'\0','\0','\0'};
+    int i;
+    for (i=0; i < hex.length / 2; i++) {
+        byte_chars[0] = [hex characterAtIndex:i*2];
+        byte_chars[1] = [hex characterAtIndex:i*2+1];
+        whole_byte = strtol(byte_chars, NULL, 16);
+        [data appendBytes:&whole_byte length:1];
     }
-    
-    free(buffer);
-    
-    return nil;
-    
+    return data;
 }
 
-@end
-
-
-@interface NSData (Encypt)
-
-@end
-
-@implementation NSData (Encypt)
-
-
-#pragma mark -
-
-
-
-
 
 
 @end
+
 
 
 

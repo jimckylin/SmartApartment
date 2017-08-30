@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UITextField     *verifyCodeTF;
 
 @property (nonatomic, strong) UIButton        *verifyCodeBtn;  // 验证码按钮
-@property (nonatomic, strong) UIButton        *voiceVerifyBtn; // 语音验证码按钮
+@property (nonatomic, strong) UIButton        *checkPwdBtn;    // 查看密码按钮
 @property (nonatomic, strong) UIButton        *loginBtn;       // 登录按钮
 @property (nonatomic, strong) UILabel         *protocolMarkLabel;
 @property (nonatomic, strong) UILabel         *protocolLabel;
@@ -64,6 +64,14 @@
     
     _loginBgView = [UIView new];
     [self addSubview:_loginBgView];
+    
+    // 头像
+    _headImageView = [[UIImageView alloc] initWithImage:kImage(@"logoiphone")];
+    _headImageView.backgroundColor = [UIColor lightGrayColor];
+    _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _headImageView.layer.cornerRadius = 4;
+    _headImageView.layer.masksToBounds = YES;
+    [_loginBgView addSubview:_headImageView];
     
     // 手机号码输入框
     _phoneTF = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -121,21 +129,10 @@
     _verifyCodeTF.delegate = self;
     [self.loginBgView addSubview:_verifyCodeTF];
     
-    _voiceVerifyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _voiceVerifyBtn.layer.cornerRadius = 5;
-    _voiceVerifyBtn.layer.masksToBounds = YES;
-    _voiceVerifyBtn.layer.borderWidth = 0.5;
-    _voiceVerifyBtn.layer.borderColor = [UIColor colorWithHexString:@"#535C61"].CGColor;
-    _voiceVerifyBtn.tag = CZDLoginActionVoiceVerifyCodeSend;
-    
-    _voiceVerifyBtn.disableBackGroundColor = [UIColor whiteColor];
-    [_voiceVerifyBtn setBackgroundColor:[UIColor whiteColor]];
-    [_voiceVerifyBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0f]];
-    [_voiceVerifyBtn setTitle:@"未收到?" forState:UIControlStateNormal];
-    [_voiceVerifyBtn setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
-    [_voiceVerifyBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_voiceVerifyBtn setHidden:YES];
-    [self.loginBgView addSubview:_voiceVerifyBtn];
+    _checkPwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_checkPwdBtn setImage:kImage(@"login_password_hide_ic") forState:UIControlStateNormal];
+    [_checkPwdBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.loginBgView addSubview:_checkPwdBtn];
     
     _verifyCodeLine = [[UIImageView alloc] init];
     _verifyCodeLine.image = image;
@@ -228,7 +225,6 @@
     
     __WeakObj(self)
     [self.verifyCodeBtn startCountDown:30 timeOut:^{
-        selfWeak.voiceVerifyBtn.hidden = NO;
         selfWeak.verifyCodeBtn.layer.borderColor = [UIColor colorWithHexString:@"#535C61"].CGColor;
         selfWeak.verifyCodeBtn.enabled = YES;
     }];
@@ -372,9 +368,13 @@
     CGFloat padding = 27.0f;
     [self.loginBgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
+    [self.headImageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:35];
+    [self.headImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [self.headImageView autoSetDimensionsToSize:CGSizeMake(60, 60)];
+    
     // 手机号输入框
+    [self.phoneTF autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.headImageView withOffset:40];
     [self.phoneTF autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:padding];
-    [self.phoneTF autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:44];
     [self.phoneTF autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.verifyCodeBtn];
     [self.phoneTF autoSetDimension:ALDimensionHeight toSize:32];
     
@@ -393,9 +393,9 @@
     [self.verifyCodeTF autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:padding];
     [self.verifyCodeTF autoSetDimension:ALDimensionHeight toSize:32];
     
-    [self.voiceVerifyBtn autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.verifyCodeTF];
-    [self.voiceVerifyBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:padding];
-    [self.voiceVerifyBtn autoSetDimensionsToSize:CGSizeMake(87, 32)];
+    [self.checkPwdBtn autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.verifyCodeTF];
+    [self.checkPwdBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:padding];
+    [self.checkPwdBtn autoSetDimensionsToSize:CGSizeMake(87, 32)];
     
     [self.verifyCodeLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.verifyCodeTF withOffset:6];
     [self.verifyCodeLine autoSetDimension:ALDimensionHeight toSize:0.5];
