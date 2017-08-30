@@ -7,6 +7,7 @@
 //
 
 #import "TripHistoryListViewController.h"
+#import "CommentHotelViewController.h"
 
 #import "TripListCell.h"
 
@@ -63,6 +64,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
+    [cell setButtonStyleHistoryTrip];
+    cell.tripListCellBlock = ^(NSInteger tag) {
+        if (tag == 1) {
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+    };
     
     return cell;
 }

@@ -10,4 +10,8 @@
 
 @interface TripListCell : UITableViewCell
 
+@property (nonatomic, copy) void(^tripListCellBlock)(NSInteger tag);
+
+- (void)setButtonStyleHistoryTrip;
+
 @end

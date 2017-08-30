@@ -34,10 +34,28 @@
     self.bgView.layer.shadowRadius = 4;//阴影半径，默认3
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setButtonStyleHistoryTrip {
+    
+    [self.cancelOrderBtn setTitle:@"删除" forState:UIControlStateNormal];
+    [self.payOrderBtn setTitle:@"点评" forState:UIControlStateNormal];
+    
+    [self.cancelOrderBtn addTarget:self action:@selector(deleteBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.payOrderBtn addTarget:self action:@selector(commentBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
+
+
+- (void)deleteBtnClick{
+    if (self.tripListCellBlock) {
+        self.tripListCellBlock(0);
+    }
+}
+
+- (void)commentBtnClick{
+    if (self.tripListCellBlock) {
+        self.tripListCellBlock(1);
+    }
+}
+
 
 @end
