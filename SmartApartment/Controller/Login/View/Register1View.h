@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol Register1ViewDelegate <NSObject>
+
+- (void)register1ViewBtnClick:(NSString *)phone name:(NSString *)name;
+
+@end
+
 @interface Register1View : UIView
+
+@property (nonatomic, weak) id<Register1ViewDelegate> delegate;
 
 @end

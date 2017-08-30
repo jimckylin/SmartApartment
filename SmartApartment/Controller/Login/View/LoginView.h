@@ -10,14 +10,12 @@
 
 typedef NS_ENUM(NSInteger, CZDLoginAction) {
     
-    CZDLoginActionVerifyCodeSend,             // 短信验证码
-    CZDLoginActionVoiceVerifyCodeSend,        // 语音验证码
     CZDLoginActionLogin,                      // 登录操作
+    CZDLoginActionViewPassword,               // 检查密码
     
-    CZDLoginActionWXOAuthVerifyCodeSend,      // 微信登录短信验证码
-    CZDLoginActionWXOAuthVoiceVerifyCodeSend, // 微信登录语音验证码
-    CZDLoginActionWXOAuthLogin,               // 微信登录
-    CZDLoginActionProtocol                    // 注册协议
+    CZDLoginActionVerifyCodeLoginJump,        // 短信验证码
+    CZDLoginActionForgotPwd,                  // 忘记密码操作
+    CZDLoginActionRegister,                   // 注册操作
 };
 
 
@@ -31,10 +29,7 @@ typedef NS_ENUM(NSInteger, CZDLoginAction) {
 @interface LoginView : UIView
 
 @property (nonatomic, weak) id<CZDLoginViewDelegate> delegate;
-@property (nonatomic, strong) NSDictionary *userInfo;
 
-- (void)startCountDown;
-- (void)setVerifyBtnEnabled:(BOOL)enabled;
 - (void)phoneTextFieldBecomeFirstResponse;
 
 @end

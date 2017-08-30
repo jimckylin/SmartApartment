@@ -51,6 +51,7 @@
         
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
     }];
 }
 

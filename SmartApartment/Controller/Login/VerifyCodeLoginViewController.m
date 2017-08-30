@@ -1,14 +1,12 @@
 //
-//  CZDLoginViewController.m
-//  CWGJCarOwner
+//  VerifyCodeLoginViewController.m
+//  SmartApartment
 //
-//  Created by jimcky on 2017/7/18.
-//  Copyright © 2017年 CheWeiGuanJia. All rights reserved.
+//  Created by jimcky on 2017/8/30.
+//  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "LoginViewController.h"
 #import "VerifyCodeLoginViewController.h"
-#import "Register1ViewController.h"
 
 #import "LoginView.h"
 
@@ -16,14 +14,14 @@
 #import "LoginViewModel.h"
 
 
-@interface LoginViewController ()<CZDLoginViewDelegate>
+@interface VerifyCodeLoginViewController ()<CZDLoginViewDelegate>
 
 @property (nonatomic, strong) LoginView           *loginView;
 @property (nonatomic, strong) LoginViewModel      *viewModel;
 
 @end
 
-@implementation LoginViewController
+@implementation VerifyCodeLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,34 +73,26 @@
 - (void)loginViewDidClickBtnAction:(CZDLoginAction)action param:(NSDictionary *)param {
     
     NSString *phone = param[@"paramPhone"];
-    NSString *pwd  = param[@"paramPwd"];
+    NSString *code  = param[@"paramCode"];
     
     switch (action) {
         case CZDLoginActionLogin: {
             [UserManager manager].isLogin = YES;
-            [_viewModel requestLoginWithPhone:phone psw:pwd];
+            [_viewModel requestLoginWithPhone:phone psw:@"psw"];
             //[_viewModel requestLoginWithPhone:phone verifyCode:code];
         }
             break;
-        case CZDLoginActionVerifyCodeLoginJump:{
-            VerifyCodeLoginViewController *vc = [VerifyCodeLoginViewController new];
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-        }
+            
             break;
-        case CZDLoginActionForgotPwd: {
+        case CZDLoginActionVerifyCodeLoginJump:{
+            __WeakObj(self)
             
         }
+            
             break;
-        case CZDLoginActionRegister:{
-            Register1ViewController *vc = [Register1ViewController new];
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-        }
-            break;
-        default:
-            break;
-    }
+            
+     }
 }
-
 
 
 

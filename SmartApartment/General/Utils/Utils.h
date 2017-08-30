@@ -14,4 +14,6 @@
 + (CGFloat)getContentHeight:(NSString *)content Width:(float)width FontSize:(int)fontsize;
 + (CGFloat)getBlodContentHeight:(NSString *)content Width:(float)width FontSize:(int)fontsize;
 
++ (BOOL)isBlankString:(NSString *)string;
+
 @end
