@@ -10,4 +10,10 @@
 
 @interface HotelListViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *area;
+@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, copy) NSString *checkInTime;
+@property (nonatomic, copy) NSString *checkOutTime;
+@property (nonatomic, copy) NSString *checkInRoomType;
+
 @end

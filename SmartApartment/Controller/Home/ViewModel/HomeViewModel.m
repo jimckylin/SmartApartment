@@ -9,6 +9,7 @@
 #import "HomeViewModel.h"
 #import "LocationManager.h"
 #import "Activity.h"
+#import "HotelList.h"
 
 @implementation HomeViewModel
 
@@ -25,5 +26,37 @@
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
     }];
 }
+
+- (void)requestQueryApartment:(NSString *)area
+                     storeName:(NSString *)storeName
+                   checkInTime:(NSString *)checkInTime
+                  checkOutTime:(NSString *)checkOutTime
+               checkInRoomType:(NSString *)checkInRoomType
+                     complete:(void (^)(NSArray *))complete {
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:area            forKey:@"area"];
+    if (storeName) {
+        [param setObject:storeName   forKey:@"storeName"];
+    }
+    [param setObject:checkInTime     forKey:@"checkInTime"];
+    [param setObject:checkOutTime    forKey:@"checkOutTime"];
+    [param setObject:checkInRoomType forKey:@"checkInRoomType"];
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"queryStore" params:param class:[HotelList class] success:^(id response) {
+        
+        [self.hotelList addObjectsFromArray:response];
+        if (complete) {
+            complete(response);
+        }
+        [MBProgressHUD cwgj_hideHUD];
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+    
+}
+
 
 @end

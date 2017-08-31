@@ -29,9 +29,15 @@
 
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 @property (nonatomic, strong) UITableView       *tableView;
-@property (nonatomic, copy) NSString *city;
+
 @property (nonatomic, strong) HomeViewModel  *homeViewModel;
 @property (nonatomic, strong) NSMutableArray *activityAarr;
+
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, copy) NSString *checkInTime;
+@property (nonatomic, copy) NSString *checkOutTime;
+@property (nonatomic, copy) NSString *checkInRoomType;
 
 @end
 
@@ -194,8 +200,11 @@
         case HotelSelectBtnTypeLeaveDate: {
             CalendarViewController *vc = [CalendarViewController new];
             vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
-                for (NSDate *date in manager.selectedDateArray) {
-                    NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+                if ([manager.selectedDateArray count] > 1) {
+                    NSDate *checkinTime = manager.selectedDateArray[0];
+                    NSDate *checkoutTime = manager.selectedDateArray[1];
+                    self.checkInTime =  [NSString sia_stringFromDate:checkinTime withFormat:@"yyyy-MM-dd"];
+                    self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
                 }
             };
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
@@ -203,6 +212,11 @@
             break;
         case HotelSelectBtnTypeSearchHotel: {
             HotelListViewController *vc = [HotelListViewController new];
+            vc.area = self.city;
+            vc.storeName = self.storeName;
+            vc.checkInTime = self.checkInTime;
+            vc.checkOutTime = self.checkOutTime;
+            vc.checkInRoomType = @"0";
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }
             break;

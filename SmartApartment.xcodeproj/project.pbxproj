@@ -184,6 +184,7 @@
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
 		A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9730E871F385377006E66A4 /* nav_back@2x.png */; };
+		A974F2B61F5880E7008A739A /* HotelList.m in Sources */ = {isa = PBXBuildFile; fileRef = A974F2B51F5880E7008A739A /* HotelList.m */; };
 		A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97677731F3EE97500EDCDFA /* ActivityTableViewCell.m */; };
 		A97677761F3EED4900EDCDFA /* activity02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97677751F3EED4900EDCDFA /* activity02@2x.png */; };
 		A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97677791F3EF64E00EDCDFA /* Localizable.strings */; };
@@ -596,6 +597,8 @@
 		A9730E7E1F384B97006E66A4 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
 		A9730E7F1F384B97006E66A4 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
 		A9730E871F385377006E66A4 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		A974F2B41F5880E7008A739A /* HotelList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelList.h; sourceTree = "<group>"; };
+		A974F2B51F5880E7008A739A /* HotelList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelList.m; sourceTree = "<group>"; };
 		A97677721F3EE97500EDCDFA /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
 		A97677731F3EE97500EDCDFA /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
 		A97677751F3EED4900EDCDFA /* activity02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activity02@2x.png"; sourceTree = "<group>"; };
@@ -1842,6 +1845,8 @@
 		A9EAB8821F5851AC00C367F2 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
+				A974F2B41F5880E7008A739A /* HotelList.h */,
+				A974F2B51F5880E7008A739A /* HotelList.m */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -2240,6 +2245,7 @@
 				A92F80151F516F9D0056CACC /* InvoiceTypeCell.m in Sources */,
 				A9EAB8741F5725AD00C367F2 /* CommentHotelViewController.m in Sources */,
 				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
+				A974F2B61F5880E7008A739A /* HotelList.m in Sources */,
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9EAB85F1F55C6AF00C367F2 /* RSADataVerifier.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,

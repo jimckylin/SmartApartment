@@ -16,6 +16,7 @@
 
 #import <BAButton/BAButton.h>
 #import "ZYCalendarManager.h"
+#import "HomeViewModel.h"
 
 NSString *const kHotelListCell = @"kHotelListCell";
 
@@ -26,17 +27,41 @@ NSString *const kHotelListCell = @"kHotelListCell";
 
 @property (nonatomic, strong) HotelListHeaderView *headerView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) HomeViewModel  *homeViewModel;
 
 @end
 
 
 @implementation HotelListViewController
 
+- (void)dealloc {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initData];
     [self initSubView];
 }
+
+
+- (void)initData {
+    
+    _homeViewModel = [HomeViewModel new];
+    //_activityAarr = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    [_homeViewModel requestQueryApartment:self.area
+                                storeName:self.storeName
+                              checkInTime:self.checkInTime
+                             checkOutTime:self.checkOutTime
+                          checkInRoomType:self.checkInRoomType
+                                 complete:^(NSArray *hotels) {
+       
+                                     [_tableView reloadData];
+    }];
+}
+
 
 - (void)initSubView {
     
@@ -79,7 +104,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_homeViewModel.hotelList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
