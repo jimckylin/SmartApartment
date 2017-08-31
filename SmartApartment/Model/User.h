@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SAModel.h"
 
-@interface User : NSObject
+@interface User : SAModel
 
 @property(nonatomic, copy) NSString *headImage;       // 头像,是URL地址
 @property(nonatomic, copy) NSString *birthdate;       // 出生日期

@@ -6,9 +6,9 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import "SAModel.h"
 
-@interface Order : NSObject
+@interface Order : SAModel
 
 @property(nonatomic, copy) NSString * partner;
 @property(nonatomic, copy) NSString * seller;

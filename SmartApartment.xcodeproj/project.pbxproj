@@ -280,6 +280,8 @@
 		A9EAB8761F57277E00C367F2 /* illustraion_commentiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EAB8751F57277E00C367F2 /* illustraion_commentiphone@2x.png */; };
 		A9EAB8791F5727B400C367F2 /* CommentHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB8781F5727B400C367F2 /* CommentHeaderCell.m */; };
 		A9EAB87F1F572C4D00C367F2 /* StarHotelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB87E1F572C4D00C367F2 /* StarHotelCell.m */; };
+		A9EAB8881F5851E000C367F2 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB8871F5851E000C367F2 /* Activity.m */; };
+		A9EAB88B1F58567400C367F2 /* SAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB88A1F58567400C367F2 /* SAModel.m */; };
 		A9EB26201F48ACFF007DB818 /* trip_illustrationiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */; };
 		A9EB26241F48AF08007DB818 /* TripHelperNoOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26231F48AF08007DB818 /* TripHelperNoOrderView.m */; };
 		A9EB26261F48AF1D007DB818 /* TripHelperNoOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26251F48AF1D007DB818 /* TripHelperNoOrderView.xib */; };
@@ -765,6 +767,10 @@
 		A9EAB8781F5727B400C367F2 /* CommentHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentHeaderCell.m; sourceTree = "<group>"; };
 		A9EAB87D1F572C4D00C367F2 /* StarHotelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarHotelCell.h; sourceTree = "<group>"; };
 		A9EAB87E1F572C4D00C367F2 /* StarHotelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarHotelCell.m; sourceTree = "<group>"; };
+		A9EAB8861F5851E000C367F2 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		A9EAB8871F5851E000C367F2 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		A9EAB8891F58567400C367F2 /* SAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAModel.h; sourceTree = "<group>"; };
+		A9EAB88A1F58567400C367F2 /* SAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAModel.m; sourceTree = "<group>"; };
 		A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_illustrationiphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26221F48AF08007DB818 /* TripHelperNoOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperNoOrderView.h; sourceTree = "<group>"; };
 		A9EB26231F48AF08007DB818 /* TripHelperNoOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripHelperNoOrderView.m; sourceTree = "<group>"; };
@@ -967,6 +973,10 @@
 		A94B82631F4D268200840D88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9EAB8801F5851AC00C367F2 /* Activity */,
+				A9EAB8811F5851AC00C367F2 /* Home */,
+				A9EAB8841F5851AC00C367F2 /* Mine */,
+				A9EAB8851F5851AC00C367F2 /* TripHelper */,
 				A94B826F1F4D26DA00840D88 /* ZFBPayRContent.h */,
 				A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */,
 				A94B826C1F4D26C900840D88 /* WXPayRContent.h */,
@@ -975,6 +985,8 @@
 				A94B82651F4D268B00840D88 /* Order.m */,
 				A9D9ABD71F57E7860099819E /* User.h */,
 				A9D9ABD81F57E7860099819E /* User.m */,
+				A9EAB8891F58567400C367F2 /* SAModel.h */,
+				A9EAB88A1F58567400C367F2 /* SAModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1809,6 +1821,52 @@
 			path = RSADataSigner;
 			sourceTree = "<group>";
 		};
+		A9EAB8801F5851AC00C367F2 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				A9EAB8861F5851E000C367F2 /* Activity.h */,
+				A9EAB8871F5851E000C367F2 /* Activity.m */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		A9EAB8811F5851AC00C367F2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9EAB8821F5851AC00C367F2 /* Hotel */,
+				A9EAB8831F5851AC00C367F2 /* Order */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A9EAB8821F5851AC00C367F2 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		A9EAB8831F5851AC00C367F2 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		A9EAB8841F5851AC00C367F2 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		A9EAB8851F5851AC00C367F2 /* TripHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TripHelper;
+			sourceTree = "<group>";
+		};
 		A9EB26211F48AECF007DB818 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2066,6 +2124,7 @@
 				A95D63F91F46813F00F78A7E /* HotelDetailNoCommentCellCell.m in Sources */,
 				A95D63F61F46812600F78A7E /* HotelDetailCommentHeaderCell.m in Sources */,
 				A9AA8EF91F38B706005F9DBB /* ParentViewController.m in Sources */,
+				A9EAB88B1F58567400C367F2 /* SAModel.m in Sources */,
 				A9EAB85C1F55C6AF00C367F2 /* NSDataEx.m in Sources */,
 				A92F800F1F4F40E70056CACC /* RechargeButton.m in Sources */,
 				A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */,
@@ -2216,6 +2275,7 @@
 				A9D9ABDF1F57FE6F0099819E /* VerifyCode1LoginView.m in Sources */,
 				A9415A511F5520FA00FAD195 /* Register1View.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
+				A9EAB8881F5851E000C367F2 /* Activity.m in Sources */,
 				A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A959C32D1F55B6D3006E091A /* Utils.m in Sources */,

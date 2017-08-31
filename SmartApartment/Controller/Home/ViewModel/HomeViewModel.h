@@ -10,4 +10,6 @@
 
 @interface HomeViewModel : NSObject
 
+- (void)requestGetTopAd:(void(^)(NSArray *))getTopBlock;
+
 @end

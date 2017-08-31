@@ -136,8 +136,8 @@
     if (_phoneNumView == nil) {
         _phoneNumView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _phoneNumView.leftLabel.text = @"出生日期";
-        [_arriveTimeView setLineStyleWithLeftZero];
-        _arriveTimeView.rightLabel.text = [UserManager manager].user.birthdate;
+        [_phoneNumView setLineStyleWithLeftZero];
+        _phoneNumView.rightLabel.text = [UserManager manager].user.birthdate;
     }
     return _phoneNumView;
 }
