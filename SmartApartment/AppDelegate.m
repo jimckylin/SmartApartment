@@ -52,7 +52,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    
+    [[UserManager manager] user];
     [[NavManager shareInstance] setRootController:[LaunchAdViewController new]];
     self.window.rootViewController = [[NavManager shareInstance] rootNavigationController];
     

@@ -223,7 +223,7 @@
             [MBProgressHUD cwgj_showHUDWithText:@"密码不为空或小于4位"];
             return;
         }
-        param = @{@"paramPhone":phone, @"paramPsw":pwd};
+        param = @{@"paramPhone":phone, @"paramPwd":pwd};
     }
     
     

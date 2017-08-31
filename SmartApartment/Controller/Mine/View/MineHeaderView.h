@@ -27,4 +27,6 @@ typedef NS_ENUM(NSInteger, HeaderEventType) {
 
 @property (nonatomic, weak) id<MineHeaderViewDelegate> delegate;
 
+- (void)setHeaderViewData;
+
 @end

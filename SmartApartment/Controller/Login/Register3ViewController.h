@@ -10,4 +10,7 @@
 
 @interface Register3ViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *name;
+
 @end

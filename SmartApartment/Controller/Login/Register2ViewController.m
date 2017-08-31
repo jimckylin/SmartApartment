@@ -10,11 +10,12 @@
 #import "Register3ViewController.h"
 
 #import "Register2View.h"
-
+#import "LoginViewModel.h"
 
 @interface Register2ViewController ()<Register2ViewDelegate>
 
 @property (nonatomic, strong) Register2View       *register2View;
+@property (nonatomic, strong) LoginViewModel      *loginViewModel;
 
 @end
 
@@ -34,7 +35,7 @@
 }
 
 - (void)initData {
-    
+    _loginViewModel = [[LoginViewModel alloc] init];
 }
 
 - (void)initUI {
@@ -56,13 +57,18 @@
 
 - (void)register2ViewVerifyCodeBtnClick {
     
-    
+    [_loginViewModel requestVerifyCode:self.phone complete:nil];
 }
 
 - (void)register2ViewBtnClick:(NSString *)verifyCode {
     
-    Register3ViewController *vc = [Register3ViewController new];
-    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    __WeakObj(self)
+    [_loginViewModel requestCheckVerifyCode:_phone code:verifyCode complete:^{
+        Register3ViewController *vc = [Register3ViewController new];
+        vc.phone = selfWeak.phone;
+        vc.name = selfWeak.name;
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }];
 }
 
 

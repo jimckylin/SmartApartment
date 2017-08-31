@@ -58,6 +58,8 @@
 - (void)register1ViewBtnClick:(NSString *)phone name:(NSString *)name {
     
     Register2ViewController *vc = [Register2ViewController new];
+    vc.phone = phone;
+    vc.name = name;
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 

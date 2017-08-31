@@ -104,6 +104,12 @@
 }
 
 
+#pragma mark - UIButton Action 
+
+- (void)backClick:(id)sender {
+    [[NavManager shareInstance] returnToMainView:YES];
+}
+
 
 
 @end

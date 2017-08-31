@@ -7,45 +7,35 @@
 //
 
 #import "VerifyCodeLoginViewController.h"
+#import "VerifyCodeLogin2ViewController.h"
+#import "Register1ViewController.h"
 
-#import "LoginView.h"
+#import "VerifyCode1LoginView.h"
 
 #import "CZDWebViewFactory.h"
 #import "LoginViewModel.h"
 
 
-@interface VerifyCodeLoginViewController ()<CZDLoginViewDelegate>
+@interface VerifyCodeLoginViewController ()<VerifyCode1LoginViewDelegate>
 
-@property (nonatomic, strong) LoginView           *loginView;
-@property (nonatomic, strong) LoginViewModel      *viewModel;
+@property (nonatomic, strong) VerifyCode1LoginView  *verifyCode1LoginView;
+@property (nonatomic, strong) LoginViewModel        *viewModel;
 
 @end
 
 @implementation VerifyCodeLoginViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initData];
     [self initUI];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    
-    [super viewDidDisappear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    [_loginView phoneTextFieldBecomeFirstResponse];
 }
 
 - (void)initData {
@@ -57,40 +47,41 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _naviBgView.backgroundColor = [UIColor clearColor];
     _naviLabel.textColor = [UIColor darkTextColor];
-    _naviLabel.text = @"会员登录";
+    _naviLabel.text = @"动态密码登录";
     [_naviBackBtn setImage:kImage(@"nav_return_iciphone") forState:UIControlStateNormal];
     
     //[self.customNavItem.leftBarButtonItem]
     
-    _loginView = [[LoginView alloc] init];
-    _loginView.delegate = self;
-    [self.view addSubview:_loginView];
+    _verifyCode1LoginView = [[VerifyCode1LoginView alloc] init];
+    _verifyCode1LoginView.delegate = self;
+    [self.view addSubview:_verifyCode1LoginView];
 }
 
 
-#pragma mark - CZDLoginViewDelegate
+#pragma mark - VerifyCode1LoginViewDelegate
 
-- (void)loginViewDidClickBtnAction:(CZDLoginAction)action param:(NSDictionary *)param {
-    
-    NSString *phone = param[@"paramPhone"];
-    NSString *code  = param[@"paramCode"];
+- (void)verifyCode1LoginViewBtnClick:(NSString *)phone action:(VerifyCodeLoginAction)action {
     
     switch (action) {
-        case CZDLoginActionLogin: {
-            [UserManager manager].isLogin = YES;
-            [_viewModel requestLoginWithPhone:phone psw:@"psw"];
-            //[_viewModel requestLoginWithPhone:phone verifyCode:code];
+        case VerifyCodeLoginActionGetVerifyCode: {
+            VerifyCodeLogin2ViewController *vc = [VerifyCodeLogin2ViewController new];
+            vc.phone = phone;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES]; 
         }
             break;
             
             break;
-        case CZDLoginActionVerifyCodeLoginJump:{
-            __WeakObj(self)
-            
+        case VerifyCodeLoginActionNormalLogin:{
+            [[NavManager shareInstance] returnToFrontView:YES];
         }
             
             break;
+        case VerifyCodeLoginActionRegitster:{
+            Register1ViewController *vc = [Register1ViewController new];
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
             
+            break;
      }
 }
 

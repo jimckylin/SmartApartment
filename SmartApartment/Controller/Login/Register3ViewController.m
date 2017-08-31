@@ -7,8 +7,14 @@
 //
 
 #import "Register3ViewController.h"
+#import "LoginViewModel.h"
+#import "Register3View.h"
 
-@interface Register3ViewController ()
+
+@interface Register3ViewController ()<Register3ViewDelegate>
+
+@property (nonatomic, strong) Register3View        *register3View;
+@property (nonatomic, strong) LoginViewModel       *loginViewModel;
 
 @end
 
@@ -16,22 +22,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self initData];
+    [self initUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initData {
+    _loginViewModel = [[LoginViewModel alloc] init];
 }
-*/
+
+- (void)initUI {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    _naviBgView.backgroundColor = [UIColor clearColor];
+    _naviLabel.textColor = [UIColor darkTextColor];
+    _naviLabel.text = @"注册3/3";
+    [_naviBackBtn setImage:kImage(@"nav_return_iciphone") forState:UIControlStateNormal];
+    
+    
+    _register3View = [[Register3View alloc] init];
+    _register3View.delegate = self;
+    [self.view addSubview:_register3View];
+}
+
+
+#pragma mark - Register1ViewDelegate
+
+- (void)register3ViewBtnClick:(NSString *)pwd {
+    
+    [_loginViewModel requestRegisterWithPhone:self.phone name:self.name psw:pwd];
+}
+
+
+
+
 
 @end

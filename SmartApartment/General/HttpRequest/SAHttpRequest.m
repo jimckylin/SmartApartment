@@ -11,13 +11,14 @@
 #import "RequestSign.h"
 #import "YRJSONAdapter.h"
 #import "AESCipher.h"
+#import <YYModel/YYModel.h>
 
 @implementation SAHttpRequest
 
 
-+ (NSURLSessionTask *)requestWithFuncion:(NSString *)function  params:(id)parameters success:(PPRequestSuccess)success failure:(PPRequestFailure)failure {
++ (NSURLSessionTask *)requestWithFuncion:(NSString *)function  params:(id)parameters class:(__unsafe_unretained Class)model success:(PPRequestSuccess)success failure:(PPRequestFailure)failure {
     
-    return [self requestWithFunction:function parameters:parameters success:success failure:failure];
+    return [self requestWithFunction:function parameters:parameters class:model success:success failure:failure];
 }
 
 
@@ -29,7 +30,7 @@
 
 #pragma mark - 请求的公共方法
 
-+ (NSURLSessionTask *)requestWithFunction:(NSString *)function parameters:(NSDictionary *)parameter success:(PPRequestSuccess)success failure:(PPRequestFailure)failure {
++ (NSURLSessionTask *)requestWithFunction:(NSString *)function parameters:(NSDictionary *)parameter class:(__unsafe_unretained Class)model success:(PPRequestSuccess)success failure:(PPRequestFailure)failure {
     
     NSMutableDictionary *params = @{@"function": function,
                                     @"data"    : parameter}.mutableCopy;
@@ -60,7 +61,14 @@
                 id res = [decryptString objectFromJSONString];
                 [self handleResultCode:res complete:^(NSInteger resultCode, NSError *error) {
                     if (resultCode == 0) {
-                        success(res);
+                        if (model) {
+                            id object = [model yy_modelWithDictionary:res[@"data"]];
+                            if (object) {
+                                success(object);
+                            }
+                        }else {
+                            success(res);
+                        }
                     }else {
                         failure(error);
                     }

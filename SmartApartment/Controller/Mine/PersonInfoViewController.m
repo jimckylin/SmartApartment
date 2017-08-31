@@ -104,7 +104,8 @@
 
 - (void)logoutBtnClick:(id)sender {
     
-    [UserManager manager].isLogin = NO;
+    [[UserManager manager] removeUser];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kLogoutSuccess" object:nil];
     [[NavManager shareInstance] returnToLoginView:YES];
 }
 
@@ -116,7 +117,8 @@
     if (_roomNumView == nil) {
         _roomNumView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_IconIndicator];
         _roomNumView.leftLabel.text = @"头像";
-        _roomNumView.rightIcon.image = kImage(@"mine_headiphone");
+        [_roomNumView.rightIcon sd_setImageWithURL:[NSURL URLWithString:[UserManager manager].user.headImage]
+                                  placeholderImage:kImage(@"mine_headiphone")];
     }
     return _roomNumView;
 }
@@ -125,7 +127,7 @@
     if (_livePersonView == nil) {
         _livePersonView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _livePersonView.leftLabel.text = @"姓名";
-        _livePersonView.rightLabel.text = @"李四";
+        _livePersonView.rightLabel.text = [UserManager manager].user.name;
     }
     return _livePersonView;
 }
@@ -135,7 +137,7 @@
         _phoneNumView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _phoneNumView.leftLabel.text = @"出生日期";
         [_arriveTimeView setLineStyleWithLeftZero];
-        _arriveTimeView.rightLabel.text = @"2017-8-30";
+        _arriveTimeView.rightLabel.text = [UserManager manager].user.birthdate;
     }
     return _phoneNumView;
 }
@@ -144,7 +146,7 @@
     if (_arriveTimeView == nil) {
         _arriveTimeView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _arriveTimeView.leftLabel.text = @"手机";
-        _arriveTimeView.rightLabel.text = @"15606025985";
+        _arriveTimeView.rightLabel.text = [UserManager manager].user.mobilePhone;
     }
     return _arriveTimeView;
 }
@@ -153,15 +155,16 @@
     if (_invoiceView == nil) {
         _invoiceView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _invoiceView.leftLabel.text = @"证件号码";
-        _invoiceView.rightLabel.text = @"3515616315615651554151455";
+        _invoiceView.rightLabel.text = [UserManager manager].user.idNo;
     }
     return _invoiceView;
 }
 
 - (WRCellView *)remarkView {
     if (_remarkView == nil) {
-        _remarkView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_Indicator];
+        _remarkView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _remarkView.leftLabel.text = @"邮箱";
+        _remarkView.rightLabel.text = [UserManager manager].user.email;
         [_remarkView setLineStyleWithLeftZero];
     }
     return _remarkView;

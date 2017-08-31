@@ -262,6 +262,11 @@
 		A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABCF1F56AF1A0099819E /* Register1ViewController.m */; };
 		A9D9ABD31F56AF2A0099819E /* Register2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABD21F56AF2A0099819E /* Register2ViewController.m */; };
 		A9D9ABD61F56B82A0099819E /* Register3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABD51F56B82A0099819E /* Register3ViewController.m */; };
+		A9D9ABD91F57E7860099819E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABD81F57E7860099819E /* User.m */; };
+		A9D9ABDC1F57F3D40099819E /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABDB1F57F3D40099819E /* NSObject+Coding.m */; };
+		A9D9ABDF1F57FE6F0099819E /* VerifyCode1LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABDE1F57FE6F0099819E /* VerifyCode1LoginView.m */; };
+		A9D9ABE21F57FE9F0099819E /* VerifyCode2LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABE11F57FE9F0099819E /* VerifyCode2LoginView.m */; };
+		A9D9ABE51F580A800099819E /* VerifyCodeLogin2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABE41F580A800099819E /* VerifyCodeLogin2ViewController.m */; };
 		A9EAB8591F55C6AF00C367F2 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB84A1F55C6AF00C367F2 /* DataSigner.m */; };
 		A9EAB85A1F55C6AF00C367F2 /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB84C1F55C6AF00C367F2 /* DataVerifier.m */; };
 		A9EAB85B1F55C6AF00C367F2 /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB84E1F55C6AF00C367F2 /* MD5DataSigner.m */; };
@@ -717,6 +722,16 @@
 		A9D9ABD21F56AF2A0099819E /* Register2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register2ViewController.m; sourceTree = "<group>"; };
 		A9D9ABD41F56B82A0099819E /* Register3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register3ViewController.h; sourceTree = "<group>"; };
 		A9D9ABD51F56B82A0099819E /* Register3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register3ViewController.m; sourceTree = "<group>"; };
+		A9D9ABD71F57E7860099819E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A9D9ABD81F57E7860099819E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A9D9ABDA1F57F3D40099819E /* NSObject+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
+		A9D9ABDB1F57F3D40099819E /* NSObject+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
+		A9D9ABDD1F57FE6F0099819E /* VerifyCode1LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCode1LoginView.h; sourceTree = "<group>"; };
+		A9D9ABDE1F57FE6F0099819E /* VerifyCode1LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCode1LoginView.m; sourceTree = "<group>"; };
+		A9D9ABE01F57FE9F0099819E /* VerifyCode2LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCode2LoginView.h; sourceTree = "<group>"; };
+		A9D9ABE11F57FE9F0099819E /* VerifyCode2LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCode2LoginView.m; sourceTree = "<group>"; };
+		A9D9ABE31F580A800099819E /* VerifyCodeLogin2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCodeLogin2ViewController.h; sourceTree = "<group>"; };
+		A9D9ABE41F580A800099819E /* VerifyCodeLogin2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeLogin2ViewController.m; sourceTree = "<group>"; };
 		A9EAB8481F55C6AF00C367F2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		A9EAB8491F55C6AF00C367F2 /* DataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSigner.h; sourceTree = "<group>"; };
 		A9EAB84A1F55C6AF00C367F2 /* DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSigner.m; sourceTree = "<group>"; };
@@ -958,6 +973,8 @@
 				A94B826D1F4D26C900840D88 /* WXPayRContent.m */,
 				A94B82641F4D268B00840D88 /* Order.h */,
 				A94B82651F4D268B00840D88 /* Order.m */,
+				A9D9ABD71F57E7860099819E /* User.h */,
+				A9D9ABD81F57E7860099819E /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1153,6 +1170,10 @@
 			children = (
 				A95D64041F468DE500F78A7E /* LoginView.h */,
 				A95D64051F468DE500F78A7E /* LoginView.m */,
+				A9D9ABDD1F57FE6F0099819E /* VerifyCode1LoginView.h */,
+				A9D9ABDE1F57FE6F0099819E /* VerifyCode1LoginView.m */,
+				A9D9ABE01F57FE9F0099819E /* VerifyCode2LoginView.h */,
+				A9D9ABE11F57FE9F0099819E /* VerifyCode2LoginView.m */,
 				A9415A4F1F5520FA00FAD195 /* Register1View.h */,
 				A9415A501F5520FA00FAD195 /* Register1View.m */,
 				A9415A521F55210D00FAD195 /* Register2View.h */,
@@ -1249,6 +1270,8 @@
 		A9730E741F384ADE006E66A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A9D9ABDA1F57F3D40099819E /* NSObject+Coding.h */,
+				A9D9ABDB1F57F3D40099819E /* NSObject+Coding.m */,
 				A94B82721F4D280900840D88 /* NSMutableDictionary+CWGJ.h */,
 				A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */,
 				A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */,
@@ -1537,6 +1560,8 @@
 				A95D64011F468DD200F78A7E /* LoginViewController.m */,
 				A95052EA1F569F5B00180545 /* VerifyCodeLoginViewController.h */,
 				A95052EB1F569F5B00180545 /* VerifyCodeLoginViewController.m */,
+				A9D9ABE31F580A800099819E /* VerifyCodeLogin2ViewController.h */,
+				A9D9ABE41F580A800099819E /* VerifyCodeLogin2ViewController.m */,
 				A9D9ABCE1F56AF1A0099819E /* Register1ViewController.h */,
 				A9D9ABCF1F56AF1A0099819E /* Register1ViewController.m */,
 				A9D9ABD11F56AF2A0099819E /* Register2ViewController.h */,
@@ -2102,6 +2127,7 @@
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */,
+				A9D9ABE21F57FE9F0099819E /* VerifyCode2LoginView.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
 				A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */,
@@ -2120,6 +2146,7 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A9D9ABD91F57E7860099819E /* User.m in Sources */,
 				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
@@ -2135,6 +2162,7 @@
 				A9EAB8791F5727B400C367F2 /* CommentHeaderCell.m in Sources */,
 				A92F7FD31F4B502A0056CACC /* MyOrderCell.m in Sources */,
 				A9D9ABD31F56AF2A0099819E /* Register2ViewController.m in Sources */,
+				A9D9ABDC1F57F3D40099819E /* NSObject+Coding.m in Sources */,
 				A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */,
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
@@ -2170,6 +2198,7 @@
 				A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */,
 				A92F7FBF1F4B3D1D0056CACC /* MASLayoutConstraint.m in Sources */,
 				A92F7FC01F4B3D1D0056CACC /* MASViewAttribute.m in Sources */,
+				A9D9ABE51F580A800099819E /* VerifyCodeLogin2ViewController.m in Sources */,
 				A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */,
 				A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
@@ -2184,6 +2213,7 @@
 				A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */,
 				A9415A571F55211D00FAD195 /* Register3View.m in Sources */,
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
+				A9D9ABDF1F57FE6F0099819E /* VerifyCode1LoginView.m in Sources */,
 				A9415A511F5520FA00FAD195 /* Register1View.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
 				A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */,

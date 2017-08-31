@@ -92,6 +92,7 @@
     _verifyCodeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     _verifyCodeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [_verifyCodeBtn addTarget:self action:@selector(verifyCodeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
     [self.loginBgView addSubview:_verifyCodeBtn];
     
     UIImage *image = [[UIImage imageWithColor:[UIColor colorWithHexString:@"#C3D0D7"]] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];

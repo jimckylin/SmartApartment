@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol Register3ViewDelegate <NSObject>
+
+- (void)register3ViewBtnClick:(NSString *)pwd;
+@end
+
 @interface Register3View : UIView
+
+@property (nonatomic, weak) id<Register3ViewDelegate> delegate;
 
 @end

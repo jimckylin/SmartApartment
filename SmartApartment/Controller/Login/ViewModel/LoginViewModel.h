@@ -16,12 +16,15 @@
 
 // 获取验证码
 - (void)requestVerifyCode:(NSString *)phone complete:(void(^)(void))complete;
-// 获取语音验证码
-- (void)requestVoiceVerifyCode:(NSString *)phone type:(int)type complete:(void(^)(void))complete;
+// 验证验证码
+- (void)requestCheckVerifyCode:(NSString *)phone code:(NSString *)code complete:(void(^)(void))complete;
+
 // 登录
 - (void)requestLoginWithPhone:(NSString *)phone psw:(NSString *)psw;
+// 验证码登录
 - (void)requestLoginWithPhone:(NSString *)phone verifyCode:(NSString *)code;
-// 微信登录
-- (void)requestWeChatLoginWithPhone:(NSDictionary *)param;
+// 注册
+- (void)requestRegisterWithPhone:(NSString *)phone name:(NSString *)name psw:(NSString *)psw;
+
 
 @end

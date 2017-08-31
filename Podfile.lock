@@ -37,6 +37,7 @@ PODS:
   - SVProgressHUD (2.1.2)
   - WebViewJavascriptBridge (6.0.2)
   - YYCache (1.0.4)
+  - YYModel (1.0.4)
   - YZHeaderScaleImage (1.0.1)
 
 DEPENDENCIES:
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.66)
   - SVProgressHUD (~> 2.1.2)
   - WebViewJavascriptBridge (~> 6.0.2)
+  - YYModel (~> 1.0.4)
   - YZHeaderScaleImage (~> 1.0.1)
 
 SPEC CHECKSUMS:
@@ -74,8 +76,9 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: 4382bce52145024714faad702aa912c751eab6e4
+PODFILE CHECKSUM: 997b34ecd2d98b2b2e8eda4a7bc9618f805be84f
 
 COCOAPODS: 1.2.1

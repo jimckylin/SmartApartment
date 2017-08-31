@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface UserManager : NSObject
 
 @property (nonatomic, assign) BOOL isLogin;
+@property (nonatomic, strong) User *user;
 
 + (instancetype)manager;
+
+- (void)saveUser:(User *)user;
+- (void)removeUser;
 
 @end

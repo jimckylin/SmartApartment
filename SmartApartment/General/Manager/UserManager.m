@@ -8,29 +8,56 @@
 
 #import "UserManager.h"
 
+
+NSString *const kUserModelKey = @"kUserModelKey";
+
+
+@interface UserManager ()
+
+@property (nonatomic, strong) NSUserDefaults *ud;
+@end
+
 @implementation UserManager
 
 + (instancetype)manager {
-    
     static UserManager *instance = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^ { instance = [[UserManager alloc] init]; });
     return instance;
 }
 
-
-- (void)setIsLogin:(BOOL)isLogin {
-    
-    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
-    [df setObject:@(isLogin) forKey:@"isLogin"];
-    [df synchronize];
+-(id)init {
+    self = [super init];
+    if (self) {
+        self.ud = [NSUserDefaults standardUserDefaults];
+    }
+    return self;
 }
 
 - (BOOL)isLogin {
-    
-    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
-    BOOL login = [[df objectForKey:@"isLogin"] boolValue];
-    return login;
+    if (self.user.cardNo) {
+        return YES;
+    }
+    return NO;
 }
+
+- (User *)user {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:[_ud objectForKey:kUserModelKey]];
+}
+
+- (void)saveUser:(User *)user {
+    
+    if (user){
+        NSData * data = [NSKeyedArchiver archivedDataWithRootObject:user];
+        [_ud setObject:data forKey:kUserModelKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+- (void)removeUser {
+    [_ud removeObjectForKey:kUserModelKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 @end

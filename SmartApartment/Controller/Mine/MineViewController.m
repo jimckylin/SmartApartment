@@ -22,6 +22,7 @@
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MineHeaderView *headerView;
 
 @end
 
@@ -29,7 +30,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     [self initUI];
+}
+
+- (void)initData {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loginSuccess:)
+                                                 name:@"kLoginSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(logoutSuccess:)
+                                                 name:@"kLogoutSuccess" object:nil];
 }
 
 - (void)initUI {
@@ -60,11 +71,12 @@
     _tableView.yz_headerScaleImage = [UIImage imageNamed:@"mine_hand_bgiphone"];
     
     // 设置tableView头部视图，必须设置头部视图背景颜色为clearColor,否则会被挡住
-    MineHeaderView *headerView = [MineHeaderView new];
+    _headerView = [MineHeaderView new];
+    [_headerView setHeaderViewData];
     // 清空头部视图背景颜色
-    headerView.backgroundColor = [UIColor clearColor];
-    headerView.delegate = self;
-    self.tableView.tableHeaderView = headerView;
+    _headerView.backgroundColor = [UIColor clearColor];
+    _headerView.delegate = self;
+    self.tableView.tableHeaderView = _headerView;
     
     
 }
@@ -201,15 +213,19 @@
     
     switch (type) {
         case HeaderEventTypeProfile:{
-            PersonInfoViewController *vc = [PersonInfoViewController new];
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            if ([UserManager manager].isLogin) {
+                PersonInfoViewController *vc = [PersonInfoViewController new];
+                [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            }else {
+                [[NavManager shareInstance] returnToLoginView:YES];
             }
+        }
             break;
         case HeaderEventTypeBalance: {
             WalletViewController *vc = [WalletViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
                 
-            }
+        }
             break;
         case HeaderEventTypeCoupon: {
             CouponViewController *vc = [CouponViewController new];
@@ -233,6 +249,19 @@
     
     SettingViewController *vc = [SettingViewController new];
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+}
+
+
+#pragma mark - Notification
+
+- (void)loginSuccess:(NSNotification *)noti {
+    
+    [_headerView setHeaderViewData];
+}
+
+- (void)logoutSuccess:(NSNotification *)noti {
+    
+    [_headerView setHeaderViewData];
 }
 
 

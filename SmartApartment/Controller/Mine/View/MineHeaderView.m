@@ -149,6 +149,19 @@
 }
 
 
+#pragma mark - Pulic
+
+- (void)setHeaderViewData {
+    
+    User *user = [UserManager manager].user;
+    [_headImgView sd_setImageWithURL:[NSURL URLWithString:user.headImage] placeholderImage:kImage(@"mine_headiphone")];
+    _nickNameLabel.text = user.name;
+    _balanceLabel.text = user.cardMoney;
+    _couponLabel.text = user.couponNum;
+    _integralLabel.text = user.cardIntegral;
+}
+
+
 #pragma mark - UIButton Action
 
 - (void)btnClick:(UIButton *)sender {

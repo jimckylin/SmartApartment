@@ -154,7 +154,7 @@ PhoneTextFieldDelegate>
     }
     
     if ([self.delegate respondsToSelector:@selector(register1ViewBtnClick:name:)]) {
-        [self.delegate register1ViewBtnClick:_phoneTF.text name:_nameTF.text];
+        [self.delegate register1ViewBtnClick:phone name:_nameTF.text];
     }
 }
 
