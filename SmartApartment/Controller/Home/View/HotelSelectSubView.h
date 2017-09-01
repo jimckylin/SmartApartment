@@ -21,6 +21,10 @@
 @property (nonatomic, assign) HotelRoomType roomType; // 房型
 @property (nonatomic, weak) id<HotelSelectViewDelegate> deletegate;
 
+@property (nonatomic, strong) NSDate *checkinDate;
+@property (nonatomic, strong) NSDate *checkoutDate;
+
+
 - (instancetype)initWithFrame:(CGRect)frame  roomType:(HotelRoomType)roomType;
 
 @end

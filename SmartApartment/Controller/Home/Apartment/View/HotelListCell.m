@@ -7,6 +7,7 @@
 //
 
 #import "HotelListCell.h"
+#import "Hotel.h"
 
 @interface HotelListCell ()
 
@@ -92,6 +93,14 @@
     _priceLabel.textAlignment = NSTextAlignmentRight;
     _priceLabel.text = @"¥99起";
     [self addSubview:_priceLabel];
+}
+
+- (void)setHotel:(Hotel *)hotel {
+    
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:nil];
+    _titleLabel.text = hotel.storeName;
+    _scoreLabel.text = hotel.storeScore;
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@起", hotel.storeRoomMinPrice];
 }
 
 

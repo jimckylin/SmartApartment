@@ -7,12 +7,19 @@
 //
 
 #import "HotelList.h"
+#import "Hotel.h"
+#import <YYModel/NSObject+YYModel.h>
+
+@interface HotelList ()<YYModel>
+
+@end
 
 @implementation HotelList
 
-+ (NSString *)node {
-    
-    return @"storeList";
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass {
+    return @{
+             @"storeList" : [Hotel class]
+             };
 }
 
 @end

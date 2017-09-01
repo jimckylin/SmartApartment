@@ -9,7 +9,7 @@
 #import "HomeViewModel.h"
 #import "LocationManager.h"
 #import "Activity.h"
-#import "HotelList.h"
+
 
 @implementation HomeViewModel
 
@@ -46,7 +46,7 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"queryStore" params:param class:[HotelList class] success:^(id response) {
         
-        [self.hotelList addObjectsFromArray:response];
+        self.hotelList = response;
         if (complete) {
             complete(response);
         }

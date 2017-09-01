@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HotelList;
 
 typedef NS_ENUM(NSInteger, HotelListHeaderBtnType) {
     
@@ -27,5 +28,9 @@ typedef NS_ENUM(NSInteger, HotelListHeaderBtnType) {
 
 @property (nonatomic, weak) id<HotelListHeaderViewDelegate> delegate;
 - (void)relayoutHeaderView:(UIScrollView *)scrollView;
+
+@property (nonatomic, strong) HotelList *hotelList;
+
+- (void)setHeaderViewDate:(NSDate *)checkinDate checkoutDate:(NSDate *)checkoutDate;
 
 @end

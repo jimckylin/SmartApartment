@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HotelList.h"
 
 @interface HomeViewModel : NSObject
 
-@property (nonatomic, strong) NSMutableArray *hotelList;
+@property (nonatomic, strong) HotelList *hotelList;
 
 - (void)requestGetTopAd:(void(^)(NSArray *))getTopBlock;
 

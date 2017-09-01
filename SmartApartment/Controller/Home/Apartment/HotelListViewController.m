@@ -59,6 +59,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
                                  complete:^(NSArray *hotels) {
        
                                      [_tableView reloadData];
+                                     _headerView.hotelList = _homeViewModel.hotelList;
     }];
 }
 
@@ -79,7 +80,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerClass:[HotelListCell class] forCellReuseIdentifier:kHotelListCell];
     _tableView.contentInset = UIEdgeInsetsMake(90, 0, 0, 0);
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(90, 0, 0, 0);
@@ -104,7 +105,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_homeViewModel.hotelList count];
+    return [_homeViewModel.hotelList.storeList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,7 +121,8 @@ NSString *const kHotelListCell = @"kHotelListCell";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
     
-    
+    Hotel *hotel = _homeViewModel.hotelList.storeList[indexPath.row];
+    [cell setHotel:hotel];
     return cell;
 }
 
@@ -185,8 +187,13 @@ NSString *const kHotelListCell = @"kHotelListCell";
     }else {
         CalendarViewController *vc = [CalendarViewController new];
         vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
-            for (NSDate *date in manager.selectedDateArray) {
-                NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+            if ([manager.selectedDateArray count] > 1) {
+                NSDate *checkinTime = manager.selectedDateArray[0];
+                NSDate *checkoutTime = manager.selectedDateArray[1];
+                self.checkInTime =  [NSString sia_stringFromDate:checkinTime withFormat:@"yyyy-MM-dd"];
+                self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
+                
+                [_headerView setHeaderViewDate:checkinTime checkoutDate:checkoutTime];
             }
         };
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];

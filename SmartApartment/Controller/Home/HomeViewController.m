@@ -32,6 +32,7 @@
 
 @property (nonatomic, strong) HomeViewModel  *homeViewModel;
 @property (nonatomic, strong) NSMutableArray *activityAarr;
+@property (nonatomic, strong) HotelSelectView *selectView;
 
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *storeName;
@@ -51,6 +52,11 @@
 }
 
 - (void)initData {
+    
+    NSDate *date = [NSDate date];
+    NSDate *nextDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:date];//后一天
+    self.checkInTime = [NSString sia_stringFromDate:date withFormat:@"yyyy-MM-dd"];
+    self.checkOutTime = [NSString sia_stringFromDate:nextDay withFormat:@"yyyy-MM-dd"];
     
     _homeViewModel = [HomeViewModel new];
     _activityAarr = [[NSMutableArray alloc] initWithCapacity:1];
@@ -98,7 +104,6 @@
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 49, 0)];
     
     _tableView.tableHeaderView = _bannerView;
-    
     [self.view bringSubviewToFront:_naviView];
 }
 
@@ -128,8 +133,8 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
             cell.backgroundColor = [UIColor clearColor];
-            HotelSelectView *selectView = [[HotelSelectView alloc] initWithDelegate:self];
-            [cell addSubview:selectView];
+            _selectView = [[HotelSelectView alloc] initWithDelegate:self];
+            [cell addSubview:_selectView];
         }
         return cell;
     }else {
@@ -205,6 +210,9 @@
                     NSDate *checkoutTime = manager.selectedDateArray[1];
                     self.checkInTime =  [NSString sia_stringFromDate:checkinTime withFormat:@"yyyy-MM-dd"];
                     self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
+                    
+                    _selectView.checkinDate = checkinTime;
+                    _selectView.checkoutDate = checkoutTime;
                 }
             };
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
@@ -212,7 +220,10 @@
             break;
         case HotelSelectBtnTypeSearchHotel: {
             HotelListViewController *vc = [HotelListViewController new];
-            vc.area = self.city;
+            if ([Utils isBlankString:self.city]) {
+                self.city = @"";
+            }
+            vc.area = [self.city stringByReplacingOccurrencesOfString:@"市" withString:@""];
             vc.storeName = self.storeName;
             vc.checkInTime = self.checkInTime;
             vc.checkOutTime = self.checkOutTime;

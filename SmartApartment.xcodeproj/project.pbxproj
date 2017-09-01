@@ -180,6 +180,7 @@
 		A96E112B1F4E83E700357DCB /* SAHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112A1F4E83E700357DCB /* SAHttpRequest.m */; };
 		A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112E1F4E8D7F00357DCB /* RequestSign.m */; };
 		A96E11321F4EBCE000357DCB /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E11311F4EBCE000357DCB /* Encrypt.m */; };
+		A96FBB311F58FD2E00C945C8 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FBB301F58FD2E00C945C8 /* Hotel.m */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -590,6 +591,8 @@
 		A96E112E1F4E8D7F00357DCB /* RequestSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSign.m; sourceTree = "<group>"; };
 		A96E11301F4EBCE000357DCB /* Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrypt.h; sourceTree = "<group>"; };
 		A96E11311F4EBCE000357DCB /* Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypt.m; sourceTree = "<group>"; };
+		A96FBB2F1F58FD2E00C945C8 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		A96FBB301F58FD2E00C945C8 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -1847,6 +1850,8 @@
 			children = (
 				A974F2B41F5880E7008A739A /* HotelList.h */,
 				A974F2B51F5880E7008A739A /* HotelList.m */,
+				A96FBB2F1F58FD2E00C945C8 /* Hotel.h */,
+				A96FBB301F58FD2E00C945C8 /* Hotel.m */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -2135,6 +2140,7 @@
 				A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */,
 				A959C3211F548C6F006E091A /* YRJSONAdapter.m in Sources */,
 				A95B3FF71F3AC7FF0046E150 /* ZYWeekView.m in Sources */,
+				A96FBB311F58FD2E00C945C8 /* Hotel.m in Sources */,
 				A9BA5DF31F4614C70093A50D /* BookHotelViewController.m in Sources */,
 				A97677741F3EE97500EDCDFA /* ActivityTableViewCell.m in Sources */,
 				A97677AD1F433D2700EDCDFA /* HotelDetailRoomListCell.m in Sources */,

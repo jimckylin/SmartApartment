@@ -8,6 +8,7 @@
 
 #import "HotelListHeaderView.h"
 #import <BAButton/BAButton.h>
+#import "HotelList.h"
 
 @interface HotelListHeaderView ()
 
@@ -87,6 +88,23 @@
 
 
 #pragma mark - Publick
+
+- (void)setHotelList:(HotelList *)hotelList {
+    
+    NSString *title = [NSString stringWithFormat:@"%@(%@)", hotelList.area, hotelList.storeNum];
+    [_cityBtn setTitle:title forState:UIControlStateNormal];
+}
+
+- (void)setHeaderViewDate:(NSDate *)checkinDate checkoutDate:(NSDate *)checkoutDate {
+    
+    NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+    NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd"];
+    NSString *checkoutDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd"];
+    
+    NSString *title = [NSString stringWithFormat:@"%@-%@ 共(%zd)天", checkinDateStr, checkoutDateStr, days];
+    [_dateBtn setTitle:title forState:UIControlStateNormal];
+}
+
 
 - (void)relayoutHeaderView:(UIScrollView *)scrollView {
     

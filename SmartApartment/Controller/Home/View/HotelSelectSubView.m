@@ -82,7 +82,9 @@
     [_liveBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
     [_liveBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [_liveBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [_liveBtn setTitle:@"08月08日" forState:UIControlStateNormal];
+    NSDate *date = [NSDate date];
+    NSString *checkInStr = [NSString sia_stringFromDate:date withFormat:@"MM月dd日"];
+    [_liveBtn setTitle:checkInStr forState:UIControlStateNormal];
     _liveBtn.titleLabel.textAlignment = NSTextAlignmentLeft; // 文字在titleLabel中左对齐(并没有看出有什么卵用)
     [_liveBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
     _liveBtn.tag = HotelSelectBtnTypeLiveDate;
@@ -99,7 +101,9 @@
     if (self.roomType == HotelRoomTypeAllday) {
         _leaveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_leaveBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_leaveBtn setTitle:@"08月09日" forState:UIControlStateNormal];
+        NSDate *nextDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:date];//后一天
+        NSString *checkoutStr = [NSString sia_stringFromDate:nextDay withFormat:@"MM月dd日"];
+        [_leaveBtn setTitle:checkoutStr forState:UIControlStateNormal];
         [_leaveBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
         [_leaveBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [_leaveBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
@@ -160,6 +164,20 @@
     _searchBtn.layer.cornerRadius = 3;
     [self addSubview:_searchBtn];
 }
+
+
+- (void)setCheckinDate:(NSDate *)checkinDate {
+    NSString *checkInStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd日"];
+    [_liveBtn setTitle:checkInStr forState:UIControlStateNormal];
+    _checkinDate = checkinDate;
+}
+
+- (void)setCheckoutDate:(NSDate *)checkoutDate {
+    NSString *checkoutStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd日"];
+    [_leaveBtn setTitle:checkoutStr forState:UIControlStateNormal];
+    _checkoutDate = checkoutDate;
+}
+
 
 
 #pragma mark - UIButton Action

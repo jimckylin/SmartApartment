@@ -16,6 +16,9 @@
 @property (nonatomic, strong) UIButton *alldayBtn;
 @property (nonatomic, strong) UIButton *hoursBtn;
 
+@property (nonatomic, strong) HotelSelectSubView *selectView;
+@property (nonatomic, strong) HotelSelectSubView *selectView2;
+
 @end
 
 @implementation HotelSelectView
@@ -70,13 +73,28 @@
     [self addSubview:_hoursBtn];
     
     // 位置选择
-    HotelSelectSubView *selectView = [[HotelSelectSubView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, self.size.height - 40) roomType:HotelRoomTypeAllday];
-    selectView.deletegate = self.deletegate;
-    [_contentSrollView addSubview:selectView];
+    _selectView = [[HotelSelectSubView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, self.size.height - 40) roomType:HotelRoomTypeAllday];
+    _selectView.deletegate = self.deletegate;
+    [_contentSrollView addSubview:_selectView];
     
-    HotelSelectSubView *selectView2 = [[HotelSelectSubView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, self.size.height - 40) roomType:HotelRoomTypeTypeHours];
-    selectView2.deletegate = self.deletegate;
-    [_contentSrollView addSubview:selectView2];
+    _selectView2 = [[HotelSelectSubView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, self.size.height - 40) roomType:HotelRoomTypeTypeHours];
+    _selectView2.deletegate = self.deletegate;
+    [_contentSrollView addSubview:_selectView2];
+}
+
+
+- (void)setCheckinDate:(NSDate *)checkinDate {
+    
+    _selectView.checkinDate = checkinDate;
+    _selectView2.checkinDate = checkinDate;
+    _checkinDate = checkinDate;
+}
+
+- (void)setCheckoutDate:(NSDate *)checkoutDate {
+    
+    _selectView.checkoutDate = checkoutDate;
+    _selectView2.checkoutDate = checkoutDate;
+    _checkoutDate = checkoutDate;
 }
 
 
