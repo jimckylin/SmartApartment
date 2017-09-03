@@ -82,6 +82,13 @@
 
 }
 
+- (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime {
+    
+    [_dateView1 setDateViewateStr:checkInTime checkoutDateStr:checkOutTime];
+    [_dateView2 setDateViewateStr:checkInTime checkoutDateStr:checkOutTime];
+}
+
+
 #pragma mark - UIButton Action
 
 - (void)btnClick:(UIButton *)sender {

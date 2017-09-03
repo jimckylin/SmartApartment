@@ -53,13 +53,15 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateViewDelegate, HotelDetailHeaderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-//@property (nonatomic, strong) NSMutableArray<__kindof ZZFoldCellModel *> *data;
+
 @property (nonatomic, strong) NSMutableArray *comments;
 @property (nonatomic, strong) HotelViewModel *viewModel;
 @property (nonatomic, assign) HotelRoomType roomType;
 
 @property (nonatomic, strong) NSMutableArray *dayRoomArr;
 @property (nonatomic, strong) NSMutableArray *hourRoomArr;
+
+@property (nonatomic, strong) HotelDetailRoomTypeCell *cell;
 
 //@property(nonatomic, assign) BOOL isAlldayRoomExpand; // 是否伸缩 defalut NO
 
@@ -246,6 +248,8 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     else if (section == 2){
         if (row == 0) {
             HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
+            self.cell = cell;
+            [cell setDateViewateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
             cell.delegate = self;
             return cell;
         }else {
@@ -438,8 +442,14 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     
     CalendarViewController *vc = [CalendarViewController new];
     vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
-        for (NSDate *date in manager.selectedDateArray) {
-            NSLog(@"%@", [manager.dateFormatter stringFromDate:date]);
+        if ([manager.selectedDateArray count] > 1) {
+            NSDate *checkinTime = manager.selectedDateArray[0];
+            NSDate *checkoutTime = manager.selectedDateArray[1];
+            self.checkInTime =  [NSString sia_stringFromDate:checkinTime withFormat:@"yyyy-MM-dd"];
+            self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
+            
+            [self.cell setDateViewateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
+            [self requestHotelDetail];
         }
     };
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
@@ -463,6 +473,8 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
 
 - (void)initRoomData {
     
+    [_dayRoomArr removeAllObjects];
+    [_hourRoomArr removeAllObjects];
     for (NSInteger index = 0; index<[self.viewModel.hotelDetail.dayRoomList count]; index++) {
         
         DayRoom *dayRoom = self.viewModel.hotelDetail.dayRoomList[index];
@@ -483,11 +495,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     
     self.roomType = HotelRoomTypeAllday;
     _viewModel = [HotelViewModel new];
-    [_viewModel requestSelectApartment:self.storeId storeName:self.storeName checkInTime:self.checkInTime checkOutTime:self.checkOutTime complete:^(HotelDetail *hotelDetail) {
-        
-        [self initRoomData];
-        [_tableView reloadData];
-    }];
+    [self requestHotelDetail];
     
     _dayRoomArr = [[NSMutableArray alloc] initWithCapacity:1];
     _hourRoomArr = [[NSMutableArray alloc] initWithCapacity:1];
@@ -525,6 +533,15 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
                             },];
     _comments = [NSMutableArray new];
     [_comments addObjectsFromArray:comments];
+}
+
+- (void)requestHotelDetail {
+    
+    [_viewModel requestSelectApartment:self.storeId storeName:self.storeName checkInTime:self.checkInTime checkOutTime:self.checkOutTime complete:^(HotelDetail *hotelDetail) {
+        
+        [self initRoomData];
+        [_tableView reloadData];
+    }];
 }
 
 

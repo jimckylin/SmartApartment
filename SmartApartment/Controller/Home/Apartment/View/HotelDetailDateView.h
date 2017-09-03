@@ -22,4 +22,6 @@
 
 - (instancetype)initWithRoomType:(HotelRoomType)roomType;
 
+- (void)setDateViewateStr:(NSString *)checkinDateStr checkoutDateStr:(NSString *)checkoutDateStr;
+
 @end

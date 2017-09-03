@@ -124,4 +124,6 @@
 //是否永久有效
 + (BOOL) isValidForever:(NSTimeInterval)fure;
 
+- (NSString *)weekDayStr;
+
 @end

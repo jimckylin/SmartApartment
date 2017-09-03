@@ -622,4 +622,38 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return NO;
 }
 
+- (NSString *)weekDayStr {
+    
+    NSInteger weekday = self.weekday;
+    
+    NSString *weekDayStr = @"";
+    switch (weekday) {
+        case 1:
+            weekDayStr = @"周日";
+            break;
+        case 2:
+            weekDayStr = @"周一";
+            break;
+        case 3:
+            weekDayStr = @"周二";
+            break;
+        case 4:
+            weekDayStr = @"周三";
+            break;
+        case 5:
+            weekDayStr = @"周四";
+            break;
+        case 6:
+            weekDayStr = @"周五";
+            break;
+        case 7:
+            weekDayStr = @"周六";
+            break;
+        default:
+            weekDayStr = @"";
+            break;
+    }
+    return weekDayStr;
+}
+
 @end

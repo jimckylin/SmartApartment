@@ -19,4 +19,6 @@
 
 @property (nonatomic, assign) id<HotelDetailRoomTypeCellDelegate> delegate;
 
+- (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "HotelDetailDateView.h"
+#import "NSDate+Utilities.h"
 
 @interface HotelDetailDateView ()
 
@@ -92,6 +93,27 @@
         [self addSubview:_countLabel];
     }
 }
+
+
+- (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime {
+    
+    NSDate *checkinDate = [NSDate sia_dateFromString:checkInTime withFormat:@"yyyy-MM-dd"];
+    checkInTime = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd日"];
+    [_liveBtn setTitle:checkInTime forState:UIControlStateNormal];
+    
+    NSDate *checkoutDate = [NSDate sia_dateFromString:checkOutTime withFormat:@"yyyy-MM-dd"];
+    checkOutTime = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd日"];
+    [_leaveBtn setTitle:checkOutTime forState:UIControlStateNormal];
+    
+    _liveLabel.text = [NSString stringWithFormat:@"入住\n%@", [checkinDate weekDayStr]];
+    _leaveLabel.text = [NSString stringWithFormat:@"离店\n%@", [checkoutDate weekDayStr]];
+    
+    NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+    NSString *title = [NSString stringWithFormat:@"共%zd晚", days];
+    _countLabel.text = title;
+}
+
+
 
 #pragma mark - UIButton Action
 
