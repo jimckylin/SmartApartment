@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DayRoom, HourRoom;
 
 typedef NS_ENUM(NSInteger, HotelRoomListBtnType) {
     
@@ -22,6 +23,7 @@ typedef NS_ENUM(NSInteger, HotelRoomListBtnType) {
 
 @property (nonatomic, weak) id<HotelDetailRoomPriceTypeCellDelegate> delegate;
 
-- (void)setDic:(NSDictionary *)dic;
+@property (nonatomic, strong) DayRoom *dayRoom;
+@property (nonatomic, strong) HourRoom *hourRoom;
 
 @end

@@ -9,6 +9,7 @@
 #import "HotelDetailCommentHeaderCell.h"
 #import <BAButton/BAButton.h>
 #import "JKProgressView.h"
+#import "HotelDetail.h"
 
 @interface HotelDetailCommentHeaderCell ()
 
@@ -156,6 +157,33 @@
     _envirmentProgress.progress = 1;
     _cpRatioProgress.progress = 0.9;
 }
+
+- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+    
+    _scoreLabel.text = hotelDetail.storeScore? hotelDetail.storeScore:@"0.00";
+    _goodCommentRatioLabel.text = [NSString stringWithFormat:@"%@%%", hotelDetail.storePercent?hotelDetail.storePercent:@"0.00"];
+    
+    _hygieneProgress.progress = [self formatSocre:hotelDetail.storeRoomHealthScore];
+    _serviceProgress.progress = [self formatSocre:hotelDetail.storeHotelScore];
+    _envirmentProgress.progress = [self formatSocre:hotelDetail.storeEnvironmentScore];
+    _cpRatioProgress.progress = [self formatSocre:hotelDetail.storeEnvironmentScore];
+    
+    _hygieneScore.text = hotelDetail.storeRoomHealthScore;
+    _serviceScore.text = hotelDetail.storeHotelScore;
+    _envirmentScore.text = hotelDetail.storeEnvironmentScore;
+    _cpRatioScore.text = hotelDetail.storeEnvironmentScore;
+}
+
+- (CGFloat)formatSocre:(NSString *)scoreString {
+    
+    CGFloat score = [scoreString floatValue]/5;
+    if (score) {
+        return [[NSString stringWithFormat:@"%f0.0", score] floatValue];
+    }else{
+        return 1;
+    }
+}
+
 
 - (void)updateConstraints {
     

@@ -32,5 +32,6 @@ typedef NS_ENUM(NSInteger, HotelListHeaderBtnType) {
 @property (nonatomic, strong) HotelList *hotelList;
 
 - (void)setHeaderViewDate:(NSDate *)checkinDate checkoutDate:(NSDate *)checkoutDate;
+- (void)setHeaderViewDateStr:(NSString *)checkinDateStr checkoutDateStr:(NSString *)checkoutDateStr;
 
 @end

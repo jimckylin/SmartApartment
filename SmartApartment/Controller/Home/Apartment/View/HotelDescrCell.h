@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Hotel;
 
 @interface HotelDescrCell : UITableViewCell
 
-+ (CGFloat)getDescrCellHeight:(NSDictionary *)dict;
+@property (nonatomic, strong) Hotel *hotel;
+
++ (CGFloat)getDescrCellHeight:(Hotel *)hotel;
 
 @end

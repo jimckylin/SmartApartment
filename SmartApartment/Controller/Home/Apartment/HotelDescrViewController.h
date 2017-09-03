@@ -7,7 +7,10 @@
 //
 
 #import "ParentViewController.h"
+@class Hotel;
 
 @interface HotelDescrViewController : ParentViewController
+
+@property (nonatomic, strong) Hotel *hotel;
 
 @end

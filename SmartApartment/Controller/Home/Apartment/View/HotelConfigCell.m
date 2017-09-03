@@ -7,6 +7,7 @@
 //
 
 #import "HotelConfigCell.h"
+#import "Hotel.h"
 
 @interface HotelConfigCell ()
 
@@ -44,10 +45,13 @@
     [bgView addSubview:_titleLabel];
 }
 
-- (void)setRoomPriceDic:(NSDictionary *)roomPriceDic {
+
+- (void)setHotel:(Hotel *)hotel {
     
+    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@";"];
     
 }
+
 
 - (void)updateConstraints {
     

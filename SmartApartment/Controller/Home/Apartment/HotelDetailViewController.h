@@ -7,7 +7,16 @@
 //
 
 #import "ParentViewController.h"
+#import "Hotel.h"
+
 
 @interface HotelDetailViewController : ParentViewController
+
+@property (nonatomic, copy) NSString *storeId;
+@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, copy) NSString *checkInTime;
+@property (nonatomic, copy) NSString *checkOutTime;
+
+@property (nonatomic, strong) Hotel *hotel;
 
 @end

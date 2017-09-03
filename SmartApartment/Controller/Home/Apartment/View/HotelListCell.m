@@ -97,7 +97,7 @@
 
 - (void)setHotel:(Hotel *)hotel {
     
-    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:nil];
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:kImage(@"home_list_blankiphone")];
     _titleLabel.text = hotel.storeName;
     _scoreLabel.text = hotel.storeScore;
     _priceLabel.text = [NSString stringWithFormat:@"¥%@起", hotel.storeRoomMinPrice];

@@ -7,12 +7,16 @@
 //
 
 #import "HotelDetailRoomListCell.h"
+#import "RTLabel.h"
+#import "DayRoom.h"
+#import "HourRoom.h"
 
 @interface HotelDetailRoomListCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *remainLabel;
 @property (nonatomic, strong) UIImageView *sArrowIconV;
-@property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) RTLabel *priceLabel;
 @property (nonatomic, strong) UIImageView *bArrowIconV;
 
 @end
@@ -46,10 +50,16 @@
     _titleLabel.text = @"普通房";
     [bgView addSubview:_titleLabel];
     
-    _priceLabel = [UILabel new];
-    _priceLabel.font = [UIFont systemFontOfSize:13];
+    _remainLabel = [UILabel new];
+    _remainLabel.font = [UIFont systemFontOfSize:10];
+    _remainLabel.textColor = ThemeColor;
+    _remainLabel.text = @"仅剩0间客房";
+    [bgView addSubview:_remainLabel];
+    
+    _priceLabel = [RTLabel new];
+    _priceLabel.font = [UIFont systemFontOfSize:16];
     _priceLabel.textColor = [UIColor redColor];
-    _priceLabel.textAlignment = NSTextAlignmentRight;
+    _priceLabel.textAlignment = RTTextAlignmentRight;
     _priceLabel.text = @"¥168起";
     [bgView addSubview:_priceLabel];
     
@@ -62,23 +72,37 @@
     [bgView addSubview:_bArrowIconV];
 }
 
-- (void)setRoomPriceDic:(NSDictionary *)roomPriceDic {
+- (void)setDayRoom:(DayRoom *)dayRoom {
     
-    
+    _titleLabel.text = dayRoom.roomTypeName;
+    _remainLabel.text = [NSString stringWithFormat:@"仅剩%@间客房", dayRoom.roomNum];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>(门市价)</font>", dayRoom.shopPrice];
 }
+
+- (void)setHourRoom:(HourRoom *)hourRoom {
+    
+    _titleLabel.text = hourRoom.roomTypeName;
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.shopPrice];
+}
+
 
 - (void)updateConstraints {
     
     [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:25];
-    [_titleLabel autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
     [_titleLabel autoSetDimension:ALDimensionWidth toSize:55];
+    
+    [_remainLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:25];
+    [_remainLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel withOffset:3];
+    [_remainLabel autoSetDimension:ALDimensionWidth toSize:90];
+    
     
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:37];
     [_priceLabel autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
-    [_priceLabel autoSetDimension:ALDimensionWidth toSize:80];
+    [_priceLabel autoSetDimensionsToSize:CGSizeMake(110, 20)];
     
     [_sArrowIconV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel];
-    [_sArrowIconV autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+    [_sArrowIconV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
     
     [_bArrowIconV autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
     [_bArrowIconV autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];

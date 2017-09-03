@@ -11,7 +11,7 @@
 
 @protocol HotelDetailRoomTypeCellDelegate <NSObject>
 
-- (void)hotelDetailRoomTypeCellDidClickBtn;
+- (void)hotelDetailRoomTypeCellDidClickBtn:(HotelRoomType)type;
 @end
 
 

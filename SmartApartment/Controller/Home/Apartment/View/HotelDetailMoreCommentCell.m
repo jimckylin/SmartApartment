@@ -8,6 +8,13 @@
 
 #import "HotelDetailMoreCommentCell.h"
 #import <BAButton/BAButton.h>
+#import "HotelDetail.h"
+
+@interface HotelDetailMoreCommentCell ()
+
+@property (nonatomic, strong) UILabel *label;
+
+@end
 
 @implementation HotelDetailMoreCommentCell
 
@@ -32,16 +39,20 @@
     [self addSubview:bgView];
     [bgView ba_view_setViewRectCornerType:BAKit_ViewRectCornerTypeBottomLeftAndBottomRight viewCornerRadius:6];
     
-    UILabel *label = [UILabel new];
-    label.font = [UIFont systemFontOfSize:13];
-    label.textColor = [UIColor grayColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"查看全部45条评论";
-    [bgView addSubview:label];
-    [label autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    _label = [UILabel new];
+    _label.font = [UIFont systemFontOfSize:13];
+    _label.textColor = [UIColor grayColor];
+    _label.textAlignment = NSTextAlignmentCenter;
+    _label.text = @"查看全部0条评论";
+    [bgView addSubview:_label];
+    [_label autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
 }
 
+- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+    
+    _label.text = [NSString stringWithFormat:@"查看全部%@条评论", hotelDetail.evaluateTotal];
+}
 
 - (void)updateConstraints {
     

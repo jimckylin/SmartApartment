@@ -10,6 +10,8 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <MapKit/MapKit.h>
+#import "Hotel.h"
+
 
 @interface MapViewController ()<BMKMapViewDelegate, UIActionSheetDelegate>
 
@@ -39,7 +41,7 @@
     
     BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
     annotation.coordinate = self.coor;
-    annotation.title = @"这里是北京";
+    annotation.title = _hotel.storeName;
     [_mapView addAnnotation:annotation];
     
     
@@ -53,6 +55,15 @@
     [navBtn autoSetDimensionsToSize:CGSizeMake(99, 95)];
 }
 
+- (void)setHotel:(Hotel *)hotel {
+    
+    NSArray *coors = [hotel.coordinate componentsSeparatedByString:@","];
+    NSString *lat = [coors count] > 0 ? coors[0]: @"";
+    NSString *lon = [coors count] > 1 ? coors[1]: @"";
+    [self setMapCenterCoordinate:lat lon:lon];
+    
+    _hotel = hotel;
+}
 
 
 - (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon {
@@ -87,7 +98,7 @@
         
         //自定义显示的内容
         UILabel *title = [[UILabel alloc]initWithFrame:imageContent.bounds];
-        title.text = @"尚客优酒店";
+        title.text = _hotel.storeName;
         title.backgroundColor = [UIColor clearColor];
         title.font = [UIFont systemFontOfSize:15];
         title.textColor = [UIColor whiteColor];

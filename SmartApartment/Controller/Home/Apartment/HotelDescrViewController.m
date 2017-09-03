@@ -13,7 +13,7 @@
 #import "HotelDetailMapCell.h"
 #import "HotelDescrCell.h"
 #import "BlankCell.h"
-
+#import "Hotel.h"
 
 @interface HotelDescrViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -67,7 +67,7 @@ UITableViewDataSource>
     }else if (section == 2) {
         return 101;
     }
-    return [HotelDescrCell getDescrCellHeight:nil];
+    return [HotelDescrCell getDescrCellHeight:self.hotel];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -83,6 +83,7 @@ UITableViewDataSource>
     NSInteger section = indexPath.section;
     if (section == 0) {
         HotelConfigCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelConfigCell"];
+        cell.hotel = self.hotel;
         return cell;
         
     }else if (section == 1) {
@@ -97,17 +98,17 @@ UITableViewDataSource>
         
     }else if (section == 2) {
         HotelDetailMapCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelDetailMapCell"];
-        [cell setMapCenterCoordinate:@"26.08" lon:@"119.3"];
+        cell.hotel = self.hotel;
         cell.mapViewDidClickBlock = ^{
             MapViewController *map = [MapViewController new];
-            [map setMapCenterCoordinate:@"26.08" lon:@"119.3"];
+            map.hotel = self.hotel;
             [[NavManager shareInstance] showViewController:map isAnimated:YES];
         };
         return cell;
         
     }else if (section == 3) {
         HotelDescrCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelDescrCell"];
-        
+        cell.hotel = self.hotel;
         return cell;
     }
     

@@ -18,8 +18,8 @@
 
 @property (nonatomic, copy)  NSString *storeImage;            // 公寓图片，URL地址
 @property (nonatomic, copy)  NSString *storeRoomMinPrice;     // 公寓天房最低价格
-@property (nonatomic, strong) NSArray *storeDevice;           // 门店设施：有线上网;电视,多个设施以分号隔开
-@property (nonatomic, strong) NSArray *storePayment;          // 门店支付方式：微信;支付宝;信用住，多个支付方式以分号隔开
+@property (nonatomic, copy)  NSString *storeDevice;           // 门店设施：有线上网;电视,多个设施以分号隔开
+@property (nonatomic, copy)  NSString *storePayment;          // 门店支付方式：微信;支付宝;信用住，多个支付方式以分号隔开
 @property (nonatomic, strong) NSArray *storeImageList;        // 图片数组
 @property (nonatomic, copy)  NSString *coordinate;            // 经纬度，格式:X,Y
 

@@ -9,6 +9,7 @@
 #import "HotelDetailMapCell.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import "Hotel.h"
 
 @interface HotelDetailMapCell ()<BMKMapViewDelegate>
 
@@ -77,6 +78,18 @@
 - (void)setAddress:(NSString *)address {
     
     _addressLabel.text = address;
+}
+
+
+- (void)setHotel:(Hotel *)hotel {
+    
+    _addressLabel.text = hotel.address;
+    NSArray *coors = [hotel.coordinate componentsSeparatedByString:@","];
+    NSString *lat = [coors count] > 0 ? coors[0]: @"";
+    NSString *lon = [coors count] > 1 ? coors[1]: @"";
+    [self setMapCenterCoordinate:lat lon:lon];
+    
+    _hotel = hotel;
 }
 
 

@@ -27,6 +27,47 @@
     return foldCellModel;
 }
 
++ (instancetype)modelWithDayRoom:(DayRoom *)dayRoom {
+    
+    ZZFoldCellModel *foldModel = [ZZFoldCellModel new];
+    foldModel.dayRoom = dayRoom;
+    foldModel.level = @"0";
+    foldModel.belowCount = 0;
+    
+    
+    ZZFoldCellModel *subFoldModel = [ZZFoldCellModel new];
+    subFoldModel.dayRoom = dayRoom;
+    subFoldModel.level = @"1";
+    subFoldModel.belowCount = 0;
+    subFoldModel.supermodel = foldModel;
+    
+    foldModel.submodels = [NSMutableArray new];
+    [foldModel.submodels addObject:subFoldModel];
+    
+    return foldModel;
+}
+
++ (instancetype)modelWithHourRoom:(HourRoom *)hourRoom {
+    
+    ZZFoldCellModel *foldModel = [ZZFoldCellModel new];
+    foldModel.hourRoom = hourRoom;
+    foldModel.level = @"0";
+    foldModel.belowCount = 0;
+    
+    
+    ZZFoldCellModel *subFoldModel = [ZZFoldCellModel new];
+    subFoldModel.hourRoom = hourRoom;
+    subFoldModel.level = @"1";
+    subFoldModel.belowCount = 0;
+    subFoldModel.supermodel = foldModel;
+    
+    foldModel.submodels = [NSMutableArray new];
+    [foldModel.submodels addObject:subFoldModel];
+    
+    return foldModel;
+}
+
+
 - (NSArray *)open {
     NSArray *submodels = self.submodels;
     self.submodels = nil;

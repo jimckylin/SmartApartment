@@ -17,6 +17,7 @@
 #import <BAButton/BAButton.h>
 #import "ZYCalendarManager.h"
 #import "HomeViewModel.h"
+#import "Hotel.h"
 
 NSString *const kHotelListCell = @"kHotelListCell";
 
@@ -51,16 +52,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     _homeViewModel = [HomeViewModel new];
     //_activityAarr = [[NSMutableArray alloc] initWithCapacity:1];
     
-    [_homeViewModel requestQueryApartment:self.area
-                                storeName:self.storeName
-                              checkInTime:self.checkInTime
-                             checkOutTime:self.checkOutTime
-                          checkInRoomType:self.checkInRoomType
-                                 complete:^(NSArray *hotels) {
-       
-                                     [_tableView reloadData];
-                                     _headerView.hotelList = _homeViewModel.hotelList;
-    }];
+    [self requeHotelList];
 }
 
 
@@ -74,6 +66,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
     _headerView.backgroundColor = ThemeColor;
     _headerView.delegate = self;
+    [_headerView setHeaderViewDateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
     [self.view addSubview:_headerView];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
@@ -87,6 +80,13 @@ NSString *const kHotelListCell = @"kHotelListCell";
     [self.view addSubview:_tableView];
     
     [self.view bringSubviewToFront:_naviView];
+    
+    // 设置上拉加载更多
+    __WeakObj(self)
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        //Call this Block When enter the refresh status automatically
+        [selfWeak requeHotelList];
+    }];
     
     
     UIButton *conditionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -128,7 +128,13 @@ NSString *const kHotelListCell = @"kHotelListCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    Hotel *hotel = _homeViewModel.hotelList.storeList[indexPath.row];
     HotelDetailViewController *vc = [HotelDetailViewController new];
+    vc.storeId = hotel.storeId;
+    vc.storeName = hotel.storeName;
+    vc.checkInTime = self.checkInTime;
+    vc.checkOutTime = self.checkOutTime;
+    vc.hotel = hotel;
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
@@ -194,6 +200,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
                 self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
                 
                 [_headerView setHeaderViewDate:checkinTime checkoutDate:checkoutTime];
+                [self requeHotelList];
             }
         };
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
@@ -213,6 +220,19 @@ NSString *const kHotelListCell = @"kHotelListCell";
 
 
 #pragma mark - Private
+
+- (void)requeHotelList {
+    [_homeViewModel requestQueryApartment:self.area
+                                storeName:self.storeName
+                              checkInTime:self.checkInTime
+                             checkOutTime:self.checkOutTime
+                          checkInRoomType:self.checkInRoomType
+                                 complete:^(NSArray *hotels) {
+                                     
+                                     [_tableView reloadData];
+                                     _headerView.hotelList = _homeViewModel.hotelList;
+                                 }];
+}
 
 - (void)relayoutTableViewOffset:(UIScrollView *)scrollView {
     

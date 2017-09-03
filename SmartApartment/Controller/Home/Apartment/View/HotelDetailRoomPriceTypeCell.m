@@ -8,6 +8,8 @@
 
 #import "HotelDetailRoomPriceTypeCell.h"
 #import <BAButton/BAButton.h>
+#import "DayRoom.h"
+#import "HourRoom.h"
 
 @interface HotelDetailRoomPriceTypeCell ()
 
@@ -102,6 +104,16 @@
     _priceLabel.textAlignment = NSTextAlignmentRight;
     _priceLabel.text = @"¥99起";
     [bgView addSubview:_priceLabel];
+}
+
+- (void)setDayRoom:(DayRoom *)dayRoom {
+    
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", dayRoom.roomPrice];
+}
+
+- (void)setHourRoom:(HourRoom *)hourRoom {
+    
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.roomPrice];
 }
 
 

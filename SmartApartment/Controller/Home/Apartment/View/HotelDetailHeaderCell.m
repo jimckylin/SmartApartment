@@ -8,9 +8,11 @@
 
 #import "HotelDetailHeaderCell.h"
 #import "SDCycleScrollView.h"
+#import "Hotel.h"
 
 @interface HotelDetailHeaderCell ()
 
+@property (nonatomic, strong) SDCycleScrollView *bannerView;
 @property (nonatomic, strong) UIImageView *thumbImgV;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *scoreLabel;
@@ -50,12 +52,12 @@
                                   @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
                                   @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
                                   ];
-    SDCycleScrollView *bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 270) delegate:nil placeholderImage:[UIImage imageNamed:@"snapshot"]];
-    bannerView.imageURLStringsGroup = imagesURLStrings;
-    bannerView.autoScrollTimeInterval = 6;
-    bannerView.autoScroll = NO;
-    bannerView.pageControlBottomOffset = 30;
-    [self.contentView addSubview:bannerView];
+    _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 270) delegate:nil placeholderImage:[UIImage imageNamed:@"bigCelliphone"]];
+    _bannerView.imageURLStringsGroup = imagesURLStrings;
+    _bannerView.autoScrollTimeInterval = 6;
+    _bannerView.autoScroll = NO;
+    _bannerView.pageControlBottomOffset = 30;
+    [self.contentView addSubview:_bannerView];
     
     UIView *bgView = [UIView new];
     bgView.backgroundColor = [UIColor whiteColor];
@@ -124,6 +126,25 @@
     [self addSubview:_line];
 }
 
+- (void)setHotel:(Hotel *)hotel {
+    
+    _bannerView.imageURLStringsGroup = [self pareseImgs:hotel];
+    _titleLabel.text = hotel.storeName;
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:kImage(@"")];
+    _scoreLabel.text = hotel.storeScore;
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@起", hotel.storeRoomMinPrice];
+    
+}
+
+- (NSArray *)pareseImgs:(Hotel *)hotel {
+    
+    NSMutableArray *tempArr = [NSMutableArray array];
+    for (NSDictionary *dic in hotel.storeImageList) {
+        NSString *img = dic[@"storeImage"];
+        [tempArr addObject:img];
+    }
+    return tempArr;
+}
 
 #pragma mark - UIButton Action
 

@@ -40,6 +40,8 @@
     
     _dateView1.delegate = (id<HotelDetailDateViewDelegate>)delegate;
     _dateView2.delegate = (id<HotelDetailDateViewDelegate>)delegate;
+    
+    _delegate = delegate;
 }
 
 - (void)initSubView {
@@ -55,7 +57,7 @@
     [_alldayBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     [_alldayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_alldayBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    _alldayBtn.tag = HotelSelectBtnTypeAlldayRoom;
+    _alldayBtn.tag = HotelRoomTypeAllday;
     _alldayBtn.selected = YES;
     [self addSubview:_alldayBtn];
     
@@ -65,7 +67,7 @@
     [_hoursBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    _hoursBtn.tag = HotelSelectBtnTypeHoursRoom;
+    _hoursBtn.tag = HotelRoomTypeTypeHours;
     [self addSubview:_hoursBtn];
     
     // 时间
@@ -84,12 +86,12 @@
 
 - (void)btnClick:(UIButton *)sender {
     
-    HotelSelectBtnType type = sender.tag;
-    if (type == HotelSelectBtnTypeAlldayRoom || type == HotelSelectBtnTypeHoursRoom) {
+    HotelRoomType type = sender.tag;
+    if (type == HotelRoomTypeAllday || type == HotelRoomTypeTypeHours) {
         
-        UIButton *alldayBtn = [self viewWithTag:HotelSelectBtnTypeAlldayRoom];
-        UIButton *hoursBtn = [self viewWithTag:HotelSelectBtnTypeHoursRoom];
-        if (type == HotelSelectBtnTypeAlldayRoom) {
+        UIButton *alldayBtn = [self viewWithTag:HotelRoomTypeAllday];
+        UIButton *hoursBtn = [self viewWithTag:HotelRoomTypeTypeHours];
+        if (type == HotelRoomTypeAllday) {
             alldayBtn.selected = YES;
             hoursBtn.selected = NO;
             
@@ -102,6 +104,10 @@
             _dateView1.hidden = YES;
             _dateView2.hidden = NO;
         }
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelDetailDateViewDidClick:)]) {
+        [self.delegate hotelDetailRoomTypeCellDidClickBtn:type];
     }
 }
 

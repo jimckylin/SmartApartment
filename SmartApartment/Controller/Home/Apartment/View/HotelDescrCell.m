@@ -7,6 +7,7 @@
 //
 
 #import "HotelDescrCell.h"
+#import "Hotel.h"
 
 @interface HotelDescrCell ()
 
@@ -48,18 +49,22 @@
     _descrLabel.font = [UIFont systemFontOfSize:12];
     _descrLabel.textColor = [UIColor grayColor];
     _descrLabel.numberOfLines = 0;
-    _descrLabel.text = @"酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍";
+    _descrLabel.text = @"酒店介绍";
     [bgView addSubview:_descrLabel];
 }
 
-- (void)setRoomPriceDic:(NSDictionary *)roomPriceDic {
+
+- (void)setHotel:(Hotel *)hotel {
     
+    _titleLabel.text = hotel.storeName;
+    _descrLabel.text = hotel.storeRemark;
     
+    _hotel = hotel;
 }
 
-+ (CGFloat)getDescrCellHeight:(NSDictionary *)dict {
++ (CGFloat)getDescrCellHeight:(Hotel *)hotel {
     
-    NSString *text = @"酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍";
+    NSString *text = hotel.storeRemark;
     CGFloat width = kScreenWidth - 30;
     
     CGSize contentSize;

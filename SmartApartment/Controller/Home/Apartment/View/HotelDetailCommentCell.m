@@ -8,6 +8,7 @@
 
 #import "HotelDetailCommentCell.h"
 #import "JWStarView.h"
+#import "HotelDetail.h"
 
 @interface HotelDetailCommentCell ()
 
@@ -111,6 +112,17 @@
     [_replyBg addSubview:_replyContent];
 }
 
+- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+    
+    [_avatarImgV sd_setImageWithURL:[NSURL URLWithString:hotelDetail.username] placeholderImage:kImage(@"mine_headiphone")];
+    _titleLabel.text = hotelDetail.username;
+    _starsView.currentScore = [hotelDetail.storeScore floatValue];
+    _scoreLabel.text = hotelDetail.storeScore;
+    _dateLabel.text = hotelDetail.evaluateDate;
+    _commentLabel.text = hotelDetail.username;
+}
+
+
 
 - (void)updateConstraints {
     
@@ -124,7 +136,7 @@
     
     [_scoreLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_starsView];
     [_scoreLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_starsView];
-    [_scoreLabel autoSetDimension:ALDimensionWidth toSize:20];
+    [_scoreLabel autoSetDimension:ALDimensionWidth toSize:40];
     
     [_dateLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
     [_dateLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_scoreLabel];

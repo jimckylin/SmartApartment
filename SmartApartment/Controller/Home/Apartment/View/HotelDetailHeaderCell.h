@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Hotel;
 
 typedef NS_ENUM(NSInteger, HotelDetailHeaderType) {
     
@@ -25,5 +26,6 @@ typedef NS_ENUM(NSInteger, HotelDetailHeaderType) {
 @interface HotelDetailHeaderCell : UITableViewCell
 
 @property (nonatomic, weak) id<HotelDetailHeaderCellDelegate> delegate;
+@property (nonatomic, strong) Hotel *hotel;
 
 @end

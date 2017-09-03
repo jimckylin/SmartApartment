@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HotelDetail;
+
 
 @interface HotelDetailMoreCommentCell : UITableViewCell
+
+@property (nonatomic, strong) HotelDetail *hotelDetail;
 
 @end
