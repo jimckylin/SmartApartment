@@ -11,6 +11,9 @@
 #import "HotelCommentHeaderCell.h"
 #import "HotelCommentCell.h"
 
+#import "HotelViewModel.h"
+
+
 NSString *const kHotelCommentHeaderCell = @"HotelCommentHeaderCell";
 NSString *const kHotelCommentCell = @"HotelCommentCell";
 
@@ -19,7 +22,8 @@ NSString *const kHotelCommentCell = @"HotelCommentCell";
 UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) HotelViewModel *viewModel;
 
 @end
 
@@ -67,7 +71,7 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _comments.count + 1;
+    return _viewModel.storeEvaluateArr.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,6 +119,10 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (void)initData {
     
+    _viewModel = [HotelViewModel new];
+    [self requestStoreEvaluateList];
+    
+    
     NSArray *comments = @[@{@"userid": @"1",
                             @"name": @"Jimcky",
                             @"avatar": @"https://www.baidu.com",
@@ -147,6 +155,14 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
                             },];
     _comments = [NSMutableArray new];
     [_comments addObjectsFromArray:comments];
+}
+
+- (void)requestStoreEvaluateList {
+    
+    [_viewModel requestStoreEvaluate:self.storeId complete:^(NSArray *evaluateArr) {
+        
+        [_tableView reloadData];
+    }];
 }
 
 

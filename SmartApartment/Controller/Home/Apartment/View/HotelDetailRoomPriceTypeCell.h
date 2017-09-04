@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DayRoom, HourRoom;
+@class DayRoom, HourRoom, HotelDetailRoomPriceTypeCell;
 
 typedef NS_ENUM(NSInteger, HotelRoomListBtnType) {
     
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, HotelRoomListBtnType) {
 };
 
 @protocol HotelDetailRoomPriceTypeCellDelegate <NSObject>
-- (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type;
+- (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type cell:(HotelDetailRoomPriceTypeCell *)cell;
 @end
 
 @interface HotelDetailRoomPriceTypeCell : UITableViewCell

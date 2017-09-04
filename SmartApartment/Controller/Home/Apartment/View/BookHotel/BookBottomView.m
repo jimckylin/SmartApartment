@@ -72,6 +72,11 @@
     [_bgView addSubview:_bookBtn];
 }
 
+- (void)setRoomPrice:(NSString *)roomPrice {
+    
+    _priceLabel.text = [NSString stringWithFormat:@"￥%@", roomPrice];
+}
+
 
 #pragma mark - UIButton Action
 

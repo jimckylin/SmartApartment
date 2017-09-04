@@ -14,7 +14,6 @@
 		A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA21F52C4C100778B53 /* NewAddInvoiceViewController.m */; };
 		A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */; };
 		A912F6AD1F55BADD00DACB4B /* map_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A912F6AC1F55BADD00DACB4B /* map_lineiphone@2x.png */; };
-		A92178EA1F5AC56400C0923A /* HotelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178E91F5AC56400C0923A /* HotelViewModel.m */; };
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
@@ -161,6 +160,14 @@
 		A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642A1F46979D00F78A7E /* UIButton+countDown.m */; };
 		A95D642E1F46985C00F78A7E /* UIImage+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D642D1F46985C00F78A7E /* UIImage+Categories.m */; };
 		A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D64301F46E10500F78A7E /* JKProgressView.m */; };
+		A95D943B1F5CE3EE00E10CEE /* HotelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D943A1F5CE3EE00E10CEE /* HotelViewModel.m */; };
+		A95D943E1F5CE52500E10CEE /* StoreEvaluate.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D943D1F5CE52500E10CEE /* StoreEvaluate.m */; };
+		A95D94411F5CE9C500E10CEE /* StoreEvaluateList.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94401F5CE9C500E10CEE /* StoreEvaluateList.m */; };
+		A95D94601F5D2F2300E10CEE /* Aroma.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94571F5D2F2300E10CEE /* Aroma.m */; };
+		A95D94611F5D2F2300E10CEE /* Breakfast.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94591F5D2F2300E10CEE /* Breakfast.m */; };
+		A95D94621F5D2F2300E10CEE /* FivePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945B1F5D2F2300E10CEE /* FivePiece.m */; };
+		A95D94631F5D2F2300E10CEE /* RoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945D1F5D2F2300E10CEE /* RoomConfig.m */; };
+		A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945F1F5D2F2300E10CEE /* RoomLayout.m */; };
 		A96A33021F47573C00A55A42 /* WRCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33011F47573C00A55A42 /* WRCellView.m */; };
 		A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */; };
 		A96A33081F47FF1B00A55A42 /* BookBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33071F47FF1B00A55A42 /* BookBottomView.m */; };
@@ -331,8 +338,6 @@
 		A9060FA41F52C5C000778B53 /* NewAddInvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAddInvoiceCell.h; sourceTree = "<group>"; };
 		A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAddInvoiceCell.m; sourceTree = "<group>"; };
 		A912F6AC1F55BADD00DACB4B /* map_lineiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_lineiphone@2x.png"; sourceTree = "<group>"; };
-		A92178E81F5AC56400C0923A /* HotelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewModel.h; sourceTree = "<group>"; };
-		A92178E91F5AC56400C0923A /* HotelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewModel.m; sourceTree = "<group>"; };
 		A92178EB1F5AC68300C0923A /* HotelDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetail.h; sourceTree = "<group>"; };
 		A92178EC1F5AC68300C0923A /* HotelDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetail.m; sourceTree = "<group>"; };
 		A92178EE1F5ACC9A00C0923A /* DayRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayRoom.h; sourceTree = "<group>"; };
@@ -573,6 +578,22 @@
 		A95D642D1F46985C00F78A7E /* UIImage+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Categories.m"; sourceTree = "<group>"; };
 		A95D642F1F46E10500F78A7E /* JKProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKProgressView.h; sourceTree = "<group>"; };
 		A95D64301F46E10500F78A7E /* JKProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKProgressView.m; sourceTree = "<group>"; };
+		A95D94391F5CE3EE00E10CEE /* HotelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewModel.h; sourceTree = "<group>"; };
+		A95D943A1F5CE3EE00E10CEE /* HotelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewModel.m; sourceTree = "<group>"; };
+		A95D943C1F5CE52500E10CEE /* StoreEvaluate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreEvaluate.h; sourceTree = "<group>"; };
+		A95D943D1F5CE52500E10CEE /* StoreEvaluate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreEvaluate.m; sourceTree = "<group>"; };
+		A95D943F1F5CE9C500E10CEE /* StoreEvaluateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreEvaluateList.h; sourceTree = "<group>"; };
+		A95D94401F5CE9C500E10CEE /* StoreEvaluateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreEvaluateList.m; sourceTree = "<group>"; };
+		A95D94561F5D2F2300E10CEE /* Aroma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aroma.h; sourceTree = "<group>"; };
+		A95D94571F5D2F2300E10CEE /* Aroma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aroma.m; sourceTree = "<group>"; };
+		A95D94581F5D2F2300E10CEE /* Breakfast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Breakfast.h; sourceTree = "<group>"; };
+		A95D94591F5D2F2300E10CEE /* Breakfast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Breakfast.m; sourceTree = "<group>"; };
+		A95D945A1F5D2F2300E10CEE /* FivePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FivePiece.h; sourceTree = "<group>"; };
+		A95D945B1F5D2F2300E10CEE /* FivePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FivePiece.m; sourceTree = "<group>"; };
+		A95D945C1F5D2F2300E10CEE /* RoomConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomConfig.h; sourceTree = "<group>"; };
+		A95D945D1F5D2F2300E10CEE /* RoomConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomConfig.m; sourceTree = "<group>"; };
+		A95D945E1F5D2F2300E10CEE /* RoomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomLayout.h; sourceTree = "<group>"; };
+		A95D945F1F5D2F2300E10CEE /* RoomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomLayout.m; sourceTree = "<group>"; };
 		A96A33001F47573C00A55A42 /* WRCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCellView.h; sourceTree = "<group>"; };
 		A96A33011F47573C00A55A42 /* WRCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCellView.m; sourceTree = "<group>"; };
 		A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oeder_reminder_iciphone@2x.png"; sourceTree = "<group>"; };
@@ -914,8 +935,8 @@
 		A92178E71F5AC54200C0923A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A92178E81F5AC56400C0923A /* HotelViewModel.h */,
-				A92178E91F5AC56400C0923A /* HotelViewModel.m */,
+				A95D94391F5CE3EE00E10CEE /* HotelViewModel.h */,
+				A95D943A1F5CE3EE00E10CEE /* HotelViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1264,6 +1285,32 @@
 				A95D64181F4692E300F78A7E /* LoginViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A95D94541F5D2EE900E10CEE /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A95D94551F5D2EE900E10CEE /* RoomConfig */,
+			);
+			name = Order;
+			path = Hotel/Order;
+			sourceTree = "<group>";
+		};
+		A95D94551F5D2EE900E10CEE /* RoomConfig */ = {
+			isa = PBXGroup;
+			children = (
+				A95D94561F5D2F2300E10CEE /* Aroma.h */,
+				A95D94571F5D2F2300E10CEE /* Aroma.m */,
+				A95D94581F5D2F2300E10CEE /* Breakfast.h */,
+				A95D94591F5D2F2300E10CEE /* Breakfast.m */,
+				A95D945A1F5D2F2300E10CEE /* FivePiece.h */,
+				A95D945B1F5D2F2300E10CEE /* FivePiece.m */,
+				A95D945C1F5D2F2300E10CEE /* RoomConfig.h */,
+				A95D945D1F5D2F2300E10CEE /* RoomConfig.m */,
+				A95D945E1F5D2F2300E10CEE /* RoomLayout.h */,
+				A95D945F1F5D2F2300E10CEE /* RoomLayout.m */,
+			);
+			path = RoomConfig;
 			sourceTree = "<group>";
 		};
 		A96A32FF1F47573C00A55A42 /* WRCellView */ = {
@@ -1867,8 +1914,8 @@
 		A9EAB8811F5851AC00C367F2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A95D94541F5D2EE900E10CEE /* Order */,
 				A9EAB8821F5851AC00C367F2 /* Hotel */,
-				A9EAB8831F5851AC00C367F2 /* Order */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1886,15 +1933,12 @@
 				A92178EF1F5ACC9A00C0923A /* DayRoom.m */,
 				A92178F11F5ACCAF00C0923A /* HourRoom.h */,
 				A92178F21F5ACCAF00C0923A /* HourRoom.m */,
+				A95D943F1F5CE9C500E10CEE /* StoreEvaluateList.h */,
+				A95D94401F5CE9C500E10CEE /* StoreEvaluateList.m */,
+				A95D943C1F5CE52500E10CEE /* StoreEvaluate.h */,
+				A95D943D1F5CE52500E10CEE /* StoreEvaluate.m */,
 			);
 			path = Hotel;
-			sourceTree = "<group>";
-		};
-		A9EAB8831F5851AC00C367F2 /* Order */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Order;
 			sourceTree = "<group>";
 		};
 		A9EAB8841F5851AC00C367F2 /* Mine */ = {
@@ -2210,6 +2254,7 @@
 				A9EAB8711F5724D500C367F2 /* HistoryTripListCell.m in Sources */,
 				A9415A541F55210D00FAD195 /* Register2View.m in Sources */,
 				A96A33491F4845C000A55A42 /* OrderDetailView.m in Sources */,
+				A95D94611F5D2F2300E10CEE /* Breakfast.m in Sources */,
 				A95D64251F46977F00F78A7E /* UITextField+PhoneTextField.m in Sources */,
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
@@ -2236,6 +2281,7 @@
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */,
+				A95D94631F5D2F2300E10CEE /* RoomConfig.m in Sources */,
 				A9D9ABE21F57FE9F0099819E /* VerifyCode2LoginView.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,
 				A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */,
@@ -2244,6 +2290,7 @@
 				A95B3FD81F3ABED00046E150 /* HotelListViewController.m in Sources */,
 				A97677A41F433BB200EDCDFA /* ZZFoldCellModel.m in Sources */,
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
+				A95D94411F5CE9C500E10CEE /* StoreEvaluateList.m in Sources */,
 				A955E9D11F45735500FEB05F /* HotelDetailMoreCell.m in Sources */,
 				A9EAB85B1F55C6AF00C367F2 /* MD5DataSigner.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
@@ -2269,6 +2316,7 @@
 				A9AA8EDB1F3751F7005F9DBB /* LaunchAdViewController.m in Sources */,
 				A95D642B1F46979D00F78A7E /* UIButton+countDown.m in Sources */,
 				A9EAB8791F5727B400C367F2 /* CommentHeaderCell.m in Sources */,
+				A95D943B1F5CE3EE00E10CEE /* HotelViewModel.m in Sources */,
 				A92F7FD31F4B502A0056CACC /* MyOrderCell.m in Sources */,
 				A9D9ABD31F56AF2A0099819E /* Register2ViewController.m in Sources */,
 				A9D9ABDC1F57F3D40099819E /* NSObject+Coding.m in Sources */,
@@ -2276,7 +2324,7 @@
 				A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */,
 				A95B3FF31F3AC7FF0046E150 /* ZYCalendarView.m in Sources */,
 				A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */,
-				A92178EA1F5AC56400C0923A /* HotelViewModel.m in Sources */,
+				A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
@@ -2297,6 +2345,7 @@
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A92F7FC41F4B3D1E0056CACC /* View+MASAdditions.m in Sources */,
+				A95D94601F5D2F2300E10CEE /* Aroma.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
 				A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */,
 				A95D64221F46946800F78A7E /* UIViewController+CWGJ.m in Sources */,
@@ -2313,6 +2362,7 @@
 				A92F7FF21F4DF1270056CACC /* BalanceDetailListViewController.m in Sources */,
 				A92F800C1F4F3C870056CACC /* RechargeView.m in Sources */,
 				A95D63FF1F46889B00F78A7E /* HotelDetailMoreCommentCell.m in Sources */,
+				A95D94621F5D2F2300E10CEE /* FivePiece.m in Sources */,
 				A9060FA01F52C1EA00778B53 /* InvoiceInfoCell.m in Sources */,
 				A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */,
 				A9EB26451F48D156007DB818 /* UserManager.m in Sources */,
@@ -2328,6 +2378,7 @@
 				A9415A511F5520FA00FAD195 /* Register1View.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
 				A9EAB8881F5851E000C367F2 /* Activity.m in Sources */,
+				A95D943E1F5CE52500E10CEE /* StoreEvaluate.m in Sources */,
 				A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */,
 				A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */,
 				A959C32D1F55B6D3006E091A /* Utils.m in Sources */,

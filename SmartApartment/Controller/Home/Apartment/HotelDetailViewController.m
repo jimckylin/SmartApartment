@@ -272,6 +272,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
                 return cell;
             }else {
                 HotelDetailRoomPriceTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomPriceTypeCell];
+                cell.tag = indexPath.row;
                 cell.delegate = self;
                 
                 if (self.roomType == HotelRoomTypeAllday) {
@@ -377,6 +378,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
         if (_comments.count > 0) {
             if (indexPath.row == 2) {
                 HotelCommentListViewController *vc = [HotelCommentListViewController new];
+                vc.storeId = self.hotel.storeId;
                 [[NavManager shareInstance] showViewController:vc isAnimated:YES];
             }
         }
@@ -458,11 +460,36 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
 
 #pragma mark - HotelDetailRoomPriceTypeCellDelegate
 
-- (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type {
+- (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type cell:(HotelDetailRoomPriceTypeCell *)cell {
     
     NSLog(@"type:%zd", type);
     if (type == HotelRoomListBtnTypeBook) {
         BookHotelViewController *vc = [BookHotelViewController new];
+        vc.hotel = self.hotel;
+        vc.checkInTime = self.checkInTime;
+        vc.checkOutTime = self.checkOutTime;
+        vc.checkInRoomType = self.roomType == HotelRoomTypeAllday? @"0" :@"1";
+        
+        NSInteger index = cell.tag-1;
+        ZZFoldCellModel *foldCellModel;
+        NSString *roomTypeId = @"";
+        NSString *roomTypeName = @"";
+        NSString *roomPrice = @"";
+        
+        if (self.roomType == HotelRoomTypeAllday) {
+            foldCellModel = self.dayRoomArr[index];
+            roomTypeId = foldCellModel.dayRoom.roomTypeId;
+            roomTypeName = foldCellModel.dayRoom.roomTypeName;
+            roomPrice = foldCellModel.dayRoom.roomPrice;
+        }else {
+            foldCellModel = self.hourRoomArr[index];
+            roomTypeId = foldCellModel.hourRoom.roomTypeId;
+            roomTypeName = foldCellModel.hourRoom.roomTypeName;
+            roomPrice = foldCellModel.dayRoom.roomPrice;
+        }
+        vc.roomTypeId = roomTypeId;
+        vc.roomTypeName = roomTypeName;
+        vc.roomPrice = roomPrice;
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     }
 }

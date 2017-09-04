@@ -22,5 +22,6 @@ typedef NS_ENUM(NSInteger, HotelBookBtnType) {
 @interface BookBottomView : UIView
 
 @property (nonatomic, weak) id<BookBottomViewDelegate> delegate;
+@property (nonatomic, copy) NSString *roomPrice;
 
 @end

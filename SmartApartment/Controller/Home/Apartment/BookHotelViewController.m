@@ -14,6 +14,10 @@
 #import "BookBottomView.h"
 #import <PPNumberButton/PPNumberButton.h>
 
+#import "Hotel.h"
+#import "HotelDetail.h"
+
+#import "HotelViewModel.h"
 
 #define WRCellViewHeight  50
 #define CustomViewX       110
@@ -48,6 +52,8 @@
 
 @property (nonatomic, strong) BookDetailView *bookDetailView;
 
+@property (nonatomic, strong) HotelViewModel *viewModel;
+
 @end
 
 
@@ -55,6 +61,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self iniData];
     [self initView];
     [self addViews];
     [self setCellFrame];
@@ -91,6 +98,7 @@
     [self.tipView addSubview:self.tipLabel];
     
     BookBottomView *bottomView = [BookBottomView new];
+    bottomView.roomPrice = self.roomPrice;
     bottomView.delegate = self;
     [self.view addSubview:bottomView];
     [bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
@@ -121,7 +129,7 @@
     self.arriveTimeView.tapBlock = ^ {
         __strong typeof(self) pThis = weakSelf;
         
-        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"12:00前", @"13:00前", @"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前", nil];
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前", nil];
         // 显示
         [actionsheet showInView:pThis.view];
     };
@@ -146,7 +154,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    NSArray *times = @[@"12:00前", @"13:00前", @"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
+    NSArray *times = @[@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
     if (buttonIndex < [times count]) {
         NSString *time = times[buttonIndex];
         self.arriveTimeLabel.text = time;
@@ -159,12 +167,33 @@
 - (void)bookBottomViewDickBtn:(HotelBookBtnType)type detailShow:(BOOL)show {
     
     if (type == HotelSelectBtnTypeBook) {
-        BookSuccessViewController *vc = [BookSuccessViewController new];
-        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         
+        NSString *arriveTime = [self.arriveTimeLabel.text stringByReplacingOccurrencesOfString:@"前" withString:@""];
+        arriveTime = [NSString stringWithFormat:@"%@ %@", self.checkInTime, arriveTime];
+        [_viewModel requestSubmitOrder:self.hotel.storeId
+                            roomTypeId:self.roomTypeId
+                       checkInRoomType:self.checkInRoomType
+                                  name:self.livePersonTF.text
+                           mobilePhone:self.phoneNumTF.text
+                           checkInTime:self.checkInTime
+                          checkOutTime:self.checkOutTime
+                            arriveTime:arriveTime
+                                remark:self.remarkTF.text
+                           breakfastId:@""
+                          breakfastNum:@""
+                           fivePieceId:@""
+                               aromaId:@""
+                          roomLayoutId:@""
+                                wineId:@"" complete:^(NSDictionary *resp) {
+            
+                                    BookSuccessViewController *vc = [BookSuccessViewController new];
+                                    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }];
     }else {
         if (show) {
             _bookDetailView = [[BookDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 50)];
+            _bookDetailView.checkInTime = self.checkInTime;
+            _bookDetailView.roomPrice = self.roomPrice;
             [self.view addSubview:_bookDetailView];
         }else {
             [_bookDetailView removeFromSuperview];
@@ -189,24 +218,44 @@
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 12, kScreenHeight-30, 25)];
         _titleLabel.font = [UIFont systemFontOfSize:15];
         _titleLabel.textColor = [UIColor darkTextColor];
-        _titleLabel.text = @"尚客优酒店北京怀柔区北房镇幸福大街店";
+        _titleLabel.text = self.hotel.storeName;
         [_headerView addSubview:_titleLabel];
         
         _descrLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, _titleLabel.bottom, kScreenHeight-30, 25)];
         _descrLabel.font = [UIFont systemFontOfSize:14];
         _descrLabel.textColor = [UIColor grayColor];
-        _descrLabel.text = @"高级麻将套房";
+        _descrLabel.text = self.roomTypeName;
         [_headerView addSubview:_descrLabel];
+        
+        
+        
+        NSDate *checkinDate = [NSDate sia_dateFromString:self.checkInTime withFormat:@"yyyy-MM-dd"];
+        NSDate *checkoutDate = [NSDate sia_dateFromString:self.checkOutTime withFormat:@"yyyy-MM-dd"];
+        NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+        
+        NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd"];
+        NSString *checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd"];
         
         _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, _descrLabel.bottom, kScreenHeight-30, 25)];
         _dateLabel.font = [UIFont systemFontOfSize:14];
         _dateLabel.textColor = [UIColor grayColor];
-        _dateLabel.text = @"入住08月19日 离店08月20日 1晚";
+        _dateLabel.text = [NSString stringWithFormat:@"入住%@ 离店%@ %zd晚", checkinDateStr, checkoutDateStr, days];
         [_headerView addSubview:_dateLabel];
         
     }
     return _headerView;
 }
+
+- (void)iniData {
+    
+    _viewModel = [HotelViewModel new];
+    [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
+        
+        
+    }];
+}
+
+
 
 - (WRCellView *)roomNumView {
     if (_roomNumView == nil) {
@@ -297,7 +346,7 @@
         _livePersonTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _livePersonTF.font = [UIFont systemFontOfSize:14];
         _livePersonTF.textColor = [UIColor darkTextColor];
-        _livePersonTF.text = @"Jimcky Lin";
+        _livePersonTF.text = [UserManager manager].user.name;
     }
     return _livePersonTF;
 }
@@ -317,7 +366,7 @@
         _phoneNumTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _phoneNumTF.font = [UIFont systemFontOfSize:14];
         _phoneNumTF.textColor = [UIColor darkTextColor];
-        _phoneNumTF.text = @"15606025989";
+        _phoneNumTF.text = [UserManager manager].user.mobilePhone;
     }
     return _phoneNumTF;
 }

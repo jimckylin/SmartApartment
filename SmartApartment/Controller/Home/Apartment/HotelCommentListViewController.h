@@ -10,4 +10,6 @@
 
 @interface HotelCommentListViewController : ParentViewController
 
+@property (nonatomic, strong) NSString *storeId;
+
 @end

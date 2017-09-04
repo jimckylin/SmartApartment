@@ -82,6 +82,14 @@
     [line2 autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 0.5)];
 }
 
+- (void)setCheckInTime:(NSString *)checkInTime {
+    _dateLabel.text = [checkInTime stringByReplacingOccurrencesOfString:@"-" withString:@"."];
+}
+
+- (void)setRoomPrice:(NSString *)roomPrice {
+    _priceLabel.text = [NSString stringWithFormat:@"￥%@", roomPrice];
+}
+
 
 #pragma mark - UIButton Action
 

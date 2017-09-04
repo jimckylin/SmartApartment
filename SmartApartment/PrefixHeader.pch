@@ -25,6 +25,7 @@
 #import <SIADateFormatter/NSDateFormatter+SIADateFormatter.h>
 #import "NSDate+Utilities.h"
 #import <MJRefresh/MJRefresh.h>
+#import "NSMutableDictionary+CWGJ.h"
 
 // 根据屏幕高度比算出不同设备对应数值
 #define kGetScreenHeightScale(height) iPhone5SE? height * 568 / 667.0 : iPhone6_6s? height * 667 / 667.0 : height * 736 / 667.0

@@ -10,4 +10,7 @@
 
 @interface BookDetailView : UIView
 
+@property (nonatomic, copy) NSString *checkInTime;
+@property (nonatomic, copy) NSString *roomPrice;       // 房间价格
+
 @end

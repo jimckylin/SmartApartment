@@ -121,8 +121,8 @@
 
 - (void)btnClick:(UIButton *)sender {
     
-    if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickBtn:)]) {
-        [self.delegate hotelDetailRoomPriceTypeCellDidClickBtn:sender.tag];
+    if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickBtn:cell:)]) {
+        [self.delegate hotelDetailRoomPriceTypeCellDidClickBtn:sender.tag cell:self];
     }
 }
 
