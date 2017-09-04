@@ -168,6 +168,7 @@
 		A95D94621F5D2F2300E10CEE /* FivePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945B1F5D2F2300E10CEE /* FivePiece.m */; };
 		A95D94631F5D2F2300E10CEE /* RoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945D1F5D2F2300E10CEE /* RoomConfig.m */; };
 		A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945F1F5D2F2300E10CEE /* RoomLayout.m */; };
+		A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94661F5D4D4D00E10CEE /* Wine.m */; };
 		A96A33021F47573C00A55A42 /* WRCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33011F47573C00A55A42 /* WRCellView.m */; };
 		A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */; };
 		A96A33081F47FF1B00A55A42 /* BookBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33071F47FF1B00A55A42 /* BookBottomView.m */; };
@@ -594,6 +595,8 @@
 		A95D945D1F5D2F2300E10CEE /* RoomConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomConfig.m; sourceTree = "<group>"; };
 		A95D945E1F5D2F2300E10CEE /* RoomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomLayout.h; sourceTree = "<group>"; };
 		A95D945F1F5D2F2300E10CEE /* RoomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomLayout.m; sourceTree = "<group>"; };
+		A95D94651F5D4D4D00E10CEE /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
+		A95D94661F5D4D4D00E10CEE /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
 		A96A33001F47573C00A55A42 /* WRCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCellView.h; sourceTree = "<group>"; };
 		A96A33011F47573C00A55A42 /* WRCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCellView.m; sourceTree = "<group>"; };
 		A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oeder_reminder_iciphone@2x.png"; sourceTree = "<group>"; };
@@ -1309,6 +1312,8 @@
 				A95D945D1F5D2F2300E10CEE /* RoomConfig.m */,
 				A95D945E1F5D2F2300E10CEE /* RoomLayout.h */,
 				A95D945F1F5D2F2300E10CEE /* RoomLayout.m */,
+				A95D94651F5D4D4D00E10CEE /* Wine.h */,
+				A95D94661F5D4D4D00E10CEE /* Wine.m */,
 			);
 			path = RoomConfig;
 			sourceTree = "<group>";
@@ -2343,6 +2348,7 @@
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9EAB85F1F55C6AF00C367F2 /* RSADataVerifier.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
+				A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A92F7FC41F4B3D1E0056CACC /* View+MASAdditions.m in Sources */,
 				A95D94601F5D2F2300E10CEE /* Aroma.m in Sources */,
