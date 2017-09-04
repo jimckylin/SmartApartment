@@ -139,7 +139,7 @@
         priceLabel.font = [UIFont systemFontOfSize:13];
         priceLabel.textColor = [UIColor grayColor];
         priceLabel.textAlignment = RTTextAlignmentCenter;
-        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=red>394</font>"];
+        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=red>%@</font>", self.price];
         [_headerView addSubview:priceLabel];
     }
     return _headerView;

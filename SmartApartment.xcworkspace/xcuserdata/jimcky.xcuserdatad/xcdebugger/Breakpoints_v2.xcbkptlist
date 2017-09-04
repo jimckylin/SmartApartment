@@ -10,13 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-            timestampString = "526198585.26099"
+            timestampString = "526239252.490862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HotelViewModel requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
+                  timestampString = "526240093.428857"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1653">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__198-[HotelViewModel requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
+                  timestampString = "526240093.436945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/BookHotelViewController.m"
-            timestampString = "526197553.004374"
+            timestampString = "526239896.734513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-bookBottomViewDickBtn:detailShow:"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-            timestampString = "526198585.26099"
+            timestampString = "526240158.509078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:"
             landmarkType = "7">
          </BreakpointContent>

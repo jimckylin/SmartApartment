@@ -18,7 +18,7 @@
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass {
     return @{
              @"aromaList" : [Aroma class],
-             @"breakfastList" : [Aroma class],
+             @"breakfastList" : [Breakfast class],
              @"fivePieceList" : [FivePiece class],
              @"roomLayoutList" : [RoomLayout class],
              @"wineList" : [Wine class]

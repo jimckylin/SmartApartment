@@ -10,4 +10,7 @@
 
 @interface BookSuccessViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *orderId;
+
 @end

@@ -14,6 +14,8 @@
 #import "BookBottomView.h"
 #import <PPNumberButton/PPNumberButton.h>
 
+#import "HotelConfigView.h"
+
 #import "Hotel.h"
 #import "HotelDetail.h"
 
@@ -23,7 +25,7 @@
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface BookHotelViewController ()<BookBottomViewDelegate, UIActionSheetDelegate>
+@interface BookHotelViewController ()<BookBottomViewDelegate, HotelConfigViewDelete, UIActionSheetDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) UIView        *headerView;
@@ -53,6 +55,13 @@
 @property (nonatomic, strong) BookDetailView *bookDetailView;
 
 @property (nonatomic, strong) HotelViewModel *viewModel;
+
+@property (nonatomic, strong) NSString       *breakfastId;
+@property (nonatomic, strong) NSString       *breakfastNum;
+@property (nonatomic, strong) NSString       *fivePieceId;
+@property (nonatomic, strong) NSString       *aromaId;
+@property (nonatomic, strong) NSString       *roomLayoutId;
+@property (nonatomic, strong) NSString       *wineId;
 
 @end
 
@@ -162,6 +171,24 @@
 }
 
 
+#pragma mark - HotelConfigViewDelete
+
+- (void)hotelConfigViewDidSelectConfig:(NSString *)breakfastId
+                          breakfastNum:(NSString *)breakfastNum
+                           fivePieceId:(NSString *)fivePieceId
+                               aromaId:(NSString *)aromaId
+                          roomLayoutId:(NSString *)roomLayoutId
+                                wineId:(NSString *)wineId {
+    
+    self.breakfastId = breakfastId;
+    self.breakfastNum = breakfastNum;
+    self.fivePieceId = fivePieceId;
+    self.aromaId = aromaId;
+    self.roomLayoutId = roomLayoutId;
+    self.wineId = wineId;
+}
+
+
 #pragma mark - BookBottomViewDelegate
 
 - (void)bookBottomViewDickBtn:(HotelBookBtnType)type detailShow:(BOOL)show {
@@ -179,11 +206,11 @@
                           checkOutTime:self.checkOutTime
                             arriveTime:arriveTime
                                 remark:self.remarkTF.text
-                           breakfastId:@""
-                          breakfastNum:@""
-                           fivePieceId:@""
-                               aromaId:@""
-                          roomLayoutId:@""
+                           breakfastId:self.breakfastId
+                          breakfastNum:self.breakfastNum
+                           fivePieceId:self.fivePieceId
+                               aromaId:self.aromaId
+                          roomLayoutId:self.wineId
                                 wineId:@"" complete:^(NSDictionary *resp) {
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
@@ -249,9 +276,13 @@
 - (void)iniData {
     
     _viewModel = [HotelViewModel new];
+    __WeakObj(self)
     [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
         
-        
+        HotelConfigView *view = [HotelConfigView new];
+        view.delegate = selfWeak;
+        view.roomConfig = roomConfig;
+        [selfWeak.view addSubview:view];
     }];
 }
 

@@ -274,6 +274,9 @@
 		A9BA5DF81F4716D10093A50D /* detail_blank_commentiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BA5DF71F4716D10093A50D /* detail_blank_commentiphone@2x.png */; };
 		A9BF422E1F5C17700050C39F /* evaluate_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */; };
 		A9BF42301F5C17E70050C39F /* home_list_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */; };
+		A9BF42331F5D9EB50050C39F /* HotelConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42321F5D9EB50050C39F /* HotelConfigView.m */; };
+		A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */; };
+		A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */; };
 		A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */; };
 		A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABCF1F56AF1A0099819E /* Register1ViewController.m */; };
 		A9D9ABD31F56AF2A0099819E /* Register2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABD21F56AF2A0099819E /* Register2ViewController.m */; };
@@ -762,6 +765,12 @@
 		A9BA5DF71F4716D10093A50D /* detail_blank_commentiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_blank_commentiphone@2x.png"; sourceTree = "<group>"; };
 		A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "evaluate_blankiphone@2x.png"; sourceTree = "<group>"; };
 		A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_list_blankiphone@2x.png"; sourceTree = "<group>"; };
+		A9BF42311F5D9EB50050C39F /* HotelConfigView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigView.h; sourceTree = "<group>"; };
+		A9BF42321F5D9EB50050C39F /* HotelConfigView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigView.m; sourceTree = "<group>"; };
+		A9BF42341F5DA0F10050C39F /* HotelConfigItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigItemCell.h; sourceTree = "<group>"; };
+		A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigItemCell.m; sourceTree = "<group>"; };
+		A9BF42371F5DAD5E0050C39F /* HotelConfigHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigHeaderView.h; sourceTree = "<group>"; };
+		A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigHeaderView.m; sourceTree = "<group>"; };
 		A9D4D8C71F4434AA005C4100 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		A9D9ABCE1F56AF1A0099819E /* Register1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register1ViewController.h; sourceTree = "<group>"; };
@@ -1337,6 +1346,12 @@
 				A96A33471F4845C000A55A42 /* OrderDetailView.h */,
 				A96A33481F4845C000A55A42 /* OrderDetailView.m */,
 				A96A334A1F4845D000A55A42 /* OrderDetailView.xib */,
+				A9BF42311F5D9EB50050C39F /* HotelConfigView.h */,
+				A9BF42321F5D9EB50050C39F /* HotelConfigView.m */,
+				A9BF42341F5DA0F10050C39F /* HotelConfigItemCell.h */,
+				A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */,
+				A9BF42371F5DAD5E0050C39F /* HotelConfigHeaderView.h */,
+				A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */,
 			);
 			path = BookHotel;
 			sourceTree = "<group>";
@@ -2312,6 +2327,7 @@
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
 				A982240A1F3A19BB00CA9A9F /* TLCityHeaderView.m in Sources */,
 				A96A33131F481DDF00A55A42 /* UseCouponListViewController.m in Sources */,
+				A9BF42331F5D9EB50050C39F /* HotelConfigView.m in Sources */,
 				A955E9C41F454B4300FEB05F /* HotelDetailRoomPriceTypeCell.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A9EAB85A1F55C6AF00C367F2 /* DataVerifier.m in Sources */,
@@ -2331,6 +2347,7 @@
 				A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */,
 				A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
+				A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */,
 				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
@@ -2351,6 +2368,7 @@
 				A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
 				A92F7FC41F4B3D1E0056CACC /* View+MASAdditions.m in Sources */,
+				A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */,
 				A95D94601F5D2F2300E10CEE /* Aroma.m in Sources */,
 				A9AA8EFC1F38B706005F9DBB /* YZTabBarController.m in Sources */,
 				A96A33101F481D6200A55A42 /* OrderDetailViewController.m in Sources */,
