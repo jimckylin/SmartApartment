@@ -38,6 +38,16 @@
 				<string>wxdc1e388c3822c80b</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.wisdom.apartment</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>SmartApartment</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -52,6 +62,8 @@
 		<string>weixin</string>
 		<string>baidumap</string>
 		<string>iosamap</string>
+		<string>alipay</string>
+		<string>safepay</string>
 	</array>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>

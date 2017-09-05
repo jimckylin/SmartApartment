@@ -12,7 +12,7 @@
 
 - (void)cwgj_setObject:(id)object forKey:(NSString *)key
 {
-    if (object) {
+    if (object && ![Utils isBlankString:object]) {
         [self setValue:object forKey:key];
     }
 }

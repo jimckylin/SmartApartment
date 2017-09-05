@@ -9,44 +9,60 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-            timestampString = "526239252.490862"
+            filePath = "SmartApartment/Controller/Home/Apartment/BookHotelViewController.m"
+            timestampString = "526197553.004374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-hotelConfigViewDidSelectConfig:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/General/Manager/PayManager.m"
+            timestampString = "526286634.693142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-requestZFBV2:"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[HotelViewModel requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:]"
+                  symbolName = "-[PayManager requestZFBV2:]"
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-                  timestampString = "526240093.428857"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/Manager/PayManager.m"
+                  timestampString = "526288609.326576"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "1653">
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "184">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__198-[HotelViewModel requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:]_block_invoke"
+                  symbolName = "__27-[PayManager requestZFBV2:]_block_invoke"
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-                  timestampString = "526240093.436945"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/General/Manager/PayManager.m"
+                  timestampString = "526288609.328479"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -57,14 +73,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartApartment/Controller/Home/Apartment/BookHotelViewController.m"
-            timestampString = "526239896.734513"
+            filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
+            timestampString = "526285436.524374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "-bookBottomViewDickBtn:detailShow:"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "-requestConfirmPay:couponId:orderNo:complete:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HotelViewModel requestConfirmPay:couponId:orderNo:complete:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
+                  timestampString = "526288609.332821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__62-[HotelViewModel requestConfirmPay:couponId:orderNo:complete:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
+                  timestampString = "526288609.334797"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,12 +122,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/HotelViewModel.m"
-            timestampString = "526240158.509078"
+            timestampString = "526285438.1885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-requestSubmitOrder:roomTypeId:checkInRoomType:name:mobilePhone:checkInTime:checkOutTime:arriveTime:remark:breakfastId:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:complete:"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-requestConfirmPay:couponId:orderNo:complete:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/General/Manager/PayManager.m"
+            timestampString = "526285759.150866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-requestZFBV2:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

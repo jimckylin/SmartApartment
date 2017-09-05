@@ -80,4 +80,15 @@
                       wineId:(NSString *)wineId
                     complete:(void(^)(NSDictionary *resp))complete;
 
+
+/* 确认支付
+ * @param payWay 支付方式（0-微信支付，1-支付宝支付，2-银行卡支付，3-会员余额支付）
+ * @param couponId 优惠券ID
+ * @param orderNo 订单流水号，由服务端生成使用时间戳+100000随机数
+ */
+- (void)requestConfirmPay:(NSString *)payWay
+                 couponId:(NSString *)couponId
+                  orderNo:(NSString *)orderNo
+                 complete:(void(^)(NSDictionary *orderDict))complete;
+
 @end

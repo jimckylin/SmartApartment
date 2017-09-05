@@ -92,11 +92,12 @@
     return md5Sign;
 }
 #pragma mark -  支付宝
-- (void)requestZFBV2:(NSDictionary *)orderDic {
-    if (orderDic && [orderDic isKindOfClass:[NSDictionary class]]) {
+- (void)requestZFBV2:(NSString *)orderStr {
+    
+    if (orderStr && [orderStr isKindOfClass:[NSString class]]) {
         //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
-        NSString *appScheme = @"CWGJCarOwner";
-        NSString *order = orderDic[@"orderStr"];
+        NSString *appScheme = @"SmartApartment";
+        NSString *order = orderStr;
         [[AlipaySDK defaultService] payOrder:order fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             if ([resultDic[@"resultStatus"] integerValue] == 9000) {
                 //成功

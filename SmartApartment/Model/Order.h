@@ -27,6 +27,7 @@
 
 @property(nonatomic, copy) NSString * rsaDate;//可选
 @property(nonatomic, copy) NSString * appID;//可选
+@property(nonatomic, copy) NSString * method;//可选
 
 @property(nonatomic, readonly) NSMutableDictionary * extraParams;
 

@@ -128,9 +128,8 @@
             complete(0, nil);
         }else {
             NSString *msg = res[@"msg"];
-            NSDictionary *userInfo = @{msg: NSLocalizedDescriptionKey,
-                                       msg: NSLocalizedFailureReasonErrorKey,};
-            NSError *error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:4 userInfo:userInfo];
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: msg};
+            NSError *error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:resultCode userInfo:userInfo];
             complete(resultCode, error);
         }
     }

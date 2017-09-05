@@ -13,6 +13,8 @@
 #import "WRCellView.h"
 #import "BookBottomView.h"
 #import <RTLabel/RTLabel.h>
+#import "HotelViewModel.h"
+#import "PayManager.h"
 
 #define WRCellViewHeight  44
 #define CustomViewX       110
@@ -39,6 +41,7 @@
 @property (nonatomic, strong) UILabel       *invoiceLabel;
 @property (nonatomic, strong) UITextField   *remarkTF;
 @property (nonatomic, strong) UILabel       *tipLabel;
+@property (nonatomic, strong) HotelViewModel *viewModel;
 
 @end
 
@@ -51,6 +54,7 @@
     [self addViews];
     [self setCellFrame];
     [self onClickEvent];
+    [self iniData];
 }
 
 - (void)initView {
@@ -106,12 +110,27 @@
     };
 }
 
+- (void)iniData {
+    
+    _viewModel = [HotelViewModel new];
+}
+
 
 #pragma mark - UIButton Click
 
 - (void)payBtnClick:(UIButton *)sender {
     
-    
+    __WeakObj(self)
+    [_viewModel requestConfirmPay:@"1"
+                         couponId:@""
+                          orderNo:self.orderNo
+                         complete:^(NSDictionary *orderDict) {
+                             
+                             [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
+                             [PayManager getInstance].didPayCompleteBlock = ^{
+                                 // 跳转支付成功页面
+                             };
+                         }];
 }
 
 

@@ -23,7 +23,7 @@
 - (void)requestWX:(WXPayRContent *)rcontent;
 
 //支付宝请求
-- (void)requestZFBV2:(NSDictionary *)orderDic;
+- (void)requestZFBV2:(NSString *)orderStr;
 
 - (void)showPaySuccView;
 

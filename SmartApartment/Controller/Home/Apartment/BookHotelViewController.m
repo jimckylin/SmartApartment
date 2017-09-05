@@ -197,10 +197,12 @@
         
         NSString *arriveTime = [self.arriveTimeLabel.text stringByReplacingOccurrencesOfString:@"前" withString:@""];
         arriveTime = [NSString stringWithFormat:@"%@ %@", self.checkInTime, arriveTime];
+        NSString *name = [self.livePersonTF.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
         [_viewModel requestSubmitOrder:self.hotel.storeId
                             roomTypeId:self.roomTypeId
                        checkInRoomType:self.checkInRoomType
-                                  name:self.livePersonTF.text
+                                  name:name
                            mobilePhone:self.phoneNumTF.text
                            checkInTime:self.checkInTime
                           checkOutTime:self.checkOutTime
@@ -214,6 +216,8 @@
                                 wineId:@"" complete:^(NSDictionary *resp) {
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
+                                    vc.price = resp[@"consumeTotalPrice"];
+                                    vc.orderNo = resp[@"orderNo"];
                                     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }];
     }else {
