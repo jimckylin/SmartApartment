@@ -43,6 +43,8 @@
 @property (nonatomic, strong) UILabel       *tipLabel;
 @property (nonatomic, strong) HotelViewModel *viewModel;
 
+@property (nonatomic, copy) NSString *payType;
+
 @end
 
 
@@ -99,15 +101,38 @@
 
 - (void)onClickEvent {
     
-    //__weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     self.orderDetailView.tapBlock = ^ {
         OrderDetailViewController *vc = [OrderDetailViewController new];
+        vc.orderNo = weakSelf.orderNo;
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     };
     self.couponView.tapBlock = ^ {
         UseCouponListViewController *vc = [UseCouponListViewController new];
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     };
+    
+    
+    // 支付选择
+    self.aliPayView.tapBlock = ^ {
+        weakSelf.payType = @"1";
+        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
+        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
+    };
+    self.wechatPayView.tapBlock = ^ {
+        weakSelf.payType = @"0";
+        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
+        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
+    };
+    self.walletView.tapBlock = ^ {
+        weakSelf.payType = @"3";
+        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_pay_siphone");
+    };
+    
 }
 
 - (void)iniData {
@@ -121,7 +146,7 @@
 - (void)payBtnClick:(UIButton *)sender {
     
     __WeakObj(self)
-    [_viewModel requestConfirmPay:@"1"
+    [_viewModel requestConfirmPay:self.payType
                          couponId:@""
                           orderNo:self.orderNo
                          complete:^(NSDictionary *orderDict) {

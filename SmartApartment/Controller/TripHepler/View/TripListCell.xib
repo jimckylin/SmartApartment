@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bud-Lj-jbL" id="kIm-fs-sfv">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017年08月19日 周六" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wk-zg-lHf">
@@ -317,9 +317,20 @@ Cg
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="address" destination="7cb-C1-2Mt" id="WSV-DS-Nj9"/>
                 <outlet property="bgView" destination="e9G-7T-flf" id="obY-c6-StZ"/>
                 <outlet property="cancelOrderBtn" destination="Ggf-Lw-hLX" id="VNd-fD-0hf"/>
+                <outlet property="checkinDate" destination="8jU-8o-Y9m" id="Zgw-lI-l1P"/>
+                <outlet property="checkinDateHeader" destination="3Wk-zg-lHf" id="fdq-Io-uQg"/>
+                <outlet property="checkinDay" destination="MZr-I4-uOB" id="K2S-w1-YVa"/>
+                <outlet property="checkoutDate" destination="c57-oU-PIG" id="ANg-On-Hyl"/>
+                <outlet property="checkoutDay" destination="H9D-5W-NWe" id="2HN-TN-dcT"/>
+                <outlet property="lastCheckinTime" destination="Hgo-Ab-aa5" id="MfJ-ez-WJ9"/>
                 <outlet property="payOrderBtn" destination="hs3-fC-OS5" id="8mp-Cj-6TQ"/>
+                <outlet property="state" destination="GHl-S8-bMU" id="12e-Qe-f4V"/>
+                <outlet property="storeName" destination="A6v-Ss-wax" id="MML-Fh-i33"/>
+                <outlet property="storeType" destination="bPj-l6-TUp" id="pdO-aC-Yo1"/>
+                <outlet property="thumbImgView" destination="2Nz-hs-zfm" id="wPa-Wk-qlO"/>
             </connections>
             <point key="canvasLocation" x="-17.5" y="10.5"/>
         </tableViewCell>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OrderDetail;
 
 typedef NS_ENUM(NSInteger, OrderDetailViewBtnType) {
     
@@ -17,5 +18,6 @@ typedef NS_ENUM(NSInteger, OrderDetailViewBtnType) {
 @interface OrderDetailView : UIView
 
 @property (nonatomic, copy) void(^OrderDetailViewBlock)(OrderDetailViewBtnType type);
+@property (nonatomic, strong) OrderDetail *orderDetail;
 
 @end

@@ -10,11 +10,13 @@
 #import "CommentHotelViewController.h"
 
 #import "TripListCell.h"
+#import "OrderViewModel.h"
 
 
 @interface TripHistoryListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @end
 
@@ -31,7 +33,12 @@
 
 - (void)iniData {
     
+    _orderViewModel = [OrderViewModel new];
     
+    __WeakObj(self)
+    [_orderViewModel requestGetHistoryTripPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
+        [selfWeak.tableView reloadData];
+    }];
 }
 
 - (void)initSubView {
@@ -51,7 +58,7 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_orderViewModel.tripOrderList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,6 +72,8 @@
     
     TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
     [cell setButtonStyleHistoryTrip];
+    TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
+    cell.tripOrder = order;
     cell.tripListCellBlock = ^(NSInteger tag) {
         if (tag == 1) {
             CommentHotelViewController *vc = [CommentHotelViewController new];

@@ -39,9 +39,11 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="待付款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-XB-Dz8">
-                    <rect key="frame" x="26" y="58" width="93" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待付款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-XB-Dz8">
+                    <rect key="frame" x="26" y="58" width="322" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="vZt-ca-iMg"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -356,88 +358,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-dQ-Bg0">
-                            <rect key="frame" x="15" y="40" width="346" height="82"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="600" constant="82" id="hRc-Fv-lvO"/>
-                            </constraints>
-                            <attributedString key="attributedText">
-                                <fragment content="本订单最晚取消时间为">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="2017-08-22 19:00;">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="当超过最晚取消时间后">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content=",">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="蔓心公寓将不接受您的取消请求">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content=",">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="同时已支付的预付款项不予退还，优惠券订单一经取消后无法恢复。">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment>
-                                    <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="退款相关问题详询">
-                                    <attributes>
-                                        <color key="NSColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="4006-456-999">
-                                    <attributes>
-                                        <color key="NSColor" red="1" green="0.0" blue="0.03977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC2-7c-Zay">
                             <rect key="frame" x="15" y="176" width="346" height="40"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -455,15 +375,20 @@ Cg
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-L2-izm" customClass="RTLabel">
+                            <rect key="frame" x="15" y="40" width="346" height="122"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="eC2-7c-Zay" secondAttribute="bottom" constant="32" id="19o-eb-p1k"/>
                         <constraint firstAttribute="height" constant="248" id="84L-Uh-9k4"/>
-                        <constraint firstItem="Kqr-dQ-Bg0" firstAttribute="leading" secondItem="Xnl-L7-vIH" secondAttribute="leading" constant="15" id="SUY-YZ-5gP"/>
-                        <constraint firstAttribute="trailing" secondItem="Kqr-dQ-Bg0" secondAttribute="trailing" constant="15" id="Xbq-WX-nB8"/>
+                        <constraint firstItem="c5E-L2-izm" firstAttribute="top" secondItem="Xnl-L7-vIH" secondAttribute="top" constant="40" id="Pqr-0d-JLK"/>
+                        <constraint firstItem="c5E-L2-izm" firstAttribute="leading" secondItem="Xnl-L7-vIH" secondAttribute="leading" constant="15" id="VId-8F-0OA"/>
                         <constraint firstAttribute="trailing" secondItem="eC2-7c-Zay" secondAttribute="trailing" constant="15" id="af9-i1-7fc"/>
-                        <constraint firstItem="Kqr-dQ-Bg0" firstAttribute="top" secondItem="Xnl-L7-vIH" secondAttribute="top" constant="40" id="cBQ-6y-7hG"/>
+                        <constraint firstItem="eC2-7c-Zay" firstAttribute="top" secondItem="c5E-L2-izm" secondAttribute="bottom" constant="14" id="hXV-uO-Z2C"/>
+                        <constraint firstAttribute="trailing" secondItem="c5E-L2-izm" secondAttribute="trailing" constant="15" id="lMd-5R-28i"/>
                         <constraint firstItem="eC2-7c-Zay" firstAttribute="leading" secondItem="Xnl-L7-vIH" secondAttribute="leading" constant="15" id="ngy-KF-kd7"/>
                     </constraints>
                 </view>
@@ -475,6 +400,7 @@ Cg
                 <constraint firstItem="uBa-PE-FgJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3Ng-Lj-6ej"/>
                 <constraint firstItem="1tn-dI-oAG" firstAttribute="top" secondItem="grU-UA-of7" secondAttribute="bottom" constant="20" id="3z2-8c-Heu"/>
                 <constraint firstAttribute="trailing" secondItem="uBa-PE-FgJ" secondAttribute="trailing" id="5wB-dH-Gq3"/>
+                <constraint firstItem="fb7-XB-Dz8" firstAttribute="top" secondItem="1Zk-1u-Je6" secondAttribute="bottom" constant="7" id="87h-EJ-Qpa"/>
                 <constraint firstItem="HbQ-j9-nGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="B9v-YH-ftJ"/>
                 <constraint firstItem="HbQ-j9-nGN" firstAttribute="top" secondItem="u8y-5x-ejD" secondAttribute="bottom" constant="32" id="G56-To-33c"/>
                 <constraint firstAttribute="trailing" secondItem="HXQ-Bu-s6i" secondAttribute="trailing" constant="15" id="G58-WB-Jqz"/>
@@ -494,10 +420,12 @@ Cg
                 <constraint firstItem="rhr-id-TxM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bi1-0S-L0l"/>
                 <constraint firstItem="HXQ-Bu-s6i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="cIR-0Z-K0m"/>
                 <constraint firstAttribute="trailing" secondItem="HbQ-j9-nGN" secondAttribute="trailing" id="eMv-Fe-GBo"/>
+                <constraint firstItem="fb7-XB-Dz8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="26" id="fJb-Xe-wcq"/>
                 <constraint firstAttribute="trailing" secondItem="1Zk-1u-Je6" secondAttribute="trailing" constant="27" id="hN0-3g-vmw"/>
                 <constraint firstAttribute="trailing" secondItem="u8y-5x-ejD" secondAttribute="trailing" constant="4" id="k1Y-vz-r97"/>
                 <constraint firstItem="grU-UA-of7" firstAttribute="top" secondItem="HbQ-j9-nGN" secondAttribute="bottom" constant="20" id="kNY-bi-gsI"/>
                 <constraint firstAttribute="trailing" secondItem="Xnl-L7-vIH" secondAttribute="trailing" id="kln-Db-tjZ"/>
+                <constraint firstAttribute="trailing" secondItem="fb7-XB-Dz8" secondAttribute="trailing" constant="27" id="oLX-NX-qzQ"/>
                 <constraint firstItem="grU-UA-of7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oWp-bw-BlK"/>
                 <constraint firstAttribute="trailing" secondItem="rhr-id-TxM" secondAttribute="trailing" id="xGs-GI-Yu6"/>
                 <constraint firstItem="Xnl-L7-vIH" firstAttribute="top" secondItem="uBa-PE-FgJ" secondAttribute="bottom" constant="20" id="yVY-xJ-b3x"/>
@@ -505,8 +433,24 @@ Cg
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="address" destination="6Ki-Yj-gGu" id="0XG-Da-oxK"/>
                 <outlet property="cancelBtn" destination="eC2-7c-Zay" id="sdh-Li-vKy"/>
+                <outlet property="cancelRemark" destination="c5E-L2-izm" id="DhU-XZ-G1G"/>
+                <outlet property="checkinDate" destination="qCS-qf-3BE" id="yUD-d1-eVU"/>
+                <outlet property="checkinTime" destination="Cgl-tN-0Wo" id="9Us-Ci-Qan"/>
+                <outlet property="checkoutTime" destination="Ico-Yc-t9K" id="hmJ-zc-nDi"/>
+                <outlet property="liveMobilePhone" destination="EZw-gK-5Dv" id="fRt-bo-2sG"/>
+                <outlet property="livePerson" destination="zd8-Xs-JS5" id="P5B-Nk-iZN"/>
+                <outlet property="orderNo" destination="Goh-LY-0kX" id="yp2-X6-yhz"/>
                 <outlet property="payOrderBtn" destination="7Hg-HZ-cNd" id="Op8-OB-Arw"/>
+                <outlet property="payState" destination="sDz-B3-ixU" id="cuC-oE-zFf"/>
+                <outlet property="price" destination="1Zk-1u-Je6" id="Ka0-qh-JUU"/>
+                <outlet property="price2" destination="S00-HW-gri" id="jVQ-AI-HNf"/>
+                <outlet property="remark" destination="36b-GE-Tqa" id="cW8-TL-86F"/>
+                <outlet property="state" destination="fb7-XB-Dz8" id="NvQ-kY-gMy"/>
+                <outlet property="storeName" destination="YK0-Rt-31K" id="gwI-tT-WHJ"/>
+                <outlet property="storeTel" destination="ZWJ-1E-XCs" id="ZfB-Cd-brI"/>
+                <outlet property="storeType" destination="Dtl-UR-qgK" id="LIv-Ev-cfj"/>
             </connections>
             <point key="canvasLocation" x="-331.5" y="352"/>
         </view>

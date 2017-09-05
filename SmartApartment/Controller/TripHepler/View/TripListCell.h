@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TripOrder.h"
 
 @interface TripListCell : UITableViewCell
 
 @property (nonatomic, copy) void(^tripListCellBlock)(NSInteger tag);
+@property (nonatomic, strong) TripOrder *tripOrder;
 
 - (void)setButtonStyleHistoryTrip;
 

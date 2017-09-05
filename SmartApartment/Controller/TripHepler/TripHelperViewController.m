@@ -12,12 +12,14 @@
 
 #import "TripHelperNoOrderView.h"
 #import "TripListCell.h"
+#import "OrderViewModel.h"
 
 
 @interface TripHelperViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) TripHelperNoOrderView *tripHelperNoOrderView;
+@property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @end
 
@@ -43,6 +45,14 @@
 
 - (void)iniData {
     
+    _orderViewModel = [OrderViewModel new];
+    
+    __WeakObj(self)
+    [_orderViewModel requestGetCurrTripComplete:^(NSArray *tripOrderList) {
+        [selfWeak.tableView reloadData];
+    }];
+    
+    
     self.tripHelperNoOrderView.tripHelperNoOrderViewBlock = ^(){
         [[NavManager shareInstance] goToTabbarHome];
     };
@@ -66,7 +76,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([UserManager manager].isLogin) {
-        return 10;
+        return [_orderViewModel.tripOrderList count];
     }
     return 1;
 }
@@ -86,6 +96,9 @@
     TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
     if (![UserManager manager].isLogin) {
         [cell addSubview:self.tripHelperNoOrderView];
+    }else {
+        TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
+        cell.tripOrder = order;
     }
     
     return cell;

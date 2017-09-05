@@ -117,10 +117,10 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"submitOrder" params:dict class:nil success:^(id response) {
         
+        [MBProgressHUD cwgj_hideHUD];
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];

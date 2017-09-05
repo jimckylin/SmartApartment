@@ -8,12 +8,13 @@
 
 #import "OrderDetailViewController.h"
 #import "OrderDetailView.h"
-
+#import "OrderViewModel.h"
 
 @interface OrderDetailViewController ()
 
 @property (nonatomic, strong) IBOutlet UIScrollView *containView;
 @property (nonatomic, strong) OrderDetailView *orderDetailView;
+@property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @end
 
@@ -30,7 +31,18 @@
         self.containView.contentSize = CGSizeMake(0, _orderDetailView.bottom);
     }
     
+    [self initData];
     [self addEvent];
+}
+
+- (void)initData {
+    
+    __WeakObj(self)
+    _orderViewModel = [OrderViewModel new];
+    [_orderViewModel requestOrderInfo:self.orderNo complete:^(OrderDetail *orderDetail) {
+       
+        selfWeak.orderDetailView.orderDetail = orderDetail;
+    }];
 }
 
 - (void)addEvent {

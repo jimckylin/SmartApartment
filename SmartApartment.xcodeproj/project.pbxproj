@@ -245,6 +245,10 @@
 		A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A992C1F11F47331C00D5371C /* HotelCommentListViewController.m */; };
 		A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A992C1F51F4736EA00D5371C /* HotelCommentCell.m */; };
 		A992C1F91F4736EA00D5371C /* HotelCommentHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A992C1F71F4736EA00D5371C /* HotelCommentHeaderCell.m */; };
+		A997DAED1F5ED8EC00F6D1B5 /* OrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAEC1F5ED8EC00F6D1B5 /* OrderViewModel.m */; };
+		A997DAF01F5EDC1000F6D1B5 /* OrderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAEF1F5EDC1000F6D1B5 /* OrderDetail.m */; };
+		A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF21F5EDC7B00F6D1B5 /* Consume.m */; };
+		A997DAF71F5EF88B00F6D1B5 /* TripOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -719,6 +723,14 @@
 		A992C1F51F4736EA00D5371C /* HotelCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCommentCell.m; sourceTree = "<group>"; };
 		A992C1F61F4736EA00D5371C /* HotelCommentHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelCommentHeaderCell.h; sourceTree = "<group>"; };
 		A992C1F71F4736EA00D5371C /* HotelCommentHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCommentHeaderCell.m; sourceTree = "<group>"; };
+		A997DAEB1F5ED8EC00F6D1B5 /* OrderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewModel.h; sourceTree = "<group>"; };
+		A997DAEC1F5ED8EC00F6D1B5 /* OrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewModel.m; sourceTree = "<group>"; };
+		A997DAEE1F5EDC1000F6D1B5 /* OrderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetail.h; sourceTree = "<group>"; };
+		A997DAEF1F5EDC1000F6D1B5 /* OrderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetail.m; sourceTree = "<group>"; };
+		A997DAF11F5EDC7B00F6D1B5 /* Consume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consume.h; sourceTree = "<group>"; };
+		A997DAF21F5EDC7B00F6D1B5 /* Consume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consume.m; sourceTree = "<group>"; };
+		A997DAF51F5EF88A00F6D1B5 /* TripOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripOrder.h; sourceTree = "<group>"; };
+		A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripOrder.m; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -949,6 +961,8 @@
 			children = (
 				A95D94391F5CE3EE00E10CEE /* HotelViewModel.h */,
 				A95D943A1F5CE3EE00E10CEE /* HotelViewModel.m */,
+				A997DAEB1F5ED8EC00F6D1B5 /* OrderViewModel.h */,
+				A997DAEC1F5ED8EC00F6D1B5 /* OrderViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1040,7 +1054,7 @@
 				A9EAB8801F5851AC00C367F2 /* Activity */,
 				A9EAB8811F5851AC00C367F2 /* Home */,
 				A9EAB8841F5851AC00C367F2 /* Mine */,
-				A9EAB8851F5851AC00C367F2 /* TripHelper */,
+				A997DAF41F5EF86900F6D1B5 /* TripHelper */,
 				A94B826F1F4D26DA00840D88 /* ZFBPayRContent.h */,
 				A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */,
 				A94B826C1F4D26C900840D88 /* WXPayRContent.h */,
@@ -1303,6 +1317,10 @@
 			isa = PBXGroup;
 			children = (
 				A95D94551F5D2EE900E10CEE /* RoomConfig */,
+				A997DAEE1F5EDC1000F6D1B5 /* OrderDetail.h */,
+				A997DAEF1F5EDC1000F6D1B5 /* OrderDetail.m */,
+				A997DAF11F5EDC7B00F6D1B5 /* Consume.h */,
+				A997DAF21F5EDC7B00F6D1B5 /* Consume.m */,
 			);
 			name = Order;
 			path = Hotel/Order;
@@ -1311,14 +1329,14 @@
 		A95D94551F5D2EE900E10CEE /* RoomConfig */ = {
 			isa = PBXGroup;
 			children = (
+				A95D945C1F5D2F2300E10CEE /* RoomConfig.h */,
+				A95D945D1F5D2F2300E10CEE /* RoomConfig.m */,
 				A95D94561F5D2F2300E10CEE /* Aroma.h */,
 				A95D94571F5D2F2300E10CEE /* Aroma.m */,
 				A95D94581F5D2F2300E10CEE /* Breakfast.h */,
 				A95D94591F5D2F2300E10CEE /* Breakfast.m */,
 				A95D945A1F5D2F2300E10CEE /* FivePiece.h */,
 				A95D945B1F5D2F2300E10CEE /* FivePiece.m */,
-				A95D945C1F5D2F2300E10CEE /* RoomConfig.h */,
-				A95D945D1F5D2F2300E10CEE /* RoomConfig.m */,
 				A95D945E1F5D2F2300E10CEE /* RoomLayout.h */,
 				A95D945F1F5D2F2300E10CEE /* RoomLayout.m */,
 				A95D94651F5D4D4D00E10CEE /* Wine.h */,
@@ -1585,6 +1603,15 @@
 				A992C1F51F4736EA00D5371C /* HotelCommentCell.m */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		A997DAF41F5EF86900F6D1B5 /* TripHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A997DAF51F5EF88A00F6D1B5 /* TripOrder.h */,
+				A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */,
+			);
+			path = TripHelper;
 			sourceTree = "<group>";
 		};
 		A9AA8E8F1F3712A5005F9DBB = {
@@ -1968,13 +1995,6 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		A9EAB8851F5851AC00C367F2 /* TripHelper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TripHelper;
-			sourceTree = "<group>";
-		};
 		A9EB26211F48AECF007DB818 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2259,6 +2279,7 @@
 				A92F7FEA1F4C95B10056CACC /* CouponViewController.m in Sources */,
 				A95154B11F4C2D1000841D3F /* ShareManager.m in Sources */,
 				A95D64131F468E0400F78A7E /* CZDWebViewController.m in Sources */,
+				A997DAED1F5ED8EC00F6D1B5 /* OrderViewModel.m in Sources */,
 				A959C31D1F5341ED006E091A /* HotelConfigCell.m in Sources */,
 				A92F7FC51F4B3D1E0056CACC /* ViewController+MASAdditions.m in Sources */,
 				A95D64151F468E0400F78A7E /* CZDWebViewModel.m in Sources */,
@@ -2322,6 +2343,7 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A997DAF71F5EF88B00F6D1B5 /* TripOrder.m in Sources */,
 				A9D9ABD91F57E7860099819E /* User.m in Sources */,
 				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
 				A95D64141F468E0400F78A7E /* CZDWebViewFactory.m in Sources */,
@@ -2331,6 +2353,7 @@
 				A955E9C41F454B4300FEB05F /* HotelDetailRoomPriceTypeCell.m in Sources */,
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A9EAB85A1F55C6AF00C367F2 /* DataVerifier.m in Sources */,
+				A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A9D9ABD61F56B82A0099819E /* Register3ViewController.m in Sources */,
 				A94B82471F4D259F00840D88 /* PayManager.m in Sources */,
@@ -2364,6 +2387,7 @@
 				A974F2B61F5880E7008A739A /* HotelList.m in Sources */,
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9EAB85F1F55C6AF00C367F2 /* RSADataVerifier.m in Sources */,
+				A997DAF01F5EDC1000F6D1B5 /* OrderDetail.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,

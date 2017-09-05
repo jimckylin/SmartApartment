@@ -18,6 +18,7 @@
 #import "UsefullInfoViewController.h"
 #import "WalletViewController.h"
 #import "CouponViewController.h"
+#import <BMLine/UIView+BMLine.h>
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -126,6 +127,11 @@
             iconArrow.tag = 1001;
             [cell addSubview:iconArrow];
             
+            UIView *line = [UIView new];
+            line.backgroundColor = [UIColor lightGrayColor];
+            [cell addSubview:line];
+            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+            [line autoSetDimension:ALDimensionHeight toSize:0.5];
         }
         UILabel *subLabel = (UILabel *)[cell viewWithTag:1000];
         UIImageView *iconArrow = (UIImageView *)[cell viewWithTag:1001];
@@ -160,6 +166,12 @@
             iconArrow.center = CGPointMake(kScreenWidth-25, 22);
             iconArrow.tag = 1001;
             [cell addSubview:iconArrow];
+            
+            UIView *line = [UIView new];
+            line.backgroundColor = [UIColor lightGrayColor];
+            [cell addSubview:line];
+            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+            [line autoSetDimension:ALDimensionHeight toSize:0.5];
         }
         cell.textLabel.text = @"关于蔓心宿";
         return cell;

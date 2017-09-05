@@ -10,4 +10,6 @@
 
 @interface OrderDetailViewController : ParentViewController
 
+@property (nonatomic, strong) NSString *orderNo;
+
 @end
