@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bud-Lj-jbL" id="kIm-fs-sfv">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017年08月19日 周六" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wk-zg-lHf">
@@ -206,7 +206,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最晚到店时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-6c-f0Q">
-                                <rect key="frame" x="8" y="245.5" width="153" height="16"/>
+                                <rect key="frame" x="8" y="246" width="153" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="X3F-x3-271"/>
                                     <constraint firstAttribute="width" constant="153" id="xel-9e-3rj"/>
@@ -225,14 +225,62 @@ Cg
                                 <color key="textColor" red="0.21213163860000001" green="0.21213163860000001" blue="0.21213163860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-fC-OS5">
-                                <rect key="frame" x="220" y="279" width="111" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="2Mn-IB-pbA"/>
-                                    <constraint firstAttribute="height" constant="30" id="zEo-sz-72G"/>
-                                </constraints>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fde-8Q-lAi">
+                                <rect key="frame" x="175" y="279" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="立即支付(￥314)">
+                                <state key="normal" title="APP开门">
+                                    <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7d-7t-evG">
+                                <rect key="frame" x="94" y="279" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="自助退房">
+                                    <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-Lw-hLX">
+                                <rect key="frame" x="12" y="279" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="取消订单">
+                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-fC-OS5">
+                                <rect key="frame" x="253" y="279" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="取卡验证码">
                                     <color key="titleColor" red="0.92205226421356201" green="0.18760952353477478" blue="0.27655041217803955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -246,22 +294,9 @@ Cg
                                         <color key="value" red="0.93208259344100952" green="0.78884893655776978" blue="0.80475157499313354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-Lw-hLX">
-                                <rect key="frame" x="115" y="279" width="85" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="ONY-g7-xVh"/>
-                                    <constraint firstAttribute="height" constant="30" id="qtS-mV-Tjr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="取消订单">
-                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="bud-Lj-jbL" eventType="touchUpInside" id="tjX-kK-VFp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -277,13 +312,11 @@ Cg
                             <constraint firstAttribute="trailing" secondItem="0z8-dN-OSs" secondAttribute="trailing" id="IFA-Qh-dut"/>
                             <constraint firstItem="H9D-5W-NWe" firstAttribute="top" secondItem="2Nz-hs-zfm" secondAttribute="bottom" constant="15" id="Jre-lX-V2H"/>
                             <constraint firstItem="0z8-dN-OSs" firstAttribute="top" secondItem="e9G-7T-flf" secondAttribute="top" id="Kqx-aH-yyd"/>
-                            <constraint firstItem="hs3-fC-OS5" firstAttribute="leading" secondItem="Ggf-Lw-hLX" secondAttribute="trailing" constant="20" id="LFI-kO-vuN"/>
                             <constraint firstItem="bPj-l6-TUp" firstAttribute="top" secondItem="8jU-8o-Y9m" secondAttribute="bottom" constant="18" id="Lml-ke-ubm"/>
                             <constraint firstAttribute="trailing" secondItem="tbp-Qb-Shq" secondAttribute="trailing" id="P04-IR-Ag6"/>
                             <constraint firstItem="tbp-Qb-Shq" firstAttribute="leading" secondItem="e9G-7T-flf" secondAttribute="leading" id="P8W-Pl-jF3"/>
                             <constraint firstItem="0z8-dN-OSs" firstAttribute="leading" secondItem="e9G-7T-flf" secondAttribute="leading" id="Soo-h7-BIe"/>
                             <constraint firstItem="MZr-I4-uOB" firstAttribute="top" secondItem="2Nz-hs-zfm" secondAttribute="bottom" constant="15" id="Tgi-lT-sfF"/>
-                            <constraint firstAttribute="bottom" secondItem="hs3-fC-OS5" secondAttribute="bottom" constant="8" id="UJb-LT-Mfc"/>
                             <constraint firstItem="8jU-8o-Y9m" firstAttribute="top" secondItem="2Nz-hs-zfm" secondAttribute="bottom" constant="13" id="VCn-oS-AuH"/>
                             <constraint firstItem="tbp-Qb-Shq" firstAttribute="top" secondItem="0z8-dN-OSs" secondAttribute="bottom" constant="79" id="fds-kN-98Q"/>
                             <constraint firstAttribute="trailing" secondItem="7cb-C1-2Mt" secondAttribute="trailing" constant="12" id="fkJ-vU-ejV"/>
@@ -292,8 +325,6 @@ Cg
                             <constraint firstItem="Io6-6c-f0Q" firstAttribute="leading" secondItem="e9G-7T-flf" secondAttribute="leading" constant="8" id="kvA-Lh-XdU"/>
                             <constraint firstItem="Io6-6c-f0Q" firstAttribute="top" secondItem="bPj-l6-TUp" secondAttribute="bottom" constant="5.5" id="mv6-Vr-3wX"/>
                             <constraint firstItem="7cb-C1-2Mt" firstAttribute="top" secondItem="0z8-dN-OSs" secondAttribute="bottom" constant="87" id="qJR-HA-Q5B"/>
-                            <constraint firstAttribute="bottom" secondItem="Ggf-Lw-hLX" secondAttribute="bottom" constant="8" id="sUo-M9-eiT"/>
-                            <constraint firstAttribute="trailing" secondItem="hs3-fC-OS5" secondAttribute="trailing" constant="14" id="v46-U7-ksE"/>
                             <constraint firstItem="2Nz-hs-zfm" firstAttribute="top" secondItem="e9G-7T-flf" secondAttribute="top" constant="41" id="vAb-bv-Be3"/>
                             <constraint firstItem="c57-oU-PIG" firstAttribute="leading" secondItem="H9D-5W-NWe" secondAttribute="trailing" constant="8" id="y6E-mu-LIu"/>
                         </constraints>
@@ -319,14 +350,16 @@ Cg
             <connections>
                 <outlet property="address" destination="7cb-C1-2Mt" id="WSV-DS-Nj9"/>
                 <outlet property="bgView" destination="e9G-7T-flf" id="obY-c6-StZ"/>
-                <outlet property="cancelOrderBtn" destination="Ggf-Lw-hLX" id="VNd-fD-0hf"/>
                 <outlet property="checkinDate" destination="8jU-8o-Y9m" id="Zgw-lI-l1P"/>
                 <outlet property="checkinDateHeader" destination="3Wk-zg-lHf" id="fdq-Io-uQg"/>
                 <outlet property="checkinDay" destination="MZr-I4-uOB" id="K2S-w1-YVa"/>
                 <outlet property="checkoutDate" destination="c57-oU-PIG" id="ANg-On-Hyl"/>
                 <outlet property="checkoutDay" destination="H9D-5W-NWe" id="2HN-TN-dcT"/>
                 <outlet property="lastCheckinTime" destination="Hgo-Ab-aa5" id="MfJ-ez-WJ9"/>
-                <outlet property="payOrderBtn" destination="hs3-fC-OS5" id="8mp-Cj-6TQ"/>
+                <outlet property="right1Btn" destination="hs3-fC-OS5" id="45O-f0-9JN"/>
+                <outlet property="right2Btn" destination="fde-8Q-lAi" id="TVr-th-W1Y"/>
+                <outlet property="right3Btn" destination="N7d-7t-evG" id="hve-vF-TX1"/>
+                <outlet property="right4Btn" destination="Ggf-Lw-hLX" id="sgC-8m-cX2"/>
                 <outlet property="state" destination="GHl-S8-bMU" id="12e-Qe-f4V"/>
                 <outlet property="storeName" destination="A6v-Ss-wax" id="MML-Fh-i33"/>
                 <outlet property="storeType" destination="bPj-l6-TUp" id="pdO-aC-Yo1"/>

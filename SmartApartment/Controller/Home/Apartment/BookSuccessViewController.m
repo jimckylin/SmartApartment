@@ -9,6 +9,7 @@
 #import "BookSuccessViewController.h"
 #import "OrderDetailViewController.h"
 #import "UseCouponListViewController.h"
+#import "PaySuccessViewController.h"
 
 #import "WRCellView.h"
 #import "BookBottomView.h"
@@ -20,7 +21,7 @@
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface BookSuccessViewController ()<BookBottomViewDelegate>
+@interface BookSuccessViewController ()<BookBottomViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) UIView        *headerView;
@@ -136,7 +137,7 @@
 }
 
 - (void)iniData {
-    
+    self.payType = @"1";
     _viewModel = [HotelViewModel new];
 }
 
@@ -145,17 +146,30 @@
 
 - (void)payBtnClick:(UIButton *)sender {
     
-    __WeakObj(self)
-    [_viewModel requestConfirmPay:self.payType
-                         couponId:@""
-                          orderNo:self.orderNo
-                         complete:^(NSDictionary *orderDict) {
-                             
-                             [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
-                             [PayManager getInstance].didPayCompleteBlock = ^{
-                                 // 跳转支付成功页面
-                             };
-                         }];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"点击确认支付后，不能再次修改优惠券，是否继续支付" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定支付", nil];
+    [alertView show];
+}
+
+
+#pragma mark - UIAlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        __WeakObj(self)
+        [_viewModel requestConfirmPay:self.payType
+                             couponId:@""
+                              orderNo:self.orderNo
+                             complete:^(NSDictionary *orderDict) {
+                                 
+                                 [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
+                                 [PayManager getInstance].didPayCompleteBlock = ^{
+                                     // 跳转支付成功页面
+                                     PaySuccessViewController *vc = [PaySuccessViewController new];
+                                     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+                                 };
+                             }];
+    }
 }
 
 

@@ -268,6 +268,10 @@
 		A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8F031F38C217005F9DBB /* icon_head_back@2x.png */; };
 		A9AA8F061F38C217005F9DBB /* icon_head_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8F041F38C217005F9DBB /* icon_head_back@3x.png */; };
 		A9AA8F0F1F38C31E005F9DBB /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8F0E1F38C31E005F9DBB /* ActivityViewController.m */; };
+		A9B2F7D51F60448600E9068D /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2F7D41F60448600E9068D /* PaySuccessViewController.m */; };
+		A9B2F7D71F6044DE00E9068D /* illustration_commentiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */; };
+		A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */; };
+		A9B2F7DB1F60458B00E9068D /* check_room_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */; };
 		A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BA5DE71F45F5320093A50D /* detail_drop_ic_siphone@2x.png */; };
 		A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BA5DE81F45F5320093A50D /* detail_drop_iciphone@2x.png */; };
 		A9BA5DEC1F45F5320093A50D /* detail_more_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BA5DE91F45F5320093A50D /* detail_more_iciphone@2x.png */; };
@@ -765,6 +769,11 @@
 		A9AA8F041F38C217005F9DBB /* icon_head_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_head_back@3x.png"; sourceTree = "<group>"; };
 		A9AA8F0D1F38C31E005F9DBB /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		A9AA8F0E1F38C31E005F9DBB /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		A9B2F7D31F60448600E9068D /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
+		A9B2F7D41F60448600E9068D /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
+		A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "illustration_commentiphone@2x.png"; sourceTree = "<group>"; };
+		A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_delete_iciphone@2x.png"; sourceTree = "<group>"; };
+		A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_room_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9BA5DE71F45F5320093A50D /* detail_drop_ic_siphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_drop_ic_siphone@2x.png"; sourceTree = "<group>"; };
 		A9BA5DE81F45F5320093A50D /* detail_drop_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_drop_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9BA5DE91F45F5320093A50D /* detail_more_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_more_iciphone@2x.png"; sourceTree = "<group>"; };
@@ -1197,6 +1206,8 @@
 				A9BA5DF21F4614C70093A50D /* BookHotelViewController.m */,
 				A96A330B1F4815B900A55A42 /* BookSuccessViewController.h */,
 				A96A330C1F4815B900A55A42 /* BookSuccessViewController.m */,
+				A9B2F7D31F60448600E9068D /* PaySuccessViewController.h */,
+				A9B2F7D41F60448600E9068D /* PaySuccessViewController.m */,
 				A96A330E1F481D6200A55A42 /* OrderDetailViewController.h */,
 				A96A330F1F481D6200A55A42 /* OrderDetailViewController.m */,
 				A96A331E1F482EE600A55A42 /* OrderDetailViewController.xib */,
@@ -1747,6 +1758,9 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */,
+				A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */,
+				A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */,
 				A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */,
 				A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */,
 				A9415A591F566E1600FAD195 /* nav_return_iciphone@2x.png */,
@@ -2088,6 +2102,7 @@
 				A97677871F3F0AFB00EDCDFA /* mine_vip_1_iciphone@2x.png in Resources */,
 				A95B3FCC1F3AA04D0046E150 /* mine_order_iciphone@2x.png in Resources */,
 				A95154AD1F4C183A00841D3F /* UMSocialSDKResources.bundle in Resources */,
+				A9B2F7D71F6044DE00E9068D /* illustration_commentiphone@2x.png in Resources */,
 				A97677971F41EEA600EDCDFA /* xq_xinyongzhuiphone@2x.png in Resources */,
 				A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */,
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
@@ -2109,6 +2124,7 @@
 				A9AA8F051F38C217005F9DBB /* icon_head_back@2x.png in Resources */,
 				A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */,
 				A992C1ED1F472D8600D5371C /* star_full_iciphone@2x.png in Resources */,
+				A9B2F7DB1F60458B00E9068D /* check_room_iciphone@2x.png in Resources */,
 				A9EB26351F48BC79007DB818 /* TripListCell.xib in Resources */,
 				A9EAB8761F57277E00C367F2 /* illustraion_commentiphone@2x.png in Resources */,
 				A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */,
@@ -2140,6 +2156,7 @@
 				A94B82441F4D1E7A00840D88 /* README.txt in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
+				A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */,
 				A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */,
 				A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */,
 				A9EB263B1F48C124007DB818 /* bigCelliphone@2x.png in Resources */,
@@ -2383,6 +2400,7 @@
 				A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */,
 				A92F80151F516F9D0056CACC /* InvoiceTypeCell.m in Sources */,
 				A9EAB8741F5725AD00C367F2 /* CommentHotelViewController.m in Sources */,
+				A9B2F7D51F60448600E9068D /* PaySuccessViewController.m in Sources */,
 				A95D63FC1F46815A00F78A7E /* HotelDetailCommentCell.m in Sources */,
 				A974F2B61F5880E7008A739A /* HotelList.m in Sources */,
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
