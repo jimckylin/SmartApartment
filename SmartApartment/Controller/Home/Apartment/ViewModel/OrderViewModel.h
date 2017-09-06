@@ -31,4 +31,9 @@
  */
 - (void)requestGetHistoryTripPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize complete:(void(^)(NSArray *tripOrderList))complete;
 
+/* 公寓订单
+ * @param username 手机号码/卡号，使用卡号
+ */
+- (void)requestStoreOrderPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize complete:(void(^)(NSArray *tripOrderList))complete;
+
 @end

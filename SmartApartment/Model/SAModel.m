@@ -60,6 +60,7 @@
                 NSString *decryptString = aesDecryptString(dataString, accessKey);
                 
                 id res = [decryptString objectFromJSONString];
+                NSLog(@"response:============== 接口:%@ ===============\n%@\n================== end ===============", function, res);
                 [self handleResultCode:res complete:^(NSInteger resultCode, NSError *error) {
                     if (resultCode == 0) {
                         [self handleSucces:res class:model success:success];

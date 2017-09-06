@@ -42,11 +42,11 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"getCurrTrip" params:dict class:[TripOrder class] success:^(id response) {
         
+        [MBProgressHUD cwgj_hideHUD];
         self.tripOrderList = response;
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
@@ -67,6 +67,33 @@
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageSize]   forKey:@"pageSize"];
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"historyTrip" params:dict class:[TripOrder class] success:^(id response) {
+        
+        self.tripOrderList = response;
+        if (complete) {
+            complete(response);
+        }
+        [MBProgressHUD cwgj_hideHUD];
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+
+- (void)requestStoreOrderPageNum:(NSInteger)pageNum
+                        pageSize:(NSInteger)pageSize
+                        complete:(void (^)(NSArray *))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:username     forKey:@"username"];
+    [dict cwgj_setObject:token        forKey:@"token"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageNum]    forKey:@"pageNum"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageSize]   forKey:@"pageSize"];
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"storeOrder" params:dict class:[TripOrder class] success:^(id response) {
         
         self.tripOrderList = response;
         if (complete) {

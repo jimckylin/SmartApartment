@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Activity;
 
 @interface ActivityTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) Activity *activity;
 @end

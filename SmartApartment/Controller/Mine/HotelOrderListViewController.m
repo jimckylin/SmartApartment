@@ -9,12 +9,16 @@
 #import "HotelOrderListViewController.h"
 #import "YJSliderView.h"
 #import "MyOrderCell.h"
+#import "OrderViewModel.h"
+
+
 
 @interface HotelOrderListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableView *tableView1;
 @property (nonatomic, strong) YJSliderView *sliderView;
+@property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @end
 
@@ -28,9 +32,18 @@
     self.sliderView.delegate = self;
     [self.view addSubview:self.sliderView];
     
+    [self initData];
     [self initSubView];
 }
 
+- (void)initData {
+    
+    _orderViewModel = [OrderViewModel new];
+    __WeakObj(self)
+    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
+        [selfWeak.tableView reloadData];
+    }];
+}
 
 - (void)initSubView {
     
@@ -91,7 +104,7 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_orderViewModel.tripOrderList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,7 +117,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MyOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyOrderCell" forIndexPath:indexPath];
-    
+    TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
+    cell.tripOrder = order;
     return cell;
 }
 
