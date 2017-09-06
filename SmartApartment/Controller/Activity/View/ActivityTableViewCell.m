@@ -7,6 +7,7 @@
 //
 
 #import "ActivityTableViewCell.h"
+#import "Activity.h"
 
 @interface ActivityTableViewCell ()
 
@@ -71,6 +72,15 @@
     _tagLabel.layer.cornerRadius = 2;
     _tagLabel.text = @"限时活动";
     [self addSubview:_tagLabel];
+}
+
+- (void)setActivity:(Activity *)activity {
+    
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:activity.activityUrl] placeholderImage:kImage(@"travel_details_blankiphone")];
+    _titleLabel.text = activity.activityTitle;
+    _decrLabel.text = activity.activitySubTitle;
+    
+    _dateLabel.text = [NSString stringWithFormat:@"%@-%@", activity.beginDate, activity.endDate];
 }
 
 

@@ -44,7 +44,12 @@
 }
 
 - (void)iniData {
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loginSuccess:)
+                                                 name:@"kLoginSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(logoutSuccess:)
+                                                 name:@"kLogoutSuccess" object:nil];
     _orderViewModel = [OrderViewModel new];
     
     __WeakObj(self)
@@ -131,6 +136,18 @@
     return _tripHelperNoOrderView;
 }
 
+
+#pragma mark - Notification
+
+- (void)loginSuccess:(NSNotification *)noti {
+    
+    [_tableView reloadData];
+}
+
+- (void)logoutSuccess:(NSNotification *)noti {
+    
+    [_tableView reloadData];
+}
 
 
 @end

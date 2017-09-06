@@ -9,10 +9,13 @@
 #import "ActivityViewController.h"
 #import "ActivityTableViewCell.h"
 #import "ActivityDetailViewController.h"
+#import "ActivityViewModel.h"
+#import "CZDWebViewController.h"
 
 @interface ActivityViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) ActivityViewModel *viewModel;
 
 @end
 
@@ -26,7 +29,17 @@
     [_naviBackBtn setHidden:YES];
     _naviLabel.text = NSLocalizedString(@"活动", nil);
     
+    [self initData];
     [self initSubView];
+}
+
+- (void)initData {
+    
+    _viewModel = [ActivityViewModel new];
+    __WeakObj(self)
+    [_viewModel requestGetActivityComplete:^(NSArray *activityArr) {
+        [selfWeak.tableView reloadData];
+    }];
 }
 
 - (void)initSubView {
@@ -45,7 +58,7 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_viewModel.activityArr count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,15 +73,22 @@
     ActivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kActivityTableViewCell];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
-    
+    Activity *activity = _viewModel.activityArr[indexPath.row];
+    cell.activity = activity;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ActivityDetailViewController *vc = [ActivityDetailViewController new];
+    Activity *activity = _viewModel.activityArr[indexPath.row];
+    
+    CZDWebViewController *vc = [CZDWebViewController new];
+    vc.requestUrl = activity.activityUrl;
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    
+//    ActivityDetailViewController *vc = [ActivityDetailViewController new];
+//    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 
