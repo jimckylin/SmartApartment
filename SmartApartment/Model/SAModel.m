@@ -115,7 +115,13 @@
             success(classModel);
         }
     }else {
-        success(res[@"data"]);
+        
+        NSDictionary *resDic = (NSDictionary *)res;
+        if ([resDic.allKeys containsObject:@"data"]) {
+            success(res[@"data"]);
+        }else {
+            success([NSNumber numberWithInt:1]);
+        }
     }
 }
 

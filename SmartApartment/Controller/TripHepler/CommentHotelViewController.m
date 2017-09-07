@@ -12,12 +12,21 @@
 #import "WRCellView.h"
 #import "StarHotelCell.h"
 #import "BlankCell.h"
+#import "OrderViewModel.h"
 
 
 @interface CommentHotelViewController ()<UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource, StarHotelCellDelegtate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) OrderViewModel  *orderViewModel;
+
+@property (nonatomic, assign) CGFloat roomHealthScore;
+@property (nonatomic, assign) CGFloat environmentScore;
+@property (nonatomic, assign) CGFloat hotelScore;
+@property (nonatomic, assign) CGFloat deviceScore;
+
+@property (nonatomic, copy) NSString *commentContent;
 
 @end
 
@@ -27,7 +36,12 @@ UITableViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self iniData];
     [self initSubView];
+}
+
+- (void)iniData {
+    _orderViewModel = [OrderViewModel new];
 }
 
 - (void)initSubView {
@@ -121,6 +135,7 @@ UITableViewDataSource>
         
     }else if (section == 2) {
         StarHotelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarHotelCell"];
+        cell.delegate = self;
         return cell;
     }
     
@@ -136,12 +151,48 @@ UITableViewDataSource>
 }
 
 
+#pragma mark - StarHotelCellDelegtate
+
+- (void)starHotelCellStarViewDidGiveScore:(CGFloat)score viewTag:(NSInteger)tag {
+    
+    if (tag == 1) {
+        self.roomHealthScore = score;
+    }else if (tag == 2) {
+        self.environmentScore = score;
+    }else if (tag == 3) {
+        self.hotelScore = score;
+    }else if (tag == 4) {
+        self.deviceScore = score;
+    }
+}
+
+- (void)starHotelCellStarViewDidComment:(NSString *)content {
+    
+    self.commentContent = content;
+}
+
 
 #pragma mark - UIButton Action
 
 - (void)commitCommentBtnClick:(id)sender {
     
-    
+    __WeakObj(self)
+    [_orderViewModel requestTripReview:self.tripOrder.orderNo
+                       roomHealthScore:self.roomHealthScore
+                      environmentScore:self.environmentScore
+                            hotelScore:self.hotelScore
+                           deviceScore:self.deviceScore
+                      customerEvaluate:self.commentContent
+                         customerImage:nil
+                    imageExtensionName:@"jpg"
+                              complete:^(BOOL isSuccess) {
+                              
+                                  [MBProgressHUD cwgj_showHUDWithText:@"评论成功"];
+                                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                      
+                                      [[NavManager shareInstance] returnToFrontView:YES];
+                                  });
+                              }];
 }
 
 

@@ -17,6 +17,6 @@
 
 /* 获取优惠券
  */
-- (void)requestGetCouponComplete:(void(^)(NSArray *))complete;
+- (void)requestGetCoupon:(NSString *)roomTypeId storeId:(NSString *)storeId complete:(void(^)(NSArray *))complete;
 
 @end

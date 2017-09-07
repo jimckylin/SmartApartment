@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-Bu-91J">
@@ -73,33 +73,20 @@
                                 <color key="textColor" red="0.91764705879999997" green="0.12549019610000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-iZ-kgC">
-                                <rect key="frame" x="184" y="146" width="70" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尚客优酒店北京朝阳区潘家园店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-16-QCF">
+                                <rect key="frame" x="12" y="8" width="328" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="QLL-M8-qcn"/>
-                                    <constraint firstAttribute="height" constant="30" id="Qoq-s7-JSj"/>
+                                    <constraint firstAttribute="height" constant="22" id="ibz-ee-6i3"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.11909547108730978" green="0.11909547108730978" blue="0.11909547108730978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aew-nF-XfO">
+                                <rect key="frame" x="261" y="149" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="删除">
-                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YY-Mh-IXN">
-                                <rect key="frame" x="270" y="146" width="70" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aGM-Sa-Mg5"/>
-                                    <constraint firstAttribute="width" constant="70" id="lCV-oa-cIl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="点评">
+                                <state key="normal" title="取卡验证码">
                                     <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -113,25 +100,16 @@
                                         <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TZ4-5N-h1I"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尚客优酒店北京朝阳区潘家园店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-16-QCF">
-                                <rect key="frame" x="12" y="8" width="328" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="ibz-ee-6i3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.11909547108730978" green="0.11909547108730978" blue="0.11909547108730978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sc-Sk-Q8S">
-                                <rect key="frame" x="98" y="146" width="70" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="LXy-tB-Usx"/>
-                                    <constraint firstAttribute="height" constant="30" id="Oms-2D-iGW"/>
-                                </constraints>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjE-Zw-6cE">
+                                <rect key="frame" x="183" y="149" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="再次预订">
-                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="APP开门">
+                                    <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -140,22 +118,61 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xbT-Fh-93i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REr-ix-c4Y">
+                                <rect key="frame" x="102" y="149" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="自助退房">
+                                    <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e6k-2P-gF4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-yx-TYC">
+                                <rect key="frame" x="20" y="149" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="取消订单">
+                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gnW-2d-ajb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9Sc-Sk-Q8S" secondAttribute="bottom" constant="11" id="1zT-Nl-tSZ"/>
                             <constraint firstItem="gn3-16-QCF" firstAttribute="leading" secondItem="cpy-Bu-91J" secondAttribute="leading" constant="12" id="5Tw-1b-lXi"/>
-                            <constraint firstAttribute="bottom" secondItem="Vmi-iZ-kgC" secondAttribute="bottom" constant="11" id="7XN-09-AgT"/>
-                            <constraint firstItem="5YY-Mh-IXN" firstAttribute="top" secondItem="PAm-Hn-C5I" secondAttribute="bottom" constant="10" id="CoJ-hN-Q6w"/>
                             <constraint firstItem="PAm-Hn-C5I" firstAttribute="top" secondItem="GWc-dp-5aq" secondAttribute="bottom" constant="12" id="DZg-yq-drv"/>
                             <constraint firstItem="0Ty-wi-4Sw" firstAttribute="leading" secondItem="cpy-Bu-91J" secondAttribute="leading" constant="29" id="Id9-d3-Dhw"/>
                             <constraint firstAttribute="trailing" secondItem="GWc-dp-5aq" secondAttribute="trailing" constant="11" id="PIi-ww-PYr"/>
                             <constraint firstAttribute="trailing" secondItem="gn3-16-QCF" secondAttribute="trailing" constant="11" id="PoX-cV-C3Q"/>
                             <constraint firstItem="GWc-dp-5aq" firstAttribute="top" secondItem="0Ty-wi-4Sw" secondAttribute="bottom" constant="22" id="QyC-ev-dQM"/>
-                            <constraint firstItem="5YY-Mh-IXN" firstAttribute="leading" secondItem="Vmi-iZ-kgC" secondAttribute="trailing" constant="16" id="TCX-PJ-w0T"/>
-                            <constraint firstItem="Vmi-iZ-kgC" firstAttribute="leading" secondItem="9Sc-Sk-Q8S" secondAttribute="trailing" constant="16" id="WY1-vg-cdP"/>
                             <constraint firstItem="qT6-CV-PVc" firstAttribute="top" secondItem="GWc-dp-5aq" secondAttribute="bottom" constant="12" id="dld-un-kV5"/>
                             <constraint firstAttribute="trailing" secondItem="0Ty-wi-4Sw" secondAttribute="trailing" constant="12" id="erg-6R-gYp"/>
                             <constraint firstAttribute="trailing" secondItem="t2z-oj-A8o" secondAttribute="trailing" constant="12" id="geS-zt-pTH"/>
@@ -166,7 +183,6 @@
                             <constraint firstItem="gn3-16-QCF" firstAttribute="top" secondItem="cpy-Bu-91J" secondAttribute="top" constant="8" id="n86-IH-ZkG"/>
                             <constraint firstAttribute="trailing" secondItem="PAm-Hn-C5I" secondAttribute="trailing" constant="22" id="nU4-73-Wj7"/>
                             <constraint firstItem="qT6-CV-PVc" firstAttribute="leading" secondItem="cpy-Bu-91J" secondAttribute="leading" constant="12" id="piJ-Hf-J2K"/>
-                            <constraint firstAttribute="trailing" secondItem="5YY-Mh-IXN" secondAttribute="trailing" constant="11" id="uYI-Cm-sCq"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -187,10 +203,12 @@
             <connections>
                 <outlet property="address" destination="t2z-oj-A8o" id="sek-5C-pM2"/>
                 <outlet property="bgView" destination="cpy-Bu-91J" id="aCs-Ji-OAI"/>
-                <outlet property="cancelOrderBtn" destination="Vmi-iZ-kgC" id="rwg-t2-ram"/>
                 <outlet property="checkinCheckoutDate" destination="0Ty-wi-4Sw" id="1M6-re-9tF"/>
                 <outlet property="consumeSumPrice" destination="PAm-Hn-C5I" id="qXt-pr-urO"/>
-                <outlet property="payOrderBtn" destination="5YY-Mh-IXN" id="9An-2f-b3W"/>
+                <outlet property="right1Btn" destination="aew-nF-XfO" id="smZ-tJ-Md1"/>
+                <outlet property="right2Btn" destination="bjE-Zw-6cE" id="Mx9-rY-gCI"/>
+                <outlet property="right3Btn" destination="REr-ix-c4Y" id="SDG-er-xhS"/>
+                <outlet property="right4Btn" destination="aDW-yx-TYC" id="Rt6-3a-y4Z"/>
                 <outlet property="state" destination="qT6-CV-PVc" id="4Gy-29-os0"/>
                 <outlet property="storeName" destination="gn3-16-QCF" id="2EO-Ar-2oh"/>
             </connections>

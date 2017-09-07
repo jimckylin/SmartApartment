@@ -17,7 +17,7 @@
     
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"getActivity" params:nil class:[Activity class] success:^(id response) {
-        if (getTopBlock) {
+        if (getTopBlock) { 
             getTopBlock(response);
         }
         [MBProgressHUD cwgj_hideHUD];

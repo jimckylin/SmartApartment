@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, TripCellBtnType) {
      TripCellBtnTypeAppOpenDoor,               // APP开门
      TripCellBtnTypeCommentRoom,               // 点评
      TripCellBtnTypeDeleteOrder,               // 删除订单
+     TripCellBtnTypeBookAgain,                 // 再次预订
      TripCellBtnTypeNone,                      // 未知
 };
 

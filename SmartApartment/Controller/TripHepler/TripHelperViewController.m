@@ -14,6 +14,7 @@
 
 #import "TripHelperNoOrderView.h"
 #import "TripListCell.h"
+#import "BlankCell.h"
 #import "OrderViewModel.h"
 
 
@@ -91,14 +92,16 @@
 
 - (void)requestData {
     
-    __WeakObj(self)
-    [_orderViewModel requestGetCurrTripComplete:^(NSArray *tripOrderList) {
-        [selfWeak.tableView reloadData];
-        if ([tripOrderList count] == 0) {
-            [selfWeak.tableView.mj_header setHidden:YES];
-        }
-        [selfWeak.tableView.mj_header endRefreshing];
-    }];
+    if ([UserManager manager].isLogin) {
+        __WeakObj(self)
+        [_orderViewModel requestGetCurrTripComplete:^(NSArray *tripOrderList) {
+            [selfWeak.tableView reloadData];
+            if ([tripOrderList count] == 0) {
+                [selfWeak.tableView.mj_header setHidden:YES];
+            }
+            [selfWeak.tableView.mj_header endRefreshing];
+        }];
+    }
 }
 
 - (void)initSubView {
@@ -112,12 +115,15 @@
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 49, 0)];
     
     [_tableView registerNib:[UINib nibWithNibName:@"TripListCell" bundle:nil] forCellReuseIdentifier:@"TripListCell"];
+    [_tableView registerClass:[BlankCell class] forCellReuseIdentifier:@"BlankCell"];
     
-    __weak typeof(self) weakSelf = self;
-    //默认block方法：设置下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestData];
-    }];
+    if ([UserManager manager].isLogin) {
+        __weak typeof(self) weakSelf = self;
+        //默认block方法：设置下拉刷新
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf requestData];
+        }];
+    }
 }
 
 
@@ -142,16 +148,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
-    if (![UserManager manager].isLogin) {
-        [cell addSubview:self.tripHelperNoOrderView];
-    }else {
+    if ([UserManager manager].isLogin) {
+        TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
         cell.delegate = self;
         TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
         cell.tripOrder = order;
+        
+        return cell;
+        
+    }else {
+        BlankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlankCell" forIndexPath:indexPath];
+        [cell addSubview:self.tripHelperNoOrderView];
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -204,7 +214,7 @@
             break;
         case TripCellBtnTypeCommentRoom: {
             CommentHotelViewController *vc = [CommentHotelViewController new];
-            vc.orderNo = order.orderNo;
+            vc.tripOrder = order;
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }
             break;
@@ -259,7 +269,7 @@
 }
 
 - (void)logoutSuccess:(NSNotification *)noti {
-    
+    [_tableView.mj_header setHidden:YES];
     [_tableView reloadData];
 }
 

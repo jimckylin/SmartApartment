@@ -61,4 +61,24 @@
  */
 - (void)requestStoreOrderPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize complete:(void(^)(NSArray *tripOrderList))complete;
 
+/* 行程点评
+ * @param orderNo 订单流水号
+ * @param roomHealthScore 房间卫生评分
+ * @param environmentScore 周围环境评分
+ * @param hotelScore 酒店服务评分
+ * @param deviceScore 设施服务评分
+ * @param customerEvaluate 客户评价
+ * @param customerImage 客户上传图片，最多5张，图片都是base64形式上传
+ * @param imageExtensionName 图片扩展名，比如：png、jgp
+ */
+- (void)requestTripReview:(NSString *)orderNo
+          roomHealthScore:(CGFloat)roomHealthScore
+         environmentScore:(CGFloat)environmentScore
+               hotelScore:(CGFloat)hotelScore
+              deviceScore:(CGFloat)deviceScore
+         customerEvaluate:(NSString *)customerEvaluate
+            customerImage:(NSArray *)customerImage
+       imageExtensionName:(NSString *)imageExtensionName
+                 complete:(void(^)(BOOL isSuccess))complete;
+
 @end

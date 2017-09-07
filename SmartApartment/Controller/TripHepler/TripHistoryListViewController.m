@@ -112,7 +112,7 @@
     switch (btnType) {
         case TripCellBtnTypeCommentRoom: {
             CommentHotelViewController *vc = [CommentHotelViewController new];
-            vc.orderNo = order.orderNo;
+            vc.tripOrder = order;
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }
             break;

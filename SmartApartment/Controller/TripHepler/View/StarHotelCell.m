@@ -9,7 +9,7 @@
 #import "StarHotelCell.h"
 #import "JWStarView.h"
 
-@interface StarHotelCell ()<JWStarViewViewDelegate>
+@interface StarHotelCell ()<JWStarViewViewDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) UILabel *hygieneLabel;     // 卫生
 @property (nonatomic, strong) UILabel *envirmentLabel;   // 环境
@@ -77,21 +77,25 @@
     _hygieneStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, 8, 100, 20)];
     _hygieneStarsView.delegate = self;
     _hygieneStarsView.rateStyle = HalfStar;
+    _hygieneStarsView.tag = 1001;
     [bgView addSubview:_hygieneStarsView];
     
     _envirmentStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _hygieneStarsView.bottom+18, 100, 20)];
     _envirmentStarsView.rateStyle = HalfStar;
     _envirmentStarsView.delegate = self;
+    _envirmentStarsView.tag = 1002;
     [bgView addSubview:_envirmentStarsView];
     
     _serviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _envirmentStarsView.bottom+18, 100, 20)];
     _serviceStarsView.rateStyle = HalfStar;
     _serviceStarsView.delegate = self;
+    _serviceStarsView.tag = 1003;
     [bgView addSubview:_serviceStarsView];
     
     _deviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _serviceStarsView.bottom+18, 100, 20)];
     _deviceStarsView.rateStyle = HalfStar;
     _deviceStarsView.delegate = self;
+    _deviceStarsView.tag = 1004;
     [bgView addSubview:_deviceStarsView];
     
     
@@ -107,21 +111,32 @@
     _commentTextView.backgroundColor = [UIColor lightGrayColor];
     _commentTextView.font = [UIFont systemFontOfSize:13];
     _commentTextView.textColor = [UIColor grayColor];
+    _commentTextView.delegate = self;
     _commentTextView.text = @"写下您的入住体验，帮助千万用户挑选到心仪的酒店";
     [bgView addSubview:_commentTextView];
 }
 
-- (void)setCommentHeaderDic:(NSDictionary *)commentDic {
-    
-    
-}
 
 
 #pragma mark - JWStarViewViewDelegate
 
 -(void)starView:(JWStarView *)starView currentScore:(CGFloat)currentScore {
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(starHotelCellStarViewDidGiveScore:viewTag:)]) {
+        [self.delegate starHotelCellStarViewDidGiveScore:currentScore viewTag:starView.tag-1000];
+    }
+}
+
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(starHotelCellStarViewDidComment:)]) {
+        [self.delegate starHotelCellStarViewDidComment:_commentTextView.text];
+    }
+    
+    return YES;
 }
 
 

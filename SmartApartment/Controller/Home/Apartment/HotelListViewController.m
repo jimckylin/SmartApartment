@@ -63,12 +63,6 @@ NSString *const kHotelListCell = @"kHotelListCell";
     [self.view addSubview:view];
     
     // header
-    _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
-    _headerView.backgroundColor = ThemeColor;
-    _headerView.delegate = self;
-    [_headerView setHeaderViewDateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
-    [self.view addSubview:_headerView];
-    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
@@ -79,16 +73,14 @@ NSString *const kHotelListCell = @"kHotelListCell";
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(90, 0, 0, 0);
     [self.view addSubview:_tableView];
     
+    _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
+    _headerView.backgroundColor = ThemeColor;
+    _headerView.delegate = self;
+    [_headerView setHeaderViewDateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
+    [self.view addSubview:_headerView];
+    
+    
     [self.view bringSubviewToFront:_naviView];
-    
-    // 设置上拉加载更多
-    __WeakObj(self)
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        //Call this Block When enter the refresh status automatically
-        [selfWeak requeHotelList];
-    }];
-    
-    
     UIButton *conditionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     conditionBtn.frame = CGRectMake(40, 20+6.5, kScreenWidth - 55, 31);
     conditionBtn.backgroundColor = RGBA(256, 256, 256, 0.2);

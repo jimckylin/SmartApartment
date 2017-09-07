@@ -7,6 +7,7 @@
 //
 
 #import "CommentHeaderCell.h"
+#import "TripOrder.h"
 
 @interface CommentHeaderCell ()
 
@@ -55,9 +56,9 @@
     [bgView addSubview:_titleLabel];
 }
 
-- (void)setRoomPriceDic:(NSDictionary *)roomPriceDic {
+- (void)setTripOrder:(TripOrder *)tripOrder {
     
-    
+    _titleLabel.text = tripOrder.storeName;
 }
 
 - (void)updateConstraints {

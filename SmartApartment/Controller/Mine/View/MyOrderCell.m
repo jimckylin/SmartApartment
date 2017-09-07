@@ -9,6 +9,7 @@
 #import "MyOrderCell.h"
 #import "TripOrder.h"
 
+
 @interface MyOrderCell ()
 
 
@@ -19,9 +20,10 @@
 @property (nonatomic, weak) IBOutlet UILabel *consumeSumPrice;
 
 @property (nonatomic, weak) IBOutlet UIView   *bgView;
-@property (nonatomic, weak) IBOutlet UIButton *commentBtn;
-@property (nonatomic, weak) IBOutlet UIButton *deleteBtn;
-@property (nonatomic, weak) IBOutlet UIButton *bookAgainBtn;
+@property (nonatomic, strong) IBOutlet UIButton *right1Btn;
+@property (nonatomic, strong) IBOutlet UIButton *right2Btn;
+@property (nonatomic, strong) IBOutlet UIButton *right3Btn;
+@property (nonatomic, strong) IBOutlet UIButton *right4Btn;
 
 @end
 
@@ -31,19 +33,35 @@
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    self.commentBtn.layer.borderWidth = 1;
-    self.commentBtn.layer.borderColor = [UIColor redColor].CGColor;
+    self.right1Btn.layer.borderWidth = 1;
+    self.right2Btn.layer.borderWidth = 1;
+    self.right3Btn.layer.borderWidth = 1;
+    self.right4Btn.layer.borderWidth = 1;
     
-    self.deleteBtn.layer.borderWidth = 1;
-    self.deleteBtn.layer.borderColor = [UIColor grayColor].CGColor;
     
-    self.bookAgainBtn.layer.borderWidth = 1;
-    self.bookAgainBtn.layer.borderColor = [UIColor grayColor].CGColor;
+    CGFloat btnWidth = (self.bgView.width - 14 - 10 - 8*3)/4;
+    
+    [self.right1Btn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:14];
+    [self.right1Btn autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.right1Btn autoSetDimensionsToSize:CGSizeMake(btnWidth, 30)];
+    
+    [self.right2Btn autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.right1Btn withOffset:-8];
+    [self.right2Btn autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.right2Btn autoSetDimensionsToSize:CGSizeMake(btnWidth, 30)];
+    
+    [self.right3Btn autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.right2Btn withOffset:-8];
+    [self.right3Btn autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.right3Btn autoSetDimensionsToSize:CGSizeMake(btnWidth, 30)];
+    
+    [self.right4Btn autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.right3Btn withOffset:-8];
+    [self.right4Btn autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.right4Btn autoSetDimensionsToSize:CGSizeMake(btnWidth, 30)];
 }
 
 
 - (void)setTripOrder:(TripOrder *)tripOrder {
     
+    _tripOrder = tripOrder;
     NSDate *checkinDate = [NSDate sia_dateFromString:tripOrder.checkInTime withFormat:@"yyyy-MM-dd"];
     NSDate *checkoutDate = [NSDate sia_dateFromString:tripOrder.checkOutTime withFormat:@"yyyy-MM-dd"];
     
@@ -59,54 +77,55 @@
 
 - (void)configButton:(NSInteger)orderState {
     
-//    if (orderState == 1) {
-//        self.commentBtn.hidden = NO;
-//        self.deleteBtn.hidden = NO;
-//        self.bookAgainBtn.hidden = YES;
-//        
-//        [self.commentBtn setTitle:@"取卡验证码" forState:UIControlStateNormal];
-//        [self.deleteBtn setTitle:@"取消订单" forState:UIControlStateNormal];
-//        
-//        self.commentBtn.layer.borderColor = [UIColor redColor].CGColor;
-//        self.deleteBtn.layer.borderColor = [UIColor grayColor].CGColor;
-//        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//        
-//        
-//    }else if (orderState == 2) {
-//        self.right1Btn.hidden = NO;
-//        self.right2Btn.hidden = NO;
-//        self.right3Btn.hidden = NO;
-//        self.right4Btn.hidden = NO;
-//        
-//        [self.right1Btn setTitle:@"续住" forState:UIControlStateNormal];
-//        [self.right2Btn setTitle:@"自助退房" forState:UIControlStateNormal];
-//        [self.right3Btn setTitle:@"APP开门" forState:UIControlStateNormal];
-//        [self.right4Btn setTitle:@"点评" forState:UIControlStateNormal];
-//        
-//        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-//        self.right2Btn.layer.borderColor = [UIColor redColor].CGColor;
-//        self.right3Btn.layer.borderColor = [UIColor redColor].CGColor;
-//        self.right4Btn.layer.borderColor = [UIColor grayColor].CGColor;
-//        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [self.right2Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [self.right3Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [self.right4Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//        
-//    }else if (orderState == 9) {
-//        self.right1Btn.hidden = NO;
-//        self.right2Btn.hidden = NO;
-//        self.right3Btn.hidden = YES;
-//        self.right4Btn.hidden = YES;
-//        
-//        [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
-//        [self.right2Btn setTitle:@"删除" forState:UIControlStateNormal];
-//        
-//        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-//        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-//        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    }
+    if (orderState == 1) {
+        self.right1Btn.hidden = NO;
+        self.right2Btn.hidden = NO;
+        self.right3Btn.hidden = YES;
+        self.right4Btn.hidden = YES;
+        
+        [self.right1Btn setTitle:@"取卡验证码" forState:UIControlStateNormal];
+        [self.right2Btn setTitle:@"取消订单" forState:UIControlStateNormal];
+        
+        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        
+        
+    }else if (orderState == 2) {
+        self.right1Btn.hidden = NO;
+        self.right2Btn.hidden = NO;
+        self.right3Btn.hidden = NO;
+        self.right4Btn.hidden = NO;
+        
+        [self.right1Btn setTitle:@"续住" forState:UIControlStateNormal];
+        [self.right2Btn setTitle:@"自助退房" forState:UIControlStateNormal];
+        [self.right3Btn setTitle:@"APP开门" forState:UIControlStateNormal];
+        [self.right4Btn setTitle:@"点评" forState:UIControlStateNormal];
+        
+        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right2Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right3Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right4Btn.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right2Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right3Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right4Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        
+    }else if (orderState == 9) {
+        self.right1Btn.hidden = NO;
+        self.right2Btn.hidden = NO;
+        self.right3Btn.hidden = YES;
+        self.right4Btn.hidden = YES;
+        
+        [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
+        [self.right2Btn setTitle:@"删除" forState:UIControlStateNormal];
+        
+        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }
 }
 
 
@@ -135,6 +154,45 @@
     }
     
     return string;
+}
+
+
+- (IBAction)btnClick:(UIButton *)sender {
+    
+    NSInteger tag = sender.tag;
+    TripCellBtnType type = TripCellBtnTypeNone;
+    
+    NSInteger orderState = [_tripOrder.orderStatus integerValue];
+    if (orderState == 1) {
+        if (tag == 0) {
+            type = TripCellBtnTypeGetCarVerifyCode;
+        }else {
+            type = TripCellBtnTypeCancelOrder;
+        }
+    }
+    else if (orderState == 2) {
+        if (tag == 0) {
+            type = TripCellBtnTypeContinueLiving;
+        }else if (tag == 1) {
+            type = TripCellBtnTypeAutoCheckout;
+        }else if (tag == 2) {
+            type = TripCellBtnTypeAppOpenDoor;
+        }else if (tag == 3) {
+            type = TripCellBtnTypeCommentRoom;
+        }
+    }
+    else if (orderState == 9) {
+        if (tag == 0) {
+            type = TripCellBtnTypeCommentRoom;
+        }else if (tag == 1) {
+            type = TripCellBtnTypeDeleteOrder;
+        }
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(myOrderCellDidClcikBtnType:order:)]) {
+        [self.delegate myOrderCellDidClcikBtnType:type order:self.tripOrder];
+    }
+    
 }
 
 @end

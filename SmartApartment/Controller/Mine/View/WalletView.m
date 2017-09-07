@@ -52,7 +52,7 @@
     _balance.font = [UIFont systemFontOfSize:26];
     _balance.textColor = [UIColor whiteColor];
     _balance.textAlignment = NSTextAlignmentCenter;
-    _balance.text = @"24.00";
+    _balance.text = [UserManager manager].user.cardMoney;
     [self addSubview:_balance];
     
     _balanceLabel = [UILabel new];
@@ -67,7 +67,7 @@
     _recharge.font = [UIFont systemFontOfSize:14];
     _recharge.textColor = [UIColor whiteColor];
     _recharge.textAlignment = NSTextAlignmentCenter;
-    _recharge.text = @"19.00";
+    _recharge.text = [UserManager manager].user.pechargeMoney;
     [self addSubview:_recharge];
     
     _rechargeLabel = [UILabel new];
@@ -84,7 +84,7 @@
     _give.textColor = [UIColor whiteColor];
     _give.textAlignment = NSTextAlignmentCenter;
     _give.textAlignment = NSTextAlignmentCenter;
-    _give.text = @"5.00";
+    _give.text = [UserManager manager].user.giveMoney;
     [self addSubview:_give];
     
     _giveLabel = [UILabel new];

@@ -126,7 +126,7 @@
         _countLabel.layer.borderColor = [UIColor grayColor].CGColor;
         _countLabel.layer.borderWidth = 0.5;
         _countLabel.layer.cornerRadius = 15/2.;
-        _countLabel.text = @"共2晚";
+        _countLabel.text = @"共1晚";
         [self addSubview:_countLabel];
     }
     
@@ -167,6 +167,8 @@
 
 
 - (void)setCheckinDate:(NSDate *)checkinDate {
+    _checkinDate = checkinDate;
+    
     NSString *checkInStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd日"];
     [_liveBtn setTitle:checkInStr forState:UIControlStateNormal];
     _checkinDate = checkinDate;
@@ -176,6 +178,9 @@
     NSString *checkoutStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd日"];
     [_leaveBtn setTitle:checkoutStr forState:UIControlStateNormal];
     _checkoutDate = checkoutDate;
+    
+    NSInteger days = [_checkinDate daysBeforeDate:checkoutDate];
+    _countLabel.text = [NSString stringWithFormat:@"共%zd晚", days];
 }
 
 

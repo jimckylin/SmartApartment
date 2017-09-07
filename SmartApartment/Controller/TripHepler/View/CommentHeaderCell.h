@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TripOrder;
 
 @interface CommentHeaderCell : UITableViewCell
+
+@property (nonatomic, strong) TripOrder *tripOrder;
 
 @end

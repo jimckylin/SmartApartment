@@ -7,13 +7,15 @@
 //
 
 #import "HotelOrderListViewController.h"
+#import "CommentHotelViewController.h"
+
 #import "YJSliderView.h"
 #import "MyOrderCell.h"
 #import "OrderViewModel.h"
 
 
 
-@interface HotelOrderListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HotelOrderListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource, MyOrderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableView *tableView1;
@@ -39,10 +41,7 @@
 - (void)initData {
     
     _orderViewModel = [OrderViewModel new];
-    __WeakObj(self)
-    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
-        [selfWeak.tableView reloadData];
-    }];
+    [self requestData];
 }
 
 - (void)initSubView {
@@ -84,7 +83,7 @@
 }
 
 - (NSString *)yj_SliderView:(YJSliderView *)sliderView titleForItemAtIndex:(NSInteger)index {
-    NSArray *titles = @[@"全部订单", @"带评价"];
+    NSArray *titles = @[@"全部订单", @"待评价"];
     return titles[index];
 }
 
@@ -117,6 +116,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MyOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyOrderCell" forIndexPath:indexPath];
+    cell.delegate = self;
     TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
     cell.tripOrder = order;
     return cell;
@@ -127,6 +127,112 @@
     
 }
 
+#pragma mark - HttpRequest
+
+- (void)requestData {
+    __WeakObj(self)
+    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
+        [selfWeak.tableView reloadData];
+    }];
+}
+
+- (void)requestCancelOrder:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestCancelOrder:orderNo refundReason:@"取消订单" complete:^(BOOL isCancel) {
+        if (isCancel) {
+            [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
+
+- (void)requestCheckOutRoom:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestCheckoutRoom:orderNo complete:^(BOOL isCheckout) {
+        if (isCheckout) {
+            [MBProgressHUD cwgj_showHUDWithText:@"退房成功"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
+- (void)requestDeleteHistoryTrip:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestDelHistoryTrip:orderNo complete:^(BOOL isDelete) {
+        if (isDelete) {
+            [MBProgressHUD cwgj_showHUDWithText:@"删除成功"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
+
+#pragma mark - TripListCellDelegate
+
+- (void)myOrderCellDidClcikBtnType:(TripCellBtnType)btnType order:(TripOrder *)order {
+    
+    switch (btnType) {
+        case TripCellBtnTypeGetCarVerifyCode: {
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            vc.tripOrder = order;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            return;
+            [self showVerifyCode:order.checkInNo];
+        }
+            break;
+        case TripCellBtnTypeCancelOrder: {
+            [self requestCancelOrder:order.orderNo];
+        }
+            break;
+        case TripCellBtnTypeContinueLiving: {
+            [self showContinueLivingTip];
+        }
+            break;
+        case TripCellBtnTypeAutoCheckout: {
+            [self requestCheckOutRoom:order.orderNo];
+        }
+            break;
+        case TripCellBtnTypeAppOpenDoor: {
+            [self showAppOpenDoorTip];
+        }
+            break;
+        case TripCellBtnTypeCommentRoom: {
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            vc.tripOrder = order;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
+        case TripCellBtnTypeDeleteOrder: {
+            [self requestDeleteHistoryTrip:order.orderNo];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+#pragma mark - Private
+
+- (void)showVerifyCode:(NSString *)code {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"取卡验证码" message:code delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void)showAppOpenDoorTip {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"后续开发" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void)showContinueLivingTip {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请到自助机操作" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 
 

@@ -7,9 +7,10 @@
 //
 
 #import "ParentViewController.h"
+#import "TripOrder.h"
 
 @interface CommentHotelViewController : ParentViewController
 
-@property (nonatomic, copy) NSString *orderNo;
+@property (nonatomic, strong) TripOrder *tripOrder;
 
 @end
