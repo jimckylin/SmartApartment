@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Qoq-s7-JSj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="取消">
+                                <state key="normal" title="删除">
                                     <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="width" constant="70" id="lCV-oa-cIl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="支付">
+                                <state key="normal" title="点评">
                                     <color key="titleColor" red="0.92205226419999997" green="0.18760952350000001" blue="0.27655041219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -123,9 +123,29 @@
                                 <color key="textColor" red="0.11909547108730978" green="0.11909547108730978" blue="0.11909547108730978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sc-Sk-Q8S">
+                                <rect key="frame" x="98" y="146" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="LXy-tB-Usx"/>
+                                    <constraint firstAttribute="height" constant="30" id="Oms-2D-iGW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="再次预订">
+                                    <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9Sc-Sk-Q8S" secondAttribute="bottom" constant="11" id="1zT-Nl-tSZ"/>
                             <constraint firstItem="gn3-16-QCF" firstAttribute="leading" secondItem="cpy-Bu-91J" secondAttribute="leading" constant="12" id="5Tw-1b-lXi"/>
                             <constraint firstAttribute="bottom" secondItem="Vmi-iZ-kgC" secondAttribute="bottom" constant="11" id="7XN-09-AgT"/>
                             <constraint firstItem="5YY-Mh-IXN" firstAttribute="top" secondItem="PAm-Hn-C5I" secondAttribute="bottom" constant="10" id="CoJ-hN-Q6w"/>
@@ -135,6 +155,7 @@
                             <constraint firstAttribute="trailing" secondItem="gn3-16-QCF" secondAttribute="trailing" constant="11" id="PoX-cV-C3Q"/>
                             <constraint firstItem="GWc-dp-5aq" firstAttribute="top" secondItem="0Ty-wi-4Sw" secondAttribute="bottom" constant="22" id="QyC-ev-dQM"/>
                             <constraint firstItem="5YY-Mh-IXN" firstAttribute="leading" secondItem="Vmi-iZ-kgC" secondAttribute="trailing" constant="16" id="TCX-PJ-w0T"/>
+                            <constraint firstItem="Vmi-iZ-kgC" firstAttribute="leading" secondItem="9Sc-Sk-Q8S" secondAttribute="trailing" constant="16" id="WY1-vg-cdP"/>
                             <constraint firstItem="qT6-CV-PVc" firstAttribute="top" secondItem="GWc-dp-5aq" secondAttribute="bottom" constant="12" id="dld-un-kV5"/>
                             <constraint firstAttribute="trailing" secondItem="0Ty-wi-4Sw" secondAttribute="trailing" constant="12" id="erg-6R-gYp"/>
                             <constraint firstAttribute="trailing" secondItem="t2z-oj-A8o" secondAttribute="trailing" constant="12" id="geS-zt-pTH"/>
@@ -173,7 +194,7 @@
                 <outlet property="state" destination="qT6-CV-PVc" id="4Gy-29-os0"/>
                 <outlet property="storeName" destination="gn3-16-QCF" id="2EO-Ar-2oh"/>
             </connections>
-            <point key="canvasLocation" x="73.5" y="2"/>
+            <point key="canvasLocation" x="-113" y="-12"/>
         </tableViewCell>
     </objects>
     <resources>

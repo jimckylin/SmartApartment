@@ -10,6 +10,7 @@
 #import "HotelDetailViewController.h"
 #import "TripHistoryListViewController.h"
 #import "OrderDetailViewController.h"
+#import "CommentHotelViewController.h"
 
 #import "TripHelperNoOrderView.h"
 #import "TripListCell.h"
@@ -58,6 +59,35 @@
         [[NavManager shareInstance] goToTabbarHome];
     };
 }
+
+
+#pragma mark - HttpRequest
+
+- (void)requestCancelOrder:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestCancelOrder:orderNo refundReason:@"取消订单" complete:^(BOOL isCancel) {
+        
+        if (isCancel) {
+            [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
+
+- (void)requestCheckOutRoom:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestCheckoutRoom:orderNo complete:^(BOOL isCheckout) {
+        
+        if (isCheckout) {
+            [MBProgressHUD cwgj_showHUDWithText:@"退房成功"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
 
 - (void)requestData {
     
@@ -149,27 +179,33 @@
 
 #pragma mark - TripListCellDelegate
 
-- (void)tripListCellDidClcikBtnType:(TripCellBtnType)btnType {
+- (void)tripListCellDidClcikBtnType:(TripCellBtnType)btnType order:(TripOrder *)order {
     
     switch (btnType) {
         case TripCellBtnTypeGetCarVerifyCode: {
-            
+            [self showVerifyCode:order.checkInNo];
         }
             break;
         case TripCellBtnTypeCancelOrder: {
-            
+            [self requestCancelOrder:order.orderNo];
         }
             break;
         case TripCellBtnTypeContinueLiving: {
-            
+            [self showContinueLivingTip];
         }
             break;
         case TripCellBtnTypeAutoCheckout: {
-            
+            [self requestCheckOutRoom:order.orderNo];
+        }
+            break;
+        case TripCellBtnTypeAppOpenDoor: {
+            [self showAppOpenDoorTip];
         }
             break;
         case TripCellBtnTypeCommentRoom: {
-            
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            vc.orderNo = order.orderNo;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }
             break;
         case TripCellBtnTypeDeleteOrder: {
@@ -181,6 +217,27 @@
             break;
     }
 }
+
+
+#pragma mark - Private
+
+- (void)showVerifyCode:(NSString *)code {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"取卡验证码" message:code delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void)showAppOpenDoorTip {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"后续开发" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void)showContinueLivingTip {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请到自助机操作" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+
+
 
 
 #pragma mark - Getter

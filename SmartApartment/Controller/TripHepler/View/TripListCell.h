@@ -19,12 +19,13 @@ typedef NS_ENUM(NSInteger, TripCellBtnType) {
      TripCellBtnTypeAppOpenDoor,               // APP开门
      TripCellBtnTypeCommentRoom,               // 点评
      TripCellBtnTypeDeleteOrder,               // 删除订单
+     TripCellBtnTypeNone,                      // 未知
 };
 
 
 @protocol TripListCellDelegate <NSObject>
 
-- (void)tripListCellDidClcikBtnType:(TripCellBtnType)btnType;
+- (void)tripListCellDidClcikBtnType:(TripCellBtnType)btnType order:(TripOrder *)order;
 
 @end
 
@@ -33,8 +34,5 @@ typedef NS_ENUM(NSInteger, TripCellBtnType) {
 @property (nonatomic, copy) void(^tripListCellBlock)(NSInteger tag);
 @property (nonatomic, assign) id <TripListCellDelegate> delegate;
 @property (nonatomic, strong) TripOrder *tripOrder;
-
-
-- (void)setButtonStyleHistoryTrip;
 
 @end

@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _naviLabel.text = @"酒店订单";
+    _naviLabel.text = @"公寓订单";
     
     self.sliderView = [[YJSliderView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     self.sliderView.delegate = self;
@@ -84,7 +84,7 @@
 }
 
 - (NSString *)yj_SliderView:(YJSliderView *)sliderView titleForItemAtIndex:(NSInteger)index {
-    NSArray *titles = @[@"全部订单", @"未完成"];
+    NSArray *titles = @[@"全部订单", @"带评价"];
     return titles[index];
 }
 

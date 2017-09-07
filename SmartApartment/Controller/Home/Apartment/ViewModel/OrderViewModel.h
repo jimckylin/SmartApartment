@@ -29,7 +29,32 @@
 /* 获取历史行程
  * @param username 手机号码/卡号，使用卡号
  */
-- (void)requestGetHistoryTripPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize complete:(void(^)(NSArray *tripOrderList))complete;
+- (void)requestGetHistoryTripPageNum:(NSInteger)pageNum
+                            pageSize:(NSInteger)pageSize
+                            complete:(void(^)(NSArray *tripOrderList))complete;
+
+/* 取消订单
+ * @param orderNo 订单流水号
+ * @param refundReason 取消原因
+ */
+- (void)requestCancelOrder:(NSString *)orderNo
+              refundReason:(NSString *)refundReason
+                  complete:(void(^)(BOOL isCancel))complete;
+
+/* 自助退房
+ * @param orderNo 订单流水号
+ */
+- (void)requestCheckoutRoom:(NSString *)orderNo
+                   complete:(void(^)(BOOL isCheckout))complete;
+
+/* 历史行程删除
+ * @param orderNo 订单流水号
+ */
+- (void)requestDelHistoryTrip:(NSString *)orderNo
+                  complete:(void(^)(BOOL isDelete))complete;
+
+
+
 
 /* 公寓订单
  * @param username 手机号码/卡号，使用卡号

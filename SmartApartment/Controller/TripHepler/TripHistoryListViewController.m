@@ -8,12 +8,13 @@
 
 #import "TripHistoryListViewController.h"
 #import "CommentHotelViewController.h"
+#import "OrderDetailViewController.h"
 
 #import "TripListCell.h"
 #import "OrderViewModel.h"
 
 
-@interface TripHistoryListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface TripHistoryListViewController ()<UITableViewDelegate, UITableViewDataSource, TripListCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
@@ -29,16 +30,11 @@
     
     [self iniData];
     [self initSubView];
+    [self requestData];
 }
 
 - (void)iniData {
-    
     _orderViewModel = [OrderViewModel new];
-    
-    __WeakObj(self)
-    [_orderViewModel requestGetHistoryTripPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
-        [selfWeak.tableView reloadData];
-    }];
 }
 
 - (void)initSubView {
@@ -71,32 +67,64 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
-    [cell setButtonStyleHistoryTrip];
+    cell.delegate = self;
     TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
     cell.tripOrder = order;
-    cell.tripListCellBlock = ^(NSInteger tag) {
-        if (tag == 1) {
-            CommentHotelViewController *vc = [CommentHotelViewController new];
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-        }
-    };
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
+    OrderDetailViewController *vc = [OrderDetailViewController new];
+    vc.orderNo = order.orderNo;
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 
-#pragma mark - UIButton Action
+#pragma mark - HttpRequest
 
-- (void)tripHistoryBtnClick:(id)sender {
+- (void)requestData {
     
-    
+    __WeakObj(self)
+    [_orderViewModel requestGetHistoryTripPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
+        [selfWeak.tableView reloadData];
+    }];
 }
 
+- (void)requestDeleteHistoryTrip:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestDelHistoryTrip:orderNo complete:^(BOOL isDelete) {
+        if (isDelete) {
+            [MBProgressHUD cwgj_showHUDWithText:@"删除成功"];
+            [selfWeak requestData];
+        }
+    }];
+}
+
+
+#pragma mark - TripListCellDelegate
+
+- (void)tripListCellDidClcikBtnType:(TripCellBtnType)btnType order:(TripOrder *)order {
+    
+    switch (btnType) {
+        case TripCellBtnTypeCommentRoom: {
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            vc.orderNo = order.orderNo;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        }
+            break;
+        case TripCellBtnTypeDeleteOrder: {
+            [self requestDeleteHistoryTrip:order.orderNo];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 

@@ -10,4 +10,6 @@
 
 @interface CommentHotelViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *orderNo;
+
 @end

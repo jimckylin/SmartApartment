@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bud-Lj-jbL" id="kIm-fs-sfv">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017年08月19日 周六" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wk-zg-lHf">
@@ -243,6 +243,9 @@ Cg
                                         <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="bud-Lj-jbL" eventType="touchUpInside" id="jnn-lf-eDy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7d-7t-evG">
                                 <rect key="frame" x="94" y="279" width="67" height="30"/>
@@ -262,6 +265,9 @@ Cg
                                         <color key="value" red="0.93208259339999999" green="0.78884893659999999" blue="0.80475157500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="bud-Lj-jbL" eventType="touchUpInside" id="SEJ-eM-srN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-Lw-hLX">
                                 <rect key="frame" x="12" y="279" width="69" height="30"/>
@@ -275,6 +281,9 @@ Cg
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnClick:" destination="bud-Lj-jbL" eventType="touchUpInside" id="ONq-ID-Eqy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-fC-OS5">
                                 <rect key="frame" x="253" y="279" width="78" height="30"/>

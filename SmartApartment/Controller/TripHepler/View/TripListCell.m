@@ -76,25 +76,6 @@
     [self.right4Btn autoSetDimensionsToSize:CGSizeMake(btnWidth, 30)];
 }
 
-
-- (void)setButtonStyleHistoryTrip {
-    
-    self.right1Btn.hidden = NO;
-    self.right2Btn.hidden = NO;
-    self.right3Btn.hidden = YES;
-    self.right4Btn.hidden = YES;
-    self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-    self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-    [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    
-    [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
-    [self.right2Btn setTitle:@"删除" forState:UIControlStateNormal];
-    
-    [self.right1Btn addTarget:self action:@selector(commentBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.right2Btn addTarget:self action:@selector(deleteBtnClick) forControlEvents:UIControlEventTouchUpInside];
-}
-
 - (void)setTripOrder:(TripOrder *)tripOrder {
     
     _tripOrder = tripOrder;
@@ -116,7 +97,7 @@
     self.checkinDate.text = [NSString stringWithFormat:@"%zd月\n%@", [checkinDate month], checkinWeek];
     self.checkoutDate.text = [NSString stringWithFormat:@"%zd月\n%@", [checkoutDate month], checkoutWeek];
     self.checkinDay.text = [NSString stringWithFormat:@"%zd", [checkinDate day]];
-    self.checkinDay.text = [NSString stringWithFormat:@"%zd", [checkoutDate day]];
+    self.checkoutDay.text = [NSString stringWithFormat:@"%zd", [checkoutDate day]];
     
     self.storeType.text = tripOrder.roomType;
     self.lastCheckinTime.text = tripOrder.lastCheckInTime;
@@ -211,9 +192,9 @@
 - (IBAction)btnClick:(UIButton *)sender {
     
     NSInteger tag = sender.tag;
-    TripCellBtnType type;
+    TripCellBtnType type = TripCellBtnTypeNone;
     
-    NSInteger orderState = 2;//[_tripOrder.orderStatus integerValue];
+    NSInteger orderState = [_tripOrder.orderStatus integerValue];
     if (orderState == 1) {
         if (tag == 0) {
             type = TripCellBtnTypeGetCarVerifyCode;
@@ -240,8 +221,8 @@
         }
     }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tripListCellDidClcikBtnType:)]) {
-        [self.delegate tripListCellDidClcikBtnType:type];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tripListCellDidClcikBtnType:order:)]) {
+        [self.delegate tripListCellDidClcikBtnType:type order:self.tripOrder];
     }
     
 }
