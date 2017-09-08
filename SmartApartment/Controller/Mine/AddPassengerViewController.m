@@ -8,13 +8,13 @@
 
 #import "AddPassengerViewController.h"
 #import "WRCellView.h"
-#import "BookBottomView.h"
+#import "MineViewModel.h"
 
 #define WRCellViewHeight  50
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface AddPassengerViewController ()<BookBottomViewDelegate>
+@interface AddPassengerViewController ()<UIActionSheetDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) WRCellView    *roomNumView;
@@ -34,6 +34,11 @@
 @property (nonatomic, strong) UIView        *footerView;
 
 
+@property (nonatomic, assign) NSString      *certificateType; // 证件类型
+@property (nonatomic, strong) MineViewModel *viewModel;
+
+
+
 @end
 
 
@@ -41,9 +46,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initView];
     [self addViews];
     [self setCellFrame];
+    [self onClickEvent];
 }
 
 - (void)initView {
@@ -99,18 +106,55 @@
     __weak typeof(self) weakSelf = self;
     self.arriveTimeView.tapBlock = ^ {
         __strong typeof(self) pThis = weakSelf;
-        
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"证件类型" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"身份证", @"学生证", @"其他证件", nil];
+        [actionsheet showInView:pThis.view];
     };
 }
 
 
-#pragma mark - BookBottomViewDelegate
+#pragma mark - UIActionSheetDelegate
 
-- (void)bookBottomViewDickBtn:(HotelBookBtnType)type {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    
+    // 证件类型：0-身份证，1-学生证，2-其他证件
+    if (buttonIndex == 0) {
+        self.certificateType = @"0";
+        _arriveTimeLabel.text = @"居民身份证";
+    }else if (buttonIndex == 1) {
+        self.certificateType = @"1";
+        _arriveTimeLabel.text = @"学生证";
+    }else if (buttonIndex == 1) {
+        self.certificateType = @"2";
+        _arriveTimeLabel.text = @"其他证件";
+    }
 }
 
+
+#pragma mark -
+
+- (void)saveBtnClick:(id)sender {
+    
+    if (!_viewModel) {
+        _viewModel = [MineViewModel new];
+    }
+    [_viewModel requestSaveCommonInfo:_nameTF.text
+                               idType:self.certificateType
+                                 idNo:_idCarnumTF.text
+                          mobilePhone:_phoneNumTF.text
+                                email:_emailTF.text
+                            checkInNo:@""
+                             complete:^(BOOL isSuccess) {
+       
+                                 if (isSuccess) {
+                                     [MBProgressHUD cwgj_showHUDWithText:@"新增成功"];
+                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                         
+                                         [[NavManager shareInstance] returnToFrontView:YES];
+                                     });
+                                 }
+    }];
+    
+}
 
 
 #pragma mark - getter
@@ -135,7 +179,6 @@
     if (_phoneNumView == nil) {
         _phoneNumView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_];
         _phoneNumView.leftLabel.text = @"邮箱";
-        [_arriveTimeView setLineStyleWithLeftZero];
     }
     return _phoneNumView;
 }
@@ -160,16 +203,17 @@
     if (!_footerView) {
         _footerView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         
-        UIButton *logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [logoutBtn setFrame:CGRectMake(20, 20, kScreenWidth - 40, 44)];
-        logoutBtn.backgroundColor = ThemeColor;
+        UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [saveBtn setFrame:CGRectMake(20, 20, kScreenWidth - 40, 44)];
+        saveBtn.backgroundColor = ThemeColor;
         //[logoutBtn addTarget:self action:@selector(logoutBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [logoutBtn setTitle:@"保存" forState:UIControlStateNormal];
-        [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [logoutBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-        [logoutBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        logoutBtn.layer.cornerRadius = 3;
-        [_footerView addSubview:logoutBtn];
+        [saveBtn setTitle:@"保存" forState:UIControlStateNormal];
+        [saveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [saveBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        [saveBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        saveBtn.layer.cornerRadius = 3;
+        [saveBtn addTarget:self action:@selector(saveBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_footerView addSubview:saveBtn];
         
         
     }

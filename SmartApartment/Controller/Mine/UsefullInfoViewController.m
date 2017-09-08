@@ -12,11 +12,13 @@
 #import <BAButton/BAButton.h>
 #import <BMLine/UIView+BMLine.h>
 #import "AddPassengerViewController.h"
+#import "MineViewModel.h"
 
 @interface UsefullInfoViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) YJSliderView *sliderView;
+@property (nonatomic, strong) MineViewModel *viewModel;
 
 @end
 
@@ -30,9 +32,21 @@
     self.sliderView.delegate = self;
     [self.view addSubview:self.sliderView];
     
+    [self initData];
     [self initSubView];
 }
 
+- (void)initData {
+    
+    if (!_viewModel) {
+        _viewModel = [MineViewModel new];
+    }
+    __WeakObj(self)
+    [_viewModel requestQueryCommonInfo:^(NSArray *infos) {
+        
+        [selfWeak.tableView reloadData];
+    }];
+}
 
 - (void)initSubView {
     
@@ -97,7 +111,7 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return [_viewModel.contacList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,13 +124,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PassengerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PassengerCell" forIndexPath:indexPath];
+    NSDictionary *contact = _viewModel.contacList[indexPath.row];
+    cell.contact = contact;
     [cell addLineWithType:BMLineTypeCustomDefault color:nil position:BMLinePostionCustomBottom];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    NSDictionary *contact = _viewModel.contacList[indexPath.row];
+    AddPassengerViewController *vc = [AddPassengerViewController new];
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 

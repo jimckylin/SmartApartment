@@ -8,12 +8,27 @@
 
 #import "PassengerCell.h"
 
+@interface PassengerCell ()
+
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+@end
+
 @implementation PassengerCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
+
+
+- (void)setContact:(NSDictionary *)contact {
+    
+    _nameLabel.text = contact[@"name"];
+    _phoneLabel.text = contact[@"mobilePhone"];
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

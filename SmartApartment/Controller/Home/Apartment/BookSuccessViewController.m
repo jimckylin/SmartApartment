@@ -7,7 +7,7 @@
 //
 
 #import "BookSuccessViewController.h"
-#import "OrderDetailViewController.h"
+#import "ConsumeListViewController.h"
 #import "UseCouponListViewController.h"
 #import "PaySuccessViewController.h"
 
@@ -104,8 +104,8 @@
     
     __weak typeof(self) weakSelf = self;
     self.orderDetailView.tapBlock = ^ {
-        OrderDetailViewController *vc = [OrderDetailViewController new];
-        vc.orderNo = weakSelf.orderNo;
+        ConsumeListViewController *vc = [ConsumeListViewController new];
+        vc.consumeList = weakSelf.orderDict[@"consumeList"];
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     };
     self.couponView.tapBlock = ^ {
@@ -159,7 +159,7 @@
         __WeakObj(self)
         [_viewModel requestConfirmPay:self.payType
                              couponId:@""
-                              orderNo:self.orderNo
+                              orderNo:self.orderDict[@"orderNo"]
                              complete:^(NSDictionary *orderDict) {
                                  
                                  [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
@@ -197,7 +197,7 @@
         priceLabel.font = [UIFont systemFontOfSize:13];
         priceLabel.textColor = [UIColor grayColor];
         priceLabel.textAlignment = RTTextAlignmentCenter;
-        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=red>%@</font>", self.price];
+        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=red>%@</font>", self.orderDict[@"consumeTotalPrice"]];
         [_headerView addSubview:priceLabel];
     }
     return _headerView;
@@ -227,7 +227,7 @@
     if (_orderDetailView == nil) {
         _orderDetailView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_Indicator];
         _orderDetailView.leftLabel.font = [UIFont systemFontOfSize:14];
-        _orderDetailView.leftLabel.text = @"订单详情";
+        _orderDetailView.leftLabel.text = @"付款清单";
     }
     return _orderDetailView;
 }

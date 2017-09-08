@@ -10,4 +10,7 @@
 
 @interface AddPassengerViewController : ParentViewController
 
+@property (nonatomic, assign) BOOL modify;
+@property (nonatomic, strong) NSDictionary *contact;
+
 @end

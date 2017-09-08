@@ -10,4 +10,6 @@
 
 @interface PassengerCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *contact;
+
 @end

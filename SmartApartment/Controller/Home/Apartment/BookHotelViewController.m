@@ -20,6 +20,7 @@
 #import "HotelDetail.h"
 
 #import "HotelViewModel.h"
+#import "MineViewModel.h"
 
 #define WRCellViewHeight  50
 #define CustomViewX       110
@@ -55,6 +56,8 @@
 @property (nonatomic, strong) BookDetailView *bookDetailView;
 
 @property (nonatomic, strong) HotelViewModel *viewModel;
+@property (nonatomic, strong) MineViewModel  *mineViewModel;
+@property (nonatomic, strong) RoomConfig     *roomConfig;
 
 @property (nonatomic, strong) NSString       *breakfastId;
 @property (nonatomic, strong) NSString       *breakfastNum;
@@ -62,6 +65,8 @@
 @property (nonatomic, strong) NSString       *aromaId;
 @property (nonatomic, strong) NSString       *roomLayoutId;
 @property (nonatomic, strong) NSString       *wineId;
+
+@property (nonatomic, strong) NSMutableArray *contactPersons;
 
 @end
 
@@ -75,6 +80,22 @@
     [self addViews];
     [self setCellFrame];
     [self onClickEvent];
+}
+
+- (void)iniData {
+    
+    _viewModel = [HotelViewModel new];
+    _mineViewModel = [MineViewModel new];
+    __WeakObj(self)
+    [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
+        
+        selfWeak.roomConfig = roomConfig;
+        
+        HotelConfigView *view = [HotelConfigView new];
+        view.delegate = selfWeak;
+        view.roomConfig = roomConfig;
+        [selfWeak.view addSubview:view];
+    }];
 }
 
 - (void)initView {
@@ -140,22 +161,65 @@
         
         UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前", nil];
         // 显示
+        actionsheet.tag = 1000;
         [actionsheet showInView:pThis.view];
     };
     
     self.invoiceView.tapBlock = ^{
-        AddInvoiceViewController *vc = [AddInvoiceViewController new];
-        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+        
+        HotelConfigView *view = [HotelConfigView new];
+        view.delegate = weakSelf;
+        view.roomConfig = weakSelf.roomConfig;
+        [weakSelf.view addSubview:view];
     };
     
 }
 
 
-#pragma mark - 
+#pragma mark - UIButton Action
 
-- (void)btnClick:(id)sender {
+- (void)addLivePersonBtnClick:(id)sender {
     
+    if ([_contactPersons count]) {
+        
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住人" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+        for( NSString *person in _contactPersons)  {
+            [actionsheet addButtonWithTitle:person];
+        }
+        [actionsheet addButtonWithTitle:@"取消"];
+        actionsheet.cancelButtonIndex = [_contactPersons count];
+        // 显示
+        [actionsheet showInView:self.view];
+        
+    }else {
+        __weak typeof(self) weakSelf = self;
+        [_mineViewModel requestQueryCommonInfo:^(NSArray *contacts) {
+            
+            _contactPersons = [self getPersons:contacts];
+            __strong typeof(self) pThis = weakSelf;
+            UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住人" delegate:pThis cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+            for( NSString *person in _contactPersons)  {
+                [actionsheet addButtonWithTitle:person];
+            }
+            [actionsheet addButtonWithTitle:@"取消"];
+            actionsheet.cancelButtonIndex = [_contactPersons count];
+            // 显示
+            [actionsheet showInView:pThis.view];
+        }];
+    }
+}
+
+
+#pragma mark - Private
+
+- (NSMutableArray *)getPersons:(NSArray *)contacts {
     
+    _contactPersons = [[NSMutableArray alloc] initWithCapacity:1];
+    for (NSDictionary *contact in contacts) {
+        NSString *name = contact[@"name"];
+        [_contactPersons addObject:name];
+    }
+    return _contactPersons;
 }
 
 
@@ -163,10 +227,16 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    NSArray *times = @[@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
-    if (buttonIndex < [times count]) {
-        NSString *time = times[buttonIndex];
-        self.arriveTimeLabel.text = time;
+    if (actionSheet.tag == 1000) {
+        NSArray *times = @[@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
+        if (buttonIndex < [times count]) {
+            NSString *time = times[buttonIndex];
+            self.arriveTimeLabel.text = time;
+        }
+    }else {
+        if (buttonIndex < [_contactPersons count]) {
+            self.livePersonTF.text = _contactPersons[buttonIndex];
+        }
     }
 }
 
@@ -216,8 +286,7 @@
                                 wineId:@"" complete:^(NSDictionary *resp) {
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
-                                    vc.price = resp[@"consumeTotalPrice"];
-                                    vc.orderNo = resp[@"orderNo"];
+                                    vc.orderDict = resp;
                                     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }];
     }else {
@@ -277,21 +346,6 @@
     return _headerView;
 }
 
-- (void)iniData {
-    
-    _viewModel = [HotelViewModel new];
-    __WeakObj(self)
-    [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
-        
-        HotelConfigView *view = [HotelConfigView new];
-        view.delegate = selfWeak;
-        view.roomConfig = roomConfig;
-        [selfWeak.view addSubview:view];
-    }];
-}
-
-
-
 - (WRCellView *)roomNumView {
     if (_roomNumView == nil) {
         _roomNumView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_];
@@ -327,8 +381,9 @@
 
 - (WRCellView *)invoiceView {
     if (_invoiceView == nil) {
-        _invoiceView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_Indicator];
-        _invoiceView.leftLabel.text = @"发票";
+        _invoiceView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
+        _invoiceView.leftLabel.text = @"个性配置";
+        _invoiceView.rightLabel.text = @"查看";
     }
     return _invoiceView;
 }
@@ -390,7 +445,7 @@
     if (!_livePersonBtn) {
         _livePersonBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _livePersonBtn.frame = CGRectMake(kScreenWidth-35, 15, 20, 20);
-        [_livePersonBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_livePersonBtn addTarget:self action:@selector(addLivePersonBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [_livePersonBtn setImage:kImage(@"order_add_iciphone") forState:UIControlStateNormal];
     }
     return _livePersonBtn;
@@ -421,7 +476,7 @@
         _invoiceLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _invoiceLabel.font = [UIFont systemFontOfSize:14];
         _invoiceLabel.textColor = [UIColor darkTextColor];
-        _invoiceLabel.text = @"不需要";
+        //_invoiceLabel.text = @"不需要";
     }
     return _invoiceLabel;
 }
