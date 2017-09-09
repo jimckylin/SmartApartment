@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UILabel *expDateLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
 
+@property (nonatomic, strong) UIButton *selectedBtn;
+
 @end
 
 
@@ -24,6 +26,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         [self initSubView];
         _countLabel.layer.cornerRadius = 9;
@@ -75,16 +78,33 @@
     _priceLabel.textAlignment = NSTextAlignmentRight;
     _priceLabel.text = @"¥10";
     [bgView addSubview:_priceLabel];
+    
+    _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
+    [_selectedBtn setImage:kImage(@"reserve_pay_siphone") forState:UIControlStateSelected];
+    [bgImgV addSubview:_selectedBtn];
 }
 
+- (void)setCouponList:(CouponList *)couponList {
+    
+    _titleLabel.text = couponList.couponName;
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", couponList.couponMoney];
+    _expDateLabel.text = [NSString stringWithFormat:@"有效期至%@", couponList.validDate];
+}
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    _selectedBtn.selected = selected;
+}
 
 - (void)updateConstraints {
     
     [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
-    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:16];
-    [_titleLabel autoSetDimensionsToSize:CGSizeMake(130, 25)];
+    [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    //[_titleLabel autoSetDimensionsToSize:CGSizeMake(130, 25)];
     
-    [_countLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:5];
+    [_countLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:8];
     [_countLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
     [_countLabel autoSetDimensionsToSize:CGSizeMake(54, 18)];
     
@@ -95,6 +115,10 @@
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 30)];
+    
+    [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
+    [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+    [_selectedBtn autoSetDimensionsToSize:CGSizeMake(25, 25)];
     
     [super updateConstraints];
 }

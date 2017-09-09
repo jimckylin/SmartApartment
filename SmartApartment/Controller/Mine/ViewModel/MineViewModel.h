@@ -61,4 +61,6 @@
  */
 - (void)requestWalletRecharge:(NSString *)payWay rechargeId:(NSString *)rechargerId complete:(void(^)(NSDictionary *))complete;
 
+
+
 @end

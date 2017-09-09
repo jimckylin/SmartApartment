@@ -41,6 +41,7 @@
     [params setObject:sign forKey:@"sign"];
     // aes加密
     NSString *jsonString = [params JSONString];
+    NSLog(@"request:==== 接口:%@ ===============\n%@\n================== end ===============", function, jsonString);
     NSString *encrypt = aesEncryptString(jsonString, accessKey);
     
     NSData *bodyData = [[NSString stringWithFormat:@"data=%@",encrypt] dataUsingEncoding:NSUTF8StringEncoding];//把bodyString转换为NSData数据

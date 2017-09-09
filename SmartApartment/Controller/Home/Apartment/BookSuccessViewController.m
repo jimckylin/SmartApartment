@@ -34,17 +34,12 @@
 @property (nonatomic, strong) WRCellView    *walletView;
 @property (nonatomic, strong) UIView        *footerView;
 
-@property (nonatomic, strong) UILabel       *roomNumLabel;
-@property (nonatomic, strong) UITextField   *livePersonTF;
-@property (nonatomic, strong) UITextField   *phoneNumTF;
-@property (nonatomic, strong) UILabel       *arriveTimeLabel;
+@property (nonatomic, strong) UILabel *couponLabel;
 
-@property (nonatomic, strong) UILabel       *invoiceLabel;
-@property (nonatomic, strong) UITextField   *remarkTF;
-@property (nonatomic, strong) UILabel       *tipLabel;
 @property (nonatomic, strong) HotelViewModel *viewModel;
 
 @property (nonatomic, copy) NSString *payType;
+@property (nonatomic, strong) CouponList *couponList;
 
 @end
 
@@ -79,6 +74,8 @@
     [self.containerView addSubview:self.wechatPayView];
     [self.containerView addSubview:self.walletView];
     [self.containerView addSubview:self.footerView];
+    
+    [self.couponView addSubview:self.couponLabel];
 }
 
 - (void)setCellFrame {
@@ -110,6 +107,19 @@
     };
     self.couponView.tapBlock = ^ {
         UseCouponListViewController *vc = [UseCouponListViewController new];
+        vc.storeId = weakSelf.storeId;
+        vc.roomTypeId = weakSelf.roomTypeId;
+        
+        vc.didSelectedCoupon = ^(CouponList *couponList){
+            if (couponList) {
+                weakSelf.couponList = couponList;
+                weakSelf.couponLabel.textColor = ThemeColor;
+                weakSelf.couponLabel.text = [NSString stringWithFormat:@"%@(%@)元", couponList.couponName, couponList.couponMoney];
+            }else {
+                weakSelf.couponLabel.textColor = [UIColor lightGrayColor];
+                weakSelf.couponLabel.text = @"不使用";
+            }
+        };
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     };
     
@@ -158,7 +168,7 @@
     if (buttonIndex == 1) {
         __WeakObj(self)
         [_viewModel requestConfirmPay:self.payType
-                             couponId:@""
+                             couponId:self.couponList.couponId
                               orderNo:self.orderDict[@"orderNo"]
                              complete:^(NSDictionary *orderDict) {
                                  
@@ -237,7 +247,6 @@
         _couponView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
         _couponView.leftLabel.font = [UIFont systemFontOfSize:14];
         _couponView.leftLabel.text = @"优惠券";
-        _couponView.rightLabel.text = @"不使用";
     }
     return _couponView;
 }
@@ -286,76 +295,16 @@
 
 
 // Custom
-- (UILabel *)roomNumLabel {
-    if (_roomNumLabel == nil) {
-        _roomNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _roomNumLabel.font = [UIFont systemFontOfSize:14];
-        _roomNumLabel.textColor = [UIColor darkTextColor];
-        _roomNumLabel.text = @"1间";
+- (UILabel *)couponLabel {
+    if (_couponLabel == nil) {
+        _couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth-190, 0, 160, WRCellViewHeight)];
+        _couponLabel.font = [UIFont systemFontOfSize:13];
+        _couponLabel.textColor = [UIColor lightGrayColor];
+        _couponLabel.textAlignment = NSTextAlignmentRight;
+        _couponLabel.text = @"不使用";
     }
-    return _roomNumLabel;
+    return _couponLabel;
 }
 
-- (UITextField *)livePersonTF {
-    if (_livePersonTF == nil) {
-        _livePersonTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _livePersonTF.font = [UIFont systemFontOfSize:14];
-        _livePersonTF.textColor = [UIColor darkTextColor];
-        _livePersonTF.text = @"Jimcky Lin";
-    }
-    return _livePersonTF;
-}
-
-- (UITextField *)phoneNumTF {
-    if (_phoneNumTF == nil) {
-        _phoneNumTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _phoneNumTF.font = [UIFont systemFontOfSize:14];
-        _phoneNumTF.textColor = [UIColor darkTextColor];
-        _phoneNumTF.text = @"15606025989";
-    }
-    return _phoneNumTF;
-}
-
-- (UILabel *)arriveTimeLabel {
-    if (_arriveTimeLabel == nil) {
-        _arriveTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _arriveTimeLabel.font = [UIFont systemFontOfSize:14];
-        _arriveTimeLabel.textColor = [UIColor darkTextColor];
-        _arriveTimeLabel.text = @"19:00前";
-    }
-    return _arriveTimeLabel;
-}
-
-- (UILabel *)invoiceLabel {
-    if (_invoiceLabel == nil) {
-        _invoiceLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _invoiceLabel.font = [UIFont systemFontOfSize:14];
-        _invoiceLabel.textColor = [UIColor darkTextColor];
-        _invoiceLabel.text = @"不需要";
-    }
-    return _invoiceLabel;
-}
-
-- (UITextField *)remarkTF {
-    if (_remarkTF == nil) {
-        _remarkTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _remarkTF.font = [UIFont systemFontOfSize:14];
-        _remarkTF.textColor = [UIColor darkTextColor];
-        _remarkTF.placeholder = @"需要告知酒店的特殊要求";
-    }
-    return _remarkTF;
-}
-
-- (UILabel *)tipLabel {
-    if (_tipLabel == nil) {
-        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视酒店空房情况安排";
-        _tipLabel.font = [UIFont systemFontOfSize:11];
-        _tipLabel.textColor = [UIColor lightGrayColor];
-        _tipLabel.numberOfLines = 0;
-        _tipLabel.frame = CGRectMake(40, 0, kScreenWidth-72, WRCellViewHeight);
-    }
-    return _tipLabel;
-}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MineViewModel.h"
+#import "CouponList.h"
 
 @implementation MineViewModel
 
@@ -32,16 +33,20 @@
 }
 
 
-- (void)requestGetCouponComplete:(void (^)(NSArray *))complete {
+- (void)requestGetCoupon:(NSString *)roomTypeId
+                 storeId:(NSString *)storeId
+                complete:(void (^)(NSArray *))complete {
     
     NSString *username = [UserManager manager].user.cardNo;
     NSString *token = [UserManager manager].user.token;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
+    [dict cwgj_setObject:roomTypeId     forKey:@"roomTypeId"];
+    [dict cwgj_setObject:storeId        forKey:@"storeId"];
     [dict cwgj_setObject:username     forKey:@"username"];
     [dict cwgj_setObject:token        forKey:@"token"];
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    [SAHttpRequest requestWithFuncion:@"storeOrder" params:dict class:nil success:^(id response) {
+    [SAHttpRequest requestWithFuncion:@"getCoupon" params:dict class:[CouponList class] success:^(id response) {
         
         if (complete) {
             complete(response);

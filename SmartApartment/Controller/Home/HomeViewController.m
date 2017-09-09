@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "SDCycleScrollView.h"
-#import "BannerDetailViewController.h"
+#import "CZDWebViewController.h"
 #import "TLCityPickerController.h"
 #import "CalendarViewController.h"
 #import "HotelListViewController.h"
@@ -153,7 +153,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 1) {
-        [SVProgressHUD showInfoWithStatus:@"正在开发中"];
+        [MBProgressHUD cwgj_showHUDWithText:@"正在开发中"];
     }
 }
 
@@ -171,9 +171,11 @@
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    NSLog(@"---点击了第%ld张图片", (long)index);
-    BannerDetailViewController *bannerDetail = [BannerDetailViewController new];
-    [[NavManager shareInstance] showViewController:bannerDetail isAnimated:YES];
+    
+    Activity *activity = _activityAarr[index];
+    CZDWebViewController *vc = [CZDWebViewController new];
+    vc.requestUrl = activity.activityUrl;
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 

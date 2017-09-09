@@ -7,7 +7,13 @@
 //
 
 #import "ParentViewController.h"
+#import "CouponList.h"
 
 @interface UseCouponListViewController : ParentViewController
+
+@property (nonatomic, copy) NSString *storeId;
+@property (nonatomic, copy) NSString *roomTypeId;
+
+@property (nonatomic, copy) void(^didSelectedCoupon)(CouponList *couponList);
 
 @end

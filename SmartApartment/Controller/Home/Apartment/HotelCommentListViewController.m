@@ -119,42 +119,9 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (void)initData {
     
+    _comments = [NSMutableArray new];
     _viewModel = [HotelViewModel new];
     [self requestStoreEvaluateList];
-    
-    
-    NSArray *comments = @[@{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },];
-    _comments = [NSMutableArray new];
-    [_comments addObjectsFromArray:comments];
 }
 
 - (void)requestStoreEvaluateList {

@@ -269,6 +269,7 @@
         arriveTime = [NSString stringWithFormat:@"%@ %@", self.checkInTime, arriveTime];
         NSString *name = [self.livePersonTF.text stringByReplacingOccurrencesOfString:@" " withString:@""];
         
+        __WeakObj(self)
         [_viewModel requestSubmitOrder:self.hotel.storeId
                             roomTypeId:self.roomTypeId
                        checkInRoomType:self.checkInRoomType
@@ -287,6 +288,8 @@
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
                                     vc.orderDict = resp;
+                                    vc.roomTypeId = selfWeak.roomTypeId;
+                                    vc.storeId = selfWeak.hotel.storeId;
                                     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }];
     }else {

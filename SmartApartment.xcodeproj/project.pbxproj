@@ -17,6 +17,7 @@
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
+		A92E14431F63EFA100EFF1A7 /* CouponList.m in Sources */ = {isa = PBXBuildFile; fileRef = A92E14421F63EFA100EFF1A7 /* CouponList.m */; };
 		A92F7FA11F4B333C0056CACC /* STSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA01F4B333C0056CACC /* STSegmentView.m */; };
 		A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA41F4B3D1D0056CACC /* MASCompositeConstraint.m */; };
 		A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA71F4B3D1D0056CACC /* MASConstraint.m */; };
@@ -361,6 +362,8 @@
 		A92178EF1F5ACC9A00C0923A /* DayRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayRoom.m; sourceTree = "<group>"; };
 		A92178F11F5ACCAF00C0923A /* HourRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourRoom.h; sourceTree = "<group>"; };
 		A92178F21F5ACCAF00C0923A /* HourRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourRoom.m; sourceTree = "<group>"; };
+		A92E14411F63EFA100EFF1A7 /* CouponList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponList.h; sourceTree = "<group>"; };
+		A92E14421F63EFA100EFF1A7 /* CouponList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponList.m; sourceTree = "<group>"; };
 		A92F7F9F1F4B333C0056CACC /* STSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSegmentView.h; sourceTree = "<group>"; };
 		A92F7FA01F4B333C0056CACC /* STSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSegmentView.m; sourceTree = "<group>"; };
 		A92F7FA31F4B3D1D0056CACC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -1085,6 +1088,8 @@
 				A94B826D1F4D26C900840D88 /* WXPayRContent.m */,
 				A94B82641F4D268B00840D88 /* Order.h */,
 				A94B82651F4D268B00840D88 /* Order.m */,
+				A92E14411F63EFA100EFF1A7 /* CouponList.h */,
+				A92E14421F63EFA100EFF1A7 /* CouponList.m */,
 				A9D9ABD71F57E7860099819E /* User.h */,
 				A9D9ABD81F57E7860099819E /* User.m */,
 				A9EAB8891F58567400C367F2 /* SAModel.h */,
@@ -2374,6 +2379,7 @@
 				A9EAB87F1F572C4D00C367F2 /* StarHotelCell.m in Sources */,
 				A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */,
 				A95286121F43FA6B00D7EB2F /* MapViewController.m in Sources */,
+				A92E14431F63EFA100EFF1A7 /* CouponList.m in Sources */,
 				A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */,
 				A96E112B1F4E83E700357DCB /* SAHttpRequest.m in Sources */,
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,

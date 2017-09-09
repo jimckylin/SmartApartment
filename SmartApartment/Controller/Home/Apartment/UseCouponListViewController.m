@@ -7,12 +7,9 @@
 //
 
 #import "UseCouponListViewController.h"
-#import "NewAddInvoiceViewController.h"
-
 #import "CouponListCell.h"
-
 #import <BAButton/BAButton.h>
-
+#import "MineViewModel.h"
 
 
 @interface UseCouponListViewController ()<UITableViewDelegate,
@@ -21,6 +18,9 @@ UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray *coupons;
 @property(nonatomic, assign) BOOL useCoupon;   // 是否使用优惠券
+@property (nonatomic, strong) MineViewModel  *mineViewModel;
+
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 @end
 
@@ -45,7 +45,7 @@ UITableViewDataSource>
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     [_tableView registerClass:[CouponListCell class] forCellReuseIdentifier:@"CouponListCell"];
-    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 80, 0)];
     
     // header
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
@@ -65,14 +65,18 @@ UITableViewDataSource>
     [headerView addSubview:switchBtn];
     
     // footer
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-    _tableView.tableFooterView = footerView;
+    UIView *footerView = [UIView new];
+    [self.view addSubview:footerView];
+    [footerView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [footerView autoSetDimension:ALDimensionHeight toSize:80];
     
-    UIButton *addBtn = [UIButton ba_buttonWithFrame:CGRectMake(20, 40, kScreenWidth-40, 44) title:@"完成" titleColor:[UIColor whiteColor] titleFont:[UIFont systemFontOfSize:13] image:nil backgroundColor:ThemeColor];
+    UIButton *addBtn = [UIButton ba_buttonWithFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"完成" titleColor:[UIColor whiteColor] titleFont:[UIFont systemFontOfSize:13] image:nil backgroundColor:ThemeColor];
     [addBtn ba_button_setViewRectCornerType:BAKit_ViewRectCornerTypeAllCorners viewCornerRadius:4];
     [addBtn ba_button_setButtonLayoutType:BAKit_ButtonLayoutTypeNormal padding:10];
     [addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:addBtn];
+    
+    
 }
 
 
@@ -86,8 +90,16 @@ UITableViewDataSource>
 
 - (void)addBtnClick:(id)sender {
     
-    NewAddInvoiceViewController *vc = [NewAddInvoiceViewController new];
-    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    if (_useCoupon) {
+        if (self.didSelectedCoupon && [_coupons count] > 0) {
+            self.didSelectedCoupon(_coupons[_selectedIndex]);
+        }
+    }else {
+        if (self.didSelectedCoupon) {
+            self.didSelectedCoupon(nil);
+        }
+    }
+    [[NavManager shareInstance] returnToFrontView:YES];
 }
 
 
@@ -98,7 +110,7 @@ UITableViewDataSource>
     
     if (_useCoupon) {
         if ([_coupons count] > 0) {
-            return 5;
+            return [_coupons count];
         }else {
             return 1;
         }
@@ -148,12 +160,11 @@ UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    
     if ([_coupons count] > 0) {
         CouponListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CouponListCell"];
-        
+        cell.couponList = _coupons[row];
+        cell.isUse = YES;
         return cell;
     }else {
         
@@ -172,7 +183,7 @@ UITableViewDataSource>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
  
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    _selectedIndex = indexPath.row;
 }
 
 
@@ -183,9 +194,20 @@ UITableViewDataSource>
 
 - (void)initData {
     _coupons = [[NSMutableArray alloc] initWithCapacity:1];
-    
-    [_coupons addObject:@""];
+    _mineViewModel = [MineViewModel new];
+    [self requestGetCoupon];
 }
 
+#pragma mark - Request
+
+- (void)requestGetCoupon {
+    
+    __WeakObj(self)
+    [_mineViewModel requestGetCoupon:self.roomTypeId storeId:self.storeId complete:^(NSArray *couponList) {
+        
+        [selfWeak.coupons addObjectsFromArray:couponList];
+        [selfWeak.tableView reloadData];
+    }];
+}
 
 @end

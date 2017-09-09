@@ -10,6 +10,8 @@
 
 @interface BookSuccessViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *storeId;
+@property (nonatomic, copy) NSString *roomTypeId;
 @property (nonatomic, strong) NSDictionary *orderDict;
 
 @end

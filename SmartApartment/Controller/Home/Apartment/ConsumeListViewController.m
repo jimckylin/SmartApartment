@@ -59,6 +59,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
+    headerView.backgroundColor = [UIColor whiteColor];
     UILabel *itemLabel = [UILabel new];
     itemLabel.font = [UIFont systemFontOfSize:13];
     itemLabel.textColor = ThemeColor;
