@@ -9,12 +9,16 @@
 #import "BalanceDetailListViewController.h"
 #import "YJSliderView.h"
 #import "BalanceListCell.h"
+#import "MineViewModel.h"
+
 
 @interface BalanceDetailListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableView *tableView1;
 @property (nonatomic, strong) YJSliderView *sliderView;
+@property (nonatomic, strong) MineViewModel  *mineViewModel;
+
 
 @end
 
@@ -29,8 +33,16 @@
     [self.view addSubview:self.sliderView];
     
     [self initSubView];
+    [self initData];
+    
 }
 
+- (void)initData {
+    
+    _mineViewModel = [MineViewModel new];
+    [self requestCardConsumeDetail:1 pageSize:20];
+    [self requestCardRechargeDetail:1 pageSize:20];
+}
 
 - (void)initSubView {
     
@@ -91,7 +103,11 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (tableView == self.tableView) {
+        return [_mineViewModel.consumeList count];
+    }else {
+        return [_mineViewModel.rechargeList count];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,7 +120,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     BalanceListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BalanceListCell" forIndexPath:indexPath];
-    
+    if (tableView == self.tableView) {
+        cell.consumeDict = _mineViewModel.consumeList[indexPath.row];
+    }else {
+        cell.rechargeDict = _mineViewModel.rechargeList[indexPath.row];
+    }
     return cell;
 }
 
@@ -112,5 +132,26 @@
     
     
 }
+
+
+#pragma mark - Request
+
+- (void)requestCardConsumeDetail:(NSInteger)pageNum pageSize:(NSInteger)pageSize {
+    
+    __WeakObj(self)
+    [_mineViewModel requestCardConsumeDetail:^(NSArray *consumeList) {
+        [selfWeak.tableView reloadData];
+    }];
+}
+
+
+- (void)requestCardRechargeDetail:(NSInteger)pageNum pageSize:(NSInteger)pageSize {
+    
+    __WeakObj(self)
+    [_mineViewModel requestCardRechargeDetail:^(NSArray *rechargeList) {
+        [selfWeak.tableView1 reloadData];
+    }];
+}
+
 
 @end

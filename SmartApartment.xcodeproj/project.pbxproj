@@ -253,6 +253,7 @@
 		A997DAF01F5EDC1000F6D1B5 /* OrderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAEF1F5EDC1000F6D1B5 /* OrderDetail.m */; };
 		A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF21F5EDC7B00F6D1B5 /* Consume.m */; };
 		A997DAF71F5EF88B00F6D1B5 /* TripOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */; };
+		A9A7D18B1F63C503006F742B /* RechargeItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7D18A1F63C503006F742B /* RechargeItemCell.m */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
 		A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA8EAA1F3712A5005F9DBB /* Assets.xcassets */; };
@@ -747,6 +748,8 @@
 		A997DAF21F5EDC7B00F6D1B5 /* Consume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consume.m; sourceTree = "<group>"; };
 		A997DAF51F5EF88A00F6D1B5 /* TripOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripOrder.h; sourceTree = "<group>"; };
 		A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripOrder.m; sourceTree = "<group>"; };
+		A9A7D1891F63C503006F742B /* RechargeItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeItemCell.h; sourceTree = "<group>"; };
+		A9A7D18A1F63C503006F742B /* RechargeItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeItemCell.m; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AA8E9C1F3712A5005F9DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9AA8E9E1F3712A5005F9DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1622,6 +1625,8 @@
 				A92F7FF61F4DF2770056CACC /* BalanceListCell.h */,
 				A92F7FF71F4DF2770056CACC /* BalanceListCell.m */,
 				A92F7FF81F4DF2770056CACC /* BalanceListCell.xib */,
+				A9A7D1891F63C503006F742B /* RechargeItemCell.h */,
+				A9A7D18A1F63C503006F742B /* RechargeItemCell.m */,
 				A92F800A1F4F3C870056CACC /* RechargeView.h */,
 				A92F800B1F4F3C870056CACC /* RechargeView.m */,
 				A92F800D1F4F40E70056CACC /* RechargeButton.h */,
@@ -2448,6 +2453,7 @@
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */,
 				A98224091F3A19BB00CA9A9F /* TLCityGroupCell.m in Sources */,
+				A9A7D18B1F63C503006F742B /* RechargeItemCell.m in Sources */,
 				A92F7FC41F4B3D1E0056CACC /* View+MASAdditions.m in Sources */,
 				A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */,
 				A95D94601F5D2F2300E10CEE /* Aroma.m in Sources */,

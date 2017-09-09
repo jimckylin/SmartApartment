@@ -85,7 +85,7 @@
 
 - (void)returnToLoginView:(BOOL)isAnimated {
     
-    __block BOOL exsitLoginVC;
+    __block BOOL exsitLoginVC = NO;
     [[self rootNavigationController].viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc,NSUInteger idx, BOOL *stop){
         if ([vc isKindOfClass:NSClassFromString(@"LoginViewController")]) {
             [[self rootNavigationController] popToViewController:vc animated:isAnimated];

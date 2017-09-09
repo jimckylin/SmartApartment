@@ -10,7 +10,10 @@
 
 @interface MineViewModel : NSObject
 
-@property (nonatomic, strong) NSArray *contacList;
+@property (nonatomic, strong) NSArray *contacList;    // 联系人列表
+@property (nonatomic, strong) NSArray *consumeList;   // 消费列表
+@property (nonatomic, strong) NSArray *rechargeList;  // 充值列表
+@property (nonatomic, strong) NSArray *moneyList;     // 充值价位信息列表
 
 
 /* 我的钱包
@@ -40,5 +43,22 @@
                         email:(NSString *)email
                     checkInNo:(NSString *)checkInNo
                      complete:(void(^)(BOOL isSuccess))complete;
+
+
+/* 消费明细
+ */
+- (void)requestCardConsumeDetail:(void(^)(NSArray *))complete;
+
+/* 充值明细
+ */
+- (void)requestCardRechargeDetail:(void(^)(NSArray *))complete;
+
+/* 充值价位
+ */
+- (void)requestRechargePrice:(void(^)(NSArray *))complete;
+
+/* 立即充值
+ */
+- (void)requestWalletRecharge:(NSString *)payWay rechargeId:(NSString *)rechargerId complete:(void(^)(NSDictionary *))complete;
 
 @end

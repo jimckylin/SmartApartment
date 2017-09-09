@@ -8,6 +8,14 @@
 
 #import "BalanceListCell.h"
 
+@interface BalanceListCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+@end
+
 @implementation BalanceListCell
 
 - (void)awakeFromNib {
@@ -21,10 +29,18 @@
     [line autoSetDimension:ALDimensionHeight toSize:0.5];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setConsumeDict:(NSDictionary *)consumeDict {
+    
+    self.titleLabel.text = consumeDict[@"consumeTitle"];
+    self.priceLabel.text = [NSString stringWithFormat:@"-%@元", consumeDict[@"consumePrice"]];
+    self.dateLabel.text = consumeDict[@"consumeDate"];
+}
 
-    // Configure the view for the selected state
+- (void)setRechargeDict:(NSDictionary *)rechargeDict {
+    
+    self.titleLabel.text = rechargeDict[@"rechargeTitle"];
+    self.priceLabel.text = [NSString stringWithFormat:@"+%@元", rechargeDict[@"rechargePrice"]];
+    self.dateLabel.text = rechargeDict[@"rechargeDate"];
 }
 
 @end

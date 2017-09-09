@@ -10,4 +10,7 @@
 
 @interface BalanceListCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *consumeDict;   // 消费列表
+@property (nonatomic, strong) NSDictionary *rechargeDict;  // 充值列表
+
 @end

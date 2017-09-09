@@ -110,6 +110,103 @@
     }];
 }
 
+- (void)requestCardConsumeDetail:(void (^)(NSArray *))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:username     forKey:@"username"];
+    [dict cwgj_setObject:token        forKey:@"token"];
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"cardConsumeDetail" params:dict class:nil success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        self.consumeList = response[@"consumeList"];
+        if (complete) {
+            complete(response[@"consumeList"]);
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+
+- (void)requestCardRechargeDetail:(void (^)(NSArray *))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:username     forKey:@"username"];
+    [dict cwgj_setObject:token        forKey:@"token"];
+    
+    //[MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"cardRechargeDetail" params:dict class:nil success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        self.rechargeList = response[@"rechargeList"];
+        if (complete) {
+            complete(response[@"rechargeList"]);
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+- (void)requestRechargePrice:(void (^)(NSArray *))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:username     forKey:@"username"];
+    [dict cwgj_setObject:token        forKey:@"token"];
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"rechargePrice" params:dict class:nil success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        self.rechargeList = response[@"moneyList"];
+        if (complete) {
+            complete(response[@"moneyList"]);
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+- (void)requestWalletRecharge:(NSString *)payWay
+                   rechargeId:(NSString *)rechargerId
+                     complete:(void (^)(NSDictionary *))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:payWay        forKey:@"payWay"];
+    [dict cwgj_setObject:rechargerId   forKey:@"rechargeId"];
+    [dict cwgj_setObject:username      forKey:@"username"];
+    [dict cwgj_setObject:token         forKey:@"token"];
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"walletRecharge" params:dict class:nil success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        if (complete) {
+            complete(response);
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+
 
 
 @end

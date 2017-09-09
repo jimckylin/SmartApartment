@@ -7,173 +7,198 @@
 //
 
 #import "RechargeView.h"
+#import "RechargeItemCell.h"
 #import "WRCellView.h"
-#import <RTLabel/RTLabel.h>
-#import "RechargeButton.h"
 
-#define WRCellViewHeight  44
-#define CustomViewX       110
-#define CustomViewWidth   150
+#define WRCellViewHeight  50
 
-@interface RechargeView ()
+@interface RechargeView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, strong) UIScrollView  *containerView;
-@property (nonatomic, strong) UIView        *headerView;
+@property(nonatomic,strong)UICollectionView *collectionView;
 
 @property (nonatomic, strong) WRCellView    *aliPayView;
 @property (nonatomic, strong) WRCellView    *wechatPayView;
-@property (nonatomic, strong) UIView        *footerView;
+@property (nonatomic, strong) UIButton      *payBtn;
 
-@property (nonatomic, strong) NSMutableArray *chargeBtns;
+@property (nonatomic, strong) NSDictionary *rechargeDic;
+@property (nonatomic, copy) NSString *payType; //  支付方式（0-微信支付，1-支付宝支付）
 
 @end
 
-
 @implementation RechargeView
 
-- (instancetype)init {
+- (instancetype)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     if (self) {
-        [self initData];
-        [self initView];
-        [self addViews];
-        [self setCellFrame];
         [self onClickEvent];
+        [self initView];
     }
-    return self;
-}
-
-- (void)initData {
     
-    _chargeBtns = [[NSMutableArray alloc] initWithCapacity:1];
+    return self;
 }
 
 - (void)initView {
     
-    self.containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
-    [self addSubview:self.containerView];
+    //此处必须要有创见一个UICollectionViewFlowLayout的对象
+    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
+    //同一行相邻两个cell的最小间距
+    layout.minimumInteritemSpacing = 5;
+    //最小两行之间的间距
+    layout.minimumLineSpacing = 5;
+    
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+    _collectionView.backgroundColor=[UIColor whiteColor];
+    _collectionView.delegate=self;
+    _collectionView.dataSource=self;
+    //这个是横向滑动
+    //layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
+    [self addSubview:_collectionView];
+    [_collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    // cell注册
+    [_collectionView registerClass:[RechargeItemCell class] forCellWithReuseIdentifier:@"RechargeItemCell"];
+    //这是头部
+    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableView"];
+    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionReusableView"];
+    
 }
 
-- (void)addViews {
+- (void)setMoneyList:(NSArray *)moneyList {
     
-    [self.containerView addSubview:self.headerView];
+    _moneyList = moneyList;
+    self.rechargeDic = moneyList[0];
+    self.payType = @"1";   // 默认选择支付宝
     
-    [self.containerView addSubview:self.aliPayView];
-    [self.containerView addSubview:self.wechatPayView];
-    [self.containerView addSubview:self.footerView];
+    [_collectionView reloadData];
+    [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
 }
 
-- (void)setCellFrame {
-    self.headerView.frame = CGRectMake(0, 0, kScreenWidth, 265);
+
+#pragma mark - UICollectionViewDelegate UICollectionViewDataSource
+
+//一共有多少个组
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
-    self.aliPayView.frame = CGRectMake(0, _headerView.bottom, kScreenWidth, WRCellViewHeight);
-    self.wechatPayView.frame = CGRectMake(0, _aliPayView.bottom, kScreenWidth, WRCellViewHeight);
-    self.footerView.frame = CGRectMake(0, _wechatPayView.bottom, kScreenWidth, 100);
+    NSInteger sections = 1;
+    return sections;
+}
+
+//每一组有多少个cell
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [_moneyList count];
+}
+
+//每一个cell是什么
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    RechargeItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RechargeItemCell" forIndexPath:indexPath];
+    NSDictionary *rechargeDic = _moneyList[indexPath.row];
+    cell.rechargeDic = rechargeDic;
+    [self setCellStyle:cell];
     
-    if (self.footerView.bottom< (kScreenHeight -64)) {
-        self.containerView.contentSize = CGSizeMake(0, (kScreenHeight -64 + 20));
+    return cell;
+}
+
+//头部和脚部的加载
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"UICollectionReusableView" forIndexPath:indexPath];
+    
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        UILabel *chargeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 100, 20)];
+        chargeLabel.font = [UIFont boldSystemFontOfSize:14];
+        chargeLabel.textColor = [UIColor darkTextColor];
+        chargeLabel.text = @"充值金额";
+        [view addSubview:chargeLabel];
+        
     }else {
-        self.containerView.contentSize = CGSizeMake(0, self.footerView.bottom + 50);
+        UIView *footerView = [self collectionFooterView];
+        [view addSubview:footerView];
     }
-    self.footerView.height = self.containerView.contentSize.height - self.wechatPayView.bottom;
+    return view;
 }
+
+-(CGFloat )collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 15;
+}
+
+
+//每一个分组的上左下右间距
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+//头部试图的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(50, 40);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeMake(kScreenWidth, 280);
+}
+
+//定义每一个cell的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGFloat cellwidth = (kScreenWidth-30)/2;
+    return CGSizeMake(cellwidth, 74);
+}
+
+//cell的点击事件
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *rechargeDic = _moneyList[indexPath.row];
+    self.rechargeDic = rechargeDic;
+}
+
+
+#pragma mark - Button Action
 
 - (void)onClickEvent {
     
-    //__weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
+    // 支付选择
     self.aliPayView.tapBlock = ^ {
-        
+        weakSelf.payType = @"1";
+        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
+        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
     };
     self.wechatPayView.tapBlock = ^ {
-        
+        weakSelf.payType = @"0";
+        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
     };
-}
-
-
-#pragma mark - UIButton Click
-
-- (void)chargeBtnClick:(RechargeButton *)sender {
-    
-    for (NSInteger index = 0; index < 4; index++) {
-        
-        RechargeButton *chargeBtn = _chargeBtns[index];
-        chargeBtn.selected = sender.superview.tag == index? YES:NO;
-    }
     
 }
 
 - (void)payBtnClick:(id)sender {
     
-    
-}
-
-
-
-#pragma mark - getter
-
-- (UIView *)headerView {
-    
-    if (!_headerView) {
-        _headerView = [UIView new];
-        _headerView.backgroundColor = [UIColor whiteColor];
-        
-        UILabel *chargeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 100, 20)];
-        chargeLabel.font = [UIFont boldSystemFontOfSize:14];
-        chargeLabel.textColor = [UIColor darkTextColor];
-        chargeLabel.text = @"充值金额";
-        [_headerView addSubview:chargeLabel];
-        
-        CGFloat padding = 10;
-        CGFloat btnWidth = (kScreenWidth- padding*3)/2;
-        CGFloat btnHeight = 74;
-        for (NSInteger index = 0; index < 4; index++) {
-            
-            NSInteger shang = index/2;
-            NSInteger yushu = index%2;
-            
-            CGFloat x = (yushu+1)*padding+yushu*btnWidth;
-            CGFloat y = (shang+1)*padding + shang*btnHeight + chargeLabel.bottom+10;
-            
-            RechargeButton *chargeBtn = [[RechargeButton alloc] initWithFrame:CGRectMake(x, y, btnWidth, btnHeight)];
-            [chargeBtn addAction:@selector(chargeBtnClick:) addTarget:self];
-            chargeBtn.tag = index;
-            chargeBtn.selected = index == 0?YES:NO;
-            [_headerView addSubview:chargeBtn];
-            [_chargeBtns addObject:chargeBtn];
-        }
-        
-        RechargeButton *lastBtn = _chargeBtns.lastObject;
-        UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, lastBtn.bottom + 25, 100, 20)];
-        typeLabel.font = [UIFont boldSystemFontOfSize:14];
-        typeLabel.textColor = [UIColor darkTextColor];
-        typeLabel.text = @"选择支付方式";
-        [_headerView addSubview:typeLabel];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rechargeViewDidClickRechargeBtn:rechargeDic:)]) {
+        [self.delegate rechargeViewDidClickRechargeBtn:self.payType rechargeDic:self.rechargeDic];
     }
-    return _headerView;
 }
 
-- (UIView *)footerView {
+
+#pragma mark - Private
+
+- (UIView *)collectionFooterView {
     
-    if (!_footerView) {
-        _footerView = [UIView new];
-        _footerView.backgroundColor = [UIColor whiteColor];
-        
-        UIButton *payBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        payBtn.frame = CGRectMake(21, 20, kScreenWidth-42, 44);
-        payBtn.backgroundColor = [UIColor redColor];
-        [payBtn addTarget:self action:@selector(payBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [payBtn setTitle:@"充值" forState:UIControlStateNormal];
-        [payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [payBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-        [payBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
-        payBtn.layer.cornerRadius = 44/2;
-        payBtn.layer.masksToBounds = YES;
-        [_footerView addSubview:payBtn];
-    }
-    return _footerView;
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 280)];
+    
+    UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 100, 20)];
+    typeLabel.font = [UIFont boldSystemFontOfSize:14];
+    typeLabel.textColor = [UIColor darkTextColor];
+    typeLabel.text = @"选择支付方式";
+    [footerView addSubview:typeLabel];
+    
+    [footerView addSubview:self.aliPayView];
+    [footerView addSubview:self.wechatPayView];
+    self.aliPayView.frame = CGRectMake(0, typeLabel.bottom+15, kScreenWidth, WRCellViewHeight);
+    self.wechatPayView.frame = CGRectMake(0, _aliPayView.bottom, kScreenWidth, WRCellViewHeight);
+    
+    [footerView addSubview:self.payBtn];
+    return footerView;
 }
-
 
 - (WRCellView *)aliPayView {
     if (_aliPayView == nil) {
@@ -195,7 +220,31 @@
     return _wechatPayView;
 }
 
+- (UIButton *)payBtn {
+    
+    if (!_payBtn) {
+        _payBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _payBtn.frame = CGRectMake(21, self.wechatPayView.bottom + 50, kScreenWidth-42, 44);
+        _payBtn.backgroundColor = ThemeColor;
+        [_payBtn addTarget:self action:@selector(payBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_payBtn setTitle:@"充值" forState:UIControlStateNormal];
+        [_payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_payBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        [_payBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        _payBtn.layer.cornerRadius = 44/2;
+        _payBtn.layer.masksToBounds = YES;
+    }
+    return _payBtn;
+}
 
 
+- (void)setCellStyle:(RechargeItemCell *)cell {
+    
+    cell.layer.cornerRadius = 5;
+    cell.contentView.layer.cornerRadius = 5.0f;
+    cell.contentView.layer.borderWidth = 1;
+    cell.contentView.layer.borderColor = [UIColor colorWithHexString:@"#FCF742"].CGColor;
+    cell.contentView.layer.masksToBounds = YES;
+}
 
 @end
