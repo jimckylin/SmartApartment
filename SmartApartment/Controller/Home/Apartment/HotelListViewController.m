@@ -203,7 +203,11 @@ NSString *const kHotelListCell = @"kHotelListCell";
 #pragma mark - TLCityPickerDelegate
 
 - (void) cityPickerController:(TLCityPickerController *)cityPickerViewController didSelectCity:(TLCity *)city {
+    self.area = city.shortName;
+    _headerView.cityName = city.shortName;
     [[NavManager shareInstance] returnToFrontView:YES];
+    
+    [self requeHotelList];
 }
 
 - (void) cityPickerControllerDidCancel:(TLCityPickerController *)cityPickerViewController {

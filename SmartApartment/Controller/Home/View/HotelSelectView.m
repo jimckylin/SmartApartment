@@ -82,6 +82,12 @@
     [_contentSrollView addSubview:_selectView2];
 }
 
+- (void)setCityName:(NSString *)cityName {
+    
+    _selectView.cityName = cityName;
+    _selectView2.cityName = cityName;
+}
+
 
 - (void)setCheckinDate:(NSDate *)checkinDate {
     

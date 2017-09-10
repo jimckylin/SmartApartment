@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class HotelList;
 
 @interface MineViewModel : NSObject
 
@@ -14,6 +15,8 @@
 @property (nonatomic, strong) NSArray *consumeList;   // 消费列表
 @property (nonatomic, strong) NSArray *rechargeList;  // 充值列表
 @property (nonatomic, strong) NSArray *moneyList;     // 充值价位信息列表
+
+@property (nonatomic, strong) HotelList *hotelList;   // 评论门店列表
 
 
 /* 我的钱包
@@ -61,6 +64,9 @@
  */
 - (void)requestWalletRecharge:(NSString *)payWay rechargeId:(NSString *)rechargerId complete:(void(^)(NSDictionary *))complete;
 
+/* 我的点评
+ */
+- (void)requestMyReview:(void(^)(HotelList *hotelList))complete;
 
 
 @end

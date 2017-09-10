@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HotelDetail;
+@class StoreEvaluate;
 
 @interface HotelDetailCommentCell : UITableViewCell
 
-@property (nonatomic, strong) HotelDetail *hotelDetail;
+@property (nonatomic, strong) StoreEvaluate *evaluate;
+
++ (CGFloat)getCellHeightWith:(StoreEvaluate *)storeEvaluate;
 
 @end

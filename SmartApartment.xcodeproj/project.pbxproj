@@ -18,6 +18,9 @@
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
 		A92E14431F63EFA100EFF1A7 /* CouponList.m in Sources */ = {isa = PBXBuildFile; fileRef = A92E14421F63EFA100EFF1A7 /* CouponList.m */; };
+		A92E14491F64E98900EFF1A7 /* MyCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92E14481F64E98900EFF1A7 /* MyCommentListViewController.m */; };
+		A92E144D1F64EA0800EFF1A7 /* MyCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92E144B1F64EA0800EFF1A7 /* MyCommentListCell.m */; };
+		A92E144E1F64EA0800EFF1A7 /* MyCommentListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92E144C1F64EA0800EFF1A7 /* MyCommentListCell.xib */; };
 		A92F7FA11F4B333C0056CACC /* STSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA01F4B333C0056CACC /* STSegmentView.m */; };
 		A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA41F4B3D1D0056CACC /* MASCompositeConstraint.m */; };
 		A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A92F7FA71F4B3D1D0056CACC /* MASConstraint.m */; };
@@ -364,6 +367,11 @@
 		A92178F21F5ACCAF00C0923A /* HourRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourRoom.m; sourceTree = "<group>"; };
 		A92E14411F63EFA100EFF1A7 /* CouponList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponList.h; sourceTree = "<group>"; };
 		A92E14421F63EFA100EFF1A7 /* CouponList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponList.m; sourceTree = "<group>"; };
+		A92E14471F64E98900EFF1A7 /* MyCommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommentListViewController.h; sourceTree = "<group>"; };
+		A92E14481F64E98900EFF1A7 /* MyCommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCommentListViewController.m; sourceTree = "<group>"; };
+		A92E144A1F64EA0800EFF1A7 /* MyCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommentListCell.h; sourceTree = "<group>"; };
+		A92E144B1F64EA0800EFF1A7 /* MyCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCommentListCell.m; sourceTree = "<group>"; };
+		A92E144C1F64EA0800EFF1A7 /* MyCommentListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCommentListCell.xib; sourceTree = "<group>"; };
 		A92F7F9F1F4B333C0056CACC /* STSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSegmentView.h; sourceTree = "<group>"; };
 		A92F7FA01F4B333C0056CACC /* STSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSegmentView.m; sourceTree = "<group>"; };
 		A92F7FA31F4B3D1D0056CACC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -1636,6 +1644,9 @@
 				A92F800B1F4F3C870056CACC /* RechargeView.m */,
 				A92F800D1F4F40E70056CACC /* RechargeButton.h */,
 				A92F800E1F4F40E70056CACC /* RechargeButton.m */,
+				A92E144A1F64EA0800EFF1A7 /* MyCommentListCell.h */,
+				A92E144B1F64EA0800EFF1A7 /* MyCommentListCell.m */,
+				A92E144C1F64EA0800EFF1A7 /* MyCommentListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1931,6 +1942,8 @@
 				A92F7FE91F4C95B10056CACC /* CouponViewController.m */,
 				A92F7FF01F4DF1270056CACC /* BalanceDetailListViewController.h */,
 				A92F7FF11F4DF1270056CACC /* BalanceDetailListViewController.m */,
+				A92E14471F64E98900EFF1A7 /* MyCommentListViewController.h */,
+				A92E14481F64E98900EFF1A7 /* MyCommentListViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2202,6 +2215,7 @@
 				A94B82441F4D1E7A00840D88 /* README.txt in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
+				A92E144E1F64EA0800EFF1A7 /* MyCommentListCell.xib in Resources */,
 				A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */,
 				A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */,
 				A96A334B1F4845D000A55A42 /* OrderDetailView.xib in Resources */,
@@ -2421,6 +2435,7 @@
 				A9EAB85A1F55C6AF00C367F2 /* DataVerifier.m in Sources */,
 				A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
+				A92E14491F64E98900EFF1A7 /* MyCommentListViewController.m in Sources */,
 				A9D9ABD61F56B82A0099819E /* Register3ViewController.m in Sources */,
 				A959F5DE1F5F96C9002AF838 /* ActivityViewModel.m in Sources */,
 				A94B82471F4D259F00840D88 /* PayManager.m in Sources */,
@@ -2455,6 +2470,7 @@
 				A974F2B61F5880E7008A739A /* HotelList.m in Sources */,
 				A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */,
 				A9EAB85F1F55C6AF00C367F2 /* RSADataVerifier.m in Sources */,
+				A92E144D1F64EA0800EFF1A7 /* MyCommentListCell.m in Sources */,
 				A997DAF01F5EDC1000F6D1B5 /* OrderDetail.m in Sources */,
 				A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */,
 				A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */,

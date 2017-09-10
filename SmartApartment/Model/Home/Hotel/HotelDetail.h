@@ -7,6 +7,7 @@
 //
 
 #import "SAModel.h"
+#import "StoreEvaluate.h"
 #import "DayRoom.h"
 #import "HourRoom.h"
 
@@ -22,14 +23,8 @@
 @property (nonatomic, strong)  NSArray <DayRoom *>*dayRoomList;   // 全天房列表
 @property (nonatomic, strong)  NSArray <HourRoom *>*hourRoomList; // 钟点房列表
 
-@property (nonatomic, strong) NSArray *customerList;            // 评论列表
-
-
+@property (nonatomic, strong) NSArray <StoreEvaluate *>*customerList;            // 评论列表
 @property (nonatomic, copy)  NSString *evaluateTotal;           // 评价总数
-@property (nonatomic, copy)  NSString *username ;//匿名用户
-@property (nonatomic, copy)  NSString *customerEvaluate;        // 客户评价
-@property (nonatomic, copy)  NSString *storeEvaluate;           //门店评价
-@property (nonatomic, copy)  NSString *customerScore;           // 客户评分,等级分为（0-2）差评，（2-4）中评，好评（4-5）好评
-@property (nonatomic, copy)  NSString *evaluateDate;            // 客户评价时间，精确到天，格式：1900-09-11
+
 
 @end

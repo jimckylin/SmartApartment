@@ -7,6 +7,7 @@
 //
 
 #import "MineViewModel.h"
+#import "HotelList.h"
 #import "CouponList.h"
 
 @implementation MineViewModel
@@ -211,7 +212,27 @@
     }];
 }
 
-
+- (void)requestMyReview:(void (^)(HotelList *hotelList))complete {
+    
+    NSString *username = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:username      forKey:@"username"];
+    [dict cwgj_setObject:token         forKey:@"token"];
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"myReview" params:dict class:[HotelList class] success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        self.hotelList = response;
+        if (complete) {
+            complete(response);
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
 
 
 @end

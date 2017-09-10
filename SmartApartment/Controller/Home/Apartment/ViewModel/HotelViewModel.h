@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) HotelDetail *hotelDetail;
 @property (nonatomic, strong) RoomConfig  *roomConfig;
-@property (nonatomic, strong) NSMutableArray *storeEvaluateArr;
+@property (nonatomic, strong) StoreEvaluateList *storeEvaluateList;
 
 /* 选择公寓
  * @param area 地区
@@ -34,9 +34,15 @@
 
 /* 公寓评价列表
  * @param storeId 门店id
+ * @param evaluateType 评价类型 ： 0-全部 1- 差评 2-中评 3-好评
+ * @param pageNum 第N页
+ * @param pageSize 每页数量
  */
 - (void)requestStoreEvaluate:(NSString *)storeId
-                      complete:(void(^)(NSArray *evaluateArr))complete;
+                evaluateType:(NSInteger)evaluateType
+                     pageNum:(NSInteger)pageNum
+                    pageSize:(NSInteger)pageSize
+                    complete:(void(^)(StoreEvaluateList *storeEvaluateList))complete;
 
 /* 标准房间、豪华房间配置
  * @param roomTypeId 房型ID

@@ -18,8 +18,9 @@
 @property (nonatomic, strong) UILabel *dateLabel;
 
 @property (nonatomic, strong) UILabel *commentLabel;
-@property (nonatomic, strong) UIImageView *flagImgV;
 @property (nonatomic, strong) UILabel *replyLabel;
+@property (nonatomic, strong) UIImageView *replyBg;
+@property (nonatomic, strong) UILabel *replyContent;
 
 
 @end
@@ -69,10 +70,6 @@
     _scoreLabel.text = @"4.5";
     [self addSubview:_scoreLabel];
     
-    _flagImgV = [UIImageView new];
-    _flagImgV.contentMode = UIViewContentModeScaleAspectFill;
-    _flagImgV.image = [UIImage imageNamed:@"xq_xinyongzhuiphone"];
-    [self addSubview:_flagImgV];
     
     _dateLabel = [UILabel new];
     _dateLabel.font = [UIFont systemFontOfSize:11];
@@ -89,12 +86,47 @@
     
     _replyLabel = [UILabel new];
     _replyLabel.font = [UIFont systemFontOfSize:13];
-    _replyLabel.textColor = [UIColor redColor];
+    _replyLabel.textColor = [UIColor lightGrayColor];
     _replyLabel.textAlignment = NSTextAlignmentRight;
-    _replyLabel.text = @"尊敬的宾客您好：感谢您对本店的点评和支持";
+    _replyLabel.text = @"酒店回复";
     [self addSubview:_replyLabel];
+    
+    _replyBg = [UIImageView new];
+    _replyBg.contentMode = UIViewContentModeScaleAspectFill;
+    _replyBg.image = kImage(@"");
+    _replyBg.backgroundColor = [UIColor lightGrayColor];
+    [self addSubview:_replyBg];
+    
+    _replyContent = [UILabel new];
+    _replyContent.font = [UIFont systemFontOfSize:11];
+    _replyContent.textColor = [UIColor grayColor];
+    _replyContent.textAlignment = NSTextAlignmentLeft;
+    _replyContent.text = @"尊敬的宾客您好：感谢您对本店的点评和支持";
+    _replyContent.numberOfLines = 0;
+    [_replyBg addSubview:_replyContent];
 }
 
+- (void)setEvaluate:(StoreEvaluate *)evaluate {
+    
+    _titleLabel.text = evaluate.username;
+    _starsView.currentScore = [evaluate.customerScore floatValue];
+    _scoreLabel.text = [NSString stringWithFormat:@"%0.1f", [evaluate.customerScore floatValue]];
+    _commentLabel.text = evaluate.customerEvaluate;
+    _dateLabel.text = evaluate.evaluateDate;
+    _replyContent.text = evaluate.storeEvaluate;
+    
+    _evaluate = evaluate;
+}
+
++ (CGFloat)getCellHeightWith:(StoreEvaluate *)evaluate {
+    
+    CGFloat hegith = 75 + [Utils getContentHeight:evaluate.customerEvaluate Width:kScreenWidth-20 FontSize:13] + 15;
+    if (![Utils isBlankString:evaluate.storeEvaluate]) {
+        CGFloat storeEvaluateHegith = 30 + 20 + [Utils getContentHeight:evaluate.storeEvaluate Width:kScreenWidth-26 FontSize:16];
+        hegith += storeEvaluateHegith;
+    }
+    return hegith;
+}
 
 - (void)updateConstraints {
     
@@ -118,16 +150,20 @@
     [_commentLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_avatarImgV withOffset:20];
     [_commentLabel autoSetDimension:ALDimensionWidth toSize:kScreenWidth-20];
     
-    
-    
-//    [_flagImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
-//    [_flagImgV autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_scoreLabel];
-//    [_flagImgV autoSetDimensionsToSize:CGSizeMake(34, 12)];
-    
-
-//    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
-//    [_priceLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:_thumbImgV];
-//    [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 20)];
+    if (![Utils isBlankString:_evaluate.storeEvaluate]) {
+        [_replyLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
+        [_replyLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_commentLabel withOffset:20];
+        [_replyLabel autoSetDimension:ALDimensionWidth toSize:80];
+        
+        [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
+        [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
+        [_replyBg autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_replyLabel];
+        
+        CGFloat hegith = 20 + [Utils getContentHeight:_evaluate.storeEvaluate Width:kScreenWidth-26 FontSize:11];
+        [_replyBg autoSetDimension:ALDimensionHeight toSize:hegith];
+        
+        [_replyContent autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 8, 10, 8)];
+    }
     
     [super updateConstraints];
 }

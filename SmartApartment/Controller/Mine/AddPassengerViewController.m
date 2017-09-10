@@ -54,8 +54,10 @@
 }
 
 - (void)initView {
-    
-    _naviLabel.text = @"新增常用旅客";
+    if (self.contact) {
+        _naviLabel.text = @"修改常用旅客";
+    }else
+        _naviLabel.text = @"新增常用旅客";
     self.containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, self.view.bounds.size.height-64 - 50)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.containerView];
@@ -137,18 +139,26 @@
     if (!_viewModel) {
         _viewModel = [MineViewModel new];
     }
+    
+    __WeakObj(self)
     [_viewModel requestSaveCommonInfo:_nameTF.text
                                idType:self.certificateType
                                  idNo:_idCarnumTF.text
                           mobilePhone:_phoneNumTF.text
                                 email:_emailTF.text
-                            checkInNo:@""
+                            checkInNo:self.contact[@"checkInNo"]
                              complete:^(BOOL isSuccess) {
        
                                  if (isSuccess) {
-                                     [MBProgressHUD cwgj_showHUDWithText:@"新增成功"];
+                                     if (selfWeak.contact) {
+                                         [MBProgressHUD cwgj_showHUDWithText:@"修改成功"];
+                                     }else
+                                         [MBProgressHUD cwgj_showHUDWithText:@"新增成功"];
+                                     
+                                     if (selfWeak.didAddOrModifyUserInfo) {
+                                         selfWeak.didAddOrModifyUserInfo();
+                                     }
                                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                         
                                          [[NavManager shareInstance] returnToFrontView:YES];
                                      });
                                  }
@@ -227,7 +237,11 @@
         _nameTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _nameTF.font = [UIFont systemFontOfSize:14];
         _nameTF.textColor = [UIColor darkTextColor];
-        _nameTF.placeholder = @"请填写姓名";
+        NSString *name = self.contact[@"name"];
+        if (![Utils isBlankString:name]) {
+            _nameTF.text = self.contact[@"name"];
+        }else
+            _nameTF.placeholder = @"请填写姓名";
     }
     return _nameTF;
 }
@@ -237,7 +251,11 @@
         _phoneNumTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _phoneNumTF.font = [UIFont systemFontOfSize:14];
         _phoneNumTF.textColor = [UIColor darkTextColor];
-        _phoneNumTF.placeholder = @"请填写手机号码";
+        NSString *phone = self.contact[@"mobilePhone"];
+        if (![Utils isBlankString:phone]) {
+            _phoneNumTF.text = phone;
+        }else
+            _phoneNumTF.placeholder = @"请填写手机号码";
     }
     return _phoneNumTF;
 }
@@ -247,7 +265,11 @@
         _emailTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _emailTF.font = [UIFont systemFontOfSize:14];
         _emailTF.textColor = [UIColor darkTextColor];
-        _emailTF.placeholder = @"请填写邮箱";
+        NSString *email = self.contact[@"email"];
+        if (![Utils isBlankString:email]) {
+            _emailTF.text = email;
+        }else
+            _emailTF.placeholder = @"请填写邮箱";
     }
     return _emailTF;
 }
@@ -257,7 +279,11 @@
         _idCarnumTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _idCarnumTF.font = [UIFont systemFontOfSize:14];
         _idCarnumTF.textColor = [UIColor darkTextColor];
-        _idCarnumTF.placeholder = @"请填写证件号码";
+        NSString *idNo = self.contact[@"idNo"];
+        if (![Utils isBlankString:idNo]) {
+            _idCarnumTF.text = idNo;
+        }else
+            _idCarnumTF.placeholder = @"请填写证件号码";
     }
     return _idCarnumTF;
 }

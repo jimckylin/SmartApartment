@@ -18,7 +18,7 @@
 @property (nonatomic, copy)  NSString *storeDeviceScore;         // 公寓设施服务评分
 @property (nonatomic, copy)  NSString *storePercent;             // 公寓评分百分比
 
-@property (nonatomic, strong)  NSArray <StoreEvaluate *>*evaluates; // 用户评价
+@property (nonatomic, strong)  NSArray <StoreEvaluate *>*customerList; // 用户评价
 
 
 @end

@@ -49,7 +49,7 @@
     [_cityBtn setImage:kImage(@"list_city_iciphone") forState:UIControlStateNormal];
     [_cityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
-    [_cityBtn setTitle:@"福州(10)" forState:UIControlStateNormal];
+    [_cityBtn setTitle:@"福州(0)" forState:UIControlStateNormal];
     _cityBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
     [_cityBtn setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
     _cityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
@@ -73,6 +73,12 @@
     _dateBtn.tag = HotelListHeaderBtnTypeDate;
     [_dateBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_dateBtn];
+}
+
+- (void)setCityName:(NSString *)cityName {
+    
+    cityName = [cityName stringByReplacingOccurrencesOfString:@"市" withString:@""];
+    [_cityBtn setTitle:cityName forState:UIControlStateNormal];
 }
 
 

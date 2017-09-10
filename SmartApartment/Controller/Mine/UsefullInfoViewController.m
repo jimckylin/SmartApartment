@@ -41,9 +41,13 @@
     if (!_viewModel) {
         _viewModel = [MineViewModel new];
     }
+    [self requestData];
+}
+
+- (void)requestData {
+    
     __WeakObj(self)
     [_viewModel requestQueryCommonInfo:^(NSArray *infos) {
-        
         [selfWeak.tableView reloadData];
     }];
 }
@@ -132,8 +136,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    __WeakObj(self)
     NSDictionary *contact = _viewModel.contacList[indexPath.row];
     AddPassengerViewController *vc = [AddPassengerViewController new];
+    vc.contact = contact;
+    vc.didAddOrModifyUserInfo = ^{
+        [selfWeak requestData];
+    };
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 

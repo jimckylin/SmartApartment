@@ -26,5 +26,6 @@
 @property (nonatomic, copy)  NSString *address;               // 地址
 @property (nonatomic, copy)  NSString *phone;                 // 电话
 @property (nonatomic, copy)  NSString *storeRemark;           // 门店介绍
+@property (nonatomic, copy)  NSString *storePrice;           // 门店价格
 
 @end

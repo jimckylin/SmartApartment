@@ -165,6 +165,11 @@
     [self addSubview:_searchBtn];
 }
 
+- (void)setCityName:(NSString *)cityName {
+    
+    cityName = [cityName stringByReplacingOccurrencesOfString:@"市" withString:@""];
+    [_cityBtn setTitle:cityName forState:UIControlStateNormal];
+}
 
 - (void)setCheckinDate:(NSDate *)checkinDate {
     _checkinDate = checkinDate;

@@ -8,7 +8,7 @@
 
 #import "HotelDetailCommentCell.h"
 #import "JWStarView.h"
-#import "HotelDetail.h"
+#import "StoreEvaluate.h"
 
 @interface HotelDetailCommentCell ()
 
@@ -112,16 +112,28 @@
     [_replyBg addSubview:_replyContent];
 }
 
-- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+
+- (void)setEvaluate:(StoreEvaluate *)evaluate {
     
-    [_avatarImgV sd_setImageWithURL:[NSURL URLWithString:hotelDetail.username] placeholderImage:kImage(@"mine_headiphone")];
-    _titleLabel.text = hotelDetail.username;
-    _starsView.currentScore = [hotelDetail.storeScore floatValue];
-    _scoreLabel.text = hotelDetail.storeScore;
-    _dateLabel.text = hotelDetail.evaluateDate;
-    _commentLabel.text = hotelDetail.username;
+    _titleLabel.text = evaluate.username;
+    _starsView.currentScore = [evaluate.customerScore floatValue];
+    _scoreLabel.text = [NSString stringWithFormat:@"%0.1f", [evaluate.customerScore floatValue]];
+    _commentLabel.text = evaluate.customerEvaluate;
+    _dateLabel.text = evaluate.evaluateDate;
+    _replyContent.text = evaluate.storeEvaluate;
+    
+    _evaluate = evaluate;
 }
 
++ (CGFloat)getCellHeightWith:(StoreEvaluate *)storeEvaluate {
+    
+    CGFloat hegith = 75 + [Utils getContentHeight:storeEvaluate.customerEvaluate Width:kScreenWidth-20-20 FontSize:13] + 15;
+    if (![Utils isBlankString:storeEvaluate.storeEvaluate]) {
+        CGFloat storeEvaluateHegith = 30 + 20 + [Utils getContentHeight:storeEvaluate.storeEvaluate Width:kScreenWidth-26-20 FontSize:16];
+        hegith += storeEvaluateHegith;
+    }
+    return hegith;
+}
 
 
 - (void)updateConstraints {
@@ -144,27 +156,22 @@
 
     [_commentLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10];
     [_commentLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_avatarImgV withOffset:20];
-    [_commentLabel autoSetDimension:ALDimensionWidth toSize:kScreenWidth-20];
+    [_commentLabel autoSetDimension:ALDimensionWidth toSize:kScreenWidth-20-20];
     
-    [_replyLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
-    [_replyLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_commentLabel withOffset:20];
-    [_replyLabel autoSetDimension:ALDimensionWidth toSize:80];
-    
-    [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
-    [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
-    [_replyBg autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_replyLabel];
-    [_replyBg autoSetDimension:ALDimensionHeight toSize:50];
-    
-    [_replyContent autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 8, 10, 8)];
-    
-//    [_flagImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
-//    [_flagImgV autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_scoreLabel];
-//    [_flagImgV autoSetDimensionsToSize:CGSizeMake(34, 12)];
-    
-
-//    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
-//    [_priceLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:_thumbImgV];
-//    [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 20)];
+    if (![Utils isBlankString:_evaluate.storeEvaluate]) {
+        [_replyLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
+        [_replyLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_commentLabel withOffset:20];
+        [_replyLabel autoSetDimension:ALDimensionWidth toSize:80];
+        
+        [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
+        [_replyBg autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
+        [_replyBg autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_replyLabel];
+        
+        CGFloat hegith = 20 + [Utils getContentHeight:_evaluate.storeEvaluate Width:kScreenWidth-26-20 FontSize:11];
+        [_replyBg autoSetDimension:ALDimensionHeight toSize:hegith];
+        
+        [_replyContent autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 8, 10, 8)];
+    }
     
     [super updateConstraints];
 }

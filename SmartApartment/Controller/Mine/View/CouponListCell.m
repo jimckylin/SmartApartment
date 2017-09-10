@@ -116,10 +116,11 @@
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 30)];
     
-    [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
-    [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [_selectedBtn autoSetDimensionsToSize:CGSizeMake(25, 25)];
-    
+    if (_isUse) {
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(25, 25)];
+    }
     [super updateConstraints];
 }
 

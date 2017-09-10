@@ -19,7 +19,8 @@
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass {
     return @{
              @"dayRoomList" : [DayRoom class],
-             @"hourRoomList" : [HourRoom class]
+             @"hourRoomList" : [HourRoom class],
+             @"customerList" : [StoreEvaluate class]
              };
 }
 

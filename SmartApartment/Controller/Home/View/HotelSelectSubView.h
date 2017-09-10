@@ -18,6 +18,8 @@
 
 @interface HotelSelectSubView : UIView
 
+@property (nonatomic, copy) NSString *cityName;
+
 @property (nonatomic, assign) HotelRoomType roomType; // 房型
 @property (nonatomic, weak) id<HotelSelectViewDelegate> deletegate;
 

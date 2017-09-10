@@ -39,15 +39,21 @@
 
 
 - (void)requestStoreEvaluate:(NSString *)storeId
-                    complete:(void (^)(NSArray *))complete {
+                evaluateType:(NSInteger)evaluateType
+                     pageNum:(NSInteger)pageNum
+                    pageSize:(NSInteger)pageSize
+                    complete:(void (^)(StoreEvaluateList *storeEvaluateList))complete {
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setObject:storeId         forKey:@"storeId"];
+    [param setObject:storeId          forKey:@"storeId"];
+    [param setObject:@(evaluateType)  forKey:@"evaluateType"];
+    [param setObject:@(pageNum)       forKey:@"pageNum"];
+    [param setObject:@(pageSize)      forKey:@"pageSize"];
     
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"storeEvaluate" params:param class:[StoreEvaluateList class] success:^(id response) {
         
-        [self.storeEvaluateArr addObjectsFromArray:response];
+        self.storeEvaluateList = response;
         if (complete) {
             complete(response);
         }

@@ -22,8 +22,11 @@ NSString *const kHotelCommentCell = @"HotelCommentCell";
 UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) NSMutableArray *commentArr;
 @property (nonatomic, strong) HotelViewModel *viewModel;
+
+@property (nonatomic, assign) NSInteger evaluateType;
+@property (nonatomic, assign) NSInteger pageNum;
 
 @end
 
@@ -64,6 +67,17 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
     [self.view bringSubviewToFront:_naviView];
     
+    
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weakSelf.pageNum = 1;
+        [weakSelf requestStoreEvaluateListEvaluateType:weakSelf.evaluateType pageNum:1 pageSize:20];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        weakSelf.pageNum ++;
+        [weakSelf requestStoreEvaluateListEvaluateType:weakSelf.evaluateType pageNum:weakSelf.pageNum pageSize:20];
+    }];
 }
 
 
@@ -71,7 +85,7 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _viewModel.storeEvaluateArr.count + 1;
+    return _commentArr.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,7 +93,8 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
     if (indexPath.row == 0) {
         return 138;
     }
-    return 130; // 根据评论及回复内容动态高度
+    StoreEvaluate *evaluate = _commentArr[indexPath.row -1];
+    return [HotelCommentCell getCellHeightWith:evaluate]; // 根据评论及回复内容动态高度
 }
 
 
@@ -93,11 +108,14 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
     if (row == 0) {
         HotelCommentHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelCommentHeaderCell];
         cell.delegate = self;
-        [cell setCommentHeaderDic:nil];
-        return cell;
+        cell.storeEvaluateList = _viewModel.storeEvaluateList;
         
+        return cell;
     }
     HotelCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelCommentCell];
+    StoreEvaluate *evaluate = _commentArr[indexPath.row -1];
+    cell.evaluate = evaluate;
+    
     return cell;
 }
 
@@ -111,7 +129,19 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (void)hotelCommentHeaderCellDidClick:(CommentType)type {
     
-    NSLog(@"type:%zd", type);
+    // 0-全部 1- 差评 2-中评 3-好评
+    _evaluateType = 0;
+    if (type == CommentTypeAll) {
+        _evaluateType = 0;
+    }else if (type == CommentTypeGood) {
+        _evaluateType = 3;
+    }else if (type == CommentTypeNotbad) {
+        _evaluateType = 2;
+    }else if (type == CommentTypeBad) {
+        _evaluateType = 1;
+    }
+    [self requestStoreEvaluateListEvaluateType:_evaluateType pageNum:1 pageSize:20];
+    
 }
 
 
@@ -119,16 +149,25 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (void)initData {
     
-    _comments = [NSMutableArray new];
+    _pageNum = 1;
+    _commentArr = [[NSMutableArray alloc] initWithCapacity:1];
     _viewModel = [HotelViewModel new];
-    [self requestStoreEvaluateList];
+    [self requestStoreEvaluateListEvaluateType:0 pageNum:1 pageSize:20];
 }
 
-- (void)requestStoreEvaluateList {
+- (void)requestStoreEvaluateListEvaluateType:(NSInteger)evaluateType
+                         pageNum:(NSInteger)pageNum
+                        pageSize:(NSInteger)pageSize {
     
-    [_viewModel requestStoreEvaluate:self.storeId complete:^(NSArray *evaluateArr) {
-        
-        [_tableView reloadData];
+    __WeakObj(self)
+    [_viewModel requestStoreEvaluate:self.storeId evaluateType:evaluateType pageNum:pageNum pageSize:pageSize complete:^(StoreEvaluateList *storeEvaluateList) {
+        if (pageNum == 1) {
+            [selfWeak.commentArr removeAllObjects];
+        }
+        [selfWeak.commentArr addObjectsFromArray:storeEvaluateList.customerList];
+        [selfWeak.tableView reloadData];
+        [selfWeak.tableView.mj_header endRefreshing];
+        [selfWeak.tableView.mj_footer endRefreshing];
     }];
 }
 

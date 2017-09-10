@@ -12,13 +12,12 @@
 #import "UIScrollView+HeaderScaleImage.h"
 #import "MineHeaderView.h"
 #import "AboutViewController.h"
-#import "HotelCommentListViewController.h"
-#import "TripHistoryListViewController.h"
 #import "HotelOrderListViewController.h"
 #import "UsefullInfoViewController.h"
 #import "WalletViewController.h"
 #import "CouponViewController.h"
 #import <BMLine/UIView+BMLine.h>
+#import "MyCommentListViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MineHeaderViewDelegate>
 
@@ -49,12 +48,13 @@
     [_naviBackBtn setHidden:YES];
     _naviLabel.text = NSLocalizedString(@"我的", nil);
     
+    /*
     UIButton *settingBtn =[UIButton buttonWithType:UIButtonTypeCustom];
     settingBtn.frame=CGRectMake(kScreenWidth - 45, 22, 40, 40);
     [settingBtn setImage:[UIImage imageNamed:@"mine_set_navbariphone"] forState:UIControlStateNormal];
     settingBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [settingBtn addTarget:self action:@selector(rightBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:settingBtn];
+    [self.view addSubview:settingBtn];*/
 
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -187,16 +187,12 @@
         if (indexPath.row == 0) {
             HotelOrderListViewController *vc = [HotelOrderListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-            
-            
-            //TripHistoryListViewController *vc = [TripHistoryListViewController new];
-            //[[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else if (indexPath.row == 1) {
             UsefullInfoViewController *vc = [UsefullInfoViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
             
         }else if (indexPath.row == 2) {
-            HotelCommentListViewController *vc = [HotelCommentListViewController new];
+            MyCommentListViewController *vc = [MyCommentListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else {
             NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
@@ -245,8 +241,10 @@
         }
             
             break;
-            case HeaderEventTypeIntegral:
+        case HeaderEventTypeIntegral: {
             
+            [MBProgressHUD cwgj_showHUDWithText:@"后续开发"];
+        }
             break;
             
         default:

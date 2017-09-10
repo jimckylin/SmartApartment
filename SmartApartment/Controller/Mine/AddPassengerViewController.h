@@ -13,4 +13,6 @@
 @property (nonatomic, assign) BOOL modify;
 @property (nonatomic, strong) NSDictionary *contact;
 
+@property (nonatomic, copy) void(^didAddOrModifyUserInfo)();
+
 @end

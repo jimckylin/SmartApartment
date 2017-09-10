@@ -54,7 +54,6 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *comments;
 @property (nonatomic, strong) HotelViewModel *viewModel;
 @property (nonatomic, assign) HotelRoomType roomType;
 
@@ -162,7 +161,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             return 1+[self.hourRoomArr count];
         }
     }else {
-        if (_comments.count > 0) {
+        if (_viewModel.hotelDetail.customerList.count > 0) {
             return 3;
         }
         return 2;
@@ -190,11 +189,11 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             }
         }
     }else {
-        if (_comments.count > 0) {
+        if (_viewModel.hotelDetail.customerList.count > 0) {
             if (indexPath.row == 0) {
                 return 80;
             }else if (indexPath.row == 1){
-                return 200; // 根据评论及回复内容动态高度
+                return [HotelDetailCommentCell getCellHeightWith:_viewModel.hotelDetail.customerList[0]]; // 根据评论及回复内容动态高度
             }
             return 40;
         }else {
@@ -291,9 +290,9 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             return cell;
             
         }else if (indexPath.row == 1) {
-            if (_comments.count > 0) {
+            if (_viewModel.hotelDetail.customerList.count > 0) {
                 HotelDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailCommentCell];
-                cell.hotelDetail = self.viewModel.hotelDetail;
+                cell.evaluate = _viewModel.hotelDetail.customerList[0];
                 return cell;
             }else {
                 HotelDetailNoCommentCellCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailNoCommentCellCell];
@@ -375,7 +374,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
         
     }else if(indexPath.section == 3) {
         
-        if (_comments.count > 0) {
+        if (_viewModel.hotelDetail.customerList.count > 0) {
             if (indexPath.row == 2) {
                 HotelCommentListViewController *vc = [HotelCommentListViewController new];
                 vc.storeId = self.hotel.storeId;
@@ -526,40 +525,6 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     
     _dayRoomArr = [[NSMutableArray alloc] initWithCapacity:1];
     _hourRoomArr = [[NSMutableArray alloc] initWithCapacity:1];
-    
-    
-    NSArray *comments = @[@{@"userid": @"1",
-                           @"name": @"Jimcky",
-                           @"avatar": @"https://www.baidu.com",
-                           @"content": @"这是评论内容",
-                           @"reply": @"这是回复内容"
-                           },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },
-                          @{@"userid": @"1",
-                            @"name": @"Jimcky",
-                            @"avatar": @"https://www.baidu.com",
-                            @"content": @"这是评论内容",
-                            @"reply": @"这是回复内容"
-                            },];
-    _comments = [NSMutableArray new];
-    [_comments addObjectsFromArray:comments];
 }
 
 - (void)requestHotelDetail {

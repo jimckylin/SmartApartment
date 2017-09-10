@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoreEvaluate.h"
 
 @interface HotelCommentCell : UITableViewCell
+
+@property (nonatomic, strong) StoreEvaluate *evaluate;
+
++ (CGFloat)getCellHeightWith:(StoreEvaluate *)evaluate;
 
 @end

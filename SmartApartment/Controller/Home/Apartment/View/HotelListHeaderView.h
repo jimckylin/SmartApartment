@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, HotelListHeaderBtnType) {
 
 @interface HotelListHeaderView : UIView
 
+@property (nonatomic, copy) NSString *cityName;
 @property (nonatomic, weak) id<HotelListHeaderViewDelegate> delegate;
 - (void)relayoutHeaderView:(UIScrollView *)scrollView;
 

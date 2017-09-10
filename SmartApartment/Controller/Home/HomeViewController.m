@@ -196,9 +196,11 @@
             break;
         case HotelSelectBtnTypeLocate: {
             [SVProgressHUD show];
+            __WeakObj(self)
             [[LocationManager shareManager] startLocate:^(NSDictionary *addressDic) {
                
-                
+                selfWeak.city = addressDic[kLocationCity];
+                selfWeak.selectView.cityName = addressDic[kLocationCity];
                 [SVProgressHUD dismiss];
             }];
         }
@@ -247,6 +249,8 @@
 #pragma mark - TLCityPickerDelegate
 
 - (void) cityPickerController:(TLCityPickerController *)cityPickerViewController didSelectCity:(TLCity *)city {
+    self.city = city.shortName;
+    _selectView.cityName = city.shortName;
     [[NavManager shareInstance] returnToFrontView:YES];
 }
 

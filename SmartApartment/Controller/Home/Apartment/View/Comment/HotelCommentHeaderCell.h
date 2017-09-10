@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoreEvaluateList.h"
 
 typedef NS_ENUM(NSInteger, CommentType) {
     
@@ -27,6 +28,6 @@ typedef NS_ENUM(NSInteger, CommentType) {
 
 @property (nonatomic, weak) id<HotelCommentHeaderCellDelegate> delegate;
 
-- (void)setCommentHeaderDic:(NSDictionary*)commentDic;
+@property (nonatomic, strong) StoreEvaluateList *storeEvaluateList;
 
 @end

@@ -191,9 +191,6 @@
 - (void)btnClick:(UIButton *)sender {
     
     CommentType type = sender.tag;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelCommentHeaderCellDidClick:)]) {
-        [self.delegate hotelCommentHeaderCellDidClick:type];
-    }
     
     for (NSInteger index = 0; index < 4; index ++) {
         UIButton *btn = _btnArray[index];
@@ -204,16 +201,29 @@
         }
     }
     CGFloat width = kScreenWidth/4;
+    NSLog(@"%f", (width-60)/2+ sender.tag*width);
     _indicatorLine.left = (width-60)/2+ sender.tag*width;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelCommentHeaderCellDidClick:)]) {
+        [self.delegate hotelCommentHeaderCellDidClick:type];
+    }
 }
 
 
-- (void)setCommentHeaderDic:(NSDictionary *)commentDic {
+- (void)setStoreEvaluateList:(StoreEvaluateList *)storeEvaluateList {
     
-    _hygieneProgress.progress = 1;
-    _serviceProgress.progress = 0.89;
-    _envirmentProgress.progress = 1;
-    _cpRatioProgress.progress = 0.9;
+    _scoreLabel.text = [NSString stringWithFormat:@"%@分", storeEvaluateList.storeScore];
+    _goodCommentRatioLabel.text = [NSString stringWithFormat:@"%@好评", storeEvaluateList.storePercent];
+    
+    _hygieneProgress.progress = [storeEvaluateList.storeRoomHealthScore floatValue]/5;
+    _serviceProgress.progress = [storeEvaluateList.storeHotelScore floatValue]/5;
+    _envirmentProgress.progress = [storeEvaluateList.storeEnvironmentScore floatValue]/5;
+    _cpRatioProgress.progress = [storeEvaluateList.storeDeviceScore floatValue]/5;
+    
+    _hygieneScore.text = storeEvaluateList.storeRoomHealthScore;
+    _serviceScore.text = storeEvaluateList.storeHotelScore;
+    _envirmentScore.text = storeEvaluateList.storeEnvironmentScore;
+    _cpRatioScore.text = storeEvaluateList.storeDeviceScore;
     
     NSArray *titles = @[@"全部(46)", @"好评(34)", @"中评(10)", @"差评(2)"];
     for (NSInteger index = 0; index < 4; index ++) {
@@ -221,6 +231,7 @@
         [btn setTitle:titles[index] forState:UIControlStateNormal];
     }
 }
+
 
 - (void)updateConstraints {
     

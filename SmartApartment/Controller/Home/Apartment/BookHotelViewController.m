@@ -117,7 +117,7 @@
     [self.containerView addSubview:self.tipView];
     
     [self.roomNumView addSubview:self.roomNumLabel];
-    [self.roomNumView addSubview:self.roomNumBtn];
+    //[self.roomNumView addSubview:self.roomNumBtn];
     [self.livePersonView addSubview:self.livePersonTF];
     [self.livePersonView addSubview:self.livePersonBtn];
     [self.phoneNumView addSubview:self.phoneNumTF];

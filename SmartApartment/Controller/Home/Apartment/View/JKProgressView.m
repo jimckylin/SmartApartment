@@ -26,7 +26,7 @@
 
 - (void)setProgress:(CGFloat)progress {
     
-    self.width = progress * self.width;
+    self.width = progress * 90;
     self.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0, self.width, self.height) andColors:@[[UIColor redColor],[UIColor yellowColor]]];
 }
 
