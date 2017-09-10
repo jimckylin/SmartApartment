@@ -289,6 +289,10 @@
         [phoneString insertString:@" " atIndex:8];
         textField.text = phoneString;
     }
+    
+    if (textField.text.length >= 13 ) {//输入完成
+        textField.text = [textField.text substringToIndex:13];
+    }
 }
 
 

@@ -72,9 +72,9 @@
     _levelLabel.text = @"网客";
     [self addSubview:_levelLabel];
     
-    UIImageView *arrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
-    arrowIconV.center = CGPointMake(kScreenWidth - 25, 78);
-    [self addSubview:arrowIconV];
+    _vipIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+    _vipIconV.center = CGPointMake(kScreenWidth - 25, 78);
+    [self addSubview:_vipIconV];
     
     
     // 下半部分
@@ -155,10 +155,18 @@
     
     User *user = [UserManager manager].user;
     [_headImgView sd_setImageWithURL:[NSURL URLWithString:user.headImage] placeholderImage:kImage(@"mine_headiphone")];
-    _nickNameLabel.text = user.name;
-    _balanceLabel.text = user.cardMoney;
-    _couponLabel.text = user.couponNum;
-    _integralLabel.text = user.cardIntegral;
+    _nickNameLabel.text = user.name? user.name:@"未登录";
+    _balanceLabel.text = user.cardMoney? user.cardMoney:@"-";
+    _couponLabel.text = user.couponNum? user.couponNum:@"-";
+    _integralLabel.text = user.cardIntegral? user.cardIntegral:@"-";
+    
+    if ([UserManager manager].isLogin) {
+        _levelLabel.hidden = NO;
+        _vipIconV.hidden = NO;
+    }else {
+        _levelLabel.hidden = YES;
+        _vipIconV.hidden = YES;
+    }
 }
 
 
