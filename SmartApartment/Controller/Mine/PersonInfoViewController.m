@@ -14,7 +14,7 @@
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface PersonInfoViewController ()
+@interface PersonInfoViewController ()<UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) WRCellView    *roomNumView;
@@ -104,9 +104,19 @@
 
 - (void)logoutBtnClick:(id)sender {
     
-    [[UserManager manager] removeUser];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kLogoutSuccess" object:nil];
-    [[NavManager shareInstance] returnToLoginView:YES];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确定退出" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        [[UserManager manager] removeUser];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kLogoutSuccess" object:nil];
+        [[NavManager shareInstance] returnToLoginView:YES];
+    }
 }
 
 

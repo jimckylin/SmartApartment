@@ -98,7 +98,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return 50;
 }
 
 
@@ -115,7 +115,7 @@
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.textLabel.textColor = [UIColor darkTextColor];
             
-            UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 135, 0, 100, 44)];
+            UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 135, 0, 100, 50)];
             [subLabel setTextAlignment:NSTextAlignmentRight];
             [subLabel setTextColor:[UIColor lightGrayColor]];
             [subLabel setFont:[UIFont systemFontOfSize:13.0f]];
@@ -123,7 +123,7 @@
             [cell addSubview:subLabel];
             
             UIImageView *iconArrow = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
-            iconArrow.center = CGPointMake(kScreenWidth-25, 22);
+            iconArrow.center = CGPointMake(kScreenWidth-25, 25);
             iconArrow.tag = 1001;
             [cell addSubview:iconArrow];
             
@@ -163,7 +163,7 @@
             cell.textLabel.textColor = [UIColor darkTextColor];
             
             UIImageView *iconArrow = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
-            iconArrow.center = CGPointMake(kScreenWidth-25, 22);
+            iconArrow.center = CGPointMake(kScreenWidth-25, 25);
             iconArrow.tag = 1001;
             [cell addSubview:iconArrow];
             
