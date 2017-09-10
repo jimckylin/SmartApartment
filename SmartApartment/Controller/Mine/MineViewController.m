@@ -57,7 +57,7 @@
     [self.view addSubview:settingBtn];*/
 
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -147,7 +147,7 @@
         
         
         NSArray *icons = @[@"mine_order_iciphone", @"mine_information_iciphone", @"mine_comment_iciphone", @"mine_information_iciphone"];
-        NSArray *titles = @[@"酒店订单", @"常用信息", @"我的点评", @"客服电话"];
+        NSArray *titles = @[@"公寓订单", @"常用信息", @"我的点评", @"客服电话"];
         
         cell.imageView.image = [UIImage imageNamed:icons[indexPath.row]];
         cell.textLabel.text = titles[indexPath.row];

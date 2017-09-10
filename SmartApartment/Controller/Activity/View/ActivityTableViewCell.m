@@ -44,6 +44,7 @@
     _thumbImgV = [UIImageView new];
     _thumbImgV.contentMode = UIViewContentModeScaleAspectFill;
     _thumbImgV.image = [UIImage imageNamed:@"activity02"];
+    _thumbImgV.clipsToBounds = YES;
     [self addSubview:_thumbImgV];
     
     _titleLabel = [UILabel new];
@@ -76,7 +77,7 @@
 
 - (void)setActivity:(Activity *)activity {
     
-    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:activity.activityUrl] placeholderImage:kImage(@"travel_details_blankiphone")];
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:activity.activityImage] placeholderImage:kImage(@"travel_details_blankiphone")];
     _titleLabel.text = activity.activityTitle;
     _decrLabel.text = activity.activitySubTitle;
     

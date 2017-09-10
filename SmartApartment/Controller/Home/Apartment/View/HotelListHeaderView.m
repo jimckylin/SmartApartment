@@ -45,7 +45,7 @@
     [self addSubview:_backBtn];
     
     _cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _cityBtn.backgroundColor = RGBA(256, 256, 256, 0.2);
+    _cityBtn.backgroundColor = RGBA(256, 256, 256, 0.3);
     [_cityBtn setImage:kImage(@"list_city_iciphone") forState:UIControlStateNormal];
     [_cityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_cityBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
@@ -60,7 +60,7 @@
     [self addSubview:_cityBtn];
     
     _dateBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _dateBtn.backgroundColor = RGBA(256, 256, 256, 0.2);
+    _dateBtn.backgroundColor = RGBA(256, 256, 256, 0.3);
     [_dateBtn setImage:kImage(@"list_time_iciphone") forState:UIControlStateNormal];
     [_dateBtn setTitle:@"8月14-15 共1晚" forState:UIControlStateNormal];
     [_dateBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

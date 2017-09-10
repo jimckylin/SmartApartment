@@ -72,9 +72,9 @@
     _levelLabel.text = @"网客";
     [self addSubview:_levelLabel];
     
-    _vipIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
-    _vipIconV.center = CGPointMake(kScreenWidth - 25, 78);
-    [self addSubview:_vipIconV];
+    UIImageView *arrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+    arrowIconV.center = CGPointMake(kScreenWidth - 25, 78);
+    [self addSubview:arrowIconV];
     
     
     // 下半部分
@@ -161,11 +161,11 @@
     _integralLabel.text = user.cardIntegral? user.cardIntegral:@"-";
     
     if ([UserManager manager].isLogin) {
-        _levelLabel.hidden = NO;
         _vipIconV.hidden = NO;
+        _levelLabel.hidden = NO;
     }else {
-        _levelLabel.hidden = YES;
         _vipIconV.hidden = YES;
+        _levelLabel.hidden = YES;
     }
 }
 

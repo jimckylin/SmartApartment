@@ -49,7 +49,7 @@
 
 - (void)showLaunchAd {
     
-    UIImage *adImage = [UIImage imageNamed:@"snapshot.png"];
+    UIImage *adImage = [UIImage imageNamed:@"iP6_5iphone"];
     if (adImage) {
         // 设置广告图片开启倒计时
         LaunchAdView *launchAdView = [[LaunchAdView alloc] initWithFrame:[UIScreen mainScreen].bounds];
