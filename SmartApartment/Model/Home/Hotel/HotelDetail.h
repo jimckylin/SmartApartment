@@ -21,7 +21,7 @@
 @property (nonatomic, copy)  NSString *storePercent;            // 公寓评分百分比
 
 @property (nonatomic, strong)  NSArray <DayRoom *>*dayRoomList;   // 全天房列表
-@property (nonatomic, strong)  NSArray <HourRoom *>*hourRoomList; // 钟点房列表
+@property (nonatomic, strong)  NSArray <HourRoom *>*hourRoomList; // 体验房列表
 
 @property (nonatomic, strong) NSArray <StoreEvaluate *>*customerList;            // 评论列表
 @property (nonatomic, copy)  NSString *evaluateTotal;           // 评价总数

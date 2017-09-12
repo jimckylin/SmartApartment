@@ -53,7 +53,7 @@
     [_alldayBtn setBackgroundImage:kImage(@"CombinedShape2iphone") forState:UIControlStateNormal];
     [_alldayBtn setBackgroundImage:whiteImg forState:UIControlStateSelected];
     [_alldayBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_alldayBtn setTitle:@"全日房" forState:UIControlStateNormal];
+    [_alldayBtn setTitle:@"短租房" forState:UIControlStateNormal];
     [_alldayBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
     [_alldayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_alldayBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
@@ -65,7 +65,7 @@
     [_hoursBtn setBackgroundImage:kImage(@"CombinedShapeiphone") forState:UIControlStateNormal];
     [_hoursBtn setBackgroundImage:whiteImg forState:UIControlStateSelected];
     [_hoursBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_hoursBtn setTitle:@"钟点房" forState:UIControlStateNormal];
+    [_hoursBtn setTitle:@"体验房" forState:UIControlStateNormal];
     [_hoursBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];

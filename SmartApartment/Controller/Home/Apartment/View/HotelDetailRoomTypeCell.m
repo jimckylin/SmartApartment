@@ -53,7 +53,7 @@
     
     _alldayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_alldayBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_alldayBtn setTitle:@"全日房" forState:UIControlStateNormal];
+    [_alldayBtn setTitle:@"短租房" forState:UIControlStateNormal];
     [_alldayBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     [_alldayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_alldayBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
@@ -63,7 +63,7 @@
     
     _hoursBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_hoursBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_hoursBtn setTitle:@"钟点房" forState:UIControlStateNormal];
+    [_hoursBtn setTitle:@"体验房" forState:UIControlStateNormal];
     [_hoursBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];

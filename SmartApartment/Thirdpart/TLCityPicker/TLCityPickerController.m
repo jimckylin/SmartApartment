@@ -268,10 +268,10 @@
 {
     if (_localCityData == nil) {
         _localCityData = [[NSMutableArray alloc] init];
-        if (self.locationCityID != nil) {
+        if (self.locationCityName != nil) {
             TLCity *city = nil;
             for (TLCity *item in self.cityData) {
-                if ([item.cityID isEqualToString:self.locationCityID]) {
+                if ([item.cityName isEqualToString:self.locationCityName]) {
                     city = item;
                     break;
                 }

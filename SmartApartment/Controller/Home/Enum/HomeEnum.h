@@ -12,14 +12,14 @@
 
 typedef NS_ENUM(NSInteger, HotelRoomType) {
     
-    HotelRoomTypeAllday = 123,    // 全日房
-    HotelRoomTypeTypeHours,       // 钟点房
+    HotelRoomTypeAllday = 123,    // 短租房
+    HotelRoomTypeTypeHours,       // 体验房
 };
 
 typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     
-    HotelSelectBtnTypeAlldayRoom = 1000,   // 全日房
-    HotelSelectBtnTypeHoursRoom,    // 钟点房
+    HotelSelectBtnTypeAlldayRoom = 1000,   // 短租房
+    HotelSelectBtnTypeHoursRoom,    // 体验房
     HotelSelectBtnTypeCitySelect,   // 城市选择
     HotelSelectBtnTypeLocate,       // 定位
     HotelSelectBtnTypeLiveDate,     // 入住时间

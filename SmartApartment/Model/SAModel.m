@@ -66,6 +66,10 @@
                     if (resultCode == 0) {
                         [self handleSucces:res class:model success:success];
                     }else {
+                        if (resultCode == 1) {
+                            [[NavManager shareInstance] returnToLoginView:YES];
+                            return ;
+                        }
                         failure(error);
                     }
                 }];

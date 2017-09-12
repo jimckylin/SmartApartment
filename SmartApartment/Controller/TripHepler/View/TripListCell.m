@@ -114,7 +114,7 @@
         self.right3Btn.hidden = YES;
         self.right4Btn.hidden = YES;
         
-        [self.right1Btn setTitle:@"取卡验证码" forState:UIControlStateNormal];
+        [self.right1Btn setTitle:@"入住码" forState:UIControlStateNormal];
         [self.right2Btn setTitle:@"取消订单" forState:UIControlStateNormal];
         
         self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;

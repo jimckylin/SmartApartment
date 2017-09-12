@@ -41,7 +41,7 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (void)initUI {
     
-    _naviLabel.text = @"评论评价";
+    _naviLabel.text = @"公寓评价";
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
     [self.view addSubview:view];

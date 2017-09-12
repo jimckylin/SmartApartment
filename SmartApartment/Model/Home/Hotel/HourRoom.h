@@ -11,7 +11,7 @@
 @interface HourRoom : NSObject
 
 @property (nonatomic, strong) NSArray *bedNum;               // 床数
-@property (nonatomic, strong) NSArray *hourNum;              // 钟点房几个小时
+@property (nonatomic, strong) NSArray *hourNum;              // 体验房几个小时
 @property (nonatomic, copy)  NSString *liveNum;              // 最大入住人数
 @property (nonatomic, copy)  NSString *roomNum;              // 房型剩余房间数量，展示副标题条件是房间低于5间展示出来，显示是 ：“最后4间，预定加速哦！”
 @property (nonatomic, copy)  NSString *roomPrice;            // 房型价格，单位元

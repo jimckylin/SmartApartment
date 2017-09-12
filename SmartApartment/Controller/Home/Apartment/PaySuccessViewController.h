@@ -10,4 +10,6 @@
 
 @interface PaySuccessViewController : ParentViewController
 
+@property (nonatomic, copy) NSString *checkinNo; // 入住码
+
 @end

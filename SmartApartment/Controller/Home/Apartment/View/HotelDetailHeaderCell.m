@@ -50,6 +50,7 @@
     _bannerView.autoScrollTimeInterval = 6;
     _bannerView.autoScroll = NO;
     _bannerView.pageControlBottomOffset = 30;
+    _bannerView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_bannerView];
     
     UIView *bgView = [UIView new];

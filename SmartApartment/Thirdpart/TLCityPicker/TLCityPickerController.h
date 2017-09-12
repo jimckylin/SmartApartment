@@ -23,6 +23,11 @@
 @property (nonatomic, strong) NSString *locationCityID;
 
 /*
+ *  定位城市名
+ */
+@property (nonatomic, strong) NSString *locationCityName;
+
+/*
  *  常用城市id数组,自动管理，也可赋值
  */
 @property (nonatomic, strong) NSMutableArray *commonCitys;

@@ -7,6 +7,7 @@
 //
 
 #import "PaySuccessViewController.h"
+#import "RTLabel.h"
 #import <BAButton/BAButton.h>
 
 @interface PaySuccessViewController ()
@@ -28,7 +29,7 @@
     headerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:headerView];
     [headerView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
-    [headerView autoSetDimension:ALDimensionHeight toSize:223];
+    [headerView autoSetDimension:ALDimensionHeight toSize:260];
     
     UIImageView *icon = [[UIImageView alloc] initWithImage:kImage(@"illustration_commentiphone")];
     icon.center = CGPointMake(kScreenWidth/2, 57);
@@ -41,6 +42,18 @@
     label.text = @"恭喜您支付成功!";
     [headerView addSubview:label];
     
+    RTLabel *descrLabel = [RTLabel new];
+    descrLabel.font = [UIFont systemFontOfSize:16];
+    descrLabel.textColor = [UIColor darkTextColor];
+    descrLabel.textAlignment = RTTextAlignmentCenter;
+    descrLabel.text = [NSString stringWithFormat:@"您的入住码是:<font color=#EA2035>%@</font>\n 您到达公寓后，请在自助机的互联网取卡界面，输入入住码自助入住。", self.checkinNo];
+    [headerView addSubview:descrLabel];
+    
+    [descrLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [descrLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:label withOffset:30];
+    [descrLabel autoSetDimensionsToSize:CGSizeMake(kScreenWidth-40, 80)];
+    
+    /*
     UIButton *selectRoomBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     selectRoomBtn.backgroundColor = ThemeColor;
     [selectRoomBtn addTarget:self action:@selector(selectRoomBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -53,7 +66,7 @@
     
     [selectRoomBtn autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [selectRoomBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:label withOffset:30];
-    [selectRoomBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth-40, 40)];
+    [selectRoomBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth-40, 40)];*/
     
     UIView *footerView = [UIView new];
     footerView.backgroundColor = [UIColor whiteColor];
@@ -122,7 +135,7 @@
 
 - (void)backClick:(id)sender {
     
-    
+    [[NavManager shareInstance] returnToMainView:YES];
 }
 
 

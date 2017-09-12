@@ -220,7 +220,7 @@
 #pragma mark - Private
 
 - (void)showVerifyCode:(NSString *)code {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"取卡验证码" message:code delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"入住码" message:code delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alertView show];
 }
 
