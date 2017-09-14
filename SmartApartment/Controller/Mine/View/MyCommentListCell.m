@@ -27,7 +27,7 @@
     self.thumbImageView.layer.cornerRadius = 4.f;
     self.thumbImageView.layer.masksToBounds = YES;
     
-    self.starView.isIndicator = NO;
+    self.starView.isIndicator = YES;
 }
 
 

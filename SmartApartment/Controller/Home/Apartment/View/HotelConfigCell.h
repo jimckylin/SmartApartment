@@ -12,5 +12,6 @@
 @interface HotelConfigCell : UITableViewCell
 
 @property (nonatomic, strong) Hotel *hotel;
++ (CGFloat)getCellHeight:(Hotel *)hotel;
 
 @end

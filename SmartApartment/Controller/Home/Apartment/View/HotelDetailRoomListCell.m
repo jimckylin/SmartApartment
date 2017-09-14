@@ -76,13 +76,13 @@
     
     _titleLabel.text = dayRoom.roomTypeName;
     _remainLabel.text = [NSString stringWithFormat:@"仅剩%@间客房", dayRoom.roomNum];
-    _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>(门市价)</font>", dayRoom.shopPrice];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>(门市价)</font>", dayRoom.roomPrice];
 }
 
 - (void)setHourRoom:(HourRoom *)hourRoom {
     
     _titleLabel.text = hourRoom.roomTypeName;
-    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.shopPrice];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.roomPrice];
 }
 
 

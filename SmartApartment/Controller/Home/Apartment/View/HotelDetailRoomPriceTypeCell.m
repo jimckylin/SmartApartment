@@ -108,12 +108,12 @@
 
 - (void)setDayRoom:(DayRoom *)dayRoom {
     
-    _priceLabel.text = [NSString stringWithFormat:@"¥%@", dayRoom.roomPrice];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", dayRoom.customerTotalMoney];
 }
 
 - (void)setHourRoom:(HourRoom *)hourRoom {
     
-    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.roomPrice];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.customerTotalMoney];
 }
 
 

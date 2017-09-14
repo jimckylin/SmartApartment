@@ -82,7 +82,7 @@
                                       lineBreakMode:NSLineBreakByWordWrapping];
     }
     
-    return contentSize.height + 50;
+    return contentSize.height + 60;
 }
 
 - (void)updateConstraints {

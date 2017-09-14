@@ -176,7 +176,7 @@
                                      // 跳转支付成功页面
                                      PaySuccessViewController *vc = [PaySuccessViewController new];
                                      // FIX-ME : 替换入住码
-                                     vc.checkinNo = @"456132";
+                                     vc.checkinNo = selfWeak.orderDict[@"checkInNo"];
                                      [[NavManager shareInstance] showViewController:vc isAnimated:YES];
                                  };
                              }];

@@ -48,18 +48,44 @@
 
 - (void)setHotel:(Hotel *)hotel {
     
-    CGFloat width = kScreenWidth/3;
-    CGFloat height = 20;
+    CGFloat width = (kScreenWidth-15)/3;
+    CGFloat height = 25;
     
+    UIView *tagBgView = [UIView new];
+    tagBgView.frame = CGRectMake(15, 35, kScreenWidth - 15, 20);
+    [self addSubview:tagBgView];
     
-    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@";"];
-//    for (NSInteger index = 0; index< [devices count]; index ++) {
-//        
-//        NSInteger shang = index/[devices count];
-//        NSInteger yushu = index%[devices count];
-//        
-//        UILabel *tagLabel = [UILabel alloc] initWithFrame:CGRectMake(, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-//    }
+    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@" "];
+    for (NSInteger index = 0; index< [devices count]; index ++) {
+        NSInteger shang = index/3;
+        NSInteger yushu = index%3;
+        
+        UILabel *tagLabel = [[UILabel alloc] initWithFrame:CGRectMake(yushu*width, shang*height, width, height)];
+        tagLabel.textColor = [UIColor grayColor];
+        tagLabel.font = [UIFont systemFontOfSize:12];
+        tagLabel.text = devices[index];
+        [tagBgView addSubview:tagLabel];
+    }
+    
+    NSInteger shang = [devices count]/3;
+    NSInteger yushu = [devices count]%3;
+    
+    if ([devices count] >0) {
+        CGFloat tagBgVHeight = height * (shang+(yushu?0:1));
+        tagBgView.height = tagBgVHeight;
+    }
+}
+
++ (CGFloat)getCellHeight:(Hotel *)hotel {
+
+    CGFloat tagHeight = 25;
+    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@" "];
+
+    NSInteger shang = [devices count]/3;
+    NSInteger yushu = [devices count]%3;
+    
+    CGFloat height = 35 + tagHeight * (shang+(yushu?1:0)) +10;
+    return height;
 }
 
 

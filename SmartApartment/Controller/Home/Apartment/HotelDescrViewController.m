@@ -61,7 +61,7 @@ UITableViewDataSource>
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
     if (section == 0) {
-        return 112;
+        return [HotelConfigCell getCellHeight:self.hotel];
     }else if (section == 1) {
         return 40;
     }else if (section == 2) {
