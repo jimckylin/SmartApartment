@@ -155,10 +155,6 @@
 #pragma mark - UIButton Click
 
 - (void)payBtnClick:(UIButton *)sender {
-    PaySuccessViewController *vc = [PaySuccessViewController new];
-    vc.checkinNo = @"456132";
-    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-    return;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"点击确认支付后，不能再次修改优惠券，是否继续支付" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定支付", nil];
     [alertView show];
 }
@@ -179,6 +175,8 @@
                                  [PayManager getInstance].didPayCompleteBlock = ^{
                                      // 跳转支付成功页面
                                      PaySuccessViewController *vc = [PaySuccessViewController new];
+                                     // FIX-ME : 替换入住码
+                                     vc.checkinNo = @"456132";
                                      [[NavManager shareInstance] showViewController:vc isAnimated:YES];
                                  };
                              }];

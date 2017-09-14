@@ -96,6 +96,14 @@
 }
 
 
+- (BOOL)checkIsLogin {
+    if (![UserManager manager].isLogin) {
+        [[NavManager shareInstance] returnToLoginView:YES];
+    }
+    return [UserManager manager].isLogin;
+}
+
+
 #pragma mark- 添加自定义按钮
 
 // 添加文字按钮

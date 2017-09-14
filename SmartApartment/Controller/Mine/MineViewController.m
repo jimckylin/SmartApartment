@@ -184,6 +184,9 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
+        if (!self.checkIsLogin) {
+            return;
+        }
         if (indexPath.row == 0) {
             HotelOrderListViewController *vc = [HotelOrderListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
@@ -230,12 +233,14 @@
         }
             break;
         case HeaderEventTypeBalance: {
+            if (!self.checkIsLogin) return;
             WalletViewController *vc = [WalletViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
                 
         }
             break;
         case HeaderEventTypeCoupon: {
+            if (!self.checkIsLogin) return;
             CouponViewController *vc = [CouponViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }

@@ -38,4 +38,7 @@ typedef enum{
 - (void)pushControllerWithName:(NSString *)controllerName properties:(NSDictionary *)properties;
 - (void)pushControllerWithClass:(Class)controllerClass properties:(NSDictionary *)properties;
 
+// 测试是否登录 没有则跳转登录
+@property (nonatomic, assign) BOOL checkIsLogin;
+
 @end

@@ -130,14 +130,14 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([UserManager manager].isLogin) {
+    if ([UserManager manager].isLogin && [self hasTripOrder]) {
         return [_orderViewModel.tripOrderList count];
     }
     return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([UserManager manager].isLogin) {
+    if ([UserManager manager].isLogin && [self hasTripOrder]) {
         return 373;
     }
     return 1193;
@@ -148,7 +148,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([UserManager manager].isLogin) {
+    if ([UserManager manager].isLogin && [self hasTripOrder]) {
         TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
         cell.delegate = self;
         TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
@@ -165,7 +165,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([UserManager manager].isLogin) {
+    if ([UserManager manager].isLogin && [self hasTripOrder]) {
         
         TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
         OrderDetailViewController *vc = [OrderDetailViewController new];
@@ -181,7 +181,7 @@
 #pragma mark - UIButton Action
 
 - (void)tripHistoryBtnClick:(id)sender {
-    
+    if (!self.checkIsLogin) return;
     TripHistoryListViewController *vc = [TripHistoryListViewController new];
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
@@ -246,7 +246,10 @@
     [alertView show];
 }
 
-
+- (BOOL)hasTripOrder {
+    
+    return [_orderViewModel.tripOrderList count];
+}
 
 
 
