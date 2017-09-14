@@ -31,7 +31,7 @@
 @property (nonatomic, strong) WRCellView    *payTypeView;  // 支付方式
 @property (nonatomic, strong) WRCellView    *aliPayView;
 @property (nonatomic, strong) WRCellView    *wechatPayView;
-@property (nonatomic, strong) WRCellView    *walletView;
+//@property (nonatomic, strong) WRCellView    *walletView;
 @property (nonatomic, strong) UIView        *footerView;
 
 @property (nonatomic, strong) UILabel *couponLabel;
@@ -72,7 +72,7 @@
     [self.containerView addSubview:self.payTypeView];
     [self.containerView addSubview:self.aliPayView];
     [self.containerView addSubview:self.wechatPayView];
-    [self.containerView addSubview:self.walletView];
+    //[self.containerView addSubview:self.walletView];
     [self.containerView addSubview:self.footerView];
     
     [self.couponView addSubview:self.couponLabel];
@@ -86,15 +86,15 @@
     
     self.aliPayView.frame = CGRectMake(0, _payTypeView.bottom, kScreenWidth, WRCellViewHeight);
     self.wechatPayView.frame = CGRectMake(0, _aliPayView.bottom, kScreenWidth, WRCellViewHeight);
-    self.walletView.frame = CGRectMake(0, _wechatPayView.bottom, kScreenWidth, WRCellViewHeight);
-    self.footerView.frame = CGRectMake(0, _walletView.bottom, kScreenWidth, 100);
+    //self.walletView.frame = CGRectMake(0, _wechatPayView.bottom, kScreenWidth, WRCellViewHeight);
+    self.footerView.frame = CGRectMake(0, _wechatPayView.bottom, kScreenWidth, 100);
     
     if (self.footerView.bottom< (kScreenHeight -64)) {
         self.containerView.contentSize = CGSizeMake(0, (kScreenHeight -64 + 20));
     }else {
         self.containerView.contentSize = CGSizeMake(0, self.footerView.bottom + 50);
     }
-    self.footerView.height = self.containerView.contentSize.height - self.walletView.bottom;
+    self.footerView.height = self.containerView.contentSize.height - self.wechatPayView.bottom;
 }
 
 - (void)onClickEvent {
@@ -129,20 +129,20 @@
         weakSelf.payType = @"1";
         weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
         weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
-        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
+        //weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
     };
     self.wechatPayView.tapBlock = ^ {
         weakSelf.payType = @"0";
         weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
         weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
-        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
+        //weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
     };
-    self.walletView.tapBlock = ^ {
-        weakSelf.payType = @"3";
-        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
-        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
-        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_pay_siphone");
-    };
+//    self.walletView.tapBlock = ^ {
+//        weakSelf.payType = @"3";
+//        weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+//        weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_payiphone");
+//        weakSelf.walletView.rightIndicator.image = kImage(@"reserve_pay_siphone");
+//    };
     
 }
 
@@ -283,16 +283,16 @@
     return _wechatPayView;
 }
 
-- (WRCellView *)walletView {
-    if (_walletView == nil) {
-        _walletView = [[WRCellView alloc] initWithLineStyle:WRCellStyleIconLabel_Indicator];
-        _walletView.leftIcon.image = kImage(@"reserve_pay_1_iciphone");
-        _walletView.rightIndicator.image = kImage(@"reserve_payiphone");
-        _walletView.leftLabel.text = @"钱包支付";
-        [_walletView setLineStyleWithLeftZero];
-    }
-    return _walletView;
-}
+//- (WRCellView *)walletView {
+//    if (_walletView == nil) {
+//        _walletView = [[WRCellView alloc] initWithLineStyle:WRCellStyleIconLabel_Indicator];
+//        _walletView.leftIcon.image = kImage(@"reserve_pay_1_iciphone");
+//        _walletView.rightIndicator.image = kImage(@"reserve_payiphone");
+//        _walletView.leftLabel.text = @"钱包支付";
+//        [_walletView setLineStyleWithLeftZero];
+//    }
+//    return _walletView;
+//}
 
 
 // Custom

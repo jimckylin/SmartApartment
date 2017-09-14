@@ -40,7 +40,7 @@
     
     UIImageView *iconV = [UIImageView new];
     iconV.contentMode = UIViewContentModeScaleAspectFill;
-    iconV.image = [UIImage imageNamed:@"logoiphone"];
+    iconV.image = [UIImage imageNamed:@"msx_h_round_256"];
     [header addSubview:iconV];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];

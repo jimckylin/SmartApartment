@@ -38,7 +38,7 @@
 #define __StrongObj(o) __strong typeof(o) o = o##Weak;
 
 // 颜色
-#define ThemeColor [UIColor colorWithHexString:@"#EA2035"]
+#define ThemeColor [UIColor colorWithHexString:@"#1B5B5E"]
 
 #pragma mark - RGBA颜色
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]

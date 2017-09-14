@@ -48,8 +48,18 @@
 
 - (void)setHotel:(Hotel *)hotel {
     
-    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@";"];
+    CGFloat width = kScreenWidth/3;
+    CGFloat height = 20;
     
+    
+    NSArray *devices = [hotel.storeDevice componentsSeparatedByString:@";"];
+//    for (NSInteger index = 0; index< [devices count]; index ++) {
+//        
+//        NSInteger shang = index/[devices count];
+//        NSInteger yushu = index%[devices count];
+//        
+//        UILabel *tagLabel = [UILabel alloc] initWithFrame:CGRectMake(, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+//    }
 }
 
 

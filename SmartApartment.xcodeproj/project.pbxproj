@@ -201,6 +201,7 @@
 		A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112E1F4E8D7F00357DCB /* RequestSign.m */; };
 		A96E11321F4EBCE000357DCB /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E11311F4EBCE000357DCB /* Encrypt.m */; };
 		A96FBB311F58FD2E00C945C8 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FBB301F58FD2E00C945C8 /* Hotel.m */; };
+		A970752B1F6A61A4005D58B8 /* msx_h_round_256@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -666,6 +667,7 @@
 		A96E11311F4EBCE000357DCB /* Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypt.m; sourceTree = "<group>"; };
 		A96FBB2F1F58FD2E00C945C8 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
 		A96FBB301F58FD2E00C945C8 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msx_h_round_256@2x.png"; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -1813,6 +1815,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */,
 				A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */,
 				A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */,
 				A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */,
@@ -2251,6 +2254,7 @@
 				A9BF422E1F5C17700050C39F /* evaluate_blankiphone@2x.png in Resources */,
 				A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */,
 				A9EB26371F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png in Resources */,
+				A970752B1F6A61A4005D58B8 /* msx_h_round_256@2x.png in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
 				A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */,
 				A985ABEF1F415134005B31DF /* list_city_iciphone@2x.png in Resources */,
