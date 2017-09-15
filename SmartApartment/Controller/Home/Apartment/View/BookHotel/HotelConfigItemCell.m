@@ -50,7 +50,7 @@
         [_nameLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
         
         _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
+        //[_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
         [_selectedBtn setImage:kImage(@"reserve_pay_siphone") forState:UIControlStateSelected];
         [self addSubview:_selectedBtn];
         

@@ -57,9 +57,12 @@
 
 
 /* 公寓订单
- * @param username 手机号码/卡号，使用卡号
+ * @param orderType 订单类型：0-全部订单，1-待评价
  */
-- (void)requestStoreOrderPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize complete:(void(^)(NSArray *tripOrderList))complete;
+- (void)requestStoreOrderPageNum:(NSInteger)pageNum
+                        pageSize:(NSInteger)pageSize
+                       orderType:(NSInteger)orderType
+                        complete:(void(^)(NSArray *tripOrderList))complete;
 
 /* 行程点评
  * @param orderNo 订单流水号

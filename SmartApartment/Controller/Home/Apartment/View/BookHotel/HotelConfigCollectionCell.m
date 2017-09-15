@@ -24,7 +24,7 @@
 @property (nonatomic, strong) NSString       *roomLayoutId;
 @property (nonatomic, strong) NSString       *wineId;
 
-@property (nonatomic, assign) NSInteger      selectedIndex;
+@property (nonatomic, assign) NSInteger      selectedIndex; // 初始-1 不选中任何
 
 @end
 
@@ -70,29 +70,50 @@
 - (void)setAromaList:(NSArray<Aroma *> *)aromaList {
     
     _aromaList = aromaList;
+    _breakfastList = nil;
+    _fivePieceList = nil;
+    _roomLayoutList = nil;
+    _wineList = nil;
+    
     [_collectionView reloadData];
 }
 
 - (void)setBreakfastList:(NSArray<Breakfast *> *)breakfastList {
     
+    _aromaList = nil;
     _breakfastList = breakfastList;
+    _fivePieceList = nil;
+    _roomLayoutList = nil;
+    _wineList = nil;
     [_collectionView reloadData];
 }
 
 - (void)setFivePieceList:(NSArray<FivePiece *> *)fivePieceList {
     
+    _aromaList = nil;
+    _breakfastList = nil;
     _fivePieceList = fivePieceList;
+    _roomLayoutList = nil;
+    _wineList = nil;
     [_collectionView reloadData];
 }
 
 - (void)setRoomLayoutList:(NSArray<RoomLayout *> *)roomLayoutList {
     
+    _aromaList = nil;
+    _breakfastList = nil;
+    _fivePieceList = nil;
     _roomLayoutList = roomLayoutList;
+    _wineList = nil;
     [_collectionView reloadData];
 }
 
 - (void)setWineList:(NSArray<Wine *> *)wineList {
     
+    _aromaList = nil;
+    _breakfastList = nil;
+    _fivePieceList = nil;
+    _roomLayoutList = nil;
     _wineList = wineList;
     [_collectionView reloadData];
 }
@@ -143,10 +164,14 @@
         cell.wine = self.wineList[row];
     }
     
-    if (indexPath.row == _selectedIndex) {
-        [cell setCellSelected:YES];
-    }else {
+    if (self.clearSelectedIndex == -1) {
         [cell setCellSelected:NO];
+    }else {
+        if (indexPath.row == _selectedIndex) {
+            [cell setCellSelected:YES];
+        }else {
+            [cell setCellSelected:NO];
+        }
     }
     
     return cell;
@@ -178,24 +203,40 @@
     if (self.breakfastList) {
         Breakfast *breakfast = self.breakfastList[row];
         self.breakfastId = breakfast.breakfastId;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Breakfast class] itemId:self.breakfastId];
+        }
     }
     else if (self.fivePieceList) {
         FivePiece *fivePiece = self.fivePieceList[row];
         self.fivePieceId = fivePiece.fivePieceId;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[FivePiece class] itemId:self.fivePieceId];
+        }
     }
     else if (self.roomLayoutList) {
         RoomLayout *roomLayout = self.roomLayoutList[row];
         self.roomLayoutId = roomLayout.roomLayoutId;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[RoomLayout class] itemId:self.roomLayoutId];
+        }
     }
     else if (self.aromaList) {
         Aroma *aroma = self.aromaList[row];
         self.aromaId = aroma.aromaId;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Aroma class] itemId:self.aromaId];
+        }
     }
     else if (self.wineList) {
         Wine *wine = self.wineList[row];
         self.wineId = wine.wineId;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Wine class] itemId:self.wineId];
+        }
     }
     
+    self.clearSelectedIndex = 0;
     _selectedIndex = indexPath.row;
     [collectionView reloadData];
 }
@@ -209,8 +250,11 @@
     CGFloat padding = 15;
     NSInteger count = [arr count];
     
+    CGFloat shang = count/2;
+    CGFloat yushu = count%2;
+    
     if (count > 0) {
-        heigth = 5+count*100+(count-1)*padding+5;
+        heigth = 5+ 100 * (shang+(yushu?1:0)) +(shang+(yushu?1:0)-1)*padding+5;
     }
     return heigth;
 }

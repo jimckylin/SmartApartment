@@ -24,4 +24,7 @@
 @property (nonatomic, strong) RoomConfig *roomConfig;
 @property (nonatomic, weak) id<HotelConfigViewDelete> delegate;
 
+- (void)show;
+- (void)hide;
+
 @end

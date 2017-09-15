@@ -145,6 +145,7 @@
 
 - (void)requestStoreOrderPageNum:(NSInteger)pageNum
                         pageSize:(NSInteger)pageSize
+                       orderType:(NSInteger)orderType
                         complete:(void (^)(NSArray *))complete {
     
     NSString *username = [UserManager manager].user.cardNo;
@@ -155,6 +156,7 @@
     [dict cwgj_setObject:token        forKey:@"token"];
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageNum]    forKey:@"pageNum"];
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageSize]   forKey:@"pageSize"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", orderType]  forKey:@"orderType"];
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"storeOrder" params:dict class:[TripOrder class] success:^(id response) {
         

@@ -22,6 +22,8 @@
 @property (nonatomic, strong) YJSliderView *sliderView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
+@property (nonatomic, assign) NSInteger  orderType;
+
 @end
 
 @implementation HotelOrderListViewController
@@ -41,7 +43,7 @@
 - (void)initData {
     
     _orderViewModel = [OrderViewModel new];
-    [self requestData];
+    [self requestDataWith:0];
 }
 
 - (void)initSubView {
@@ -96,6 +98,7 @@
 }
 
 - (void)changeCurrrentToIndex:(NSInteger)index {
+    
     NSLog(@"切换到位置%ld", index);
 }
 
@@ -129,9 +132,9 @@
 
 #pragma mark - HttpRequest
 
-- (void)requestData {
+- (void)requestDataWith:(NSInteger)orderType {
     __WeakObj(self)
-    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 complete:^(NSArray *tripOrderList) {
+    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 orderType:orderType complete:^(NSArray *tripOrderList) {
         [selfWeak.tableView reloadData];
     }];
 }
@@ -142,7 +145,7 @@
     [_orderViewModel requestCancelOrder:orderNo refundReason:@"取消订单" complete:^(BOOL isCancel) {
         if (isCancel) {
             [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
-            [selfWeak requestData];
+            [selfWeak requestDataWith:0];
         }
     }];
 }
@@ -154,7 +157,7 @@
     [_orderViewModel requestCheckoutRoom:orderNo complete:^(BOOL isCheckout) {
         if (isCheckout) {
             [MBProgressHUD cwgj_showHUDWithText:@"退房成功"];
-            [selfWeak requestData];
+            [selfWeak requestDataWith:0];
         }
     }];
 }
@@ -165,7 +168,7 @@
     [_orderViewModel requestDelHistoryTrip:orderNo complete:^(BOOL isDelete) {
         if (isDelete) {
             [MBProgressHUD cwgj_showHUDWithText:@"删除成功"];
-            [selfWeak requestData];
+            [selfWeak requestDataWith:0];
         }
     }];
 }
@@ -177,10 +180,11 @@
     
     switch (btnType) {
         case TripCellBtnTypeGetCarVerifyCode: {
+            /*
             CommentHotelViewController *vc = [CommentHotelViewController new];
             vc.tripOrder = order;
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-            return;
+            return;*/
             [self showVerifyCode:order.checkInNo];
         }
             break;

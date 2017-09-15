@@ -15,7 +15,7 @@
 
 NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
-@interface HotelConfigView ()<UITableViewDelegate, UITableViewDataSource>
+@interface HotelConfigView ()<UITableViewDelegate, UITableViewDataSource, HotelConfigCollectionCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -26,6 +26,8 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 @property (nonatomic, copy) NSString       *roomLayoutId;
 @property (nonatomic, copy) NSString       *wineId;
 @property (nonatomic, strong) NSMutableArray       *sectionTitles;
+
+@property (nonatomic, assign) NSInteger      selectedIndex;
 
 @end
 
@@ -44,6 +46,11 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 }
 
 - (void)initSubView {
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = self.bounds;
+    [btn addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:btn];
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(25, 0, kScreenWidth-50, 400)];
     bgView.backgroundColor = RGBA(255, 255, 255, 1);
@@ -73,7 +80,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
-    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelBtn setTitle:@"重置" forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(cancelBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:cancelBtn];
     
@@ -131,7 +138,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
         sections ++;
     }
     
-    return sections;
+    return _roomConfig?5:0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -140,19 +147,20 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (_roomConfig.breakfastList) {
+    NSInteger section = indexPath.section;
+    if (section == 0) {
         return [HotelConfigCollectionCell getCellHeight:_roomConfig.breakfastList];
     }
-    if (_roomConfig.fivePieceList) {
+    if (section == 1) {
         return [HotelConfigCollectionCell getCellHeight:_roomConfig.fivePieceList];
     }
-    if (_roomConfig.roomLayoutList) {
+    if (section == 2) {
         return [HotelConfigCollectionCell getCellHeight:_roomConfig.roomLayoutList];
     }
-    if (_roomConfig.aromaList) {
+    if (section == 3) {
         return [HotelConfigCollectionCell getCellHeight:_roomConfig.aromaList];
     }
-    if (_roomConfig.wineList) {
+    if (section == 4) {
         return [HotelConfigCollectionCell getCellHeight:_roomConfig.wineList];
     }
     
@@ -164,31 +172,54 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    HotelConfigCollectionCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelConfigCollectionCell];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
+    NSString *cellId = [NSString stringWithFormat:@"kHotelConfigCollectionCell%zd%zd", indexPath.section, indexPath.row];
+    HotelConfigCollectionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[HotelConfigCollectionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.delegate = self;
+    }
     
-    if (_roomConfig.breakfastList) {
+    NSInteger section = indexPath.section;
+    if (section == 0) {
         cell.breakfastList = _roomConfig.breakfastList;
     }
-    else if (_roomConfig.fivePieceList) {
+    else if (section == 1) {
         cell.fivePieceList = _roomConfig.fivePieceList;
     }
-    else if (_roomConfig.roomLayoutList) {
+    else if (section == 2) {
         cell.roomLayoutList = _roomConfig.roomLayoutList;
     }
-    else if (_roomConfig.aromaList) {
+    else if (section == 3) {
         cell.aromaList = _roomConfig.aromaList;
     }
-    else if (_roomConfig.wineList) {
+    else if (section == 4) {
         cell.wineList = _roomConfig.wineList;
     }
+    
+    cell.clearSelectedIndex = self.selectedIndex;
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
+    if (section == 0 && _roomConfig.breakfastList) {
+        return 44;
+    }
+    else if (section == 1 && _roomConfig.fivePieceList) {
+        return 44;
+    }
+    else if (section == 2 && _roomConfig.roomLayoutList) {
+        return 44;
+    }
+    else if (section == 3 && _roomConfig.aromaList) {
+        return 44;
+    }
+    else if (section == 4 && _roomConfig.wineList) {
+        return 44;
+    }
     return 44;
 }
 
@@ -205,10 +236,38 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 }
 
 
+#pragma mark - HotelConfigCollectionCellDelegate
+
+- (void)hotelConfigCollectionCellDidSelectedConfig:(Class)class itemId:(NSString *)itemId {
+    
+    if (class == [Breakfast class]) {
+        self.breakfastId = itemId;
+    }else if (class == [FivePiece class]) {
+        self.fivePieceId = itemId;
+    }else if (class == [RoomLayout class]) {
+        self.roomLayoutId = itemId;
+    }else if (class == [Aroma class]) {
+        self.aromaId = itemId;
+    }else if (class == [Wine class]) {
+        self.wineId = itemId;
+    }
+}
+
+
 #pragma mark - Button Action
 
 - (void)cancelBtnClick:(id)sender {
-    [self removeFromSuperview];
+    
+    self.selectedIndex = -1;
+    
+    self.breakfastId = nil;
+    self.breakfastNum = nil;
+    self.fivePieceId = nil;
+    self.aromaId = nil;
+    self.roomLayoutId = nil;
+    self.wineId = nil;
+    
+    [_tableView reloadData];
 }
 
 - (void)confirmBtnClick:(id)sender {
@@ -221,9 +280,21 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
                                          roomLayoutId:self.roomLayoutId
                                                wineId:self.wineId];
     }
-    [self removeFromSuperview];
+    [self hide];
 }
 
+
+#pragma mark - Public
+
+- (void)show {
+    
+    self.hidden = NO;
+}
+
+- (void)hide {
+    
+    self.hidden = YES;
+}
 
 
 
@@ -248,7 +319,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
         [_sectionTitles addObject:@"酒水"];
     }
     
-    return _sectionTitles;
+    return @[@"早餐", @"五件套", @"房间布局", @"香气", @"酒水"];
 }
 
 @end

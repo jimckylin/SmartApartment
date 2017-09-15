@@ -54,6 +54,7 @@
 @property (nonatomic, strong) UILabel       *tipLabel;
 
 @property (nonatomic, strong) BookDetailView *bookDetailView;
+@property (nonatomic, strong) HotelConfigView *hotelConfigView;
 
 @property (nonatomic, strong) HotelViewModel *viewModel;
 @property (nonatomic, strong) MineViewModel  *mineViewModel;
@@ -67,6 +68,8 @@
 @property (nonatomic, strong) NSString       *wineId;
 
 @property (nonatomic, strong) NSMutableArray *contactPersons;
+
+
 
 @end
 
@@ -86,15 +89,16 @@
     
     _viewModel = [HotelViewModel new];
     _mineViewModel = [MineViewModel new];
+    
+    self.hotelConfigView = [HotelConfigView new];
+    self.hotelConfigView.delegate = self;
+    
     __WeakObj(self)
     [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
         
         selfWeak.roomConfig = roomConfig;
-        
-        HotelConfigView *view = [HotelConfigView new];
-        view.delegate = selfWeak;
-        view.roomConfig = roomConfig;
-        [selfWeak.view addSubview:view];
+        selfWeak.hotelConfigView.roomConfig = roomConfig;
+        [selfWeak.view addSubview:self.hotelConfigView];
     }];
 }
 
@@ -167,10 +171,7 @@
     
     self.invoiceView.tapBlock = ^{
         
-        HotelConfigView *view = [HotelConfigView new];
-        view.delegate = weakSelf;
-        view.roomConfig = weakSelf.roomConfig;
-        [weakSelf.view addSubview:view];
+        [weakSelf.hotelConfigView show];
     };
     
 }
