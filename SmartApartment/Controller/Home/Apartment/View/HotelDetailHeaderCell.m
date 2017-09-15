@@ -64,7 +64,7 @@
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:16];
     _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"优客酒店北京朝阳区双桥东路店";
+    _titleLabel.text = @"优客公寓北京朝阳区双桥东路店";
     [bgView addSubview:_titleLabel];
     
     _thumbImgV = [[UIImageView alloc] initWithImage:kImage(@"detail_brand_iciphone")];
@@ -96,7 +96,7 @@
     [_hotelDetailBtn setImage:kImage(@"detail_listiphone") forState:UIControlStateNormal];
     [_hotelDetailBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     [_hotelDetailBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
-    [_hotelDetailBtn setTitle:@"酒店详情" forState:UIControlStateNormal];
+    [_hotelDetailBtn setTitle:@"公寓详情" forState:UIControlStateNormal];
     _hotelDetailBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     _hotelDetailBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     _hotelDetailBtn.tag = HotelDetailHeaderTypeHotelDetail;
@@ -106,7 +106,7 @@
     _hotelTelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _hotelTelBtn.backgroundColor = [UIColor lightTextColor];
     [_hotelTelBtn setImage:kImage(@"detail_phone_iciphone") forState:UIControlStateNormal];
-    [_hotelTelBtn setTitle:@"咨询酒店" forState:UIControlStateNormal];
+    [_hotelTelBtn setTitle:@"咨询公寓" forState:UIControlStateNormal];
     [_hotelTelBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     [_hotelTelBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
     _hotelTelBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);

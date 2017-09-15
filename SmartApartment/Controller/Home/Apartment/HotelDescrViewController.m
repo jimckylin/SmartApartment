@@ -33,7 +33,7 @@ UITableViewDataSource>
 
 - (void)initSubView {
     
-    _naviLabel.text = @"酒店介绍";
+    _naviLabel.text = @"公寓介绍";
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     _tableView.backgroundColor = [UIColor clearColor];
@@ -93,7 +93,7 @@ UITableViewDataSource>
         
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textColor = [UIColor darkGrayColor];
-        cell.textLabel.text = [NSString stringWithFormat:@"酒店电话(%@)", @"135608065986"];
+        cell.textLabel.text = [NSString stringWithFormat:@"公寓电话(%@)", @"135608065986"];
         return cell;
         
     }else if (section == 2) {

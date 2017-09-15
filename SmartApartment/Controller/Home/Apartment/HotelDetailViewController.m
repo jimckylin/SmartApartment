@@ -79,7 +79,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     
     [_naviBackBtn setHidden:YES];
     [_naviView setAlpha:0];
-    _naviLabel.text = @"酒店详情";
+    _naviLabel.text = @"公寓详情";
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
     [self.view addSubview:view];

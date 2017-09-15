@@ -65,7 +65,7 @@
  * @param orderNo 订单流水号
  * @param roomHealthScore 房间卫生评分
  * @param environmentScore 周围环境评分
- * @param hotelScore 酒店服务评分
+ * @param hotelScore 公寓服务评分
  * @param deviceScore 设施服务评分
  * @param customerEvaluate 客户评价
  * @param customerImage 客户上传图片，最多5张，图片都是base64形式上传

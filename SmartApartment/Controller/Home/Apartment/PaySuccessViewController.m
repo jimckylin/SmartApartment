@@ -84,7 +84,7 @@
     descLabel.font = [UIFont systemFontOfSize:11];
     descLabel.textColor = [UIColor lightGrayColor];
     descLabel.numberOfLines = 2;
-    descLabel.text = @"请于中午12:00后办理入住，如提前到店，视酒店空房情况安排";
+    descLabel.text = @"请于中午12:00后办理入住，如提前到店，视公寓空房情况安排";
     [footerView addSubview:descLabel];
     [descLabel sizeToFit];
     

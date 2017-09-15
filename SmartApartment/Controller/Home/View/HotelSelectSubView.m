@@ -138,7 +138,7 @@
     _extraLabel = [UILabel new];
     _extraLabel.font = [UIFont systemFontOfSize:13];
     _extraLabel.textColor = [UIColor lightGrayColor];
-    _extraLabel.text = @"位置/品牌/酒店名称";
+    _extraLabel.text = @"位置/品牌/公寓名称";
     _extraLabel.userInteractionEnabled = YES;
     _extraLabel.tag = HotelSelectBtnTypeExtraSearch;
     [self addSubview:_extraLabel];
@@ -152,11 +152,11 @@
     line3.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:line3];
     
-    // 查找酒店
+    // 查找公寓
     _searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _searchBtn.backgroundColor = ThemeColor;
     [_searchBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_searchBtn setTitle:@"查找酒店" forState:UIControlStateNormal];
+    [_searchBtn setTitle:@"查找公寓" forState:UIControlStateNormal];
     [_searchBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_searchBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [_searchBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];

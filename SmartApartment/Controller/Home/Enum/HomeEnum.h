@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, HotelSelectBtnType) {
     HotelSelectBtnTypeLiveDate,     // 入住时间
     HotelSelectBtnTypeLeaveDate,    // 离店时间
     HotelSelectBtnTypeExtraSearch,  // 离店时间
-    HotelSelectBtnTypeSearchHotel,  // 查找酒店
+    HotelSelectBtnTypeSearchHotel,  // 查找公寓
 };
 
 #endif /* HomeEnum_h */

@@ -52,7 +52,7 @@
     _titleLabel.font = [UIFont systemFontOfSize:15];
     _titleLabel.textColor = [UIColor darkTextColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.text = @"尚客优酒店广东深圳坂田五河地铁站店";
+    _titleLabel.text = @"尚客优公寓广东深圳坂田五河地铁站店";
     [bgView addSubview:_titleLabel];
 }
 

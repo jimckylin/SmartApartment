@@ -46,7 +46,7 @@ UITableViewDataSource, StarHotelCellDelegtate>
 
 - (void)initSubView {
     
-    _naviLabel.text = @"酒店点评";
+    _naviLabel.text = @"公寓点评";
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     _tableView.backgroundColor = [UIColor clearColor];

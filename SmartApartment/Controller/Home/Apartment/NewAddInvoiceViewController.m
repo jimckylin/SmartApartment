@@ -205,7 +205,7 @@ UITableViewDataSource>
 - (UILabel *)tipLabel {
     if (_tipLabel == nil) {
         _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 175, 50)];
-        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视酒店空房情况安排";
+        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视公寓空房情况安排";
         _tipLabel.font = [UIFont systemFontOfSize:11];
         _tipLabel.textColor = [UIColor lightGrayColor];
         _tipLabel.numberOfLines = 0;

@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) JWStarView *hygieneStarsView;     // 房间卫生
 @property (nonatomic, strong) JWStarView *envirmentStarsView;   // 周围环境
-@property (nonatomic, strong) JWStarView *serviceStarsView;     // 酒店服务
+@property (nonatomic, strong) JWStarView *serviceStarsView;     // 公寓服务
 @property (nonatomic, strong) JWStarView *deviceStarsView;      // 设施服务
 
 @property (nonatomic, strong) UITextView *commentTextView;
@@ -64,7 +64,7 @@
     _serviceLabel = [UILabel new];
     _serviceLabel.font = [UIFont systemFontOfSize:14];
     _serviceLabel.textColor = [UIColor darkTextColor];
-    _serviceLabel.text = @"酒店服务";
+    _serviceLabel.text = @"公寓服务";
     [bgView addSubview:_serviceLabel];
     
     _deviceLabel = [UILabel new];
@@ -112,7 +112,7 @@
     _commentTextView.font = [UIFont systemFontOfSize:13];
     _commentTextView.textColor = [UIColor grayColor];
     _commentTextView.delegate = self;
-    _commentTextView.text = @"写下您的入住体验，帮助千万用户挑选到心仪的酒店";
+    _commentTextView.text = @"写下您的入住体验，帮助千万用户挑选到心仪的公寓";
     [bgView addSubview:_commentTextView];
 }
 

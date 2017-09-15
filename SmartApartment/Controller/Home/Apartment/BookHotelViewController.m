@@ -489,7 +489,7 @@
         _remarkTF = [[UITextField alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _remarkTF.font = [UIFont systemFontOfSize:14];
         _remarkTF.textColor = [UIColor darkTextColor];
-        _remarkTF.placeholder = @"需要告知酒店的特殊要求";
+        _remarkTF.placeholder = @"需要告知公寓的特殊要求";
     }
     return _remarkTF;
 }
@@ -497,7 +497,7 @@
 - (UILabel *)tipLabel {
     if (_tipLabel == nil) {
         _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
-        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视酒店空房情况安排";
+        _tipLabel.text = @"请于入住日中午12:00后办理入住，如提前到店，视公寓空房情况安排";
         _tipLabel.font = [UIFont systemFontOfSize:11];
         _tipLabel.textColor = [UIColor lightGrayColor];
         _tipLabel.numberOfLines = 0;

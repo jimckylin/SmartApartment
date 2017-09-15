@@ -42,14 +42,14 @@
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:15];
     _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"酒店介绍";
+    _titleLabel.text = @"公寓介绍";
     [bgView addSubview:_titleLabel];
     
     _descrLabel = [UILabel new];
     _descrLabel.font = [UIFont systemFontOfSize:12];
     _descrLabel.textColor = [UIColor grayColor];
     _descrLabel.numberOfLines = 0;
-    _descrLabel.text = @"酒店介绍";
+    _descrLabel.text = @"公寓介绍";
     [bgView addSubview:_descrLabel];
 }
 

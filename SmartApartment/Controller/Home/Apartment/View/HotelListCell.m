@@ -60,7 +60,7 @@
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:16];
     _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"优客酒店北京朝阳区双桥东路店";
+    _titleLabel.text = @"优客公寓北京朝阳区双桥东路店";
     [self addSubview:_titleLabel];
     
     _scoreLabel = [UILabel new];

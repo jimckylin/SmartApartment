@@ -41,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9ZG-IF-JnR" secondAttribute="height" multiplier="311:44" id="rjl-53-y5Y"/>
                     </constraints>
-                    <state key="normal" title="预订酒店">
+                    <state key="normal" title="预订公寓">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>

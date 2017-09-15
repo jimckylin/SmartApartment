@@ -10,7 +10,7 @@
 
 @protocol StarHotelCellDelegtate <NSObject>
 
-// tag 1:房间卫生 2:周围环境 3:酒店服务 4:设施服务
+// tag 1:房间卫生 2:周围环境 3:公寓服务 4:设施服务
 - (void)starHotelCellStarViewDidGiveScore:(CGFloat)score viewTag:(NSInteger)tag;
 - (void)starHotelCellStarViewDidComment:(NSString *)content;
 

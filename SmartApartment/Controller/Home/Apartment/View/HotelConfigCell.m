@@ -41,7 +41,7 @@
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:15];
     _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"酒店设施";
+    _titleLabel.text = @"公寓设施";
     [bgView addSubview:_titleLabel];
 }
 

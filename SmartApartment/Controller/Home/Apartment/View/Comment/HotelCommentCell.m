@@ -88,7 +88,7 @@
     _replyLabel.font = [UIFont systemFontOfSize:13];
     _replyLabel.textColor = [UIColor lightGrayColor];
     _replyLabel.textAlignment = NSTextAlignmentRight;
-    _replyLabel.text = @"酒店回复";
+    _replyLabel.text = @"公寓回复";
     [self addSubview:_replyLabel];
     
     _replyBg = [UIImageView new];
