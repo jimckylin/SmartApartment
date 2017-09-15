@@ -232,6 +232,7 @@
 		A9768D561F3D8ED900B14D36 /* ExtraSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9768D551F3D8ED900B14D36 /* ExtraSearchViewController.m */; };
 		A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97D41D81F385CFF0071284B /* InfoPlist.strings */; };
 		A97D41DF1F3892EF0071284B /* HotelSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D41DE1F3892EF0071284B /* HotelSelectView.m */; };
+		A97E7E5E1F6B73C900158C78 /* HotelConfigCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97E7E5D1F6B73C900158C78 /* HotelConfigCollectionCell.m */; };
 		A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */; };
 		A98224071F3A19BB00CA9A9F /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98223FB1F3A19BB00CA9A9F /* CityData.plist */; };
 		A98224081F3A19BB00CA9A9F /* TLCity.m in Sources */ = {isa = PBXBuildFile; fileRef = A98223FD1F3A19BB00CA9A9F /* TLCity.m */; };
@@ -718,6 +719,8 @@
 		A97D41D91F385D0B0071284B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A97D41DD1F3892EF0071284B /* HotelSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelSelectView.h; sourceTree = "<group>"; };
 		A97D41DE1F3892EF0071284B /* HotelSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelSelectView.m; sourceTree = "<group>"; };
+		A97E7E5C1F6B73C900158C78 /* HotelConfigCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigCollectionCell.h; sourceTree = "<group>"; };
+		A97E7E5D1F6B73C900158C78 /* HotelConfigCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigCollectionCell.m; sourceTree = "<group>"; };
 		A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jifen_mall@2x.png"; sourceTree = "<group>"; };
 		A98223E51F3A131700CA9A9F /* DINCond-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCond-Medium.otf"; sourceTree = "<group>"; };
 		A98223FB1F3A19BB00CA9A9F /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
@@ -1427,6 +1430,8 @@
 				A96A334A1F4845D000A55A42 /* OrderDetailView.xib */,
 				A9BF42311F5D9EB50050C39F /* HotelConfigView.h */,
 				A9BF42321F5D9EB50050C39F /* HotelConfigView.m */,
+				A97E7E5C1F6B73C900158C78 /* HotelConfigCollectionCell.h */,
+				A97E7E5D1F6B73C900158C78 /* HotelConfigCollectionCell.m */,
 				A9BF42341F5DA0F10050C39F /* HotelConfigItemCell.h */,
 				A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */,
 				A9BF42371F5DAD5E0050C39F /* HotelConfigHeaderView.h */,
@@ -2405,6 +2410,7 @@
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
 				A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */,
+				A97E7E5E1F6B73C900158C78 /* HotelConfigCollectionCell.m in Sources */,
 				A95D94631F5D2F2300E10CEE /* RoomConfig.m in Sources */,
 				A9D9ABE21F57FE9F0099819E /* VerifyCode2LoginView.m in Sources */,
 				A92F7FED1F4C982F0056CACC /* CouponListCell.m in Sources */,

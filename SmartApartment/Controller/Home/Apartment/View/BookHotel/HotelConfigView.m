@@ -7,24 +7,28 @@
 //
 
 #import "HotelConfigView.h"
+#import "HotelConfigCollectionCell.h"
 #import "HotelConfigHeaderView.h"
-#import "HotelConfigItemCell.h"
+
 #import "RoomConfig.h"
+#import "Hotel.h"
 
+NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
-@interface HotelConfigView ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HotelConfigView ()<UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic,strong)UICollectionView *collectionView;
+@property (nonatomic, strong) UITableView *tableView;
 
-
-@property (nonatomic, strong) NSString       *breakfastId;
-@property (nonatomic, strong) NSString       *breakfastNum;
-@property (nonatomic, strong) NSString       *fivePieceId;
-@property (nonatomic, strong) NSString       *aromaId;
-@property (nonatomic, strong) NSString       *roomLayoutId;
-@property (nonatomic, strong) NSString       *wineId;
+@property (nonatomic, copy) NSString       *breakfastId;
+@property (nonatomic, copy) NSString       *breakfastNum;
+@property (nonatomic, copy) NSString       *fivePieceId;
+@property (nonatomic, copy) NSString       *aromaId;
+@property (nonatomic, copy) NSString       *roomLayoutId;
+@property (nonatomic, copy) NSString       *wineId;
+@property (nonatomic, strong) NSMutableArray       *sectionTitles;
 
 @end
+
 
 @implementation HotelConfigView
 
@@ -33,40 +37,28 @@
     self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     if (self) {
         self.backgroundColor = RGBA(0, 0, 0, 0.4);
-        [self initView];
+        _sectionTitles = [[NSMutableArray alloc] initWithCapacity:1];
+        [self initSubView];
     }
-    
     return self;
 }
 
-- (void)initView {
+- (void)initSubView {
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(25, 0, kScreenWidth-50, 400)];
     bgView.backgroundColor = RGBA(255, 255, 255, 1);
     bgView.center = self.center;
     [self addSubview:bgView];
     
-    //此处必须要有创见一个UICollectionViewFlowLayout的对象
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
-    //同一行相邻两个cell的最小间距
-    layout.minimumInteritemSpacing = 5;
-    //最小两行之间的间距
-    layout.minimumLineSpacing = 5;
-    
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
-    _collectionView.allowsMultipleSelection = YES;
-    _collectionView.backgroundColor=[UIColor whiteColor];
-    _collectionView.delegate=self;
-    _collectionView.dataSource=self;
-    //这个是横向滑动
-    //layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
-    [bgView addSubview:_collectionView];
-    [_collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(30, 0, 40, 0)];
-    
-    // cell注册
-    [_collectionView registerClass:[HotelConfigItemCell class] forCellWithReuseIdentifier:@"HotelConfigItemCell"];
-    //这是头部
-    [_collectionView registerClass:[HotelConfigHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HotelConfigHeaderView"];
+    _tableView = [UITableView new];
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView registerClass:[HotelConfigCollectionCell class] forCellReuseIdentifier:kHotelConfigCollectionCell];
+    [_tableView registerClass:[HotelConfigHeaderView class] forHeaderFooterViewReuseIdentifier:@"HotelConfigHeaderView"];
+    [bgView addSubview:_tableView];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(30, 0, 40, 0)];
     
     
     UILabel *titleLabel = [UILabel new];
@@ -112,14 +104,15 @@
 - (void)setRoomConfig:(RoomConfig *)roomConfig {
     
     _roomConfig = roomConfig;
-    [_collectionView reloadData];
+    [self setSectionTitlesWith:roomConfig];
+    [_tableView reloadData];
 }
 
 
-#pragma mark - UICollectionViewDelegate UICollectionViewDataSource
 
-//一共有多少个组
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+#pragma mark - UITableView Delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     NSInteger sections = 0;
     if (_roomConfig.breakfastList) {
@@ -141,123 +134,80 @@
     return sections;
 }
 
-//每一组有多少个cell
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (section == 0) {
-        return [_roomConfig.breakfastList count];
+    if (_roomConfig.breakfastList) {
+        return [HotelConfigCollectionCell getCellHeight:_roomConfig.breakfastList];
     }
-    else if (section == 1) {
-        return [_roomConfig.fivePieceList count];
+    if (_roomConfig.fivePieceList) {
+        return [HotelConfigCollectionCell getCellHeight:_roomConfig.fivePieceList];
     }
-    else if (section == 2) {
-        return [_roomConfig.roomLayoutList count];
+    if (_roomConfig.roomLayoutList) {
+        return [HotelConfigCollectionCell getCellHeight:_roomConfig.roomLayoutList];
     }
-    else if (section == 3) {
-        return [_roomConfig.aromaList count];
+    if (_roomConfig.aromaList) {
+        return [HotelConfigCollectionCell getCellHeight:_roomConfig.aromaList];
     }
-    else if (section == 4) {
-        return [_roomConfig.wineList count];
+    if (_roomConfig.wineList) {
+        return [HotelConfigCollectionCell getCellHeight:_roomConfig.wineList];
     }
+    
     return 0;
 }
 
-//每一个cell是什么
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    HotelConfigItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HotelConfigItemCell" forIndexPath:indexPath];
-    [self setCellStyle:cell];
+
+#pragma mark - UITableView DataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if (section == 0) {
-        cell.breakfast = _roomConfig.breakfastList[row];
+    HotelConfigCollectionCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelConfigCollectionCell];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor clearColor];
+    
+    if (_roomConfig.breakfastList) {
+        cell.breakfastList = _roomConfig.breakfastList;
     }
-    else if (section == 1) {
-        cell.fivePiece = _roomConfig.fivePieceList[row];
+    else if (_roomConfig.fivePieceList) {
+        cell.fivePieceList = _roomConfig.fivePieceList;
     }
-    else if (section == 2) {
-        cell.roomLayout = _roomConfig.roomLayoutList[row];
+    else if (_roomConfig.roomLayoutList) {
+        cell.roomLayoutList = _roomConfig.roomLayoutList;
     }
-    else if (section == 3) {
-        cell.aroma = _roomConfig.aromaList[row];
+    else if (_roomConfig.aromaList) {
+        cell.aromaList = _roomConfig.aromaList;
     }
-    else if (section == 4) {
-        cell.wine = _roomConfig.wineList[row];
+    else if (_roomConfig.wineList) {
+        cell.wineList = _roomConfig.wineList;
     }
     
     return cell;
 }
 
-//头部和脚部的加载
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        NSArray *titles = @[@"早餐", @"五件套", @"房间布局", @"香气", @"酒水"];
-        
-        HotelConfigHeaderView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HotelConfigHeaderView" forIndexPath:indexPath];
-        view.title = titles[indexPath.section];
-        
-        return view;
-    }
-    return nil;
+    return 44;
 }
 
--(CGFloat )collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 15;
-}
-
-
-//每一个分组的上左下右间距
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
-}
-
-//头部试图的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(50, 44);
-}
-
-//定义每一个cell的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    CGFloat cellwidth = (kScreenWidth-50-10 - 20)/2;
-    return CGSizeMake(cellwidth, 100);
+    HotelConfigHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HotelConfigHeaderView"];
+    view.title = _sectionTitles[section];
+    return view;
 }
 
-//cell的点击事件
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //cell被电击后移动的动画
-    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if (section == 0) {
-        Breakfast *breakfast = _roomConfig.breakfastList[row];
-        self.breakfastId = breakfast.breakfastId;
-    }
-    else if (section == 1) {
-        FivePiece *fivePiece = _roomConfig.fivePieceList[row];
-        self.fivePieceId = fivePiece.fivePieceId;
-    }
-    else if (section == 2) {
-        RoomLayout *roomLayout = _roomConfig.roomLayoutList[row];
-        self.roomLayoutId = roomLayout.roomLayoutId;
-    }
-    else if (section == 3) {
-        Aroma *aroma = _roomConfig.aromaList[row];
-        self.aromaId = aroma.aromaId;
-    }
-    else if (section == 4) {
-        Wine *wine = _roomConfig.wineList[row];
-        self.wineId = wine.wineId;
-    }
 }
 
 
 #pragma mark - Button Action
 
 - (void)cancelBtnClick:(id)sender {
-    
     [self removeFromSuperview];
 }
 
@@ -275,22 +225,30 @@
 }
 
 
+
+
 #pragma mark - Private
 
-- (void)setCellStyle:(HotelConfigItemCell *)cell {
+- (NSArray *)setSectionTitlesWith:(RoomConfig *)roomConfig {
     
-    cell.layer.cornerRadius = 5;
-    cell.contentView.layer.cornerRadius = 5.0f;
-    cell.contentView.layer.borderWidth = 0.5f;
-    cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
-    cell.contentView.layer.masksToBounds = YES;
+    [_sectionTitles removeAllObjects];
+    if (roomConfig.breakfastList) {
+        [_sectionTitles addObject:@"早餐"];
+    }
+    if (roomConfig.fivePieceList) {
+        [_sectionTitles addObject:@"五件套"];
+    }
+    if (roomConfig.roomLayoutList) {
+        [_sectionTitles addObject:@"房间布局"];
+    }
+    if (roomConfig.aromaList) {
+        [_sectionTitles addObject:@"香气"];
+    }
+    if (roomConfig.wineList) {
+        [_sectionTitles addObject:@"酒水"];
+    }
     
-    cell.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-    cell.layer.shadowOffset = CGSizeMake(1, 1);
-    cell.layer.shadowRadius = 2.0f;
-    cell.layer.shadowOpacity = 0.5f;
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
+    return _sectionTitles;
 }
 
 @end

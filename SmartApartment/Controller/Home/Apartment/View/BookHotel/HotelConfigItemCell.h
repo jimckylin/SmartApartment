@@ -17,4 +17,6 @@
 @property (nonatomic, strong) RoomLayout *roomLayout;  // 房间布局
 @property (nonatomic, strong) Wine *wine;              // 酒水
 
+- (void)setCellSelected:(BOOL)selected;
+
 @end

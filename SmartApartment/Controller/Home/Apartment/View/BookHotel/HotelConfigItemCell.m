@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIImageView  *imageView;
 @property (nonatomic, strong) UIView       *nameBgView;
 @property (nonatomic, strong) RTLabel      *nameLabel;
+@property (nonatomic, strong) UIButton     *selectedBtn;
 
 @end
 
@@ -30,7 +31,7 @@
     if (self) {
         
         _imageView = [[UIImageView alloc]initWithFrame:self.bounds];
-        _imageView.highlightedImage = [UIImage imageNamed:@"activity02"];
+        //_imageView.highlightedImage = [UIImage imageNamed:@"activity02"];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.clipsToBounds = YES;
         [self addSubview:_imageView];
@@ -47,10 +48,24 @@
         _nameLabel.text = @"中式 0.01";
         [_nameBgView addSubview:_nameLabel];
         [_nameLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
+        
+        _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
+        [_selectedBtn setImage:kImage(@"reserve_pay_siphone") forState:UIControlStateSelected];
+        [self addSubview:_selectedBtn];
+        
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(25, 25)];
     }
     
     return self;
     
+}
+
+- (void)setCellSelected:(BOOL)selected {
+    
+    _selectedBtn.selected = selected;
 }
 
 
@@ -88,9 +103,8 @@
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
-    _imageView.highlighted = selected;
-    
-    // Configure the view for the selected state
+    //_imageView.highlighted = selected;
+    //_selectedBtn.selected = selected;
 }
 
 @end

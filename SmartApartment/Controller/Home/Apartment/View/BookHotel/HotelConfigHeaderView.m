@@ -15,9 +15,9 @@
 
 @implementation HotelConfigHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     
-    self = [super initWithFrame:frame];
+    self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor colorWithHexString:@"#F1F2F6"];
         

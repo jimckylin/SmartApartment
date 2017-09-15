@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HotelConfigHeaderView : UICollectionReusableView
+@interface HotelConfigHeaderView : UITableViewHeaderFooterView
 
 @property (nonatomic, copy) NSString *title;
 
