@@ -60,7 +60,7 @@
 - (UIImageView*)logoImageView
 {
     if (!_logoImageView) {
-        _logoImageView = [[UIImageView alloc] initWithImage:kImage(@"mine_about_qrcodeiphone")];
+        _logoImageView = [[UIImageView alloc] initWithImage:kImage(@"iTunesArtwork")];
         [_logoImageView setBackgroundColor:[UIColor clearColor]];
     }
     
@@ -122,6 +122,7 @@
         
         [self.logoImageView autoSetDimensionsToSize:CGSizeMake(self.logoImageView.image.size.width, self.logoImageView.image.size.height)];
         [self.logoImageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:50];
+        [self.logoImageView autoSetDimensionsToSize:CGSizeMake(120, 120)];
         [self.logoImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
         
         [self.versionLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.logoImageView withOffset:8.0f];

@@ -463,6 +463,10 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     
     NSLog(@"type:%zd", type);
     if (type == HotelRoomListBtnTypeBook) {
+        if (!self.checkIsLogin) {
+            return;
+        }
+        
         BookHotelViewController *vc = [BookHotelViewController new];
         vc.hotel = self.hotel;
         vc.checkInTime = self.checkInTime;
@@ -479,12 +483,12 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             foldCellModel = self.dayRoomArr[index];
             roomTypeId = foldCellModel.dayRoom.roomTypeId;
             roomTypeName = foldCellModel.dayRoom.roomTypeName;
-            roomPrice = foldCellModel.dayRoom.roomPrice;
+            roomPrice = foldCellModel.dayRoom.customerTotalMoney;
         }else {
             foldCellModel = self.hourRoomArr[index];
             roomTypeId = foldCellModel.hourRoom.roomTypeId;
             roomTypeName = foldCellModel.hourRoom.roomTypeName;
-            roomPrice = foldCellModel.dayRoom.roomPrice;
+            roomPrice = foldCellModel.dayRoom.customerTotalMoney;
         }
         vc.roomTypeId = roomTypeId;
         vc.roomTypeName = roomTypeName;

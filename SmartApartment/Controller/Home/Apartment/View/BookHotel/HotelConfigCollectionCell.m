@@ -165,6 +165,7 @@
     }
     
     if (self.clearSelectedIndex == -1) {
+        _selectedIndex = -1;
         [cell setCellSelected:NO];
     }else {
         if (indexPath.row == _selectedIndex) {
@@ -234,6 +235,11 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
             [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Wine class] itemId:self.wineId];
         }
+    }
+    
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellUpdateSelectedIndex:)]) {
+        [self.delegate hotelConfigCollectionCellUpdateSelectedIndex:-2];
     }
     
     self.clearSelectedIndex = 0;

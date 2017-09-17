@@ -64,7 +64,7 @@
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     _headImageView.layer.cornerRadius = 4;
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.image = kImage(@"logoiphone");
+    _headImageView.image = kImage(@"icon-83");
     [_loginBgView addSubview:_headImageView];
     
     // 设置密码输入框

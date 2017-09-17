@@ -201,7 +201,6 @@
 		A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E112E1F4E8D7F00357DCB /* RequestSign.m */; };
 		A96E11321F4EBCE000357DCB /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E11311F4EBCE000357DCB /* Encrypt.m */; };
 		A96FBB311F58FD2E00C945C8 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FBB301F58FD2E00C945C8 /* Hotel.m */; };
-		A970752B1F6A61A4005D58B8 /* msx_h_round_256@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */; };
 		A9730E7A1F384B1B006E66A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E791F384B1B006E66A4 /* UIView+Size.m */; };
 		A9730E7D1F384B80006E66A4 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7C1F384B80006E66A4 /* UIColor+HexString.m */; };
 		A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = A9730E7F1F384B97006E66A4 /* UIImage+color.m */; };
@@ -296,6 +295,7 @@
 		A9BF42331F5D9EB50050C39F /* HotelConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42321F5D9EB50050C39F /* HotelConfigView.m */; };
 		A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */; };
 		A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */; };
+		A9CBF7781F6CC64C00FE4D0E /* HotelCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CBF7771F6CC64C00FE4D0E /* HotelCommentHeaderView.m */; };
 		A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */; };
 		A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABCF1F56AF1A0099819E /* Register1ViewController.m */; };
 		A9D9ABD31F56AF2A0099819E /* Register2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABD21F56AF2A0099819E /* Register2ViewController.m */; };
@@ -341,13 +341,15 @@
 		A9EB264A1F494A02007DB818 /* HotelOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26491F494A02007DB818 /* HotelOrderListViewController.m */; };
 		A9EB264D1F494A54007DB818 /* UsefullInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */; };
 		A9EB26501F494B14007DB818 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB264F1F494B14007DB818 /* AboutViewController.m */; };
-		A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */; };
 		A9EB26551F494FE4007DB818 /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */; };
 		A9EB268B1F4971E5007DB818 /* PassengerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26891F4971E5007DB818 /* PassengerCell.m */; };
 		A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268A1F4971E5007DB818 /* PassengerCell.xib */; };
 		A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */; };
 		A9EB26901F497546007DB818 /* order_add_grey_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */; };
 		A9EB26931F4977C9007DB818 /* AddPassengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26921F4977C9007DB818 /* AddPassengerViewController.m */; };
+		A9F45D191F6E8BB800B39988 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F45D171F6E8BB800B39988 /* iTunesArtwork.png */; };
+		A9F45D1A1F6E8BB800B39988 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F45D181F6E8BB800B39988 /* iTunesArtwork@2x.png */; };
+		A9F45D1C1F6E8C3C00B39988 /* icon-83@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F45D1B1F6E8C3C00B39988 /* icon-83@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -668,7 +670,6 @@
 		A96E11311F4EBCE000357DCB /* Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypt.m; sourceTree = "<group>"; };
 		A96FBB2F1F58FD2E00C945C8 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
 		A96FBB301F58FD2E00C945C8 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
-		A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msx_h_round_256@2x.png"; sourceTree = "<group>"; };
 		A9730E781F384B1B006E66A4 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		A9730E791F384B1B006E66A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		A9730E7B1F384B80006E66A4 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -823,6 +824,8 @@
 		A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigItemCell.m; sourceTree = "<group>"; };
 		A9BF42371F5DAD5E0050C39F /* HotelConfigHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigHeaderView.h; sourceTree = "<group>"; };
 		A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigHeaderView.m; sourceTree = "<group>"; };
+		A9CBF7761F6CC64C00FE4D0E /* HotelCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelCommentHeaderView.h; sourceTree = "<group>"; };
+		A9CBF7771F6CC64C00FE4D0E /* HotelCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCommentHeaderView.m; sourceTree = "<group>"; };
 		A9D4D8C71F4434AA005C4100 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		A9D9ABCE1F56AF1A0099819E /* Register1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register1ViewController.h; sourceTree = "<group>"; };
@@ -906,7 +909,6 @@
 		A9EB264C1F494A54007DB818 /* UsefullInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefullInfoViewController.m; sourceTree = "<group>"; };
 		A9EB264E1F494B14007DB818 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		A9EB264F1F494B14007DB818 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_about_qrcodeiphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoViewController.h; sourceTree = "<group>"; };
 		A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoViewController.m; sourceTree = "<group>"; };
 		A9EB26881F4971E5007DB818 /* PassengerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassengerCell.h; sourceTree = "<group>"; };
@@ -916,6 +918,9 @@
 		A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_grey_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26911F4977C9007DB818 /* AddPassengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPassengerViewController.h; sourceTree = "<group>"; };
 		A9EB26921F4977C9007DB818 /* AddPassengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPassengerViewController.m; sourceTree = "<group>"; };
+		A9F45D171F6E8BB800B39988 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		A9F45D181F6E8BB800B39988 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		A9F45D1B1F6E8C3C00B39988 /* icon-83@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-83@2x.png"; sourceTree = "<group>"; };
 		EBB19E4496CA9810E22E72D5 /* Pods-SmartApartment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.release.xcconfig"; sourceTree = "<group>"; };
 		ED3712D7E15B069F1EC0B569 /* Pods-SmartApartment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartApartment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartApartment/Pods-SmartApartment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1670,6 +1675,8 @@
 		A992C1F31F4736EA00D5371C /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				A9CBF7761F6CC64C00FE4D0E /* HotelCommentHeaderView.h */,
+				A9CBF7771F6CC64C00FE4D0E /* HotelCommentHeaderView.m */,
 				A992C1F61F4736EA00D5371C /* HotelCommentHeaderCell.h */,
 				A992C1F71F4736EA00D5371C /* HotelCommentHeaderCell.m */,
 				A992C1F41F4736EA00D5371C /* HotelCommentCell.h */,
@@ -1820,7 +1827,9 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A970752A1F6A61A4005D58B8 /* msx_h_round_256@2x.png */,
+				A9F45D1B1F6E8C3C00B39988 /* icon-83@2x.png */,
+				A9F45D171F6E8BB800B39988 /* iTunesArtwork.png */,
+				A9F45D181F6E8BB800B39988 /* iTunesArtwork@2x.png */,
 				A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */,
 				A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */,
 				A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */,
@@ -1847,7 +1856,6 @@
 				A92F7FD51F4B515F0056CACC /* message_location_iciphone@2x.png */,
 				A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */,
 				A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */,
-				A9EB26511F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png */,
 				A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */,
 				A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */,
 				A9EB263C1F48C1D2007DB818 /* recoment_shadowiphone@2x.png */,
@@ -2129,7 +2137,7 @@
 				TargetAttributes = {
 					A9AA8E971F3712A5005F9DBB = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 6ME3XZY529;
+						DevelopmentTeam = 5GVNR3NW7N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2174,6 +2182,7 @@
 				A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */,
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
 				A9EB26901F497546007DB818 /* order_add_grey_iciphone@2x.png in Resources */,
+				A9F45D1C1F6E8C3C00B39988 /* icon-83@2x.png in Resources */,
 				A9EB262F1F48B1CB007DB818 /* trip_remind_iciphone@2x.png in Resources */,
 				A9BF42301F5C17E70050C39F /* home_list_blankiphone@2x.png in Resources */,
 				A976779E1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png in Resources */,
@@ -2207,6 +2216,7 @@
 				A9AA8EED1F38A788005F9DBB /* CombinedShapeiphone@2x.png in Resources */,
 				A95154AB1F4C183A00841D3F /* UMSocialSDKPromptResources.bundle in Resources */,
 				A992C1E41F47275900D5371C /* share_friend_iciphone@2x.png in Resources */,
+				A9F45D1A1F6E8BB800B39988 /* iTunesArtwork@2x.png in Resources */,
 				A96A334F1F4847E000A55A42 /* details_card_bgiphone@2x.png in Resources */,
 				A92F7FEF1F4C999F0056CACC /* coupon_bgiphone@2x.png in Resources */,
 				A9EB26301F48B1CB007DB818 /* trip_service_iciphone@2x.png in Resources */,
@@ -2244,7 +2254,6 @@
 				A9060F9D1F52B7BD00778B53 /* coupon_seleiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
-				A9EB26521F494B2C007DB818 /* mine_about_qrcodeiphone@2x.png in Resources */,
 				A9EB26201F48ACFF007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A992C1E51F47275900D5371C /* share_qq_iciphone@2x.png in Resources */,
 				A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */,
@@ -2259,10 +2268,10 @@
 				A9BF422E1F5C17700050C39F /* evaluate_blankiphone@2x.png in Resources */,
 				A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */,
 				A9EB26371F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png in Resources */,
-				A970752B1F6A61A4005D58B8 /* msx_h_round_256@2x.png in Resources */,
 				A9AA8EAB1F3712A5005F9DBB /* Assets.xcassets in Resources */,
 				A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */,
 				A985ABEF1F415134005B31DF /* list_city_iciphone@2x.png in Resources */,
+				A9F45D191F6E8BB800B39988 /* iTunesArtwork.png in Resources */,
 				A92F7FDD1F4B5F660056CACC /* detail_listiphone@2x.png in Resources */,
 				A92F7FDE1F4B5F660056CACC /* detail_phone_iciphone@2x.png in Resources */,
 				A95B3FD01F3AA4680046E150 /* mine_set_navbariphone@2x.png in Resources */,
@@ -2398,6 +2407,7 @@
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
 				A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
+				A9CBF7781F6CC64C00FE4D0E /* HotelCommentHeaderView.m in Sources */,
 				A97677AA1F433CEB00EDCDFA /* HotelDetailMapCell.m in Sources */,
 				A9EAB87F1F572C4D00C367F2 /* StarHotelCell.m in Sources */,
 				A95D64281F46978F00F78A7E /* UITextField+VerifyNoteTextField.m in Sources */,
@@ -2668,7 +2678,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6ME3XZY529;
+				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2691,8 +2701,9 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/OpenSDK1.8.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -2705,7 +2716,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 6ME3XZY529;
+				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2728,8 +2739,9 @@
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/UMSocial/UMSocialSDKPlugin",
 					"$(PROJECT_DIR)/SmartApartment/Thirdpart/OpenSDK1.8.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wisdom.apartment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;

@@ -222,7 +222,7 @@
         
         UIButton *payBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         payBtn.frame = CGRectMake(21, 20, kScreenWidth-42, 44);
-        payBtn.backgroundColor = [UIColor redColor];
+        payBtn.backgroundColor = ThemeColor;
         [payBtn addTarget:self action:@selector(payBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [payBtn setTitle:@"确认支付" forState:UIControlStateNormal];
         [payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

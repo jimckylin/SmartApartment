@@ -8,7 +8,7 @@
 
 #import "HotelCommentListViewController.h"
 
-#import "HotelCommentHeaderCell.h"
+#import "HotelCommentHeaderView.h"
 #import "HotelCommentCell.h"
 
 #import "HotelViewModel.h"
@@ -22,6 +22,8 @@ NSString *const kHotelCommentCell = @"HotelCommentCell";
 UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) HotelCommentHeaderView *headerView;
+
 @property (nonatomic, strong) NSMutableArray *commentArr;
 @property (nonatomic, strong) HotelViewModel *viewModel;
 
@@ -58,14 +60,18 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
     _tableView.sectionHeaderHeight = 10;
     //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [bgView addSubview:_tableView];
-    [_tableView registerClass:[HotelCommentHeaderCell class] forCellReuseIdentifier:kHotelCommentHeaderCell];
+    //[_tableView registerClass:[HotelCommentHeaderCell class] forCellReuseIdentifier:kHotelCommentHeaderCell];
     [_tableView registerClass:[HotelCommentCell class] forCellReuseIdentifier:kHotelCommentCell];
 
-    
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0.01)];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
     [self.view bringSubviewToFront:_naviView];
+    
+    
+    _headerView = [[HotelCommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 138)];
+    _headerView.delegate = self;
+    _tableView.tableHeaderView = _headerView;
     
     
     __weak typeof(self) weakSelf = self;
@@ -85,15 +91,12 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _commentArr.count + 1;
+    return _commentArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        return 138;
-    }
-    StoreEvaluate *evaluate = _commentArr[indexPath.row -1];
+    StoreEvaluate *evaluate = _commentArr[indexPath.row];
     return [HotelCommentCell getCellHeightWith:evaluate]; // 根据评论及回复内容动态高度
 }
 
@@ -103,17 +106,8 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger row = indexPath.row;
-    
-    if (row == 0) {
-        HotelCommentHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelCommentHeaderCell];
-        cell.delegate = self;
-        cell.storeEvaluateList = _viewModel.storeEvaluateList;
-        
-        return cell;
-    }
     HotelCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelCommentCell];
-    StoreEvaluate *evaluate = _commentArr[indexPath.row -1];
+    StoreEvaluate *evaluate = _commentArr[indexPath.row];
     cell.evaluate = evaluate;
     
     return cell;
@@ -163,6 +157,7 @@ UITableViewDataSource, HotelCommentHeaderCellDelegate>
     [_viewModel requestStoreEvaluate:self.storeId evaluateType:evaluateType pageNum:pageNum pageSize:pageSize complete:^(StoreEvaluateList *storeEvaluateList) {
         if (pageNum == 1) {
             [selfWeak.commentArr removeAllObjects];
+            selfWeak.headerView.storeEvaluateList = storeEvaluateList;
         }
         [selfWeak.commentArr addObjectsFromArray:storeEvaluateList.customerList];
         [selfWeak.tableView reloadData];

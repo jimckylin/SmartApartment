@@ -226,7 +226,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     HotelConfigHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HotelConfigHeaderView"];
-    view.title = _sectionTitles[section];
+    view.title = [self setSectionTitlesWith:_roomConfig][section];
     return view;
 }
 
@@ -251,6 +251,11 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     }else if (class == [Wine class]) {
         self.wineId = itemId;
     }
+}
+
+- (void)hotelConfigCollectionCellUpdateSelectedIndex:(NSInteger)index {
+    
+    self.selectedIndex = index;
 }
 
 
