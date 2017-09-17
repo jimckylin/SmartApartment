@@ -26,12 +26,12 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-                  timestampString = "527339470.504264"
+                  timestampString = "527346755.492006"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "196"
                   endingLineNumber = "196"
-                  offsetFromSymbolStart = "1188">
+                  offsetFromSymbolStart = "1046">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-                  timestampString = "527339470.507559"
+                  timestampString = "527346755.495756"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "196"
                   endingLineNumber = "196"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>

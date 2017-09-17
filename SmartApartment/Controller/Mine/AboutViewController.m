@@ -87,7 +87,7 @@
         [_rightsLabel setTextAlignment:NSTextAlignmentCenter];
         [_rightsLabel setTextColor:[UIColor lightGrayColor]];
         [_rightsLabel setFont:[UIFont systemFontOfSize:13.0f]];
-        _rightsLabel.text = @"Copyright© 2015 ihotels.cc, All rights reserved.";
+        _rightsLabel.text = @"Copyright@2017 manxinsu.com，All Rights Reserved";
     }
     return _rightsLabel;
 }

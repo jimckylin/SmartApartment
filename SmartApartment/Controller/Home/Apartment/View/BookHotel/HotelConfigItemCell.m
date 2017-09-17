@@ -51,12 +51,12 @@
         
         _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         //[_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
-        [_selectedBtn setImage:kImage(@"reserve_pay_siphone") forState:UIControlStateSelected];
+        [_selectedBtn setImage:kImage(@"Selected_iciphone") forState:UIControlStateSelected];
         [self addSubview:_selectedBtn];
         
-        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:12];
-        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(25, 25)];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(14, 14)];
     }
     
     return self;

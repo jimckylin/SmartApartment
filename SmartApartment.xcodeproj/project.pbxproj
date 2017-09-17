@@ -14,6 +14,7 @@
 		A9060FA31F52C4C100778B53 /* NewAddInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA21F52C4C100778B53 /* NewAddInvoiceViewController.m */; };
 		A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */; };
 		A912F6AD1F55BADD00DACB4B /* map_lineiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A912F6AC1F55BADD00DACB4B /* map_lineiphone@2x.png */; };
+		A914395E1F6EA9BB00167089 /* Selected_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A914395D1F6EA9BB00167089 /* Selected_iciphone@2x.png */; };
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
@@ -363,6 +364,7 @@
 		A9060FA41F52C5C000778B53 /* NewAddInvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAddInvoiceCell.h; sourceTree = "<group>"; };
 		A9060FA51F52C5C000778B53 /* NewAddInvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAddInvoiceCell.m; sourceTree = "<group>"; };
 		A912F6AC1F55BADD00DACB4B /* map_lineiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_lineiphone@2x.png"; sourceTree = "<group>"; };
+		A914395D1F6EA9BB00167089 /* Selected_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selected_iciphone@2x.png"; sourceTree = "<group>"; };
 		A92178EB1F5AC68300C0923A /* HotelDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetail.h; sourceTree = "<group>"; };
 		A92178EC1F5AC68300C0923A /* HotelDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetail.m; sourceTree = "<group>"; };
 		A92178EE1F5ACC9A00C0923A /* DayRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayRoom.h; sourceTree = "<group>"; };
@@ -1827,6 +1829,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A914395D1F6EA9BB00167089 /* Selected_iciphone@2x.png */,
 				A9F45D1B1F6E8C3C00B39988 /* icon-83@2x.png */,
 				A9F45D171F6E8BB800B39988 /* iTunesArtwork.png */,
 				A9F45D181F6E8BB800B39988 /* iTunesArtwork@2x.png */,
@@ -2192,6 +2195,7 @@
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
 				A96A33511F48487B00A55A42 /* order_detail_costiphone@2x.png in Resources */,
 				A9EB268C1F4971E5007DB818 /* PassengerCell.xib in Resources */,
+				A914395E1F6EA9BB00167089 /* Selected_iciphone@2x.png in Resources */,
 				A9EB262A1F48AF9E007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A92F7FDA1F4B53BC0056CACC /* trip_pic_bgiphone@2x.png in Resources */,
 				A9415A4E1F55200A00FAD195 /* login_password_hshow_ic@2x.png in Resources */,

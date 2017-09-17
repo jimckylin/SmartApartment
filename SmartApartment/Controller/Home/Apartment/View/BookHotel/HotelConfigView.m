@@ -12,6 +12,7 @@
 
 #import "RoomConfig.h"
 #import "Hotel.h"
+#import <PPNumberButton/PPNumberButton.h>
 
 NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
@@ -220,13 +221,17 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     else if (section == 4 && _roomConfig.wineList) {
         return 44;
     }
-    return 44;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     HotelConfigHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HotelConfigHeaderView"];
     view.title = [self setSectionTitlesWith:_roomConfig][section];
+    view.didSelectedBreakfastNum = ^(NSInteger num){
+        self.breakfastNum = [NSString stringWithFormat:@"%zd", num];
+    };
+    
     return view;
 }
 
