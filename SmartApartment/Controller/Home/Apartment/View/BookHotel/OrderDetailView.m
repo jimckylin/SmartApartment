@@ -30,7 +30,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *storeTel;
 @property (nonatomic, strong) IBOutlet RTLabel *cancelRemark;
 
-@property (nonatomic, strong) IBOutlet UIButton *payOrderBtn;
 @property (nonatomic, strong) IBOutlet UIButton *cancelBtn;
 
 @end
@@ -38,8 +37,6 @@
 @implementation OrderDetailView
 
 - (void)awakeFromNib {
-    self.payOrderBtn.tag = OrderDetailViewBtnTypePay;
-    [self.payOrderBtn addTarget:self action:@selector(payOrderBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.cancelBtn.tag = OrderDetailViewBtnTypeCancel;
     [self.cancelBtn addTarget:self action:@selector(cancelBtnClick:) forControlEvents:UIControlEventTouchUpInside];

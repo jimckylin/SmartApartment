@@ -130,7 +130,7 @@
             UIView *line = [UIView new];
             line.backgroundColor = [UIColor lightGrayColor];
             [cell addSubview:line];
-            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 15, 0, 0) excludingEdge:ALEdgeTop];
             [line autoSetDimension:ALDimensionHeight toSize:0.5];
         }
         UILabel *subLabel = (UILabel *)[cell viewWithTag:1000];
@@ -170,7 +170,7 @@
             UIView *line = [UIView new];
             line.backgroundColor = [UIColor lightGrayColor];
             [cell addSubview:line];
-            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+            [line autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 15, 0, 0) excludingEdge:ALEdgeTop];
             [line autoSetDimension:ALDimensionHeight toSize:0.5];
         }
         cell.textLabel.text = @"关于蔓心宿";

@@ -9,6 +9,8 @@
 #import "HotelSelectSubView.h"
 #import "UIImage+color.h"
 #import <BAButton/BAButton.h>
+#import "NSDate+Utilities.h"
+
 
 @interface HotelSelectSubView ()
 
@@ -90,12 +92,15 @@
     _liveBtn.tag = HotelSelectBtnTypeLiveDate;
     [self addSubview:_liveBtn];
     
+    NSDate *nowDate = [NSDate date];
+    NSDate *nextDayDate = [nowDate dateByAddingDays:1];
+    
     _liveLabel = [UILabel new];
     _liveLabel.font = [UIFont systemFontOfSize:10];
     _liveLabel.textColor = [UIColor lightGrayColor];
     _liveLabel.textAlignment = NSTextAlignmentCenter;
     _liveLabel.numberOfLines = 0;
-    _liveLabel.text = @"入住\n周二";
+    _liveLabel.text = [NSString stringWithFormat:@"入住\n%@", [nowDate weekDayStr]];
     [self addSubview:_liveLabel];
     
     if (self.roomType == HotelRoomTypeAllday) {
@@ -116,7 +121,7 @@
         _leaveLabel.textColor = [UIColor lightGrayColor];
         _leaveLabel.textAlignment = NSTextAlignmentCenter;
         _leaveLabel.numberOfLines = 0;
-        _leaveLabel.text = @"离店\n周三";
+        _leaveLabel.text = [NSString stringWithFormat:@"离店\n%@", [nextDayDate weekDayStr]];
         [self addSubview:_leaveLabel];
         
         _countLabel = [UILabel new];
@@ -174,6 +179,7 @@
 - (void)setCheckinDate:(NSDate *)checkinDate {
     _checkinDate = checkinDate;
     
+    _liveLabel.text = [NSString stringWithFormat:@"入住\n%@", [checkinDate weekDayStr]];
     NSString *checkInStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月dd日"];
     [_liveBtn setTitle:checkInStr forState:UIControlStateNormal];
     _checkinDate = checkinDate;
@@ -184,6 +190,7 @@
     [_leaveBtn setTitle:checkoutStr forState:UIControlStateNormal];
     _checkoutDate = checkoutDate;
     
+    _leaveLabel.text = [NSString stringWithFormat:@"离店\n%@", [checkoutDate weekDayStr]];
     NSInteger days = [_checkinDate daysBeforeDate:checkoutDate];
     _countLabel.text = [NSString stringWithFormat:@"共%zd晚", days];
 }

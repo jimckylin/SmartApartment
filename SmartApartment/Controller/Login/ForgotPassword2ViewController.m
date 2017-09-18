@@ -46,13 +46,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _naviBgView.backgroundColor = [UIColor clearColor];
     _naviLabel.textColor = [UIColor darkTextColor];
-    _naviLabel.text = @"重置密码1/2";
+    _naviLabel.text = @"重置密码2/2";
     [_naviBackBtn setImage:kImage(@"nav_return_iciphone") forState:UIControlStateNormal];
     
     
     _forgotPwdView = [[ForgotPsw2View alloc] init];
     _forgotPwdView.delegate = self;
     [self.view addSubview:_forgotPwdView];
+    
 }
 
 
