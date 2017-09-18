@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "VerifyCodeLoginViewController.h"
 #import "Register1ViewController.h"
+#import "ForgotPassword1ViewController.h"
 
 #import "LoginView.h"
 
@@ -90,7 +91,8 @@
         }
             break;
         case CZDLoginActionForgotPwd: {
-            
+            ForgotPassword1ViewController *forgotPwd = [ForgotPassword1ViewController new];
+            [[NavManager shareInstance] showViewController:forgotPwd isAnimated:YES];
         }
             break;
         case CZDLoginActionRegister:{

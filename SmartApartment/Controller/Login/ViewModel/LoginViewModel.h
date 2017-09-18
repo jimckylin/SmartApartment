@@ -25,6 +25,7 @@
 - (void)requestLoginWithPhone:(NSString *)phone verifyCode:(NSString *)code;
 // 注册
 - (void)requestRegisterWithPhone:(NSString *)phone name:(NSString *)name psw:(NSString *)psw;
-
+// 重置密码 
+- (void)requestResetPwdWithPhone:(NSString *)phone newPwd:(NSString *)newPwd complete:(void(^)(BOOL isSuccess))complete;
 
 @end

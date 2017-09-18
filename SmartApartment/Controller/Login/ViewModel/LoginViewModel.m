@@ -89,6 +89,22 @@
                                                         }];
 }
 
+- (void)requestResetPwdWithPhone:(NSString *)phone newPwd:(NSString *)newPwd complete:(void (^)(BOOL))complete {
+    
+    NSDictionary *param = @{@"mobilePhone": phone, @"pwd": newPwd};
+    [MBProgressHUD cwgj_showProgressHUDWithText:@"重置中..."];
+    [SAHttpRequest requestWithFuncion:@"resetPwd" params:param class:nil success:^(id response) {
+        [MBProgressHUD cwgj_hideHUD];
+        if (complete) {
+            complete(response);
+        }
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
 
 #pragma mark - Private
 

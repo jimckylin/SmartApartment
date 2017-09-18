@@ -1,21 +1,25 @@
 //
-//  Register1View.m
+//  ForgotPsw1View.m
 //  SmartApartment
 //
-//  Created by jimcky on 2017/8/29.
+//  Created by jimcky on 2017/9/18.
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "Register1View.h"
+#import "ForgotPsw1View.h"
 
 #import "UITextField+PhoneTextField.h"
+#import "UITextField+VerifyNoteTextField.h"
+#import "UIButton+countDown.h"
 #import "UIImage+Categories.h"
 
-@interface Register1View ()<UITextFieldDelegate,
-PhoneTextFieldDelegate>
+@interface ForgotPsw1View ()<UITextFieldDelegate,
+PhoneTextFieldDelegate,
+VerifyNoteTextFieldDelegate>
 
 // 微信登录
 @property (nonatomic, strong) UIView          *profileBgView;
+@property (nonatomic, strong) UILabel         *welcomeLabel;
 @property (nonatomic, strong) UIImageView     *headImageView;
 
 // 手机登录
@@ -23,20 +27,22 @@ PhoneTextFieldDelegate>
 @property (nonatomic, strong) UILabel         *phoneLabel;
 @property (nonatomic, strong) UILabel         *pwdLabel;
 @property (nonatomic, strong) UITextField     *phoneTF;
-@property (nonatomic, strong) UITextField     *nameTF;
+@property (nonatomic, strong) UITextField     *verifyCodeTF;
 
+@property (nonatomic, strong) UIButton        *verifyCodeBtn;
 @property (nonatomic, strong) UIButton        *loginBtn;         // 登录按钮
-
+@property (nonatomic, strong) UILabel         *verifyCodeLabel;  // 通过短信验证码登录
 
 @property (nonatomic, strong) UIImageView     *phoneLine;
 @property (nonatomic, strong) UIImageView     *verifyCodeLine;
 
-
+@property (nonatomic, strong) UIButton        *forgotPwdBtn;      // 忘记密码按钮
+@property (nonatomic, strong) UIButton        *registerBtn;       // 注册按钮
 
 @end
 
 
-@implementation Register1View
+@implementation ForgotPsw1View
 
 - (instancetype)init {
     
@@ -83,7 +89,7 @@ PhoneTextFieldDelegate>
     [_phoneTF setTextColor:[UIColor blackColor]];
     [_phoneTF setBackgroundColor:[UIColor clearColor]];
     [_phoneTF setFont:[UIFont systemFontOfSize:17.f]];
-    NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:@"11位数字"];
+    NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:@"11数字"];
     [aString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, aString.length)];
     _phoneTF.attributedPlaceholder = aString;
     [_phoneTF setPhoneDelegate:self];
@@ -104,19 +110,32 @@ PhoneTextFieldDelegate>
     _pwdLabel = [UILabel new];
     _pwdLabel.textColor = [UIColor darkTextColor];
     _pwdLabel.font = [UIFont systemFontOfSize:15];
-    _pwdLabel.text = @"姓名";
+    _pwdLabel.text = @"验证码";
     [_loginBgView addSubview:_pwdLabel];
     
-    _nameTF = [[UITextField alloc] initWithFrame:CGRectZero];
-    [_nameTF setTextColor:[UIColor blackColor]];
-    [_nameTF setBackgroundColor:[UIColor clearColor]];
-    [_nameTF setFont:[UIFont systemFontOfSize:17.f]];
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:@"不超过20个汉字或英文字母"];
+    _verifyCodeTF = [[UITextField alloc] initWithFrame:CGRectZero];
+    [_verifyCodeTF initVerifyNoteTextField];
+    [_verifyCodeTF setTextColor:[UIColor blackColor]];
+    [_verifyCodeTF setBackgroundColor:[UIColor clearColor]];
+    [_verifyCodeTF setFont:[UIFont systemFontOfSize:17.f]];
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:@"6为数字"];
     [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, string.length)];
-    _nameTF.attributedPlaceholder = string;
-    _nameTF.delegate = self;
-    [self.loginBgView addSubview:_nameTF];
+    _verifyCodeTF.attributedPlaceholder = string;
+    [_verifyCodeTF setPhoneDelegate:self];
+    _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
+    [self.loginBgView addSubview:_verifyCodeTF];
     
+    // 发送验证码
+    _verifyCodeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 87, 32)];
+    [_verifyCodeBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
+    _verifyCodeBtn.timeoutText = @"重新发送";
+    _verifyCodeBtn.disableBackGroundColor = [UIColor whiteColor];
+    
+    [_verifyCodeBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    _verifyCodeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    _verifyCodeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [_verifyCodeBtn addTarget:self action:@selector(verifyCodeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.loginBgView addSubview:_verifyCodeBtn];
     
     _verifyCodeLine = [[UIImageView alloc] init];
     _verifyCodeLine.image = image;
@@ -132,7 +151,7 @@ PhoneTextFieldDelegate>
     
     [_loginBtn setBackgroundColor:ThemeColor];
     [_loginBtn.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
-    [_loginBtn setTitle:@"下一步,验证手机号" forState:UIControlStateNormal];
+    [_loginBtn setTitle:@"下一步,重置密码" forState:UIControlStateNormal];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_loginBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.loginBgView addSubview:_loginBtn];
@@ -141,6 +160,19 @@ PhoneTextFieldDelegate>
 
 #pragma mark - UIButton Action
 
+- (void)verifyCodeBtnClick:(id)sender {
+    
+    NSString *phone = [self.phoneTF getPhoneTextFieldText];
+    if (!phone||phone.length <= 0) {
+        return;
+    }
+    
+    [self startCountDown];
+    if ([self.delegate respondsToSelector:@selector(forgotPsw1ViewVerifyCodeBtnClick:)]) {
+        [self.delegate forgotPsw1ViewVerifyCodeBtnClick:phone];
+    }
+}
+
 - (void)btnClick:(id)sender {
     
     NSString *phone = [self.phoneTF getPhoneTextFieldText];
@@ -148,24 +180,26 @@ PhoneTextFieldDelegate>
         return;
     }
     
-    if ([Utils isBlankString:_nameTF.text] || [_nameTF.text length] > 20) {
-        [MBProgressHUD cwgj_showHUDWithText:@"姓名为空或不合法"];
+    if ([Utils isBlankString:_verifyCodeTF.text] || [_verifyCodeTF.text length] < 6 || [_verifyCodeTF.text length] > 6) {
+        [MBProgressHUD cwgj_showHUDWithText:@"请输入6位验证码"];
         return;
     }
     
-    if ([self.delegate respondsToSelector:@selector(register1ViewBtnClick:name:)]) {
-        [self.delegate register1ViewBtnClick:phone name:_nameTF.text];
+    if ([self.delegate respondsToSelector:@selector(forgotPsw1ViewDidClickBtnAction:code:)]) {
+        [self.delegate forgotPsw1ViewDidClickBtnAction:phone code:_verifyCodeTF.text];
     }
 }
 
 
-
-#pragma mark - Public
-
-
-
-
 #pragma mark - Pravite
+
+- (void)startCountDown {
+    
+    __WeakObj(self)
+    [self.verifyCodeBtn startCountDown:30 timeOut:^{
+        
+    }];
+}
 
 - (void)phoneTextFieldBecomeFirstResponse {
     [self.phoneTF becomeFirstResponder];
@@ -178,7 +212,7 @@ PhoneTextFieldDelegate>
     
     if ([textField isEqual:self.phoneTF]) {
         self.phoneLine.highlighted = YES;
-    }else if ([textField isEqual:self.nameTF]){
+    }else if ([textField isEqual:self.verifyCodeTF]){
         self.verifyCodeLine.highlighted = YES;
     }
 }
@@ -187,7 +221,7 @@ PhoneTextFieldDelegate>
     
     if ([textField isEqual:self.phoneTF]) {
         self.phoneLine.highlighted = NO;
-    }else if ([textField isEqual:self.nameTF]){
+    }else if ([textField isEqual:self.verifyCodeTF]){
         self.verifyCodeLine.highlighted = NO;
     }
 }
@@ -207,12 +241,20 @@ PhoneTextFieldDelegate>
         [phoneString insertString:@" " atIndex:8];
         textField.text = phoneString;
     }
+    
+    if (textField.text.length >= 13 ) {//输入完成
+        textField.text = [textField.text substringToIndex:13];
+    }
 }
 
 
 #pragma mark - PhoneTextFieldDelegate
 
 - (void)PhoneTextField:(UITextField *)phoneTextField getPhoneTextFieldTextWithFail:(const NSString *)failError {
+    [MBProgressHUD cwgj_showHUDWithText:[NSString stringWithFormat:@"%@",failError]];
+}
+
+- (void)VerifyNoteTextField:(UITextField *)VNTextField getVNTextFieldTextWithFail:(const NSString *)failError {
     [MBProgressHUD cwgj_showHUDWithText:[NSString stringWithFormat:@"%@",failError]];
 }
 
@@ -248,12 +290,16 @@ PhoneTextFieldDelegate>
     [self.pwdLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:padding];
     [self.pwdLabel autoSetDimension:ALDimensionHeight toSize:32];
     
-    [self.nameTF autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:padding + 70];
-    [self.nameTF autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.phoneLine withOffset:30];
-    [self.nameTF autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:padding];
-    [self.nameTF autoSetDimension:ALDimensionHeight toSize:32];
+    [self.verifyCodeTF autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:padding + 70];
+    [self.verifyCodeTF autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.phoneLine withOffset:30];
+    [self.verifyCodeTF autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.verifyCodeBtn];
+    [self.verifyCodeTF autoSetDimension:ALDimensionHeight toSize:32];
     
-    [self.verifyCodeLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.nameTF withOffset:6];
+    [self.verifyCodeBtn autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.verifyCodeTF];
+    [self.verifyCodeBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:padding];
+    [self.verifyCodeBtn autoSetDimensionsToSize:CGSizeMake(87, 32)];
+    
+    [self.verifyCodeLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.verifyCodeTF withOffset:6];
     [self.verifyCodeLine autoSetDimension:ALDimensionHeight toSize:0.5];
     [self.verifyCodeLine autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:padding];
     [self.verifyCodeLine autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:padding];
@@ -262,8 +308,6 @@ PhoneTextFieldDelegate>
     [self.loginBtn autoSetDimension:ALDimensionHeight toSize:44.0f];
     [self.loginBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:padding];
     [self.loginBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:padding];
-    
-   
     
     [super updateConstraints];
 }

@@ -77,6 +77,10 @@
 		A94B826E1F4D26C900840D88 /* WXPayRContent.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B826D1F4D26C900840D88 /* WXPayRContent.m */; };
 		A94B82711F4D26DA00840D88 /* ZFBPayRContent.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */; };
 		A94B82741F4D280900840D88 /* NSMutableDictionary+CWGJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */; };
+		A94F29A61F6F6EFA0064B8E2 /* ForgotPassword1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F29A51F6F6EFA0064B8E2 /* ForgotPassword1ViewController.m */; };
+		A94F29A91F6F6F5C0064B8E2 /* ForgotPassword2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F29A81F6F6F5C0064B8E2 /* ForgotPassword2ViewController.m */; };
+		A94F29AC1F6F6F8F0064B8E2 /* ForgotPsw1View.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F29AB1F6F6F8F0064B8E2 /* ForgotPsw1View.m */; };
+		A94F29AF1F6F6F9E0064B8E2 /* ForgotPsw2View.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F29AE1F6F6F9E0064B8E2 /* ForgotPsw2View.m */; };
 		A95052EC1F569F5B00180545 /* VerifyCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95052EB1F569F5B00180545 /* VerifyCodeLoginViewController.m */; };
 		A95154921F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */; };
 		A95154931F4BCEBF00841D3F /* order_add_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A951548F1F4BCEBF00841D3F /* order_add_iciphone@2x.png */; };
@@ -478,6 +482,14 @@
 		A94B82701F4D26DA00840D88 /* ZFBPayRContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBPayRContent.m; sourceTree = "<group>"; };
 		A94B82721F4D280900840D88 /* NSMutableDictionary+CWGJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CWGJ.h"; sourceTree = "<group>"; };
 		A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CWGJ.m"; sourceTree = "<group>"; };
+		A94F29A41F6F6EFA0064B8E2 /* ForgotPassword1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword1ViewController.h; sourceTree = "<group>"; };
+		A94F29A51F6F6EFA0064B8E2 /* ForgotPassword1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword1ViewController.m; sourceTree = "<group>"; };
+		A94F29A71F6F6F5C0064B8E2 /* ForgotPassword2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword2ViewController.h; sourceTree = "<group>"; };
+		A94F29A81F6F6F5C0064B8E2 /* ForgotPassword2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword2ViewController.m; sourceTree = "<group>"; };
+		A94F29AA1F6F6F8F0064B8E2 /* ForgotPsw1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPsw1View.h; sourceTree = "<group>"; };
+		A94F29AB1F6F6F8F0064B8E2 /* ForgotPsw1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPsw1View.m; sourceTree = "<group>"; };
+		A94F29AD1F6F6F9E0064B8E2 /* ForgotPsw2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPsw2View.h; sourceTree = "<group>"; };
+		A94F29AE1F6F6F9E0064B8E2 /* ForgotPsw2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPsw2View.m; sourceTree = "<group>"; };
 		A95052EA1F569F5B00180545 /* VerifyCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCodeLoginViewController.h; sourceTree = "<group>"; };
 		A95052EB1F569F5B00180545 /* VerifyCodeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeLoginViewController.m; sourceTree = "<group>"; };
 		A951548E1F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_add_grey_iciphone@2x.png"; sourceTree = "<group>"; };
@@ -1342,6 +1354,10 @@
 				A9415A531F55210D00FAD195 /* Register2View.m */,
 				A9415A551F55211D00FAD195 /* Register3View.h */,
 				A9415A561F55211D00FAD195 /* Register3View.m */,
+				A94F29AA1F6F6F8F0064B8E2 /* ForgotPsw1View.h */,
+				A94F29AB1F6F6F8F0064B8E2 /* ForgotPsw1View.m */,
+				A94F29AD1F6F6F9E0064B8E2 /* ForgotPsw2View.h */,
+				A94F29AE1F6F6F9E0064B8E2 /* ForgotPsw2View.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1788,6 +1804,10 @@
 				A9D9ABD21F56AF2A0099819E /* Register2ViewController.m */,
 				A9D9ABD41F56B82A0099819E /* Register3ViewController.h */,
 				A9D9ABD51F56B82A0099819E /* Register3ViewController.m */,
+				A94F29A41F6F6EFA0064B8E2 /* ForgotPassword1ViewController.h */,
+				A94F29A51F6F6EFA0064B8E2 /* ForgotPassword1ViewController.m */,
+				A94F29A71F6F6F5C0064B8E2 /* ForgotPassword2ViewController.h */,
+				A94F29A81F6F6F5C0064B8E2 /* ForgotPassword2ViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2367,6 +2387,7 @@
 				A9AA8F011F38B7BC005F9DBB /* NSString+RegExp.m in Sources */,
 				A95D64311F46E10500F78A7E /* JKProgressView.m in Sources */,
 				A92F7FBC1F4B3D1D0056CACC /* MASCompositeConstraint.m in Sources */,
+				A94F29AC1F6F6F8F0064B8E2 /* ForgotPsw1View.m in Sources */,
 				A992C1F81F4736EA00D5371C /* HotelCommentCell.m in Sources */,
 				A959C31A1F53180D006E091A /* BookDetailView.m in Sources */,
 				A9414F011F38C55E007857D2 /* TripHelperViewController.m in Sources */,
@@ -2400,6 +2421,7 @@
 				A97677B01F43433B00EDCDFA /* BlankCell.m in Sources */,
 				A96A330D1F4815B900A55A42 /* BookSuccessViewController.m in Sources */,
 				A92F7FC21F4B3D1D0056CACC /* NSArray+MASAdditions.m in Sources */,
+				A94F29A91F6F6F5C0064B8E2 /* ForgotPassword2ViewController.m in Sources */,
 				A9415A3E1F53ED0500FAD195 /* HotelDescrCell.m in Sources */,
 				A9060FA61F52C5C000778B53 /* NewAddInvoiceCell.m in Sources */,
 				A97677951F40B35B00EDCDFA /* HotelListCell.m in Sources */,
@@ -2436,6 +2458,7 @@
 				A95B3FF51F3AC7FF0046E150 /* ZYEmptyDayView.m in Sources */,
 				A95D94411F5CE9C500E10CEE /* StoreEvaluateList.m in Sources */,
 				A955E9D11F45735500FEB05F /* HotelDetailMoreCell.m in Sources */,
+				A94F29AF1F6F6F9E0064B8E2 /* ForgotPsw2View.m in Sources */,
 				A9EAB85B1F55C6AF00C367F2 /* MD5DataSigner.m in Sources */,
 				A9414EFE1F38C4DE007857D2 /* MineViewController.m in Sources */,
 				A92F7FF91F4DF2770056CACC /* BalanceListCell.m in Sources */,
@@ -2481,6 +2504,7 @@
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
 				A92F7FCC1F4B3D290056CACC /* YJSliderView.m in Sources */,
+				A94F29A61F6F6EFA0064B8E2 /* ForgotPassword1ViewController.m in Sources */,
 				A92F7FE41F4C66C80056CACC /* WalletView.m in Sources */,
 				A9EB26931F4977C9007DB818 /* AddPassengerViewController.m in Sources */,
 				A9EAB8591F55C6AF00C367F2 /* DataSigner.m in Sources */,

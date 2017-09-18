@@ -41,7 +41,7 @@
     
     BMKMapManager *mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [mapManager start:@"2QrqWtgqQfHkhE7AlhSqKLtI8oOQ1Ccd"  generalDelegate:nil];
+    BOOL ret = [mapManager start:@"6Wsff6whyLymmdlt8pGoPrDcNXPD3ZsP"  generalDelegate:nil];
     if (!ret) {
         NSLog(@"manager start failed!");
     }

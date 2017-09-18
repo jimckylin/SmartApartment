@@ -96,7 +96,7 @@
 - (void)setMapCenterCoordinate:(NSString *)lat lon:(NSString *)lon {
     
     CLLocationCoordinate2D coor;
-    coor.latitude = [lat doubleValue];
+    coor.latitude = [lat floatValue];
     coor.longitude = [lon doubleValue];
     _mapView.centerCoordinate = coor;
     
