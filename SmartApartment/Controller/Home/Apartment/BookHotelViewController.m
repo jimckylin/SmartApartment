@@ -94,7 +94,7 @@
     self.hotelConfigView.delegate = self;
     
     __WeakObj(self)
-    [_viewModel requestRoomConfigure:self.roomTypeId complete:^(RoomConfig *roomConfig) {
+    [_viewModel requestRoomConfigure:self.roomTypeId checkInRoomType:self.checkInRoomType complete:^(RoomConfig *roomConfig) {
         
         selfWeak.roomConfig = roomConfig;
         selfWeak.hotelConfigView.roomConfig = roomConfig;

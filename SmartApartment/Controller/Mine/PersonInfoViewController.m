@@ -9,12 +9,13 @@
 #import "PersonInfoViewController.h"
 #import "BookSuccessViewController.h"
 #import "WRCellView.h"
+#import "SelectPhotoManager.h"
 
 #define WRCellViewHeight  50
 #define CustomViewX       110
 #define CustomViewWidth   150
 
-@interface PersonInfoViewController ()<UIAlertViewDelegate>
+@interface PersonInfoViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, selectPhotoDelegate>
 
 @property (nonatomic, strong) UIScrollView  *containerView;
 @property (nonatomic, strong) WRCellView    *roomNumView;
@@ -23,6 +24,8 @@
 @property (nonatomic, strong) WRCellView    *arriveTimeView;
 @property (nonatomic, strong) WRCellView    *invoiceView;
 @property (nonatomic, strong) WRCellView    *remarkView;
+
+@property (nonatomic, strong)SelectPhotoManager *photoManager;
 
 @end
 
@@ -93,10 +96,34 @@
 - (void)onClickEvent {
     
     __weak typeof(self) weakSelf = self;
+    self.roomNumView.tapBlock = ^ {
+        __strong typeof(self) pThis = weakSelf;
+        
+        if (!pThis.photoManager) {
+            pThis.photoManager =[[SelectPhotoManager alloc]init];
+        }
+        [pThis.photoManager startSelectPhotoWithImageName:@"选择头像"];
+        //选取照片成功
+        __WeakObj(pThis)
+        pThis.photoManager.successHandle=^(SelectPhotoManager *manager,UIImage *image){
+            
+            pThisWeak.roomNumView.rightIcon.image = image;
+            //保存到本地
+            NSData *data = UIImagePNGRepresentation(image);
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
+        };
+    };
+    
     self.arriveTimeView.tapBlock = ^ {
         __strong typeof(self) pThis = weakSelf;
         
     };
+}
+
+//照片选取成功
+- (void)selectPhotoManagerDidFinishImage:(UIImage *)image {
+    
+    _roomNumView.rightIcon.image = image;
 }
 
 
@@ -108,6 +135,7 @@
     [alertView show];
 }
 
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -116,6 +144,18 @@
         [[UserManager manager] removeUser];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kLogoutSuccess" object:nil];
         [[NavManager shareInstance] returnToLoginView:YES];
+    }
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        
+    }else if (buttonIndex == 1) {
+        
     }
 }
 

@@ -18,11 +18,13 @@
 #import "OrderViewModel.h"
 
 
-@interface TripHelperViewController ()<UITableViewDelegate, UITableViewDataSource, TripListCellDelegate>
+@interface TripHelperViewController ()<UITableViewDelegate, UITableViewDataSource, TripListCellDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) TripHelperNoOrderView *tripHelperNoOrderView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
+
+@property (nonatomic, copy) NSString *orderNo;
 
 @end
 
@@ -62,14 +64,35 @@
 }
 
 
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        [self requestConfirmCancelOrder:self.orderNo];
+    }
+}
+
+
 #pragma mark - HttpRequest
 
 - (void)requestCancelOrder:(NSString *)orderNo {
     
     __WeakObj(self)
-    [_orderViewModel requestCancelOrder:orderNo refundReason:@"取消订单" complete:^(BOOL isCancel) {
+    [_orderViewModel requestCancelOrder:orderNo complete:^(NSString *msg) {
         
-        if (isCancel) {
+        selfWeak.orderNo = orderNo;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:selfWeak cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }];
+}
+
+- (void)requestConfirmCancelOrder:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestConfirmCancelOrder:orderNo complete:^(BOOL isSuccess) {
+       
+        if (isSuccess) {
             [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
             [selfWeak requestData];
         }

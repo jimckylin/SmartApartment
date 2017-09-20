@@ -15,7 +15,7 @@
 
 
 
-@interface HotelOrderListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource, MyOrderCellDelegate>
+@interface HotelOrderListViewController ()<YJSliderViewDelegate, UITableViewDelegate, UITableViewDataSource, MyOrderCellDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableView *tableView1;
@@ -23,6 +23,7 @@
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @property (nonatomic, assign) NSInteger  orderType;
+@property (nonatomic, copy) NSString *orderNo;
 
 @end
 
@@ -130,6 +131,17 @@
     
 }
 
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        [self requestConfirmCancelOrder:self.orderNo];
+    }
+}
+
+
 #pragma mark - HttpRequest
 
 - (void)requestDataWith:(NSInteger)orderType {
@@ -142,14 +154,25 @@
 - (void)requestCancelOrder:(NSString *)orderNo {
     
     __WeakObj(self)
-    [_orderViewModel requestCancelOrder:orderNo refundReason:@"取消订单" complete:^(BOOL isCancel) {
-        if (isCancel) {
+    [_orderViewModel requestCancelOrder:orderNo complete:^(NSString *msg) {
+        
+        selfWeak.orderNo = orderNo;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:selfWeak cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }];
+}
+
+- (void)requestConfirmCancelOrder:(NSString *)orderNo {
+    
+    __WeakObj(self)
+    [_orderViewModel requestConfirmCancelOrder:orderNo complete:^(BOOL isSuccess) {
+        
+        if (isSuccess) {
             [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
             [selfWeak requestDataWith:0];
         }
     }];
 }
-
 
 - (void)requestCheckOutRoom:(NSString *)orderNo {
     

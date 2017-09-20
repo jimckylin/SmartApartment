@@ -134,9 +134,13 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>允许蔓心公寓获取你的定位</string>
+	<string>允许蔓心宿获取你的定位</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>允许蔓心公寓获取你的定位</string>
+	<string>允许蔓心宿获取你的定位</string>
+	<key>NSCameraUsageDescription</key>
+	<string>允许蔓心宿获取你相机权限</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允许蔓心宿获取你相册权限</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>iconfont.ttf</string>

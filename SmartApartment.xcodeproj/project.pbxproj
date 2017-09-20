@@ -300,6 +300,7 @@
 		A9BF42331F5D9EB50050C39F /* HotelConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42321F5D9EB50050C39F /* HotelConfigView.m */; };
 		A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */; };
 		A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */; };
+		A9C9681E1F7261EF00DD1655 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C9681D1F7261EF00DD1655 /* SelectPhotoManager.m */; };
 		A9CBF7781F6CC64C00FE4D0E /* HotelCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CBF7771F6CC64C00FE4D0E /* HotelCommentHeaderView.m */; };
 		A9D4D8C91F4434AA005C4100 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D8C81F4434AA005C4100 /* HomeViewModel.m */; };
 		A9D9ABD01F56AF1A0099819E /* Register1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9ABCF1F56AF1A0099819E /* Register1ViewController.m */; };
@@ -838,6 +839,8 @@
 		A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigItemCell.m; sourceTree = "<group>"; };
 		A9BF42371F5DAD5E0050C39F /* HotelConfigHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigHeaderView.h; sourceTree = "<group>"; };
 		A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigHeaderView.m; sourceTree = "<group>"; };
+		A9C9681C1F7261EF00DD1655 /* SelectPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
+		A9C9681D1F7261EF00DD1655 /* SelectPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoManager.m; sourceTree = "<group>"; };
 		A9CBF7761F6CC64C00FE4D0E /* HotelCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelCommentHeaderView.h; sourceTree = "<group>"; };
 		A9CBF7771F6CC64C00FE4D0E /* HotelCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCommentHeaderView.m; sourceTree = "<group>"; };
 		A9D4D8C71F4434AA005C4100 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
@@ -1779,6 +1782,7 @@
 		A9AA8EB91F371A09005F9DBB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				A9C9681B1F7261EF00DD1655 /* SelectPhotoManager */,
 				A9EAB8471F55C6AF00C367F2 /* RSADataSigner */,
 				A959C32A1F55B6BA006E091A /* Utils */,
 				A96E11281F4E83BA00357DCB /* HttpRequest */,
@@ -2026,6 +2030,15 @@
 				A976777C1F3EF76E00EDCDFA /* ActivityDetailViewController.m */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		A9C9681B1F7261EF00DD1655 /* SelectPhotoManager */ = {
+			isa = PBXGroup;
+			children = (
+				A9C9681C1F7261EF00DD1655 /* SelectPhotoManager.h */,
+				A9C9681D1F7261EF00DD1655 /* SelectPhotoManager.m */,
+			);
+			path = SelectPhotoManager;
 			sourceTree = "<group>";
 		};
 		A9D4D8C61F44349B005C4100 /* ViewModel */ = {
@@ -2481,6 +2494,7 @@
 				A9AA8EDF1F375245005F9DBB /* LaunchAdView.m in Sources */,
 				A9EAB85A1F55C6AF00C367F2 /* DataVerifier.m in Sources */,
 				A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */,
+				A9C9681E1F7261EF00DD1655 /* SelectPhotoManager.m in Sources */,
 				A95B3FF11F3AC7FF0046E150 /* JTDateHelper.m in Sources */,
 				A92E14491F64E98900EFF1A7 /* MyCommentListViewController.m in Sources */,
 				A9D9ABD61F56B82A0099819E /* Register3ViewController.m in Sources */,

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "526496295.440524"
+            timestampString = "527584793.912883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "526496295.440524"
+            timestampString = "527584793.912883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
             landmarkType = "7">
             <Locations>
@@ -42,12 +42,12 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-                  timestampString = "527421426.971556"
+                  timestampString = "527591382.779915"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "1046">
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "1188">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +57,12 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-                  timestampString = "527421426.975016"
+                  timestampString = "527591382.781849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "526496517.676028"
+            timestampString = "527584793.912883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-requestCancelOrder:refundReason:complete:"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-requestCancelOrder:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
-                  timestampString = "527421426.99236"
+                  timestampString = "527591382.80319"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "282">
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,14 +153,46 @@
                   moduleName = "SmartApartment"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
-                  timestampString = "527421426.994572"
+                  timestampString = "527591382.80573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/TripHepler/TripHelperViewController.m"
+            timestampString = "527584793.912883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Mine/PersonInfoViewController.m"
+            timestampString = "527591278.067635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-selectPhotoManagerDidFinishImage:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

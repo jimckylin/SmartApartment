@@ -65,10 +65,13 @@
 }
 
 
-- (void)requestRoomConfigure:(NSString *)roomTypeId complete:(void (^)(RoomConfig *))complete {
+- (void)requestRoomConfigure:(NSString *)roomTypeId
+             checkInRoomType:(NSString *)checkInRoomType
+                    complete:(void (^)(RoomConfig *))complete {
     
+    NSDictionary *param = @{@"roomTypeId": roomTypeId , @"checkInRoomType": checkInRoomType};
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    [SAHttpRequest requestWithFuncion:@"selectRoom" params:@{@"roomTypeId": roomTypeId} class:[RoomConfig class] success:^(id response) {
+    [SAHttpRequest requestWithFuncion:@"selectRoom" params:param class:[RoomConfig class] success:^(id response) {
         
         self.roomConfig = response;
         if (complete) {

@@ -82,6 +82,7 @@
     _commentLabel.font = [UIFont systemFontOfSize:13];
     _commentLabel.textColor = [UIColor grayColor];
     _commentLabel.text = @"房间很干净卫生，价格合理";
+    _commentLabel.numberOfLines = 0;
     [self addSubview:_commentLabel];
     
     _replyLabel = [UILabel new];

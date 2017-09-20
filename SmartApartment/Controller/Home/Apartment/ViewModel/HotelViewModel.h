@@ -46,8 +46,10 @@
 
 /* 标准房间、豪华房间配置
  * @param roomTypeId 房型ID
+ * @param checkInRoomType 入住房类型（0-天房，1-钟房）
  */
 - (void)requestRoomConfigure:(NSString *)roomTypeId
+             checkInRoomType:(NSString *)checkInRoomType
                     complete:(void(^)(RoomConfig *roomConfig))complete;
 
 /* 提交订单

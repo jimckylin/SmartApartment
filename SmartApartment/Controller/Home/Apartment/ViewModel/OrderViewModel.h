@@ -33,13 +33,17 @@
                             pageSize:(NSInteger)pageSize
                             complete:(void(^)(NSArray *tripOrderList))complete;
 
-/* 取消订单
+/* 申请取消订单
  * @param orderNo 订单流水号
- * @param refundReason 取消原因
  */
 - (void)requestCancelOrder:(NSString *)orderNo
-              refundReason:(NSString *)refundReason
-                  complete:(void(^)(BOOL isCancel))complete;
+                  complete:(void(^)(NSString *msg))complete;
+
+/* 确认取消订单
+ * @param orderNo 订单流水号
+ */
+- (void)requestConfirmCancelOrder:(NSString *)orderNo
+                  complete:(void(^)(BOOL isSuccess))complete;
 
 /* 自助退房
  * @param orderNo 订单流水号

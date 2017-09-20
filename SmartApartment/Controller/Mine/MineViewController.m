@@ -46,6 +46,7 @@
 - (void)initUI {
     
     [_naviBackBtn setHidden:YES];
+    _naviView.alpha = 0.f;
     _naviLabel.text = NSLocalizedString(@"我的", nil);
     
     /*
@@ -184,17 +185,24 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
-        if (!self.checkIsLogin) {
-            return;
-        }
+        
         if (indexPath.row == 0) {
+            if (!self.checkIsLogin) {
+                return;
+            }
             HotelOrderListViewController *vc = [HotelOrderListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else if (indexPath.row == 1) {
+            if (!self.checkIsLogin) {
+                return;
+            }
             UsefullInfoViewController *vc = [UsefullInfoViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
             
         }else if (indexPath.row == 2) {
+            if (!self.checkIsLogin) {
+                return;
+            }
             MyCommentListViewController *vc = [MyCommentListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else {

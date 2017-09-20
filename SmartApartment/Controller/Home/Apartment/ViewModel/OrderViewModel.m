@@ -100,17 +100,35 @@
 }
 
 - (void)requestCancelOrder:(NSString *)orderNo
-              refundReason:(NSString *)refundReason
-                  complete:(void (^)(BOOL))complete {
+                  complete:(void (^)(NSString *msg))complete {
     
     NSString *token = [UserManager manager].user.token;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     [dict cwgj_setObject:token          forKey:@"token"];
     [dict cwgj_setObject:orderNo        forKey:@"orderNo"];
-    [dict cwgj_setObject:refundReason   forKey:@"refundReason"];
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    [SAHttpRequest requestWithFuncion:@"cancelOrder" params:dict class:nil success:^(id response) {
+    [SAHttpRequest requestWithFuncion:@"reqCancelOrder" params:dict class:nil success:^(id response) {
+        
+        if (complete) {
+            complete(response);
+        }
+        [MBProgressHUD cwgj_hideHUD];
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+}
+
+- (void)requestConfirmCancelOrder:(NSString *)orderNo complete:(void (^)(BOOL))complete {
+    
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:token          forKey:@"token"];
+    [dict cwgj_setObject:orderNo        forKey:@"orderNo"];
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"confirmCancelOrder" params:dict class:nil success:^(id response) {
         
         if (complete) {
             complete(response);

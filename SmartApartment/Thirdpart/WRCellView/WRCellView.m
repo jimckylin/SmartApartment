@@ -325,6 +325,8 @@ UIColor *CellRightTextColor = nil;
 - (UIImageView *)rightIcon {
     if (_rightIcon == nil) {
         _rightIcon = [UIImageView new];
+        _rightIcon.contentMode = UIViewContentModeScaleAspectFill;
+        _rightIcon.clipsToBounds = YES;
     }
     return _rightIcon;
 }
