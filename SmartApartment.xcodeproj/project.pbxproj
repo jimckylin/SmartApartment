@@ -263,6 +263,11 @@
 		A997DAF01F5EDC1000F6D1B5 /* OrderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAEF1F5EDC1000F6D1B5 /* OrderDetail.m */; };
 		A997DAF31F5EDC7B00F6D1B5 /* Consume.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF21F5EDC7B00F6D1B5 /* Consume.m */; };
 		A997DAF71F5EF88B00F6D1B5 /* TripOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */; };
+		A9A5C89B1F736715007E8126 /* HCGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5C8981F736715007E8126 /* HCGDatePicker.m */; };
+		A9A5C89C1F736715007E8126 /* HCGDatePickerAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5C89A1F736715007E8126 /* HCGDatePickerAppearance.m */; };
+		A9A5C89F1F73ACBE007E8126 /* ModifyIdNoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5C89E1F73ACBE007E8126 /* ModifyIdNoViewController.m */; };
+		A9A5C8A21F73AD0D007E8126 /* ModifyEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5C8A11F73AD0D007E8126 /* ModifyEmailViewController.m */; };
+		A9A5C8A51F73BA28007E8126 /* ModifyNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5C8A41F73BA28007E8126 /* ModifyNameViewController.m */; };
 		A9A7D18B1F63C503006F742B /* RechargeItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7D18A1F63C503006F742B /* RechargeItemCell.m */; };
 		A9AA8E9D1F3712A5005F9DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9C1F3712A5005F9DBB /* main.m */; };
 		A9AA8EA01F3712A5005F9DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA8E9F1F3712A5005F9DBB /* AppDelegate.m */; };
@@ -326,7 +331,6 @@
 		A9EAB87F1F572C4D00C367F2 /* StarHotelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB87E1F572C4D00C367F2 /* StarHotelCell.m */; };
 		A9EAB8881F5851E000C367F2 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB8871F5851E000C367F2 /* Activity.m */; };
 		A9EAB88B1F58567400C367F2 /* SAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAB88A1F58567400C367F2 /* SAModel.m */; };
-		A9EB26201F48ACFF007DB818 /* trip_illustrationiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */; };
 		A9EB26241F48AF08007DB818 /* TripHelperNoOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26231F48AF08007DB818 /* TripHelperNoOrderView.m */; };
 		A9EB26261F48AF1D007DB818 /* TripHelperNoOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26251F48AF1D007DB818 /* TripHelperNoOrderView.xib */; };
 		A9EB262A1F48AF9E007DB818 /* trip_illustrationiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26271F48AF9E007DB818 /* trip_illustrationiphone@2x.png */; };
@@ -780,6 +784,16 @@
 		A997DAF21F5EDC7B00F6D1B5 /* Consume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consume.m; sourceTree = "<group>"; };
 		A997DAF51F5EF88A00F6D1B5 /* TripOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripOrder.h; sourceTree = "<group>"; };
 		A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripOrder.m; sourceTree = "<group>"; };
+		A9A5C8971F736715007E8126 /* HCGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCGDatePicker.h; sourceTree = "<group>"; };
+		A9A5C8981F736715007E8126 /* HCGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCGDatePicker.m; sourceTree = "<group>"; };
+		A9A5C8991F736715007E8126 /* HCGDatePickerAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCGDatePickerAppearance.h; sourceTree = "<group>"; };
+		A9A5C89A1F736715007E8126 /* HCGDatePickerAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCGDatePickerAppearance.m; sourceTree = "<group>"; };
+		A9A5C89D1F73ACBE007E8126 /* ModifyIdNoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyIdNoViewController.h; sourceTree = "<group>"; };
+		A9A5C89E1F73ACBE007E8126 /* ModifyIdNoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyIdNoViewController.m; sourceTree = "<group>"; };
+		A9A5C8A01F73AD0D007E8126 /* ModifyEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyEmailViewController.h; sourceTree = "<group>"; };
+		A9A5C8A11F73AD0D007E8126 /* ModifyEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyEmailViewController.m; sourceTree = "<group>"; };
+		A9A5C8A31F73BA28007E8126 /* ModifyNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyNameViewController.h; sourceTree = "<group>"; };
+		A9A5C8A41F73BA28007E8126 /* ModifyNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyNameViewController.m; sourceTree = "<group>"; };
 		A9A7D1891F63C503006F742B /* RechargeItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeItemCell.h; sourceTree = "<group>"; };
 		A9A7D18A1F63C503006F742B /* RechargeItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeItemCell.m; sourceTree = "<group>"; };
 		A9AA8E981F3712A5005F9DBB /* SmartApartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartApartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -898,7 +912,6 @@
 		A9EAB8871F5851E000C367F2 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		A9EAB8891F58567400C367F2 /* SAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAModel.h; sourceTree = "<group>"; };
 		A9EAB88A1F58567400C367F2 /* SAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAModel.m; sourceTree = "<group>"; };
-		A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_illustrationiphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26221F48AF08007DB818 /* TripHelperNoOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHelperNoOrderView.h; sourceTree = "<group>"; };
 		A9EB26231F48AF08007DB818 /* TripHelperNoOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripHelperNoOrderView.m; sourceTree = "<group>"; };
 		A9EB26251F48AF1D007DB818 /* TripHelperNoOrderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripHelperNoOrderView.xib; sourceTree = "<group>"; };
@@ -1497,7 +1510,6 @@
 				A9D9ABDB1F57F3D40099819E /* NSObject+Coding.m */,
 				A94B82721F4D280900840D88 /* NSMutableDictionary+CWGJ.h */,
 				A94B82731F4D280900840D88 /* NSMutableDictionary+CWGJ.m */,
-				A9EB261F1F48ACFF007DB818 /* trip_illustrationiphone@2x.png */,
 				A95D642C1F46985C00F78A7E /* UIImage+Categories.h */,
 				A95D642D1F46985C00F78A7E /* UIImage+Categories.m */,
 				A95D64291F46979D00F78A7E /* UIButton+countDown.h */,
@@ -1619,6 +1631,7 @@
 		A98223F91F3A19B300CA9A9F /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				A9A5C8961F736715007E8126 /* HcgDatePicker */,
 				A959C31E1F548C6F006E091A /* JSONKit */,
 				A94B82671F4D26A800840D88 /* AlipaySDK */,
 				A94B823D1F4D1E7A00840D88 /* OpenSDK1.8.0 */,
@@ -1713,6 +1726,17 @@
 				A997DAF61F5EF88A00F6D1B5 /* TripOrder.m */,
 			);
 			path = TripHelper;
+			sourceTree = "<group>";
+		};
+		A9A5C8961F736715007E8126 /* HcgDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A9A5C8971F736715007E8126 /* HCGDatePicker.h */,
+				A9A5C8981F736715007E8126 /* HCGDatePicker.m */,
+				A9A5C8991F736715007E8126 /* HCGDatePickerAppearance.h */,
+				A9A5C89A1F736715007E8126 /* HCGDatePickerAppearance.m */,
+			);
+			path = HcgDatePicker;
 			sourceTree = "<group>";
 		};
 		A9AA8E8F1F3712A5005F9DBB = {
@@ -1977,6 +2001,12 @@
 				A9EB264F1F494B14007DB818 /* AboutViewController.m */,
 				A9EB26531F494FE4007DB818 /* PersonInfoViewController.h */,
 				A9EB26541F494FE4007DB818 /* PersonInfoViewController.m */,
+				A9A5C8A31F73BA28007E8126 /* ModifyNameViewController.h */,
+				A9A5C8A41F73BA28007E8126 /* ModifyNameViewController.m */,
+				A9A5C89D1F73ACBE007E8126 /* ModifyIdNoViewController.h */,
+				A9A5C89E1F73ACBE007E8126 /* ModifyIdNoViewController.m */,
+				A9A5C8A01F73AD0D007E8126 /* ModifyEmailViewController.h */,
+				A9A5C8A11F73AD0D007E8126 /* ModifyEmailViewController.m */,
 				A92F7FDF1F4C65870056CACC /* WalletViewController.h */,
 				A92F7FE01F4C65870056CACC /* WalletViewController.m */,
 				A92F7FE51F4C6FDC0056CACC /* RechargeViewController.h */,
@@ -2291,7 +2321,6 @@
 				A9060F9D1F52B7BD00778B53 /* coupon_seleiphone@2x.png in Resources */,
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
-				A9EB26201F48ACFF007DB818 /* trip_illustrationiphone@2x.png in Resources */,
 				A992C1E51F47275900D5371C /* share_qq_iciphone@2x.png in Resources */,
 				A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
@@ -2444,6 +2473,7 @@
 				A955E9CE1F45697E00FEB05F /* HotelDetailDateView.m in Sources */,
 				A95286151F441E9C00D7EB2F /* LocationManager.m in Sources */,
 				A95B3FFB1F3AC8860046E150 /* CalendarViewController.m in Sources */,
+				A9A5C89C1F736715007E8126 /* HCGDatePickerAppearance.m in Sources */,
 				A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */,
 				A982240B1F3A19BB00CA9A9F /* TLCityPickerController.m in Sources */,
 				A9CBF7781F6CC64C00FE4D0E /* HotelCommentHeaderView.m in Sources */,
@@ -2455,6 +2485,7 @@
 				A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */,
 				A96E112B1F4E83E700357DCB /* SAHttpRequest.m in Sources */,
 				A92F7FBD1F4B3D1D0056CACC /* MASConstraint.m in Sources */,
+				A9A5C8A51F73BA28007E8126 /* ModifyNameViewController.m in Sources */,
 				A9EAB8601F55C6AF00C367F2 /* WXUtil.mm in Sources */,
 				A9414F051F38CA49007857D2 /* NavManager.m in Sources */,
 				A95B3FF21F3AC7FF0046E150 /* ZYCalendarManager.m in Sources */,
@@ -2482,6 +2513,7 @@
 				A992C1F21F47331C00D5371C /* HotelCommentListViewController.m in Sources */,
 				A976779A1F41FB5A00EDCDFA /* HotelDetailViewController.m in Sources */,
 				A9768D511F3D646800B14D36 /* HotelSelectSubView.m in Sources */,
+				A9A5C89B1F736715007E8126 /* HCGDatePicker.m in Sources */,
 				A997DAF71F5EF88B00F6D1B5 /* TripOrder.m in Sources */,
 				A9D9ABD91F57E7860099819E /* User.m in Sources */,
 				A92F7FE71F4C6FDC0056CACC /* RechargeViewController.m in Sources */,
@@ -2547,6 +2579,7 @@
 				A959C3251F54946A006E091A /* AESCipher.m in Sources */,
 				A9AA8EFB1F38B706005F9DBB /* RootTabBarController.m in Sources */,
 				A9AA8ED71F37275B005F9DBB /* HomeViewController.m in Sources */,
+				A9A5C8A21F73AD0D007E8126 /* ModifyEmailViewController.m in Sources */,
 				A96E112F1F4E8D7F00357DCB /* RequestSign.m in Sources */,
 				A959591F1F6285B2003029E6 /* ConsumeListCell.m in Sources */,
 				A955E9CB1F45694C00FEB05F /* HotelDetailRoomTypeCell.m in Sources */,
@@ -2572,6 +2605,7 @@
 				A97677A71F433CCC00EDCDFA /* HotelDetailHeaderCell.m in Sources */,
 				A9D9ABDF1F57FE6F0099819E /* VerifyCode1LoginView.m in Sources */,
 				A9415A511F5520FA00FAD195 /* Register1View.m in Sources */,
+				A9A5C89F1F73ACBE007E8126 /* ModifyIdNoViewController.m in Sources */,
 				A92F7FE11F4C65870056CACC /* WalletViewController.m in Sources */,
 				A9EAB8881F5851E000C367F2 /* Activity.m in Sources */,
 				A95D943E1F5CE52500E10CEE /* StoreEvaluate.m in Sources */,

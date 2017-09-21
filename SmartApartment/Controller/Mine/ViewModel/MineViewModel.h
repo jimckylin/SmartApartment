@@ -68,5 +68,25 @@
  */
 - (void)requestMyReview:(void(^)(HotelList *hotelList))complete;
 
+/* 保存用户信息
+ * @param headImage 头像,base64图片流
+ * @param imageExtensionName 头像图片扩展名，比如：png、jgp
+ * @param cardNo 卡号
+ * @param name 姓名
+ * @param birthDate 出生日期
+ * @param idType 证件类型：0-身份证，1-学生证，2-其他证件
+ * @param idNo 身份证
+ * @param mobilePhone 手机号码
+ * @param email 邮箱
+ */
+- (void)requestSaveUser:(NSString *)headImage
+           imageExtensionName:(NSString *)imageExtensionName
+                         name:(NSString *)name
+                    birthDate:(NSString *)birthDate
+                       idType:(NSString *)idType
+                         idNo:(NSString *)idNo
+                  mobilePhone:(NSString *)mobilePhone
+                        email:(NSString *)email
+                     complete:(void(^)(User *user))complete;
 
 @end

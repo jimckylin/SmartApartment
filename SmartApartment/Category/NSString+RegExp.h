@@ -12,6 +12,7 @@
 
 - (BOOL)isPhoneNumber;
 - (BOOL)isNumber;
+- (BOOL)validateEmail;
 
 - (BOOL)isUpcasecharacter;
 - (BOOL)isSpecialCharacter;

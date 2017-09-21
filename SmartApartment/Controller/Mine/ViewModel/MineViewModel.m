@@ -234,5 +234,48 @@
     }];
 }
 
+- (void)requestSaveUser:(NSString *)headImage
+     imageExtensionName:(NSString *)imageExtensionName
+                   name:(NSString *)name
+              birthDate:(NSString *)birthDate
+                 idType:(NSString *)idType
+                   idNo:(NSString *)idNo
+            mobilePhone:(NSString *)mobilePhone
+                  email:(NSString *)email
+               complete:(void (^)(User *user))complete {
+    
+    NSString *cardNo = [UserManager manager].user.cardNo;
+    NSString *token = [UserManager manager].user.token;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict cwgj_setObject:cardNo        forKey:@"cardNo"];
+    [dict cwgj_setObject:token         forKey:@"token"];
+    [dict cwgj_setObject:headImage     forKey:@"headImage"];
+    [dict cwgj_setObject:imageExtensionName         forKey:@"imageExtensionName"];
+    [dict cwgj_setObject:name          forKey:@"name"];
+    [dict cwgj_setObject:birthDate     forKey:@"birthDate"];
+    [dict cwgj_setObject:idType        forKey:@"idType"];
+    [dict cwgj_setObject:idNo          forKey:@"idNo"];
+    [dict cwgj_setObject:mobilePhone      forKey:@"mobilePhone"];
+    [dict cwgj_setObject:email         forKey:@"email"];
+    
+    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    [SAHttpRequest requestWithFuncion:@"saveUser" params:dict class:[User class] success:^(id response) {
+        
+        [MBProgressHUD cwgj_hideHUD];
+        if (response) {
+            [[UserManager manager] saveUser:(User *)response];
+            if (complete) {
+                complete(response);
+            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kLoginSuccess" object:nil];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD cwgj_hideHUD];
+        [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
+    }];
+
+}
+
 
 @end
