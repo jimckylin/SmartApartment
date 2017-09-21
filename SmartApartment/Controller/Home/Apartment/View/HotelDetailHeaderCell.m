@@ -15,8 +15,6 @@
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 @property (nonatomic, strong) UIImageView *thumbImgV;
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UILabel *scoreLabel;
-@property (nonatomic, strong) UIImageView *flagImgV;
 
 @property (nonatomic, strong) UILabel *priceLabel;
 
@@ -24,6 +22,7 @@
 @property (nonatomic, strong) UIButton *hotelTelBtn;
 
 @property (nonatomic, strong) UIView *line;
+@property (nonatomic, strong) UIView *hLine;
 
 @end
 
@@ -72,17 +71,6 @@
     _thumbImgV.clipsToBounds = YES;
     [self addSubview:_thumbImgV];
     
-    _scoreLabel = [UILabel new];
-    _scoreLabel.font = [UIFont systemFontOfSize:10];
-    _scoreLabel.textColor = [UIColor redColor];
-    _scoreLabel.text = @"4.8分 超级棒";
-    [bgView addSubview:_scoreLabel];
-    
-    _flagImgV = [UIImageView new];
-    _flagImgV.contentMode = UIViewContentModeScaleAspectFill;
-    _flagImgV.image = [UIImage imageNamed:@"xq_xinyongzhuiphone"];
-    [bgView addSubview:_flagImgV];
-    
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:16];
     _priceLabel.textColor = ThemeColor;
@@ -101,7 +89,7 @@
     _hotelDetailBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     _hotelDetailBtn.tag = HotelDetailHeaderTypeHotelDetail;
     [_hotelDetailBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_hotelDetailBtn];
+    [bgView addSubview:_hotelDetailBtn];
     
     _hotelTelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _hotelTelBtn.backgroundColor = [UIColor lightTextColor];
@@ -113,11 +101,15 @@
     _hotelTelBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     _hotelTelBtn.tag = HotelDetailHeaderTypeTelBtn;
     [_hotelTelBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_hotelTelBtn];
+    [bgView addSubview:_hotelTelBtn];
     
     _line = [UIView new];
     _line.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:_line];
+    
+    _hLine = [UIView new];
+    _hLine.backgroundColor = [UIColor lightGrayColor];
+    [bgView addSubview:_hLine];
 }
 
 - (void)setHotel:(Hotel *)hotel {
@@ -125,7 +117,6 @@
     _bannerView.imageURLStringsGroup = [self pareseImgs:hotel];
     _titleLabel.text = hotel.storeName;
     [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:kImage(@"")];
-    _scoreLabel.text = hotel.storeScore;
     _priceLabel.text = [NSString stringWithFormat:@"¥%@起", hotel.storeRoomMinPrice];
     
 }
@@ -161,30 +152,26 @@
     [_thumbImgV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
     [_thumbImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:5];
     
-    [_scoreLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
-    [_scoreLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel];
-    [_scoreLabel autoSetDimensionsToSize:CGSizeMake(100, 17)];
-    
-    [_flagImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:_titleLabel];
-    [_flagImgV autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_scoreLabel withOffset:30];
-    [_flagImgV autoSetDimensionsToSize:CGSizeMake(34, 12)];
-    
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
-    [_priceLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:_flagImgV];
+    [_priceLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel withOffset:10];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 20)];
     
     [_hotelDetailBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_hotelDetailBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_hotelDetailBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 57)];
+    [_hotelDetailBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 46)];
     
     [_hotelTelBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_hotelDetailBtn];
     [_hotelTelBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_hotelTelBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 57)];
+    [_hotelTelBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 46)];
     
-    [_line autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_hotelDetailBtn];
-    [_line autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_hotelDetailBtn withOffset:10];
-    [_line autoSetDimensionsToSize:CGSizeMake(0.5, 37)];
+    [_line autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [_line autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
+    [_line autoSetDimensionsToSize:CGSizeMake(0.5, 20)];
     
+    [_hLine autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_hotelDetailBtn];
+    [_hLine autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_hLine autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_hLine autoSetDimension:ALDimensionHeight toSize:0.5];
     
     [super updateConstraints];
 }

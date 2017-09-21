@@ -13,6 +13,7 @@
 @interface HotelDetailMoreCommentCell ()
 
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIImageView *arrowImgV;
 
 @end
 
@@ -45,8 +46,16 @@
     _label.textAlignment = NSTextAlignmentCenter;
     _label.text = @"查看全部0条评论";
     [bgView addSubview:_label];
-    [_label autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
+    _arrowImgV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+    [bgView addSubview:_arrowImgV];
+    
+    
+    [_label autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [_label autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    
+    [_arrowImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_label withOffset:5];
+    [_arrowImgV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_label];
 }
 
 - (void)setHotelDetail:(HotelDetail *)hotelDetail {
