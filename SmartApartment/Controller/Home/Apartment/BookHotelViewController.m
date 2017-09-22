@@ -68,7 +68,7 @@
 @property (nonatomic, strong) NSString       *wineId;
 
 @property (nonatomic, strong) NSMutableArray *contactPersons;
-
+@property (nonatomic, strong) NSMutableArray *dateArray;
 
 
 @end
@@ -87,6 +87,7 @@
 
 - (void)iniData {
     
+    _dateArray = [[NSMutableArray alloc] initWithCapacity:1];
     _viewModel = [HotelViewModel new];
     _mineViewModel = [MineViewModel new];
     
@@ -100,6 +101,7 @@
         selfWeak.hotelConfigView.roomConfig = roomConfig;
         [selfWeak.view addSubview:self.hotelConfigView];
     }];
+    [self requestTimeSlot];
 }
 
 - (void)initView {
@@ -163,14 +165,21 @@
     self.arriveTimeView.tapBlock = ^ {
         __strong typeof(self) pThis = weakSelf;
         
-        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前", nil];
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"请选择入住时间" delegate:pThis cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+        
+        // 设置title
+        for (NSString *string in weakSelf.dateArray) {
+            [actionsheet addButtonWithTitle:string];
+        }
+        [actionsheet addButtonWithTitle:@"取消"];
+        actionsheet.cancelButtonIndex = [weakSelf.dateArray count];
+        
         // 显示
         actionsheet.tag = 1000;
         [actionsheet showInView:pThis.view];
     };
     
     self.invoiceView.tapBlock = ^{
-        
         [weakSelf.hotelConfigView show];
     };
     
@@ -214,8 +223,9 @@
 #pragma mark - Private
 
 - (NSMutableArray *)getPersons:(NSArray *)contacts {
-    
-    _contactPersons = [[NSMutableArray alloc] initWithCapacity:1];
+    if (!_contactPersons) {
+        _contactPersons = [[NSMutableArray alloc] initWithCapacity:1];
+    }
     for (NSDictionary *contact in contacts) {
         NSString *name = contact[@"name"];
         [_contactPersons addObject:name];
@@ -224,12 +234,26 @@
 }
 
 
+#pragma mark - Request
+
+- (void)requestTimeSlot {
+    
+    __WeakObj(self)
+    [_viewModel requestGetTimeSolt:self.checkInRoomType complete:^(NSArray *dateArray) {
+        if ([dateArray count] > 0) {
+            selfWeak.arriveTimeLabel.text = dateArray[0];
+            [_dateArray addObjectsFromArray:dateArray];
+        }
+    }];
+}
+
+
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if (actionSheet.tag == 1000) {
-        NSArray *times = @[@"14:00前", @"15:00前", @"16:00前", @"17:00前", @"18:00前", @"19:00前", @"20:00前", @"21:00前", @"22:00前", @"23:00前", @"24:00前"];
+        NSArray *times = _dateArray;
         if (buttonIndex < [times count]) {
             NSString *time = times[buttonIndex];
             self.arriveTimeLabel.text = time;
@@ -470,7 +494,7 @@
         _arriveTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CustomViewX, 0, 175, WRCellViewHeight)];
         _arriveTimeLabel.font = [UIFont systemFontOfSize:14];
         _arriveTimeLabel.textColor = [UIColor darkTextColor];
-        _arriveTimeLabel.text = @"19:00前";
+        //_arriveTimeLabel.text = @"19:00前";
     }
     return _arriveTimeLabel;
 }

@@ -99,4 +99,10 @@
                   orderNo:(NSString *)orderNo
                  complete:(void(^)(NSDictionary *orderDict))complete;
 
+/* 获取时间段
+ * @param checkInRoomType 支付方式（0-微信支付，1-支付宝支付，2-银行卡支付，3-会员余额支付）
+ */
+- (void)requestGetTimeSolt:(NSString *)checkInRoomType
+                  complete:(void(^)(NSArray *dateArray))complete;
+
 @end

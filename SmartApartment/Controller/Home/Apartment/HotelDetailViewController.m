@@ -121,11 +121,12 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     [backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
 
+    /*
     UIButton *collectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [collectBtn setImage:kImage(@"nav_detail_like_btn_siphone") forState:UIControlStateNormal];
     [collectBtn addTarget:self action:@selector(collectBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     collectBtn.tag = kNavButtonTag1;
-    [self.view addSubview:collectBtn];
+    [self.view addSubview:collectBtn];*/
     
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [shareBtn setImage:kImage(@"nav_detail_share_btn_siphone") forState:UIControlStateNormal];
@@ -136,9 +137,10 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     [shareBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:25];
     [shareBtn autoSetDimensionsToSize:CGSizeMake(34, 34)];
     
+    /*
     [collectBtn autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:shareBtn];
     [collectBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:shareBtn];
-    [collectBtn autoSetDimensionsToSize:CGSizeMake(34, 34)];
+    [collectBtn autoSetDimensionsToSize:CGSizeMake(34, 34)];*/
     
 }
 
