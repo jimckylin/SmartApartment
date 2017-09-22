@@ -158,7 +158,7 @@
     _verifyCodeLabel.tag = CZDLoginActionVerifyCodeLoginJump;
     [_verifyCodeLabel setBackgroundColor:[UIColor clearColor]];
     //[_protocolLabel setTextColor:RGBA(42, 122, 219,1.0f)];
-    [_verifyCodeLabel setTextColor:[UIColor colorWithHexString:@"#1B88EE"]];
+    [_verifyCodeLabel setTextColor:[UIColor lightGrayColor]];
     [_verifyCodeLabel setFont:[UIFont systemFontOfSize:11.0f]];
     [_verifyCodeLabel setText:@"通过短信验证码登录"];
     [_verifyCodeLabel setUserInteractionEnabled:YES];

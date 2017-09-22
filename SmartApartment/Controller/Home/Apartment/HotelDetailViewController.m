@@ -18,6 +18,7 @@
 #import "ZZFoldCellModel.h"
 #import "ShareManager.h"
 
+
 /* 头部 */
 #import "BlankCell.h"
 #import "HotelDetailHeaderCell.h"
@@ -95,7 +96,9 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     _tableView.dataSource = self;
     _tableView.sectionHeaderHeight = 10;
     //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10);
     [bgView addSubview:_tableView];
+    
     [_tableView registerClass:[BlankCell class] forCellReuseIdentifier:kBlankCell];
     [_tableView registerClass:[HotelDetailHeaderCell class] forCellReuseIdentifier:kHotelDetailHeaderCell];
     [_tableView registerClass:[HotelDetailMapCell class] forCellReuseIdentifier:kHotelDetailMapCell];
@@ -174,7 +177,7 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 420;
+        return 390;
     }else if (indexPath.section == 1) {
         return 101;
     }else if (indexPath.section == 2){

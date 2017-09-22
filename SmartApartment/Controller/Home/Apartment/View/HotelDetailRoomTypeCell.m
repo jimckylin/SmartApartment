@@ -17,6 +17,8 @@
 @property (nonatomic, strong) HotelDetailDateView *dateView1;
 @property (nonatomic, strong) HotelDetailDateView *dateView2;
 
+@property (nonatomic, strong) UIView *indicatorLine;
+
 @end
 
 
@@ -54,21 +56,28 @@
     _alldayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_alldayBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_alldayBtn setTitle:@"短租房" forState:UIControlStateNormal];
-    [_alldayBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    [_alldayBtn setTitleColor:ThemeColor forState:UIControlStateSelected];
     [_alldayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_alldayBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _alldayBtn.tag = HotelRoomTypeAllday;
     _alldayBtn.selected = YES;
-    [self addSubview:_alldayBtn];
+    [bgView addSubview:_alldayBtn];
     
     _hoursBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_hoursBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_hoursBtn setTitle:@"体验房" forState:UIControlStateNormal];
-    [_hoursBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    [_hoursBtn setTitleColor:ThemeColor forState:UIControlStateSelected];
     [_hoursBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_hoursBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     _hoursBtn.tag = HotelRoomTypeTypeHours;
-    [self addSubview:_hoursBtn];
+    [bgView addSubview:_hoursBtn];
+    
+    _indicatorLine = [UIView new];
+    _indicatorLine.backgroundColor = ThemeColor;
+    [bgView addSubview:_indicatorLine];
+    [_indicatorLine autoAlignAxis:ALAxisVertical toSameAxisOfView:_alldayBtn];
+    [_indicatorLine autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:_alldayBtn];
+    [_indicatorLine autoSetDimensionsToSize:CGSizeMake(60, 3)];
     
     // 时间
     _dateView1 = [[HotelDetailDateView alloc] initWithRoomType:HotelRoomTypeAllday];
@@ -111,6 +120,9 @@
             _dateView1.hidden = YES;
             _dateView2.hidden = NO;
         }
+        
+        CGFloat width = (kScreenWidth-20)/2;
+        _indicatorLine.left = (width-60)/2 + (sender.tag-123)*width;
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(hotelDetailDateViewDidClick:)]) {
@@ -123,11 +135,11 @@
     
     [_alldayBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_alldayBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_alldayBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 49)];
+    [_alldayBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 49)];
     
     [_hoursBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_alldayBtn];
     [_hoursBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_hoursBtn autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 49)];
+    [_hoursBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 49)];
     
     [_dateView1 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];
     [_dateView2 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];

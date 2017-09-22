@@ -83,8 +83,6 @@
         newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
         
         CGFloat titleWidth = [Utils getContentMaxWidth:annotation.title FontSize:15];
-        
-        
         UIView *popView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, titleWidth+20, 46)];
         //设置弹出气泡图片
         UIImage *image = [kImage(@"map_landmarkiphone") resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
@@ -106,7 +104,7 @@
         [popView addSubview:title];
         
         BMKActionPaopaoView *pView = [[BMKActionPaopaoView alloc]initWithCustomView:popView];
-        pView.frame = CGRectMake(0, 0, 100, 60);
+        //pView.frame = CGRectMake(0, 0, 100, 60);
         newAnnotationView.paopaoView = pView;
         
         return newAnnotationView;

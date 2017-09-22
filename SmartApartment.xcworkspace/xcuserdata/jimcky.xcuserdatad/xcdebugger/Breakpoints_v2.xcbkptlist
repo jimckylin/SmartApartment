@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "527584793.912883"
+            timestampString = "527189256.183208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,13 +26,14 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "527584793.912883"
+            timestampString = "527189256.183208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
             landmarkType = "7">
+<<<<<<< HEAD
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -65,6 +66,8 @@
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
+=======
+>>>>>>> 00121cf2df544625a0dac6dc8adf02c1535f9467
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,12 +77,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
-            timestampString = "527584793.912883"
+            timestampString = "526496517.676028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-requestCancelOrder:complete:"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-requestCancelOrder:refundReason:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -99,6 +102,7 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -179,5 +183,7 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> 00121cf2df544625a0dac6dc8adf02c1535f9467
    </Breakpoints>
 </Bucket>

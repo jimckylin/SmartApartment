@@ -63,7 +63,7 @@
     
     _addressLabel = [UILabel new];
     _addressLabel.font = [UIFont systemFontOfSize:11];
-    _addressLabel.textColor = [UIColor lightGrayColor];
+    _addressLabel.textColor = [UIColor grayColor];
     _addressLabel.text = @"福州市台江区中亭街";
     [addressBg addSubview:_addressLabel];
     [_addressLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 33, 0, 0)];
