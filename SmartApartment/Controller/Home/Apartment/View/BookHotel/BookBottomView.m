@@ -44,7 +44,7 @@
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:18];
-    _priceLabel.textColor = [UIColor redColor];
+    _priceLabel.textColor = ThemeColor;
     _priceLabel.numberOfLines = 0;
     _priceLabel.text = @"￥215";
     [_bgView addSubview:_priceLabel];
@@ -76,6 +76,48 @@
     
     _priceLabel.text = [NSString stringWithFormat:@"￥%@", roomPrice];
 }
+
+
+- (void)setPriceWithRoomPrice:(NSString *)price
+                  roomDeposit:(NSString *)deposit
+                roomRisePrice:(NSString *)risePrice
+                    breakfast:(Breakfast *)breakfast
+                 breakfastNum:(NSString *)breakfastNum
+                    fivePiece:(FivePiece *)fivePiece
+                        aroma:(Aroma *)aroma
+                   roomLayout:(RoomLayout *)roomLayout
+                         wine:(Wine *)wine {
+    
+    CGFloat totalPrice = 0;
+    
+    if (price) {
+        totalPrice += [price floatValue];
+    }
+    if (deposit) {
+        totalPrice += [deposit floatValue];
+    }
+    if (risePrice) {
+        totalPrice += [risePrice floatValue];
+    }
+    if (breakfast) {
+        totalPrice += [breakfast.price floatValue] * [breakfastNum integerValue];
+    }
+    if (fivePiece) {
+        totalPrice += [fivePiece.price floatValue];
+    }
+    if (aroma) {
+        totalPrice += [aroma.price floatValue];
+    }
+    if (roomLayout) {
+        totalPrice += [roomLayout.price floatValue];
+    }
+    if (wine) {
+        totalPrice += [wine.price floatValue];
+    }
+    
+    _priceLabel.text = [NSString stringWithFormat:@"￥%0.2f", totalPrice];
+}
+
 
 
 #pragma mark - UIButton Action

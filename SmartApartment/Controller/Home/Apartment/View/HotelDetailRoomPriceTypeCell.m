@@ -100,7 +100,7 @@
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:13];
-    _priceLabel.textColor = [UIColor redColor];
+    _priceLabel.textColor = ThemeColor;
     _priceLabel.textAlignment = NSTextAlignmentRight;
     _priceLabel.text = @"¥99起";
     [bgView addSubview:_priceLabel];

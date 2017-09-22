@@ -175,9 +175,10 @@
                                  [PayManager getInstance].didPayCompleteBlock = ^{
                                      // 跳转支付成功页面
                                      PaySuccessViewController *vc = [PaySuccessViewController new];
-                                     // FIX-ME : 替换入住码
                                      vc.checkinNo = selfWeak.orderDict[@"checkInNo"];
                                      [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+                                     
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"kRefreshTripHelper" object:nil];
                                  };
                              }];
     }
@@ -208,7 +209,7 @@
         priceLabel.font = [UIFont systemFontOfSize:13];
         priceLabel.textColor = [UIColor grayColor];
         priceLabel.textAlignment = RTTextAlignmentCenter;
-        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=red>%@</font>", self.orderDict[@"consumeTotalPrice"]];
+        priceLabel.text = [NSString stringWithFormat:@"待付款 ￥<font size=20 color=#1B5B5E>%@</font>", self.orderDict[@"consumeTotalPrice"]];
         [_headerView addSubview:priceLabel];
     }
     return _headerView;

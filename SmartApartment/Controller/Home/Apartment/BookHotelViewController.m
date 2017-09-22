@@ -54,18 +54,19 @@
 @property (nonatomic, strong) UILabel       *tipLabel;
 
 @property (nonatomic, strong) BookDetailView *bookDetailView;
+@property (nonatomic, strong) BookBottomView *bottomView;
 @property (nonatomic, strong) HotelConfigView *hotelConfigView;
 
 @property (nonatomic, strong) HotelViewModel *viewModel;
 @property (nonatomic, strong) MineViewModel  *mineViewModel;
 @property (nonatomic, strong) RoomConfig     *roomConfig;
 
-@property (nonatomic, strong) NSString       *breakfastId;
-@property (nonatomic, strong) NSString       *breakfastNum;
-@property (nonatomic, strong) NSString       *fivePieceId;
-@property (nonatomic, strong) NSString       *aromaId;
-@property (nonatomic, strong) NSString       *roomLayoutId;
-@property (nonatomic, strong) NSString       *wineId;
+@property (nonatomic, strong) Breakfast       *breakfast;
+@property (nonatomic, copy) NSString          *breakfastNum;
+@property (nonatomic, strong) FivePiece       *fivePiece;
+@property (nonatomic, strong) Aroma           *aroma;
+@property (nonatomic, strong) RoomLayout      *roomLayout;
+@property (nonatomic, strong) Wine            *wine;
 
 @property (nonatomic, strong) NSMutableArray *contactPersons;
 @property (nonatomic, strong) NSMutableArray *dateArray;
@@ -78,8 +79,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self iniData];
+    
     [self initView];
+    [self iniData];
     [self addViews];
     [self setCellFrame];
     [self onClickEvent];
@@ -133,12 +135,20 @@
     [self.remarkView addSubview:self.remarkTF];
     [self.tipView addSubview:self.tipLabel];
     
-    BookBottomView *bottomView = [BookBottomView new];
-    bottomView.roomPrice = self.roomPrice;
-    bottomView.delegate = self;
-    [self.view addSubview:bottomView];
-    [bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
-    [bottomView autoSetDimension:ALDimensionHeight toSize:50];
+    _bottomView = [BookBottomView new];
+    [_bottomView setPriceWithRoomPrice:self.roomPrice
+                           roomDeposit:self.roomDeposit
+                         roomRisePrice:self.roomRisePrice
+                             breakfast:nil
+                          breakfastNum:nil
+                             fivePiece:nil
+                                 aroma:nil
+                            roomLayout:nil
+                                  wine:nil];
+    _bottomView.delegate = self;
+    [self.view addSubview:_bottomView];
+    [_bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [_bottomView autoSetDimension:ALDimensionHeight toSize:50];
 }
 
 - (void)setCellFrame {
@@ -268,19 +278,29 @@
 
 #pragma mark - HotelConfigViewDelete
 
-- (void)hotelConfigViewDidSelectConfig:(NSString *)breakfastId
+- (void)hotelConfigViewDidSelectConfig:(Breakfast *)breakfast
                           breakfastNum:(NSString *)breakfastNum
-                           fivePieceId:(NSString *)fivePieceId
-                               aromaId:(NSString *)aromaId
-                          roomLayoutId:(NSString *)roomLayoutId
-                                wineId:(NSString *)wineId {
+                           fivePieceId:(FivePiece *)fivePiece
+                               aromaId:(Aroma *)aroma
+                          roomLayoutId:(RoomLayout *)roomLayout
+                                wineId:(Wine *)wine {
     
-    self.breakfastId = breakfastId;
+    self.breakfast = breakfast;
     self.breakfastNum = breakfastNum;
-    self.fivePieceId = fivePieceId;
-    self.aromaId = aromaId;
-    self.roomLayoutId = roomLayoutId;
-    self.wineId = wineId;
+    self.fivePiece = fivePiece;
+    self.aroma = aroma;
+    self.roomLayout = roomLayout;
+    self.wine = wine;
+    
+    [_bottomView setPriceWithRoomPrice:self.roomPrice
+                           roomDeposit:self.roomDeposit
+                         roomRisePrice:self.roomRisePrice
+                             breakfast:breakfast
+                          breakfastNum:breakfastNum
+                             fivePiece:fivePiece
+                                 aroma:aroma
+                            roomLayout:roomLayout
+                                  wine:wine];
 }
 
 
@@ -304,11 +324,11 @@
                           checkOutTime:self.checkOutTime
                             arriveTime:arriveTime
                                 remark:self.remarkTF.text
-                           breakfastId:self.breakfastId
+                           breakfastId:self.breakfast.breakfastId
                           breakfastNum:self.breakfastNum
-                           fivePieceId:self.fivePieceId
-                               aromaId:self.aromaId
-                          roomLayoutId:self.wineId
+                           fivePieceId:self.fivePiece.fivePieceId
+                               aromaId:self.aroma.aromaId
+                          roomLayoutId:self.wine.wineId
                                 wineId:@"" complete:^(NSDictionary *resp) {
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
@@ -320,8 +340,17 @@
     }else {
         if (show) {
             _bookDetailView = [[BookDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 50)];
-            _bookDetailView.checkInTime = self.checkInTime;
-            _bookDetailView.roomPrice = self.roomPrice;
+            [_bookDetailView setCheckInTime:self.checkInTime
+                               checkOutTime:self.checkOutTime
+                                  roomPrice:self.roomPrice
+                                roomDeposit:self.roomDeposit
+                              roomRisePrice:self.roomRisePrice
+                                  breakfast:self.breakfast
+                               breakfastNum:self.breakfastNum
+                                  fivePiece:self.fivePiece
+                                      aroma:self.aroma
+                                 roomLayout:self.roomLayout
+                                       wine:self.wine];
             [self.view addSubview:_bookDetailView];
         }else {
             [_bookDetailView removeFromSuperview];

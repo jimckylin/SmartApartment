@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomConfig.h"
 
 typedef NS_ENUM(NSInteger, HotelBookBtnType) {
     
@@ -22,6 +23,15 @@ typedef NS_ENUM(NSInteger, HotelBookBtnType) {
 @interface BookBottomView : UIView
 
 @property (nonatomic, weak) id<BookBottomViewDelegate> delegate;
-@property (nonatomic, copy) NSString *roomPrice;
+
+- (void)setPriceWithRoomPrice:(NSString *)price
+                  roomDeposit:(NSString *)deposit
+                roomRisePrice:(NSString *)risePrice
+                    breakfast:(Breakfast *)breakfast
+                 breakfastNum:(NSString *)breakfastNum
+                    fivePiece:(FivePiece *)fivePiece
+                        aroma:(Aroma *)aroma
+                   roomLayout:(RoomLayout *)roomLayout
+                         wine:(Wine *)wine;
 
 @end

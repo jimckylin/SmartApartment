@@ -7,13 +7,14 @@
 //
 
 #import "BookDetailView.h"
+#import "BookConsumeListCell.h"
 
-@interface BookDetailView ()
+@interface BookDetailView ()<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *bgView;
 
-@property (nonatomic, strong) UILabel *dateLabel;
-@property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -27,8 +28,8 @@
     return self;
 }
 
-+ (BOOL)requiresConstraintBasedLayout {
-    return YES;
+- (void)initData {
+    _dataArray = [[NSMutableArray alloc] initWithCapacity:1];
 }
 
 - (void)initView {
@@ -38,15 +39,19 @@
     [bgBtn addTarget:self action:@selector(bgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:bgBtn];
     
+    _tableView = [[UITableView alloc] init];
+    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self addSubview:_tableView];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [_tableView registerClass:[BookConsumeListCell class] forCellReuseIdentifier:@"BookConsumeListCell"];
     
-    _bgView = [UIView new];
+    // header
+    _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 35)];
     _bgView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:_bgView];
-    
-    [_bgView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_bgView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kScreenHeight-50-75];
-    [_bgView autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 75)];
-    
+    _tableView.tableHeaderView = _bgView;
     
     UILabel *detailLabel = [UILabel new];
     detailLabel.font = [UIFont systemFontOfSize:12];
@@ -60,35 +65,67 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 35, kScreenWidth, 0.5)];
     line.backgroundColor = [UIColor lightGrayColor];
     [_bgView addSubview:line];
-    
-    _dateLabel= [UILabel new];
-    _dateLabel.font = [UIFont systemFontOfSize:12];
-    _dateLabel.textColor = [UIColor grayColor];
-    _dateLabel.text = @"2017.08.19";
-    [_bgView addSubview:_dateLabel];
-    
-    _priceLabel = [UILabel new];
-    _priceLabel.font = [UIFont systemFontOfSize:12];
-    _priceLabel.textColor = [UIColor grayColor];
-    _priceLabel.textAlignment = NSTextAlignmentRight;
-    _priceLabel.text = @"￥215";
-    [_bgView addSubview:_priceLabel];
-    
-    UIView *line2 = [UIView new];
-    line2.backgroundColor = [UIColor lightGrayColor];
-    [_bgView addSubview:line2];
-    [line2 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [line2 autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [line2 autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 0.5)];
 }
 
-- (void)setCheckInTime:(NSString *)checkInTime {
-    _dateLabel.text = [checkInTime stringByReplacingOccurrencesOfString:@"-" withString:@"."];
+
+- (void)setCheckInTime:(NSString *)checkInTime
+          checkOutTime:(NSString *)checkOutTime
+             roomPrice:(NSString *)price
+           roomDeposit:(NSString *)deposit
+         roomRisePrice:(NSString *)risePrice
+             breakfast:(Breakfast *)breakfast
+          breakfastNum:(NSString *)breakfastNum
+             fivePiece:(FivePiece *)fivePiece
+                 aroma:(Aroma *)aroma
+            roomLayout:(RoomLayout *)roomLayout
+                  wine:(Wine *)wine {
+    
+    NSMutableArray *arr = [NSMutableArray array];
+    if (price) {
+        NSDate *checkinDate = [NSDate sia_dateFromString:checkInTime withFormat:@"yyyy-MM-dd"];
+        NSDate *checkoutDate = [NSDate sia_dateFromString:checkOutTime withFormat:@"yyyy-MM-dd"];
+        NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+        NSDictionary *dic = @{[NSString stringWithFormat:@"%@(%zd晚)", checkInTime, days]
+                              : [NSString stringWithFormat:@"￥%@", price]};
+        [arr addObject:dic];
+    }
+    if (deposit) {
+        NSDictionary *dic = @{@"押金" : [NSString stringWithFormat:@"￥%@", deposit]};
+        [arr addObject:dic];
+    }
+    if (risePrice) {
+        NSDictionary *dic = @{@"涨价" : [NSString stringWithFormat:@"￥%@", risePrice]};
+        [arr addObject:dic];
+    }
+    if (breakfast) {
+        NSDictionary *dic = @{breakfast.name : [NSString stringWithFormat:@"￥%@ x %@份", breakfast.price, breakfastNum]};
+        [arr addObject:dic];
+    }
+    if (fivePiece) {
+        NSDictionary *dic = @{fivePiece.name : [NSString stringWithFormat:@"￥%@", fivePiece.price]};
+        [arr addObject:dic];
+    }
+    if (aroma) {
+        NSDictionary *dic = @{aroma.name : [NSString stringWithFormat:@"￥%@", aroma.price]};
+        [arr addObject:dic];
+    }
+    if (roomLayout) {
+        NSDictionary *dic = @{roomLayout.name : [NSString stringWithFormat:@"￥%@", roomLayout.price]};
+        [arr addObject:dic];
+    }
+    if (wine) {
+        NSDictionary *dic = @{wine.name : [NSString stringWithFormat:@"￥%@", wine.price]};
+        [arr addObject:dic];
+    }
+    
+    _dataArray = arr;
+    
+    CGFloat height = 35 + 44 + ([arr count]- 1)*28;
+    [_tableView autoSetDimension:ALDimensionHeight toSize:height];
+    [_tableView reloadData];
 }
 
-- (void)setRoomPrice:(NSString *)roomPrice {
-    _priceLabel.text = [NSString stringWithFormat:@"￥%@", roomPrice];
-}
+
 
 
 #pragma mark - UIButton Action
@@ -103,24 +140,34 @@
 }
 
 
-#pragma mark - Update Constraints
+#pragma mark - UITableView Delegate
 
-- (void)updateConstraints {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dataArray count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 44;
+    }
+    return 28;
+}
+
+
+#pragma mark - UITableView DataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [_bgView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
-    [_bgView autoSetDimension:ALDimensionHeight toSize:50];
-    
-    [_dateLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:35];
-    [_dateLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
-    [_dateLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    
-    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
-    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 30)];
+    BookConsumeListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookConsumeListCell" forIndexPath:indexPath];
+    NSDictionary *consumeDic = self.dataArray[indexPath.row];
+    cell.consumeDic = consumeDic;
+    //[cell addLineWithType:BMLineTypeCustomDefault color:nil position:BMLinePostionCustomBottom];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    
-    [super updateConstraints];
 }
 
 @end

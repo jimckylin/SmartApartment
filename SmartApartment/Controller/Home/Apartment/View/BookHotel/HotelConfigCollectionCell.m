@@ -15,15 +15,6 @@
 @interface HotelConfigCollectionCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
-
-
-@property (nonatomic, strong) NSString       *breakfastId;
-@property (nonatomic, strong) NSString       *breakfastNum;
-@property (nonatomic, strong) NSString       *fivePieceId;
-@property (nonatomic, strong) NSString       *aromaId;
-@property (nonatomic, strong) NSString       *roomLayoutId;
-@property (nonatomic, strong) NSString       *wineId;
-
 @property (nonatomic, assign) NSInteger      selectedIndex; // 初始-1 不选中任何
 
 @end
@@ -203,37 +194,32 @@
     NSInteger row = indexPath.row;
     if (self.breakfastList) {
         Breakfast *breakfast = self.breakfastList[row];
-        self.breakfastId = breakfast.breakfastId;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Breakfast class] itemId:self.breakfastId];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:breakfast];
         }
     }
     else if (self.fivePieceList) {
         FivePiece *fivePiece = self.fivePieceList[row];
-        self.fivePieceId = fivePiece.fivePieceId;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[FivePiece class] itemId:self.fivePieceId];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:fivePiece];
         }
     }
     else if (self.roomLayoutList) {
         RoomLayout *roomLayout = self.roomLayoutList[row];
-        self.roomLayoutId = roomLayout.roomLayoutId;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[RoomLayout class] itemId:self.roomLayoutId];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:roomLayout];
         }
     }
     else if (self.aromaList) {
         Aroma *aroma = self.aromaList[row];
-        self.aromaId = aroma.aromaId;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Aroma class] itemId:self.aromaId];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:aroma];
         }
     }
     else if (self.wineList) {
         Wine *wine = self.wineList[row];
-        self.wineId = wine.wineId;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:itemId:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:[Wine class] itemId:self.wineId];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
+            [self.delegate hotelConfigCollectionCellDidSelectedConfig:wine];
         }
     }
     

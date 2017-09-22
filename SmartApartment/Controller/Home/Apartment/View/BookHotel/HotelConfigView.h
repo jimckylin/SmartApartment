@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-@class RoomConfig;
+#import "RoomConfig.h"
 
 @protocol HotelConfigViewDelete <NSObject>
 
-- (void)hotelConfigViewDidSelectConfig:(NSString *)breakfastId
+- (void)hotelConfigViewDidSelectConfig:(Breakfast *)breakfast
                           breakfastNum:(NSString *)breakfastNum
-                           fivePieceId:(NSString *)fivePieceId
-                               aromaId:(NSString *)aromaId
-                          roomLayoutId:(NSString *)roomLayoutId
-                                wineId:(NSString *)wineId;
+                           fivePieceId:(FivePiece *)fivePiece
+                               aromaId:(Aroma *)aroma
+                          roomLayoutId:(RoomLayout *)roomLayout
+                                wineId:(Wine *)wine;
 @end
 
 @interface HotelConfigView : UIView

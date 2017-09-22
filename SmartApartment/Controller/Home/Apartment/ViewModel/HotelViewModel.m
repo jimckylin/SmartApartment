@@ -153,10 +153,10 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"confirmPay" params:dict class:nil success:^(id response) {
         
+        [MBProgressHUD cwgj_hideHUD];
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
@@ -171,13 +171,11 @@
     [dict cwgj_setObject:checkInRoomType    forKey:@"checkInRoomType"];
     [dict cwgj_setObject:token              forKey:@"token"];
     
-    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"getTimeSolt" params:dict class:nil success:^(id response) {
         
         if (complete) {
             complete(response[@"dateArray"]);
         }
-        [MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];

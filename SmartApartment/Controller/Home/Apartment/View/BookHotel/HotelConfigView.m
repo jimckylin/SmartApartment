@@ -10,7 +10,7 @@
 #import "HotelConfigCollectionCell.h"
 #import "HotelConfigHeaderView.h"
 
-#import "RoomConfig.h"
+
 #import "Hotel.h"
 #import <PPNumberButton/PPNumberButton.h>
 
@@ -20,12 +20,12 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, copy) NSString       *breakfastId;
-@property (nonatomic, copy) NSString       *breakfastNum;
-@property (nonatomic, copy) NSString       *fivePieceId;
-@property (nonatomic, copy) NSString       *aromaId;
-@property (nonatomic, copy) NSString       *roomLayoutId;
-@property (nonatomic, copy) NSString       *wineId;
+@property (nonatomic, strong) Breakfast       *breakfast;
+@property (nonatomic, copy) NSString          *breakfastNum;
+@property (nonatomic, strong) FivePiece       *fivePiece;
+@property (nonatomic, strong) Aroma           *aroma;
+@property (nonatomic, strong) RoomLayout      *roomLayout;
+@property (nonatomic, strong) Wine            *wine;
 @property (nonatomic, strong) NSMutableArray       *sectionTitles;
 
 @property (nonatomic, assign) NSInteger      selectedIndex;
@@ -40,6 +40,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     if (self) {
         self.backgroundColor = RGBA(0, 0, 0, 0.4);
+        _breakfastNum = @"1";
         _sectionTitles = [[NSMutableArray alloc] initWithCapacity:1];
         [self initSubView];
     }
@@ -243,18 +244,18 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 #pragma mark - HotelConfigCollectionCellDelegate
 
-- (void)hotelConfigCollectionCellDidSelectedConfig:(Class)class itemId:(NSString *)itemId {
+- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object {
     
-    if (class == [Breakfast class]) {
-        self.breakfastId = itemId;
-    }else if (class == [FivePiece class]) {
-        self.fivePieceId = itemId;
-    }else if (class == [RoomLayout class]) {
-        self.roomLayoutId = itemId;
-    }else if (class == [Aroma class]) {
-        self.aromaId = itemId;
-    }else if (class == [Wine class]) {
-        self.wineId = itemId;
+    if ([object isKindOfClass:[Breakfast class]]) {
+        self.breakfast = object;
+    }else if ([object isKindOfClass:[FivePiece class]]) {
+        self.fivePiece = object;
+    }else if ([object isKindOfClass:[RoomLayout class]]) {
+        self.roomLayout = object;
+    }else if ([object isKindOfClass:[Aroma class]]) {
+        self.aroma = object;
+    }else if ([object isKindOfClass:[Wine class]]) {
+        self.wine = object;
     }
 }
 
@@ -270,12 +271,12 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     
     self.selectedIndex = -1;
     
-    self.breakfastId = nil;
+    self.breakfast = nil;
     self.breakfastNum = nil;
-    self.fivePieceId = nil;
-    self.aromaId = nil;
-    self.roomLayoutId = nil;
-    self.wineId = nil;
+    self.fivePiece = nil;
+    self.aroma = nil;
+    self.roomLayout = nil;
+    self.wine = nil;
     
     [_tableView reloadData];
 }
@@ -283,12 +284,12 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 - (void)confirmBtnClick:(id)sender {
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigViewDidSelectConfig:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:)]) {
-        [self.delegate hotelConfigViewDidSelectConfig:self.breakfastId
-                                         breakfastNum:@"1"
-                                          fivePieceId:self.fivePieceId
-                                              aromaId:self.aromaId
-                                         roomLayoutId:self.roomLayoutId
-                                               wineId:self.wineId];
+        [self.delegate hotelConfigViewDidSelectConfig:self.breakfast
+                                         breakfastNum:self.breakfastNum
+                                          fivePieceId:self.fivePiece
+                                              aromaId:self.aroma
+                                         roomLayoutId:self.roomLayout
+                                               wineId:self.wine];
     }
     [self hide];
 }

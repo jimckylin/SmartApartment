@@ -55,6 +55,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(logoutSuccess:)
                                                  name:@"kLogoutSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refresh:)
+                                                 name:@"kRefreshTripHelper" object:nil];
     _orderViewModel = [OrderViewModel new];
     [self requestData];
     
@@ -289,8 +292,11 @@
 
 #pragma mark - Notification
 
+- (void)refresh:(NSNotification *)noti {
+    [self requestData];
+}
+
 - (void)loginSuccess:(NSNotification *)noti {
-    
     [self requestData];
 }
 

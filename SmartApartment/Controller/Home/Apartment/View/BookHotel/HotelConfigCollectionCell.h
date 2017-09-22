@@ -15,7 +15,7 @@
 
 @protocol HotelConfigCollectionCellDelegate <NSObject>
 
-- (void)hotelConfigCollectionCellDidSelectedConfig:(Class)class itemId:(NSString *)itemId;
+- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object;
 - (void)hotelConfigCollectionCellUpdateSelectedIndex:(NSInteger)index;
 
 @end

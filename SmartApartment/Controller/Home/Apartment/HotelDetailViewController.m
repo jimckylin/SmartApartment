@@ -482,22 +482,30 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
         ZZFoldCellModel *foldCellModel;
         NSString *roomTypeId = @"";
         NSString *roomTypeName = @"";
-        NSString *roomPrice = @"";
+        NSString *roomPrice = @"";     // 房价
+        NSString *roomDeposit = @"";   // 押金
+        NSString *roomRisePrice = @""; // 涨价
         
         if (self.roomType == HotelRoomTypeAllday) {
             foldCellModel = self.dayRoomArr[index];
             roomTypeId = foldCellModel.dayRoom.roomTypeId;
             roomTypeName = foldCellModel.dayRoom.roomTypeName;
             roomPrice = foldCellModel.dayRoom.customerTotalMoney;
+            roomRisePrice = foldCellModel.dayRoom.roomRisePrice;
+            roomDeposit = foldCellModel.dayRoom.roomDeposit;
         }else {
             foldCellModel = self.hourRoomArr[index];
             roomTypeId = foldCellModel.hourRoom.roomTypeId;
             roomTypeName = foldCellModel.hourRoom.roomTypeName;
-            roomPrice = foldCellModel.dayRoom.customerTotalMoney;
+            roomPrice = foldCellModel.hourRoom.customerTotalMoney;
+            roomRisePrice = foldCellModel.hourRoom.roomRisePrice;
+            roomDeposit = foldCellModel.hourRoom.roomDeposit;
         }
         vc.roomTypeId = roomTypeId;
         vc.roomTypeName = roomTypeName;
         vc.roomPrice = roomPrice;
+        vc.roomRisePrice = roomRisePrice;
+        vc.roomDeposit = roomDeposit;
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     }
 }

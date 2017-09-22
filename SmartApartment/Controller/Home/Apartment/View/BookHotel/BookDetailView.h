@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomConfig.h"
 
 @interface BookDetailView : UIView
 
-@property (nonatomic, copy) NSString *checkInTime;
-@property (nonatomic, copy) NSString *roomPrice;       // 房间价格
+
+- (void)setCheckInTime:(NSString *)checkInTime
+          checkOutTime:(NSString *)checkOutTime
+             roomPrice:(NSString *)price
+           roomDeposit:(NSString *)deposit
+         roomRisePrice:(NSString *)risePrice
+             breakfast:(Breakfast *)breakfast
+          breakfastNum:(NSString *)breakfastNum
+             fivePiece:(FivePiece *)fivePiece
+                 aroma:(Aroma *)aroma
+            roomLayout:(RoomLayout *)roomLayout
+                  wine:(Wine *)wine;
 
 @end

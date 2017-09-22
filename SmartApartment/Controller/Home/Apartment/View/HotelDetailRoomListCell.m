@@ -58,7 +58,7 @@
     
     _priceLabel = [RTLabel new];
     _priceLabel.font = [UIFont systemFontOfSize:16];
-    _priceLabel.textColor = [UIColor redColor];
+    _priceLabel.textColor = ThemeColor;
     _priceLabel.textAlignment = RTTextAlignmentRight;
     _priceLabel.text = @"¥168起";
     [bgView addSubview:_priceLabel];
