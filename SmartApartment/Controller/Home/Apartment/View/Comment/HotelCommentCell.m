@@ -49,7 +49,7 @@
     _avatarImgV.contentMode = UIViewContentModeScaleAspectFill;
     _avatarImgV.layer.cornerRadius = 20;
     _avatarImgV.clipsToBounds = YES;
-    _avatarImgV.image = kImage(@"share_friend_iciphone");
+    _avatarImgV.image = kImage(@"mine_headiphone");
     [self addSubview:_avatarImgV];
     
     _titleLabel = [UILabel new];

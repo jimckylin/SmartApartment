@@ -11,7 +11,6 @@
 #import "NavManager.h"
 #import "LaunchAdView.h"
 
-
 @interface LaunchAdViewController () <LaunchAdViewDelegate>
 
 @property (nonatomic, assign) NSInteger adShowSecond;
@@ -23,14 +22,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    if (/* DISABLES CODE */ (YES)) {
-        [self showLaunchAd];
+    [self requestData];
+    NSString *homeAdImage = [[NSUserDefaults standardUserDefaults] objectForKey:@"homeAdImage"];
+    if (homeAdImage) {
+        [self showLaunchAd:homeAdImage];
     } else {
         [self enterMainVC];
     }
 }
+
+
+#pragma mark - HttpRequest
+
+- (void)requestData {
+    
+    [SAHttpRequest requestWithFuncion:@"getStartUpAd" params:nil class:nil success:^(id response) {
+        if (response) {
+            NSString *homeAdImage = response[@"homeAdImage"];
+            [[NSUserDefaults standardUserDefaults] setObject:homeAdImage forKey:@"homeAdImage"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    } failure:^(NSError *error) {
+    }];
+}
+
 
 #pragma mark - LaunchAdViewDelegate
 
@@ -47,17 +63,20 @@
 
 #pragma mark - Private
 
-- (void)showLaunchAd {
+- (void)showLaunchAd:(NSString *)homeAdImage {
     
-    UIImage *adImage = [UIImage imageNamed:@"iP6_5iphone"];
-    if (adImage) {
+    if (homeAdImage) {
         // 设置广告图片开启倒计时
         LaunchAdView *launchAdView = [[LaunchAdView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        launchAdView.adImgView.image = adImage;
+        [launchAdView.adImgView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:homeAdImage] placeholderImage:nil options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            
+        } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            
+        }];
         launchAdView.delegate = self;
         [self.view addSubview:launchAdView];
         
-        self.adShowSecond = 0.5;
+        self.adShowSecond = 4;
         self.adTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(adCountDown) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.adTimer forMode:NSRunLoopCommonModes];
     } else {

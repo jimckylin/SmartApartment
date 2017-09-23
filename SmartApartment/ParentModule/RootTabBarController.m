@@ -7,6 +7,7 @@
 //
 
 #import "RootTabBarController.h"
+#import "PageControlView.h"
 
 #define LeftViewWidth 175.0     //(kScreenWidth * 2.0 / 3.0)
 
@@ -58,6 +59,18 @@
     // 设置角标
 //    [self setIndex:2 badgeNum:arc4random_uniform(20)];
     
+    
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstInstall"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"isFirstInstall"];
+        [self addGuide];
+    }
+}
+
+- (void)addGuide {
+    
+    NSArray *imgs = @[@"loading_1", @"loading_2", @"loading_3", @"loading_4", @"loading_5"];
+    PageControlView *pageControlV = [[PageControlView instance] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) andImageList:imgs];
+    [self.view addSubview:pageControlV];
 }
 
 
