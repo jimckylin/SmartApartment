@@ -12,10 +12,6 @@
 
 @interface OrderDetailView ()
 
-@property (nonatomic, strong) IBOutlet UILabel *state;
-@property (nonatomic, strong) IBOutlet UILabel *price;
-@property (nonatomic, strong) IBOutlet UILabel *price2;
-@property (nonatomic, strong) IBOutlet UILabel *checkinDate;
 @property (nonatomic, strong) IBOutlet UILabel *storeName;
 @property (nonatomic, strong) IBOutlet UILabel *storeType;
 @property (nonatomic, strong) IBOutlet UILabel *checkinTime;
@@ -51,7 +47,7 @@
     }
 }
 
-- (void)cancelBtnClick:(UIButton *)sender {
+- (IBAction)cancelBtnClick:(UIButton *)sender {
     
     if (self.OrderDetailViewBlock) {
         self.OrderDetailViewBlock(sender.tag);
@@ -60,10 +56,6 @@
 
 - (void)setOrderDetail:(OrderDetail *)orderDetail {
 
-    self.state.text = [self orderStateString:orderDetail];
-    self.price.text = orderDetail.consumeSumPrice;
-    self.price2.text = orderDetail.consumeSumPrice;
-    self.checkinDate.text = orderDetail.checkInTime;
     self.storeName.text = orderDetail.storeName;
     self.storeType.text = [NSString stringWithFormat:@"%@   %@间", orderDetail.roomType, orderDetail.roomNum];
     

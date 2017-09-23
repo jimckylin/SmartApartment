@@ -110,10 +110,10 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"reqCancelOrder" params:dict class:nil success:^(id response) {
         
-        if (complete) {
-            complete(response);
-        }
         [MBProgressHUD cwgj_hideHUD];
+        if (complete) {
+            complete(response[@"returnMsg"]);
+        }
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
@@ -130,10 +130,10 @@
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"confirmCancelOrder" params:dict class:nil success:^(id response) {
         
+        [MBProgressHUD cwgj_hideHUD];
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
@@ -175,16 +175,16 @@
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageNum]    forKey:@"pageNum"];
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", pageSize]   forKey:@"pageSize"];
     [dict cwgj_setObject:[NSString stringWithFormat:@"%zd", orderType]  forKey:@"orderType"];
-    [MBProgressHUD cwgj_showProgressHUDWithText:@""];
+    //[MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"storeOrder" params:dict class:[TripOrder class] success:^(id response) {
         
         self.tripOrderList = response;
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
+        //[MBProgressHUD cwgj_hideHUD];
     } failure:^(NSError *error) {
-        [MBProgressHUD cwgj_hideHUD];
+        //[MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];
     }];
 }

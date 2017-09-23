@@ -197,9 +197,6 @@
         OrderDetailViewController *vc = [OrderDetailViewController new];
         vc.orderNo = order.orderNo;
         [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-        
-//        HotelDetailViewController *vc = [HotelDetailViewController new];
-//        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
     }
 }
 

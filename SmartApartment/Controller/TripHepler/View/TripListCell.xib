@@ -63,7 +63,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.12549019607843137" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.35686274509999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="A6v-Ss-wax" firstAttribute="top" secondItem="0z8-dN-OSs" secondAttribute="top" constant="10" id="3eU-13-f6s"/>
                                     <constraint firstAttribute="height" constant="42" id="FTV-8F-SSm"/>
@@ -371,6 +371,7 @@ Cg
                 <outlet property="right4Btn" destination="Ggf-Lw-hLX" id="sgC-8m-cX2"/>
                 <outlet property="state" destination="GHl-S8-bMU" id="12e-Qe-f4V"/>
                 <outlet property="storeName" destination="A6v-Ss-wax" id="MML-Fh-i33"/>
+                <outlet property="storeNameBgView" destination="0z8-dN-OSs" id="BBZ-Ub-PPj"/>
                 <outlet property="storeType" destination="bPj-l6-TUp" id="pdO-aC-Yo1"/>
                 <outlet property="thumbImgView" destination="2Nz-hs-zfm" id="wPa-Wk-qlO"/>
             </connections>

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *checkinDateHeader;
 @property (nonatomic, weak) IBOutlet UILabel *state;
 @property (nonatomic, weak) IBOutlet UILabel *storeName;
+@property (weak, nonatomic) IBOutlet UIView *storeNameBgView;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbImgView;
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (nonatomic, weak) IBOutlet UILabel *storeType;
@@ -104,6 +105,10 @@
     
     [self configButton:[tripOrder.orderStatus integerValue]];
     //[self configButton:2];
+    
+    if (self.isHistory) {
+        self.storeNameBgView.backgroundColor = [UIColor lightGrayColor];
+    }
 }
 
 - (void)configButton:(NSInteger)orderState {

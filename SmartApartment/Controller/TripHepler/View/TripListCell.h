@@ -36,4 +36,6 @@ typedef NS_ENUM(NSInteger, TripCellBtnType) {
 @property (nonatomic, assign) id <TripListCellDelegate> delegate;
 @property (nonatomic, strong) TripOrder *tripOrder;
 
+@property (nonatomic, assign) BOOL isHistory;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "HotelOrderListViewController.h"
 #import "CommentHotelViewController.h"
+#import "OrderDetailViewController.h"
 
 #import "YJSliderView.h"
 #import "MyOrderCell.h"
@@ -22,8 +23,14 @@
 @property (nonatomic, strong) YJSliderView *sliderView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
+@property (nonatomic, strong) NSMutableArray  *allOrderList;
+@property (nonatomic, strong) NSMutableArray  *evaluateList;
+
 @property (nonatomic, assign) NSInteger  orderType;
 @property (nonatomic, copy) NSString *orderNo;
+
+@property (nonatomic, assign) NSInteger  allPageNum;
+@property (nonatomic, assign) NSInteger  evaluatePageNum;
 
 @end
 
@@ -43,8 +50,15 @@
 
 - (void)initData {
     
+    _allPageNum = 1;
+    _evaluatePageNum = 1;
+    _allOrderList = [[NSMutableArray alloc] initWithCapacity:1];
+    _evaluateList = [[NSMutableArray alloc] initWithCapacity:1];
+    
     _orderViewModel = [OrderViewModel new];
-    [self requestDataWith:0];
+    [self requestAllOrderDataWith:1];
+    [self requestEvaluateDataWith:1];
+
 }
 
 - (void)initSubView {
@@ -66,9 +80,29 @@
     _tableView1.separatorStyle = UITableViewCellSeparatorStyleNone;
     // [self.view addSubview:_tableView];
     //[_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0)];
-    
     [_tableView1 registerNib:[UINib nibWithNibName:@"MyOrderCell" bundle:nil] forCellReuseIdentifier:@"MyOrderCell"];
     
+    
+    //默认block方法：设置下拉刷新
+    __WeakObj(self)
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        selfWeak.allPageNum = 1;
+        [selfWeak requestAllOrderDataWith:1];
+    }];
+    self.tableView1.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        selfWeak.evaluatePageNum = 1;
+        [selfWeak requestEvaluateDataWith:1];
+    }];
+    
+    //默认block方法：设置上拉加载更多
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        selfWeak.allPageNum ++;
+        [selfWeak requestAllOrderDataWith:selfWeak.allPageNum];
+    }];
+    self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        selfWeak.evaluatePageNum ++;
+        [selfWeak requestEvaluateDataWith:selfWeak.evaluatePageNum];
+    }];
 }
 
 
@@ -107,7 +141,11 @@
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_orderViewModel.tripOrderList count];
+    
+    if (tableView == _tableView) {
+        return [_allOrderList count];
+    }
+    return [_evaluateList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,14 +159,27 @@
     
     MyOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyOrderCell" forIndexPath:indexPath];
     cell.delegate = self;
-    TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
+    TripOrder *order = nil;
+    if (tableView == _tableView) {
+        order = _allOrderList[indexPath.row];
+    }else {
+        order = _evaluateList[indexPath.row];
+    }
     cell.tripOrder = order;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    TripOrder *order = nil;
+    if (tableView == _tableView) {
+        order = _allOrderList[indexPath.row];
+    }else {
+        order = _evaluateList[indexPath.row];
+    }
+    OrderDetailViewController *vc = [OrderDetailViewController new];
+    vc.orderNo = order.orderNo;
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 
@@ -144,10 +195,34 @@
 
 #pragma mark - HttpRequest
 
-- (void)requestDataWith:(NSInteger)orderType {
+- (void)requestAllOrderDataWith:(NSInteger)pageNum {
     __WeakObj(self)
-    [_orderViewModel requestStoreOrderPageNum:1 pageSize:20 orderType:orderType complete:^(NSArray *tripOrderList) {
+    [_orderViewModel requestStoreOrderPageNum:pageNum pageSize:20 orderType:0 complete:^(NSArray *tripOrderList) {
+        
+        if (pageNum == 1) {
+            [selfWeak.allOrderList removeAllObjects];
+            [selfWeak.tableView.mj_header endRefreshing];
+        }else {
+            [selfWeak.tableView.mj_footer endRefreshing];
+        }
+        [selfWeak.allOrderList addObjectsFromArray:tripOrderList];
         [selfWeak.tableView reloadData];
+    }];
+}
+
+
+- (void)requestEvaluateDataWith:(NSInteger)pageNum {
+    __WeakObj(self)
+    [_orderViewModel requestStoreOrderPageNum:pageNum pageSize:20 orderType:1 complete:^(NSArray *tripOrderList) {
+        
+        if (pageNum == 1) {
+            [selfWeak.evaluateList removeAllObjects];
+            [selfWeak.tableView1.mj_header endRefreshing];
+        }else {
+            [selfWeak.tableView1.mj_footer endRefreshing];
+        }
+        [selfWeak.evaluateList addObjectsFromArray:tripOrderList];
+        [selfWeak.tableView1 reloadData];
     }];
 }
 
@@ -169,7 +244,7 @@
         
         if (isSuccess) {
             [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
-            [selfWeak requestDataWith:0];
+            [selfWeak requestAllOrderDataWith:1];
         }
     }];
 }
@@ -180,7 +255,7 @@
     [_orderViewModel requestCheckoutRoom:orderNo complete:^(BOOL isCheckout) {
         if (isCheckout) {
             [MBProgressHUD cwgj_showHUDWithText:@"退房成功"];
-            [selfWeak requestDataWith:0];
+            [selfWeak requestAllOrderDataWith:1];
         }
     }];
 }
@@ -191,7 +266,7 @@
     [_orderViewModel requestDelHistoryTrip:orderNo complete:^(BOOL isDelete) {
         if (isDelete) {
             [MBProgressHUD cwgj_showHUDWithText:@"删除成功"];
-            [selfWeak requestDataWith:0];
+            [selfWeak requestAllOrderDataWith:1];
         }
     }];
 }

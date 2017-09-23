@@ -25,7 +25,8 @@
 @property (nonatomic, copy)  NSString *orderStatus;             // 订单状态（0-待支付，1-待入住，2-已入住，3-退房申请(退房申请已提交，请等待查房)，4-已查房(物件有损坏请联系前台人员)，5-确认退房(请自助机办理退房)，6-退款成功，7-取消订单,9-已离店)
 @property (nonatomic, copy)  NSString *remark;                  // 备注
 
-@property (nonatomic, copy)  NSString *roomDepositPrice;        // 地址
+@property (nonatomic, copy)  NSString *roomDepositPrice;        // 押金
+@property (nonatomic, copy)  NSString *roomRisePrice;           // 房间涨的价格，单位元，是周五、周六才会加上去
 @property (nonatomic, copy)  NSString *roomNum;                 // 订房间数
 @property (nonatomic, copy)  NSString *roomType;                // 房型名称
 

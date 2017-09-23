@@ -7,12 +7,14 @@
 //
 
 #import "OrderDetailViewController.h"
+#import "OrderDetailHeaderView.h"
 #import "OrderDetailView.h"
 #import "OrderViewModel.h"
 
-@interface OrderDetailViewController ()
+@interface OrderDetailViewController ()<OrderDetailHeaderViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *containView;
+@property (nonatomic, strong) OrderDetailHeaderView *orderDetailHeaderView;
 @property (nonatomic, strong) OrderDetailView *orderDetailView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
@@ -25,14 +27,17 @@
     [super viewDidLoad];
     _naviLabel.text = @"订单详情";
     
-    
-    [self.containView addSubview:self.orderDetailView];
-    if (_orderDetailView.bottom > self.containView.contentSize.height) {
-        self.containView.contentSize = CGSizeMake(0, _orderDetailView.bottom);
-    }
-    
+    [self initView];
     [self initData];
     [self addEvent];
+}
+
+- (void)initView {
+    
+    [self.containView addSubview:self.orderDetailHeaderView];
+    [self.containView addSubview:self.orderDetailView];
+    
+    [self updateHeight];
 }
 
 - (void)initData {
@@ -41,6 +46,7 @@
     _orderViewModel = [OrderViewModel new];
     [_orderViewModel requestOrderInfo:self.orderNo complete:^(OrderDetail *orderDetail) {
        
+        selfWeak.orderDetailHeaderView.orderDetail = orderDetail;
         selfWeak.orderDetailView.orderDetail = orderDetail;
     }];
 }
@@ -56,6 +62,36 @@
     };
 }
 
+
+#pragma mark - OrderDetailHeaderViewDelegate
+
+- (void)orderDetailHeaderViewUpdateHeight:(CGFloat)height {
+    
+    [self updateHeight];
+}
+
+
+#pragma mark - Private
+
+- (void)updateHeight {
+    
+    self.orderDetailView.top = self.orderDetailHeaderView.bottom + 15;
+    if (_orderDetailView.bottom > self.containView.contentSize.height) {
+        self.containView.contentSize = CGSizeMake(0, _orderDetailView.bottom);
+    }
+}
+
+
+#pragma mark - Getter
+
+- (OrderDetailHeaderView *)orderDetailHeaderView {
+    if (!_orderDetailHeaderView) {
+        NSArray *nibView =  [[NSBundle mainBundle] loadNibNamed:@"OrderDetailHeaderView"owner:self options:nil];
+        _orderDetailHeaderView = nibView.lastObject;
+        _orderDetailHeaderView.delegate = self;
+    }
+    return _orderDetailHeaderView;
+}
 
 - (OrderDetailView *)orderDetailView {
     if (!_orderDetailView) {
