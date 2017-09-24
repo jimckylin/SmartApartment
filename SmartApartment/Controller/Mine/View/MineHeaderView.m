@@ -62,7 +62,7 @@
     [self addSubview:_nickNameLabel];
     
     _vipIconV = [UIImageView new];
-    _vipIconV.image = [UIImage imageNamed:@"mine_vip_1_iciphone"];
+    _vipIconV.image = [UIImage imageNamed:@"mine_vip_ic"];
     _vipIconV.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:_vipIconV];
     
@@ -148,6 +148,18 @@
     [self addSubview:_integralBtn];
 }
 
+- (NSString *)carType {
+    // 会员等级(0001-金卡，0002-银卡，0003-普卡)
+    NSString *cardLevel = [UserManager manager].user.cardLevel;
+    if ([cardLevel integerValue] == 1) {
+        return @"金卡";
+    }else if ([cardLevel integerValue] == 2) {
+        return @"银卡";
+    }else {
+        return @"普卡";
+    }
+}
+
 
 #pragma mark - Pulic
 
@@ -156,6 +168,7 @@
     User *user = [UserManager manager].user;
     [_headImgView sd_setImageWithURL:[NSURL URLWithString:user.headImage] placeholderImage:kImage(@"mine_headiphone")];
     _nickNameLabel.text = user.name? user.name:@"未登录";
+    _levelLabel.text = [self carType];
     _balanceLabel.text = user.cardMoney? user.cardMoney:@"-";
     _couponLabel.text = user.couponNum? user.couponNum:@"-";
     _integralLabel.text = user.cardIntegral? user.cardIntegral:@"-";
