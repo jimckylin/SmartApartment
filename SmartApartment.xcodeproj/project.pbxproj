@@ -28,7 +28,6 @@
 		A91439B81F76978900167089 /* PageControlCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91439AB1F76978900167089 /* PageControlCollectionViewCell.xib */; };
 		A91439B91F76978900167089 /* PageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A91439AD1F76978900167089 /* PageControlView.m */; };
 		A91439BA1F76978900167089 /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91439AE1F76978900167089 /* PageControlView.xib */; };
-		A91439C41F77CE8100167089 /* mine_headiphone@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */; };
 		A91439C61F77CEDA00167089 /* mine_vip_ic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */; };
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
@@ -197,6 +196,7 @@
 		A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945F1F5D2F2300E10CEE /* RoomLayout.m */; };
 		A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94661F5D4D4D00E10CEE /* Wine.m */; };
 		A95EEAB81F789CB00027941D /* blank_default_nomal_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */; };
+		A95EEABA1F78F3090027941D /* mine_headiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95EEAB91F78F3090027941D /* mine_headiphone@2x.png */; };
 		A96074861F74F5F800CA4539 /* BookConsumeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96074851F74F5F800CA4539 /* BookConsumeListCell.m */; };
 		A96A33021F47573C00A55A42 /* WRCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33011F47573C00A55A42 /* WRCellView.m */; };
 		A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */; };
@@ -399,7 +399,6 @@
 		A91439AC1F76978900167089 /* PageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControlView.h; sourceTree = "<group>"; };
 		A91439AD1F76978900167089 /* PageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControlView.m; sourceTree = "<group>"; };
 		A91439AE1F76978900167089 /* PageControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
-		A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mine_headiphone@2x.jpg"; sourceTree = "<group>"; };
 		A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_vip_ic@2x.png"; sourceTree = "<group>"; };
 		A92178EB1F5AC68300C0923A /* HotelDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetail.h; sourceTree = "<group>"; };
 		A92178EC1F5AC68300C0923A /* HotelDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetail.m; sourceTree = "<group>"; };
@@ -680,6 +679,7 @@
 		A95D94651F5D4D4D00E10CEE /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
 		A95D94661F5D4D4D00E10CEE /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
 		A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_default_nomal_bg@2x.png"; sourceTree = "<group>"; };
+		A95EEAB91F78F3090027941D /* mine_headiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_headiphone@2x.png"; sourceTree = "<group>"; };
 		A96074841F74F5F800CA4539 /* BookConsumeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookConsumeListCell.h; sourceTree = "<group>"; };
 		A96074851F74F5F800CA4539 /* BookConsumeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookConsumeListCell.m; sourceTree = "<group>"; };
 		A96A33001F47573C00A55A42 /* WRCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCellView.h; sourceTree = "<group>"; };
@@ -1913,9 +1913,9 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A95EEAB91F78F3090027941D /* mine_headiphone@2x.png */,
 				A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */,
 				A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */,
-				A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */,
 				A914396C1F767A1900167089 /* loading_1@2x.png */,
 				A914396D1F767A1900167089 /* loading_2@2x.png */,
 				A914396E1F767A1900167089 /* loading_3@2x.png */,
@@ -2307,6 +2307,7 @@
 				A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */,
 				A91439751F767A1900167089 /* loading_5@2x.png in Resources */,
 				A992C1ED1F472D8600D5371C /* star_full_iciphone@2x.png in Resources */,
+				A95EEABA1F78F3090027941D /* mine_headiphone@2x.png in Resources */,
 				A9B2F7DB1F60458B00E9068D /* check_room_iciphone@2x.png in Resources */,
 				A9EB26351F48BC79007DB818 /* TripListCell.xib in Resources */,
 				A9EAB8761F57277E00C367F2 /* illustraion_commentiphone@2x.png in Resources */,
@@ -2340,7 +2341,6 @@
 				A9AA8EEE1F38A788005F9DBB /* CombinedShape2iphone@2x.png in Resources */,
 				A94B82441F4D1E7A00840D88 /* README.txt in Resources */,
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
-				A91439C41F77CE8100167089 /* mine_headiphone@2x.jpg in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
 				A92E144E1F64EA0800EFF1A7 /* MyCommentListCell.xib in Resources */,
 				A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */,
