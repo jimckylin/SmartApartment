@@ -57,7 +57,7 @@
 
 - (void)initView {
     
-    _naviLabel.text = @"预订成功";
+    _naviLabel.text = @"支付";
     self.containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, self.view.bounds.size.height-64)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.containerView];
@@ -132,6 +132,10 @@
         //weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
     };
     self.wechatPayView.tapBlock = ^ {
+        
+        [MBProgressHUD cwgj_showHUDWithText:@"敬请期待"];
+        return ;
+        
         weakSelf.payType = @"0";
         weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
         weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
@@ -198,14 +202,14 @@
         icon.center = CGPointMake(kScreenWidth/2, 55);
         [_headerView addSubview:icon];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, icon.bottom+16, kScreenWidth, 20)];
-        label.font = [UIFont systemFontOfSize:14];
-        label.textColor = [UIColor darkTextColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.text = @"恭喜您预订成功!";
-        [_headerView addSubview:label];
+        //UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, icon.bottom+16, kScreenWidth, 20)];
+        //label.font = [UIFont systemFontOfSize:14];
+        //label.textColor = [UIColor darkTextColor];
+        //label.textAlignment = NSTextAlignmentCenter;
+        //label.text = @"恭喜您预订成功!";
+        //[_headerView addSubview:label];
         
-        RTLabel *priceLabel = [[RTLabel alloc] initWithFrame:CGRectMake(0, label.bottom + 10, kScreenWidth, 40)];
+        RTLabel *priceLabel = [[RTLabel alloc] initWithFrame:CGRectMake(0, icon.bottom + 30, kScreenWidth, 40)];
         priceLabel.font = [UIFont systemFontOfSize:13];
         priceLabel.textColor = [UIColor grayColor];
         priceLabel.textAlignment = RTTextAlignmentCenter;

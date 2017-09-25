@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UILabel *remainLabel;
 @property (nonatomic, strong) UIImageView *sArrowIconV;
 @property (nonatomic, strong) RTLabel *priceLabel;
+@property (nonatomic, strong) UIButton *bookBtn;
 @property (nonatomic, strong) UIImageView *bArrowIconV;
 
 @end
@@ -67,22 +68,43 @@
     _sArrowIconV.contentMode = UIViewContentModeScaleAspectFill;
     [bgView addSubview:_sArrowIconV];
     
-    _bArrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
-    _bArrowIconV.contentMode = UIViewContentModeScaleAspectFill;
-    [bgView addSubview:_bArrowIconV];
+    
+    _bookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _bookBtn.backgroundColor = ThemeColor;
+    [_bookBtn addTarget:self action:@selector(bookBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_bookBtn setTitle:@"预订" forState:UIControlStateNormal];
+    [_bookBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_bookBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    _bookBtn.layer.cornerRadius = 4;
+    [bgView addSubview:_bookBtn];
+    
+    
+//    _bArrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
+//    _bArrowIconV.contentMode = UIViewContentModeScaleAspectFill;
+//    [bgView addSubview:_bArrowIconV];
 }
 
 - (void)setDayRoom:(DayRoom *)dayRoom {
     
     _titleLabel.text = dayRoom.roomTypeName;
     _remainLabel.text = [NSString stringWithFormat:@"仅剩%@间客房", dayRoom.roomNum];
-    _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>(门市价)</font>", dayRoom.roomPrice];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>起</font>", dayRoom.roomPrice];
 }
 
 - (void)setHourRoom:(HourRoom *)hourRoom {
     
     _titleLabel.text = hourRoom.roomTypeName;
     _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.roomPrice];
+}
+
+
+#pragma mark - UIButton Action
+
+- (void)bookBtnClick:(UIButton *)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickBookBtn:)]) {
+        [self.delegate hotelDetailRoomPriceTypeCellDidClickBookBtn:self];
+    }
 }
 
 
@@ -97,15 +119,19 @@
     [_remainLabel autoSetDimension:ALDimensionWidth toSize:90];
     
     
-    [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:37];
+    [_priceLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:_bookBtn withOffset:-10];
     [_priceLabel autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(110, 20)];
     
     [_sArrowIconV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel];
     [_sArrowIconV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
+
+    [_bookBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16];
+    [_bookBtn autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+    [_bookBtn autoSetDimensionsToSize:CGSizeMake(40, 29)];
     
-    [_bArrowIconV autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
-    [_bArrowIconV autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
+//    [_bArrowIconV autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
+//    [_bArrowIconV autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
     
     [super updateConstraints];
 }

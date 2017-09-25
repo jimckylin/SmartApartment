@@ -161,17 +161,17 @@
 - (void)setHotelDetail:(HotelDetail *)hotelDetail {
     
     _scoreLabel.text = hotelDetail.storeScore? hotelDetail.storeScore:@"0.00";
-    _goodCommentRatioLabel.text = [NSString stringWithFormat:@"%@", hotelDetail.storePercent?hotelDetail.storePercent:@"0.00"];
+    _goodCommentRatioLabel.text = [NSString stringWithFormat:@"%@好评", hotelDetail.storePercent];
     
     _hygieneProgress.progress = [self formatSocre:hotelDetail.storeRoomHealthScore];
     _serviceProgress.progress = [self formatSocre:hotelDetail.storeHotelScore];
     _envirmentProgress.progress = [self formatSocre:hotelDetail.storeEnvironmentScore];
-    _cpRatioProgress.progress = [self formatSocre:hotelDetail.storeEnvironmentScore];
+    _cpRatioProgress.progress = [self formatSocre:hotelDetail.storeDeviceScore];
     
     _hygieneScore.text = hotelDetail.storeRoomHealthScore;
     _serviceScore.text = hotelDetail.storeHotelScore;
     _envirmentScore.text = hotelDetail.storeEnvironmentScore;
-    _cpRatioScore.text = hotelDetail.storeEnvironmentScore;
+    _cpRatioScore.text = hotelDetail.storeDeviceScore;
 }
 
 - (CGFloat)formatSocre:(NSString *)scoreString {

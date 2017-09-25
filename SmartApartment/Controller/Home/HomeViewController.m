@@ -116,7 +116,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 300;
+        return 270;
     }else {
         return 174;
     }
@@ -236,6 +236,7 @@
         }
             break;
         case HotelSelectBtnTypeExtraSearch: {
+            break;
             ExtraSearchViewController *vc = [ExtraSearchViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }

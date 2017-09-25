@@ -42,6 +42,10 @@
         _viewModel = [MineViewModel new];
     }
     [self requestData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshContactList:)
+                                                 name:@"kRefreshContactList" object:nil];
 }
 
 - (void)requestData {
@@ -136,17 +140,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    __WeakObj(self)
     NSDictionary *contact = _viewModel.contacList[indexPath.row];
     AddPassengerViewController *vc = [AddPassengerViewController new];
     vc.contact = contact;
-    vc.didAddOrModifyUserInfo = ^{
-        [selfWeak requestData];
-    };
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 
+#pragma mark - NSNotification
+
+- (void)refreshContactList:(NSNotification *)noti {
+    
+    [self requestData];
+}
 
 
 @end

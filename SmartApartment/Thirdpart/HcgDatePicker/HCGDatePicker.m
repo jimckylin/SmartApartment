@@ -87,8 +87,8 @@
         self.datePickerMode = datePickerMode;
         
         if (minDate) {
-            NSDate *date = datePickerMode == DatePickerHourMode ? [self extractHourDate:minDate] : [self extractDayDate:minDate];
-            [self setMinDate:date];
+            //NSDate *date = datePickerMode == DatePickerHourMode ? [self extractHourDate:minDate] : [self extractDayDate:minDate];
+            [self setMinDate:minDate];
         } else {
             [self setMinDate:[self extractDayDate:[NSDate dateWithTimeIntervalSince1970:minTimeInterval]]];
         }

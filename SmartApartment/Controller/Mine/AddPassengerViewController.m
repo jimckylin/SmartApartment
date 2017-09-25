@@ -125,7 +125,7 @@
     }else if (buttonIndex == 1) {
         self.certificateType = @"1";
         _arriveTimeLabel.text = @"学生证";
-    }else if (buttonIndex == 1) {
+    }else if (buttonIndex == 2) {
         self.certificateType = @"2";
         _arriveTimeLabel.text = @"其他证件";
     }
@@ -155,9 +155,7 @@
                                      }else
                                          [MBProgressHUD cwgj_showHUDWithText:@"新增成功"];
                                      
-                                     if (selfWeak.didAddOrModifyUserInfo) {
-                                         selfWeak.didAddOrModifyUserInfo();
-                                     }
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"kRefreshContactList" object:nil];
                                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                          [[NavManager shareInstance] returnToFrontView:YES];
                                      });

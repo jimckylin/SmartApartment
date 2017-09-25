@@ -51,7 +51,12 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 
 
 @interface HotelDetailViewController ()<UITableViewDelegate,
-UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceTypeCellDelegate, HotelDetailDateViewDelegate, HotelDetailHeaderCellDelegate>
+                                        UITableViewDataSource,
+                                        HotelDetailRoomTypeCellDelegate,
+                                        HotelDetailRoomPriceTypeCellDelegate,
+                                        HotelDetailDateViewDelegate,
+                                        HotelDetailHeaderCellDelegate,
+                                        HotelDetailRoomListCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -268,6 +273,8 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             if (foldCellModel.level.intValue == 0) {
                 
                 HotelDetailRoomListCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomListCell];
+                cell.tag = indexPath.row;
+                cell.delegate = self;
                 if (self.roomType == HotelRoomTypeAllday) {
                     cell.dayRoom = foldCellModel.dayRoom;
                 }else {
@@ -321,6 +328,10 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
     }else if (indexPath.section == 1) {
         
     }else if (indexPath.section == 2) {
+        
+        // 禁止展开
+        return;
+        
         if (indexPath.row >= 1) {
             
             ZZFoldCellModel *didSelectFoldCellModel;
@@ -462,6 +473,52 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
 }
 
 
+#pragma mark - HotelDetailRoomListCellDelegate
+
+- (void)hotelDetailRoomPriceTypeCellDidClickBookBtn:(HotelDetailRoomListCell *)cell {
+    
+    if (!self.checkIsLogin) {
+        return;
+    }
+    
+    BookHotelViewController *vc = [BookHotelViewController new];
+    vc.hotel = self.hotel;
+    vc.checkInTime = self.checkInTime;
+    vc.checkOutTime = self.checkOutTime;
+    vc.checkInRoomType = self.roomType == HotelRoomTypeAllday? @"0" :@"1";
+    
+    NSInteger index = cell.tag-1;
+    ZZFoldCellModel *foldCellModel;
+    NSString *roomTypeId = @"";
+    NSString *roomTypeName = @"";
+    NSString *roomPrice = @"";     // 房价
+    NSString *roomDeposit = @"";   // 押金
+    NSString *roomRisePrice = @""; // 涨价
+    
+    if (self.roomType == HotelRoomTypeAllday) {
+        foldCellModel = self.dayRoomArr[index];
+        roomTypeId = foldCellModel.dayRoom.roomTypeId;
+        roomTypeName = foldCellModel.dayRoom.roomTypeName;
+        roomPrice = foldCellModel.dayRoom.roomPrice;
+        roomRisePrice = foldCellModel.dayRoom.roomRisePrice;
+        roomDeposit = foldCellModel.dayRoom.roomDeposit;
+    }else {
+        foldCellModel = self.hourRoomArr[index];
+        roomTypeId = foldCellModel.hourRoom.roomTypeId;
+        roomTypeName = foldCellModel.hourRoom.roomTypeName;
+        roomPrice = foldCellModel.hourRoom.roomPrice;
+        roomRisePrice = foldCellModel.hourRoom.roomRisePrice;
+        roomDeposit = foldCellModel.hourRoom.roomDeposit;
+    }
+    vc.roomTypeId = roomTypeId;
+    vc.roomTypeName = roomTypeName;
+    vc.roomPrice = roomPrice;
+    vc.roomRisePrice = roomRisePrice;
+    vc.roomDeposit = roomDeposit;
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+}
+
+
 #pragma mark - HotelDetailRoomPriceTypeCellDelegate
 
 - (void)hotelDetailRoomPriceTypeCellDidClickBtn:(HotelRoomListBtnType)type cell:(HotelDetailRoomPriceTypeCell *)cell {
@@ -490,14 +547,14 @@ UITableViewDataSource, HotelDetailRoomTypeCellDelegate, HotelDetailRoomPriceType
             foldCellModel = self.dayRoomArr[index];
             roomTypeId = foldCellModel.dayRoom.roomTypeId;
             roomTypeName = foldCellModel.dayRoom.roomTypeName;
-            roomPrice = foldCellModel.dayRoom.customerTotalMoney;
+            roomPrice = foldCellModel.dayRoom.roomPrice;
             roomRisePrice = foldCellModel.dayRoom.roomRisePrice;
             roomDeposit = foldCellModel.dayRoom.roomDeposit;
         }else {
             foldCellModel = self.hourRoomArr[index];
             roomTypeId = foldCellModel.hourRoom.roomTypeId;
             roomTypeName = foldCellModel.hourRoom.roomTypeName;
-            roomPrice = foldCellModel.hourRoom.customerTotalMoney;
+            roomPrice = foldCellModel.hourRoom.roomPrice;
             roomRisePrice = foldCellModel.hourRoom.roomRisePrice;
             roomDeposit = foldCellModel.hourRoom.roomDeposit;
         }

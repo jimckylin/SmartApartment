@@ -18,6 +18,7 @@
 @property (nonatomic, copy)  NSString *storeRoomHealthScore;    // 公寓房间卫生评分
 @property (nonatomic, copy)  NSString *storeEnvironmentScore;   // 公寓周围环境评分
 @property (nonatomic, copy)  NSString *storeHotelScore;         // 公寓公寓服务评分
+@property (nonatomic, copy)  NSString *storeDeviceScore;        // 性价比？ 设备评分？
 @property (nonatomic, copy)  NSString *storePercent;            // 公寓评分百分比
 
 @property (nonatomic, strong)  NSArray <DayRoom *>*dayRoomList;   // 全天房列表

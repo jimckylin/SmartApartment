@@ -87,6 +87,9 @@
         [_rightsLabel setTextAlignment:NSTextAlignmentCenter];
         [_rightsLabel setTextColor:[UIColor lightGrayColor]];
         [_rightsLabel setFont:[UIFont systemFontOfSize:13.0f]];
+        _rightsLabel.minimumScaleFactor = 6;
+        _rightsLabel.adjustsFontSizeToFitWidth = YES;
+        _rightsLabel.numberOfLines = 0;
         _rightsLabel.text = @"Copyright@2017 manxinsu.com，All Rights Reserved";
     }
     return _rightsLabel;

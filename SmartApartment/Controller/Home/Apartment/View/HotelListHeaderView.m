@@ -104,11 +104,9 @@
 // 设置头部日期
 - (void)setHeaderViewDate:(NSDate *)checkinDate checkoutDate:(NSDate *)checkoutDate {
     
-    NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月d"];
-    NSString *checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月d"];
-    
+    NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"M月d"];
+    NSString *checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"M月d"];
     NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
-    checkoutDateStr = [checkoutDateStr substringFromIndex:3];
     
     NSString *title = [NSString stringWithFormat:@"%@-%@ 共(%zd)天", checkinDateStr, checkoutDateStr, days];
     [_dateBtn setTitle:title forState:UIControlStateNormal];
@@ -121,10 +119,8 @@
     NSDate *checkoutDate = [NSDate sia_dateFromString:checkoutDateStr withFormat:@"yyyy-MM-dd"];
     NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
     
-    checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"MM月d"];
-    checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月d"];
-    
-    checkoutDateStr = [checkoutDateStr substringFromIndex:3];
+    checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"M月d"];
+    checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"M月d"];
     
     NSString *title = [NSString stringWithFormat:@"%@-%@ 共(%zd)天", checkinDateStr, checkoutDateStr, days];
     [_dateBtn setTitle:title forState:UIControlStateNormal];

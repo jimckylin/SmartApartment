@@ -116,7 +116,7 @@
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.textLabel.textColor = [UIColor darkTextColor];
             
-            UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 135, 0, 100, 50)];
+            UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 165, 0, 130, 50)];
             [subLabel setTextAlignment:NSTextAlignmentRight];
             [subLabel setTextColor:[UIColor lightGrayColor]];
             [subLabel setFont:[UIFont systemFontOfSize:13.0f]];
@@ -143,7 +143,7 @@
             iconArrow.hidden = YES;
             subLabel.textColor = ThemeColor;
             subLabel.left = subLabel.left + 20;
-            subLabel.text = @"400-4154-451";
+            subLabel.text = @"0591-83598898";
         }
         
         
@@ -206,7 +206,7 @@
             MyCommentListViewController *vc = [MyCommentListViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];
         }else {
-            NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
+            NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"0591-83598898"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
     }else {

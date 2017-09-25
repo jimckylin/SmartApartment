@@ -149,7 +149,6 @@
 		A959F5DA1F5F949F002AF838 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A959F5D91F5F949F002AF838 /* MineViewModel.m */; };
 		A959F5DE1F5F96C9002AF838 /* ActivityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A959F5DD1F5F96C9002AF838 /* ActivityViewModel.m */; };
 		A95B3FB71F395D260046E150 /* home_arrow_iconiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */; };
-		A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */; };
 		A95B3FBE1F3962BA0046E150 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */; };
 		A95B3FC61F3A9F290046E150 /* mine_hand_bgiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FC41F3A9F290046E150 /* mine_hand_bgiphone@2x.png */; };
 		A95B3FCA1F3AA04D0046E150 /* mine_hotel_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B3FC71F3AA04D0046E150 /* mine_hotel_iciphone@2x.png */; };
@@ -595,9 +594,6 @@
 		A959F5DC1F5F96C9002AF838 /* ActivityViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewModel.h; sourceTree = "<group>"; };
 		A959F5DD1F5F96C9002AF838 /* ActivityViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewModel.m; sourceTree = "<group>"; };
 		A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_arrow_iconiphone@2x.png"; sourceTree = "<group>"; };
-		A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iconfont.h"; sourceTree = "<group>"; };
-		A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iconfont.m"; sourceTree = "<group>"; };
-		A95B3FBB1F3961BF0046E150 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		A95B3FBC1F3962BA0046E150 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		A95B3FC41F3A9F290046E150 /* mine_hand_bgiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_hand_bgiphone@2x.png"; sourceTree = "<group>"; };
@@ -771,7 +767,6 @@
 		A97E7E5C1F6B73C900158C78 /* HotelConfigCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigCollectionCell.h; sourceTree = "<group>"; };
 		A97E7E5D1F6B73C900158C78 /* HotelConfigCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigCollectionCell.m; sourceTree = "<group>"; };
 		A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jifen_mall@2x.png"; sourceTree = "<group>"; };
-		A98223E51F3A131700CA9A9F /* DINCond-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCond-Medium.otf"; sourceTree = "<group>"; };
 		A98223FB1F3A19BB00CA9A9F /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
 		A98223FC1F3A19BB00CA9A9F /* TLCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCity.h; sourceTree = "<group>"; };
 		A98223FD1F3A19BB00CA9A9F /* TLCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCity.m; sourceTree = "<group>"; };
@@ -1568,8 +1563,6 @@
 				A95D641B1F4693B300F78A7E /* MBProgressHUD+gjMB.m */,
 				A95B3FBC1F3962BA0046E150 /* NSDate+Utilities.h */,
 				A95B3FBD1F3962BA0046E150 /* NSDate+Utilities.m */,
-				A95B3FB81F3961B80046E150 /* UIImage+iconfont.h */,
-				A95B3FB91F3961B80046E150 /* UIImage+iconfont.m */,
 				A9AA8EFD1F38B7BC005F9DBB /* NSString+RegExp.h */,
 				A9AA8EFE1F38B7BC005F9DBB /* NSString+RegExp.m */,
 				A9AA8EFF1F38B7BC005F9DBB /* UIButton+AYActionBlock.h */,
@@ -2012,9 +2005,7 @@
 				A95B3FC81F3AA04D0046E150 /* mine_information_iciphone@2x.png */,
 				A95B3FC91F3AA04D0046E150 /* mine_order_iciphone@2x.png */,
 				A95B3FC41F3A9F290046E150 /* mine_hand_bgiphone@2x.png */,
-				A98223E51F3A131700CA9A9F /* DINCond-Medium.otf */,
 				A98223E31F3A0F2E00CA9A9F /* jifen_mall@2x.png */,
-				A95B3FBB1F3961BF0046E150 /* iconfont.ttf */,
 				A95B3FB61F395D260046E150 /* home_arrow_iconiphone@2x.png */,
 				A9414F0A1F38D476007857D2 /* home_location_ic_siphone@2x.png */,
 				A9414F081F38D31B007857D2 /* myorder_lineiphone@2x.png */,
@@ -2600,7 +2591,6 @@
 				A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */,
 				A9730E801F384B97006E66A4 /* UIImage+color.m in Sources */,
 				A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */,
-				A95B3FBA1F3961B80046E150 /* UIImage+iconfont.m in Sources */,
 				A9AA8EEA1F376C37005F9DBB /* BannerDetailViewController.m in Sources */,
 				A95B3FF61F3AC7FF0046E150 /* ZYMonthView.m in Sources */,
 				A92F7FCC1F4B3D290056CACC /* YJSliderView.m in Sources */,

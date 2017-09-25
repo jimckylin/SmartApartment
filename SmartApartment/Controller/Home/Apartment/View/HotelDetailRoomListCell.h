@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DayRoom, HourRoom;
+@class DayRoom, HourRoom, HotelDetailRoomListCell;
+
+
+@protocol HotelDetailRoomListCellDelegate <NSObject>
+- (void)hotelDetailRoomPriceTypeCellDidClickBookBtn:(HotelDetailRoomListCell *)cell;
+@end
 
 @interface HotelDetailRoomListCell : UITableViewCell
 
 @property (nonatomic, strong) DayRoom *dayRoom;
 @property (nonatomic, strong) HourRoom *hourRoom;
 @property (nonatomic, strong) NSDictionary *roomPriceDic;
+
+@property (nonatomic, weak) id<HotelDetailRoomListCellDelegate> delegate;
 
 @end

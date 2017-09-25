@@ -25,7 +25,7 @@
 
 - (instancetype)initWithDelegate:(id<HotelSelectViewDelegate>)delegate {
     
-    self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, 290)];
+    self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, 260)];
     if (self) {
         self.deletegate = delegate;
         [self initView];
