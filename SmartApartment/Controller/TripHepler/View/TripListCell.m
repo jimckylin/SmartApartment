@@ -92,7 +92,7 @@
     self.storeName.text = tripOrder.storeName;
     self.storeName.text = tripOrder.storeName;
     self.state.text = [self orderStateString:tripOrder];
-    [self.thumbImgView sd_setImageWithURL:[NSURL URLWithString:tripOrder.storeImage] placeholderImage:kImage(@"travel_details_blankiphone")];
+    [self.thumbImgView sd_setImageWithURL:[NSURL URLWithString:tripOrder.storeImage] placeholderImage:kImage(@"blank_default_nomal_bg")];
     self.address.text = tripOrder.address;
     
     self.checkinDate.text = [NSString stringWithFormat:@"%zd月\n%@", [checkinDate month], checkinWeek];

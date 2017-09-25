@@ -45,7 +45,7 @@
 
 - (void)initSubView {
     
-    _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 270) delegate:nil placeholderImage:[UIImage imageNamed:@"bigCelliphone"]];
+    _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 270) delegate:nil placeholderImage:[UIImage imageNamed:@"blank_default_nomal_bg"]];
     _bannerView.autoScrollTimeInterval = 6;
     _bannerView.autoScroll = NO;
     _bannerView.pageControlBottomOffset = 30;

@@ -77,7 +77,7 @@
 
 - (void)setActivity:(Activity *)activity {
     
-    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:activity.activityImage] placeholderImage:kImage(@"travel_details_blankiphone")];
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:activity.activityImage] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _titleLabel.text = activity.activityTitle;
     _decrLabel.text = activity.activitySubTitle;
     

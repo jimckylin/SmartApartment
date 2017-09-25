@@ -71,25 +71,25 @@
 
 - (void)setAroma:(Aroma *)aroma {
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:kImage(@"evaluate_blankiphone")];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", aroma.name, aroma.price];
 }
 
 - (void)setBreakfast:(Breakfast *)breakfast {
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:breakfast.img] placeholderImage:kImage(@"evaluate_blankiphone")];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:breakfast.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", breakfast.name, breakfast.price];
 }
 
 - (void)setFivePiece:(FivePiece *)fivePiece {
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:fivePiece.img] placeholderImage:kImage(@"evaluate_blankiphone")];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:fivePiece.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", fivePiece.name, fivePiece.price];
 }
 
 - (void)setRoomLayout:(RoomLayout *)roomLayout {
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:roomLayout.img] placeholderImage:kImage(@"evaluate_blankiphone")];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:roomLayout.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", roomLayout.name, roomLayout.price];
 }
 

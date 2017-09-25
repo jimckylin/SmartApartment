@@ -87,7 +87,7 @@
     if ([hotel.storeImageList count] > 0) {
         urlStr = hotel.storeImageList[0][@"storeImage"];
     }
-    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:kImage(@"home_list_blankiphone")];
+    [_thumbImgV sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _titleLabel.text = hotel.storeName;
     _scoreLabel.text = [NSString stringWithFormat:@"%@分", hotel.storeScore];
     _remainLabel.text = hotel.storePayment;

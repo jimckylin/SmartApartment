@@ -33,7 +33,7 @@
 
 - (void)setHotel:(Hotel *)hotel {
     
-    [_thumbImageView sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:kImage(@"home_list_blankiphone")];
+    [_thumbImageView sd_setImageWithURL:[NSURL URLWithString:hotel.storeImage] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _storeName.text = hotel.storeName;
     _starView.currentScore = [[NSString stringWithFormat:@"%0.1f", [hotel.storeScore floatValue]] floatValue];
     _scoreLbael.text = [NSString stringWithFormat:@"评分 %0.1f", [hotel.storeScore floatValue]];

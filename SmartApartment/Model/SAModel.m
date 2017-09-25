@@ -67,6 +67,7 @@
                         [self handleSucces:res class:model success:success];
                     }else {
                         if (resultCode == 5) {
+                            [MBProgressHUD cwgj_hideHUD];
                             [[NavManager shareInstance] returnToLoginView:YES];
                             return ;
                         }

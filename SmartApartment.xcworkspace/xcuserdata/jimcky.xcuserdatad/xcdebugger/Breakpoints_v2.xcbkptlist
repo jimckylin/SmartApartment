@@ -9,6 +9,86 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
+            timestampString = "527584793.912883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
+            timestampString = "527584793.912883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[OrderViewModel requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
+                  timestampString = "527998839.715748"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "1046">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__151-[OrderViewModel requestTripReview:roomHealthScore:environmentScore:hotelScore:deviceScore:customerEvaluate:customerImage:imageExtensionName:complete:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
+                  timestampString = "527998839.719179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Home/Apartment/ViewModel/OrderViewModel.m"
+            timestampString = "527584793.912883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-requestCancelOrder:complete:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "SmartApartment/Controller/Mine/RechargeViewController.m"
             timestampString = "526638444.821101"
             startingColumnNumber = "9223372036854775807"
@@ -17,6 +97,70 @@
             endingLineNumber = "65"
             landmarkName = "-rechargeViewDidClickRechargeBtn:rechargeDic:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
+            timestampString = "527411338.131049"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-requestResetPwdWithPhone:newPwd:complete:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
+            timestampString = "527411355.899935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-requestResetPwdWithPhone:newPwd:complete:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewModel requestResetPwdWithPhone:newPwd:complete:]"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
+                  timestampString = "527998839.734108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[LoginViewModel requestResetPwdWithPhone:newPwd:complete:]_block_invoke"
+                  moduleName = "SmartApartment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimcky/Documents/WisdomApartment/SmartApartment/SmartApartment/Controller/Login/ViewModel/LoginViewModel.m"
+                  timestampString = "527998839.735944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

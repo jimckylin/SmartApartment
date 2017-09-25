@@ -91,7 +91,7 @@
     bgView.backgroundColor = [UIColor colorWithHexString:@"#F2F2F2"];
     [self.view addSubview:bgView];
     
-    _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, kScreenWidth, 180) delegate:self placeholderImage:[UIImage imageNamed:@"bigCelliphone"]];
+    _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, kScreenWidth, 180) delegate:self placeholderImage:[UIImage imageNamed:@"blank_default_nomal_bg"]];
     _bannerView.autoScrollTimeInterval = 5;
     _bannerView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
     

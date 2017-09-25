@@ -30,7 +30,6 @@
 		A91439BA1F76978900167089 /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91439AE1F76978900167089 /* PageControlView.xib */; };
 		A91439C41F77CE8100167089 /* mine_headiphone@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */; };
 		A91439C61F77CEDA00167089 /* mine_vip_ic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */; };
-		A91439C81F77CF2500167089 /* blank_default_nomal_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439C71F77CF2500167089 /* blank_default_nomal_bg.png */; };
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
@@ -198,6 +197,7 @@
 		A95D94631F5D2F2300E10CEE /* RoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945D1F5D2F2300E10CEE /* RoomConfig.m */; };
 		A95D94641F5D2F2300E10CEE /* RoomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D945F1F5D2F2300E10CEE /* RoomLayout.m */; };
 		A95D94671F5D4D4D00E10CEE /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D94661F5D4D4D00E10CEE /* Wine.m */; };
+		A95EEAB81F789CB00027941D /* blank_default_nomal_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */; };
 		A96074861F74F5F800CA4539 /* BookConsumeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96074851F74F5F800CA4539 /* BookConsumeListCell.m */; };
 		A96A33021F47573C00A55A42 /* WRCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A33011F47573C00A55A42 /* WRCellView.m */; };
 		A96A33041F476FF500A55A42 /* oeder_reminder_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A33031F476FF500A55A42 /* oeder_reminder_iciphone@2x.png */; };
@@ -314,8 +314,6 @@
 		A9BA5DF31F4614C70093A50D /* BookHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BA5DF21F4614C70093A50D /* BookHotelViewController.m */; };
 		A9BA5DF61F4615230093A50D /* HotelDescrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BA5DF51F4615230093A50D /* HotelDescrViewController.m */; };
 		A9BA5DF81F4716D10093A50D /* detail_blank_commentiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BA5DF71F4716D10093A50D /* detail_blank_commentiphone@2x.png */; };
-		A9BF422E1F5C17700050C39F /* evaluate_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */; };
-		A9BF42301F5C17E70050C39F /* home_list_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */; };
 		A9BF42331F5D9EB50050C39F /* HotelConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42321F5D9EB50050C39F /* HotelConfigView.m */; };
 		A9BF42361F5DA0F10050C39F /* HotelConfigItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42351F5DA0F10050C39F /* HotelConfigItemCell.m */; };
 		A9BF42391F5DAD5E0050C39F /* HotelConfigHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF42381F5DAD5E0050C39F /* HotelConfigHeaderView.m */; };
@@ -356,9 +354,7 @@
 		A9EB26351F48BC79007DB818 /* TripListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26341F48BC79007DB818 /* TripListCell.xib */; };
 		A9EB26371F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26361F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png */; };
 		A9EB26391F48C0D0007DB818 /* trip_more_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26381F48C0D0007DB818 /* trip_more_iciphone@2x.png */; };
-		A9EB263B1F48C124007DB818 /* bigCelliphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB263A1F48C124007DB818 /* bigCelliphone@2x.png */; };
 		A9EB263D1F48C1D2007DB818 /* recoment_shadowiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB263C1F48C1D2007DB818 /* recoment_shadowiphone@2x.png */; };
-		A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */; };
 		A9EB26421F48CF99007DB818 /* TripHistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26411F48CF99007DB818 /* TripHistoryListViewController.m */; };
 		A9EB26451F48D156007DB818 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EB26441F48D156007DB818 /* UserManager.m */; };
 		A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */; };
@@ -406,7 +402,6 @@
 		A91439AE1F76978900167089 /* PageControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
 		A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mine_headiphone@2x.jpg"; sourceTree = "<group>"; };
 		A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_vip_ic@2x.png"; sourceTree = "<group>"; };
-		A91439C71F77CF2500167089 /* blank_default_nomal_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank_default_nomal_bg.png; sourceTree = "<group>"; };
 		A92178EB1F5AC68300C0923A /* HotelDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetail.h; sourceTree = "<group>"; };
 		A92178EC1F5AC68300C0923A /* HotelDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetail.m; sourceTree = "<group>"; };
 		A92178EE1F5ACC9A00C0923A /* DayRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayRoom.h; sourceTree = "<group>"; };
@@ -688,6 +683,7 @@
 		A95D945F1F5D2F2300E10CEE /* RoomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomLayout.m; sourceTree = "<group>"; };
 		A95D94651F5D4D4D00E10CEE /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
 		A95D94661F5D4D4D00E10CEE /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
+		A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_default_nomal_bg@2x.png"; sourceTree = "<group>"; };
 		A96074841F74F5F800CA4539 /* BookConsumeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookConsumeListCell.h; sourceTree = "<group>"; };
 		A96074851F74F5F800CA4539 /* BookConsumeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookConsumeListCell.m; sourceTree = "<group>"; };
 		A96A33001F47573C00A55A42 /* WRCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCellView.h; sourceTree = "<group>"; };
@@ -877,8 +873,6 @@
 		A9BA5DF41F4615230093A50D /* HotelDescrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDescrViewController.h; sourceTree = "<group>"; };
 		A9BA5DF51F4615230093A50D /* HotelDescrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDescrViewController.m; sourceTree = "<group>"; };
 		A9BA5DF71F4716D10093A50D /* detail_blank_commentiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_blank_commentiphone@2x.png"; sourceTree = "<group>"; };
-		A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "evaluate_blankiphone@2x.png"; sourceTree = "<group>"; };
-		A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_list_blankiphone@2x.png"; sourceTree = "<group>"; };
 		A9BF42311F5D9EB50050C39F /* HotelConfigView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigView.h; sourceTree = "<group>"; };
 		A9BF42321F5D9EB50050C39F /* HotelConfigView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelConfigView.m; sourceTree = "<group>"; };
 		A9BF42341F5DA0F10050C39F /* HotelConfigItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelConfigItemCell.h; sourceTree = "<group>"; };
@@ -957,9 +951,7 @@
 		A9EB26341F48BC79007DB818 /* TripListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripListCell.xib; sourceTree = "<group>"; };
 		A9EB26361F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_hotel_name_iciphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26381F48C0D0007DB818 /* trip_more_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_more_iciphone@2x.png"; sourceTree = "<group>"; };
-		A9EB263A1F48C124007DB818 /* bigCelliphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigCelliphone@2x.png"; sourceTree = "<group>"; };
 		A9EB263C1F48C1D2007DB818 /* recoment_shadowiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recoment_shadowiphone@2x.png"; sourceTree = "<group>"; };
-		A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel_details_blankiphone@2x.png"; sourceTree = "<group>"; };
 		A9EB26401F48CF99007DB818 /* TripHistoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripHistoryListViewController.h; sourceTree = "<group>"; };
 		A9EB26411F48CF99007DB818 /* TripHistoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripHistoryListViewController.m; sourceTree = "<group>"; };
 		A9EB26431F48D156007DB818 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -1928,7 +1920,7 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A91439C71F77CF2500167089 /* blank_default_nomal_bg.png */,
+				A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */,
 				A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */,
 				A91439C31F77CE8100167089 /* mine_headiphone@2x.jpg */,
 				A914396C1F767A1900167089 /* loading_1@2x.png */,
@@ -1943,8 +1935,6 @@
 				A9B2F7D81F60458B00E9068D /* check_delete_iciphone@2x.png */,
 				A9B2F7D91F60458B00E9068D /* check_room_iciphone@2x.png */,
 				A9B2F7D61F6044DE00E9068D /* illustration_commentiphone@2x.png */,
-				A9BF422F1F5C17E70050C39F /* home_list_blankiphone@2x.png */,
-				A9BF422D1F5C17700050C39F /* evaluate_blankiphone@2x.png */,
 				A9415A591F566E1600FAD195 /* nav_return_iciphone@2x.png */,
 				A9EAB8751F57277E00C367F2 /* illustraion_commentiphone@2x.png */,
 				A9415A4B1F55200A00FAD195 /* login_password_hide_ic@2x.png */,
@@ -1967,9 +1957,7 @@
 				A9EB268F1F497546007DB818 /* order_add_grey_iciphone@2x.png */,
 				A9EB268D1F4972AD007DB818 /* information_phone_iciphone@2x.png */,
 				A9EB26461F494970007DB818 /* mine_comment_iciphone@2x.png */,
-				A9EB263E1F48C1FF007DB818 /* travel_details_blankiphone@2x.png */,
 				A9EB263C1F48C1D2007DB818 /* recoment_shadowiphone@2x.png */,
-				A9EB263A1F48C124007DB818 /* bigCelliphone@2x.png */,
 				A9EB26381F48C0D0007DB818 /* trip_more_iciphone@2x.png */,
 				A9EB26361F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png */,
 				A9EB262D1F48B1CB007DB818 /* trip_remind_iciphone@2x.png */,
@@ -2309,9 +2297,9 @@
 				A91439B81F76978900167089 /* PageControlCollectionViewCell.xib in Resources */,
 				A91439691F764B8900167089 /* OrderDetailHeaderView.xib in Resources */,
 				A9EB262F1F48B1CB007DB818 /* trip_remind_iciphone@2x.png in Resources */,
-				A9BF42301F5C17E70050C39F /* home_list_blankiphone@2x.png in Resources */,
 				A976779E1F4204EA00EDCDFA /* nav_detail_like_btn_siphone@2x.png in Resources */,
 				A976779F1F4204EA00EDCDFA /* nav_detail_like_s_btniphone@2x.png in Resources */,
+				A95EEAB81F789CB00027941D /* blank_default_nomal_bg@2x.png in Resources */,
 				A96A33151F481F1900A55A42 /* reserve_illustrationiphone@2x.png in Resources */,
 				A9BA5DEC1F45F5320093A50D /* detail_more_iciphone@2x.png in Resources */,
 				A9AA8EAE1F3712A5005F9DBB /* LaunchScreen.storyboard in Resources */,
@@ -2367,7 +2355,6 @@
 				A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */,
 				A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */,
 				A91439601F76431600167089 /* OrderDetailView.xib in Resources */,
-				A9EB263B1F48C124007DB818 /* bigCelliphone@2x.png in Resources */,
 				A992C1E61F47275900D5371C /* share_sina_iciphone@2x.png in Resources */,
 				A91439C61F77CEDA00167089 /* mine_vip_ic@2x.png in Resources */,
 				A96A331C1F48266500A55A42 /* reserve_pay_siphone@2x.png in Resources */,
@@ -2387,9 +2374,7 @@
 				A97677A01F4204EA00EDCDFA /* nav_detail_share_btn_siphone@2x.png in Resources */,
 				A914396B1F764F1F00167089 /* OrderDetailViewController.xib in Resources */,
 				A9EB26471F494970007DB818 /* mine_comment_iciphone@2x.png in Resources */,
-				A91439C81F77CF2500167089 /* blank_default_nomal_bg.png in Resources */,
 				A992C1E51F47275900D5371C /* share_qq_iciphone@2x.png in Resources */,
-				A9EB263F1F48C1FF007DB818 /* travel_details_blankiphone@2x.png in Resources */,
 				A9730E881F385377006E66A4 /* nav_back@2x.png in Resources */,
 				A96A330A1F4809D200A55A42 /* order_up_iciphone@2x.png in Resources */,
 				A95154931F4BCEBF00841D3F /* order_add_iciphone@2x.png in Resources */,
@@ -2398,7 +2383,6 @@
 				A95154921F4BCEBF00841D3F /* order_add_grey_iciphone@2x.png in Resources */,
 				A95154941F4BCEBF00841D3F /* order_minus_ic_scopyiphone@2x.png in Resources */,
 				A9414F091F38D31B007857D2 /* myorder_lineiphone@2x.png in Resources */,
-				A9BF422E1F5C17700050C39F /* evaluate_blankiphone@2x.png in Resources */,
 				A91439741F767A1900167089 /* loading_4@2x.png in Resources */,
 				A96A33181F4825D500A55A42 /* reserve_pay_1_iciphone@2x.png in Resources */,
 				A9EB26371F48BDC0007DB818 /* trip_hotel_name_iciphone@2x.png in Resources */,
