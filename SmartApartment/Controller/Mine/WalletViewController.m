@@ -54,6 +54,9 @@
 
 - (void)btnClick:(UIButton *)sender {
     
+    [MBProgressHUD cwgj_showHUDWithText:@"正在开发"];
+    return;
+    
     RechargeViewController *vc = [RechargeViewController new];
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }

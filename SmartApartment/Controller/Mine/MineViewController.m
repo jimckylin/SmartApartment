@@ -256,7 +256,7 @@
             break;
         case HeaderEventTypeIntegral: {
             
-            [MBProgressHUD cwgj_showHUDWithText:@"后续开发"];
+            [MBProgressHUD cwgj_showHUDWithText:@"正在开发"];
         }
             break;
             

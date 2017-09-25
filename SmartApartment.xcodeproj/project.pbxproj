@@ -29,6 +29,11 @@
 		A91439B91F76978900167089 /* PageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A91439AD1F76978900167089 /* PageControlView.m */; };
 		A91439BA1F76978900167089 /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91439AE1F76978900167089 /* PageControlView.xib */; };
 		A91439C61F77CEDA00167089 /* mine_vip_ic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */; };
+		A91439CA1F795E9700167089 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439C91F795E9700167089 /* icon-72@2x.png */; };
+		A91439CF1F7963F200167089 /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439CB1F7963F200167089 /* icon-40@2x.png */; };
+		A91439D01F7963F200167089 /* icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439CC1F7963F200167089 /* icon-40@3x.png */; };
+		A91439D11F7963F200167089 /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439CD1F7963F200167089 /* icon-60@2x.png */; };
+		A91439D21F7963F200167089 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91439CE1F7963F200167089 /* icon-60@3x.png */; };
 		A92178ED1F5AC68300C0923A /* HotelDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EC1F5AC68300C0923A /* HotelDetail.m */; };
 		A92178F01F5ACC9A00C0923A /* DayRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178EF1F5ACC9A00C0923A /* DayRoom.m */; };
 		A92178F31F5ACCAF00C0923A /* HourRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A92178F21F5ACCAF00C0923A /* HourRoom.m */; };
@@ -400,6 +405,11 @@
 		A91439AD1F76978900167089 /* PageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControlView.m; sourceTree = "<group>"; };
 		A91439AE1F76978900167089 /* PageControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
 		A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_vip_ic@2x.png"; sourceTree = "<group>"; };
+		A91439C91F795E9700167089 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
+		A91439CB1F7963F200167089 /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
+		A91439CC1F7963F200167089 /* icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@3x.png"; sourceTree = "<group>"; };
+		A91439CD1F7963F200167089 /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
+		A91439CE1F7963F200167089 /* icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@3x.png"; sourceTree = "<group>"; };
 		A92178EB1F5AC68300C0923A /* HotelDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelDetail.h; sourceTree = "<group>"; };
 		A92178EC1F5AC68300C0923A /* HotelDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelDetail.m; sourceTree = "<group>"; };
 		A92178EE1F5ACC9A00C0923A /* DayRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayRoom.h; sourceTree = "<group>"; };
@@ -1913,6 +1923,11 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A91439CB1F7963F200167089 /* icon-40@2x.png */,
+				A91439CC1F7963F200167089 /* icon-40@3x.png */,
+				A91439CD1F7963F200167089 /* icon-60@2x.png */,
+				A91439CE1F7963F200167089 /* icon-60@3x.png */,
+				A91439C91F795E9700167089 /* icon-72@2x.png */,
 				A95EEAB91F78F3090027941D /* mine_headiphone@2x.png */,
 				A95EEAB71F789CB00027941D /* blank_default_nomal_bg@2x.png */,
 				A91439C51F77CEDA00167089 /* mine_vip_ic@2x.png */,
@@ -2273,6 +2288,7 @@
 				A9414F071F38D060007857D2 /* nav_return_ic_wiphone@2x.png in Resources */,
 				A98223E41F3A0F2E00CA9A9F /* jifen_mall@2x.png in Resources */,
 				A97D41D61F385CFF0071284B /* InfoPlist.strings in Resources */,
+				A91439D01F7963F200167089 /* icon-40@3x.png in Resources */,
 				A95B3FC61F3A9F290046E150 /* mine_hand_bgiphone@2x.png in Resources */,
 				A92F7FD81F4B51980056CACC /* message_zip_iciphone@2x.png in Resources */,
 				A9060F9C1F52B7BD00778B53 /* coupon_sele_siphone@2x.png in Resources */,
@@ -2281,6 +2297,7 @@
 				A95154AD1F4C183A00841D3F /* UMSocialSDKResources.bundle in Resources */,
 				A9B2F7D71F6044DE00E9068D /* illustration_commentiphone@2x.png in Resources */,
 				A97677971F41EEA600EDCDFA /* xq_xinyongzhuiphone@2x.png in Resources */,
+				A91439D11F7963F200167089 /* icon-60@2x.png in Resources */,
 				A9BA5DEA1F45F5320093A50D /* detail_drop_ic_siphone@2x.png in Resources */,
 				A9BA5DEB1F45F5320093A50D /* detail_drop_iciphone@2x.png in Resources */,
 				A9EB26901F497546007DB818 /* order_add_grey_iciphone@2x.png in Resources */,
@@ -2307,10 +2324,12 @@
 				A97677771F3EF64E00EDCDFA /* Localizable.strings in Resources */,
 				A91439751F767A1900167089 /* loading_5@2x.png in Resources */,
 				A992C1ED1F472D8600D5371C /* star_full_iciphone@2x.png in Resources */,
+				A91439D21F7963F200167089 /* icon-60@3x.png in Resources */,
 				A95EEABA1F78F3090027941D /* mine_headiphone@2x.png in Resources */,
 				A9B2F7DB1F60458B00E9068D /* check_room_iciphone@2x.png in Resources */,
 				A9EB26351F48BC79007DB818 /* TripListCell.xib in Resources */,
 				A9EAB8761F57277E00C367F2 /* illustraion_commentiphone@2x.png in Resources */,
+				A91439CA1F795E9700167089 /* icon-72@2x.png in Resources */,
 				A9EB268E1F4972AD007DB818 /* information_phone_iciphone@2x.png in Resources */,
 				A959C3291F55B43B006E091A /* map_landmarkiphone@2x.png in Resources */,
 				A952860B1F43EB2900D7EB2F /* mapapi.bundle in Resources */,
@@ -2396,6 +2415,7 @@
 				A9EB26261F48AF1D007DB818 /* TripHelperNoOrderView.xib in Resources */,
 				A96A33551F484C1200A55A42 /* order_details_retreat_iciphone@2x.png in Resources */,
 				A9BA5DF01F460D070093A50D /* detail_brand_iciphone@2x.png in Resources */,
+				A91439CF1F7963F200167089 /* icon-40@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2863,8 +2883,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0eae16c6-0d75-465f-97b5-489ceb7e9235";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "1f2a68ef-7760-431c-95ec-d411b794c394";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
 			};
 			name = Release;
 		};
