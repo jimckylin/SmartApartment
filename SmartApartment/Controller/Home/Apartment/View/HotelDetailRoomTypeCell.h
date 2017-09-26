@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeEnum.h"
+@class HotelDetail;
 
 @protocol HotelDetailRoomTypeCellDelegate <NSObject>
 
@@ -18,6 +19,7 @@
 @interface HotelDetailRoomTypeCell : UITableViewCell
 
 @property (nonatomic, assign) id<HotelDetailRoomTypeCellDelegate> delegate;
+@property (nonatomic, strong) HotelDetail *hotelDetail;
 
 - (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime;
 

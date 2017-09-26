@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeEnum.h"
+#import "HotelDetail.h"
 
 @protocol HotelDetailDateViewDelegate <NSObject>
 
@@ -19,6 +20,7 @@
 
 @property (nonatomic, assign) HotelRoomType roomType;
 @property (nonatomic, assign) id<HotelDetailDateViewDelegate> delegate;
+@property (nonatomic, strong) HotelDetail *hotelDetail;
 
 - (instancetype)initWithRoomType:(HotelRoomType)roomType;
 

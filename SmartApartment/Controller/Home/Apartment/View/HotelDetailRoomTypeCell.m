@@ -97,6 +97,11 @@
     [_dateView2 setDateViewateStr:checkInTime checkoutDateStr:checkOutTime];
 }
 
+- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+    
+    _dateView2.hotelDetail = hotelDetail;
+}
+
 
 #pragma mark - UIButton Action
 

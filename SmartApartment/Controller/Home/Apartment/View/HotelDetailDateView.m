@@ -8,6 +8,7 @@
 
 #import "HotelDetailDateView.h"
 #import "NSDate+Utilities.h"
+#import "RTLabel.h"
 
 @interface HotelDetailDateView ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UILabel *liveLabel;
 @property (nonatomic, strong) UILabel *leaveLabel;
 @property (nonatomic, strong) UILabel *countLabel;
+@property (nonatomic, strong) RTLabel *bespeakDaysLabel;
 
 @end
 
@@ -91,9 +93,23 @@
         _countLabel.layer.cornerRadius = 15/2.;
         _countLabel.text = @"共2晚";
         [self addSubview:_countLabel];
+    }else {
+        
+        _bespeakDaysLabel = [RTLabel new];
+        _bespeakDaysLabel.font = [UIFont systemFontOfSize:13];
+        _bespeakDaysLabel.textColor = [UIColor grayColor];
+        _bespeakDaysLabel.text = @"可预订时段: ";
+        _bespeakDaysLabel.textAlignment = RTTextAlignmentRight;
+        [self addSubview:_bespeakDaysLabel];
     }
 }
 
+- (void)setHotelDetail:(HotelDetail *)hotelDetail {
+    
+    if (_roomType == HotelRoomTypeTypeHours) {
+        _bespeakDaysLabel.text = [NSString stringWithFormat:@"可预订时段: <font color=#1B5B5E>%@</font>", hotelDetail.bespeakTime];
+    }
+}
 
 - (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime {
     
@@ -151,6 +167,11 @@
         [_countLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
         [_countLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_liveLabel];
         [_countLabel autoSetDimensionsToSize:CGSizeMake(40, 15)];
+        
+    }else {
+        [_bespeakDaysLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:25];
+        [_bespeakDaysLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [_bespeakDaysLabel autoSetDimensionsToSize:CGSizeMake(200, 20)];
     }
     
     [super updateConstraints];

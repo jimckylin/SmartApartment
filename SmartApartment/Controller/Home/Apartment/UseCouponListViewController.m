@@ -205,7 +205,11 @@ UITableViewDataSource>
     __WeakObj(self)
     [_mineViewModel requestGetCoupon:self.roomTypeId storeId:self.storeId complete:^(NSArray *couponList) {
         
-        [selfWeak.coupons addObjectsFromArray:couponList];
+        for (CouponList *coupon in couponList) {
+            if ([coupon.useStatus intValue] == 1) {
+                [selfWeak.coupons addObject:coupon];
+            }
+        }
         [selfWeak.tableView reloadData];
     }];
 }

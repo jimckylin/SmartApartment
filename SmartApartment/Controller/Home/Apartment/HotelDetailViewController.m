@@ -258,6 +258,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
         if (row == 0) {
             HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
             self.cell = cell;
+            cell.hotelDetail = self.viewModel.hotelDetail;
             [cell setDateViewateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
             cell.delegate = self;
             return cell;
@@ -497,6 +498,11 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     
     if (self.roomType == HotelRoomTypeAllday) {
         foldCellModel = self.dayRoomArr[index];
+        if ([foldCellModel.dayRoom.bespeakDays intValue]) {
+            NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", foldCellModel.dayRoom.roomTypeName, foldCellModel.dayRoom.bespeakDays];
+            [MBProgressHUD cwgj_showHUDWithText:string];
+            return;
+        }
         roomTypeId = foldCellModel.dayRoom.roomTypeId;
         roomTypeName = foldCellModel.dayRoom.roomTypeName;
         roomPrice = foldCellModel.dayRoom.roomPrice;
@@ -504,6 +510,11 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
         roomDeposit = foldCellModel.dayRoom.roomDeposit;
     }else {
         foldCellModel = self.hourRoomArr[index];
+        NSInteger roomNum = [foldCellModel.hourRoom.roomNum integerValue];
+        if (roomNum <= 0) {
+            [MBProgressHUD cwgj_showHUDWithText:@"已没有房间"];
+            return;
+        }
         roomTypeId = foldCellModel.hourRoom.roomTypeId;
         roomTypeName = foldCellModel.hourRoom.roomTypeName;
         roomPrice = foldCellModel.hourRoom.roomPrice;
@@ -545,13 +556,25 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
         
         if (self.roomType == HotelRoomTypeAllday) {
             foldCellModel = self.dayRoomArr[index];
+            if ([foldCellModel.dayRoom.bespeakDays intValue]) {
+                NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", foldCellModel.dayRoom.roomTypeName, foldCellModel.dayRoom.bespeakDays];
+                [MBProgressHUD cwgj_showHUDWithText:string];
+                return;
+            }
+            
             roomTypeId = foldCellModel.dayRoom.roomTypeId;
             roomTypeName = foldCellModel.dayRoom.roomTypeName;
             roomPrice = foldCellModel.dayRoom.roomPrice;
             roomRisePrice = foldCellModel.dayRoom.roomRisePrice;
             roomDeposit = foldCellModel.dayRoom.roomDeposit;
         }else {
+            
             foldCellModel = self.hourRoomArr[index];
+            NSInteger roomNum = [foldCellModel.hourRoom.roomNum integerValue];
+            if (roomNum <= 0) {
+                [MBProgressHUD cwgj_showHUDWithText:@"已没有房间"];
+                return;
+            }
             roomTypeId = foldCellModel.hourRoom.roomTypeId;
             roomTypeName = foldCellModel.hourRoom.roomTypeName;
             roomPrice = foldCellModel.hourRoom.roomPrice;
