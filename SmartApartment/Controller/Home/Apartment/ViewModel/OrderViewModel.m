@@ -203,20 +203,21 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     [dict cwgj_setObject:token                                                     forKey:@"token"];
+    [dict cwgj_setObject:orderNo                                                   forKey:@"orderNo"];
     [dict cwgj_setObject:customerEvaluate                                          forKey:@"customerEvaluate"];
-    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.1f", roomHealthScore]     forKey:@"roomHealthScore"];
-    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.1f", environmentScore]    forKey:@"environmentScore"];
-    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.1f", hotelScore]          forKey:@"hotelScore"];
-    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.1f", deviceScore]         forKey:@"deviceScore"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.0f", roomHealthScore]     forKey:@"roomHealthScore"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.0f", environmentScore]    forKey:@"environmentScore"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.0f", hotelScore]          forKey:@"hotelScore"];
+    [dict cwgj_setObject:[NSString stringWithFormat:@"%0.0f", deviceScore]         forKey:@"deviceScore"];
     [dict cwgj_setObject:customerImage                                             forKey:@"customerImage"];
     [dict cwgj_setObject:imageExtensionName                                        forKey:@"imageExtensionName"];
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
     [SAHttpRequest requestWithFuncion:@"tripReview" params:dict class:[TripOrder class] success:^(id response) {
-        
+        [MBProgressHUD cwgj_hideHUD];
         if (complete) {
             complete(response);
         }
-        [MBProgressHUD cwgj_hideHUD];
+        
     } failure:^(NSError *error) {
         [MBProgressHUD cwgj_hideHUD];
         [MBProgressHUD cwgj_showHUDWithText:error.localizedDescription];

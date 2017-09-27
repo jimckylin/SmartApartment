@@ -76,24 +76,24 @@
     
     _hygieneStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, 8, 100, 20)];
     _hygieneStarsView.delegate = self;
-    _hygieneStarsView.rateStyle = HalfStar;
+    _hygieneStarsView.rateStyle = WholeStar;
     _hygieneStarsView.tag = 1001;
     [bgView addSubview:_hygieneStarsView];
     
     _envirmentStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _hygieneStarsView.bottom+18, 100, 20)];
-    _envirmentStarsView.rateStyle = HalfStar;
+    _envirmentStarsView.rateStyle = WholeStar;
     _envirmentStarsView.delegate = self;
     _envirmentStarsView.tag = 1002;
     [bgView addSubview:_envirmentStarsView];
     
     _serviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _envirmentStarsView.bottom+18, 100, 20)];
-    _serviceStarsView.rateStyle = HalfStar;
+    _serviceStarsView.rateStyle = WholeStar;
     _serviceStarsView.delegate = self;
     _serviceStarsView.tag = 1003;
     [bgView addSubview:_serviceStarsView];
     
     _deviceStarsView = [[JWStarView alloc] initWithFrame:CGRectMake(90, _serviceStarsView.bottom+18, 100, 20)];
-    _deviceStarsView.rateStyle = HalfStar;
+    _deviceStarsView.rateStyle = WholeStar;
     _deviceStarsView.delegate = self;
     _deviceStarsView.tag = 1004;
     [bgView addSubview:_deviceStarsView];

@@ -36,6 +36,12 @@
 
 @implementation HotelOrderListViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"kRefreshOrderList"
+                                                  object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _naviLabel.text = @"公寓订单";
@@ -58,7 +64,11 @@
     _orderViewModel = [OrderViewModel new];
     [self requestAllOrderDataWith:1];
     [self requestEvaluateDataWith:1];
-
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshOrderList:)
+                                                 name:@"kRefreshOrderList"
+                                               object:nil];
 }
 
 - (void)initSubView {
@@ -244,7 +254,10 @@
         
         if (isSuccess) {
             [MBProgressHUD cwgj_showHUDWithText:@"取消订单"];
+            selfWeak.allPageNum = 1;
+            selfWeak.evaluatePageNum = 1;
             [selfWeak requestAllOrderDataWith:1];
+            [selfWeak requestEvaluateDataWith:1];
         }
     }];
 }
@@ -255,7 +268,10 @@
     [_orderViewModel requestCheckoutRoom:orderNo complete:^(BOOL isCheckout) {
         if (isCheckout) {
             [MBProgressHUD cwgj_showHUDWithText:@"退房成功"];
+            selfWeak.allPageNum = 1;
+            selfWeak.evaluatePageNum = 1;
             [selfWeak requestAllOrderDataWith:1];
+            [selfWeak requestEvaluateDataWith:1];
         }
     }];
 }
@@ -266,7 +282,10 @@
     [_orderViewModel requestDelHistoryTrip:orderNo complete:^(BOOL isDelete) {
         if (isDelete) {
             [MBProgressHUD cwgj_showHUDWithText:@"删除成功"];
+            selfWeak.allPageNum = 1;
+            selfWeak.evaluatePageNum = 1;
             [selfWeak requestAllOrderDataWith:1];
+            [selfWeak requestEvaluateDataWith:1];
         }
     }];
 }
@@ -278,15 +297,16 @@
     
     switch (btnType) {
         case TripCellBtnTypeGetCarVerifyCode: {
-            /*
-            CommentHotelViewController *vc = [CommentHotelViewController new];
-            vc.tripOrder = order;
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-            return;*/
+            
             [self showVerifyCode:order.checkInNo];
         }
             break;
         case TripCellBtnTypeCancelOrder: {
+            //FIX-ME:修改
+            CommentHotelViewController *vc = [CommentHotelViewController new];
+            vc.tripOrder = order;
+            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+            return;
             [self requestCancelOrder:order.orderNo];
         }
             break;
@@ -336,6 +356,16 @@
     [alertView show];
 }
 
+
+
+#pragma mark - NSNotification
+
+- (void)refreshOrderList:(NSNotification *)noti {
+    _allPageNum = 1;
+    _evaluatePageNum = 1;
+    [self requestAllOrderDataWith:_allPageNum];
+    [self requestEvaluateDataWith:_allPageNum];
+}
 
 
 @end

@@ -184,12 +184,13 @@ UITableViewDataSource, StarHotelCellDelegtate>
                            deviceScore:self.deviceScore
                       customerEvaluate:self.commentContent
                          customerImage:nil
-                    imageExtensionName:@"jpg"
+                    imageExtensionName:nil
                               complete:^(BOOL isSuccess) {
                               
                                   [MBProgressHUD cwgj_showHUDWithText:@"评论成功"];
                                   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                       
+                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"kRefreshOrderList" object:nil];
                                       [[NavManager shareInstance] returnToFrontView:YES];
                                   });
                               }];
