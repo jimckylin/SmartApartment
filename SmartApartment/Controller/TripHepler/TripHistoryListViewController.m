@@ -67,6 +67,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TripListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripListCell" forIndexPath:indexPath];
+    cell.isHistory = YES;
     cell.delegate = self;
     TripOrder *order = _orderViewModel.tripOrderList[indexPath.row];
     cell.tripOrder = order;

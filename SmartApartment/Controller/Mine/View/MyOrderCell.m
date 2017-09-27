@@ -77,31 +77,30 @@
 
 - (void)configButton:(NSInteger)orderState {
     
+    // （0-待支付，1-待入住，2-已入住，3-退房申请(退房申请已提交，请等待查房)，4-已查房(物件有损坏请联系前台人员)，5-确认退房(请自助机办理退房)，6-退款成功，7-取消订单,9-已离店)
     if (orderState == 1) {
         self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
+        self.right2Btn.hidden = YES;
         self.right3Btn.hidden = YES;
         self.right4Btn.hidden = YES;
         
-        [self.right1Btn setTitle:@"入住码" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"取消订单" forState:UIControlStateNormal];
+        [self.right1Btn setTitle:@"取消订单" forState:UIControlStateNormal];
         
-        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        self.right1Btn.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.right1Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         
+    }else if (orderState == 2 || orderState == 9) {
+        //（0-待评论，1-已评论)
+        if ([_tripOrder.evaluateStatus integerValue]) {
+            self.right1Btn.hidden = NO;
+        }else {
+            self.right1Btn.hidden = YES;
+        }
+        self.right2Btn.hidden = YES;
+        self.right3Btn.hidden = YES;
+        self.right4Btn.hidden = YES;
         
-    }else if (orderState == 2) {
-        self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
-        self.right3Btn.hidden = NO;
-        self.right4Btn.hidden = NO;
-        
-        [self.right1Btn setTitle:@"续住" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"自助退房" forState:UIControlStateNormal];
-        [self.right3Btn setTitle:@"APP开门" forState:UIControlStateNormal];
-        [self.right4Btn setTitle:@"点评" forState:UIControlStateNormal];
+        [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
         
         self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
         self.right2Btn.layer.borderColor = [UIColor redColor].CGColor;
@@ -112,19 +111,11 @@
         [self.right3Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.right4Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         
-    }else if (orderState == 9) {
-        self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
+    }else  {
+        self.right1Btn.hidden = YES;
+        self.right2Btn.hidden = YES;
         self.right3Btn.hidden = YES;
         self.right4Btn.hidden = YES;
-        
-        [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"删除" forState:UIControlStateNormal];
-        
-        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
 }
 
@@ -159,34 +150,15 @@
 
 - (IBAction)btnClick:(UIButton *)sender {
     
-    NSInteger tag = sender.tag;
+    // NSInteger tag = sender.tag;
     TripCellBtnType type = TripCellBtnTypeNone;
     
     NSInteger orderState = [_tripOrder.orderStatus integerValue];
     if (orderState == 1) {
-        if (tag == 0) {
-            type = TripCellBtnTypeGetCarVerifyCode;
-        }else {
-            type = TripCellBtnTypeCancelOrder;
-        }
+        type = TripCellBtnTypeCancelOrder;
     }
-    else if (orderState == 2) {
-        if (tag == 0) {
-            type = TripCellBtnTypeContinueLiving;
-        }else if (tag == 1) {
-            type = TripCellBtnTypeAutoCheckout;
-        }else if (tag == 2) {
-            type = TripCellBtnTypeAppOpenDoor;
-        }else if (tag == 3) {
-            type = TripCellBtnTypeCommentRoom;
-        }
-    }
-    else if (orderState == 9) {
-        if (tag == 0) {
-            type = TripCellBtnTypeCommentRoom;
-        }else if (tag == 1) {
-            type = TripCellBtnTypeDeleteOrder;
-        }
+    else if (orderState == 2 || orderState == 9) {
+        type = TripCellBtnTypeCommentRoom;
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(myOrderCellDidClcikBtnType:order:)]) {

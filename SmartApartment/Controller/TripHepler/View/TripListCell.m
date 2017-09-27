@@ -112,55 +112,55 @@
 }
 
 - (void)configButton:(NSInteger)orderState {
-    
-    if (orderState == 1) {
+    if (!_isHistory) {
+        if (orderState == 1) {
+            self.right1Btn.hidden = NO;
+            self.right2Btn.hidden = NO;
+            self.right3Btn.hidden = YES;
+            self.right4Btn.hidden = YES;
+            
+            [self.right1Btn setTitle:@"入住码" forState:UIControlStateNormal];
+            [self.right2Btn setTitle:@"取消订单" forState:UIControlStateNormal];
+            
+            self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+            self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
+            [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            
+        }else if (orderState == 2) {
+            self.right1Btn.hidden = NO;
+            self.right2Btn.hidden = YES;
+            self.right3Btn.hidden = YES;
+            self.right4Btn.hidden = YES;
+            
+            [self.right1Btn setTitle:@"自动开门" forState:UIControlStateNormal];
+            self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+            [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            
+        }else  {
+            self.right1Btn.hidden = YES;
+            self.right2Btn.hidden = YES;
+            self.right3Btn.hidden = YES;
+            self.right4Btn.hidden = YES;
+        }
+        
+    }else {
         self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
+        if ([_tripOrder.evaluateStatus integerValue] == 0) {
+            self.right2Btn.hidden = NO;
+        }else {
+            self.right2Btn.hidden = YES;
+        }
         self.right3Btn.hidden = YES;
         self.right4Btn.hidden = YES;
         
-        [self.right1Btn setTitle:@"入住码" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"取消订单" forState:UIControlStateNormal];
+        [self.right1Btn setTitle:@"删除" forState:UIControlStateNormal];
+        [self.right2Btn setTitle:@"点评" forState:UIControlStateNormal];
         
-        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        
-        
-    }else if (orderState == 2) {
-        self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
-        self.right3Btn.hidden = NO;
-        self.right4Btn.hidden = NO;
-        
-        [self.right1Btn setTitle:@"续住" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"自助退房" forState:UIControlStateNormal];
-        [self.right3Btn setTitle:@"APP开门" forState:UIControlStateNormal];
-        [self.right4Btn setTitle:@"点评" forState:UIControlStateNormal];
-        
-        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
+        self.right1Btn.layer.borderColor = [UIColor grayColor].CGColor;
         self.right2Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right3Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right4Btn.layer.borderColor = [UIColor grayColor].CGColor;
-        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.right1Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [self.right2Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right3Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right4Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        
-    }else if (orderState == 9) {
-        self.right1Btn.hidden = NO;
-        self.right2Btn.hidden = NO;
-        self.right3Btn.hidden = YES;
-        self.right4Btn.hidden = YES;
-        
-        [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
-        [self.right2Btn setTitle:@"删除" forState:UIControlStateNormal];
-        
-        self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right2Btn.layer.borderColor = [UIColor grayColor].CGColor;
-        [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right2Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
 }
 
@@ -200,47 +200,28 @@
     TripCellBtnType type = TripCellBtnTypeNone;
     
     NSInteger orderState = [_tripOrder.orderStatus integerValue];
-    if (orderState == 1) {
-        if (tag == 0) {
-            type = TripCellBtnTypeGetCarVerifyCode;
-        }else {
-            type = TripCellBtnTypeCancelOrder;
+    if (!_isHistory) {
+        if (orderState == 1) {
+            if (tag == 0) {
+                type = TripCellBtnTypeGetCarVerifyCode;
+            }else {
+                type = TripCellBtnTypeCancelOrder;
+            }
         }
-    }
-    else if (orderState == 2) {
-        if (tag == 0) {
-            type = TripCellBtnTypeContinueLiving;
-        }else if (tag == 1) {
-            type = TripCellBtnTypeAutoCheckout;
-        }else if (tag == 2) {
+        else if (orderState == 2) {
             type = TripCellBtnTypeAppOpenDoor;
-        }else if (tag == 3) {
-            type = TripCellBtnTypeCommentRoom;
         }
-    }
-    else if (orderState == 9) {
+        
+    }else {
         if (tag == 0) {
-            type = TripCellBtnTypeCommentRoom;
-        }else if (tag == 1) {
             type = TripCellBtnTypeDeleteOrder;
+        }else {
+            type = TripCellBtnTypeCommentRoom;
         }
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(tripListCellDidClcikBtnType:order:)]) {
         [self.delegate tripListCellDidClcikBtnType:type order:self.tripOrder];
-    }
-    
-}
-
-- (void)deleteBtnClick{
-    if (self.tripListCellBlock) {
-        self.tripListCellBlock(0);
-    }
-}
-
-- (void)commentBtnClick{
-    if (self.tripListCellBlock) {
-        self.tripListCellBlock(1);
     }
 }
 

@@ -22,12 +22,13 @@
     [super viewDidLoad];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView setFrame:CGRectMake(0, 64, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - 64)];
+    [self.tableView setFrame:CGRectMake(0, 64+44, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - 64-44)];
 }
 
 #pragma mark - UITableViewDataSource

@@ -38,6 +38,7 @@
 //    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonDown:)];
 //    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
     
+    _data = self.data;
     _naviLabel.text = NSLocalizedString(@"城市选择", nil);
     
     self.tableView = [UITableView new];
