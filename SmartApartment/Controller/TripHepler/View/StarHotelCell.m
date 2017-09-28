@@ -9,6 +9,8 @@
 #import "StarHotelCell.h"
 #import "JWStarView.h"
 
+NSString *const tipString = @"写下您的入住体验，帮助千万用户挑选到心仪的公寓";
+
 @interface StarHotelCell ()<JWStarViewViewDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) UILabel *hygieneLabel;     // 卫生
@@ -108,11 +110,11 @@
     [line autoSetDimension:ALDimensionHeight toSize:0.5];
     
     _commentTextView = [UITextView new];
-    _commentTextView.backgroundColor = [UIColor lightGrayColor];
+    _commentTextView.backgroundColor = RGBA(215, 215, 215, 1);
     _commentTextView.font = [UIFont systemFontOfSize:13];
     _commentTextView.textColor = [UIColor grayColor];
     _commentTextView.delegate = self;
-    _commentTextView.text = @"写下您的入住体验，帮助千万用户挑选到心仪的公寓";
+    _commentTextView.text = tipString;
     [bgView addSubview:_commentTextView];
 }
 
@@ -129,6 +131,22 @@
 
 
 #pragma mark - UITextViewDelegate
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    
+    if ([textView.text isEqualToString:tipString]) {
+        textView.text = @"";
+    }
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    
+    if ([Utils isBlankString:textView.text]) {
+        textView.text = tipString;
+    }
+    return YES;
+}
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
