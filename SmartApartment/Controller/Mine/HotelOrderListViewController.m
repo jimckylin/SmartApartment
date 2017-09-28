@@ -302,11 +302,6 @@
         }
             break;
         case TripCellBtnTypeCancelOrder: {
-            //FIX-ME:修改
-            CommentHotelViewController *vc = [CommentHotelViewController new];
-            vc.tripOrder = order;
-            [[NavManager shareInstance] showViewController:vc isAnimated:YES];
-            return;
             [self requestCancelOrder:order.orderNo];
         }
             break;

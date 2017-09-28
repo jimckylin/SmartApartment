@@ -272,7 +272,7 @@
         if (self.locationCityName != nil) {
             TLCity *city = nil;
             for (TLCity *item in self.cityData) {
-                if ([item.cityName isEqualToString:self.locationCityName]) {
+                if ([item.cityName containsString:self.locationCityName]) {
                     city = item;
                     break;
                 }

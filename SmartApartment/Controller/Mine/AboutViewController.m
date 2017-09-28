@@ -90,7 +90,7 @@
         _rightsLabel.minimumScaleFactor = 6;
         _rightsLabel.adjustsFontSizeToFitWidth = YES;
         _rightsLabel.numberOfLines = 0;
-        _rightsLabel.text = @"Copyright@2017 manxinsu.com，All Rights Reserved";
+        _rightsLabel.text = @"福州蔓联盟网络科技有限公司\nCopyright@2017 manxinsu.com，All Rights Reserved";
     }
     return _rightsLabel;
 }
@@ -133,8 +133,9 @@
         [self.versionLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16.0f];
         [self.versionLabel autoSetDimension:ALDimensionHeight toSize:60];
         
-        [self.rightsLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
-        [self.rightsLabel autoSetDimension:ALDimensionHeight toSize:40];
+        [self.rightsLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.rightsLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.rightsLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
         
         self.didSetupConstraints = TRUE;
         [self setVersionLabelText:@"1.0"];

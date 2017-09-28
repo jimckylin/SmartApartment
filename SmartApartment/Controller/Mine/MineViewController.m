@@ -241,6 +241,7 @@
         }
             break;
         case HeaderEventTypeBalance: {
+            return;
             if (!self.checkIsLogin) return;
             WalletViewController *vc = [WalletViewController new];
             [[NavManager shareInstance] showViewController:vc isAnimated:YES];

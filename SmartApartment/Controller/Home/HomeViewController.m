@@ -47,12 +47,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initUI];
     [self initData];
+    [self initUI];
 }
 
 - (void)initData {
     
+    self.city = @"福州";
     NSDate *date = [NSDate date];
     NSDate *nextDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:date];//后一天
     self.checkInTime = [NSString sia_stringFromDate:date withFormat:@"yyyy-MM-dd"];

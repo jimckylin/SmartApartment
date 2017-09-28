@@ -61,6 +61,16 @@
 				<string>SmartApartment</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>wexin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wexin</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.1</string>
@@ -71,12 +81,11 @@
 		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
 		<string>sinaweibosso</string>
-		<string>wechat</string>
-		<string>weixin</string>
 		<string>baidumap</string>
 		<string>iosamap</string>
 		<string>alipay</string>
 		<string>safepay</string>
+		<string>weixin</string>
 	</array>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>

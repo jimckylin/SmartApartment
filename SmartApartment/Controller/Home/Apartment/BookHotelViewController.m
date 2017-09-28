@@ -93,15 +93,21 @@
     _viewModel = [HotelViewModel new];
     _mineViewModel = [MineViewModel new];
     
-    self.hotelConfigView = [HotelConfigView new];
-    self.hotelConfigView.delegate = self;
-    
     __WeakObj(self)
     [_viewModel requestRoomConfigure:self.roomTypeId checkInRoomType:self.checkInRoomType complete:^(RoomConfig *roomConfig) {
         
-        selfWeak.roomConfig = roomConfig;
-        selfWeak.hotelConfigView.roomConfig = roomConfig;
-        [selfWeak.view addSubview:self.hotelConfigView];
+        if (roomConfig.aromaList ||
+            roomConfig.breakfastList ||
+            roomConfig.fivePieceList ||
+            roomConfig.roomLayoutList ||
+            roomConfig.wineList ) {
+            
+            selfWeak.hotelConfigView = [HotelConfigView new];
+            selfWeak.hotelConfigView.delegate = self;
+            selfWeak.roomConfig = roomConfig;
+            selfWeak.hotelConfigView.roomConfig = roomConfig;
+            [selfWeak.view addSubview:self.hotelConfigView];
+        }
     }];
     [self requestTimeSlot];
 }
@@ -190,9 +196,12 @@
     };
     
     self.invoiceView.tapBlock = ^{
-        [weakSelf.hotelConfigView show];
+        if (weakSelf.hotelConfigView) {
+            [weakSelf.hotelConfigView show];
+        }else {
+            [MBProgressHUD cwgj_showHUDWithText:@"此房无个性配置"];
+        }
     };
-    
 }
 
 

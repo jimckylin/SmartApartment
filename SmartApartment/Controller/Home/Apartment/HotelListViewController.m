@@ -177,7 +177,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
         TLCityPickerController *cityPickerVC = [[TLCityPickerController alloc] init];
         [cityPickerVC setDelegate:self];
         
-        cityPickerVC.locationCityID = @"1400010000";
+        cityPickerVC.locationCityName = self.area;
         //    cityPickerVC.commonCitys = [[NSMutableArray alloc] initWithArray: @[@"1400010000", @"100010000"]];        // 最近访问城市，如果不设置，将自动管理
         cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
         [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];

@@ -498,7 +498,16 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     
     if (self.roomType == HotelRoomTypeAllday) {
         foldCellModel = self.dayRoomArr[index];
-        if ([foldCellModel.dayRoom.bespeakDays intValue]) {
+        
+        NSInteger days = [foldCellModel.dayRoom.bespeakDays intValue];
+        NSDate *now = [NSDate date];
+        NSDate *bespeakDate = [now dateByAddingDays:days];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd"];
+        NSDate *checkinDate = [df dateFromString:self.checkInTime];
+        
+        if ([bespeakDate isLaterThanDate:checkinDate]) {
             NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", foldCellModel.dayRoom.roomTypeName, foldCellModel.dayRoom.bespeakDays];
             [MBProgressHUD cwgj_showHUDWithText:string];
             return;

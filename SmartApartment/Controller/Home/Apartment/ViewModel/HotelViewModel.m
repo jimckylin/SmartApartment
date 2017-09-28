@@ -71,7 +71,7 @@
     
     NSDictionary *param = @{@"roomTypeId": roomTypeId , @"checkInRoomType": checkInRoomType};
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
-    [SAHttpRequest requestWithFuncion:@"selectRoom" params:param class:[RoomConfig class] success:^(id response) {
+    [SAHttpRequest requestWithFuncion:@"getSelfConfig" params:param class:[RoomConfig class] success:^(id response) {
         
         self.roomConfig = response;
         if (complete) {

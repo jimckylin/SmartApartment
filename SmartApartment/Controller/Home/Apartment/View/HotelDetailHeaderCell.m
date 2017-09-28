@@ -15,7 +15,7 @@
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 @property (nonatomic, strong) UIImageView *thumbImgV;
 @property (nonatomic, strong) UILabel *titleLabel;
-
+@property (nonatomic, strong) UIImageView *flagView;
 @property (nonatomic, strong) UILabel *priceLabel;
 
 @property (nonatomic, strong) UIButton *hotelDetailBtn;
@@ -70,6 +70,10 @@
     _thumbImgV.contentMode = UIViewContentModeScaleAspectFill;
     _thumbImgV.clipsToBounds = YES;
     [self addSubview:_thumbImgV];
+    
+    _flagView = [[UIImageView alloc] initWithImage:kImage(@"detail_brand_iciphone")];
+    _flagView.contentMode = UIViewContentModeCenter;
+    [bgView addSubview:_flagView];
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:16];
@@ -146,8 +150,7 @@
     
     [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
     [_titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
-    CGSize size =[_titleLabel.text sizeWithAttributes:@{NSFontAttributeName:_titleLabel.font}];
-    [_titleLabel autoSetDimension:ALDimensionWidth toSize:size.width];
+    [self.titleLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     
     [_thumbImgV autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
     [_thumbImgV autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:5];
@@ -155,6 +158,10 @@
     [_priceLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
     [_priceLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_titleLabel withOffset:10];
     [_priceLabel autoSetDimensionsToSize:CGSizeMake(80, 20)];
+    
+    [_flagView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_titleLabel withOffset:5];
+    [_flagView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_titleLabel];
+    [_flagView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
     
     [_hotelDetailBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_hotelDetailBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];

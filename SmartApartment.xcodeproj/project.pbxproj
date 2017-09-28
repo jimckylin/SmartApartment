@@ -2818,8 +2818,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2845,8 +2845,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0eae16c6-0d75-465f-97b5-489ceb7e9235";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "911eb2ad-95c7-4a60-983f-b255b144708d";
+				PROVISIONING_PROFILE_SPECIFIER = smartapartment_ad_hoc;
 			};
 			name = Debug;
 		};
@@ -2856,8 +2856,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
 				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2883,8 +2883,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1f2a68ef-7760-431c-95ec-d411b794c394";
-				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
+				PROVISIONING_PROFILE = "911eb2ad-95c7-4a60-983f-b255b144708d";
+				PROVISIONING_PROFILE_SPECIFIER = smartapartment_ad_hoc;
 			};
 			name = Release;
 		};
