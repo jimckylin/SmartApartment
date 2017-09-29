@@ -2845,8 +2845,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "1f2a68ef-7760-431c-95ec-d411b794c394";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
 			};
 			name = Debug;
 		};
@@ -2883,8 +2883,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "1f2a68ef-7760-431c-95ec-d411b794c394";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
 			};
 			name = Release;
 		};

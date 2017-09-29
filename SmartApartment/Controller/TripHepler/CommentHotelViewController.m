@@ -16,9 +16,10 @@
 
 
 @interface CommentHotelViewController ()<UITableViewDelegate,
-UITableViewDataSource, StarHotelCellDelegtate>
+UITableViewDataSource, StarHotelCellDelegtate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) WRCellView *tripTypeView;
 @property (nonatomic, strong) OrderViewModel  *orderViewModel;
 
 @property (nonatomic, assign) CGFloat roomHealthScore;
@@ -120,16 +121,19 @@ UITableViewDataSource, StarHotelCellDelegtate>
     }else if (section == 1) {
         BlankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlankCell"];
         
-        WRCellView *tripTypeView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
-        tripTypeView.frame = CGRectMake(0, 0, kScreenWidth, cell.height);
-        tripTypeView.leftLabel.textColor = [UIColor darkTextColor];
-        tripTypeView.leftLabel.text = @"出游类型";
-        tripTypeView.rightLabel.text = @"出游类型";
-        [cell addSubview:tripTypeView];
+        _tripTypeView = [[WRCellView alloc] initWithLineStyle:WRCellStyleLabel_LabelIndicator];
+        _tripTypeView.frame = CGRectMake(0, 0, kScreenWidth, cell.height);
+        _tripTypeView.leftLabel.textColor = [UIColor darkTextColor];
+        _tripTypeView.leftLabel.text = @"出游类型";
+        _tripTypeView.rightLabel.text = @"出游类型";
+        [cell addSubview:_tripTypeView];
         
         __weak typeof(self) weakSelf = self;
-        tripTypeView.tapBlock = ^ {
-            //__strong typeof(self) pThis = weakSelf;
+        _tripTypeView.tapBlock = ^ {
+            __strong typeof(self) pThis = weakSelf;
+            UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"出游类型" delegate:pThis cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"商务出差",@"朋友出游",@"情侣出游", nil];
+            // 显示
+            [actionsheet showInView:pThis.view];
             
         };
         return cell;
@@ -148,6 +152,17 @@ UITableViewDataSource, StarHotelCellDelegtate>
     if (indexPath.section == 1) {
         NSMutableString* str = [[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-4154-451"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex != 3) {
+        NSArray *array = @[@"商务出差",@"朋友出游",@"情侣出游"];
+        _tripTypeView.rightLabel.text = array[buttonIndex];
     }
 }
 
