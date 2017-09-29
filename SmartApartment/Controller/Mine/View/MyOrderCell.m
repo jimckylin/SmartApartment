@@ -71,6 +71,7 @@
     self.storeName.text = tripOrder.storeName;
     self.address.text = tripOrder.address;
     self.checkinCheckoutDate.text = [NSString stringWithFormat:@"%@至%@     %zd晚%@间", tripOrder.checkInTime, tripOrder.checkOutTime, days, @"1"];
+    self.consumeSumPrice.text = [NSString stringWithFormat:@"￥%@", tripOrder.consumeSumPrice];
     self.state.text = [self orderStateString:tripOrder];
     [self configButton:[tripOrder.orderStatus integerValue]];
 }

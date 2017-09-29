@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OrderDetailView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="719"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="653"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbQ-j9-nGN">
@@ -227,7 +227,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnl-L7-vIH">
-                    <rect key="frame" x="-1" y="471" width="376" height="248"/>
+                    <rect key="frame" x="-1" y="471" width="376" height="182"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oeder_reminder_iciphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-vq-I9E">
                             <rect key="frame" x="23" y="15" width="17" height="17"/>
@@ -267,8 +267,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="eC2-7c-Zay" secondAttribute="bottom" constant="32" id="19o-eb-p1k"/>
-                        <constraint firstAttribute="height" constant="248" id="84L-Uh-9k4"/>
+                        <constraint firstAttribute="bottom" secondItem="eC2-7c-Zay" secondAttribute="bottom" constant="-34" id="19o-eb-p1k"/>
+                        <constraint firstAttribute="height" constant="182" id="84L-Uh-9k4"/>
                         <constraint firstItem="c5E-L2-izm" firstAttribute="top" secondItem="Xnl-L7-vIH" secondAttribute="top" constant="40" id="Pqr-0d-JLK"/>
                         <constraint firstItem="c5E-L2-izm" firstAttribute="leading" secondItem="Xnl-L7-vIH" secondAttribute="leading" constant="15" id="VId-8F-0OA"/>
                         <constraint firstAttribute="trailing" secondItem="eC2-7c-Zay" secondAttribute="trailing" constant="15" id="af9-i1-7fc"/>
@@ -316,7 +316,7 @@
                 <outlet property="storeTel" destination="ZWJ-1E-XCs" id="ZfB-Cd-brI"/>
                 <outlet property="storeType" destination="Dtl-UR-qgK" id="LIv-Ev-cfj"/>
             </connections>
-            <point key="canvasLocation" x="14" y="184"/>
+            <point key="canvasLocation" x="13.5" y="150.5"/>
         </view>
     </objects>
     <resources>

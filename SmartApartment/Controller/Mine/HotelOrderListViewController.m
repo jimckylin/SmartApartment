@@ -9,6 +9,7 @@
 #import "HotelOrderListViewController.h"
 #import "CommentHotelViewController.h"
 #import "OrderDetailViewController.h"
+#import "HotelDetailViewController.h"
 
 #import "YJSliderView.h"
 #import "MyOrderCell.h"
@@ -159,6 +160,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TripOrder *order = nil;
+    if (tableView == _tableView) {
+        order = _allOrderList[indexPath.row];
+    }else {
+        order = _evaluateList[indexPath.row];
+    }
+    
+    if ([order.orderStatus integerValue] == 7) {
+        return 158;
+    }
     return 198;
 }
 
@@ -327,7 +339,10 @@
             [self requestDeleteHistoryTrip:order.orderNo];
         }
             break;
-            
+        case TripCellBtnTypeBookAgain: {
+            //HotelDetailViewController *hotelDetail = [HotelDetailViewController new];
+        }
+            break;
         default:
             break;
     }

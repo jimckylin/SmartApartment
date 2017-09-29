@@ -114,6 +114,7 @@ UITableViewDataSource, StarHotelCellDelegtate>
     NSInteger section = indexPath.section;
     if (section == 0) {
         CommentHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentHeaderCell"];
+        cell.tripOrder = self.tripOrder;
         return cell;
         
     }else if (section == 1) {
