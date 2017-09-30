@@ -171,6 +171,11 @@
     if ([order.orderStatus integerValue] == 7) {
         return 158;
     }
+    if ([order.orderStatus integerValue] == 9) {
+        if ([order.evaluateStatus integerValue] == 1) {
+            return 158;
+        }
+    }
     return 198;
 }
 

@@ -92,7 +92,7 @@
         
     }else if (orderState == 2 || orderState == 9) {
         //（0-待评论，1-已评论)
-        if ([_tripOrder.evaluateStatus integerValue]) {
+        if (![_tripOrder.evaluateStatus integerValue]) {
             self.right1Btn.hidden = NO;
         }else {
             self.right1Btn.hidden = YES;
