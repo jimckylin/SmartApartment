@@ -146,6 +146,7 @@
         
     }else {
         self.right1Btn.hidden = NO;
+        //（0-待评论，1-已评论)
         if ([_tripOrder.evaluateStatus integerValue] == 0) {
             self.right2Btn.hidden = NO;
         }else {

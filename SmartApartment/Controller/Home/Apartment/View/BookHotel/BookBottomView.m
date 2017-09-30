@@ -79,6 +79,7 @@
 
 
 - (void)setPriceWithRoomPrice:(NSString *)price
+                         days:(NSInteger)days
                   roomDeposit:(NSString *)deposit
                 roomRisePrice:(NSString *)risePrice
                     breakfast:(Breakfast *)breakfast
@@ -91,7 +92,7 @@
     CGFloat totalPrice = 0;
     
     if (price) {
-        totalPrice += [price floatValue];
+        totalPrice += ([price floatValue] * days);
     }
     if (deposit) {
         totalPrice += [deposit floatValue];

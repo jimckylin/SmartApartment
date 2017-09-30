@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, HotelBookBtnType) {
 @property (nonatomic, weak) id<BookBottomViewDelegate> delegate;
 
 - (void)setPriceWithRoomPrice:(NSString *)price
+                         days:(NSInteger)days
                   roomDeposit:(NSString *)deposit
                 roomRisePrice:(NSString *)risePrice
                     breakfast:(Breakfast *)breakfast

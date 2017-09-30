@@ -142,7 +142,12 @@
     [self.tipView addSubview:self.tipLabel];
     
     _bottomView = [BookBottomView new];
+    NSDate *checkinDate = [NSDate sia_dateFromString:self.checkInTime withFormat:@"yyyy-MM-dd"];
+    NSDate *checkoutDate = [NSDate sia_dateFromString:self.checkOutTime withFormat:@"yyyy-MM-dd"];
+    NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+    
     [_bottomView setPriceWithRoomPrice:self.roomPrice
+                                  days:days
                            roomDeposit:self.roomDeposit
                          roomRisePrice:self.roomRisePrice
                              breakfast:nil
@@ -301,7 +306,12 @@
     self.roomLayout = roomLayout;
     self.wine = wine;
     
+    NSDate *checkinDate = [NSDate sia_dateFromString:self.checkInTime withFormat:@"yyyy-MM-dd"];
+    NSDate *checkoutDate = [NSDate sia_dateFromString:self.checkOutTime withFormat:@"yyyy-MM-dd"];
+    NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
+    
     [_bottomView setPriceWithRoomPrice:self.roomPrice
+                                  days:days
                            roomDeposit:self.roomDeposit
                          roomRisePrice:self.roomRisePrice
                              breakfast:breakfast

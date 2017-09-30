@@ -85,8 +85,8 @@
         NSDate *checkinDate = [NSDate sia_dateFromString:checkInTime withFormat:@"yyyy-MM-dd"];
         NSDate *checkoutDate = [NSDate sia_dateFromString:checkOutTime withFormat:@"yyyy-MM-dd"];
         NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
-        NSDictionary *dic = @{[NSString stringWithFormat:@"%@(%zd晚)", checkInTime, days]
-                              : [NSString stringWithFormat:@"￥%@", price]};
+        NSDictionary *dic = @{[NSString stringWithFormat:@"%@至%@(%zd晚)", checkInTime, checkOutTime, days]
+                              : [NSString stringWithFormat:@"￥%@ x %zd", price, days]};
         [arr addObject:dic];
     }
     if (deposit) {

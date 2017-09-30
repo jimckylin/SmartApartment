@@ -92,7 +92,7 @@
         
     }else if (orderState == 2 || orderState == 9) {
         //（0-待评论，1-已评论)
-        if (![_tripOrder.evaluateStatus integerValue]) {
+        if ([_tripOrder.evaluateStatus integerValue] == 0) {
             self.right1Btn.hidden = NO;
         }else {
             self.right1Btn.hidden = YES;
@@ -102,15 +102,8 @@
         self.right4Btn.hidden = YES;
         
         [self.right1Btn setTitle:@"点评" forState:UIControlStateNormal];
-        
         self.right1Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right2Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right3Btn.layer.borderColor = [UIColor redColor].CGColor;
-        self.right4Btn.layer.borderColor = [UIColor grayColor].CGColor;
         [self.right1Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right2Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right3Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [self.right4Btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         
     }else  {
         self.right1Btn.hidden = YES;
