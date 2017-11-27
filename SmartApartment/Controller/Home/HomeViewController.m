@@ -20,12 +20,14 @@
 #import "HomeViewModel.h"
 
 #import "Activity.h"
+#import "NSDate+Utilities.h"
 
 @interface HomeViewController ()<UITableViewDelegate,
                                  UITableViewDataSource,
                                  SDCycleScrollViewDelegate,
                                  HotelSelectViewDelegate,
-                                 TLCityPickerDelegate>
+                                 TLCityPickerDelegate,
+                                 UIAlertViewDelegate>
 
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 @property (nonatomic, strong) UITableView       *tableView;
@@ -40,6 +42,9 @@
 @property (nonatomic, copy) NSString *checkOutTime;
 @property (nonatomic, copy) NSString *checkInRoomType;
 
+// 第一次进入此界面
+@property (nonatomic, assign) BOOL isFirstShow;
+
 @end
 
 @implementation HomeViewController
@@ -52,7 +57,7 @@
 }
 
 - (void)initData {
-    
+    self.isFirstShow = YES;
     self.city = @"福州";
     NSDate *date = [NSDate date];
     NSDate *nextDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:date];//后一天
@@ -79,7 +84,6 @@
 }
 
 - (void)initUI {
-    
     [_naviBackBtn setHidden:YES];
     [_naviView setAlpha:0];
     _naviLabel.text = @"智慧公寓";
@@ -106,6 +110,20 @@
     
     _tableView.tableHeaderView = _bannerView;
     [self.view bringSubviewToFront:_naviView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+   
+    [super viewDidAppear:animated];
+    if (self.isFirstShow) {
+        self.isFirstShow = NO;
+        // 判断是否凌晨
+        BOOL beforeDawn = [NSDate judgeTimeByStartAndEnd:@"00:00" withExpireTime:@"04:00"];
+        if (beforeDawn) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"您是否需要预订凌晨房？\n凌晨入住，当天退房。" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+            [alertView show];
+        }
+    }
 }
 
 
@@ -258,6 +276,32 @@
 
 - (void) cityPickerControllerDidCancel:(TLCityPickerController *)cityPickerViewController {
     
+}
+
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+   
+    if (buttonIndex == 1) {
+        HotelListViewController *vc = [HotelListViewController new];
+        if ([Utils isBlankString:self.city]) {
+            self.city = @"";
+        }
+        vc.area = [self.city stringByReplacingOccurrencesOfString:@"市" withString:@""];
+        
+        NSDate *date = [NSDate date];
+        NSDate *preDay = [NSDate dateWithTimeInterval:-24*60*60 sinceDate:date];//前一天
+        self.checkInTime = [NSString sia_stringFromDate:preDay withFormat:@"yyyy-MM-dd"];
+        self.checkOutTime = [NSString sia_stringFromDate:date withFormat:@"yyyy-MM-dd"];
+        
+        vc.storeName = self.storeName;
+        vc.checkInTime = self.checkInTime;
+        vc.checkOutTime = self.checkOutTime;
+        vc.checkInRoomType = @"0";
+        vc.beforeDawn = YES;
+        [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    }
 }
 
 

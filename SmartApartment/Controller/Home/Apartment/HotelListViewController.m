@@ -74,6 +74,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     [self.view addSubview:_tableView];
     
     _headerView = [[HotelListHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenHeight, 154)];
+    _headerView.beforeDawn = self.beforeDawn;
     _headerView.backgroundColor = ThemeColor;
     _headerView.delegate = self;
     [_headerView setHeaderViewDateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
@@ -122,6 +123,7 @@ NSString *const kHotelListCell = @"kHotelListCell";
     
     Hotel *hotel = _homeViewModel.hotelList.storeList[indexPath.row];
     HotelDetailViewController *vc = [HotelDetailViewController new];
+    vc.beforeDawn = self.beforeDawn;
     vc.storeId = hotel.storeId;
     vc.storeName = hotel.storeName;
     vc.checkInTime = self.checkInTime;
@@ -183,6 +185,11 @@ NSString *const kHotelListCell = @"kHotelListCell";
         [[NavManager shareInstance] showViewController:cityPickerVC isAnimated:YES];
         
     }else {
+        if (self.beforeDawn) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"凌晨房日期不能修改" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            [alertView show];
+            return;
+        }
         CalendarViewController *vc = [CalendarViewController new];
         vc.calendarDateBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
             if ([manager.selectedDateArray count] > 1) {
@@ -191,7 +198,8 @@ NSString *const kHotelListCell = @"kHotelListCell";
                 self.checkInTime =  [NSString sia_stringFromDate:checkinTime withFormat:@"yyyy-MM-dd"];
                 self.checkOutTime =  [NSString sia_stringFromDate:checkoutTime withFormat:@"yyyy-MM-dd"];
                 
-                [_headerView setHeaderViewDate:checkinTime checkoutDate:checkoutTime];
+                [_headerView setHeaderViewDateStr:self.checkInTime checkoutDateStr:self.checkOutTime];
+                //[_headerView setHeaderViewDate:checkinTime checkoutDate:checkoutTime];
                 [self requeHotelList];
             }
         };

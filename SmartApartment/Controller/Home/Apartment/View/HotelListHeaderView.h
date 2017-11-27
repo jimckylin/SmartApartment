@@ -28,10 +28,11 @@ typedef NS_ENUM(NSInteger, HotelListHeaderBtnType) {
 
 @property (nonatomic, copy) NSString *cityName;
 @property (nonatomic, weak) id<HotelListHeaderViewDelegate> delegate;
-- (void)relayoutHeaderView:(UIScrollView *)scrollView;
-
 @property (nonatomic, strong) HotelList *hotelList;
+// 是否凌晨房
+@property (nonatomic, assign) BOOL beforeDawn;
 
+- (void)relayoutHeaderView:(UIScrollView *)scrollView;
 - (void)setHeaderViewDate:(NSDate *)checkinDate checkoutDate:(NSDate *)checkoutDate;
 - (void)setHeaderViewDateStr:(NSString *)checkinDateStr checkoutDateStr:(NSString *)checkoutDateStr;
 

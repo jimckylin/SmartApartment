@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) RTLabel *bespeakDaysLabel;
 
+@property (nonatomic, assign) HotelRoomType roomType;
+
 @end
 
 
@@ -93,8 +95,8 @@
         _countLabel.layer.cornerRadius = 15/2.;
         _countLabel.text = @"共2晚";
         [self addSubview:_countLabel];
-    }else {
         
+    }else {
         _bespeakDaysLabel = [RTLabel new];
         _bespeakDaysLabel.font = [UIFont systemFontOfSize:13];
         _bespeakDaysLabel.textColor = [UIColor grayColor];
@@ -106,8 +108,12 @@
 
 - (void)setHotelDetail:(HotelDetail *)hotelDetail {
     
-    if (_roomType == HotelRoomTypeTypeHours) {
-        _bespeakDaysLabel.text = [NSString stringWithFormat:@"可预订时段: <font color=#1B5B5E>%@</font>", hotelDetail.bespeakTime];
+    if (!self.beforeDawn) {
+        if (_roomType == HotelRoomTypeTypeHours) {
+            _bespeakDaysLabel.text = [NSString stringWithFormat:@"可预订时段: <font color=#1B5B5E>%@</font>", hotelDetail.bespeakTime];
+        }
+    } else {
+        _bespeakDaysLabel.text = @"凌晨房";
     }
 }
 
@@ -127,8 +133,13 @@
     NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
     NSString *title = [NSString stringWithFormat:@"共%zd晚", days];
     _countLabel.text = title;
+    
+    if (self.beforeDawn) {
+        [_liveBtn setTitle:checkOutTime forState:UIControlStateNormal];
+        _liveBtn.enabled = NO;
+        _liveLabel.text = @"今天";
+    }
 }
-
 
 
 #pragma mark - UIButton Action

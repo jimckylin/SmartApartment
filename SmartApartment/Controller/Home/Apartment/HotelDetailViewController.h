@@ -19,4 +19,7 @@
 
 @property (nonatomic, strong) Hotel *hotel;
 
+// 是否凌晨房
+@property (nonatomic, assign) BOOL beforeDawn;
+
 @end

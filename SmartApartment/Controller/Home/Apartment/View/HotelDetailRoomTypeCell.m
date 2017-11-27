@@ -81,14 +81,11 @@
     
     // 时间
     _dateView1 = [[HotelDetailDateView alloc] initWithRoomType:HotelRoomTypeAllday];
-    _dateView1.roomType = HotelRoomTypeAllday;
     [self addSubview:_dateView1];
     
     _dateView2 = [[HotelDetailDateView alloc] initWithRoomType:HotelRoomTypeTypeHours];
-    _dateView2.roomType = HotelRoomTypeTypeHours;
     _dateView2.hidden = YES;
     [self addSubview:_dateView2];
-
 }
 
 - (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime {
@@ -100,6 +97,16 @@
 - (void)setHotelDetail:(HotelDetail *)hotelDetail {
     
     _dateView2.hotelDetail = hotelDetail;
+}
+
+- (void)setBeforeDawn:(BOOL)beforeDawn {
+   
+    _beforeDawn = beforeDawn;
+    if (beforeDawn) {
+        _dateView1.hidden = YES;
+        _dateView2.hidden = NO;
+        _dateView2.beforeDawn = YES;
+    }
 }
 
 
@@ -140,14 +147,24 @@
     
     [_alldayBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_alldayBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_alldayBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 49)];
+    [_alldayBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, self.beforeDawn? 0:49)];
     
     [_hoursBtn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_alldayBtn];
     [_hoursBtn autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_hoursBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, 49)];
+    [_hoursBtn autoSetDimensionsToSize:CGSizeMake((kScreenWidth-20)/2, self.beforeDawn? 0:49)];
     
-    [_dateView1 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];
-    [_dateView2 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];
+    [_dateView1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_dateView1 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_dateView1 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_alldayBtn];
+    [_dateView1 autoSetDimension:ALDimensionHeight toSize:104-49];
+    
+    [_dateView2 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_dateView2 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_dateView2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_alldayBtn];
+    [_dateView2 autoSetDimension:ALDimensionHeight toSize:104-49];
+    
+//    [_dateView1 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];
+//    [_dateView2 autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(49, 0, 0, 0)];
     
     [super updateConstraints];
 }

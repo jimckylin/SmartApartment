@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) id<HotelDetailRoomTypeCellDelegate> delegate;
 @property (nonatomic, strong) HotelDetail *hotelDetail;
+// 是否凌晨房
+@property (nonatomic, assign) BOOL beforeDawn;
 
 - (void)setDateViewateStr:(NSString *)checkInTime checkoutDateStr:(NSString *)checkOutTime;
 

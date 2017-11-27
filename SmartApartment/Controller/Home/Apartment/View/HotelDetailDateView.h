@@ -18,12 +18,12 @@
 
 @interface HotelDetailDateView : UIView
 
-@property (nonatomic, assign) HotelRoomType roomType;
 @property (nonatomic, assign) id<HotelDetailDateViewDelegate> delegate;
 @property (nonatomic, strong) HotelDetail *hotelDetail;
+// 是否凌晨房
+@property (nonatomic, assign) BOOL beforeDawn;
 
 - (instancetype)initWithRoomType:(HotelRoomType)roomType;
-
 - (void)setDateViewateStr:(NSString *)checkinDateStr checkoutDateStr:(NSString *)checkoutDateStr;
 
 @end

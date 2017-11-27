@@ -16,4 +16,7 @@
 @property (nonatomic, copy) NSString *checkOutTime;
 @property (nonatomic, copy) NSString *checkInRoomType;
 
+// 是否凌晨房
+@property (nonatomic, assign) BOOL beforeDawn;
+
 @end

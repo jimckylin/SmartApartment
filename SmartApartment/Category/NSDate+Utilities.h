@@ -126,4 +126,7 @@
 
 - (NSString *)weekDayStr;
 
+// 是否当前时间在某个时间段
++ (BOOL)judgeTimeByStartAndEnd:(NSString *)startTime withExpireTime:(NSString *)expireTime;
+
 @end

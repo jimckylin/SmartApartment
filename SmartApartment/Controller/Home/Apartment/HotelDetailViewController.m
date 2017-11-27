@@ -188,7 +188,11 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     }else if (indexPath.section == 2){
         
         if (indexPath.row == 0) {
-            return 104;
+            if (!self.beforeDawn) {
+                return 104;
+            } else {
+                return 104-49;
+            }
         }else {
             if (self.roomType == HotelRoomTypeAllday) {
                 ZZFoldCellModel *foldCellModel = self.dayRoomArr[indexPath.row-1];
@@ -257,6 +261,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     else if (section == 2){
         if (row == 0) {
             HotelDetailRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:kHotelDetailRoomTypeCell];
+            cell.beforeDawn = self.beforeDawn;
             self.cell = cell;
             cell.hotelDetail = self.viewModel.hotelDetail;
             [cell setDateViewateStr:self.checkInTime checkoutDateStr:self.checkOutTime];

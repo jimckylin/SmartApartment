@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIView       *nameBgView;
 @property (nonatomic, strong) RTLabel      *nameLabel;
 @property (nonatomic, strong) UIButton     *selectedBtn;
-@property (nonatomic, strong) PPNumberButton *roomNumBtn;
+@property (nonatomic, strong) PPNumberButton *numberBtn;
 
 @end
 
@@ -32,7 +32,6 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        
         _nameBgView = [UIView new];
         _nameBgView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_nameBgView];
@@ -64,17 +63,17 @@
         [selectBgView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [selectBgView autoSetDimension:ALDimensionHeight toSize:20];
         
-        _roomNumBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 2.5, 60, 15)];
+        _numberBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 2.5, 60, 15)];
         // 初始化时隐藏减按钮
-        _roomNumBtn.delegate = self;
-        _roomNumBtn.defaultNumber = 1;
-        _roomNumBtn.minValue = 1;
-        _roomNumBtn.maxValue = 200;
-        _roomNumBtn.decreaseHide = YES;
-        _roomNumBtn.increaseImage = [UIImage imageNamed:@"order_add_iciphone"];
-        _roomNumBtn.decreaseImage = [UIImage imageNamed:@"order_minus_ic_scopyiphone"];
-        [selectBgView addSubview:_roomNumBtn];
-        [_roomNumBtn setHidden:YES];
+        _numberBtn.delegate = self;
+        _numberBtn.defaultNumber = 1;
+        _numberBtn.minValue = 1;
+        _numberBtn.maxValue = 200;
+        _numberBtn.decreaseHide = YES;
+        _numberBtn.increaseImage = [UIImage imageNamed:@"order_add_iciphone"];
+        _numberBtn.decreaseImage = [UIImage imageNamed:@"order_minus_ic_scopyiphone"];
+        [selectBgView addSubview:_numberBtn];
+        [_numberBtn setHidden:YES];
         
         _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_selectedBtn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -86,9 +85,7 @@
         [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [_selectedBtn autoSetDimensionsToSize:CGSizeMake(20, 20)];
     }
-    
     return self;
-    
 }
 
 - (void)setCellSelected:(BOOL)selected {
@@ -119,35 +116,35 @@
 
 - (void)setAroma:(Aroma *)aroma {
     
-    [_roomNumBtn setHidden:YES];
+    [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", aroma.name, aroma.price];
 }
 
 - (void)setBreakfast:(Breakfast *)breakfast {
     
-    [_roomNumBtn setHidden:NO];
+    [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:breakfast.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", breakfast.name, breakfast.price];
 }
 
 - (void)setFivePiece:(FivePiece *)fivePiece {
     
-    [_roomNumBtn setHidden:YES];
+    [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:fivePiece.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", fivePiece.name, fivePiece.price];
 }
 
 - (void)setRoomLayout:(RoomLayout *)roomLayout {
     
-    [_roomNumBtn setHidden:YES];
+    [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:roomLayout.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", roomLayout.name, roomLayout.price];
 }
 
 - (void)setWine:(Wine *)wine {
     
-    [_roomNumBtn setHidden:NO];
+    [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:wine.img] placeholderImage:kImage(@"evaluate_blankiphone")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", wine.name, wine.price];
 }
@@ -156,6 +153,7 @@
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
+    NSLog(@"%@", _numberBtn);
     //_imageView.highlighted = selected;
     //_selectedBtn.selected = selected;
 }
