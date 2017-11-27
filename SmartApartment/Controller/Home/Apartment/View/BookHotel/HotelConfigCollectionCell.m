@@ -157,12 +157,12 @@
     
     if (self.clearSelectedIndex == -1) {
         _selectedIndex = -1;
-        [cell setCellSelected:NO];
+        //[cell setCellSelected:NO];
     }else {
         if (indexPath.row == _selectedIndex) {
-            [cell setCellSelected:YES];
+            //[cell setCellSelected:YES];
         }else {
-            [cell setCellSelected:NO];
+            //[cell setCellSelected:NO];
         }
     }
     
@@ -183,7 +183,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CGFloat cellwidth = (kScreenWidth-50-10 - 20)/2;
-    return CGSizeMake(cellwidth, 100);
+    return CGSizeMake(cellwidth, 120);
 }
 
 //cell的点击事件
@@ -246,7 +246,7 @@
     CGFloat yushu = count%2;
     
     if (count > 0) {
-        heigth = 5+ 100 * (shang+(yushu?1:0)) +(shang+(yushu?1:0)-1)*padding+5;
+        heigth = 5+ 120 * (shang+(yushu?1:0)) +(shang+(yushu?1:0)-1)*padding+5;
     }
     return heigth;
 }

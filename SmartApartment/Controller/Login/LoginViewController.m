@@ -48,7 +48,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    [_loginView phoneTextFieldBecomeFirstResponse];
+    //[_loginView phoneTextFieldBecomeFirstResponse];
 }
 
 - (void)initData {

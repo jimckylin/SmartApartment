@@ -80,11 +80,12 @@
 #endif
 
 
-//// 测试地址
+// 测试地址
 //#define kBaseURL @"http://116.62.124.66/httpMobileTerminalAdapter"
+#define kBaseURL @"http://115.29.210.47:8088/httpMobileTerminalAdapter"
 
 // 生产 地址
-#define kBaseURL @"http://www.manxinsu.com:8090/httpMobileTerminalAdapter"
+//#define kBaseURL @"http://www.manxinsu.com:8090/httpMobileTerminalAdapter"
 
 
 //测试数据标识

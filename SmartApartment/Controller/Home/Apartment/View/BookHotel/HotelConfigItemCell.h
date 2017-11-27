@@ -17,6 +17,8 @@
 @property (nonatomic, strong) RoomLayout *roomLayout;  // 房间布局
 @property (nonatomic, strong) Wine *wine;              // 酒水
 
+@property (nonatomic, copy) void(^didSelectedBreakfastNum)(NSInteger num);
+
 - (void)setCellSelected:(BOOL)selected;
 
 @end
