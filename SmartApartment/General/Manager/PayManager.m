@@ -34,6 +34,14 @@
 
 #pragma mark - 生成各种参数 微信支付
 - (void)requestWX:(WXPayRContent *)rcontent {
+    
+    if (![WXApi isWXAppInstalled]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD cwgj_showHUDWithText:@"您还未安装微信客户端"];
+        });
+        return;
+    }
+    
     //  调起微信支付
     PayReq *request     = [[PayReq alloc] init];
     
@@ -45,7 +53,8 @@
     [signParams cwgj_setObject: rcontent.timestamp   forKey:@"timestamp"];
     [signParams cwgj_setObject: rcontent.prepayid     forKey:@"prepayid"];
     //生成签名
-    NSString *sign  = [self createMd5Sign:signParams];
+    //NSString *sign  = [self createMd5Sign:signParams];
+    NSString *sign = rcontent.sign;
     
     request.openID      = rcontent.appid;
     request.partnerId   = rcontent.partnerid;
@@ -55,11 +64,7 @@
     request.package     = rcontent.packagevalue;
     request.sign        = sign;
     
-    // 在支付之前，如果应用没有注册到微信，应该先调用 [WXApi registerApp:appId] 将应用注册到微信
-    if (![WXApi sendReq:request]) {
-        UIAlertView *aleat = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"您未安装微信客户端,是否现在安装?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-        [aleat show];
-    }
+    [WXApi sendReq:request];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -77,7 +82,7 @@
     }];
     //拼接字符串
     for (NSString *categoryId in sortedArray) {
-        if (   ![[dict objectForKey:categoryId] isEqualToString:@""]
+        if (   ([[dict objectForKey:categoryId] isKindOfClass:[NSString class]] && ![[dict objectForKey:categoryId] isEqualToString:@""])
             && ![categoryId isEqualToString:@"sign"]
             && ![categoryId isEqualToString:@"key"]
             ) {

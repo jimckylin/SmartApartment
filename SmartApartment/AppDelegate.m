@@ -28,6 +28,7 @@
 
 // 友盟appkey
 #define USHARE_APPKEY @"59939256f29d9803c800084b"
+#define kWechatAppID @"wx70cf2db66033e397"
 
 
 @interface AppDelegate ()<WXApiDelegate>
@@ -66,7 +67,7 @@
     /* 设置友盟appkey */
     [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_APPKEY];
     [self configUSharePlatforms];
-    
+    [WXApi registerApp:kWechatAppID];
     
     return YES;
 }

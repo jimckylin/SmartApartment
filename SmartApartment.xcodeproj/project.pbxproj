@@ -2256,7 +2256,7 @@
 					A9AA8E971F3712A5005F9DBB = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5GVNR3NW7N;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -2818,9 +2818,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 5GVNR3NW7N;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kaihuai zhang (62BS5KYDQV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2845,8 +2846,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "433d18ec-adb1-49a8-b189-075c7e023ca3";
-				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2856,9 +2857,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
-				DEVELOPMENT_TEAM = 5GVNR3NW7N;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kaihuai zhang (62BS5KYDQV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2883,8 +2885,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "433d18ec-adb1-49a8-b189-075c7e023ca3";
-				PROVISIONING_PROFILE_SPECIFIER = "Distribution-SmartApartment";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

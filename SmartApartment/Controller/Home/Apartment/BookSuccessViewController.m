@@ -15,6 +15,7 @@
 #import "BookBottomView.h"
 #import <RTLabel/RTLabel.h>
 #import "HotelViewModel.h"
+#import "WXPayRContent.h"
 #import "PayManager.h"
 
 #define WRCellViewHeight  44
@@ -132,10 +133,6 @@
         //weakSelf.walletView.rightIndicator.image = kImage(@"reserve_payiphone");
     };
     self.wechatPayView.tapBlock = ^ {
-        
-        [MBProgressHUD cwgj_showHUDWithText:@"敬请期待"];
-        return ;
-        
         weakSelf.payType = @"0";
         weakSelf.aliPayView.rightIndicator.image = kImage(@"reserve_payiphone");
         weakSelf.wechatPayView.rightIndicator.image = kImage(@"reserve_pay_siphone");
@@ -175,7 +172,14 @@
                               orderNo:self.orderDict[@"orderNo"]
                              complete:^(NSDictionary *orderDict) {
                                  
-                                 [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
+                                 if ([selfWeak.payType isEqualToString:@"1"]) {
+                                     [[PayManager getInstance] requestZFBV2:orderDict[@"orderStr"]];
+                                     
+                                 } else if ([selfWeak.payType isEqualToString:@"0"]) {
+                                     
+                                     WXPayRContent *content = [WXPayRContent modelObjectWithDictionary:orderDict[@"wxpayinfo"]];
+                                     [[PayManager getInstance] requestWX:content];
+                                 }
                                  [PayManager getInstance].didPayCompleteBlock = ^{
                                      // 跳转支付成功页面
                                      PaySuccessViewController *vc = [PaySuccessViewController new];
