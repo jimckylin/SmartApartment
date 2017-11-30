@@ -19,6 +19,7 @@
 @property (nonatomic, strong) RTLabel *priceLabel;
 @property (nonatomic, strong) UIButton *bookBtn;
 @property (nonatomic, strong) UIImageView *bArrowIconV;
+@property (nonatomic, strong) UIButton *thumbImgBtn;   // 缩略图
 
 @end
 
@@ -79,6 +80,10 @@
     [bgView addSubview:_bookBtn];
     
     
+    _thumbImgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_thumbImgBtn addTarget:self action:@selector(thumbImgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:_thumbImgBtn];
+    
 //    _bArrowIconV = [[UIImageView alloc] initWithImage:kImage(@"home_arrow_iconiphone")];
 //    _bArrowIconV.contentMode = UIViewContentModeScaleAspectFill;
 //    [bgView addSubview:_bArrowIconV];
@@ -89,12 +94,14 @@
     _titleLabel.text = dayRoom.roomTypeName;
     _remainLabel.text = [NSString stringWithFormat:@"仅剩%@间客房", dayRoom.roomNum];
     _priceLabel.text = [NSString stringWithFormat:@"¥%@<font size=12 color=lightGray>起</font>", dayRoom.roomPrice];
+    _dayRoom = dayRoom;
 }
 
 - (void)setHourRoom:(HourRoom *)hourRoom {
     
     _titleLabel.text = hourRoom.roomTypeName;
     _priceLabel.text = [NSString stringWithFormat:@"¥%@", hourRoom.roomPrice];
+    _hourRoom = hourRoom;
 }
 
 
@@ -104,6 +111,13 @@
     
     if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickBookBtn:)]) {
         [self.delegate hotelDetailRoomPriceTypeCellDidClickBookBtn:self];
+    }
+}
+
+- (void)thumbImgBtnClick:(UIButton *)sender {
+   
+    if ([self.delegate respondsToSelector:@selector(hotelDetailRoomPriceTypeCellDidClickViewThumbImgBtn:)]) {
+        [self.delegate hotelDetailRoomPriceTypeCellDidClickViewThumbImgBtn:self];
     }
 }
 
@@ -129,6 +143,9 @@
     [_bookBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16];
     [_bookBtn autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];
     [_bookBtn autoSetDimensionsToSize:CGSizeMake(40, 29)];
+    
+    [_thumbImgBtn autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(5, 5, 5, 5)excludingEdge:ALEdgeRight];
+    [_thumbImgBtn autoSetDimension:ALDimensionWidth toSize:self.width/3];
     
 //    [_bArrowIconV autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
 //    [_bArrowIconV autoAlignAxisToSuperviewMarginAxis:ALAxisHorizontal];

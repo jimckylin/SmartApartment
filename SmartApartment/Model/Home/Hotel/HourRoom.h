@@ -18,6 +18,7 @@
 @property (nonatomic, copy)  NSString *roomDeposit;          // 房间押金，单位元
 @property (nonatomic, copy)  NSString *roomTypeName;         // 房型名称
 @property (nonatomic, copy)  NSString *roomTypeId;           // 房型ID
+@property (nonatomic, copy)  NSString *roomTypeRemark;       // 房型介绍
 @property (nonatomic, strong) NSArray *roomTypeImageList;    // 房间图片
 @property (nonatomic, copy)  NSString *roomRisePrice;        // 房间涨的价格，单位元，是周五、周六才会加上去
 @property (nonatomic, copy)  NSString *bespeakDays;          // 提前预定天数，单位为天

@@ -12,13 +12,13 @@
 
 @protocol HotelDetailRoomListCellDelegate <NSObject>
 - (void)hotelDetailRoomPriceTypeCellDidClickBookBtn:(HotelDetailRoomListCell *)cell;
+- (void)hotelDetailRoomPriceTypeCellDidClickViewThumbImgBtn:(HotelDetailRoomListCell *)cell;
 @end
 
 @interface HotelDetailRoomListCell : UITableViewCell
 
 @property (nonatomic, strong) DayRoom *dayRoom;
 @property (nonatomic, strong) HourRoom *hourRoom;
-@property (nonatomic, strong) NSDictionary *roomPriceDic;
 
 @property (nonatomic, weak) id<HotelDetailRoomListCellDelegate> delegate;
 

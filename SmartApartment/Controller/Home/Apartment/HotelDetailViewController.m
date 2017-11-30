@@ -14,6 +14,7 @@
 #import "HotelDescrViewController.h"
 
 #import "HotelDetailDateView.h"
+#import "HotelDetailPreviewView.h"
 #import "ZYCalendarManager.h"
 #import "ZZFoldCellModel.h"
 #import "ShareManager.h"
@@ -544,6 +545,17 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     vc.roomRisePrice = roomRisePrice;
     vc.roomDeposit = roomDeposit;
     [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+}
+
+- (void)hotelDetailRoomPriceTypeCellDidClickViewThumbImgBtn:(HotelDetailRoomListCell *)cell {
+   
+    HotelDetailPreviewView *preview = [HotelDetailPreviewView new];
+    if (cell.dayRoom) {
+        preview.dayRoom = cell.dayRoom;
+    } else if (cell.hourRoom) {
+        preview.hourRoom = cell.hourRoom;
+    }
+    [self.view addSubview:preview];
 }
 
 
