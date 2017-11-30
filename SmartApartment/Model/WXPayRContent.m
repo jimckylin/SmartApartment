@@ -9,7 +9,7 @@
 
 
 NSString *const kGJWXPayRContentAppkey = @"appkey";
-NSString *const kGJWXPayRContentPackagevalue = @"wxpackage";
+NSString *const kGJWXPayRContentPackagevalue = @"package";
 NSString *const kGJWXPayRContentPartnerid = @"partnerid";
 NSString *const kGJWXPayRContentAppid = @"appid";
 NSString *const kGJWXPayRContentNoncestr = @"noncestr";

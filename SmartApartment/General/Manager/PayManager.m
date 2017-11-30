@@ -106,7 +106,6 @@
         [[AlipaySDK defaultService] payOrder:order fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             if ([resultDic[@"resultStatus"] integerValue] == 9000) {
                 //成功
-                
                 [self successHandle];
             }
         }];;
