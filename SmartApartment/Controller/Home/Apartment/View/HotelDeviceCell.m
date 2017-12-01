@@ -6,16 +6,16 @@
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "HotelConfigCell.h"
+#import "HotelDeviceCell.h"
 #import "Hotel.h"
 
-@interface HotelConfigCell ()
+@interface HotelDeviceCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
-@implementation HotelConfigCell
+@implementation HotelDeviceCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

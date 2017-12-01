@@ -7,7 +7,7 @@
 //
 
 #import "HotelConfigView.h"
-#import "HotelConfigCollectionCell.h"
+#import "HotelConfigCell.h"
 #import "HotelConfigHeaderView.h"
 
 
@@ -64,7 +64,7 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView registerClass:[HotelConfigCollectionCell class] forCellReuseIdentifier:kHotelConfigCollectionCell];
+    [_tableView registerClass:[HotelConfigCell class] forCellReuseIdentifier:kHotelConfigCollectionCell];
     [_tableView registerClass:[HotelConfigHeaderView class] forHeaderFooterViewReuseIdentifier:@"HotelConfigHeaderView"];
     [bgView addSubview:_tableView];
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(30, 0, 40, 0)];
@@ -151,19 +151,19 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     
     NSInteger section = indexPath.section;
     if (section == 0) {
-        return [HotelConfigCollectionCell getCellHeight:_roomConfig.breakfastList];
+        return [HotelConfigCell getCellHeight:_roomConfig.breakfastList];
     }
     if (section == 1) {
-        return [HotelConfigCollectionCell getCellHeight:_roomConfig.fivePieceList];
+        return [HotelConfigCell getCellHeight:_roomConfig.fivePieceList];
     }
     if (section == 2) {
-        return [HotelConfigCollectionCell getCellHeight:_roomConfig.roomLayoutList];
+        return [HotelConfigCell getCellHeight:_roomConfig.roomLayoutList];
     }
     if (section == 3) {
-        return [HotelConfigCollectionCell getCellHeight:_roomConfig.aromaList];
+        return [HotelConfigCell getCellHeight:_roomConfig.aromaList];
     }
     if (section == 4) {
-        return [HotelConfigCollectionCell getCellHeight:_roomConfig.wineList];
+        return [HotelConfigCell getCellHeight:_roomConfig.wineList];
     }
     
     return 0;
@@ -175,9 +175,9 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *cellId = [NSString stringWithFormat:@"kHotelConfigCollectionCell%zd%zd", indexPath.section, indexPath.row];
-    HotelConfigCollectionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    HotelConfigCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[HotelConfigCollectionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[HotelConfigCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.delegate = self;

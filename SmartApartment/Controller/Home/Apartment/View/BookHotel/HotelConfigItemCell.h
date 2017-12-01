@@ -19,6 +19,6 @@
 
 @property (nonatomic, copy) void(^didSelectedBreakfastNum)(NSInteger num);
 
-//- (void)setCellSelected:(BOOL)selected;
+- (void)setCellSelected:(BOOL)selected;
 
 @end

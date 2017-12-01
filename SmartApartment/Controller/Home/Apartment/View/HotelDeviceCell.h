@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Hotel;
 
-@interface HotelConfigCell : UITableViewCell
+@interface HotelDeviceCell : UITableViewCell
 
 @property (nonatomic, strong) Hotel *hotel;
 + (CGFloat)getCellHeight:(Hotel *)hotel;

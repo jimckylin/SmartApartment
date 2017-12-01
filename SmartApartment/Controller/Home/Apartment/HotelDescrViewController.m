@@ -9,7 +9,7 @@
 #import "HotelDescrViewController.h"
 #import "MapViewController.h"
 
-#import "HotelConfigCell.h"
+#import "HotelDeviceCell.h"
 #import "HotelDetailMapCell.h"
 #import "HotelDescrCell.h"
 #import "BlankCell.h"
@@ -42,7 +42,7 @@ UITableViewDataSource>
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerClass:[HotelDescrCell class] forCellReuseIdentifier:@"HotelDescrCell"];
     [_tableView registerClass:[BlankCell class] forCellReuseIdentifier:@"BlankCell"];
-    [_tableView registerClass:[HotelConfigCell class] forCellReuseIdentifier:@"HotelConfigCell"];
+    [_tableView registerClass:[HotelDeviceCell class] forCellReuseIdentifier:@"HotelDeviceCell"];
     [_tableView registerClass:[HotelDetailMapCell class] forCellReuseIdentifier:@"HotelDetailMapCell"];
     [self.view addSubview:_tableView];
 }
@@ -61,7 +61,7 @@ UITableViewDataSource>
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
     if (section == 0) {
-        return [HotelConfigCell getCellHeight:self.hotel];
+        return [HotelDeviceCell getCellHeight:self.hotel];
     }else if (section == 1) {
         return 40;
     }else if (section == 2) {
@@ -82,7 +82,7 @@ UITableViewDataSource>
     
     NSInteger section = indexPath.section;
     if (section == 0) {
-        HotelConfigCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelConfigCell"];
+        HotelDeviceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelDeviceCell"];
         cell.hotel = self.hotel;
         return cell;
         

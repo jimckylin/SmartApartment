@@ -20,7 +20,7 @@
 
 @end
 
-@interface HotelConfigCollectionCell : UITableViewCell
+@interface HotelConfigCell : UITableViewCell
 
 @property (nonatomic, strong) NSArray <Aroma *>*aromaList;            // 香气列表
 @property (nonatomic, strong) NSArray <Breakfast *>*breakfastList;    // 早餐列表

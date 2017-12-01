@@ -65,7 +65,7 @@
         
         _numberBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 2.5, 60, 15)];
         // 初始化时隐藏减按钮
-        _numberBtn.delegate = self;
+        //_numberBtn.delegate = self;
         _numberBtn.defaultNumber = 1;
         _numberBtn.minValue = 1;
         _numberBtn.maxValue = 200;
@@ -79,7 +79,7 @@
         [_selectedBtn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         //[_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
         [_selectedBtn setImage:kImage(@"Selected_iciphone") forState:UIControlStateSelected];
-        [self addSubview:_selectedBtn];
+        [selectBgView addSubview:_selectedBtn];
         
         [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
@@ -90,7 +90,7 @@
 
 - (void)setCellSelected:(BOOL)selected {
     
-    //_selectedBtn.selected = selected;
+    _selectedBtn.selected = selected;
 }
 
 

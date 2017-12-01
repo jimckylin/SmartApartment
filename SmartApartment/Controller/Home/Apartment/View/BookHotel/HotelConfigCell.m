@@ -6,26 +6,29 @@
 //  Copyright © 2017年 Jimcky Lin. All rights reserved.
 //
 
-#import "HotelConfigCollectionCell.h"
+#import "HotelConfigCell.h"
 #import "HotelConfigHeaderView.h"
 #import "HotelConfigItemCell.h"
 #import "RoomConfig.h"
 
 
-@interface HotelConfigCollectionCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HotelConfigCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
+// 用来存放Cell的唯一标示符
+@property (nonatomic, strong) NSMutableDictionary *cellDic;
 @property (nonatomic, assign) NSInteger      selectedIndex; // 初始-1 不选中任何
 
 @end
 
-@implementation HotelConfigCollectionCell
+@implementation HotelConfigCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = RGBA(0, 0, 0, 0.4);
+        self.cellDic = [[NSMutableDictionary alloc] init];
         _selectedIndex = -1;
         [self initView];
     }
@@ -52,7 +55,7 @@
     [_collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     // cell注册
-    [_collectionView registerClass:[HotelConfigItemCell class] forCellWithReuseIdentifier:@"HotelConfigItemCell"];
+    //[_collectionView registerClass:[HotelConfigItemCell class] forCellWithReuseIdentifier:@"HotelConfigItemCell"];
 }
 
 
@@ -134,8 +137,20 @@
 }
 
 //每一个cell是什么
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    HotelConfigItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HotelConfigItemCell" forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 每次先从字典中根据IndexPath取出唯一标识符
+    NSString *identifier = [_cellDic objectForKey:[NSString stringWithFormat:@"%@", indexPath]];
+    // 如果取出的唯一标示符不存在，则初始化唯一标示符，并将其存入字典中，对应唯一标示符注册Cell
+    if (identifier == nil) {
+        identifier = [NSString stringWithFormat:@"DayCell%@", [NSString stringWithFormat:@"%@", indexPath]];
+        [_cellDic setValue:identifier forKey:[NSString stringWithFormat:@"%@", indexPath]];
+        // 注册Cell
+        [self.collectionView registerClass:[HotelConfigItemCell class]  forCellWithReuseIdentifier:identifier];
+    }
+    
+    HotelConfigItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [cell setCellSelected:cell.selected];
     [self setCellStyle:cell];
     
     NSInteger row = indexPath.row;
