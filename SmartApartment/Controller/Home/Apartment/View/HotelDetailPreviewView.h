@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) DayRoom *dayRoom;
 @property (nonatomic, strong) HourRoom *hourRoom;
+@property (nonatomic, copy) void(^bookBtnBlock)(DayRoom *dayRoom, HourRoom *hourRoom);
 
 - (void)show;
 - (void)hide;

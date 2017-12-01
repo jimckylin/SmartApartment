@@ -444,7 +444,6 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 }
 
 
-
 #pragma mark - HotelDetailHeaderCellDelegate
 
 - (void)hotelDetailHeaderCellDidClickBtn:(HotelDetailHeaderType)type {
@@ -484,67 +483,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
 
 - (void)hotelDetailRoomPriceTypeCellDidClickBookBtn:(HotelDetailRoomListCell *)cell {
     
-    if (!self.checkIsLogin) {
-        return;
-    }
-    
-    BookHotelViewController *vc = [BookHotelViewController new];
-    vc.hotel = self.hotel;
-    vc.checkInTime = self.checkInTime;
-    vc.checkOutTime = self.checkOutTime;
-    vc.checkInRoomType = self.roomType == HotelRoomTypeAllday? @"0" :@"1";
-    
-    NSInteger index = cell.tag-1;
-    ZZFoldCellModel *foldCellModel;
-    NSString *roomTypeId = @"";
-    NSString *roomTypeName = @"";
-    NSString *roomPrice = @"";     // 房价
-    NSString *roomDeposit = @"";   // 押金
-    NSString *roomRisePrice = @""; // 涨价
-    
-    if (self.roomType == HotelRoomTypeAllday) {
-        foldCellModel = self.dayRoomArr[index];
-        
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"yyyy-MM-dd"];
-        
-        NSInteger days = [foldCellModel.dayRoom.bespeakDays intValue];
-        NSDate *now = [NSDate date];
-        NSDate *bespeakDate = [now dateByAddingDays:days];
-        
-        NSString *bespeakDateStr = [NSString sia_stringFromDate:bespeakDate withFormat:@"yyyy-MM-dd"];
-        bespeakDate = [df dateFromString:bespeakDateStr];
-        NSDate *checkinDate = [df dateFromString:self.checkInTime];
-        
-        if ([bespeakDate isLaterThanDate:checkinDate]) {
-            NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", foldCellModel.dayRoom.roomTypeName, foldCellModel.dayRoom.bespeakDays];
-            [MBProgressHUD cwgj_showHUDWithText:string];
-            return;
-        }
-        roomTypeId = foldCellModel.dayRoom.roomTypeId;
-        roomTypeName = foldCellModel.dayRoom.roomTypeName;
-        roomPrice = foldCellModel.dayRoom.roomPrice;
-        roomRisePrice = foldCellModel.dayRoom.roomRisePrice;
-        roomDeposit = foldCellModel.dayRoom.roomDeposit;
-    }else {
-        foldCellModel = self.hourRoomArr[index];
-        NSInteger roomNum = [foldCellModel.hourRoom.roomNum integerValue];
-        if (roomNum <= 0) {
-            [MBProgressHUD cwgj_showHUDWithText:@"已没有房间"];
-            return;
-        }
-        roomTypeId = foldCellModel.hourRoom.roomTypeId;
-        roomTypeName = foldCellModel.hourRoom.roomTypeName;
-        roomPrice = foldCellModel.hourRoom.roomPrice;
-        roomRisePrice = foldCellModel.hourRoom.roomRisePrice;
-        roomDeposit = foldCellModel.hourRoom.roomDeposit;
-    }
-    vc.roomTypeId = roomTypeId;
-    vc.roomTypeName = roomTypeName;
-    vc.roomPrice = roomPrice;
-    vc.roomRisePrice = roomRisePrice;
-    vc.roomDeposit = roomDeposit;
-    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
+    [self jumpToBookHotelControllerWithCell:cell];
 }
 
 - (void)hotelDetailRoomPriceTypeCellDidClickViewThumbImgBtn:(HotelDetailRoomListCell *)cell {
@@ -555,6 +494,11 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
     } else if (cell.hourRoom) {
         preview.hourRoom = cell.hourRoom;
     }
+    
+    WS(weakSelf)
+    preview.bookBtnBlock = ^(DayRoom *dayRoom, HourRoom *hourRoom) {
+        [weakSelf jumpToBookHotelControllerWithCell:cell];
+    };
     [self.view addSubview:preview];
 }
 
@@ -610,6 +554,69 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
         [self initRoomData];
         [_tableView reloadData];
     }];
+}
+
+
+#pragma mark - Private
+
+- (void)jumpToBookHotelControllerWithCell:(HotelDetailRoomListCell *)cell {
+    
+    if (!self.checkIsLogin) {
+        return;
+    }
+    BookHotelViewController *vc = [BookHotelViewController new];
+    vc.hotel = self.hotel;
+    vc.checkInTime = self.checkInTime;
+    vc.checkOutTime = self.checkOutTime;
+    vc.checkInRoomType = self.roomType == HotelRoomTypeAllday? @"0" :@"1";
+    
+    NSString *roomTypeId = @"";
+    NSString *roomTypeName = @"";
+    NSString *roomPrice = @"";     // 房价
+    NSString *roomDeposit = @"";   // 押金
+    NSString *roomRisePrice = @""; // 涨价
+    
+    if (self.roomType == HotelRoomTypeAllday) {
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd"];
+        
+        NSInteger days = [cell.dayRoom.bespeakDays intValue];
+        NSDate *now = [NSDate date];
+        NSDate *bespeakDate = [now dateByAddingDays:days];
+        
+        NSString *bespeakDateStr = [NSString sia_stringFromDate:bespeakDate withFormat:@"yyyy-MM-dd"];
+        bespeakDate = [df dateFromString:bespeakDateStr];
+        NSDate *checkinDate = [df dateFromString:self.checkInTime];
+        
+        if ([bespeakDate isLaterThanDate:checkinDate]) {
+            NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", cell.dayRoom.roomTypeName, cell.dayRoom.bespeakDays];
+            [MBProgressHUD cwgj_showHUDWithText:string];
+            return;
+        }
+        roomTypeId = cell.dayRoom.roomTypeId;
+        roomTypeName = cell.dayRoom.roomTypeName;
+        roomPrice = cell.dayRoom.roomPrice;
+        roomRisePrice = cell.dayRoom.roomRisePrice;
+        roomDeposit = cell.dayRoom.roomDeposit;
+        
+    } else {
+        NSInteger roomNum = [cell.hourRoom.roomNum integerValue];
+        if (roomNum <= 0) {
+            [MBProgressHUD cwgj_showHUDWithText:@"已没有房间"];
+            return;
+        }
+        roomTypeId = cell.hourRoom.roomTypeId;
+        roomTypeName = cell.hourRoom.roomTypeName;
+        roomPrice = cell.hourRoom.roomPrice;
+        roomRisePrice = cell.hourRoom.roomRisePrice;
+        roomDeposit = cell.hourRoom.roomDeposit;
+    }
+    vc.roomTypeId = roomTypeId;
+    vc.roomTypeName = roomTypeName;
+    vc.roomPrice = roomPrice;
+    vc.roomRisePrice = roomRisePrice;
+    vc.roomDeposit = roomDeposit;
+    [[NavManager shareInstance] showViewController:vc isAnimated:YES];
 }
 
 
