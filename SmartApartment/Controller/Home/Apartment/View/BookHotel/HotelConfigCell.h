@@ -13,10 +13,21 @@
 #import "RoomLayout.h"
 #import "Wine.h"
 
+typedef NS_ENUM(NSInteger, HotelConfigType) {
+    
+    HotelConfigTypeAroma,
+    HotelConfigTypeBreakfast,
+    HotelConfigTypeFivePiece,
+    HotelConfigTypeRoomLayout,
+    HotelConfigTypeWine
+};
+
 @protocol HotelConfigCollectionCellDelegate <NSObject>
 
-- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object;
-- (void)hotelConfigCollectionCellUpdateSelectedIndex:(NSInteger)index;
+- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object
+                                              nums:(NSArray *)nums
+                                        configType:(HotelConfigType)configType;
+- (void)hotelConfigCollectionCellUpdateSelectedIndex:(HotelConfigType)configType;
 
 @end
 
@@ -30,7 +41,14 @@
 
 @property (nonatomic, assign) id<HotelConfigCollectionCellDelegate>delegate;
 
-@property (nonatomic, assign) NSInteger      clearSelectedIndex; 
+@property (nonatomic, assign) BOOL      clearAroma;
+@property (nonatomic, assign) BOOL      clearBreakfast;
+@property (nonatomic, assign) BOOL      clearFivePiece;
+@property (nonatomic, assign) BOOL      clearRoomLayout;
+@property (nonatomic, assign) BOOL      clearWine;
+@property (nonatomic, assign) NSInteger      section;
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
 
 + (CGFloat)getCellHeight:(NSArray *)arr;
 

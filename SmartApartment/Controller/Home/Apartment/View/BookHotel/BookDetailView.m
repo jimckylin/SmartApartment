@@ -73,12 +73,13 @@
              roomPrice:(NSString *)price
            roomDeposit:(NSString *)deposit
          roomRisePrice:(NSString *)risePrice
-             breakfast:(Breakfast *)breakfast
-          breakfastNum:(NSString *)breakfastNum
+            breakfasts:(NSArray<Breakfast *> *)breakfasts
+         breakfastNums:(NSArray *)breakfastNums
              fivePiece:(FivePiece *)fivePiece
                  aroma:(Aroma *)aroma
             roomLayout:(RoomLayout *)roomLayout
-                  wine:(Wine *)wine {
+                 wines:(NSArray<Wine *> *)wines
+              wineNums:(NSArray *)wineNums {
     
     NSMutableArray *arr = [NSMutableArray array];
     if (price) {
@@ -97,9 +98,14 @@
         NSDictionary *dic = @{@"涨价" : [NSString stringWithFormat:@"￥%@", risePrice]};
         [arr addObject:dic];
     }
-    if (breakfast) {
-        NSDictionary *dic = @{breakfast.name : [NSString stringWithFormat:@"￥%@ x %@份", breakfast.price, breakfastNum]};
-        [arr addObject:dic];
+    if ([breakfasts count] > 0) {
+        for (NSInteger index = 0; index < [breakfasts count]; index ++) {
+            Breakfast *breakfast = breakfasts[index];
+            NSString *breakfastNum = breakfastNums[index];
+            
+            NSDictionary *dic = @{breakfast.name : [NSString stringWithFormat:@"￥%@ x %@份", breakfast.price, breakfastNum]};
+            [arr addObject:dic];
+        }
     }
     if (fivePiece) {
         NSDictionary *dic = @{fivePiece.name : [NSString stringWithFormat:@"￥%@", fivePiece.price]};
@@ -113,9 +119,14 @@
         NSDictionary *dic = @{roomLayout.name : [NSString stringWithFormat:@"￥%@", roomLayout.price]};
         [arr addObject:dic];
     }
-    if (wine) {
-        NSDictionary *dic = @{wine.name : [NSString stringWithFormat:@"￥%@", wine.price]};
-        [arr addObject:dic];
+    if ([wines count] > 0) {
+        for (NSInteger index = 0; index < [wines count]; index ++) {
+            Wine *wine = wines[index];
+            NSString *wineNum = wineNums[index];
+            
+            NSDictionary *dic = @{wine.name : [NSString stringWithFormat:@"￥%@ x %@份", wine.price, wineNum]};
+            [arr addObject:dic];
+        }
     }
     
     _dataArray = arr;

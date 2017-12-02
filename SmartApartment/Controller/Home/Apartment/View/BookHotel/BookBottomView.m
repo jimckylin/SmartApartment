@@ -82,12 +82,13 @@
                          days:(NSInteger)days
                   roomDeposit:(NSString *)deposit
                 roomRisePrice:(NSString *)risePrice
-                    breakfast:(Breakfast *)breakfast
-                 breakfastNum:(NSString *)breakfastNum
+                   breakfasts:(NSArray<Breakfast *> *)breakfasts
+                breakfastNums:(NSArray *)breakfastNums
                     fivePiece:(FivePiece *)fivePiece
                         aroma:(Aroma *)aroma
                    roomLayout:(RoomLayout *)roomLayout
-                         wine:(Wine *)wine {
+                        wines:(NSArray<Wine *> *)wines
+                     wineNums:(NSArray *)wineNums {
     
     CGFloat totalPrice = 0;
     
@@ -100,8 +101,12 @@
     if (risePrice) {
         totalPrice += [risePrice floatValue];
     }
-    if (breakfast) {
-        totalPrice += [breakfast.price floatValue] * [breakfastNum integerValue];
+    if ([breakfasts count] > 0) {
+        for (NSInteger index = 0; index < [breakfasts count]; index ++) {
+            Breakfast *breakfast = breakfasts[index];
+            NSString *num = breakfastNums[index];
+            totalPrice += [breakfast.price floatValue] * [num integerValue];
+        }
     }
     if (fivePiece) {
         totalPrice += [fivePiece.price floatValue];
@@ -112,8 +117,12 @@
     if (roomLayout) {
         totalPrice += [roomLayout.price floatValue];
     }
-    if (wine) {
-        totalPrice += [wine.price floatValue];
+    if ([wines count] > 0) {
+        for (NSInteger index = 0; index < [wines count]; index ++) {
+            Wine *wine = wines[index];
+            NSString *num = wineNums[index];
+            totalPrice += [wine.price floatValue] * [num integerValue];
+        }
     }
     
     _priceLabel.text = [NSString stringWithFormat:@"￥%0.2f", totalPrice];

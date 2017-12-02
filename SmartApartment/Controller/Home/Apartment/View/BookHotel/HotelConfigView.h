@@ -11,12 +11,13 @@
 
 @protocol HotelConfigViewDelete <NSObject>
 
-- (void)hotelConfigViewDidSelectConfig:(Breakfast *)breakfast
-                          breakfastNum:(NSString *)breakfastNum
+- (void)hotelConfigViewDidSelectConfig:(NSArray <Breakfast *>*)breakfasts
+                         breakfastNums:(NSArray *)breakfastNums
                            fivePieceId:(FivePiece *)fivePiece
                                aromaId:(Aroma *)aroma
                           roomLayoutId:(RoomLayout *)roomLayout
-                                wineId:(Wine *)wine;
+                                 wines:(NSArray <Wine *>*)wines
+                              wineNums:(NSArray *)wineNums;
 @end
 
 @interface HotelConfigView : UIView

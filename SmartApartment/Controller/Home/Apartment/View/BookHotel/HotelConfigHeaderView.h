@@ -11,6 +11,5 @@
 @interface HotelConfigHeaderView : UITableViewHeaderFooterView
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) void(^didSelectedBreakfastNum)(NSInteger num);
 
 @end

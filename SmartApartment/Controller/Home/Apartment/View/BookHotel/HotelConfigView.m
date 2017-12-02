@@ -20,15 +20,20 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) Breakfast       *breakfast;
-@property (nonatomic, copy) NSString          *breakfastNum;
+@property (nonatomic, strong) NSArray<Breakfast*> *breakfasts;
+@property (nonatomic, strong) NSArray         *breakfastNums;
 @property (nonatomic, strong) FivePiece       *fivePiece;
 @property (nonatomic, strong) Aroma           *aroma;
 @property (nonatomic, strong) RoomLayout      *roomLayout;
-@property (nonatomic, strong) Wine            *wine;
+@property (nonatomic, strong) NSArray<Wine*>  *wines;
+@property (nonatomic, strong) NSArray         *wineNums;
 @property (nonatomic, strong) NSMutableArray       *sectionTitles;
 
-@property (nonatomic, assign) NSInteger      selectedIndex;
+@property (nonatomic, assign) BOOL      clearAromaConfig;
+@property (nonatomic, assign) BOOL      clearBreakfastConfig;
+@property (nonatomic, assign) BOOL      clearFivePieceConfig;
+@property (nonatomic, assign) BOOL      clearRoomLayoutConfig;
+@property (nonatomic, assign) BOOL      clearWineConfig;
 
 @end
 
@@ -40,7 +45,6 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     self = [super initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     if (self) {
         self.backgroundColor = RGBA(0, 0, 0, 0.4);
-        _breakfastNum = @"1";
         _sectionTitles = [[NSMutableArray alloc] initWithCapacity:1];
         [self initSubView];
     }
@@ -177,11 +181,18 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     NSString *cellId = [NSString stringWithFormat:@"kHotelConfigCollectionCell%zd%zd", indexPath.section, indexPath.row];
     HotelConfigCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[HotelConfigCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[HotelConfigCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId section:indexPath.section];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.delegate = self;
     }
+    
+    // 重置
+    cell.clearAroma = self.clearAromaConfig;
+    cell.clearBreakfast = self.clearBreakfastConfig;
+    cell.clearFivePiece = self.clearFivePieceConfig;
+    cell.clearRoomLayout = self.clearRoomLayoutConfig;
+    cell.clearWine = self.clearWineConfig;
     
     NSInteger section = indexPath.section;
     if (section == 0) {
@@ -199,8 +210,6 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     else if (section == 4) {
         cell.wineList = _roomConfig.wineList;
     }
-    
-    cell.clearSelectedIndex = self.selectedIndex;
     
     return cell;
 }
@@ -229,9 +238,6 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     
     HotelConfigHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HotelConfigHeaderView"];
     view.title = [self setSectionTitlesWith:_roomConfig][section];
-    view.didSelectedBreakfastNum = ^(NSInteger num){
-        self.breakfastNum = [NSString stringWithFormat:@"%zd", num];
-    };
     
     return view;
 }
@@ -244,24 +250,60 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 #pragma mark - HotelConfigCollectionCellDelegate
 
-- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object {
+- (void)hotelConfigCollectionCellDidSelectedConfig:(id)object
+                                              nums:(NSArray *)nums
+                                        configType:(HotelConfigType)configType {
     
-    if ([object isKindOfClass:[Breakfast class]]) {
-        self.breakfast = object;
-    }else if ([object isKindOfClass:[FivePiece class]]) {
-        self.fivePiece = object;
-    }else if ([object isKindOfClass:[RoomLayout class]]) {
-        self.roomLayout = object;
-    }else if ([object isKindOfClass:[Aroma class]]) {
-        self.aroma = object;
-    }else if ([object isKindOfClass:[Wine class]]) {
-        self.wine = object;
+    switch (configType) {
+        case HotelConfigTypeAroma:
+            self.aroma = object;
+            break;
+        case HotelConfigTypeBreakfast:
+        {
+            self.breakfasts = object;
+            self.breakfastNums = nums;
+        }
+            break;
+        case HotelConfigTypeFivePiece:
+            self.fivePiece = object;
+            break;
+        case HotelConfigTypeRoomLayout:
+            self.roomLayout = object;
+            break;
+        case HotelConfigTypeWine:
+        {
+            self.wines = object;
+            self.wineNums = nums;
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
-- (void)hotelConfigCollectionCellUpdateSelectedIndex:(NSInteger)index {
+- (void)hotelConfigCollectionCellUpdateSelectedIndex:(HotelConfigType)type {
     
-    self.selectedIndex = index;
+    switch (type) {
+        case HotelConfigTypeAroma:
+            self.clearAromaConfig = NO;
+            break;
+        case HotelConfigTypeBreakfast:
+            self.clearBreakfastConfig = NO;
+            break;
+        case HotelConfigTypeFivePiece:
+            self.clearFivePieceConfig = NO;
+            break;
+        case HotelConfigTypeRoomLayout:
+            self.clearRoomLayoutConfig = NO;
+            break;
+        case HotelConfigTypeWine:
+            self.clearWineConfig = NO;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
@@ -269,27 +311,33 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
 
 - (void)cancelBtnClick:(id)sender {
     
-    self.selectedIndex = -1;
+    self.clearAromaConfig = YES;
+    self.clearBreakfastConfig = YES;
+    self.clearFivePieceConfig = YES;
+    self.clearRoomLayoutConfig = YES;
+    self.clearWineConfig = YES;
     
-    self.breakfast = nil;
-    self.breakfastNum = nil;
+    self.breakfasts = nil;
+    self.breakfastNums = nil;
     self.fivePiece = nil;
     self.aroma = nil;
     self.roomLayout = nil;
-    self.wine = nil;
+    self.wines = nil;
+    self.wineNums = nil;
     
     [_tableView reloadData];
 }
 
 - (void)confirmBtnClick:(id)sender {
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigViewDidSelectConfig:breakfastNum:fivePieceId:aromaId:roomLayoutId:wineId:)]) {
-        [self.delegate hotelConfigViewDidSelectConfig:self.breakfast
-                                         breakfastNum:self.breakfastNum
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigViewDidSelectConfig:breakfastNums:fivePieceId:aromaId:roomLayoutId:wines:wineNums:)]) {
+        [self.delegate hotelConfigViewDidSelectConfig:self.breakfasts
+                                        breakfastNums:self.breakfastNums
                                           fivePieceId:self.fivePiece
                                               aromaId:self.aroma
                                          roomLayoutId:self.roomLayout
-                                               wineId:self.wine];
+                                                wines:self.wines
+                                             wineNums:self.wineNums];
     }
     [self hide];
 }

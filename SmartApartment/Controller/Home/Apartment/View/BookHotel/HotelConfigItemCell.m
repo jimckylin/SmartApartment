@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UIButton     *selectedBtn;
 @property (nonatomic, strong) PPNumberButton *numberBtn;
 
+
 @end
 
 @implementation HotelConfigItemCell
@@ -32,6 +33,17 @@
     
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.cornerRadius = 4.0f;
+        self.layer.borderWidth = 0.5f;
+        self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        
+        self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+        self.layer.shadowOffset = CGSizeMake(1, 1);
+        self.layer.shadowRadius = 2.0f;
+        self.layer.shadowOpacity = 0.5f;
+        self.layer.masksToBounds = YES;
+        
+        self.backgroundColor = [UIColor lightGrayColor];
         _nameBgView = [UIView new];
         _nameBgView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_nameBgView];
@@ -65,7 +77,7 @@
         
         _numberBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 2.5, 60, 15)];
         // 初始化时隐藏减按钮
-        //_numberBtn.delegate = self;
+        _numberBtn.delegate = self;
         _numberBtn.defaultNumber = 1;
         _numberBtn.minValue = 1;
         _numberBtn.maxValue = 200;
@@ -88,7 +100,8 @@
     return self;
 }
 
-- (void)setCellSelected:(BOOL)selected {
+
+- (void)setSelectedBtnStatus:(BOOL)selected {
     
     _selectedBtn.selected = selected;
 }
@@ -98,8 +111,12 @@
 
 - (void)pp_numberButton:(PPNumberButton *)numberButton number:(NSInteger)number increaseStatus:(BOOL)increaseStatus {
     
-    if (self.didSelectedBreakfastNum) {
-        self.didSelectedBreakfastNum(number);
+    if (self.didSelectedBreakfastConfigNum && _selectedBtn.selected) {
+        self.didSelectedBreakfastConfigNum(self.breakfast, number);
+    }
+    
+    if (_didSelectedWineConfigNum && _selectedBtn.selected) {
+        self.didSelectedWineConfigNum(self.wine, number);
     }
 }
 
@@ -109,6 +126,9 @@
 - (void)selectedBtnClick:(UIButton *)btn {
    
     btn.selected = !btn.selected;
+    if (self.didChangeSelectedBtnStatus) {
+        self.didChangeSelectedBtnStatus(self.tag, _selectedBtn.selected, _numberBtn.currentNumber);
+    }
 }
 
 
@@ -119,6 +139,7 @@
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", aroma.name, aroma.price];
+    _aroma = aroma;
 }
 
 - (void)setBreakfast:(Breakfast *)breakfast {
@@ -126,6 +147,7 @@
     [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:breakfast.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", breakfast.name, breakfast.price];
+    _breakfast = breakfast;
 }
 
 - (void)setFivePiece:(FivePiece *)fivePiece {
@@ -133,6 +155,7 @@
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:fivePiece.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", fivePiece.name, fivePiece.price];
+    _fivePiece = fivePiece;
 }
 
 - (void)setRoomLayout:(RoomLayout *)roomLayout {
@@ -140,6 +163,7 @@
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:roomLayout.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", roomLayout.name, roomLayout.price];
+    _roomLayout = roomLayout;
 }
 
 - (void)setWine:(Wine *)wine {
@@ -147,15 +171,9 @@
     [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:wine.img] placeholderImage:kImage(@"evaluate_blankiphone")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", wine.name, wine.price];
+    _wine = wine;
 }
 
 
-
-- (void)setSelected:(BOOL)selected{
-    [super setSelected:selected];
-    NSLog(@"%@", _numberBtn);
-    //_imageView.highlighted = selected;
-    //_selectedBtn.selected = selected;
-}
 
 @end

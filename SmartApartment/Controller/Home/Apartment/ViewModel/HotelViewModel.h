@@ -86,7 +86,8 @@
                      aromaId:(NSString *)aromaId
                 roomLayoutId:(NSString *)roomLayoutId
                       wineId:(NSString *)wineId
-                    complete:(void(^)(NSDictionary *resp))complete;
+                   wineNum:(NSString *)wineNum
+                  complete:(void(^)(NSDictionary *resp))complete;
 
 
 /* 确认支付

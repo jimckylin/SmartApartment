@@ -17,11 +17,12 @@
              roomPrice:(NSString *)price
            roomDeposit:(NSString *)deposit
          roomRisePrice:(NSString *)risePrice
-             breakfast:(Breakfast *)breakfast
-          breakfastNum:(NSString *)breakfastNum
+            breakfasts:(NSArray <Breakfast *>*)breakfasts
+         breakfastNums:(NSArray *)breakfastNums
              fivePiece:(FivePiece *)fivePiece
                  aroma:(Aroma *)aroma
             roomLayout:(RoomLayout *)roomLayout
-                  wine:(Wine *)wine;
+                 wines:(NSArray <Wine *>*)wines
+              wineNums:(NSArray *)wineNums;
 
 @end

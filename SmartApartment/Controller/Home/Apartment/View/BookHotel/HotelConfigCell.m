@@ -12,25 +12,31 @@
 #import "RoomConfig.h"
 
 
-@interface HotelConfigCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HotelConfigCell ()
 
 @property(nonatomic,strong)UICollectionView *collectionView;
 // 用来存放Cell的唯一标示符
 @property (nonatomic, strong) NSMutableDictionary *cellDic;
-@property (nonatomic, assign) NSInteger      selectedIndex; // 初始-1 不选中任何
+
+@property (nonatomic, strong) NSMutableArray<Breakfast*> *breakfasts;
+@property (nonatomic, strong) NSMutableArray             *breakfastNums;
+@property (nonatomic, strong) NSMutableArray<Wine*>      *wines;
+@property (nonatomic, strong) NSMutableArray             *wineNums;
+
 
 @end
 
 @implementation HotelConfigCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = RGBA(0, 0, 0, 0.4);
+        self.section = section;
         self.cellDic = [[NSMutableDictionary alloc] init];
-        _selectedIndex = -1;
         [self initView];
+        
     }
     
     return self;
@@ -38,6 +44,7 @@
 
 - (void)initView {
     
+    /*
     //此处必须要有创见一个UICollectionViewFlowLayout的对象
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
     //同一行相邻两个cell的最小间距
@@ -55,7 +62,56 @@
     [_collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     // cell注册
-    //[_collectionView registerClass:[HotelConfigItemCell class] forCellWithReuseIdentifier:@"HotelConfigItemCell"];
+    [_collectionView registerClass:[HotelConfigItemCell class] forCellWithReuseIdentifier:@"HotelConfigItemCell"];*/
+}
+
+- (void)setClearAroma:(BOOL)clearAroma {
+    
+    _clearAroma = clearAroma;
+    if (clearAroma) {
+        [self clearSelfView];
+    }
+}
+
+- (void)setClearBreakfast:(BOOL)clearBreakfast {
+    
+    _clearBreakfast = clearBreakfast;
+    if (clearBreakfast) {
+        [self clearSelfView];
+    }
+}
+
+- (void)setClearFivePiece:(BOOL)clearFivePiece {
+    
+    _clearFivePiece = clearFivePiece;
+    if (clearFivePiece) {
+        [self clearSelfView];
+    }
+}
+
+- (void)setClearRoomLayout:(BOOL)clearRoomLayout {
+    
+    _clearRoomLayout = clearRoomLayout;
+    if (clearRoomLayout) {
+        [self clearSelfView];
+    }
+}
+
+- (void)setClearWine:(BOOL)clearWine {
+    
+    _clearWine = clearWine;
+    if (clearWine) {
+        [self clearSelfView];
+    }
+}
+
+
+
+- (void)updateClearConfigFlag:(HotelConfigType)configType {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellUpdateSelectedIndex:)]) {
+        [self.delegate hotelConfigCollectionCellUpdateSelectedIndex:configType];
+    }
 }
 
 
@@ -63,189 +119,265 @@
 
 - (void)setAromaList:(NSArray<Aroma *> *)aromaList {
     
+    if (!_aromaList || _clearAroma) {
+        _clearAroma = NO;
+        [self updateClearConfigFlag:HotelConfigTypeAroma];
+        
+        CGFloat originX = 10;
+        CGFloat originY = 10;
+        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemHeight = 120;
+        
+        for (int index = 0; index < aromaList.count; index ++) {
+            CGFloat shang = index/2;
+            CGFloat yushu = index%2;
+            CGRect frame = CGRectMake((yushu+1)*originX + itemWidth*yushu, (shang+1) * originY + itemHeight*shang, itemWidth, itemHeight);
+            
+            HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
+            configItemView.aroma = aromaList[index];
+            configItemView.tag = index+100;
+            [self addSubview:configItemView];
+            
+            __WeakObj(self)
+            configItemView.didChangeSelectedBtnStatus = ^(NSInteger tag, BOOL selected, NSInteger num) {
+                for (NSInteger idx = 0; idx < aromaList.count; idx ++) {
+                    HotelConfigItemCell *cell = [selfWeak viewWithTag:idx+100];
+                    if (tag-100 != idx) {
+                        [cell setSelectedBtnStatus:NO];
+                    }
+                }
+                
+                Aroma *aroma = selected? aromaList[index]:nil;
+                if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [selfWeak.delegate hotelConfigCollectionCellDidSelectedConfig:aroma nums:nil configType:HotelConfigTypeAroma];
+                }
+            };
+        }
+    }
+    
     _aromaList = aromaList;
     _breakfastList = nil;
     _fivePieceList = nil;
     _roomLayoutList = nil;
     _wineList = nil;
-    
-    [_collectionView reloadData];
 }
 
 - (void)setBreakfastList:(NSArray<Breakfast *> *)breakfastList {
+    
+    if (!_breakfastList || _clearBreakfast) {
+        _clearBreakfast = NO;
+        [self updateClearConfigFlag:HotelConfigTypeBreakfast];
+        
+        CGFloat originX = 10;
+        CGFloat originY = 10;
+        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemHeight = 120;
+        
+        for (int index = 0; index < breakfastList.count; index ++) {
+            CGFloat shang = index/2;
+            CGFloat yushu = index%2;
+            CGRect frame = CGRectMake((yushu+1)*originX + itemWidth*yushu, (shang+1) * originY + itemHeight*shang, itemWidth, itemHeight);
+            
+            HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
+            configItemView.breakfast = breakfastList[index];
+            [self addSubview:configItemView];
+            
+            __WeakObj(self)
+            // 点击勾选按钮
+            configItemView.didChangeSelectedBtnStatus = ^(NSInteger tag, BOOL selected, NSInteger num) {
+                
+                Breakfast *breakfast = breakfastList[index];
+                if (selected) {
+                    if (![selfWeak.breakfasts containsObject:breakfast]) {
+                        [selfWeak.breakfasts addObject:breakfast];
+                        [selfWeak.breakfastNums addObject:[NSString stringWithFormat:@"%zd", num]];
+                    }
+                } else {
+                    if ([selfWeak.breakfasts containsObject:breakfast]) {
+                        NSInteger breakfastIndex = [selfWeak.breakfastList indexOfObject:breakfast];
+                        [selfWeak.breakfasts removeObject:breakfast];
+                        [selfWeak.breakfastNums removeObjectAtIndex:breakfastIndex];
+                    }
+                }
+                if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [selfWeak.delegate hotelConfigCollectionCellDidSelectedConfig:selfWeak.breakfasts nums:selfWeak.breakfastNums configType:HotelConfigTypeBreakfast];
+                }
+            };
+            
+            // 点击数量按钮
+            configItemView.didSelectedBreakfastConfigNum = ^(Breakfast *breakfast, NSInteger num) {
+                
+                if ([selfWeak.breakfasts containsObject:breakfast]) {
+                    NSInteger breakfastIndex = [selfWeak.breakfastList indexOfObject:breakfast];
+                    NSString *numStr = [NSString stringWithFormat:@"%zd", num];
+                    [selfWeak.breakfastNums replaceObjectAtIndex:breakfastIndex withObject:numStr];
+                }
+                if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [selfWeak.delegate hotelConfigCollectionCellDidSelectedConfig:selfWeak.breakfasts nums:selfWeak.breakfastNums configType:HotelConfigTypeBreakfast];
+                }
+            };
+        }
+    }
     
     _aromaList = nil;
     _breakfastList = breakfastList;
     _fivePieceList = nil;
     _roomLayoutList = nil;
     _wineList = nil;
-    [_collectionView reloadData];
 }
 
 - (void)setFivePieceList:(NSArray<FivePiece *> *)fivePieceList {
+    
+    if (!_fivePieceList || _clearFivePiece) {
+        _clearFivePiece = NO;
+        [self updateClearConfigFlag:HotelConfigTypeFivePiece];
+        
+        CGFloat originX = 10;
+        CGFloat originY = 10;
+        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemHeight = 120;
+        
+        for (int index = 0; index < fivePieceList.count; index ++) {
+            CGFloat shang = index/2;
+            CGFloat yushu = index%2;
+            CGRect frame = CGRectMake((yushu+1)*originX + itemWidth*yushu, (shang+1) * originY + itemHeight*shang, itemWidth, itemHeight);
+            
+            HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
+            configItemView.fivePiece = fivePieceList[index];
+            configItemView.tag = index+100;
+            [self addSubview:configItemView];
+            
+            __WeakObj(self)
+            configItemView.didChangeSelectedBtnStatus = ^(NSInteger tag, BOOL selected, NSInteger num) {
+                for (NSInteger idx = 0; idx < fivePieceList.count; idx ++) {
+                    HotelConfigItemCell *cell = [selfWeak viewWithTag:idx+100];
+                    if (tag-100 != idx) {
+                        [cell setSelectedBtnStatus:NO];
+                    }
+                }
+                
+                FivePiece *fivePiece = selected? fivePieceList[index]:nil;
+                if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [self.delegate hotelConfigCollectionCellDidSelectedConfig:fivePiece nums:nil configType:HotelConfigTypeFivePiece];
+                }
+            };
+        }
+    }
     
     _aromaList = nil;
     _breakfastList = nil;
     _fivePieceList = fivePieceList;
     _roomLayoutList = nil;
     _wineList = nil;
-    [_collectionView reloadData];
 }
 
 - (void)setRoomLayoutList:(NSArray<RoomLayout *> *)roomLayoutList {
+    
+    if (!_roomLayoutList || _clearRoomLayout) {
+        _clearRoomLayout = NO;
+        [self updateClearConfigFlag:HotelConfigTypeRoomLayout];
+        
+        CGFloat originX = 10;
+        CGFloat originY = 10;
+        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemHeight = 120;
+        
+        for (int index = 0; index < roomLayoutList.count; index ++) {
+            CGFloat shang = index/2;
+            CGFloat yushu = index%2;
+            CGRect frame = CGRectMake((yushu+1)*originX + itemWidth*yushu, (shang+1) * originY + itemHeight*shang, itemWidth, itemHeight);
+            
+            HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
+            configItemView.roomLayout = roomLayoutList[index];
+            configItemView.tag = index+100;
+            [self addSubview:configItemView];
+            
+            __WeakObj(self)
+            configItemView.didChangeSelectedBtnStatus = ^(NSInteger tag, BOOL selected, NSInteger num) {
+                for (NSInteger idx = 0; idx < roomLayoutList.count; idx ++) {
+                    HotelConfigItemCell *cell = [selfWeak viewWithTag:idx+100];
+                    if (tag-100 != idx) {
+                        [cell setSelectedBtnStatus:NO];
+                    }
+                }
+                
+                RoomLayout *roomLayout = selected? roomLayoutList[index]:nil;
+                if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [self.delegate hotelConfigCollectionCellDidSelectedConfig:roomLayout nums:nil configType:HotelConfigTypeRoomLayout];
+                }
+            };
+        }
+    }
     
     _aromaList = nil;
     _breakfastList = nil;
     _fivePieceList = nil;
     _roomLayoutList = roomLayoutList;
     _wineList = nil;
-    [_collectionView reloadData];
 }
 
 - (void)setWineList:(NSArray<Wine *> *)wineList {
+    
+    if (!_wineList || _clearWine) {
+        _clearWine = NO;
+        [self updateClearConfigFlag:HotelConfigTypeWine];
+        
+        CGFloat originX = 10;
+        CGFloat originY = 10;
+        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemHeight = 120;
+        
+        for (int index = 0; index < wineList.count; index ++) {
+            CGFloat shang = index/2;
+            CGFloat yushu = index%2;
+            CGRect frame = CGRectMake((yushu+1)*originX + itemWidth*yushu, (shang+1) * originY + itemHeight*shang, itemWidth, itemHeight);
+            
+            HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
+            configItemView.wine = wineList[index];
+            [self addSubview:configItemView];
+            
+            __WeakObj(self)
+            // 点击勾选按钮
+            configItemView.didChangeSelectedBtnStatus = ^(NSInteger tag, BOOL selected, NSInteger num) {
+                
+                Wine *wine = wineList[index];
+                if (selected) {
+                    if (![selfWeak.wines containsObject:wine]) {
+                        [selfWeak.wines addObject:wine];
+                        [selfWeak.wineNums addObject:[NSString stringWithFormat:@"%zd", num]];
+                    }
+                } else {
+                    if ([selfWeak.wines containsObject:wine]) {
+                        NSInteger wineIndex = [selfWeak.wines indexOfObject:wine];
+                        [selfWeak.wines removeObject:wine];
+                        [selfWeak.wineNums removeObjectAtIndex:wineIndex];
+                    }
+                }
+                if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [selfWeak.delegate hotelConfigCollectionCellDidSelectedConfig:selfWeak.wines nums:selfWeak.wineNums configType:HotelConfigTypeWine];
+                }
+            };
+            
+            // 点击数量按钮
+            configItemView.didSelectedWineConfigNum = ^(Wine *wine, NSInteger num) {
+                
+                if ([selfWeak.wines containsObject:wine]) {
+                    NSInteger wineIndex = [selfWeak.wines indexOfObject:wine];
+                    NSString *numStr = [NSString stringWithFormat:@"%zd", num];
+                    [selfWeak.wineNums replaceObjectAtIndex:wineIndex withObject:numStr];
+                }
+                if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:nums:configType:)]) {
+                    [selfWeak.delegate hotelConfigCollectionCellDidSelectedConfig:selfWeak.wines nums:selfWeak.wineNums configType:HotelConfigTypeWine];
+                }
+            };
+        }
+    }
     
     _aromaList = nil;
     _breakfastList = nil;
     _fivePieceList = nil;
     _roomLayoutList = nil;
     _wineList = wineList;
-    [_collectionView reloadData];
-}
-
-
-#pragma mark - UICollectionViewDelegate UICollectionViewDataSource
-
-//每一组有多少个cell
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    if (self.breakfastList) {
-        return [self.breakfastList count];
-    }
-    else if (self.fivePieceList) {
-        return [self.fivePieceList count];
-    }
-    else if (self.roomLayoutList) {
-        return [self.roomLayoutList count];
-    }
-    else if (self.aromaList) {
-        return [self.aromaList count];
-    }
-    else if (self.wineList) {
-        return [self.wineList count];
-    }
-    return 0;
-}
-
-//每一个cell是什么
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // 每次先从字典中根据IndexPath取出唯一标识符
-    NSString *identifier = [_cellDic objectForKey:[NSString stringWithFormat:@"%@", indexPath]];
-    // 如果取出的唯一标示符不存在，则初始化唯一标示符，并将其存入字典中，对应唯一标示符注册Cell
-    if (identifier == nil) {
-        identifier = [NSString stringWithFormat:@"DayCell%@", [NSString stringWithFormat:@"%@", indexPath]];
-        [_cellDic setValue:identifier forKey:[NSString stringWithFormat:@"%@", indexPath]];
-        // 注册Cell
-        [self.collectionView registerClass:[HotelConfigItemCell class]  forCellWithReuseIdentifier:identifier];
-    }
-    
-    HotelConfigItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell setCellSelected:cell.selected];
-    [self setCellStyle:cell];
-    
-    NSInteger row = indexPath.row;
-    if (self.breakfastList) {
-        cell.breakfast = self.breakfastList[row];
-    }
-    else if (self.fivePieceList) {
-        cell.fivePiece = self.fivePieceList[row];
-    }
-    else if (self.roomLayoutList) {
-        cell.roomLayout = self.roomLayoutList[row];
-    }
-    else if (self.aromaList) {
-        cell.aroma = self.aromaList[row];
-    }
-    else if (self.wineList) {
-        cell.wine = self.wineList[row];
-    }
-    
-    if (self.clearSelectedIndex == -1) {
-        _selectedIndex = -1;
-        //[cell setCellSelected:NO];
-    }else {
-        if (indexPath.row == _selectedIndex) {
-            //[cell setCellSelected:YES];
-        }else {
-            //[cell setCellSelected:NO];
-        }
-    }
-    
-    return cell;
-}
-
--(CGFloat )collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 15;
-}
-
-
-//每一个分组的上左下右间距
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
-}
-
-//定义每一个cell的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    CGFloat cellwidth = (kScreenWidth-50-10 - 20)/2;
-    return CGSizeMake(cellwidth, 120);
-}
-
-//cell的点击事件
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //cell被电击后移动的动画
-    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
-    
-    NSInteger row = indexPath.row;
-    if (self.breakfastList) {
-        Breakfast *breakfast = self.breakfastList[row];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:breakfast];
-        }
-    }
-    else if (self.fivePieceList) {
-        FivePiece *fivePiece = self.fivePieceList[row];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:fivePiece];
-        }
-    }
-    else if (self.roomLayoutList) {
-        RoomLayout *roomLayout = self.roomLayoutList[row];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:roomLayout];
-        }
-    }
-    else if (self.aromaList) {
-        Aroma *aroma = self.aromaList[row];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:aroma];
-        }
-    }
-    else if (self.wineList) {
-        Wine *wine = self.wineList[row];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidSelectedConfig:)]) {
-            [self.delegate hotelConfigCollectionCellDidSelectedConfig:wine];
-        }
-    }
-    
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellUpdateSelectedIndex:)]) {
-        [self.delegate hotelConfigCollectionCellUpdateSelectedIndex:-2];
-    }
-    
-    self.clearSelectedIndex = 0;
-    _selectedIndex = indexPath.row;
-    [collectionView reloadData];
 }
 
 
@@ -254,14 +386,16 @@
 + (CGFloat)getCellHeight:(NSArray *)arr {
     
     CGFloat heigth = 0;
-    CGFloat padding = 15;
-    NSInteger count = [arr count];
+    CGFloat padding = 10;
+    CGFloat itemHeight = 120;
+    
+    NSInteger count = [arr count]-1;
     
     CGFloat shang = count/2;
-    CGFloat yushu = count%2;
+    //CGFloat yushu = count%2;
     
     if (count > 0) {
-        heigth = 5+ 120 * (shang+(yushu?1:0)) +(shang+(yushu?1:0)-1)*padding+5;
+        heigth = itemHeight * (shang+1) + (shang+2)*padding;
     }
     return heigth;
 }
@@ -269,20 +403,43 @@
 
 #pragma mark - Private
 
-- (void)setCellStyle:(HotelConfigItemCell *)cell {
+- (void)clearSelfView {
     
-    cell.layer.cornerRadius = 5;
-    cell.contentView.layer.cornerRadius = 5.0f;
-    cell.contentView.layer.borderWidth = 0.5f;
-    cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
-    cell.contentView.layer.masksToBounds = YES;
+    for (UIView *subView in self.subviews) {
+        [subView removeFromSuperview];
+    }
+}
+
+
+#pragma mark - Lazy init
+
+- (NSMutableArray<Breakfast *> *)breakfasts {
     
-    cell.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-    cell.layer.shadowOffset = CGSizeMake(1, 1);
-    cell.layer.shadowRadius = 2.0f;
-    cell.layer.shadowOpacity = 0.5f;
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
+    if (!_breakfasts) {
+        _breakfasts = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    return _breakfasts;
+}
+
+- (NSMutableArray *)breakfastNums {
+    if (!_breakfastNums) {
+        _breakfastNums = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    return _breakfastNums;
+}
+
+- (NSMutableArray<Wine *> *)wines {
+    if (!_wines) {
+        _wines = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    return _wines;
+}
+
+- (NSMutableArray *)wineNums {
+    if (!_wineNums) {
+        _wineNums = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    return _wineNums;
 }
 
 @end

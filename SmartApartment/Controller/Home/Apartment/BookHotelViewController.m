@@ -61,12 +61,13 @@
 @property (nonatomic, strong) MineViewModel  *mineViewModel;
 @property (nonatomic, strong) RoomConfig     *roomConfig;
 
-@property (nonatomic, strong) Breakfast       *breakfast;
-@property (nonatomic, copy) NSString          *breakfastNum;
-@property (nonatomic, strong) FivePiece       *fivePiece;
-@property (nonatomic, strong) Aroma           *aroma;
-@property (nonatomic, strong) RoomLayout      *roomLayout;
-@property (nonatomic, strong) Wine            *wine;
+@property (nonatomic, strong) NSArray<Breakfast*> *breakfasts;
+@property (nonatomic, strong) NSArray          *breakfastNums;
+@property (nonatomic, strong) FivePiece        *fivePiece;
+@property (nonatomic, strong) Aroma            *aroma;
+@property (nonatomic, strong) RoomLayout       *roomLayout;
+@property (nonatomic, strong) NSArray<Wine*>   *wines;
+@property (nonatomic, strong) NSArray          *wineNums;
 
 @property (nonatomic, strong) NSMutableArray *contactPersons;
 @property (nonatomic, strong) NSMutableArray *dateArray;
@@ -150,12 +151,14 @@
                                   days:days
                            roomDeposit:self.roomDeposit
                          roomRisePrice:self.roomRisePrice
-                             breakfast:nil
-                          breakfastNum:nil
-                             fivePiece:nil
-                                 aroma:nil
-                            roomLayout:nil
-                                  wine:nil];
+                            breakfasts:self.breakfasts
+                         breakfastNums:self.breakfastNums
+                             fivePiece:self.fivePiece
+                                 aroma:self.aroma
+                            roomLayout:self.roomLayout
+                                 wines:self.wines
+                              wineNums:self.wineNums];
+    
     _bottomView.delegate = self;
     [self.view addSubview:_bottomView];
     [_bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
@@ -292,19 +295,21 @@
 
 #pragma mark - HotelConfigViewDelete
 
-- (void)hotelConfigViewDidSelectConfig:(Breakfast *)breakfast
-                          breakfastNum:(NSString *)breakfastNum
+- (void)hotelConfigViewDidSelectConfig:(NSArray<Breakfast *> *)breakfasts
+                         breakfastNums:(NSArray *)breakfastNums
                            fivePieceId:(FivePiece *)fivePiece
                                aromaId:(Aroma *)aroma
                           roomLayoutId:(RoomLayout *)roomLayout
-                                wineId:(Wine *)wine {
+                                 wines:(NSArray<Wine *> *)wines
+                              wineNums:(NSArray *)wineNums {
     
-    self.breakfast = breakfast;
-    self.breakfastNum = breakfastNum;
+    self.breakfasts = breakfasts;
+    self.breakfastNums = breakfastNums;
     self.fivePiece = fivePiece;
     self.aroma = aroma;
     self.roomLayout = roomLayout;
-    self.wine = wine;
+    self.wines = wines;
+    self.wineNums = wineNums;
     
     NSDate *checkinDate = [NSDate sia_dateFromString:self.checkInTime withFormat:@"yyyy-MM-dd"];
     NSDate *checkoutDate = [NSDate sia_dateFromString:self.checkOutTime withFormat:@"yyyy-MM-dd"];
@@ -314,12 +319,13 @@
                                   days:days
                            roomDeposit:self.roomDeposit
                          roomRisePrice:self.roomRisePrice
-                             breakfast:breakfast
-                          breakfastNum:breakfastNum
+                            breakfasts:breakfasts
+                         breakfastNums:breakfastNums
                              fivePiece:fivePiece
                                  aroma:aroma
                             roomLayout:roomLayout
-                                  wine:wine];
+                                 wines:wines
+                              wineNums:wineNums];
 }
 
 
@@ -333,6 +339,20 @@
         arriveTime = [NSString stringWithFormat:@"%@ %@", self.checkInTime, arriveTime];
         NSString *name = [self.livePersonTF.text stringByReplacingOccurrencesOfString:@" " withString:@""];
         
+        
+        NSMutableString *breakfastIds = [NSMutableString string];
+        NSString *breakfastNums = [self.breakfastNums componentsJoinedByString:@","];
+        for (Breakfast *breakfast in self.breakfasts) {
+            [breakfastIds appendString:[NSString stringWithFormat:@"%@,", breakfast.breakfastId]];
+        }
+        
+        NSMutableString *wineIds = [NSMutableString string];
+        NSString *wineNums = [self.wineNums componentsJoinedByString:@","];
+        for (Wine *wine in self.wines) {
+            [wineIds appendString:[NSString stringWithFormat:@"%@,", wine.wineId]];
+        }
+        
+        
         __WeakObj(self)
         [_viewModel requestSubmitOrder:self.hotel.storeId
                             roomTypeId:self.roomTypeId
@@ -343,12 +363,14 @@
                           checkOutTime:self.checkOutTime
                             arriveTime:arriveTime
                                 remark:self.remarkTF.text
-                           breakfastId:self.breakfast.breakfastId
-                          breakfastNum:self.breakfastNum
+                           breakfastId:breakfastIds
+                          breakfastNum:breakfastNums
                            fivePieceId:self.fivePiece.fivePieceId
                                aromaId:self.aroma.aromaId
-                          roomLayoutId:self.wine.wineId
-                                wineId:@"" complete:^(NSDictionary *resp) {
+                          roomLayoutId:self.roomLayout.roomLayoutId
+                                wineId:wineIds
+                               wineNum:wineNums
+                              complete:^(NSDictionary *resp) {
             
                                     BookSuccessViewController *vc = [BookSuccessViewController new];
                                     vc.orderDict = resp;
@@ -364,12 +386,13 @@
                                   roomPrice:self.roomPrice
                                 roomDeposit:self.roomDeposit
                               roomRisePrice:self.roomRisePrice
-                                  breakfast:self.breakfast
-                               breakfastNum:self.breakfastNum
+                                 breakfasts:self.breakfasts
+                              breakfastNums:self.breakfastNums
                                   fivePiece:self.fivePiece
                                       aroma:self.aroma
                                  roomLayout:self.roomLayout
-                                       wine:self.wine];
+                                      wines:self.wines
+                                   wineNums:self.wineNums];
             [self.view addSubview:_bookDetailView];
         }else {
             [_bookDetailView removeFromSuperview];

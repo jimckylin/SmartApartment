@@ -99,7 +99,9 @@
               fivePieceId:(NSString *)fivePieceId
                   aromaId:(NSString *)aromaId
              roomLayoutId:(NSString *)roomLayoutId
-                   wineId:(NSString *)wineId complete:(void (^)(NSDictionary *))complete {
+                   wineId:(NSString *)wineId
+                  wineNum:(NSString *)wineNum
+                 complete:(void (^)(NSDictionary *))complete {
     
     
     NSString *token = [UserManager manager].user.token;
@@ -121,6 +123,8 @@
     [dict cwgj_setObject:fivePieceId     forKey:@"fivePieceId"];
     [dict cwgj_setObject:aromaId         forKey:@"aromaId"];
     [dict cwgj_setObject:roomLayoutId    forKey:@"roomLayoutId"];
+    [dict cwgj_setObject:wineId          forKey:@"wineId"];
+    [dict cwgj_setObject:wineNum         forKey:@"wineNum"];
     [dict cwgj_setObject:token           forKey:@"token"];
     
     [MBProgressHUD cwgj_showProgressHUDWithText:@""];
