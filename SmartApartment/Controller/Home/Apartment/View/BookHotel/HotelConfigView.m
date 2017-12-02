@@ -306,6 +306,15 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     }
 }
 
+- (void)hotelConfigCollectionCellDidTapImage:(NSArray *)imgUrls
+                               selectedIndex:(NSInteger)index
+                                        view:(UIView *)view {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigViewDidTapImage:selectedIndex:view:)]) {
+        [self.delegate hotelConfigViewDidTapImage:imgUrls selectedIndex:index view:view];
+    }
+}
+
 
 #pragma mark - Button Action
 

@@ -63,8 +63,12 @@
         //_imageView.highlightedImage = [UIImage imageNamed:@"activity02"];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.clipsToBounds = YES;
+        _imageView.userInteractionEnabled = YES;
         [self addSubview:_imageView];
         [_imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(20, 0, 20, 0)];
+        
+        UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+        [_imageView addGestureRecognizer:imageTap];
         
         // 分数选择及勾选
         UIView *selectBgView = [UIView new];
@@ -123,6 +127,21 @@
 
 #pragma mark - UIButton Action
 
+- (void)imageTap:(UITapGestureRecognizer*)gesture {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigItemCellTapImageDidSelectedIndex:configTpe:view:)]) {
+        NSInteger index = 0;
+        if (self.configType == HotelConfigTypeBreakfast || self.configType == HotelConfigTypeWine) {
+            index = self.tag;
+        } else {
+            index = self.tag - 100;
+        }
+        [self.delegate hotelConfigItemCellTapImageDidSelectedIndex:index
+                                                         configTpe:self.configType
+                                                              view:gesture.view];
+    }
+}
+
 - (void)selectedBtnClick:(UIButton *)btn {
    
     btn.selected = !btn.selected;
@@ -137,7 +156,7 @@
 - (void)setAroma:(Aroma *)aroma {
     
     [_numberBtn setHidden:YES];
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:kImage(@"blank_default_nomal_bg")];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:aroma.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
     _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", aroma.name, aroma.price];
     _aroma = aroma;
 }

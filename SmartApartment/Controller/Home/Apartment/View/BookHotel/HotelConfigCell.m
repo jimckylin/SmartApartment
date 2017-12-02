@@ -12,7 +12,7 @@
 #import "RoomConfig.h"
 
 
-@interface HotelConfigCell ()
+@interface HotelConfigCell ()<HotelConfigItemCellDelegate>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
 // 用来存放Cell的唯一标示符
@@ -135,6 +135,8 @@
             
             HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
             configItemView.aroma = aromaList[index];
+            configItemView.configType = HotelConfigTypeAroma;
+            configItemView.delegate = self;
             configItemView.tag = index+100;
             [self addSubview:configItemView];
             
@@ -180,6 +182,9 @@
             
             HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
             configItemView.breakfast = breakfastList[index];
+            configItemView.configType = HotelConfigTypeBreakfast;
+            configItemView.delegate = self;
+            configItemView.tag = index;
             [self addSubview:configItemView];
             
             __WeakObj(self)
@@ -244,6 +249,8 @@
             
             HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
             configItemView.fivePiece = fivePieceList[index];
+            configItemView.configType = HotelConfigTypeFivePiece;
+            configItemView.delegate = self;
             configItemView.tag = index+100;
             [self addSubview:configItemView];
             
@@ -289,6 +296,8 @@
             
             HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
             configItemView.roomLayout = roomLayoutList[index];
+            configItemView.configType = HotelConfigTypeRoomLayout;
+            configItemView.delegate = self;
             configItemView.tag = index+100;
             [self addSubview:configItemView];
             
@@ -334,6 +343,9 @@
             
             HotelConfigItemCell *configItemView = [[HotelConfigItemCell alloc] initWithFrame:frame];
             configItemView.wine = wineList[index];
+            configItemView.configType = HotelConfigTypeWine;
+            configItemView.delegate = self;
+            configItemView.tag = index;
             [self addSubview:configItemView];
             
             __WeakObj(self)
@@ -407,6 +419,55 @@
     
     for (UIView *subView in self.subviews) {
         [subView removeFromSuperview];
+    }
+}
+
+
+#pragma mark - HotelConfigItemCellDelegate
+
+- (void)hotelConfigItemCellTapImageDidSelectedIndex:(NSInteger)index
+                                          configTpe:(HotelConfigType)configType
+                                               view:(UIView *)view {
+    
+    NSMutableArray *imgUrls = [[NSMutableArray alloc] initWithCapacity:0];
+    switch (configType) {
+        case HotelConfigTypeAroma: {
+            for (Aroma *aroma in _aromaList) {
+                [imgUrls addObject:aroma.img];
+            }
+        }
+            break;
+        case HotelConfigTypeBreakfast: {
+            for (Breakfast *breakfast in _breakfastList) {
+                [imgUrls addObject:breakfast.img];
+            }
+        }
+            break;
+        case HotelConfigTypeFivePiece: {
+            for (FivePiece *fivePiece in _fivePieceList) {
+                [imgUrls addObject:fivePiece.img];
+            }
+        }
+            break;
+        case HotelConfigTypeRoomLayout: {
+            for (RoomLayout *roomLayout in _roomLayoutList) {
+                [imgUrls addObject:roomLayout.img];
+            }
+        }
+            break;
+        case HotelConfigTypeWine: {
+            for (Wine *wine in _wineList) {
+                [imgUrls addObject:wine.img];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hotelConfigCollectionCellDidTapImage:selectedIndex:view:)]) {
+        [self.delegate hotelConfigCollectionCellDidTapImage:imgUrls selectedIndex:index view:view];
     }
 }
 

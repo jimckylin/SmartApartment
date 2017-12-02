@@ -13,6 +13,7 @@
 #import "BookDetailView.h"
 #import "BookBottomView.h"
 #import <PPNumberButton/PPNumberButton.h>
+#import <KSPhotoBrowser/KSPhotoBrowser.h>
 
 #import "HotelConfigView.h"
 
@@ -326,6 +327,20 @@
                             roomLayout:roomLayout
                                  wines:wines
                               wineNums:wineNums];
+}
+
+- (void)hotelConfigViewDidTapImage:(NSArray *)imgUrls selectedIndex:(NSInteger)index view:(UIView *)view {
+    
+    if ([imgUrls count] > 0) {
+        NSMutableArray *items = @[].mutableCopy;
+        for (int i = 0; i < imgUrls.count; i++) {
+            NSString *url = imgUrls[i];
+            KSPhotoItem *item = [KSPhotoItem itemWithSourceView:(UIImageView *)view imageUrl:[NSURL URLWithString:url]];
+            [items addObject:item];
+        }
+        KSPhotoBrowser *browser = [KSPhotoBrowser browserWithPhotoItems:items selectedIndex:index];
+        [browser showFromViewController:self];
+    }
 }
 
 

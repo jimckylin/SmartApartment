@@ -11,6 +11,7 @@
 @interface Aroma : NSObject
 
 @property (nonatomic, copy) NSString *aromaId;
+@property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *price;
 

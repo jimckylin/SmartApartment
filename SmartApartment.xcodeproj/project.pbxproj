@@ -2261,7 +2261,7 @@
 					A9AA8E971F3712A5005F9DBB = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5GVNR3NW7N;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -2824,10 +2824,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kaihuai zhang (62BS5KYDQV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2852,8 +2852,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
 			};
 			name = Debug;
 		};
@@ -2863,10 +2863,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kaihuai zhang (62BS5KYDQV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2891,8 +2891,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
 			};
 			name = Release;
 		};

@@ -18,6 +18,10 @@
                           roomLayoutId:(RoomLayout *)roomLayout
                                  wines:(NSArray <Wine *>*)wines
                               wineNums:(NSArray *)wineNums;
+
+- (void)hotelConfigViewDidTapImage:(NSArray *)imgUrls
+                     selectedIndex:(NSInteger)index view:(UIView *)view;
+
 @end
 
 @interface HotelConfigView : UIView

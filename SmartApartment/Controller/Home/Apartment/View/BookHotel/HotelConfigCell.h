@@ -28,6 +28,9 @@ typedef NS_ENUM(NSInteger, HotelConfigType) {
                                               nums:(NSArray *)nums
                                         configType:(HotelConfigType)configType;
 - (void)hotelConfigCollectionCellUpdateSelectedIndex:(HotelConfigType)configType;
+- (void)hotelConfigCollectionCellDidTapImage:(NSArray *)imgUrls
+                               selectedIndex:(NSInteger)index
+                                        view:(UIView *)view;
 
 @end
 
