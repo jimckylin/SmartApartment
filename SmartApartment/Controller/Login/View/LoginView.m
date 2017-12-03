@@ -256,6 +256,11 @@
 
 #pragma mark - UITextField Delegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     
     if ([textField isEqual:self.phoneTF]) {

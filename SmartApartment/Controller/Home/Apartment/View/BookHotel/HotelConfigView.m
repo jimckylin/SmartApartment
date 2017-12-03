@@ -58,7 +58,8 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
     [btn addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
     
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(25, 0, kScreenWidth-50, 400)];
+    CGFloat height = kScreenWidth > 320? (kScreenHeight -200):(kScreenHeight-100);
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(15, 0, kScreenWidth-30, height)];
     bgView.backgroundColor = RGBA(255, 255, 255, 1);
     bgView.center = self.center;
     [self addSubview:bgView];
@@ -187,27 +188,30 @@ NSString *const kHotelConfigCollectionCell = @"kHotelConfigCollectionCell";
         cell.delegate = self;
     }
     
-    // 重置
-    cell.clearAroma = self.clearAromaConfig;
-    cell.clearBreakfast = self.clearBreakfastConfig;
-    cell.clearFivePiece = self.clearFivePieceConfig;
-    cell.clearRoomLayout = self.clearRoomLayoutConfig;
-    cell.clearWine = self.clearWineConfig;
-    
     NSInteger section = indexPath.section;
     if (section == 0) {
+        // 重置
+        cell.clearBreakfast = self.clearBreakfastConfig;
         cell.breakfastList = _roomConfig.breakfastList;
     }
     else if (section == 1) {
+        // 重置
+        cell.clearFivePiece = self.clearFivePieceConfig;
         cell.fivePieceList = _roomConfig.fivePieceList;
     }
     else if (section == 2) {
+        // 重置
+        cell.clearRoomLayout = self.clearRoomLayoutConfig;
         cell.roomLayoutList = _roomConfig.roomLayoutList;
     }
     else if (section == 3) {
+        // 重置
+        cell.clearAroma = self.clearAromaConfig;
         cell.aromaList = _roomConfig.aromaList;
     }
     else if (section == 4) {
+        // 重置
+        cell.clearWine = self.clearWineConfig;
         cell.wineList = _roomConfig.wineList;
     }
     

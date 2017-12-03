@@ -125,7 +125,7 @@
         
         CGFloat originX = 10;
         CGFloat originY = 10;
-        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemWidth = ((kScreenWidth - 30) - 30)/2;
         CGFloat itemHeight = 120;
         
         for (int index = 0; index < aromaList.count; index ++) {
@@ -172,7 +172,7 @@
         
         CGFloat originX = 10;
         CGFloat originY = 10;
-        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemWidth = ((kScreenWidth - 30) - 30)/2;
         CGFloat itemHeight = 120;
         
         for (int index = 0; index < breakfastList.count; index ++) {
@@ -239,7 +239,7 @@
         
         CGFloat originX = 10;
         CGFloat originY = 10;
-        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemWidth = ((kScreenWidth - 30) - 30)/2;
         CGFloat itemHeight = 120;
         
         for (int index = 0; index < fivePieceList.count; index ++) {
@@ -286,7 +286,7 @@
         
         CGFloat originX = 10;
         CGFloat originY = 10;
-        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemWidth = ((kScreenWidth - 30) - 30)/2;
         CGFloat itemHeight = 120;
         
         for (int index = 0; index < roomLayoutList.count; index ++) {
@@ -333,7 +333,7 @@
         
         CGFloat originX = 10;
         CGFloat originY = 10;
-        CGFloat itemWidth = (self.width - 30)/2;
+        CGFloat itemWidth = ((kScreenWidth - 30) - 30)/2;
         CGFloat itemHeight = 120;
         
         for (int index = 0; index < wineList.count; index ++) {

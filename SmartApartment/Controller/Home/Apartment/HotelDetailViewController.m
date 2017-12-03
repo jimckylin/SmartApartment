@@ -588,7 +588,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
         bespeakDate = [df dateFromString:bespeakDateStr];
         NSDate *checkinDate = [df dateFromString:self.checkInTime];
         
-        if ([bespeakDate isLaterThanDate:checkinDate]) {
+        if ([bespeakDate isLaterThanDate:checkinDate] && !self.beforeDawn) {
             NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", cell.dayRoom.roomTypeName, cell.dayRoom.bespeakDays];
             [MBProgressHUD cwgj_showHUDWithText:string];
             return;

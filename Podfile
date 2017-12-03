@@ -8,7 +8,7 @@ target 'SmartApartment' do
   # Pods for SmartApartment
   
   pod 'PureLayout',            '~> 3.0.2'
-  pod 'IQKeyboardManager',     '~> 4.0.9'
+  pod 'IQKeyboardManager',     '~> 5.0.4'
   pod 'SDCycleScrollView',     '~> 1.66'
   pod 'MJRefresh',             '~> 3.1.12'
   pod 'YZHeaderScaleImage',    '~> 1.0.1'

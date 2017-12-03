@@ -85,7 +85,7 @@
         _numberBtn.defaultNumber = 1;
         _numberBtn.minValue = 1;
         _numberBtn.maxValue = 200;
-        _numberBtn.decreaseHide = YES;
+        //_numberBtn.decreaseHide = YES;
         _numberBtn.increaseImage = [UIImage imageNamed:@"order_add_iciphone"];
         _numberBtn.decreaseImage = [UIImage imageNamed:@"order_minus_ic_scopyiphone"];
         [selectBgView addSubview:_numberBtn];
@@ -93,8 +93,8 @@
         
         _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_selectedBtn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        //[_selectedBtn setImage:kImage(@"reserve_payiphone") forState:UIControlStateNormal];
-        [_selectedBtn setImage:kImage(@"Selected_iciphone") forState:UIControlStateSelected];
+        [_selectedBtn setImage:kImage(@"coupon_seleiphone") forState:UIControlStateNormal];
+        [_selectedBtn setImage:kImage(@"coupon_sele_siphone") forState:UIControlStateSelected];
         [selectBgView addSubview:_selectedBtn];
         
         [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight];
@@ -157,7 +157,7 @@
     
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:aroma.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", aroma.name, aroma.price];
+    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=#1B5B5E>%@</font>", aroma.name, aroma.price];
     _aroma = aroma;
 }
 
@@ -165,7 +165,7 @@
     
     [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:breakfast.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", breakfast.name, breakfast.price];
+    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=#1B5B5E>%@</font>", breakfast.name, breakfast.price];
     _breakfast = breakfast;
 }
 
@@ -173,7 +173,7 @@
     
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:fivePiece.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", fivePiece.name, fivePiece.price];
+    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=#1B5B5E>%@</font>", fivePiece.name, fivePiece.price];
     _fivePiece = fivePiece;
 }
 
@@ -181,7 +181,7 @@
     
     [_numberBtn setHidden:YES];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:roomLayout.img] placeholderImage:kImage(@"blank_default_nomal_bg")];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", roomLayout.name, roomLayout.price];
+    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=#1B5B5E>%@</font>", roomLayout.name, roomLayout.price];
     _roomLayout = roomLayout;
 }
 
@@ -189,7 +189,7 @@
     
     [_numberBtn setHidden:NO];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:wine.img] placeholderImage:kImage(@"evaluate_blankiphone")];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=red>%@</font>", wine.name, wine.price];
+    _nameLabel.text = [NSString stringWithFormat:@"%@ <font color=#1B5B5E>%@</font>", wine.name, wine.price];
     _wine = wine;
 }
 

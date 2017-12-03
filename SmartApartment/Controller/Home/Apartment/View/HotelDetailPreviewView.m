@@ -49,8 +49,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:14];
-    _titleLabel.textColor = [UIColor darkTextColor];
-    _titleLabel.text = @"您可选择的套餐";
+    _titleLabel.textColor = ThemeColor;
     [bgView addSubview:_titleLabel];
     [_titleLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 10, 0, 0) excludingEdge:ALEdgeBottom];
     [_titleLabel autoSetDimension:ALDimensionHeight toSize:44];
@@ -62,7 +61,7 @@
     
     _descLabel = [UILabel new];
     _descLabel.font = [UIFont systemFontOfSize:13];
-    _descLabel.textColor = [UIColor lightGrayColor];
+    _descLabel.textColor = ThemeColor;
     _descLabel.numberOfLines = 4;
     [bgView addSubview:_descLabel];
     

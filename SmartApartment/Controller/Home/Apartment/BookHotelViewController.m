@@ -331,14 +331,12 @@
 
 - (void)hotelConfigViewDidTapImage:(NSArray *)imgUrls selectedIndex:(NSInteger)index view:(UIView *)view {
     
-    if ([imgUrls count] > 0) {
+    if (index < [imgUrls count]) {
         NSMutableArray *items = @[].mutableCopy;
-        for (int i = 0; i < imgUrls.count; i++) {
-            NSString *url = imgUrls[i];
-            KSPhotoItem *item = [KSPhotoItem itemWithSourceView:(UIImageView *)view imageUrl:[NSURL URLWithString:url]];
-            [items addObject:item];
-        }
-        KSPhotoBrowser *browser = [KSPhotoBrowser browserWithPhotoItems:items selectedIndex:index];
+        NSString *url = imgUrls[index];
+        KSPhotoItem *item = [KSPhotoItem itemWithSourceView:(UIImageView *)view imageUrl:[NSURL URLWithString:url]];
+        [items addObject:item];
+        KSPhotoBrowser *browser = [KSPhotoBrowser browserWithPhotoItems:items selectedIndex:0];
         [browser showFromViewController:self];
     }
 }
