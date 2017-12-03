@@ -168,6 +168,8 @@
     
     if (!_breakfastList || _clearBreakfast) {
         _clearBreakfast = NO;
+        [self.breakfasts removeAllObjects];
+        [self.breakfastNums removeAllObjects];
         [self updateClearConfigFlag:HotelConfigTypeBreakfast];
         
         CGFloat originX = 10;
@@ -199,7 +201,7 @@
                     }
                 } else {
                     if ([selfWeak.breakfasts containsObject:breakfast]) {
-                        NSInteger breakfastIndex = [selfWeak.breakfastList indexOfObject:breakfast];
+                        NSInteger breakfastIndex = [selfWeak.breakfasts indexOfObject:breakfast];
                         [selfWeak.breakfasts removeObject:breakfast];
                         [selfWeak.breakfastNums removeObjectAtIndex:breakfastIndex];
                     }
@@ -329,6 +331,8 @@
     
     if (!_wineList || _clearWine) {
         _clearWine = NO;
+        [self.wines removeAllObjects];
+        [self.wineNums removeAllObjects];
         [self updateClearConfigFlag:HotelConfigTypeWine];
         
         CGFloat originX = 10;

@@ -71,6 +71,7 @@
     
     // 设置tableView头部缩放图片 *一行代码就集成了*
     _tableView.yz_headerScaleImage = [UIImage imageNamed:@"mine_hand_bgiphone"];
+    _tableView.yz_headerScaleImageHeight = 346/2;
     
     // 设置tableView头部视图，必须设置头部视图背景颜色为clearColor,否则会被挡住
     _headerView = [MineHeaderView new];

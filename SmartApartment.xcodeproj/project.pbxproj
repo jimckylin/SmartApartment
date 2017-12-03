@@ -267,6 +267,8 @@
 		A985ABEF1F415134005B31DF /* list_city_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A985ABED1F415134005B31DF /* list_city_iciphone@2x.png */; };
 		A985ABF01F415134005B31DF /* list_time_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A985ABEE1F415134005B31DF /* list_time_iciphone@2x.png */; };
 		A985ABF31F415193005B31DF /* HotelListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A985ABF21F415193005B31DF /* HotelListHeaderView.m */; };
+		A98BD18C1FD532BD00CADDA0 /* selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98BD18A1FD532BD00CADDA0 /* selected@2x.png */; };
+		A98BD18D1FD532BD00CADDA0 /* unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98BD18B1FD532BD00CADDA0 /* unselected@2x.png */; };
 		A9906F681F3BFC17007725B7 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9906F671F3BFC17007725B7 /* MineHeaderView.m */; };
 		A992C1DF1F4724EA00D5371C /* JWStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A992C1DE1F4724EA00D5371C /* JWStarView.m */; };
 		A992C1E41F47275900D5371C /* share_friend_iciphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A992C1E01F47275900D5371C /* share_friend_iciphone@2x.png */; };
@@ -796,6 +798,8 @@
 		A985ABEE1F415134005B31DF /* list_time_iciphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_time_iciphone@2x.png"; sourceTree = "<group>"; };
 		A985ABF11F415193005B31DF /* HotelListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListHeaderView.h; sourceTree = "<group>"; };
 		A985ABF21F415193005B31DF /* HotelListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListHeaderView.m; sourceTree = "<group>"; };
+		A98BD18A1FD532BD00CADDA0 /* selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected@2x.png"; sourceTree = "<group>"; };
+		A98BD18B1FD532BD00CADDA0 /* unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselected@2x.png"; sourceTree = "<group>"; };
 		A9906F661F3BFC17007725B7 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		A9906F671F3BFC17007725B7 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
 		A992C1DD1F4724EA00D5371C /* JWStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWStarView.h; sourceTree = "<group>"; };
@@ -1928,6 +1932,8 @@
 		A9AA8EE11F375DEA005F9DBB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A98BD18A1FD532BD00CADDA0 /* selected@2x.png */,
+				A98BD18B1FD532BD00CADDA0 /* unselected@2x.png */,
 				A91439CB1F7963F200167089 /* icon-40@2x.png */,
 				A91439CC1F7963F200167089 /* icon-40@3x.png */,
 				A91439CD1F7963F200167089 /* icon-60@2x.png */,
@@ -2261,7 +2267,7 @@
 					A9AA8E971F3712A5005F9DBB = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5GVNR3NW7N;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -2367,12 +2373,14 @@
 				A9414F0B1F38D476007857D2 /* home_location_ic_siphone@2x.png in Resources */,
 				A95B3FEF1F3AC7FF0046E150 /* circle.png in Resources */,
 				A92E144E1F64EA0800EFF1A7 /* MyCommentListCell.xib in Resources */,
+				A98BD18D1FD532BD00CADDA0 /* unselected@2x.png in Resources */,
 				A9B2F7DA1F60458B00E9068D /* check_delete_iciphone@2x.png in Resources */,
 				A9415A4D1F55200A00FAD195 /* login_password_hide_ic@2x.png in Resources */,
 				A91439601F76431600167089 /* OrderDetailView.xib in Resources */,
 				A992C1E61F47275900D5371C /* share_sina_iciphone@2x.png in Resources */,
 				A91439C61F77CEDA00167089 /* mine_vip_ic@2x.png in Resources */,
 				A96A331C1F48266500A55A42 /* reserve_pay_siphone@2x.png in Resources */,
+				A98BD18C1FD532BD00CADDA0 /* selected@2x.png in Resources */,
 				A976778D1F3F301E00EDCDFA /* trip_history_iciphone@2x.png in Resources */,
 				A9EB262C1F48AF9E007DB818 /* trip_service_piciphone@2x.png in Resources */,
 				A96A331D1F48266500A55A42 /* reserve_payiphone@2x.png in Resources */,
@@ -2835,7 +2843,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2861,8 +2869,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "911eb2ad-95c7-4a60-983f-b255b144708d";
+				PROVISIONING_PROFILE_SPECIFIER = smartapartment_ad_hoc;
 			};
 			name = Debug;
 		};
@@ -2874,7 +2882,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou Manlianmeng Network Technology Co., Ltd. (5GVNR3NW7N)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5GVNR3NW7N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2900,8 +2908,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manlianmeng.smartapartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8294f1a5-fc4c-4804-bd36-2985f7f206ed";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.manlianmeng.smartapartment";
+				PROVISIONING_PROFILE = "911eb2ad-95c7-4a60-983f-b255b144708d";
+				PROVISIONING_PROFILE_SPECIFIER = smartapartment_ad_hoc;
 			};
 			name = Release;
 		};

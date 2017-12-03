@@ -53,7 +53,7 @@
         // 标题
         _nameLabel = [RTLabel new];
         _nameLabel.font = [UIFont systemFontOfSize:12];
-        _nameLabel.textColor = [UIColor grayColor];
+        _nameLabel.textColor = ThemeColor;
         _nameLabel.text = @"中式 0.01";
         [_nameBgView addSubview:_nameLabel];
         [_nameLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
@@ -65,7 +65,7 @@
         _imageView.clipsToBounds = YES;
         _imageView.userInteractionEnabled = YES;
         [self addSubview:_imageView];
-        [_imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(20, 0, 20, 0)];
+        [_imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(20, 0, 30, 0)];
         
         UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
         [_imageView addGestureRecognizer:imageTap];
@@ -77,9 +77,9 @@
         [selectBgView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_imageView];
         [selectBgView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [selectBgView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [selectBgView autoSetDimension:ALDimensionHeight toSize:20];
+        [selectBgView autoSetDimension:ALDimensionHeight toSize:30];
         
-        _numberBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 2.5, 60, 15)];
+        _numberBtn = [PPNumberButton numberButtonWithFrame:CGRectMake(10, 7.5, 60, 15)];
         // 初始化时隐藏减按钮
         _numberBtn.delegate = self;
         _numberBtn.defaultNumber = 1;
@@ -93,13 +93,13 @@
         
         _selectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_selectedBtn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_selectedBtn setImage:kImage(@"coupon_seleiphone") forState:UIControlStateNormal];
-        [_selectedBtn setImage:kImage(@"coupon_sele_siphone") forState:UIControlStateSelected];
+        [_selectedBtn setBackgroundImage:kImage(@"unselected") forState:UIControlStateNormal];
+        [_selectedBtn setBackgroundImage:kImage(@"selected") forState:UIControlStateSelected];
         [selectBgView addSubview:_selectedBtn];
         
-        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(20, 20)];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:3];
+        [_selectedBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:3.5];
+        [_selectedBtn autoSetDimensionsToSize:CGSizeMake(23, 23)];
     }
     return self;
 }
