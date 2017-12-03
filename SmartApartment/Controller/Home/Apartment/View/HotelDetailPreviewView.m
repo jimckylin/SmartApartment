@@ -92,7 +92,7 @@
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:14];
-    _priceLabel.textColor = RGBA(230, 30, 48, 1);
+    _priceLabel.textColor = ThemeColor;
     _priceLabel.text = @"在线支付: ¥0";
     _priceLabel.textAlignment = NSTextAlignmentCenter;
     [bottomView addSubview:_priceLabel];
@@ -101,7 +101,7 @@
     [_priceLabel autoSetDimension:ALDimensionWidth toSize:bgView.width*3/5];
     
     UIButton *bookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    bookBtn.backgroundColor = RGBA(230, 30, 48, 1);
+    bookBtn.backgroundColor = ThemeColor;
     [bookBtn setTitle:@"立即预订" forState:UIControlStateNormal];
     [bookBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [bookBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];

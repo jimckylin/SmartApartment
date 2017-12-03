@@ -143,7 +143,7 @@
             iconArrow.hidden = YES;
             subLabel.textColor = ThemeColor;
             subLabel.left = subLabel.left + 20;
-            subLabel.text = @"0591-83598898";
+            subLabel.text = @"13075821312";
         }
         
         
