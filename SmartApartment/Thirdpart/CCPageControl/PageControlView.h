@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionV;
 @property (strong, nonatomic) IBOutlet UIButton *btn;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageV;
+@property (copy, nonatomic) void(^didRemoveGuideViewBlock)(void);
 
 @end

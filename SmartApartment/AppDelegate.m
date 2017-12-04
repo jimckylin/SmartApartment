@@ -37,17 +37,6 @@
 
 @implementation AppDelegate
 
-
-- (void)configBaiduMap {
-    
-    BMKMapManager *mapManager = [[BMKMapManager alloc]init];
-    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [mapManager start:@"6Wsff6whyLymmdlt8pGoPrDcNXPD3ZsP"  generalDelegate:nil];
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -138,6 +127,16 @@
 
 
 #pragma mark - Private
+
+- (void)configBaiduMap {
+    
+    BMKMapManager *mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [mapManager start:@"6Wsff6whyLymmdlt8pGoPrDcNXPD3ZsP"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+}
 
 - (void)configUSharePlatforms {
     /*

@@ -98,6 +98,10 @@ UIScrollViewDelegate
 {
     sender.backgroundColor = [UIColor clearColor];
     [self removeFromSuperview];
+    
+    if (self.didRemoveGuideViewBlock) {
+        self.didRemoveGuideViewBlock();
+    }
 }
 
 - (void)buttonBackGroundHighlighted:(UIButton *)sender

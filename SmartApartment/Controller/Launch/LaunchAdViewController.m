@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "NavManager.h"
 #import "LaunchAdView.h"
+#import "PageControlView.h"
 
 @interface LaunchAdViewController () <LaunchAdViewDelegate>
 
@@ -24,11 +25,16 @@
     [super viewDidLoad];
     
     [self requestData];
-    NSString *homeAdImage = [[NSUserDefaults standardUserDefaults] objectForKey:@"homeAdImage"];
-    if (homeAdImage) {
-        [self showLaunchAd:homeAdImage];
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstInstall"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"isFirstInstall"];
+        [self addGuide];
     } else {
-        [self enterMainVC];
+        NSString *homeAdImage = [[NSUserDefaults standardUserDefaults] objectForKey:@"homeAdImage"];
+        if (homeAdImage) {
+            [self showLaunchAd:homeAdImage];
+        } else {
+            [self enterMainVC];
+        }
     }
 }
 
@@ -62,6 +68,18 @@
 }
 
 #pragma mark - Private
+
+- (void)addGuide {
+    
+    NSArray *imgs = @[@"loading_1", @"loading_2", @"loading_3", @"loading_4", @"loading_5"];
+    PageControlView *pageControlV = [[PageControlView instance] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) andImageList:imgs];
+    
+    __WeakObj(self)
+    pageControlV.didRemoveGuideViewBlock = ^{
+        [selfWeak enterMainVC];
+    };
+    [self.view addSubview:pageControlV];
+}
 
 - (void)showLaunchAd:(NSString *)homeAdImage {
     

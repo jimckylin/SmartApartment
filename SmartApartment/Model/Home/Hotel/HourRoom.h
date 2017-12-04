@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *roomTypeImageList;    // 房间图片
 @property (nonatomic, copy)  NSString *roomRisePrice;        // 房间涨的价格，单位元，是周五、周六才会加上去
 @property (nonatomic, copy)  NSString *bespeakDays;          // 提前预定天数，单位为天
+@property (nonatomic, copy)  NSString *roomTypeCode;         // 房型类型：0001-普通房，0002-精品房，0003-豪华房
 
 @property (nonatomic, copy) NSString * customerTotalMoney;   // 消费总价包括：房费+押金
 

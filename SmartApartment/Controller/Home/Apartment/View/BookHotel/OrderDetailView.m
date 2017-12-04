@@ -61,14 +61,14 @@
     
     
     NSDate *checkinDate = [NSDate sia_dateFromString:orderDetail.checkInTime withFormat:@"yyyy-MM-dd"];
-    NSDate *checkoutDate = [NSDate sia_dateFromString:orderDetail.checkOutTime withFormat:@"yyyy-MM-dd"];
-    NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"M月d日"];
-    NSString *checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd"];
+    NSDate *checkoutDate = [NSDate sia_dateFromString:orderDetail.checkOutTime withFormat:@"yyyy-MM-dd HH:mm"];
+//    NSString *checkinDateStr = [NSString sia_stringFromDate:checkinDate withFormat:@"M月d日"];
+//    NSString *checkoutDateStr = [NSString sia_stringFromDate:checkoutDate withFormat:@"MM月dd"];
     NSInteger days = [checkinDate daysBeforeDate:checkoutDate];
     
-    self.checkinTime.text = [NSString stringWithFormat:@"%@    %@", checkinDateStr, orderDetail.roomNum];
-    self.checkoutTime.text = [NSString stringWithFormat:@"%@    共%zd晚", checkoutDateStr, days];
-    self.payState.text = [orderDetail.evaluateStatus integerValue] == 0? @"待评论": @"已评论";
+    self.checkinTime.text = [NSString stringWithFormat:@"%@", orderDetail.checkInTime];
+    self.checkoutTime.text = [NSString stringWithFormat:@"%@    共%zd晚", orderDetail.checkOutTime, days];
+    self.payState.text = [self orderStateString:orderDetail];
     self.livePerson.text = orderDetail.liveName;
     self.liveMobilePhone.text = orderDetail.mobilePhone;
     self.remark.text = orderDetail.remark;
