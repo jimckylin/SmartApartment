@@ -592,7 +592,7 @@ NSString *const kHotelDetailMoreCommentCell = @"HotelDetailMoreCommentCell";
             [MBProgressHUD cwgj_showHUDWithText:@"凌晨房模式不能入住精品房和豪华房"];
             return;
         }
-        if ([bespeakDate isLaterThanDate:checkinDate]) {
+        if ([bespeakDate isLaterThanDate:checkinDate] && !self.beforeDawn) {
             NSString *string = [NSString stringWithFormat:@"%@需要提前%@天预订", cell.dayRoom.roomTypeName, cell.dayRoom.bespeakDays];
             [MBProgressHUD cwgj_showHUDWithText:string];
             return;
